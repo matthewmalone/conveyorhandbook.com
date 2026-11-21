@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conveyor Availability and Reliability – Modern Conveyor Handbook</title>
+    <meta name="description" content="Conveyor reliability: Weibull failure modelling, downtime and life cycle cost, KPIs and OEE, FMEA and RCM, maintainability, spares, redundancy and RAMS.">
+    <meta name="author" content="Jane Doe">
+    <link rel="canonical" href="https://www.conveyorhandbook.com/16-conveyor-availability-and-reliability.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Conveyor Availability and Reliability – Modern Conveyor Handbook">
+    <meta property="og:description" content="Conveyor reliability: Weibull failure modelling, downtime and life cycle cost, KPIs and OEE, FMEA and RCM, maintainability, spares, redundancy and RAMS.">
+    <meta property="og:url" content="https://www.conveyorhandbook.com/16-conveyor-availability-and-reliability.html">
+    <meta property="og:site_name" content="Modern Conveyor Handbook">
+    <meta property="og:image" content="https://www.conveyorhandbook.com/images/og-16-conveyor-availability-and-reliability.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Maintenance crew replacing an idler on a belt conveyor">
+    <meta property="og:locale" content="en_AU">
+    <meta property="article:published_time" content="2026-11-21T00:00:00+11:00">
+    <meta property="article:modified_time" content="2026-11-21T00:00:00+11:00">
+    <meta property="article:author" content="Jane Doe">
+    <meta property="article:section" content="Engineering">
+    <meta property="article:tag" content="conveyors">
+    <meta property="article:tag" content="reliability">
+    <meta property="article:tag" content="availability">
+    <meta property="article:tag" content="conveyor maintenance">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Conveyor Availability and Reliability – Modern Conveyor Handbook">
+    <meta name="twitter:description" content="Conveyor reliability: Weibull failure modelling, downtime and life cycle cost, KPIs and OEE, FMEA and RCM, maintainability, spares, redundancy and RAMS.">
+    <meta name="twitter:image" content="https://www.conveyorhandbook.com/images/og-16-conveyor-availability-and-reliability.jpg">
+    <meta name="twitter:image:alt" content="Maintenance crew replacing an idler on a belt conveyor">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="home" href="https://www.conveyorhandbook.com/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "TechArticle",
+                "headline": "Conveyor Availability and Reliability",
+                "description": "Conveyor reliability: Weibull failure modelling, downtime and life cycle cost, KPIs and OEE, FMEA and RCM, maintainability, spares, redundancy and RAMS.",
+                "author": { "@type": "Person", "name": "Jane Doe" },
+                "publisher": { "@type": "Organization", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "datePublished": "2026-11-21",
+                "dateModified": "2026-11-21",
+                "mainEntityOfPage": "https://www.conveyorhandbook.com/16-conveyor-availability-and-reliability.html",
+                "isPartOf": { "@type": "WebSite", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "image": "https://www.conveyorhandbook.com/images/og-16-conveyor-availability-and-reliability.jpg",
+                "inLanguage": "en-AU",
+                "about": { "@type": "Thing", "name": "Conveyor Belts" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Modern Conveyor Handbook", "item": "https://www.conveyorhandbook.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Conveyor Availability and Reliability", "item": "https://www.conveyorhandbook.com/16-conveyor-availability-and-reliability.html" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="handbook.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="topbar">
+    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Contents
+    </button>
+</div>
+
+<nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
+    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="chapterMenuBtn" aria-expanded="false" aria-controls="chapterMenu">Chapters</button>
+    </p>
+    <div class="chapter-menu" id="chapterMenu"></div>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-3">Table of Contents</p>
+    <div class="toc">
+        <a href="#conveyor-availability-and-reliability">1. Conveyor Availability and Reliability</a>
+        <a href="#series-reliability-and-availability">2. Series Reliability and Availability</a>
+        <a href="#failure-distribution-modelling">3. Failure Distribution Modelling</a>
+        <a href="#the-economic-cost-of-unplanned-downtime">4. The Economic Cost of Unplanned Downtime</a>
+        <a href="#life-cycle-cost-analysis">5. Life Cycle Cost Analysis</a>
+        <a href="#key-performance-indicators-and-overall-equipment-effectiveness">6. Key Performance Indicators and Overall Equipment Effectiveness</a>
+        <a href="#failure-mode-and-effects-analysis">7. Failure Mode and Effects Analysis</a>
+        <a href="#reliability-centred-maintenance">8. Reliability-Centred Maintenance</a>
+        <a href="#preventive-and-predictive-maintenance-scheduling">9. Preventive and Predictive Maintenance Scheduling</a>
+        <a href="#maintainability-design-requirements">10. Maintainability Design Requirements</a>
+        <a href="#critical-spare-parts-strategy">11. Critical Spare Parts Strategy</a>
+        <a href="#system-redundancy-and-decoupling">12. System Redundancy and Decoupling</a>
+        <a href="#availability-modelling">13. Availability Modelling</a>
+        <a href="#commissioning-validation-of-rams-targets">14. Commissioning Validation of RAMS Targets</a>
+    </div>
+</nav>
+
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+<main class="main-content" id="main" tabindex="-1">
+
+    <section id="conveyor-availability-and-reliability">
+        <h1 class="mb-3">1. Conveyor Availability and Reliability</h1>
+        <p>Treat Reliability, Availability, Maintainability, and Safety (RAMS) as primary design parameters. Quantitative RAMS analysis is required to justify component specifications, ensuring initial Capital Expenditure (CAPEX) reductions do not yield Operational Expenditure (OPEX) increases and production losses due to unplanned downtime.</p>
+    </section>
+
+    <section id="series-reliability-and-availability">
+        <h2>2. Series Reliability and Availability</h2>
+        <p>A single-flight conveyor operates as a series reliability system where overall reliability equals the product of individual component reliabilities. Failure of any single component stops the conveyor.</p>
+        <p>System availability is maximised by optimising two independent variables:</p>
+        <ul>
+            <li><strong>Mean Time Between Failures (MTBF):</strong> Extended through higher component safety factors, improved material selection, and condition monitoring for predictive maintenance.</li>
+            <li><strong>Mean Time To Repair (MTTR):</strong> Minimised by integrating structural maintenance rigging, specifying accessible guarding, and using modular chutes with quick-release wear liners.</li>
+        </ul>
+    </section>
+
+    <section id="failure-distribution-modelling">
+        <h2>3. Failure Distribution Modelling</h2>
+        <p>MTBF does not isolate specific failure mechanisms. A component with an MTBF of 20,000 h may exhibit early-life manufacturing defects, random mid-life failures, or end-of-life wear-out, each requiring a different maintenance response.</p>
+        <p>The two-parameter Weibull distribution is the common statistical model for conveyor component reliability. The Weibull distribution is defined by two parameters: the shape parameter (beta) dictating the failure regime, and the characteristic life parameter (eta) defining the time at which 63.2% of the population fails.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 1: Weibull Shape Parameter Interpretation</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Weibull Shape Parameter (beta)</th>
+                        <th scope="col">Failure Phase</th>
+                        <th scope="col">Failure Rate Behaviour</th>
+                        <th scope="col">Characteristics and Causes</th>
+                        <th scope="col">Recommended Maintenance Strategy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Less than 1.0</th><td>Early-life failure</td><td>Decreases with time</td><td>Failures are concentrated in early life. Typically caused by manufacturing defects, installation errors, or inadequate commissioning.</td><td>Scheduled replacement is ineffective. Mandate improved quality control, burn-in testing, and commissioning verification.</td></tr>
+                    <tr><th scope="row">1.0</th><td>Random failure</td><td>Constant with time</td><td>Failures are independent of component age.</td><td>Time-based preventive replacement is ineffective. Implement condition-based monitoring.</td></tr>
+                    <tr><th scope="row">Greater than 1.0</th><td>Wear-out</td><td>Increases with time</td><td>Failures are age-dependent and follow a predictable degradation pattern.</td><td>Execute time-based preventive replacement. Set intervals to a fraction of eta based on acceptable in-service failure probabilities.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 1: Weibull Reliability Function</figcaption>
+            <p class="font-monospace my-3">R(t) = e^(-(t / eta)^beta)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>R(t) = Probability of survival to time t (dimensionless)</li>
+                <li>t = Operating time (h)</li>
+                <li>eta = Characteristic life, the time at which 63.2% of the population fails (h)</li>
+                <li>beta = Shape parameter defining the failure regime (dimensionless)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Weibull analysis applied to idler bearing life, belt splice life, and gearbox seal life distinguishes between failure regimes and supports assignment of the correct maintenance strategy to each component class. Plotting field failure data on Weibull probability paper, or fitting parameters using maximum likelihood estimation, converts raw maintenance records into quantitative replacement interval decisions. A preventive replacement programme applied to a component operating in the random failure regime (beta approximately 1.0) consumes maintenance resources without reducing the failure rate.</p>
+        </div>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 2: Typical Conveyor Component Weibull Parameter Ranges</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Component</th>
+                        <th scope="col">Shape Parameter (beta)</th>
+                        <th scope="col">Characteristics and Maintenance Strategy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Idler roll bearings</th><td>1.5 to 3.5</td><td>L10 bearing life calculations provide a theoretical baseline, but contamination ingress, misalignment, and thermal loading in service produce actual life distributions that require verification against field data.</td></tr>
+                    <tr><th scope="row">Belt splices (vulcanised)</th><td>1.2 to 2.5</td><td>Splice life is governed by cyclic fatigue under dynamic tension. Calibrate condition monitoring programmes against site-specific Weibull distributions.</td></tr>
+                    <tr><th scope="row">Gearbox oil seals</th><td>1.0 to 1.5</td><td>Failure behaviour shifts from random in clean environments to progressive wear-out under abrasive dust contamination.</td></tr>
+                    <tr><th scope="row">Drive motor bearings (grease lubricated)</th><td>2.0 to 4.0</td><td>Set relubrication intervals and vibration monitoring thresholds using fitted Weibull parameters.</td></tr>
+                    <tr><th scope="row">Conveyor belt cover (top cover wear)</th><td>3.0 to 5.0</td><td>Predictable wear-out driven by material abrasiveness and total tonnage. Use periodic ultrasonic thickness testing to forecast end-of-life and schedule belt replacement.</td></tr>
+                    <tr><th scope="row">Electronic sensors (e.g. pull cords, drift switches)</th><td>0.8 to 1.1</td><td>Dominated by random failures from environmental damage or early-life manufacturing defects. Scheduled replacement is ineffective. Rely on regular functional testing and fail-safe control logic.</td></tr>
+                    <tr><th scope="row">Pulley lagging (rubber or ceramic)</th><td>2.0 to 3.5</td><td>Wear-out is driven by belt slip, tension, and material friction. Implement visual and tactile condition monitoring to dictate replacement before the underlying pulley shell is damaged.</td></tr>
+                    <tr><th scope="row">Hydraulic hoses</th><td>1.1 to 1.8</td><td>Failure is a combination of random events (snagging, extreme pressure spikes) and age-related fatigue and UV degradation. Implement routine visual inspections for chafing and execute time-based replacement for safety-critical lines.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Ranges are typical planning values. Replace them with parameters fitted to site failure data once available.</p>
+        </div>
+    </section>
+
+    <section id="the-economic-cost-of-unplanned-downtime">
+        <h2>4. The Economic Cost of Unplanned Downtime</h2>
+        <p>Component selection requires quantifying the total cost of a downtime event. Count production loss only where it cannot be recovered through surge capacity or later catch-up production.</p>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 2: Total Cost of an Unplanned Downtime Event</figcaption>
+            <p class="font-monospace my-3">C_total = (Q_t * P_m * MTTR) + C_repair</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>C_total = Total cost of an unplanned downtime event ($)</li>
+                <li>Q_t = System throughput rate (t/h)</li>
+                <li>P_m = Commodity net profit margin ($/t)</li>
+                <li>MTTR = Mean Time To Repair (h)</li>
+                <li>C_repair = Cost of replacement parts and labour ($)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> On high-throughput commodity systems, production losses often dominate the total downtime cost. Demonstrate whether component cost is offset by avoided downtime cost.</p>
+        </div>
+        <p>Example (indicative costs): A high-tension drive pulley requires lagging in a wet environment. Standard cold-bonded rubber lagging costs AUD 5,000 and hot-vulcanised ceramic lagging costs AUD 25,000.</p>
+        <p>Under load in wet conditions, rubber lagging can hydroplane, resulting in slip, lagging delamination, and conveyor stoppage.</p>
+        <p>Assuming a nominal plant throughput of 3,000 t/h [3,300 stph] of copper ore at a net margin of AUD 100/t [AUD 91/short ton], recovery from a slip event, including crane mobilisation, pulley removal, and installation of a spare pulley, requires 12 h. Production loss is 3,000 t/h * AUD 100/t * 12 h = AUD 3,600,000, plus AUD 150,000 for crane hire, labour and pulley repair, giving C_total = AUD 3,750,000.</p>
+        <p>The additional CAPEX of AUD 20,000 for ceramic lagging is justified if it reduces the probability of one slip event over the lagging life by more than 0.53% (AUD 20,000 / AUD 3,750,000). Production loss scales linearly with commodity margins. Apply project-specific commodity economics to CAPEX justifications.</p>
+        <p>Example (indicative costs): An underground drift conveyor requires a take-up system. A gravity tower costs AUD 150,000, and an active winch system controlled by a Variable Frequency Drive (VFD) costs AUD 300,000. The active winch limits dynamic tension during start-up to 110% of steady-state tension, compared with a 150% peak with a gravity tower.</p>
+        <p>Limiting peak transient tension allows the 5 km [3.1 mi] main belt to be specified at ST 2000 rather than ST 2500. The belt cost reduction is AUD 150/m [AUD 46/ft]. On a 10,000 m [32,800 ft] loop, this represents AUD 1,500,000 in belt cost savings, exceeding the CAPEX premium of AUD 150,000 for the active winch by a factor of 10.</p>
+    </section>
+
+    <section id="life-cycle-cost-analysis">
+        <h2>5. Life Cycle Cost Analysis</h2>
+        <p>For system-level investment decisions, evaluate total cost of ownership (TCO) across the installation's design life. Life Cycle Cost (LCC) analysis aggregates capital, maintenance, energy, and production loss costs, discounting them to a Net Present Cost (NPC) for financial comparison of design alternatives.</p>
+        <p>Present LCC results as a sensitivity range. At minimum, evaluate three scenarios: a base case using median inputs, a high case using upper-bound failure rates, and a low case using lower-bound failure rates.</p>
+        <p>Derive failure and maintenance cost inputs from FMEA failure rates and site-specific maintenance data, not generic industry averages. Use a real discount rate with costs in constant dollars, or a nominal rate with escalated costs.</p>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 3: Life Cycle Net Present Cost</figcaption>
+            <p class="font-monospace my-3">NPC = CAPEX + SUM(t=1 to n) of ((C_maint_t + C_energy_t + C_loss_t) / (1 + r)^t)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>NPC = Net Present Cost over the design life ($)</li>
+                <li>CAPEX = Initial capital expenditure including procurement, installation, and commissioning ($)</li>
+                <li>C_maint_t = Total maintenance cost in year t, including preventive, predictive, and corrective maintenance labour and materials ($)</li>
+                <li>C_energy_t = Energy consumption cost in year t ($)</li>
+                <li>C_loss_t = Estimated production loss cost in year t, derived from Failure Mode and Effects Analysis (FMEA) failure rates ($)</li>
+                <li>r = Discount rate, typically 0.06 to 0.10 for mining projects (dimensionless)</li>
+                <li>n = Design life (years)</li>
+                <li>t = Year index (dimensionless)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> LCC analysis can show that the lowest-CAPEX option does not yield the lowest total cost of ownership. For example, a belt rated at ST 2500 with a 25-year splice life can yield a lower NPC than a belt rated at ST 2000 requiring splice replacement every 8 years, even though the initial belt cost is higher. LCC analysis provides the quantitative framework for communicating this to procurement and project management stakeholders.</p>
+        </div>
+    </section>
+
+    <section id="key-performance-indicators-and-overall-equipment-effectiveness">
+        <h2>6. Key Performance Indicators and Overall Equipment Effectiveness</h2>
+        <p>Track conveyor operational performance using Key Performance Indicators (KPIs) to establish benchmarks, identify fault trends, and quantify system improvements. Record and report the following KPIs monthly for each production-critical conveyor.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 3: Conveyor Key Performance Indicators</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">KPI</th>
+                        <th scope="col">Calculation</th>
+                        <th scope="col">Unit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Mechanical Availability (MA)</th><td>(Scheduled Hours - Breakdown Hours) / Scheduled Hours * 100</td><td>%</td></tr>
+                    <tr><th scope="row">Utilisation (U)</th><td>Operating Hours / Available Hours * 100</td><td>%</td></tr>
+                    <tr><th scope="row">MTBF</th><td>Total Operating Hours / Number of Failures</td><td>h</td></tr>
+                    <tr><th scope="row">MTTR</th><td>Total Breakdown Hours / Number of Failures</td><td>h</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 4: Overall Equipment Effectiveness</figcaption>
+            <p class="font-monospace my-3">OEE = A * PE * QR</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>OEE = Overall Equipment Effectiveness (dimensionless)</li>
+                <li>A = Availability, operating hours divided by scheduled hours (dimensionless)</li>
+                <li>PE = Performance efficiency, average throughput during operation divided by design throughput (dimensionless)</li>
+                <li>QR = Quality rate, conforming tonnage divided by total tonnage conveyed (dimensionless)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Establish baseline OEE targets relative to the specific operating context and investigate any shortfall to identify and rectify system losses. Use OEE metrics to quantitatively evaluate CAPEX proposals against projected production yields.</p>
+        </div>
+    </section>
+
+    <section id="failure-mode-and-effects-analysis">
+        <h2>7. Failure Mode and Effects Analysis</h2>
+        <p>FMEA is a framework for identifying potential failure modes, their causes, their effects on system operation, and the controls required to prevent or mitigate them. Maintain the register throughout the asset lifecycle and update it after design modifications and in-service failure events.</p>
+        <p>For each subsystem, the FMEA specifies component function, failure mode, failure cause, subsystem and system availability effects, detection method and Risk Priority Number (RPN).</p>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 5: Risk Priority Number</figcaption>
+            <p class="font-monospace my-3">RPN = S * O * D</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>RPN = Risk Priority Number (dimensionless)</li>
+                <li>S = Severity of the failure effect, from 1 for negligible to 10 for system loss or safety event (dimensionless)</li>
+                <li>O = Occurrence likelihood within the maintenance interval, from 1 for highly improbable to 10 for near-certain (dimensionless)</li>
+                <li>D = Detectability, the likelihood of non-detection before the effect occurs, from 1 for certain detection to 10 for no detection mechanism (dimensionless)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> An RPN greater than 100 is a common threshold for engineering action via design modifications to reduce severity or occurrence, or the implementation of detection strategies to lower D. Act on any failure mode with S of 9 or 10 regardless of RPN, because low O and D scores can mask a safety-critical effect. The FMEA outputs dictate spare parts stockholding and maintenance schedules.</p>
+        </div>
+    </section>
+
+    <section id="reliability-centred-maintenance">
+        <h2>8. Reliability-Centred Maintenance</h2>
+        <p>Reliability-Centred Maintenance (RCM) establishes the appropriate maintenance strategy for each failure mode identified in the FMEA. RCM selects condition-based, time-based or run-to-failure tasks according to the failure consequences in each operating context.</p>
+        <p>The RCM logic dictates the following maintenance responses per FMEA failure mode:</p>
+        <ul>
+            <li>Hidden failures of protective devices, such as pull-wire and belt drift switches, require scheduled failure-finding functional tests.</li>
+            <li>Safety or environmental consequences require preventive or condition-monitoring tasks. If no task reduces the risk to a tolerable level, the design must be modified to eliminate or mitigate the failure mode.</li>
+            <li>Operational consequences require preventive or condition-monitoring tasks only if task expenditure is below the average cost of allowing the failure to occur. If no cost-effective task is available, run-to-failure with planned repair is acceptable.</li>
+            <li>Failures lacking safety or operational consequences default to run-to-failure.</li>
+        </ul>
+        <p>Conduct RCM analysis with a cross-functional engineering and operations team to integrate site-specific operating context and historical failure data.</p>
+        <p>Transfer RCM outputs to Computerised Maintenance Management System (CMMS) schedules and spare parts strategies. Review the analyses at 3 to 5 year intervals or following a critical unplanned failure. Keep the FMEA register and RCM task list aligned.</p>
+    </section>
+
+    <section id="preventive-and-predictive-maintenance-scheduling">
+        <h2>9. Preventive and Predictive Maintenance Scheduling</h2>
+        <p>Maintenance tasks are categorised as preventive (time-based) or predictive (condition-based).</p>
+        <p>Preventive maintenance tasks are executed at fixed calendar or runtime intervals where failure modes follow a time-dependent degradation pattern, or where failure consequences preclude exclusive reliance on condition monitoring. Typical tasks include idler roll replacement based on bearing L10 life calculations verified against field failure data, gearbox oil and coupling element replacement at manufacturer-specified intervals, and structural bolt torque verification following commissioning and dynamic loading events.</p>
+        <p>Predictive maintenance tasks are condition-triggered, where intervention occurs when monitoring data exceeds defined degradation thresholds. Techniques include vibration analysis of drive motors against ISO 20816-3 zone boundaries and of gear units against ISO 20816-9 zone boundaries, and infrared thermography of idlers, switchgear, and drive components to detect thermal anomalies. Drive pulley bearings typically run below 120 rpm, outside the scope of ISO 20816-3. Set their alarm levels from baseline trends.</p>
+        <p>Load maintenance tasks into the site CMMS and schedule shutdown-dependent tasks in planned shutdown windows. Review maintenance plans against actual failure history to validate and adjust task frequencies.</p>
+    </section>
+
+    <section id="maintainability-design-requirements">
+        <h2>10. Maintainability Design Requirements</h2>
+        <p>MTTR depends on the physical conveyor design and its supporting infrastructure.</p>
+        <p>Integrate the following maintainability provisions into the conveyor design:</p>
+        <ul>
+            <li>Crane pads or hardstand areas at drive stations and conveyor terminals, rated for crane outrigger loads when lifting the heaviest component. Locate the pads to provide adequate boom reach and slewing clearance without interference from adjacent structures.</li>
+            <li>Monorails or overhead lifting beams above major components where mobile crane access is restricted. Rate lifting points for the maximum component mass.</li>
+            <li>Access platforms at inspection and maintenance points, including drive stations, take-up assemblies, load zones, and discharge chutes.</li>
+            <li>Machinery guards designed for removal and refitting by one person to facilitate maintenance access. Fixed guards must require a tool for removal.</li>
+            <li>Chutes with bolted or magnetic wear liner systems and segment liner plates sized for manual handling (typically maximum 25 kg [55 lb] per segment). Avoid fully welded monolithic chute structures to minimise repair and replacement times.</li>
+            <li>Drive layouts that permit independent extraction of individual components (motor, coupling, gearbox, pulley). Incorporate split coupling housings, jack bolts, and alignment dowels to expedite installation and improve alignment repeatability.</li>
+            <li>Idler frames that incorporate retractable or swing-out designs to enable roll replacement from the walkway side without belt lifting. For high-tension applications, provide under-belt access from the non-walkway side with adequate clearance.</li>
+        </ul>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 4: Maintenance Activity MTTR Design Benchmarks</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Maintenance Activity</th>
+                        <th scope="col">Lower Time Limit h</th>
+                        <th scope="col">Upper Time Limit h</th>
+                        <th scope="col">Variables Affecting Outcome</th>
+                        <th scope="col">Operational Assumptions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Idler roll replacement (trough or return)</th><td>0.25</td><td>0.5</td><td>Frame design, walk-side accessibility, material carryback</td><td>Standard tooling, no belt lifting required</td></tr>
+                    <tr><th scope="row">Belt cleaner blade replacement</th><td>0.15</td><td>0.5</td><td>Tensioner type, material build-up, access platform width</td><td>No working at heights, washdown completed</td></tr>
+                    <tr><th scope="row">Drive pulley change-out</th><td>4.0</td><td>8.0</td><td>Pulley mass, shaft diameter, bearing housing design</td><td>Staged spare and crane on-site, accessible rigging points</td></tr>
+                    <tr><th scope="row">Bend or tail pulley change-out</th><td>3.0</td><td>6.0</td><td>Take-up tension release method, pulley mass, bearing housing accessibility</td><td>Staged spare and crane on-site, belt tension isolated</td></tr>
+                    <tr><th scope="row">Gearbox change-out</th><td>3.0</td><td>6.0</td><td>Drive arrangement, coupling complexity, alignment tolerance</td><td>Staged spare and crane on-site, alignment dowels present</td></tr>
+                    <tr><th scope="row">Vulcanised belt splice</th><td>8.0</td><td>12.0</td><td>Belt width, tensile rating, ambient environmental conditions</td><td>Splicing equipment staged, adequate workspace available</td></tr>
+                    <tr><th scope="row">Motor replacement</th><td>2.0</td><td>4.0</td><td>Frame size, coupling complexity, alignment specifications</td><td>Staged spare, lifting equipment on-site, pre-machined shims available</td></tr>
+                    <tr><th scope="row">Chute wear liner replacement (per segment)</th><td>1.0</td><td>3.0</td><td>Liner mass, fastener accessibility, internal corrosion</td><td>Segmented liners (maximum 25 kg [55 lb]), bolted connections</td></tr>
+                    <tr><th scope="row">Skirt seal replacement (per 3 m [10 ft] zone)</th><td>0.5</td><td>1.5</td><td>Clamp design, chute geometry, material spillage</td><td>Quick-release clamping system, load zone cleared</td></tr>
+                    <tr><th scope="row">Fluid coupling oil replacement</th><td>0.5</td><td>1.0</td><td>Fluid volume, drain plug accessibility, thermal state</td><td>Lubricant staged, standard draining equipment available</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Specify MTTR targets during design and validate them during commissioning. A design that cannot achieve its MTTR targets due to access constraints, inadequate rigging provisions, or monolithic components will not meet its RAMS availability targets at the design MTBF.</p>
+        </div>
+    </section>
+
+    <section id="critical-spare-parts-strategy">
+        <h2>11. Critical Spare Parts Strategy</h2>
+        <p>MTTR depends on the availability of replacement components. A stock-out of a long-lead or high-consequence item extends MTTR by up to the replenishment lead time.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 5: Spare Parts Classifications</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Tier</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Criteria</th>
+                        <th scope="col">Stocking Strategy and Quantity</th>
+                        <th scope="col">Examples</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">1</th><td>Insurance Spares</td><td>Components with long manufacturing lead times (typically greater than 12 weeks) or items causing complete conveyor shutdown upon failure.</td><td>Hold on site at all times. Maintain at least one complete replacement unit per interchangeable drive train type.</td><td>Drive pulley assemblies, gearboxes, VFD units, main drive motors.</td></tr>
+                    <tr><th scope="row">2</th><td>Operational Spares</td><td>Components consumed or replaced at a predictable rate during scheduled maintenance.</td><td>Determined by maintenance frequency and supplier lead time. Set stock levels to bridge the replenishment cycle with a buffer margin.</td><td>Idler rolls, belt scrapers, wear liner segments, coupling elements.</td></tr>
+                    <tr><th scope="row">3</th><td>Consumables</td><td>Low-cost, short-lead-time items replenished on a routine basis.</td><td>Managed under standard stores replenishment procedures.</td><td>Lubricants, fasteners, seals, electrical fuses.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Review the spare parts register at commissioning, after each critical unplanned failure event, and at intervals not exceeding two years of operation. Confirm at each review that on-hand stock levels remain appropriate for the current conveyor duty and maintenance history. Identify obsolete components, particularly discontinued electrical or control equipment, and schedule them for replacement.</p>
+    </section>
+
+    <section id="system-redundancy-and-decoupling">
+        <h2>12. System Redundancy and Decoupling</h2>
+        <p>Build fault tolerance into the broader material handling system through redundancy and decoupling. For operationally critical conveying paths, such as blast furnace feed or ship-loading with demurrage exposure, use parallel conveyor configurations.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 6: Conveyor Redundancy Options</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Configuration</th>
+                        <th scope="col">Operating Mode</th>
+                        <th scope="col">Normal Operation</th>
+                        <th scope="col">Failure Scenario (Single Belt Down)</th>
+                        <th scope="col">Capital Cost Implication</th>
+                        <th scope="col">Application</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">2 x 100%</th><td>Duty / Standby</td><td>Single unit conveys 100% design throughput.</td><td>Diverter gate redirects material flow to standby unit. Throughput is restored after changeover.</td><td>Highest. System operates at 50% utilisation.</td><td>Specify for downstream processes requiring fixed feed rates (e.g. smelter feed, kiln charge).</td></tr>
+                    <tr><th scope="row">2 x 50%</th><td>Load Sharing</td><td>Dual units operate concurrently, each conveying 50% of design throughput.</td><td>Active unit maintains 50% capacity, resulting in a 50% throughput reduction.</td><td>Lowest. Minimises capital expenditure.</td><td>Specify where a 50% throughput reduction is operationally acceptable.</td></tr>
+                    <tr><th scope="row">2 x 75%</th><td>Load Sharing</td><td>Dual units operate concurrently, each conveying 50% of design throughput.</td><td>Active unit maintains 75% capacity, reducing overall throughput by 25%.</td><td>Moderate. Lower than 2 x 100% capital cost.</td><td>Specify where a 25% throughput reduction is operationally acceptable to prevent complete production cessation.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Direct coupling of upstream and downstream bulk handling processes propagates individual subsystem failures across the full conveying chain. If a 10 km [6.2 mi] overland conveyor feeds directly into a ship loader, failure of either system immediately halts the other. Stopping and restarting an overland belt imposes transient fatigue loading on splices and drive components, and unplanned equipment downtime during vessel loading can incur demurrage penalties.</p>
+        <p>Integrate buffer storage to decouple subsystem failures via short and long-term buffering. Surge bins installed between conveyors provide a short-term buffer. If the downstream belt trips, the upstream belt can continue operation until the bin is full, typically 10 to 20 min, discharging into the bin rather than executing a loaded emergency stop. Large-capacity stockpiles positioned between the mine and port provide long-term decoupling, allowing reclaiming and vessel loading to proceed during extended upstream maintenance, such as a 72 h primary crusher outage.</p>
+    </section>
+
+    <section id="availability-modelling">
+        <h2>13. Availability Modelling</h2>
+        <p>For complex multi-conveyor systems with multiple transfer points, parallel paths, surge storage, and variable maintenance shift patterns, analytical availability calculation using steady-state series-parallel models is insufficient. The interactions between component failure distributions, repair logistics, shift rosters, spare parts availability, and surge bin capacities preclude closed-form analytical solutions.</p>
+        <p>Monte Carlo simulation is common practice for system-level availability modelling. The simulation generates stochastic failure and repair scenarios until the output distribution converges, typically after 10,000 or more iterations, sampling from the Weibull failure distributions of each component and the log-normal or empirical repair time distributions derived from site maintenance data.</p>
+        <p>Required inputs for each component or subsystem include Weibull failure distribution parameters (beta and eta) derived from field data or manufacturer life estimates. Build repair time distributions (mean and standard deviation) from fault diagnosis, parts retrieval, labour mobilisation, lifting equipment scheduling, and testing times. Additional inputs comprise maintenance rosters, resource constraints, permitting delays, inventory levels, supplier lead times, and surge capacities modelled as time buffers.</p>
+        <p>The simulation produces a statistical distribution of system availability, throughput, and production loss. Key outputs include mean system availability with P10 to P90 ranges, annual production tonnage distributions for target probability quantification, identification of bottleneck components driving downtime, and availability sensitivity relative to inventory levels, maintenance crew sizing, and surge storage capacity.</p>
+    </section>
+
+    <section id="commissioning-validation-of-rams-targets">
+        <h2>14. Commissioning Validation of RAMS Targets</h2>
+        <p>Design-phase RAMS targets are theoretical baselines requiring empirical validation. Commissioning and early operations (typically 12 to 24 months) yield the operational data required to reconcile predicted and actual metrics.</p>
+        <p>Initial operation requires logging failure events to facilitate Weibull analysis. Burn-in tracking isolates infant mortality (beta less than 1.0) caused by manufacturing, installation, or commissioning anomalies from steady-state failure rates dictating lifecycle maintenance.</p>
+        <p>Record the following in a dedicated failure register, functioning independently of the primary CMMS during burn-in: component identification (type, Original Equipment Manufacturer (OEM), serial number, installation location), Time to Failure (TTF), failure mode, root cause classification, repair time breakdown (diagnosis, parts retrieval, labour, reinstallation, testing), and failure categorisation (infant mortality, random, or wear-out).</p>
+        <p>Review burn-in failure data weekly to isolate systemic defects. Spatiotemporal or OEM-specific failure clustering indicates systemic design, procurement, or installation deviations rather than stochastic events. Corrective action is required prior to operational handover.</p>
+        <p>Post-burn-in, a formal RAMS validation review is required to benchmark empirical MTBF, MTTR, Mechanical Availability, and OEE against design thresholds. Sub-optimal performance requires root cause isolation and remediation through design modifications, maintenance strategy revision, spare parts stockholding adjustments, or operator retraining.</p>
+    </section>
+
+    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+        Published <time datetime="2026-11-21">21 November 2026</time><br>
+        Updated <time datetime="2026-11-21">21 November 2026</time>
+    </footer>
+
+</main>
+
+<script src="chapters.js"></script>
+<script src="handbook.js"></script>
+
+</body>
+</html>

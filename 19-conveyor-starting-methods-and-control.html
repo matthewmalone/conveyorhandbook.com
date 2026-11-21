@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conveyor Starting Methods and Control – Modern Conveyor Handbook</title>
+    <meta name="description" content="Conveyor starting and control: starting methods, tension wave timing, network latency and redundancy, VFD start sequences, load sharing and fault handling.">
+    <meta name="author" content="Jane Doe">
+    <link rel="canonical" href="https://www.conveyorhandbook.com/19-conveyor-starting-methods-and-control.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Conveyor Starting Methods and Control – Modern Conveyor Handbook">
+    <meta property="og:description" content="Conveyor starting and control: starting methods, tension wave timing, network latency and redundancy, VFD start sequences, load sharing and fault handling.">
+    <meta property="og:url" content="https://www.conveyorhandbook.com/19-conveyor-starting-methods-and-control.html">
+    <meta property="og:site_name" content="Modern Conveyor Handbook">
+    <meta property="og:image" content="https://www.conveyorhandbook.com/images/og-19-conveyor-starting-methods-and-control.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Variable frequency drive cabinets in a conveyor motor control room">
+    <meta property="og:locale" content="en_AU">
+    <meta property="article:published_time" content="2026-11-21T00:00:00+11:00">
+    <meta property="article:modified_time" content="2026-11-21T00:00:00+11:00">
+    <meta property="article:author" content="Jane Doe">
+    <meta property="article:section" content="Engineering">
+    <meta property="article:tag" content="conveyors">
+    <meta property="article:tag" content="conveyor starting">
+    <meta property="article:tag" content="variable frequency drives">
+    <meta property="article:tag" content="conveyor control">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Conveyor Starting Methods and Control – Modern Conveyor Handbook">
+    <meta name="twitter:description" content="Conveyor starting and control: starting methods, tension wave timing, network latency and redundancy, VFD start sequences, load sharing and fault handling.">
+    <meta name="twitter:image" content="https://www.conveyorhandbook.com/images/og-19-conveyor-starting-methods-and-control.jpg">
+    <meta name="twitter:image:alt" content="Variable frequency drive cabinets in a conveyor motor control room">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="home" href="https://www.conveyorhandbook.com/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "TechArticle",
+                "headline": "Conveyor Starting Methods and Control",
+                "description": "Conveyor starting and control: starting methods, tension wave timing, network latency and redundancy, VFD start sequences, load sharing and fault handling.",
+                "author": { "@type": "Person", "name": "Jane Doe" },
+                "publisher": { "@type": "Organization", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "datePublished": "2026-11-21",
+                "dateModified": "2026-11-21",
+                "mainEntityOfPage": "https://www.conveyorhandbook.com/19-conveyor-starting-methods-and-control.html",
+                "isPartOf": { "@type": "WebSite", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "image": "https://www.conveyorhandbook.com/images/og-19-conveyor-starting-methods-and-control.jpg",
+                "inLanguage": "en-AU",
+                "about": { "@type": "Thing", "name": "Conveyor Belts" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Modern Conveyor Handbook", "item": "https://www.conveyorhandbook.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Conveyor Starting Methods and Control", "item": "https://www.conveyorhandbook.com/19-conveyor-starting-methods-and-control.html" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="handbook.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="topbar">
+    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Contents
+    </button>
+</div>
+
+<nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
+    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="chapterMenuBtn" aria-expanded="false" aria-controls="chapterMenu">Chapters</button>
+    </p>
+    <div class="chapter-menu" id="chapterMenu"></div>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-3">Table of Contents</p>
+    <div class="toc">
+        <a href="#conveyor-starting-methods-and-control">1. Conveyor Starting Methods and Control</a>
+        <a href="#starting-technologies">2. Starting Technologies</a>
+        <a href="#control-architecture-and-network-requirements">3. Control Architecture and Network Requirements</a>
+        <a href="#tension-wave-propagation" class="sub">3.1 Tension Wave Propagation</a>
+        <a href="#network-latency-requirements" class="sub">3.2 Network Latency Requirements</a>
+        <a href="#network-redundancy" class="sub">3.3 Network Redundancy</a>
+        <a href="#startup-algorithms-and-sequencing">4. Startup Algorithms and Sequencing</a>
+        <a href="#pre-magnetisation-phase-flux-build-up" class="sub">4.1 Pre-Magnetisation Phase (Flux Build-Up)</a>
+        <a href="#breakaway-dwell-overcoming-stiction" class="sub">4.2 Breakaway Dwell (Overcoming Stiction)</a>
+        <a href="#s-curve-and-jerk-control" class="sub">4.3 S-Curve and Jerk Control</a>
+        <a href="#consolidated-startup-sequence" class="sub">4.4 Consolidated Startup Sequence</a>
+        <a href="#multi-motor-load-sharing">5. Multi-Motor Load Sharing</a>
+        <a href="#fluid-coupling-load-sharing" class="sub">5.1 Fluid Coupling Load Sharing</a>
+        <a href="#vfd-master-follower-load-sharing" class="sub">5.2 VFD Master/Follower Load Sharing</a>
+        <a href="#application-specific-startup-sequences">6. Application-Specific Startup Sequences</a>
+        <a href="#drive-protection-and-fault-handling">7. Drive Protection and Fault Handling</a>
+        <a href="#hard-trip-faults" class="sub">7.1 Hard-Trip Faults</a>
+        <a href="#managed-faults" class="sub">7.2 Managed Faults</a>
+    </div>
+</nav>
+
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+<main class="main-content" id="main" tabindex="-1">
+
+    <section id="conveyor-starting-methods-and-control">
+        <h1 class="mb-3">1. Conveyor Starting Methods and Control</h1>
+        <p>A conveyor starting system delivers an acceleration profile that holds peak starting tension near running tension across all material loading conditions.</p>
+    </section>
+
+    <section id="starting-technologies">
+        <h2>2. Starting Technologies</h2>
+        <p>Select the starting method from conveyor length, drive power, belt carcass and the degree of tension control required.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 1: Conveyor Starting Technologies</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Starting Method</th>
+                        <th scope="col">Mechanics</th>
+                        <th scope="col">Impact on the Belt / Torque</th>
+                        <th scope="col">Rule of Thumb / Suitability</th>
+                        <th scope="col">Pros</th>
+                        <th scope="col">Cons</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Direct On-Line (DOL)</th><td>Uses a contactor to apply full line voltage to the motor terminals. Inrush current is typically 600% to 800% of rated current.</td><td>Starting torque of 150% to 250% of full-load torque generates a tension transient. This requires elevated belt strength ratings.</td><td>Limited to short, low-inertia conveyors less than 50 m [164 ft] in length and below 37 kW [50 hp].</td><td>Simplest method of starting an electric motor.</td><td>Not suitable for steel cord belts. Low carcass elongation transmits the full starting transient to the splices. Inrush causes supply voltage dip on weak supplies.</td></tr>
+                    <tr><th scope="row">Solid State Reduced Voltage Soft Starters (RVSS)</th><td>Uses thyristors (silicon controlled rectifiers) to ramp voltage over a preset period, typically 10 to 20 seconds. Once at full speed, a bypass contactor closes to run on full line power.</td><td>Torque varies with the square of applied voltage, so torque is not directly controlled. Heavily loaded belts may not break away until voltage is high, then accelerate abruptly and produce a tension surge.</td><td>Cost-effective for medium-duty fabric belts up to 200 m [656 ft] and 150 kW [200 hp].</td><td>Reduces inrush current and starting torque transient relative to DOL. Low capital cost.</td><td>Thyristor and motor heating during the ramp limits start frequency. Unsuitable for frequent jogging or extended acceleration times.</td></tr>
+                    <tr><th scope="row">Constant Fill Fluid Coupling (Traction Type)</th><td>Installed between motor and gearbox. Contains a fixed volume of oil. Motor starts near no-load. The impeller accelerates oil centrifugally to a turbine runner, transferring torque progressively by hydrodynamic momentum transfer.</td><td>Torque builds progressively as the motor reaches speed. Peak torque is typically limited to 140% to 160% of full-load torque by adjusting the oil volume.</td><td>Common in harsh, contaminated environments (underground mining, crushing plants). Suits load sharing on multi-drive systems.</td><td>Absorbs shock loads and damps torsional vibrations without power electronics.</td><td>Start profile is fixed by the oil volume and cannot be adjusted in operation. Running slip, typically 2% to 3%, adds continuous power loss.</td></tr>
+                    <tr><th scope="row">Variable Fill Fluid Coupling (Scoop Control)</th><td>Uses an external oil reservoir and a mechanical scoop tube. The scoop tube is adjusted to change the oil volume in the working chamber during operation.</td><td>Adjustable torque transfer. Can start empty (zero torque transfer) and progressively introduce oil to accelerate loaded long conveyors over typically 60 to 120 seconds.</td><td>Suitable for drives from 500 kW [670 hp] upward.</td><td>Adjustable mechanical start profile. Allows sustained creep or inspection speeds at 10% to 20% of full speed.</td><td>Slip losses at creep speed are dissipated as heat in the oil and require an external oil cooler.</td></tr>
+                    <tr><th scope="row">Wound Rotor Motors (Slip Ring)</th><td>Motor rotor is wound with wire connected to slip rings and external resistor banks. Mechanical contactors bypass resistors in steps as the motor accelerates.</td><td>Stepped torque profile. Produces peak torque at zero speed, but each contactor closure produces a step change in torque.</td><td>Legacy technology still in service on high-capacity bulk export terminals for high-inertia long conveyors.</td><td>Accelerates high-inertia loads while drawing reduced starting current.</td><td>Contactors, slip rings and brushes require regular maintenance. Stepped torque profile increases fatigue loading on steel cord splices.</td></tr>
+                    <tr><th scope="row">Variable Frequency Drives (VFD)</th><td>Converts AC to DC, then inverts back to a controlled AC waveform, decoupling motor speed and torque from the supply grid. Actively controls motor magnetic flux.</td><td>Delivers full-load torque at zero speed. Programmable S-curve manages tension rise, acceleration and taper to limit overshoot and take-up instability.</td><td>Typical for steel-cord long systems, regenerative decline conveyors and systems requiring dynamic speed adjustment.</td><td>Lower belt safety factor can offset drive capital costs (depending on belt length, carcass and system complexity). Reduces energy consumption and cover wear by adjusting belt speed to match material flow.</td><td>Higher initial hardware cost and complexity compared to simpler methods. Requires harmonic mitigation and bearing current protection on larger motors.</td></tr>
+                    <tr><th scope="row">Load Commutated Inverter (LCI) Drives</th><td>Current source Medium Voltage (MV) topology using a large inductor (reactor) in the DC link instead of a capacitor. Output is a stepped current waveform commutated by motor back-EMF above 10% speed.</td><td>Torque ripple at low speed is higher than that of a voltage-source VFD, producing tension pulsations during startup. Provides smooth torque at rated speeds.</td><td>Large high-inertia drives, typically 1,500 to 10,000 kW [2,000 to 13,400 hp] at 3,300 V and above. Conveyor use is limited. MV voltage source VFDs are common practice for new large conveyor drives.</td><td>Inherent four-quadrant operation (motoring and regeneration). Thyristor power stage with low switching losses.</td><td>Requires a synchronous motor. Requires forced commutation below 10% speed. Requires 12-pulse or 18-pulse input transformers for harmonic mitigation. Input power factor falls with speed. Torque pulsation increases audible motor noise.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Current, torque, length and power values are typical practice and vary with motor design, belt construction and supply strength.</p>
+        </div>
+    </section>
+
+    <section id="control-architecture-and-network-requirements">
+        <h2>3. Control Architecture and Network Requirements</h2>
+    </section>
+
+    <section id="tension-wave-propagation">
+        <h3>3.1 Tension Wave Propagation</h3>
+        <p>Drive torque application initiates a tension wave that propagates at a velocity dependent on belt construction.</p>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 1: Tension Wave Propagation Velocity (v_w)</figcaption>
+            <p class="font-monospace my-3">Metric: v_w = SQRT((E_b * B) / m_e)<br>Imperial: v_w = SQRT((g_c * E_b * B) / m_e)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>v_w = Tension wave propagation velocity in the belt carcass (m/s) [ft/s]</li>
+                <li>E_b = Longitudinal elastic modulus of the belt carcass per unit width (N/m) [lbf/ft]</li>
+                <li>B = Belt width (m) [ft]</li>
+                <li>m_e = Effective mass per unit length: belt, conveyed material where loaded, and the reduced rotating mass of the idlers (kg/m) [lb/ft]</li>
+                <li>g_c = Gravitational conversion constant, 32.174 [lb-ft/(lbf-s2)], imperial line only</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> E_b * B is the belt axial stiffness (force per unit strain). Use manufacturer stiffness data where available. Typical v_w is 1,000 to 3,000 m/s [3,300 to 9,800 ft/s] for steel cord belts and 250 to 850 m/s [820 to 2,800 ft/s] for EP fabric belts, at the lower end of each range when loaded.</p>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Wave speed rises with axial stiffness and falls with moving mass, so a steel cord belt carries tension waves faster than a fabric belt, and a loaded belt slower than an empty one.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 2: One-Way Wave Transit Time (t_transit)</figcaption>
+            <p class="font-monospace my-3">t_transit = L / v_w</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>t_transit = Time for the tension wave to travel from head to tail pulley (s)</li>
+                <li>L = Conveyor centre-to-centre length (m)</li>
+                <li>v_w = Tension wave propagation velocity in the belt carcass (m/s)</li>
+            </ul>
+        </figure>
+        <p>Example: On a 10 km [6.2 mi] conveyor, a fabric belt at 800 m/s [2,625 ft/s] gives t_transit = 10,000 / 800 = 12.5 s. A steel cord belt at 1,800 m/s [5,906 ft/s] gives t_transit = 10,000 / 1,800 = 5.6 s.</p>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> A control action at the head pulley reaches the tail only after the tension wave travel time. Base breakaway dwell, ramp segment timing and take-up response on this delay.</p>
+        </div>
+        <p>Bulk material on the carry strand increases the effective mass per unit length and reduces wave velocity. Use the empty belt wave velocity for control loop and Programmable Logic Controller (PLC) scan limits, because it gives the shortest transit time. Use the loaded belt wave velocity for breakaway dwell and hold durations, because it gives the longest transit time, and for stopping calculations of peak dynamic tension.</p>
+    </section>
+
+    <section id="network-latency-requirements">
+        <h3>3.2 Network Latency Requirements</h3>
+        <p>On conveyors over 1 km [3,300 ft], network latencies above 500 ms can cause belt slip by letting the tension wave reach the take-up before the tail winch receives the command.</p>
+        <p>Long conveyors with active take-ups require deterministic protocols (e.g. PROFINET IRT or EtherCAT) to keep drive communications under 10 ms latency.</p>
+        <p>Given a fibre delay of approximately 5 microseconds per kilometre [8 microseconds per mile], a 10 km [6.2 mi] conveyor's 100 microsecond round-trip delay is negligible compared to typical 1 to 10 ms PLC and protocol overheads. PLC scan time is the limiting factor, not fibre length.</p>
+        <p>Limit drive PLC scan time to 10% of the one-way wave transit time.</p>
+        <p>Example: A 10 km [6.2 mi] steel cord belt at 1,800 m/s [5,906 ft/s] has a 5.6 s transit time and permits a 0.56 s scan. A 1 km [3,300 ft] steel cord belt has a 0.56 s transit time and requires a scan of 56 ms or less.</p>
+    </section>
+
+    <section id="network-redundancy">
+        <h3>3.3 Network Redundancy</h3>
+        <p>Configure critical single-conveyor networks with all devices (PLC, VFDs, remote input/output (I/O), instrumentation) in an automatically rerouting fibre optic ring topology so an isolated cable or switch fault does not stop the drives.</p>
+        <p>Media Redundancy Protocol (MRP, per IEC 62439-2) provides recovery times below 200 ms, which is sufficient for horizontal, incline and most long conveyors.</p>
+        <p>High-availability Seamless Redundancy (HSR) or Parallel Redundancy Protocol (PRP) (IEC 62439-3) provide zero recovery time by sending duplicate frames over two paths. Specify HSR or PRP for regenerative decline conveyors and configurations where communication interruptions exceeding 50 ms would cause loss of control.</p>
+    </section>
+
+    <section id="startup-algorithms-and-sequencing">
+        <h2>4. Startup Algorithms and Sequencing</h2>
+        <p>Common practice for VFD-controlled conveyors is a six-phase start: pre-magnetisation, a zero-speed breakaway dwell, a three-segment S-curve velocity ramp and post-ramp tension stabilisation. The S-curve controls jerk (the rate of change of acceleration) to avoid abrupt tension changes that damage splices and destabilise take-ups.</p>
+    </section>
+
+    <section id="pre-magnetisation-phase-flux-build-up">
+        <h3>4.1 Pre-Magnetisation Phase (Flux Build-Up)</h3>
+        <p>Establish stator flux before shaft rotation by commanding the VFD to inject DC current into the stator. Initiating rotation before flux is established causes torque pulsations, transmitting transient dynamic loads into the drive pulley and belt splice.</p>
+        <p>The pre-magnetisation phase consists of initial flux injection and flux stabilisation stages.</p>
+        <p>During initial flux injection, the VFD applies DC voltage to the stator windings, generating a stationary magnetic field. Flux build-up rate is governed by the motor's rotor time constant (L_r / R_r, where L_r is the rotor inductance and R_r is the rotor resistance). The VFD ramps the DC current to the magnetising level (typically 40% to 60% of rated current) over a programmable period.</p>
+        <p>During flux stabilisation, the VFD holds the magnetising current steady to achieve a uniform, steady-state air gap flux distribution.</p>
+        <p>Factors affecting pre-magnetisation time include the following:</p>
+        <ul>
+            <li>Higher capacity motors have longer rotor time constants and require longer flux build-up. A 200 kW [268 hp] Low Voltage (LV) motor requires 0.3 to 0.5 seconds and a 1,000 kW [1,341 hp] LV motor requires 0.8 to 1.2 seconds.</li>
+            <li>MV motors (3,300 V and above) have longer rotor time constants. MV motors above 1,000 kW [1,341 hp] typically require 1.5 to 2.5 seconds.</li>
+            <li>Lower rotor resistance in a cold motor increases the rotor time constant, extending magnetisation time. Set VFD parameters for the worst-case cold start condition.</li>
+            <li>Sensorless vector control relies on accurate flux estimation. Inadequate magnetisation corrupts this model and causes acceleration torque errors. Drives with encoder feedback (closed-loop vector) are less sensitive but still require full magnetisation before rotation.</li>
+        </ul>
+        <p><strong>Rules of Thumb:</strong></p>
+        <ul>
+            <li><strong>Standard LV induction motors (up to 500 kW [670 hp] at 415 V or 690 V):</strong> 0.3 to 0.8 seconds.</li>
+            <li><strong>Large LV induction motors (500 to 1,500 kW [670 to 2,000 hp] at 690 V):</strong> 0.8 to 1.5 seconds.</li>
+            <li><strong>MV induction motors (3,300 to 6,600 V, above 1,000 kW [1,341 hp]):</strong> 1.5 to 2.5 seconds.</li>
+            <li><strong>MV synchronous motors (for LCI drives):</strong> 2.0 to 3.0 seconds, as the rotor field winding must also be excited and rotor position established before rotation.</li>
+        </ul>
+        <p>Consult VFD manufacturer documentation for specific frame sizes. Conservative magnetisation times have no adverse operational consequence other than a longer start delay.</p>
+    </section>
+
+    <section id="breakaway-dwell-overcoming-stiction">
+        <h3>4.2 Breakaway Dwell (Overcoming Stiction)</h3>
+        <p>Loaded conveyor belts exhibit static friction (stiction) higher than kinetic friction, due to idler seal and grease drag and to belt and material deformation over the idlers while stationary. Applying linear VFD torque ramps can induce drive pulley slip if the effective tension exceeds the traction limit set by the slack-side tension (T2) prior to overcoming stiction. Configure the VFD to ramp torque to a breakaway threshold (typically 110% to 125% of nominal torque) while holding speed at zero.</p>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 3: Minimum Breakaway Dwell Time (t_dwell)</figcaption>
+            <p class="font-monospace my-3">t_dwell = (L / v_w) + 1.0</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>t_dwell = Minimum breakaway dwell time (s)</li>
+                <li>L = Conveyor centre-to-centre length (m)</li>
+                <li>v_w = Tension wave propagation velocity in the belt carcass, loaded belt (m/s)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> The 1.0 s term is an empirical margin for torque build-up at the drive.</p>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> The dwell allows the initial stretch wave to propagate the full length of the belt, ensuring progressive stiction release. This formula provides a theoretical minimum based on wave propagation alone. In practice, increase the dwell time by 20% to 50% for belt sag between idlers, then apply the factors below.</p>
+        </div>
+        <p><strong>Rules of Thumb:</strong></p>
+        <ul>
+            <li><strong>Short Plant Conveyors (under 500 m [1,640 ft]):</strong> 1.0 to 2.0 seconds.</li>
+            <li><strong>Medium Conveyors (500 m to 3 km [1,640 ft to 1.9 mi]):</strong> 2.0 to 5.0 seconds.</li>
+            <li><strong>Long Conveyors (3 to 10 km [1.9 to 6.2 mi]):</strong> 5.0 to 10.0 seconds.</li>
+            <li><strong>Very Long Conveyors (above 10 km [6.2 mi]):</strong> 10.0 to 15.0 seconds.</li>
+        </ul>
+        <p>Factors affecting dwell time selection include the following:</p>
+        <ul>
+            <li>At temperatures below 0 deg C [32 deg F], idler grease viscosity and rubber compound stiffness increase, raising stiction. Increase dwell times by 30% to 50% for sub-zero starts.</li>
+            <li>Set the dwell torque threshold based on the fully loaded condition to account for increased normal force and resulting stiction.</li>
+            <li>Degraded grease in aged bearings increases breakaway resistance. Apply dwell times at the upper end of the range for older systems.</li>
+            <li>Conveyors with vertical curves (concave and convex) require additional time for the tension wave to redistribute around the curve transitions. Add 0.5 to 1.0 seconds per major vertical curve.</li>
+        </ul>
+    </section>
+
+    <section id="s-curve-and-jerk-control">
+        <h3>4.3 S-Curve and Jerk Control</h3>
+        <p>Once stiction is overcome, the VFD executes the S-curve velocity ramp. Do not use a simple linear ramp. The step change from zero to constant acceleration produces theoretically infinite jerk at the transition point, generating the tension transients the S-curve avoids.</p>
+        <p><strong>Rules of Thumb:</strong></p>
+        <ul>
+            <li><strong>Acceleration, plant conveyors:</strong> 0.1 to 0.2 m/s2 [0.33 to 0.66 ft/s2].</li>
+            <li><strong>Acceleration, long systems:</strong> 0.02 to 0.05 m/s2 [0.07 to 0.16 ft/s2].</li>
+            <li><strong>Jerk:</strong> 0.05 to 0.1 m/s3 [0.16 to 0.33 ft/s3].</li>
+            <li><strong>Total ramp time, short conveyors (less than 500 m [1,640 ft]):</strong> 10 to 20 seconds.</li>
+            <li><strong>Total ramp time, medium conveyors (500 m to 3 km [1,640 ft to 1.9 mi]):</strong> 30 to 60 seconds.</li>
+            <li><strong>Total ramp time, long conveyors (3 to 15 km [1.9 to 9.3 mi]):</strong> 90 to 180 seconds.</li>
+        </ul>
+        <p>Jerk above this range induces take-up oscillation and destabilises T2.</p>
+        <p>The total ramp time is the sum of the three S-curve segments: the lower knee (acceleration ramp-up), the constant acceleration body and the upper knee (acceleration ramp-down). For a symmetrical S-curve, the lower and upper knees are each typically 15% to 25% of the total ramp time, with the constant acceleration segment comprising the balance.</p>
+        <p>Factors governing rate selection include the following:</p>
+        <ul>
+            <li>Limit the acceleration rate so that the dynamic starting tension does not cause the tension ratio T1 / T2 to exceed the friction limit at the drive pulley. Limit peak T1 during the ramp to 115% to 120% of the steady-state running T1 for VFD-controlled starts.</li>
+            <li>Gravity take-ups have a fixed counterweight and rely on vertical displacement to maintain T2. During acceleration, the counterweight descends to absorb belt stretch. If the acceleration rate is too high, the counterweight lags the stretch and its downward acceleration reduces T2, increasing the risk of slip. Winch-type active take-ups can compensate dynamically, but only within their response time. Set the acceleration rate so the take-up system (gravity or active) can maintain the T2 setpoint throughout the ramp.</li>
+            <li>On long systems, the elastic stretch during acceleration can reach 0.1% to 0.3% of the belt length. For a 10 km [6.2 mi] belt, this is 10 to 30 m [33 to 98 ft] of stretch that the take-up absorbs. Set the ramp time long enough for this stretch to develop gradually rather than as a step change.</li>
+        </ul>
+    </section>
+
+    <section id="consolidated-startup-sequence">
+        <h3>4.4 Consolidated Startup Sequence</h3>
+        <p>The complete VFD startup sequence consists of six phases executed in series, each with distinct control parameters in the VFD and PLC. The table below summarises the phase, its function, the governing parameters, typical values and the primary constraint that limits each parameter.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 2: VFD Startup Sequence Parameters</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Phase</th>
+                        <th scope="col">Function</th>
+                        <th scope="col">Key Parameters</th>
+                        <th scope="col">Typical Values</th>
+                        <th scope="col">Primary Constraint</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">1. Pre-Magnetisation</th><td>Establish stator flux before shaft rotation.</td><td>Magnetising current level. Flux hold time.</td><td>40% to 60% of rated current. LV motors: 0.3 to 1.5 s. MV motors: 1.5 to 3.0 s.</td><td>Motor rotor time constant (L_r / R_r). Worst-case cold rotor resistance determines the longest required hold.</td></tr>
+                    <tr><th scope="row">2. Breakaway Dwell</th><td>Ramp torque to overcome stiction while holding speed at zero. Allow tension wave to propagate the full belt length.</td><td>Dwell torque setpoint and dwell time.</td><td>110% to 125% of nominal torque. Total dwell = (L / v_w) + 1.0 s, increased 20% to 50% in practice.</td><td>Dwell torque within the T1 / T2 traction limit at the drive pulley. Dwell time longer than the one-way wave transit time on the loaded belt.</td></tr>
+                    <tr><th scope="row">3. Lower Knee (Acceleration Ramp-Up)</th><td>Increase acceleration linearly from zero, so velocity follows a parabolic path and belt tension builds gradually.</td><td>Jerk limit (da/dt). Knee duration as a fraction of total ramp time.</td><td>0.05 to 0.1 m/s3 [0.16 to 0.33 ft/s3]. 15% to 25% of total ramp time.</td><td>Limit jerk to avoid take-up oscillation and T2 instability. On active take-up systems, keep jerk within the winch response bandwidth.</td></tr>
+                    <tr><th scope="row">4. Constant Acceleration Body</th><td>Maintain a steady acceleration rate. This phase produces the majority of the velocity increase.</td><td>Acceleration rate. Duration (balance of total ramp time after both knees).</td><td>Plant conveyors: 0.1 to 0.2 m/s2 [0.33 to 0.66 ft/s2]. Long systems: 0.02 to 0.05 m/s2 [0.07 to 0.16 ft/s2]. 50% to 70% of ramp time.</td><td>Peak T1 during the ramp not greater than 115% to 120% of steady-state T1. The take-up system (gravity or active) holds the T2 setpoint at this acceleration rate. Elastic stretch (0.1% to 0.3% of belt length on long systems) develops gradually within the take-up stroke.</td></tr>
+                    <tr><th scope="row">5. Upper Knee (Acceleration Taper)</th><td>Reduce acceleration linearly from the constant rate to zero as the belt approaches full speed.</td><td>Jerk limit (da/dt). Knee duration as a fraction of ramp time.</td><td>Same jerk limit as the lower knee. 15% to 25% of ramp time.</td><td>Taper gradually enough to limit take-up carriage overshoot past its running position as stored elastic energy releases at steady state.</td></tr>
+                    <tr><th scope="row">6. Post-Ramp Stabilisation</th><td>Reduce take-up tension from the elevated starting setpoint to the running setpoint. Allow elastic stretch to equalise. Active take-ups only.</td><td>Tension reduction rate. Stabilisation duration.</td><td>Running T2 restored over 10 to 15 s (e.g. 85 kN [19,100 lbf] starting to 50 kN [11,200 lbf] running).</td><td>Reducing T2 too quickly can induce belt slip at the drive pulley before the tension profile has stabilised along the full belt length. Reduction time longer than the round-trip wave transit time (2 * t_transit).</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>The total startup duration is the sum of all phase durations.</p>
+        <p><strong>Rules of Thumb:</strong></p>
+        <ul>
+            <li><strong>Short plant conveyors (under 500 m [1,640 ft]):</strong> Total startup of 12 to 25 seconds, dominated by the S-curve ramp.</li>
+            <li><strong>Medium conveyors (500 m to 3 km [1,640 ft to 1.9 mi]):</strong> Total startup of 35 to 70 seconds, dominated by the S-curve ramp.</li>
+            <li><strong>Long systems (3 to 15 km [1.9 to 9.3 mi]):</strong> Total startup of 100 to 200 seconds, dominated by the S-curve ramp, with breakaway dwell and post-ramp stabilisation each adding 5 to 15 seconds.</li>
+        </ul>
+        <p>For conveyors exceeding 3 km [1.9 mi], verify the parameters after pre-magnetisation by finite element dynamic simulation capable of modelling the viscoelastic transient response, rather than selecting them from the rules of thumb above. Empirical rules of thumb are not adequate for complex profiles with multiple drives, vertical curves and active take-ups.</p>
+    </section>
+
+    <section id="multi-motor-load-sharing">
+        <h2>5. Multi-Motor Load Sharing</h2>
+        <p>If two separate drives power the same belt without load-sharing controls, differences in pulley diameter (due to lagging wear), control system lag or motor slip cause unequal load distribution. Unbalanced loading overloads individual motors and reduces service life.</p>
+    </section>
+
+    <section id="fluid-coupling-load-sharing">
+        <h3>5.1 Fluid Coupling Load Sharing</h3>
+        <p>Hydrodynamic fluid couplings operate with slip (typically 2% to 3% at rated torque). Their torque-slip characteristic is softer than that of an induction motor, so a speed mismatch between drive pulleys produces a smaller torque imbalance. This provides a passive method of load sharing, less precise than VFD control but requiring no active coordination.</p>
+    </section>
+
+    <section id="vfd-master-follower-load-sharing">
+        <h3>5.2 VFD Master/Follower Load Sharing</h3>
+        <p>One drive (typically the primary drive with the largest wrap angle) operates as the master in closed-loop speed control. The master VFD monitors the encoder, calculates the torque required to follow the S-curve speed profile, and applies it.</p>
+        <p>Secondary drives operate as followers in torque control mode. The master sends its torque reference signal to the follower VFDs over a deterministic link with an update time of less than 10 ms, dictating the current torque output as a percentage. The follower reproduces that torque percentage irrespective of its own speed. Set an overspeed limit on each follower so a belt slip or break does not cause runaway in torque mode.</p>
+        <p>Do not run independent speed control loops on two drives powering the same belt. Small differences in effective pulley diameter (due to lagging wear) cause one motor to apply maximum torque while the other attempts to retard the belt.</p>
+        <p>The drives share load proportionally according to their rated capacity. If pulley diameters vary, the follower motor rotates at a differential speed to maintain the torque share, avoiding mechanical conflict.</p>
+    </section>
+
+    <section id="application-specific-startup-sequences">
+        <h2>6. Application-Specific Startup Sequences</h2>
+        <p>Complex conveyor geometries such as vertical or horizontal curves and declines cause non-uniform tension during startup that a single S-curve does not control. A mid-ramp speed hold pauses the S-curve at a target speed for a set duration so the belt tension profile redistributes and stabilises before acceleration resumes.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 3: Special Geometry Conveyor Starting Considerations</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Conveyor Profile / Condition</th>
+                        <th scope="col">Primary Risks and Mechanisms</th>
+                        <th scope="col">Critical Phase / Trigger</th>
+                        <th scope="col">Control Strategy</th>
+                        <th scope="col">Specific Parameters and Values</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Convex Vertical Curves (Crests)</th><td>Belt lift-off where centrifugal force exceeds the transiently low local tension and belt weight component, causing spillage, belt flap and idler impact damage on re-contact.</td><td>Ramp acceleration (typically at 60% to 85% of full speed before steady-state tension is established).</td><td>Program a mid-ramp speed hold to allow crest tension to stabilise.</td><td>Hold at 50% to 70% of rated speed. Duration: at least two one-way wave transit times. Hold speed below the critical lift-off speed of the tightest curve.</td></tr>
+                    <tr><th scope="row">Incline-to-Decline Transitions</th><td>Decline overruns incline under gravity, creating a slack zone, belt folding or structural contact.</td><td>Startup from breakaway to 30% speed (especially if decline exceeds 30% of length or exceeds 8 to 10 deg slope).</td><td>Reduce initial acceleration rate. Use a speed hold for long or steep declines.</td><td>Acceleration rate: 50% to 70% of flat conveyor rate. Hold: 20% to 30% speed for at least 1.5 times the one-way transit time (if decline exceeds 30% of length).</td></tr>
+                    <tr><th scope="row">Concave Vertical Curves (Sags)</th><td>Belt lift-off when starting tension through the curve exceeds the tension used to set the curve radius, most likely on an empty or lightly loaded belt. Causes spillage on a loaded belt, edge damage and structure contact.</td><td>Peak acceleration tension, particularly on an empty belt start.</td><td>Limit acceleration so peak tension at the curve stays within the curve design tension.</td><td>Peak starting tension at the curve not greater than the tension used in the curve radius calculation. Mid-ramp hold usually not required.</td></tr>
+                    <tr><th scope="row">Horizontal Curves (Tilted Idlers)</th><td>High transient tension amplifies uneven edge tension, risking splice overstress (outside edge) or mistracking (inside).</td><td>Ramp acceleration phase (transient tension peaks).</td><td>Cap the peak acceleration rate to limit maximum transient tension at the curve.</td><td>Max transient tension at the curve: no greater than 110% of steady-state tension. Tight curves (less than 400 m [1,312 ft] radius): no greater than 105%.</td></tr>
+                    <tr><th scope="row">Long Decline Sections</th><td>Torque dip during zero-torque crossover causes momentary belt slip or speed transients.</td><td>Motoring-to-regenerating crossover (typically 15% to 30% of rated speed).</td><td>Program a speed hold to stabilise the VFD control loop in the regenerating quadrant.</td><td>Trigger the hold when motoring torque falls below 5% of rated torque. Maintain the hold for 3 to 5 seconds, resuming acceleration only when a stable negative (braking) torque is achieved and regenerative braking is active.</td></tr>
+                    <tr><th scope="row">Decline Conveyors (Take-Up Sequencing)</th><td>Gravity pulls belt forward before drive has control, causing take-up runaway, T2 collapse and drive slip.</td><td>Initial breakaway and low-speed ramp phases.</td><td>Hold take-up brake locked until the drive encoder confirms positive speed control.</td><td>Release at 10% to 15% rated speed. Steep declines (greater than 12 deg): Hold until the VFD enters the regenerating quadrant and braking is active.</td></tr>
+                    <tr><th scope="row">Take-Up at Higher Elevation Than Drive</th><td>Unsupported belt mass sags, pulling take-up forward and reducing T2 at the drive.</td><td>Early startup before drive T1 builds enough to support the gravity load.</td><td>Hold take-up brake locked until drive torque can support the hanging belt mass.</td><td>Hold until drive torque is at least 130% of the static gravitational load (typically 15% to 25% rated speed).</td></tr>
+                    <tr><th scope="row">Concave Curve Between Drive and Take-Up</th><td>High-tension zone at the curve slows the redistribution of the tension wave to the take-up.</td><td>Wave transit phase during breakaway.</td><td>Extend the timed take-up brake hold duration to account for curve geometry.</td><td>Add one wave transit time per concave curve to the base brake hold time.</td></tr>
+                    <tr><th scope="row">Long Conveyors with Remote Take-Up (greater than 5 km [3.1 mi])</th><td>Long wave transit times (typically 5 to 10 seconds) mean the drive accelerates before tension control reaches the take-up.</td><td>Breakaway dwell and lower S-curve knee.</td><td>Delay brake release or transition to active, feedback-controlled tension release.</td><td>Greater than 5 km [3.1 mi]: Hold for the full dwell time until the lower S-curve knee confirms positive speed. Greater than 10 km [6.2 mi]: Release only when local tension is within 10% of the T2 setpoint and the rate of change is less than 2 kN/s [450 lbf/s] for at least 2 s.</td></tr>
+                    <tr><th scope="row">Long Horizontal Conveyors with Active Tail Winch (10 km [6.2 mi] or longer)</th><td>Elastic belt stretch exceeds passive take-up capacity, causing T2 collapse and drive slip at the head pulley.</td><td>Entire S-curve ramp (from breakaway to steady-state full speed).</td><td>Synchronise the head VFD with the tail winch via a pre-tension algorithm. Raise T2 before breakaway, reel in rope to match stretch during the ramp, and revert to running tension post-ramp.</td><td>Pre-start: Raise T2 to starting tension before the head VFD rotates. Ramp: Winch tracks stretch to hold starting T2 continuously. Post-ramp: Reduce T2 to the running value over 10 to 15 s after 100% speed stabilises.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Values are typical practice. Confirm hold speeds, durations and tension limits by dynamic simulation for conveyors exceeding 3 km [1.9 mi].</p>
+        </div>
+    </section>
+
+    <section id="drive-protection-and-fault-handling">
+        <h2>7. Drive Protection and Fault Handling</h2>
+        <p>Program the PLC and VFD with a protection response for each fault type, balancing equipment protection against the consequence of an unplanned shutdown. Hard-trip faults require an immediate shutdown and manual investigation before restart, while managed faults are absorbed by the VFD through ride-through, foldback or auto-restart to keep the belt running or recover without operator intervention.</p>
+    </section>
+
+    <section id="hard-trip-faults">
+        <h3>7.1 Hard-Trip Faults</h3>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 4: Hard-Trip Faults (Immediate Shutdown, Manual Restart)</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Fault Category</th>
+                        <th scope="col">Trigger Condition</th>
+                        <th scope="col">Common Causes</th>
+                        <th scope="col">VFD Response</th>
+                        <th scope="col">Action Before Restart</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Overcurrent (OC)</th><td>Output current exceeds programmed limit (typically 150% to 180% of rated current for a defined duration, or instantaneously above 200%).</td><td>Mechanical seizure (e.g. seized gearbox or pulley bearing, or collapsed structure trapping the belt), motor winding fault, output short circuit or excessive acceleration command.</td><td>Immediate trip (Stop Category 0 to IEC 60204-1) with mechanical brakes engaging.</td><td>Operator investigation required. Root cause may involve structural damage.</td></tr>
+                    <tr><th scope="row">Earth Fault (EF)</th><td>Leakage current to earth exceeds a threshold (typically 5% to 20% of rated current, depending on VFD model and cable length).</td><td>Insulation breakdown in motor windings, cable joints or slip ring assembly (if applicable).</td><td>Immediate trip.</td><td>Test motor and cable insulation resistance before re-energising.</td></tr>
+                    <tr><th scope="row">Output Phase Loss</th><td>VFD detects a missing phase on the outgoing motor current.</td><td>Failed contactor, broken motor cable or loose terminal connections.</td><td>Immediate trip to protect the motor.</td><td>Physical inspection of cables, contactors and terminals before restart.</td></tr>
+                    <tr><th scope="row">Communication / Network Loss</th><td>VFD loses network heartbeat or control signal from the master PLC (e.g. EtherNet/IP, PROFINET, Modbus).</td><td>Severed network cable, PLC power failure, faulty network switch or electromagnetic interference (EMI).</td><td>Configurable: immediate trip, ramp to stop, or maintain last known speed. Maintain last known speed only where all safety stops are hardwired independently of the network.</td><td>Re-establish communication and issue a network fault reset from the PLC.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="managed-faults">
+        <h3>7.2 Managed Faults</h3>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 5: Managed Faults (VFD Ride-Through, Foldback and Auto-Restart)</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Fault / Condition</th>
+                        <th scope="col">VFD Feature</th>
+                        <th scope="col">Trigger / Threshold</th>
+                        <th scope="col">Mechanism</th>
+                        <th scope="col">Escalation if Unresolved</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Voltage Dip</th><td>Voltage Dip Ride-Through</td><td>40% to 50% supply dip for 0.5 to 2.0 seconds.</td><td>The rectifier continues to supply the DC bus at reduced voltage. The VFD reduces output voltage and flux and limits power to the available supply. Belt decelerates slightly but resumes normal operation when full voltage returns.</td><td>Dip exceeding duration or depth threshold triggers undervoltage trip.</td></tr>
+                    <tr><th scope="row">Complete Supply Loss</th><td>Kinetic Buffering</td><td>100% power loss for 2 to 10 seconds.</td><td>Operates the motor as a generator using the belt's kinetic energy to maintain DC bus voltage.</td><td>If supply does not return within the buffering window, the VFD executes a controlled stop.</td></tr>
+                    <tr><th scope="row">Transient Undervoltage</th><td>Auto-Restart</td><td>Supply restored after a momentary interruption.</td><td>VFD delays 30 to 120 seconds, resets the fault and attempts a restart automatically after the pre-start warning sounds. Where the belt is still coasting, the flying start function synchronises the drive output to the belt before applying torque.</td><td>Repeated trips within a defined window lock out auto-restart and require operator reset.</td></tr>
+                    <tr><th scope="row">Regenerative Overvoltage</th><td>Overvoltage Control / Flux Braking</td><td>DC bus voltage exceeds the operating limit (e.g. loaded decline conveyor).</td><td>Modulates output frequency, increases motor flux to dissipate energy, activates a brake chopper and resistor, or returns energy to the supply through an active front end.</td><td>Severe overvoltage exceeding the bus rating triggers an immediate trip. Check braking resistor sizing and deceleration parameters.</td></tr>
+                    <tr><th scope="row">Momentary Overload</th><td>Current Limit / Overload Foldback</td><td>Sudden heavy material loading or mechanical drag.</td><td>Current limit holds motor current within the thermal (I^2*t) limit. A conveyor is a constant-torque load. Reducing speed at constant feed rate increases load per metre and does not relieve motor current. Interlock feeders to reduce feed rate during foldback. Drive restores speed once the load clears.</td><td>Sustained overload beyond the I^2*t curve triggers an inverse-time trip. Auto-restart permitted after a calculated thermal cool-down period.</td></tr>
+                    <tr><th scope="row">VFD or Motor Over-Temperature</th><td>Thermal Foldback</td><td>High VFD heatsink or motor temperature.</td><td>Lowers the Pulse Width Modulation (PWM) switching frequency or restricts the maximum current limit to reduce heat generation without stopping the belt.</td><td>Temperature exceeding the trip threshold triggers an immediate trip. Inspect cooling fans, filters and enclosure ventilation.</td></tr>
+                    <tr><th scope="row">Input Phase Loss</th><td>Phase Loss Ride-Through</td><td>Loss of one incoming phase or severe imbalance.</td><td>Detects excessive DC bus ripple. Reduces maximum allowable output power to protect the DC bus capacitors while keeping the belt moving at a reduced rate.</td><td>Severe imbalance or sustained loss triggers an immediate trip. Auto-restart disabled until repaired.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+        Published <time datetime="2026-11-21">21 November 2026</time><br>
+        Updated <time datetime="2026-11-21">21 November 2026</time>
+    </footer>
+
+</main>
+
+<script src="chapters.js"></script>
+<script src="handbook.js"></script>
+
+</body>
+</html>

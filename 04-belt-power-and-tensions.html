@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belt Power and Tensions – Modern Conveyor Handbook</title>
+    <meta name="description" content="Conveyor belt power and tensions: resistance categories, effective tension, drive power, the Euler-Eytelwein slip limit, pulley lagging and drive layouts.">
+    <meta name="author" content="Jane Doe">
+    <link rel="canonical" href="https://www.conveyorhandbook.com/04-belt-power-and-tensions.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Belt Power and Tensions – Modern Conveyor Handbook">
+    <meta property="og:description" content="Conveyor belt power and tensions: resistance categories, effective tension, drive power, the Euler-Eytelwein slip limit, pulley lagging and drive layouts.">
+    <meta property="og:url" content="https://www.conveyorhandbook.com/04-belt-power-and-tensions.html">
+    <meta property="og:site_name" content="Modern Conveyor Handbook">
+    <meta property="og:image" content="https://www.conveyorhandbook.com/images/og-04-belt-power-and-tensions.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Conveyor drive pulley with belt wrap showing the tight-side and slack-side tensions">
+    <meta property="og:locale" content="en_AU">
+    <meta property="article:published_time" content="2026-11-21T00:00:00+11:00">
+    <meta property="article:modified_time" content="2026-11-21T00:00:00+11:00">
+    <meta property="article:author" content="Jane Doe">
+    <meta property="article:section" content="Engineering">
+    <meta property="article:tag" content="conveyors">
+    <meta property="article:tag" content="belt tension">
+    <meta property="article:tag" content="conveyor drive power">
+    <meta property="article:tag" content="bulk materials handling">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Belt Power and Tensions – Modern Conveyor Handbook">
+    <meta name="twitter:description" content="Conveyor belt power and tensions: resistance categories, effective tension, drive power, the Euler-Eytelwein slip limit, pulley lagging and drive layouts.">
+    <meta name="twitter:image" content="https://www.conveyorhandbook.com/images/og-04-belt-power-and-tensions.jpg">
+    <meta name="twitter:image:alt" content="Conveyor drive pulley with belt wrap showing the tight-side and slack-side tensions">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="home" href="https://www.conveyorhandbook.com/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "TechArticle",
+                "headline": "Belt Power and Tensions",
+                "description": "Conveyor belt power and tensions: resistance categories, effective tension, drive power, the Euler-Eytelwein slip limit, pulley lagging and drive layouts.",
+                "author": { "@type": "Person", "name": "Jane Doe" },
+                "publisher": { "@type": "Organization", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "datePublished": "2026-11-21",
+                "dateModified": "2026-11-21",
+                "mainEntityOfPage": "https://www.conveyorhandbook.com/04-belt-power-and-tensions.html",
+                "isPartOf": { "@type": "WebSite", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "image": "https://www.conveyorhandbook.com/images/og-04-belt-power-and-tensions.jpg",
+                "inLanguage": "en-AU",
+                "about": { "@type": "Thing", "name": "Conveyor Belts" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Modern Conveyor Handbook", "item": "https://www.conveyorhandbook.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Belt Power and Tensions", "item": "https://www.conveyorhandbook.com/04-belt-power-and-tensions.html" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="handbook.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="topbar">
+    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Contents
+    </button>
+</div>
+
+<nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
+    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="chapterMenuBtn" aria-expanded="false" aria-controls="chapterMenu">Chapters</button>
+    </p>
+    <div class="chapter-menu" id="chapterMenu"></div>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-3">Table of Contents</p>
+    <div class="toc">
+        <a href="#belt-power-and-tensions">1. Belt Power and Tensions</a>
+        <a href="#conveyor-resistances">2. Conveyor Resistances</a>
+        <a href="#effective-tension-and-power-calculation">3. Effective Tension and Power Calculation</a>
+        <a href="#belt-slip-and-the-euler-eytelwein-equation">4. Belt Slip and the Euler-Eytelwein Equation</a>
+        <a href="#drive-and-take-up-configurations">5. Drive and Take-Up Configurations</a>
+    </div>
+</nav>
+
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+<main class="main-content" id="main" tabindex="-1">
+
+    <section id="belt-power-and-tensions">
+        <h1 class="mb-3">1. Belt Power and Tensions</h1>
+        <p>Conveyor drive power is determined by a force balance. At constant belt speed, the drive pulley force equals the sum of all resistances opposing belt motion around the conveyor loop.</p>
+    </section>
+
+    <section id="conveyor-resistances">
+        <h2>2. Conveyor Resistances</h2>
+        <p>ISO 5048 / DIN 22101 sum the main, secondary, special and slope resistances, and the Conveyor Equipment Manufacturers Association (CEMA) method sums the same losses as separate component terms. The table below groups these resistances by distribution, mechanical origin and governing dependencies, with the main resistance divided into its no-load and loaded parts.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 1: Conveyor Resistance Categories</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Resistance Type</th>
+                        <th scope="col">Classification</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Mechanisms / Components</th>
+                        <th scope="col">Governing Dependencies</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Empty running friction</th><td>Main resistance, no-load</td><td>Drag of the unladen belt and rotating idlers acting on both runs over the full centre-to-centre length.</td><td>Idler bearing and seal friction. Belt flexure over idlers. Viscoelastic belt cover indentation.</td><td>Friction factor f, conveyor length, belt mass, idler rotating mass.</td></tr>
+                    <tr><th scope="row">Load friction</th><td>Main resistance, loaded</td><td>Additional drag from the conveyed material along the carrying run.</td><td>Empty running mechanisms acting on the added material mass. Material and belt flexure between idlers.</td><td>Material mass per unit length, friction factor f, conveyor length.</td></tr>
+                    <tr><th scope="row">Slope resistance</th><td>Lift or drop</td><td>Gravitational force component of material weight along the line of travel (belt weight forces cancel across runs).</td><td>Positive work raising load (incline). Negative work lowering load (decline), requiring braking or regeneration where it exceeds the other resistances.</td><td>Material mass per unit length, net elevation change (independent of length).</td></tr>
+                    <tr><th scope="row">Secondary and special resistances</th><td>Localised, or distributed over a defined section</td><td>Friction and drag losses at discrete points or over defined sections, significant on short conveyors.</td><td>Material acceleration at loading, skirtboard friction, belt cleaner drag, non-drive pulley resistance (belt wrap and bearing), forward-tilted idlers, discharge ploughs and trippers.</td><td>Number and type of components, and length of skirted and tilted-idler sections.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="effective-tension-and-power-calculation">
+        <h2>3. Effective Tension and Power Calculation</h2>
+        <p>Effective tension, T_e, is the net peripheral force required to drive or brake the loaded conveyor, equal to the sum of all resistances resolved at the drive pulley (F_U in ISO 5048).</p>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 1: Drive Pulley Power</figcaption>
+            <p class="font-monospace my-3">Metric: P = T_e * v<br>Imperial: P = (T_e * v) / 33,000</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>P = Drive pulley power (kW) [hp]</li>
+                <li>T_e = Effective tension (kN) [lbf]</li>
+                <li>v = Belt speed (m/s) [fpm]</li>
+                <li>33,000 = Conversion constant [ft-lbf/min per hp]</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> At a fixed mass flow, the load and lift components of effective tension vary inversely with belt speed, so their power demand is independent of speed, while empty running power rises in proportion to speed. Size the motor from P divided by the drive train efficiency, at the peak effective tension of the governing load case.</p>
+        </div>
+    </section>
+
+    <section id="belt-slip-and-the-euler-eytelwein-equation">
+        <h2>4. Belt Slip and the Euler-Eytelwein Equation</h2>
+        <p>Transmitting the effective tension, without slip requires a minimum slack-side tension, T2, leaving the drive pulley. The Euler-Eytelwein (capstan) equation defines the maximum tension ratio before slip.</p>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 2: Euler-Eytelwein Slip Limit</figcaption>
+            <p class="font-monospace my-3">T1 / T2 less than or equal to e^(mu * theta)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>T1 = Tight-side tension entering the drive pulley (kN)</li>
+                <li>T2 = Slack-side tension leaving the drive pulley (kN)</li>
+                <li>mu = Friction coefficient between belt and pulley surface (dimensionless)</li>
+                <li>theta = Wrap angle of belt around the drive pulley (rad)</li>
+                <li>e = Base of the natural logarithm, 2.71828 (dimensionless)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Convert theta to radians (deg * PI / 180).</p>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> The permissible tension ratio rises exponentially with mu * theta. Increase the wrap angle with a snub pulley or a dual-pulley drive, or the friction coefficient with lagging, to reduce the slack-side tension required for a given effective tension. This reduces total belt tension, the required belt rating and take-up mass.</p>
+        </div>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 2: Friction Coefficients for Pulley Surfaces</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Pulley Surface</th>
+                        <th scope="col">Dry</th>
+                        <th scope="col">Wet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Bare steel pulley</th><td>0.25 to 0.30</td><td>0.10 to 0.15</td></tr>
+                    <tr><th scope="row">Rubber lagging</th><td>0.35 to 0.40</td><td>0.25 to 0.30</td></tr>
+                    <tr><th scope="row">Rubber lagging (diamond-grooved)</th><td>0.40 to 0.45</td><td>0.30 to 0.35</td></tr>
+                    <tr><th scope="row">Rubber lagging (chevron/herringbone)</th><td>0.40 to 0.45</td><td>0.30 to 0.35</td></tr>
+                    <tr><th scope="row">Polyurethane lagging</th><td>0.35 to 0.40</td><td>0.25 to 0.35</td></tr>
+                    <tr><th scope="row">Polyurethane lagging (grooved)</th><td>0.40 to 0.45</td><td>0.30 to 0.35</td></tr>
+                    <tr><th scope="row">Ceramic lagging</th><td>0.40 to 0.45</td><td>0.35 to 0.40</td></tr>
+                    <tr><th scope="row">Ceramic lagging (dimpled)</th><td>0.45 to 0.50</td><td>0.40 to 0.45</td></tr>
+                    <tr><th scope="row">Ceramic lagging (rubber-backed composite)</th><td>0.45 to 0.50</td><td>0.40 to 0.45</td></tr>
+                    <tr><th scope="row">Direct-bonded ceramic (epoxy matrix)</th><td>0.45 to 0.55</td><td>0.40 to 0.50</td></tr>
+                    <tr><th scope="row">Slide-lagging (replaceable rubber pads)</th><td>0.35 to 0.40</td><td>0.25 to 0.30</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Values are typical design values for clean conditions. Design with the lower bound of the wet range where the pulley runs wet or contaminated. Upper-range values for profiled and direct-bonded ceramic lagging are based on manufacturer data.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 3: Minimum Slack-Side Tension</figcaption>
+            <p class="font-monospace my-3">T2_min = T_e / (e^(mu * theta) - 1)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>T2_min = Minimum slack-side tension to prevent slip (kN)</li>
+                <li>T_e = Effective tension, T1 - T2 (kN)</li>
+                <li>mu = Friction coefficient between belt and pulley surface (dimensionless)</li>
+                <li>theta = Wrap angle of belt around the drive pulley (rad)</li>
+                <li>e = Base of the natural logarithm, 2.71828 (dimensionless)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Apply a slip safety factor of 1.2 or greater to T2_min and evaluate the worst case of a wet or cold pulley at peak starting and braking effective tension.</p>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Set the take-up so that slack-side tension is not less than T2_min with the slip safety factor applied, and belt tension at the lowest-tension point of the carry and return runs is not less than the tension needed to hold the sag limit. On horizontal and low-lift conveyors the greater of the two sets the take-up force, and any excess slack-side tension adds directly to T1 and the required belt rating.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 4: Drive Factor (C_w)</figcaption>
+            <p class="font-monospace my-3">C_w = e^(mu * theta) / (e^(mu * theta) - 1)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>C_w = Drive factor, the minimum ratio of tight-side tension to effective tension without slip (dimensionless)</li>
+                <li>mu = Friction coefficient between belt and pulley surface (dimensionless)</li>
+                <li>theta = Wrap angle of belt around the drive pulley (rad)</li>
+                <li>e = Base of the natural logarithm, 2.71828 (dimensionless)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> The minimum tight-side tension is C_w * T_e. A higher friction coefficient or a larger wrap angle lowers C_w, and with it the tight-side tension and belt rating needed to transmit a given effective tension.</p>
+        </div>
+    </section>
+
+    <section id="drive-and-take-up-configurations">
+        <h2>5. Drive and Take-Up Configurations</h2>
+        <p>Drive and take-up locations determine the tension distribution around the belt loop. Correct placement minimises maximum belt tension and the required belt rating.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 3: Recommended Drive and Take-Up Locations</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Conveyor Profile</th>
+                        <th scope="col">Drive Location</th>
+                        <th scope="col">Take-Up Location</th>
+                        <th scope="col">Basis</th>
+                        <th scope="col">Starting and Stopping Considerations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Horizontal</th><td>Head</td><td>Return side, immediately following the drive</td><td>Drive slip typically governs. The take-up sets T2 directly at the drive slack side.</td><td>The take-up absorbs elastic stretch during starting and stopping. Size take-up travel for the starting transient.</td></tr>
+                    <tr><th scope="row">Incline, low lift</th><td>Head</td><td>Return side, immediately following the drive</td><td>Drive slip governs. The take-up sets T2 directly at the drive slack side.</td><td>Fit a holdback where the loaded belt can run back. Verify T2 at the drive during holdback engagement.</td></tr>
+                    <tr><th scope="row">Incline, high lift</th><td>Head</td><td>Return side, at the tail</td><td>Carry-side sag at the tail loading zone governs. Return belt weight raises tension from the tail to the drive, providing T2_min without additional take-up force.</td><td>Fit a holdback. The starting tension wave reaches a tail take-up only after the wave transit time. Verify T2 at the drive during acceleration by dynamic analysis.</td></tr>
+                    <tr><th scope="row">Decline (Regenerative)</th><td>Tail</td><td>Return side, immediately following the head pulley</td><td>The tail drive retards the loaded carry strand on its tight side. Tension is lowest at the head pulley, where carry-side sag governs.</td><td>Tension at the head falls during braking. Size the take-up to hold minimum tension and limit carry-side sag and spillage. Perform a dynamic analysis.</td></tr>
+                    <tr><th scope="row">Multi-Slope (Undulating)</th><td>Head, or as determined by the tension profile</td><td>Return side, at the minimum tension point for the governing load case</td><td>The minimum tension point moves with the loading pattern on inclines and declines.</td><td>Partial loading can shift the system between motoring and regenerating. Perform a dynamic analysis of transient slack waves.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Locations apply to single-drive, non-reversing conveyors. Classify an incline as high lift where the carry-side sag tension at the tail, plus the return belt weight per metre multiplied by the lift, less the return run resistance, provides T2_min at the drive. Verify the carry-side sag tension at the minimum-tension point of the carry run.</p>
+        </div>
+    </section>
+
+    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+        Published <time datetime="2026-11-21">21 November 2026</time><br>
+        Updated <time datetime="2026-11-21">21 November 2026</time>
+    </footer>
+
+</main>
+
+<script src="chapters.js"></script>
+<script src="handbook.js"></script>
+
+</body>
+</html>

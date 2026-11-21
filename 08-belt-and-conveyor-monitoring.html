@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belt and Conveyor Monitoring – Modern Conveyor Handbook</title>
+    <meta name="description" content="Conveyor monitoring: safety switches, tramp metal, weighing, rip and wear detection, cord and splice scanning, thermal and acoustic sensing, and digital twins.">
+    <meta name="author" content="Jane Doe">
+    <link rel="canonical" href="https://www.conveyorhandbook.com/08-belt-and-conveyor-monitoring.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Belt and Conveyor Monitoring – Modern Conveyor Handbook">
+    <meta property="og:description" content="Conveyor monitoring: safety switches, tramp metal, weighing, rip and wear detection, cord and splice scanning, thermal and acoustic sensing, and digital twins.">
+    <meta property="og:url" content="https://www.conveyorhandbook.com/08-belt-and-conveyor-monitoring.html">
+    <meta property="og:site_name" content="Modern Conveyor Handbook">
+    <meta property="og:image" content="https://www.conveyorhandbook.com/images/og-08-belt-and-conveyor-monitoring.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Sensors mounted along a belt conveyor for condition monitoring">
+    <meta property="og:locale" content="en_AU">
+    <meta property="article:published_time" content="2026-11-21T00:00:00+11:00">
+    <meta property="article:modified_time" content="2026-11-21T00:00:00+11:00">
+    <meta property="article:author" content="Jane Doe">
+    <meta property="article:section" content="Engineering">
+    <meta property="article:tag" content="conveyors">
+    <meta property="article:tag" content="conveyor monitoring">
+    <meta property="article:tag" content="condition monitoring">
+    <meta property="article:tag" content="bulk materials handling">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Belt and Conveyor Monitoring – Modern Conveyor Handbook">
+    <meta name="twitter:description" content="Conveyor monitoring: safety switches, tramp metal, weighing, rip and wear detection, cord and splice scanning, thermal and acoustic sensing, and digital twins.">
+    <meta name="twitter:image" content="https://www.conveyorhandbook.com/images/og-08-belt-and-conveyor-monitoring.jpg">
+    <meta name="twitter:image:alt" content="Sensors mounted along a belt conveyor for condition monitoring">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="home" href="https://www.conveyorhandbook.com/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "TechArticle",
+                "headline": "Belt and Conveyor Monitoring",
+                "description": "Conveyor monitoring: safety switches, tramp metal, weighing, rip and wear detection, cord and splice scanning, thermal and acoustic sensing, and digital twins.",
+                "author": { "@type": "Person", "name": "Jane Doe" },
+                "publisher": { "@type": "Organization", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "datePublished": "2026-11-21",
+                "dateModified": "2026-11-21",
+                "mainEntityOfPage": "https://www.conveyorhandbook.com/08-belt-and-conveyor-monitoring.html",
+                "isPartOf": { "@type": "WebSite", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "image": "https://www.conveyorhandbook.com/images/og-08-belt-and-conveyor-monitoring.jpg",
+                "inLanguage": "en-AU",
+                "about": { "@type": "Thing", "name": "Conveyor Belts" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Modern Conveyor Handbook", "item": "https://www.conveyorhandbook.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Belt and Conveyor Monitoring", "item": "https://www.conveyorhandbook.com/08-belt-and-conveyor-monitoring.html" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="handbook.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="topbar">
+    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Contents
+    </button>
+</div>
+
+<nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
+    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="chapterMenuBtn" aria-expanded="false" aria-controls="chapterMenu">Chapters</button>
+    </p>
+    <div class="chapter-menu" id="chapterMenu"></div>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-3">Table of Contents</p>
+    <div class="toc">
+        <a href="#belt-and-conveyor-monitoring">1. Belt and Conveyor Monitoring</a>
+        <a href="#basic-condition-monitoring-and-running-sensors">2. Basic Condition Monitoring and Running Sensors</a>
+        <a href="#pull-wire-emergency-stop-systems" class="sub">2.1 Pull-Wire (Emergency Stop) Systems</a>
+        <a href="#zero-speed-under-speed-and-drive-slip-detection" class="sub">2.2 Zero-Speed, Under-Speed and Drive Slip Detection</a>
+        <a href="#belt-drift-misalignment-switches" class="sub">2.3 Belt Drift (Misalignment) Switches</a>
+        <a href="#blocked-chute-detectors" class="sub">2.4 Blocked Chute Detectors</a>
+        <a href="#tramp-metal-detectors-and-magnetic-separators">3. Tramp Metal Detectors and Magnetic Separators</a>
+        <a href="#magnetic-separators-overband-magnets" class="sub">3.1 Magnetic Separators (Overband Magnets)</a>
+        <a href="#metal-detectors" class="sub">3.2 Metal Detectors</a>
+        <a href="#belt-scales-belt-weighers-gravimetric-weighing">4. Belt Scales / Belt Weighers (Gravimetric Weighing)</a>
+        <a href="#3d-material-profile-scanning-volumetric-capacity-measurement">5. 3D Material Profile Scanning (Volumetric Capacity Measurement)</a>
+        <a href="#longitudinal-rip-detection">6. Longitudinal Rip Detection</a>
+        <a href="#inductive-sensor-loops-active" class="sub">6.1 Inductive Sensor Loops (Active)</a>
+        <a href="#passive-rip-detection" class="sub">6.2 Passive Rip Detection</a>
+        <a href="#real-time-cover-wear-monitoring">7. Real-Time Cover Wear Monitoring</a>
+        <a href="#laser-thickness-mapping-3d-profiling" class="sub">7.1 Laser Thickness Mapping (3D Profiling)</a>
+        <a href="#ultrasonic-thickness-gauges" class="sub">7.2 Ultrasonic Thickness Gauges</a>
+        <a href="#steel-cord-scanning-internal-carcass-ndt">8. Steel Cord Scanning (Internal Carcass NDT)</a>
+        <a href="#magnetic-flux-leakage-mfl-systems" class="sub">8.1 Magnetic Flux Leakage (MFL) Systems</a>
+        <a href="#x-ray-radiography-and-fluoroscopy" class="sub">8.2 X-Ray Radiography and Fluoroscopy</a>
+        <a href="#automated-splice-condition-monitoring">9. Automated Splice Condition Monitoring</a>
+        <a href="#splice-elongation-monitoring-embedded-targets" class="sub">9.1 Splice Elongation Monitoring (Embedded Targets)</a>
+        <a href="#high-speed-machine-vision-and-laser-profiling-splice-surface-monitoring" class="sub">9.2 High-Speed Machine Vision and Laser Profiling (Splice Surface Monitoring)</a>
+        <a href="#rfid-splice-tagging" class="sub">9.3 RFID Splice Tagging</a>
+        <a href="#automated-belt-cleaner-scraper-monitoring">10. Automated Belt Cleaner (Scraper) Monitoring</a>
+        <a href="#take-up-carriage-position-and-skew-monitoring">11. Take-Up Carriage Position and Skew Monitoring</a>
+        <a href="#belt-sag-and-catenary-monitoring">12. Belt Sag and Catenary Monitoring</a>
+        <a href="#acoustic-idler-bearing-monitoring">13. Acoustic Idler Bearing Monitoring</a>
+        <a href="#fibre-optic-distributed-acoustic-sensing-das" class="sub">13.1 Fibre-Optic Distributed Acoustic Sensing (DAS)</a>
+        <a href="#autonomous-drones-and-robotic-crawlers" class="sub">13.2 Autonomous Drones and Robotic Crawlers</a>
+        <a href="#thermal-and-temperature-monitoring">14. Thermal and Temperature Monitoring</a>
+        <a href="#distributed-temperature-sensing-dts" class="sub">14.1 Distributed Temperature Sensing (DTS)</a>
+        <a href="#fixed-thermal-imaging-ir-cameras" class="sub">14.2 Fixed Thermal Imaging (IR Cameras)</a>
+        <a href="#drivetrain-condition-monitoring-gearbox-oil-and-mcsa">15. Drivetrain Condition Monitoring (Gearbox Oil and MCSA)</a>
+        <a href="#real-time-gearbox-oil-condition-monitoring" class="sub">15.1 Real-Time Gearbox Oil Condition Monitoring</a>
+        <a href="#motor-current-signature-analysis-mcsa" class="sub">15.2 Motor Current Signature Analysis (MCSA)</a>
+        <a href="#real-time-digital-twins-and-iiot-predictive-control">16. Real-Time Digital Twins and IIoT (Predictive Control)</a>
+        <a href="#integrating-the-iiot-sensor-network" class="sub">16.1 Integrating the IIoT Sensor Network</a>
+        <a href="#dynamic-parameter-adjustment-prescriptive-control" class="sub">16.2 Dynamic Parameter Adjustment (Prescriptive Control)</a>
+        <a href="#validating-low-rolling-resistance-lrr-in-real-time" class="sub">16.3 Validating Low Rolling Resistance (LRR) in Real-Time</a>
+        <a href="#wireless-sensor-networks-lpwan-and-mems-vibration" class="sub">16.4 Wireless Sensor Networks (LPWAN) and MEMS Vibration</a>
+        <a href="#cloud-predictive-analytics-and-the-p-f-curve" class="sub">16.5 Cloud Predictive Analytics and the P-F Curve</a>
+    </div>
+</nav>
+
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+<main class="main-content" id="main" tabindex="-1">
+
+    <section id="belt-and-conveyor-monitoring">
+        <h1 class="mb-3">1. Belt and Conveyor Monitoring</h1>
+        <p>Monitoring detects degradation early enough to plan repairs and avoid unplanned belt replacement and the associated production downtime.</p>
+        <p>Installed costs are indicative budget ranges, with lower bounds for single-unit retrofits on short in-plant conveyors and upper bounds for multi-unit or full-length overland installations.</p>
+    </section>
+
+    <section id="basic-condition-monitoring-and-running-sensors">
+        <h2>2. Basic Condition Monitoring and Running Sensors</h2>
+    </section>
+
+    <section id="pull-wire-emergency-stop-systems">
+        <h3>2.1 Pull-Wire (Emergency Stop) Systems</h3>
+        <p>AS/NZS 4024.3610 / AS/NZS 4024.3611 set the requirements for pull-wire emergency stops on conveyors.</p>
+        <p>A galvanised steel wire rope runs taut along each side of the conveyor, supported on eye-bolts or guide pulleys, and terminates at pull-wire switches. Pulling the rope actuates the switch on that span.</p>
+        <p>The switch is hard-wired into the conveyor safety circuit, de-energises the drive and, where the risk assessment requires, applies the brakes. Pull-wire switches must latch and require a manual local reset. Switches with broken-wire detection trip when rope tension falls to zero.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 1: Pull-Wire Emergency Stop Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Personnel hazards requiring an emergency stop</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Both sides of all accessible walkways along the full conveyor length, with switches at access gates, crossover platforms and ladder entry points. Rope approximately 1.0 m [3.3 ft] above the walkway grating. Supports at typically 2 to 3 m [6.6 to 9.8 ft], with the end supports within 300 mm [12 in] of each switch. Emergency stop labels on the rope at intervals not exceeding 30 m [98 ft] where more than one switch is installed. Emergency stop push-buttons within 1.0 m [3.3 ft] reach where the rope cannot be reached.</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Rope typically 3 to 6 mm [0.12 to 0.24 in] diameter, tensioned to typically 50 to 100 N [11 to 22 lbf]. Switch spacing set by the manufacturer's rated rope span, which ranges from approximately 30 to 125 m [98 to 410 ft] by model. Actuation latches the switch and stops the conveyor.</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Instantaneous trip</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Test every switch at the interval set by the site risk assessment, typically monthly. Pull from the span midpoint, confirm remote restart is locked out and log the result. Replace corroded rope.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Emergency stop coverage along the full accessible length. Simple to operate. Latching requires a local reset before restart. Broken-wire detection trips on rope failure.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Rope corrodes and requires periodic replacement. Support friction raises the midpoint pull force and limits switch spacing. Falling material and debris cause false trips. Switch, rope, support and testing costs become significant on conveyors longer than 10 km [6.2 mi].</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$500 to $1,500 per switch unit, plus $5 to $15 per metre [$1.50 to $4.60 per ft] of wire rope</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="zero-speed-under-speed-and-drive-slip-detection">
+        <h3>2.2 Zero-Speed, Under-Speed and Drive Slip Detection</h3>
+        <p>Undetected belt slip is a recognised ignition source for conveyor fires. A drive pulley turning against a stalled or slipping belt generates frictional heat sufficient to ignite the belt cover.</p>
+        <p>Provide two separate protection functions:</p>
+        <ul>
+            <li>Under-speed detection compares belt speed with design speed. It detects a stalled or broken belt and driveline failure.</li>
+            <li>Drive slip detection compares drive pulley surface speed with belt speed. It detects slip at the drive pulley while the belt is still moving, well before belt speed falls to the under-speed trip.</li>
+        </ul>
+        <p>Measure belt speed on a non-driven pulley. Do not use the drive pulley, motor shaft or gearbox shafts as the belt-speed reference, as they continue to rotate when the belt slips or the driveline fails.</p>
+        <p>Use inductive proximity sensors triggered by steel targets welded or bolted to the outboard end of the pulley shell. With no belt contact, they tolerate dust, mud, moisture and vibration better than optical sensors or friction-wheel tachometers. Use a contact wheel running on the belt only where no suitable non-driven pulley is available, and allow for wheel slip on wet or dirty belts.</p>
+        <p>For drive slip detection, fit a second sensor to each monitored drive pulley and compare its surface speed with the non-driven pulley sensor in the programmable logic controller (PLC). Fit drive slip detection on critical drives and on conveyors in enclosed or underground installations. A speed difference above the trip setting indicates drive slip or a sensor fault.</p>
+        <p>Encoders, resolvers and Hall-effect sensors on Variable Frequency Drive (VFD) motor shafts serve drive control only and do not replace independent belt-speed sensors.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 2: Under-Speed and Drive Slip Detection Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Under-speed: stalled or broken belt, driveline failure. Drive slip: belt slipping on the drive pulley.</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Non-driven pulley for belt speed. A second sensor on each monitored drive pulley for drive slip.</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Under-speed: alarm at typically 90% and trip at 80% of design speed, bypassed during start-up for the acceleration time. Drive slip: trip at a speed difference of typically 5% to 10% between drive pulley surface and belt, after a short time delay, set above the normal elastic creep at the drive pulley. Select the number of targets to give typically 4 to 10 pulses per second at the minimum operating belt speed.</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Under-speed: instantaneous trip. Drive slip: trip after the set time delay.</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Verify alarm and trip set points at each scheduled function test. Check the sensing gap and target security.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Simple and low cost per unit. Continuous protection against slip and the associated fire hazard. Integrates with standard PLC or relay safety circuits.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>A seized sensing pulley or a lost target causes a false trip. Contact wheels wear, slip on wet or dirty belts and lose contact if incorrectly tensioned. Optical sensors require regular cleaning in dusty environments. Indicates slip but not its cause.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$500 to $2,000 per unit</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="belt-drift-misalignment-switches">
+        <h3>2.3 Belt Drift (Misalignment) Switches</h3>
+        <p>Belt misalignment causes spillage and abrasive damage to the belt edge and structure. Drift switches use a roller lever adjacent to the belt edge and operate in two stages, alarm then trip. Locate drift switches by risk assessment, typically as follows.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 3: Belt Drift Switch Placement</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Location</th>
+                        <th scope="col">Requirement</th>
+                        <th scope="col">Engineering Rationale</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Head / Discharge Pulley</th><td>Both sides, within 3 to 15 m [10 to 49 ft] of the pulley</td><td>Detects misalignment before off-centre discharge causes chute blockage and belt cleaner damage</td></tr>
+                    <tr><th scope="row">Tail / Loading Pulley</th><td>Both sides, within 3 to 15 m [10 to 49 ft] of the pulley</td><td>Detects misalignment of the empty belt before it enters the loading zone, where an off-centre belt receives an asymmetric load</td></tr>
+                    <tr><th scope="row">Drive and Take-Up Stations</th><td>Both sides, immediately before and after the assembly</td><td>Detects misalignment before belt edge contact with snub pulleys and take-up structures</td></tr>
+                    <tr><th scope="row">Convex / Concave Curves</th><td>At the apex or lowest point of the curve</td><td>Monitors zones of high dynamic tension variation and reduced tracking stability, particularly during empty or partial-load running</td></tr>
+                    <tr><th scope="row">General Conveyor Length</th><td>Every 30 to 50 m [98 to 164 ft] on short conveyors. On long overland conveyors, at horizontal curves, belt lift zones, subsidence zones and high-wind sections identified by risk assessment.</td><td>Protects structure in areas susceptible to belt edge contact</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 4: Belt Drift Switch Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Belt misalignment, edge damage, stringer wear</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Both sides of the belt at terminals, drive and take-up stations, vertical curves and along the conveyor length</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Stage 1 alarm at typically 15 to 20 deg lever deflection, prompting investigation or a feed rate reduction. Stage 2 trip at 35 to 45 deg, stopping the conveyor.</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Instantaneous alarm or trip</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Check lever free movement and both stage set points at scheduled function tests. Clear ice and material build-up.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Robust and low cost per unit. Two stages give a graduated response. Suits most belt types and configurations.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Wander below the alarm threshold is not detected. Levers are susceptible to seizure, corrosion and impact damage. Ice accumulation can prevent actuation in freezing environments. Indicates misalignment but not its cause.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$300 to $1,500 per unit</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Two-dimensional (2D) laser edge scanners monitor transverse belt position continuously and detect progressive wander before a drift switch actuates.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 5: Laser Edge Scanner Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Progressive belt wander, splice tracking</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Terminals and critical points</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Continuous transverse belt position, trended to identify progressive wander</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Days to weeks before a drift switch trip</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Clean the optics, or fit an air purge in dusty environments</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Detects wander before a switch actuates, allowing planned correction. Non-contact.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Dust and water spray foul the optics. Higher cost per location than drift switches. Supplements, but does not replace, drift switch trips.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$5,000 to $15,000 per tracking station</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="blocked-chute-detectors">
+        <h3>2.4 Blocked Chute Detectors</h3>
+        <p>A transfer chute blocks when the receiving conveyor stops while the feeding conveyor continues to run, or when wet, cohesive or oversize material hangs up in the chute. Install a high-level detector in each transfer chute, interlocked to stop the feeding conveyor. Set the sensor elevation so that the free chute volume above it holds all material discharged during the feeding conveyor's stopping time and coast-down.</p>
+        <p>Microwave detectors sense material accumulation across the chute without contact.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 6: Microwave Blocked Chute Detector Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Chute blockage, belt burial, top cover damage</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Opposed transmitter and receiver on the chute walls, behind ultra-high molecular weight polyethylene (UHMWPE) or polytetrafluoroethylene (PTFE) windows</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Trip relay actuates on signal attenuation and stops the feeding conveyor</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Instantaneous trip</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Inspect windows for wear and cracking and replace them periodically</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Non-contact, with no mechanical wear. Unaffected by airborne dust.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Higher capital cost than mechanical switches. Cracked or degraded windows admit moisture, causing false trips or signal attenuation.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$1,000 to $5,000 per unit</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Tilt switches detect material by probe deflection or angle change.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 7: Tilt Switch Blocked Chute Detector Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Chute blockage, belt burial, top cover damage</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Metallic probe suspended on a flexible tether inside the chute, clear of the main material trajectory</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Internal micro-switch actuates at approximately 15 deg probe deflection and stops the feeding conveyor</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Instantaneous trip</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Inspect the probe and tether for wear and material build-up</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Low cost, simple and robust</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Direct material impact causes false trips. Cohesive wet material such as clay or bauxite can restrict deflection and prevent actuation.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$200 to $800 per unit</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Vibrating fork switches detect material by damping of the tine vibration.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 8: Vibrating Fork Blocked Chute Detector Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Chute blockage, belt burial, top cover damage</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Tines through the chute wall at the trip level</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Trip relay actuates on loss of tine resonance and stops the feeding conveyor</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Instantaneous trip</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Inspect the tines for deformation and build-up</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Suits fine, low bulk density powders such as cement and fly ash, where tilt switches may not actuate</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Large lump impact deforms the tines. Limited to fine particulates.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>Obtain vendor pricing</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="tramp-metal-detectors-and-magnetic-separators">
+        <h2>3. Tramp Metal Detectors and Magnetic Separators</h2>
+        <p>Tramp metal, such as broken excavator teeth or rock bolts, can damage downstream processing equipment. Overband magnets remove ferrous tramp metal, and metal detectors stop the conveyor for conductive metals that magnets cannot remove, such as manganese steel and austenitic stainless steel.</p>
+    </section>
+
+    <section id="magnetic-separators-overband-magnets">
+        <h3>3.1 Magnetic Separators (Overband Magnets)</h3>
+        <p>Electromagnets or permanent magnets suspended over the belt extract ferrous tramp metal from the burden. Select the location as follows.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 9: Overband Magnet Installation Locations</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Installation Location</th>
+                        <th scope="col">Operational Dynamics</th>
+                        <th scope="col">Engineering Trade-Offs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Head Pulley (Discharge Trajectory)</th><td>The magnet sits in front of the discharge trajectory. The burden expands in free fall, giving higher extraction efficiency than over-belt locations.</td><td>Requires a monorail or overhead crane for servicing. Specify a non-magnetic head pulley shell, as a magnetised shell holds tramp metal and carries it back into the chute.</td></tr>
+                    <tr><th scope="row">Over the Troughed Belt</th><td>The burden is deep and compacted</td><td>Requires a larger magnet to extract metal from the trough base, adding capital cost and gantry dead load</td></tr>
+                    <tr><th scope="row">Flattening the Belt</th><td>Idler trough angle reduced to typically 10 to 20 deg to reduce burden depth</td><td>Reduces the belt cross-section at the magnet. Derate the conveyor volumetric capacity to avoid edge spillage.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Specify non-magnetic idler rolls and frames within the magnetic footprint, typically 1.0 to 2.0 m [3.3 to 6.6 ft] upstream and downstream of the magnet centre. Use 304 or 316 stainless steel shells and shafts, or high-density polyethylene (HDPE) or polymer composite rolls. Steel components within the field can be dislodged and damage the magnet or belt.</p>
+        <p>The field is a hazard to personnel with pacemakers or other implanted medical devices and damages unshielded electronics and mechanical watches. Establish barriered exclusion zones with warning signage, with boundaries set by International Commission on Non-Ionizing Radiation Protection (ICNIRP) occupational exposure guidelines and the applicable national requirements.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 10: Overband Magnet Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Ferrous tramp metal ingress</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Over the head pulley discharge trajectory, or over a troughed or flattened carrying belt</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Continuous extraction without stopping the conveyor. Electromagnet field strength adjustable.</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Continuous extraction</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Remove collected metal from manually cleaned magnets at a set interval. Maintain exclusion zone barriers and signage.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Removes ferrous metal without stopping the conveyor. Permanent magnets need no power. Electromagnets offer adjustable field strength and can be de-energised for cleaning.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Does not extract non-magnetic metals such as manganese steel, austenitic stainless steel and aluminium. Non-magnetic idlers and head pulley shells add cost. The field requires barriered exclusion zones.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$50,000 to $500,000 or more</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="metal-detectors">
+        <h3>3.2 Metal Detectors</h3>
+        <p>Metal detectors emit an electromagnetic field through the belt to detect conductive objects. On detection, the system stops the conveyor and deploys a dye spray or bag marker to locate the object for manual removal.</p>
+        <p>Fabricate idler frames, stringers and decking within the metal-free zone (MFZ) from structural fibreglass or timber. Insulate structural joints near the detector to break closed conductive loops.</p>
+        <p>Mechanical belt fasteners trip the detector unless the control system suppresses detection as each splice passes, which leaves that belt length unprotected.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 11: Metal Detector Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Conductive tramp metal, including manganese steel and stainless steel</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All with vulcanised splices. Steel cord belts only with detectors that compensate for the cord signal.</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Upstream of crushers, high-pressure grinding rolls (HPGRs) and screens, at a distance greater than the conveyor stopping distance, with an MFZ of typically 1.5 to 2.0 m [4.9 to 6.6 ft] in all directions</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Sensitivity set to balance false trips against missed detections. Multi-zone detectors discriminate tramp metal from mineralised ore. Detection stops the conveyor and deploys a marker.</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Instantaneous trip</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Verify sensitivity with a calibrated test piece at a set interval. Keep the MFZ clear of stray metal.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Detects non-magnetic conductive metals that magnets cannot extract. Fast trip protection for downstream crushers, HPGRs and screens. Multi-zone detectors reduce false trips from mineralised ore. Markers speed location and recovery.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Stops the conveyor but does not remove the metal, so manual removal delays production. The MFZ adds structural complexity and cost. Incompatible with mechanical fasteners unless splice signals are suppressed. Requires precise calibration.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$20,000 to $80,000 per unit</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="belt-scales-belt-weighers-gravimetric-weighing">
+        <h2>4. Belt Scales / Belt Weighers (Gravimetric Weighing)</h2>
+        <p>Belt scales measure mass flow rate continuously for process control, inventory management and trade settlement. Keep belt tension at the weigh frame stable to limit errors from belt stiffness.</p>
+        <p>Weigh frames mount either one carrying idler or two to four consecutive idlers on an extended weigh bridge.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 12: Belt Scale Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Process deviation, inventory error, overloading</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Straight, horizontal carrying run away from the tail pulley and downstream of the loading zone once material has settled. Provide three to four idler spacings, typically 3.0 to 4.5 m [10 to 15 ft], of undisturbed belt upstream and downstream. Not on vertical or horizontal curves, within transitions from the loading point or terminal pulleys, or adjacent to gravity or winch take-ups.</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Strain-gauge load cells under the weigh frame. Single-idler accuracy typically +/- 1.0% to 2.0%, suited to process control. Continuous flow rate and totalised mass to the PLC and supervisory control and data acquisition (SCADA) system.</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Continuous</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Check zero and span routinely. Verify trade scales by material run test against a certified static scale. Keep weigh idlers aligned and free of build-up.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Continuous mass flow measurement without stopping the conveyor. Low maintenance once installed and calibrated. Integrates with PLC, SCADA and digital twin systems.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Accuracy is sensitive to installation quality, belt tension variation, inclination changes, idler misalignment and wind loading. Belt stiffness and drift in troughed sections reduce accuracy, with the greatest effect on single-idler frames. Calibration requires coordination with operations and access to certified reference scales.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$15,000 to $80,000 per installation, with multi-idler frames at the upper end</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Multi-idler frames average load over a longer span, reducing errors from surging, belt stiffness and idler misalignment. This raises accuracy to +/- 0.5% or better, as required for trade-certified custody transfer.</p>
+        </div>
+    </section>
+
+    <section id="3d-material-profile-scanning-volumetric-capacity-measurement">
+        <h2>5. 3D Material Profile Scanning (Volumetric Capacity Measurement)</h2>
+        <p>Three-dimensional (3D) laser scanning of the burden profile supports volumetric capacity optimisation, loading and unloading sequencing, and real-time digital twin modelling.</p>
+        <p>A laser scanner above the carrying belt sweeps a line across the burden surface. Multiplying the cross-sectional area by belt speed gives instantaneous volumetric flow rate (m3/h [ft3/h]), and comparing the area with the design cross-section gives the volumetric fill ratio. Conversion to mass flow requires independent bulk density data.</p>
+        <p>On systems feeding multiple bins, silos or ships, the scanner tracks the leading and trailing edges of material slugs. The control system predicts their arrival at each discharge point and actuates diverter gates or tripper cars. This reduces material run off the belt end or into the wrong bin during changeover.</p>
+        <p>Where the fill ratio is consistently low, the digital twin can increase the feed rate from apron feeders, vibrating feeders or variable-speed bin gates. Alternatively, it can reduce belt speed through the VFD to hold the target cross-section at constant mass flow.</p>
+        <p>An asymmetric profile indicates a misaligned chute, worn skirting or feed segregation, allowing correction before off-centre loading causes mistracking.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 13: 3D Material Profile Scanning Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Volumetric overload, asymmetric loading, surges</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Above the carrying belt downstream of the loading point</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Continuous volumetric flow, fill ratio and burden shape. Alarm, and reduce or stop feed, when the cross-section exceeds a set maximum, typically 110% of design.</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Continuous</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Air purge or regular cleaning of the optics. Check volumetric readings against belt scale mass and measured bulk density.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Non-contact. Detects asymmetric loading, segregation and surges that a belt scale cannot. Enables belt speed control to hold the target cross-section, reducing energy use and wear. Suits retrofit.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Measures volume, not mass, and bulk density varies with moisture and size grading. Dust, water spray and steam foul the optics. Heavy rain and fog scatter the beam. Low-albedo materials such as wet coal weaken the return signal. High capital cost for scanning and processing.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$60,000 to $200,000 per system</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="longitudinal-rip-detection">
+        <h2>6. Longitudinal Rip Detection</h2>
+        <p>Tramp metal wedged in a transfer chute can cut a longitudinal rip as the drive pulls the belt past it.</p>
+    </section>
+
+    <section id="inductive-sensor-loops-active">
+        <h3>6.1 Inductive Sensor Loops (Active)</h3>
+        <p>Conductive sensor loops are embedded in the bottom cover at set intervals and pass a transmitter and receiver mounted downstream of high-risk loading zones. An intact loop couples the signal between them. A rip that severs a loop interrupts the signal and trips the conveyor. Radio frequency identification (RFID) tags beside each loop identify it for location and fault tracking.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 14: Inductive Sensor Loop Rip Detection Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Longitudinal belt rip</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>Steel cord and fabric</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Transmitter and receiver downstream of high-risk loading zones. Loops in the bottom cover at set intervals.</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Loop spacing typically 50 m [164 ft], which sets the maximum rip length before detection. A severed loop trips the conveyor.</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Seconds to minutes, set by loop spacing</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Record loops damaged by impact or cover wear and replace them during planned belt maintenance</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Established active rip detection. Unaffected by dust and moisture. Binary loop status limits false trips.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Loops are fitted during manufacture or retrofitted by vulcanising, adding belt cost. Impact or cover wear can sever a loop without a rip, disabling that monitoring point. Closer loop spacing shortens the maximum rip length but increases cost. Detects rips only, with no data on wear or carcass condition.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$50,000 to $150,000 for detector heads, plus a belt premium of $5 to $15 per metre [$1.50 to $4.60 per ft]</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="passive-rip-detection">
+        <h3>6.2 Passive Rip Detection</h3>
+        <p>Passive systems detect the physical evidence of a rip without embedded components.</p>
+        <p>Laser line scanners under the loaded carrying belt measure the bottom cover profile across the full belt width and trip when protruding material distorts it.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 15: Laser Profile Rip Detection Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Longitudinal rip, belt puncture</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Under the loaded carrying belt downstream of loading zones, scanning the full belt width</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>High-frequency line scan. Trip threshold set on profile deviation, stopping the conveyor.</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Instantaneous trip after penetration</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Clear carryback and build-up from the optics. Fit an air purge in dusty or wet environments.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Continuous full-width coverage at high spatial resolution. Fast response. Retrofits without belt modification or belt premium.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Trips after penetration, so some belt damage and spillage occur first. Dust, water spray, steam and carryback foul the optics and cause false trips. Higher cost than ultrasonic width detectors. No predictive belt health data.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$15,000 to $60,000 per unit, typically toward the upper bound</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Ultrasonic rip detectors use non-contact probes at each belt edge to measure belt width continuously. A rip that separates the belt changes the measured width and trips the conveyor.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 16: Ultrasonic Belt Width Rip Detection Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Longitudinal rip that changes belt width, belt wander</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Probes at each belt edge, on the carrying or return strand, downstream of loading zones</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Alarm or trip on set maximum and minimum belt width and wander limits</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Instantaneous trip once the rip changes belt width</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Clear build-up from the probe faces. Reset width limits after belt replacement.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Lower cost than laser scanners. Non-contact. Also monitors belt wander. Retrofits without belt modification or belt premium.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Detects a rip only once it changes belt width, so partial-depth and narrow rips may not be detected. Readings vary with air temperature and turbulence. Build-up and water spray on the probes cause false readings. No predictive belt health data.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$15,000 to $60,000 per unit, typically toward the lower bound</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>A catch pan suspended under the impact zone is the mechanical alternative. Material falling through a rip loads the pan, which pulls a cable and actuates a limit switch.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 17: Catch Pan Rip Detection Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Longitudinal rip at the impact zone</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Under the impact zone</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Trips when material in the pan actuates the limit switch</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Delayed until enough material collects in the pan</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Empty the pan and test limit switch actuation</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Simple, with no power or signal processing. Retrofits without belt modification.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Response is delayed while the pan fills. Narrow, low-leakage rips may not be detected. No predictive belt health data.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>Obtain vendor pricing</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="real-time-cover-wear-monitoring">
+        <h2>7. Real-Time Cover Wear Monitoring</h2>
+        <p>The top belt cover is a sacrificial layer protecting the carcass, and in abrasive duties, its measured wear rate sets belt life and capital forecasts. Continuous measurement reduces the need for manual depth-gauge readings, which require a shutdown and isolation.</p>
+    </section>
+
+    <section id="laser-thickness-mapping-3d-profiling">
+        <h3>7.1 Laser Thickness Mapping (3D Profiling)</h3>
+        <p>A high-speed laser array facing the top cover scans the cover across its width to build a 3D surface map. Software compares the profile with the as-new specification. It identifies asymmetric wear and localised gouging from misaligned chutes or poor material trajectories, allowing chute geometry corrections.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 18: Laser Thickness Mapping Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Top cover wear, asymmetric wear, gouging</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Facing the cleaned top cover on the return strand, at a pulley or flat section where the belt is stable. Not on vertical curves, vibrating spans or loaded sections.</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Continuous full-width surface profile, trended against the as-new profile</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Continuous, trending over weeks to months</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Air purge or regular cleaning of the optics</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Full-width wear mapping without downtime or belt access. Detects asymmetric wear and gouging missed by point measurements. Supports chute geometry corrections. Builds a digital wear record for lifecycle budgeting.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Measures the surface profile only, not the remaining cover above the carcass. Requires a stable, flat belt section. Dust fouls the optics. High capital cost.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$80,000 to $250,000 per system</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="ultrasonic-thickness-gauges">
+        <h3>7.2 Ultrasonic Thickness Gauges</h3>
+        <p>Ultrasonic gauges measure the remaining cover above the carcass. A transducer sends an acoustic pulse into the cover that reflects from the steel cords or fabric plies. The echo time of flight gives the cover thickness.</p>
+        <p>Replace the belt before the top cover falls to typically 2.0 mm [0.08 in] above the carcass. An exposed carcass wicks moisture, causing cord corrosion or ply delamination.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 19: Ultrasonic Thickness Gauge Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Loss of cover thickness above the carcass</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Handheld units on the stopped belt. Fixed arrays in contact with the return belt.</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Thickness at discrete transverse positions, trended against the replacement limit</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Continuous with fixed arrays. Periodic with handheld units.</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Calibrate against a reference sample of the cover compound. Verify acoustic coupling before each reading.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Measures remaining thickness above the carcass for replacement scheduling. Handheld units are portable and low cost. Fixed arrays monitor without downtime.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Handheld readings need belt access, typically during a shutdown. Accuracy is sensitive to temperature, surface moisture and coupling quality. Fixed arrays measure at discrete positions without full-width mapping.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$5,000 to $15,000 (handheld), $50,000 to $150,000 (fixed)</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="steel-cord-scanning-internal-carcass-ndt">
+        <h2>8. Steel Cord Scanning (Internal Carcass NDT)</h2>
+        <p>In steel cord (ST) belts, the cords carry the full belt tension, and moisture entering through cover damage corrodes them locally, breaking down cord adhesion and transferring load to adjacent cords. Two non-destructive testing (NDT) methods detect this damage.</p>
+    </section>
+
+    <section id="magnetic-flux-leakage-mfl-systems">
+        <h3>8.1 Magnetic Flux Leakage (MFL) Systems</h3>
+        <p>MFL applies to ST belts only, as fabric and solid woven tension members are non-magnetic. A scanner across the belt width saturates the cords with permanent magnets. A broken, corroded or missing cord forces flux to leak from the steel. A coil array logs the longitudinal and transverse position of the anomaly.</p>
+        <p>Each hot-vulcanised splice has a magnetic signature set by its step pattern. When the rubber between the cords yields in shear, the cords pull apart and the splice elongates and narrows (hourglassing). Tracking this allows planned splice replacement before failure and before hourglassing is visible on the surface.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 20: Magnetic Flux Leakage Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Broken or corroded cords, splice elongation</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>Steel cord only</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Across the full belt width, typically on the flat return run</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Continuous full-length scan at operating speed. Resolves splice elongation of typically 1.0 to 2.0 mm [0.04 to 0.08 in].</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Continuous, trending over weeks to months</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Record a baseline scan after installation and after each new splice. Expert calibration to distinguish damage from benign manufacturing and splice anomalies. Regular mechanical maintenance of the scanner.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Scans the full belt length at operating speed. Unaffected by dust, moisture and visual obscuration. Detects internal cord damage and splice degradation not visible externally. Established practice for ST belt integrity management.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Not applicable to fabric or solid woven belts. High capital cost. Interpretation requires expert calibration. Gives no image of internal rubber condition.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$150,000 to $500,000 or more</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="x-ray-radiography-and-fluoroscopy">
+        <h3>8.2 X-Ray Radiography and Fluoroscopy</h3>
+        <p>Radiography applies to ST belts only, as synthetic tension members are radiolucent and do not contrast with the rubber. An X-ray generator irradiates the moving belt onto a digital line-scan detector, producing a high-contrast image of the cords.</p>
+        <p>Use radiography for splice quality assurance and quality control (QA/QC), for baseline scans after vulcanising, and to inspect a splice flagged by MFL. Some critical systems use permanent scanners that image splices periodically at reduced speed during maintenance windows.</p>
+        <p>Verify the rubber gap between adjacent cords against the splice design gap. Reject splices with cord convergence.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 21: X-Ray Radiography Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Internal rubber gaps, cord convergence, splice QA/QC</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>Steel cord only</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Portable unit installed temporarily, or permanent scanner on critical systems</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Line-scan image of cord position and spacing, typically at reduced belt speed</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>On demand</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Operate under a radiation management plan with exclusion zones and regulatory approval</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Detailed image of internal cord condition. Measures cord gaps and shows cord breaks and displacement directly. Permanent units allow splice trending.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Not applicable to fabric or solid woven belts. High capital cost. Motion blur typically requires reduced belt speed. Portable units require downtime and lengthy setup.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$100,000 to $400,000 per portable unit</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="automated-splice-condition-monitoring">
+        <h2>9. Automated Splice Condition Monitoring</h2>
+        <p>Visual inspection alone does not detect internal splice failures, which can propagate without surface symptoms.</p>
+    </section>
+
+    <section id="splice-elongation-monitoring-embedded-targets">
+        <h3>9.1 Splice Elongation Monitoring (Embedded Targets)</h3>
+        <p>Metallic targets, such as copper inductive loops or magnetic transponders, are embedded at each end of the splice during vulcanising. Fixed sensors measure the target spacing on each pass. Yielding of the splice shear matrix lengthens the splice and increases the spacing. MFL and X-ray do not apply to non-magnetic tension members, so this is the principal internal diagnostic for multi-ply and solid woven belts. It tracks finger pull-out and step separation.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 22: Splice Elongation Monitoring Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Internal splice shear failure, finger pull-out, step separation</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>Multi-ply and solid woven. Optional cross-check on steel cord.</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Targets at each end of each splice. Fixed sensors on the conveyor structure.</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Splice elongation in mm [in] on each pass, trended against the as-made baseline</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Continuous, trending over weeks to months</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Record a baseline after each splice. Replace damaged targets at the next splice maintenance.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Continuous internal monitoring of non-magnetic belts. Quantitative elongation measurement. Operates at full speed. Unaffected by environmental obscuration.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Embedded targets can introduce stress concentrations. Impact or cover wear can destroy a target and disable that node. Measures overall elongation but cannot locate an individual step separation. Installed only during manufacture or splicing.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$10,000 to $40,000 per splice</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="high-speed-machine-vision-and-laser-profiling-splice-surface-monitoring">
+        <h3>9.2 High-Speed Machine Vision and Laser Profiling (Splice Surface Monitoring)</h3>
+        <p>3D laser scanners and high-speed cameras above and below the belt map the belt surface at full speed. Machine vision detects defects by belt type and presents the results as colour-coded degradation maps. In multi-ply belts it detects blistering and bulging from step delamination. In ST belts it detects protruding cords and edge (zipper) delamination. In solid woven belts it detects progressive edge fraying.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 23: Splice Surface Monitoring Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Surface blistering, edge zipper, exposed cords</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Above and below the belt</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Full-speed surface mapping. Colour-coded degradation maps trended for each splice.</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Continuous, trending over weeks to months</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Air purge or frequent cleaning of the optics</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Suits all belt types without internal modification. Automatic detection of surface degradation. Graphical output for rapid assessment. Suits retrofit.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Dust and moisture foul the optics. Detects surface symptoms only, so internal failures may propagate undetected. Complements, but does not replace, internal NDT. High data throughput requires robust processing.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$80,000 to $300,000 per system</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="rfid-splice-tagging">
+        <h3>9.3 RFID Splice Tagging</h3>
+        <p>RFID transponders embedded in the splice cover during vulcanising are read by fixed scanners. They link MFL signatures, elongation data and vision maps to each splice. On long conveyors, locating splices by calculation from speed sensors and reference marks introduces position error. RFID tags identify each splice directly.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 24: RFID Splice Tagging Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Splice identification</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Tags in each splice cover. Scanners on the conveyor structure.</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Reads each tag on every pass and indexes NDT data to that splice</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Not applicable (identification system)</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Replace lost tags at the next splice maintenance. Use calculated position until then.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Locates NDT data on multi-splice belts without ambiguity. Builds a splice-specific maintenance database. Passive tags need no power and typically outlast the splice.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Identifies splices but does not measure their condition. Primary scrapers and impact zones can destroy tags. Thermal cycling, impact and abrasion can shorten tag life. Adds a step to vulcanising.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$50 to $200 per tag, $5,000 to $15,000 per scanner</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="automated-belt-cleaner-scraper-monitoring">
+        <h2>10. Automated Belt Cleaner (Scraper) Monitoring</h2>
+        <p>Undetected cleaner failure allows carryback to accumulate on the return run, causing return idler bearing failure, mistracking and spillage.</p>
+        <p>Position sensors, such as linear potentiometers, measure remaining blade wear, and load cells measure blade pressure. This reduces routine inspection inside chutes.</p>
+        <p>Pneumatic or electromechanical tensioners hold blade pressure within the optimum range as the blade wears, removing manual retensioning. Pressure above this range increases blade wear, belt wear and drive power without further reducing carryback. Pressure below it reduces cleaning and can accelerate blade wear.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 25: Automated Belt Cleaner Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Carryback, blade wear and failure</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Primary and secondary cleaners at the head pulley</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Continuous blade wear measurement. Blade pressure held within the manufacturer's optimum range.</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Continuous, tracking wear over months</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Check measured wear against the blade at each replacement. Maintain the air supply for pneumatic tensioners.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Reduces routine entry into discharge zones for inspection and tensioning. Constant cleaning pressure improves cleaning and blade life. Supports planned blade replacement.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Higher capital cost than manually tensioned cleaners. Sensors and actuators add complexity in high-vibration, abrasive environments. Pneumatic tensioners depend on a maintained air supply.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$2,000 to $6,000 per scraper unit</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="take-up-carriage-position-and-skew-monitoring">
+        <h2>11. Take-Up Carriage Position and Skew Monitoring</h2>
+        <p>The take-up maintains the belt tension needed for drive traction and tracking. In gravity take-up (GTU) and winch configurations, monitor carriage position and squareness in addition to tension.</p>
+        <p>String potentiometers, linear encoders or laser distance meters measure carriage travel. Approaching an end stop raises an alarm and stops the conveyor before impact. Excessive travel indicates belt elongation requiring resplicing, drive slip, or failure of a take-up rope or chain.</p>
+        <p>A GTU carriage can skew in its guides from structural settlement, debris, asymmetric pulley loads or worn guide shoes. A skewed carriage can bind, losing tension control and causing slip or mistracking. Compare the position sensors on each side of the carriage and alarm on divergence before binding occurs.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 26: Take-Up Carriage Monitoring Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Take-up binding, end of travel, carriage skew</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Two linear position sensors, one each side of the carriage</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Alarm and stop before the end stops. Skew alarm at a side-to-side difference of typically 25 to 50 mm [1 to 2 in].</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Instantaneous to days, from trended limits</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Verify end-of-travel trips at commissioning and after resplicing. Inspect string potentiometers for wear.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Protects against loss of tension control from binding. Identifies guide wear and structural settlement for planned correction. Position trend feeds belt elongation models for splice replacement scheduling.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Sensors need robust enclosures against dust and impact. String potentiometers wear, and non-contact magnetostrictive transducers cost more. Detects skew but not its cause.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$1,500 to $5,000 per carriage</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="belt-sag-and-catenary-monitoring">
+        <h2>12. Belt Sag and Catenary Monitoring</h2>
+        <p>Excessive sag increases belt and bulk material flexure resistance, reduces the troughed cross-section, and causes material rollback and spillage in low-tension zones.</p>
+        <p>Sag is greatest in low-tension zones, such as the tail end of inclined conveyors. Loss of take-up tension, for example from a binding GTU, increases sag there. It can cause rollback and belt instability before speed or drift switches actuate. High sag increases spillage and idler resistance and causes belt bounce at high speed.</p>
+        <p>Sag monitoring identifies symptoms only. Determine the cause with complementary diagnostics.</p>
+        <p>Laser rangefinders at mid-span measure upward to the underside of the loaded carrying belt. A gradual increase in sag indicates local tension loss from take-up degradation or belt elongation.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 27: Laser Rangefinder Sag Monitoring Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Tension loss, rollback, overloading</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Mid-span between carrying idler sets at critical spans, on brackets from the stringer</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Sag displacement at one point, trended</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Continuous, trending over days to weeks</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Check beam alignment perpendicular to the belt. Clean the optics.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Continuous sag data without personnel access. Early warning of tension loss.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Requires precise perpendicular alignment. Vibration causes measurement error. Dust and moisture foul the optics.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$2,000 to $8,000 per sensor location</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>High-resolution cameras capture the catenary profile for image analysis.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 28: Machine Vision Sag Monitoring Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Tension loss, rollback, asymmetric sag</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Concave curves and transition zones</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Sag depth across the full belt width</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Continuous, trending over days to weeks</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Clean the optics</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Full-width profile identifies asymmetric sag from off-centre loading</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Dust and moisture foul the optics</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$50,000 to $150,000 per system</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Where no sag sensors are installed, a digital twin can calculate sag in every span.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 29: Digital Twin Sag Model Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Tension loss, rollback, overloading</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Not applicable (calculated for every span)</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Calculated sag from take-up tension and mass properties</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Continuous, trending over days to weeks</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Check calculated sag against measured sag after belt or material changes</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Uses existing load cell data with no added sensor cost</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Assumes uniform properties, so density variation and local elongation cause error</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>No added sensor cost where a digital twin is installed</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="acoustic-idler-bearing-monitoring">
+        <h2>13. Acoustic Idler Bearing Monitoring</h2>
+        <p>Idler bearing failure can cause longitudinal rips and frictional ignition. As raceways spall or lubrication fails, a bearing emits ultrasonic frequencies before it generates enough heat to trigger thermal or fire detection, but manual acoustic inspection is impractical on long conveyors with tens of thousands of bearings.</p>
+    </section>
+
+    <section id="fibre-optic-distributed-acoustic-sensing-das">
+        <h3>13.1 Fibre-Optic Distributed Acoustic Sensing (DAS)</h3>
+        <p>A DAS interrogator sends laser pulses along a fibre-optic cable routed the full length of the conveyor. It measures changes in Rayleigh backscatter caused by vibration and acoustic waves acting on the cable, so the fibre becomes a continuous acoustic sensor. Machine learning (ML) algorithms filter broadband operating noise and isolate bearing fault signatures. Optical time-domain reflectometry (OTDR) locates the faulty idler.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 30: Distributed Acoustic Sensing Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Idler bearing degradation, seized rolls</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Fibre along the full conveyor length. Interrogator range can exceed 40 km [25 mi], typically 10 to 20 km [6.2 to 12 mi] per unit due to optical attenuation and routing.</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Fault location to within 1.0 to 5.0 m [3.3 to 16 ft], depending on hardware and conditions. ML classification of bearing fault signatures.</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Weeks to months before seizure</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Allow an initial ML training period, then tune the model. Protect the fibre from maintenance activity, spillage and vermin.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Continuous coverage of the full length. No power or electronics along the conveyor. Immune to electromagnetic interference (EMI) from VFDs, motors and lightning. The same fibre can provide perimeter intrusion detection.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>High capital cost for the interrogator and fibre. Spatial resolution may not isolate individual rolls on closely spaced frames. Maintenance work, spillage or vermin can sever the fibre. Provides no temperature data. Use in explosive atmospheres requires assessment of optical radiation to IEC 60079-28.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$200,000 to $1,000,000 or more</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="autonomous-drones-and-robotic-crawlers">
+        <h3>13.2 Autonomous Drones and Robotic Crawlers</h3>
+        <p>Mobile platforms verify continuous monitoring results visually, acoustically and thermally. Unmanned aerial vehicles (UAVs) with directional ultrasonic microphones and radiometric thermal cameras fly pre-programmed routes. They correlate acoustic anomalies with thermal signatures.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 31: UAV Inspection Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Bearing thermal anomalies, belt edge wander</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Elevated and restricted sections such as stacker booms, overland galleries and ship-loader booms</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Pre-programmed flight paths. Combined ultrasonic and thermal data.</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Periodic confirmation</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Battery endurance of typically 20 to 45 min per charge requires multiple sorties or automated charging on long conveyors</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Correlates acoustic and thermal data to confirm defects. Inspects elevated and restricted sections without scaffolding or rope access. Records structural damage, spillage, belt edge condition and alignment.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Requires global positioning system (GPS) coverage or pre-programmed indoor navigation. High wind, heavy rain and dust ground flights. Periodic, not continuous, data. Operation is subject to national aviation authority rules for remotely piloted aircraft.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$50,000 to $300,000 per unit</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>In enclosed or underground conveyors without GPS coverage, robotic crawlers on an overhead monorail scan the belt edge with light detection and ranging (LiDAR). They also record the acoustic and thermal condition of each idler frame.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 32: Robotic Crawler Inspection Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Bearing thermal anomalies, belt edge wander</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Enclosed and underground conveyors, on an overhead monorail</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Scheduled traverses with LiDAR edge scanning and acoustic and thermal records</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Periodic confirmation at each traverse</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Maintain the platform and monorail</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Operates where GPS is unavailable. Records structural damage, spillage, belt edge condition and alignment.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Monorail adds structural dead load and capital cost. Platform maintenance adds operating cost. Periodic, not continuous, data.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$50,000 to $300,000 per unit</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="thermal-and-temperature-monitoring">
+        <h2>14. Thermal and Temperature Monitoring</h2>
+        <p>Distributed temperature sensing (DTS) along a fibre-optic cable gives continuous linear temperature coverage. Fixed infrared (IR) cameras monitor individual equipment. Both complement acoustic and vibration monitoring.</p>
+    </section>
+
+    <section id="distributed-temperature-sensing-dts">
+        <h3>14.1 Distributed Temperature Sensing (DTS)</h3>
+        <p>A DTS interrogator sends laser pulses into the fibre and measures Raman backscatter. The ratio of the anti-Stokes to Stokes components gives the local fibre temperature.</p>
+        <p>A single fibre can serve DAS and DTS only where the interrogator supports concurrent Raman and Rayleigh measurement. Otherwise, install separate fibres.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 33: Distributed Temperature Sensing Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Conveyor fires, frictional heating, belt slip ignition</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Fibre along the full conveyor length</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Spatial resolution typically 1.0 m [3.3 ft], up to 2.0 m [6.6 ft] on long runs. Stage 1 warning at 70 to 80 deg C [158 to 176 deg F] or a rise of 5 to 10 deg C [9 to 18 deg F] per minute, prompting investigation. Stage 2 trip below the ignition temperature of the conveyed material, with margin, or at a higher rate of rise, stopping the conveyor or releasing suppression. For coal, trip at no more than 100 deg C [212 deg F].</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Seconds to minutes</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Calibrate rate-of-rise thresholds to site conditions to limit false alarms from ambient variation such as solar gain. Protect the fibre from mechanical and environmental damage.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Continuous linear coverage without point-sensor gaps. Rate-of-rise detection identifies anomalies earlier than fixed thresholds. No power along the conveyor. Integrates with suppression controllers for zoned response. Can share fibre with DAS. Immune to EMI.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>High capital cost. Spatial averaging can mask small point heat sources. No visual diagnosis, so verification needs thermography or inspection. Use in explosive atmospheres requires assessment of optical radiation to IEC 60079-28.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$150,000 to $600,000 or more for a full-length installation</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="fixed-thermal-imaging-ir-cameras">
+        <h3>14.2 Fixed Thermal Imaging (IR Cameras)</h3>
+        <p>Fixed IR cameras produce two-dimensional temperature maps of individual equipment where a developing fault has a spatially complex heat signature. Microbolometer focal plane array (FPA) detectors operate in the 8 to 14 micrometre long-wave infrared (LWIR) band. They give a thermal sensitivity of typically 0.05 to 0.10 deg C [0.09 to 0.18 deg F], which resolves temperature differences across motor frames, gearbox zones and pulley bearing housings.</p>
+        <p>Map region-of-interest (ROI) alarm zones to equipment surfaces. Give each ROI an absolute alarm and a differential alarm on the maximum-to-minimum temperature difference within the ROI to identify hot spots. Align thresholds with the manufacturer's maximum continuous operating temperature.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 34: Fixed Thermal Imaging Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Motor, gearbox and pulley bearing overheating</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>Not applicable (drives and equipment)</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Sealed enclosures 0.5 to 3.0 m [1.6 to 9.8 ft] from the target</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Absolute ROI alarms typically 80 to 100 deg C [176 to 212 deg F] for motor frames, 70 to 90 deg C [158 to 194 deg F] for gearbox casings and 60 to 80 deg C [140 to 176 deg F] for pulley bearing housings, plus a differential alarm in each ROI</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Minutes to hours</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Set emissivity for each surface. Painted, polished and corroded surfaces need individual calibration. Clean lenses and windows regularly or fit an air purge.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>High-resolution 2D maps locate hot spots more precisely than point sensors. Non-contact monitoring of rotating and energised equipment without access to hazardous zones. Automated comparison against baseline images.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Fixed field of view. Accuracy depends on emissivity. Dust, oil mist and condensation degrade the image. High cost for ruggedised cameras, enclosures and mounts. Measures surface temperature only, so internal faults may not alarm before damage occurs.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$5,000 to $20,000 per camera installation</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="drivetrain-condition-monitoring-gearbox-oil-and-mcsa">
+        <h2>15. Drivetrain Condition Monitoring (Gearbox Oil and MCSA)</h2>
+        <p>The motor, coupling, gearbox, low-speed shaft and drive pulley concentrate mechanical failure risk. Micro-electro-mechanical systems (MEMS) vibration sensors monitor bearing condition, and oil condition sensors and motor current signature analysis (MCSA) give complementary indication of drivetrain degradation.</p>
+    </section>
+
+    <section id="real-time-gearbox-oil-condition-monitoring">
+        <h3>15.1 Real-Time Gearbox Oil Condition Monitoring</h3>
+        <p>Install in-line oil condition sensors on the kidney-loop filtration circuit of each main gearbox. The sensors measure three parameters. Dielectric constant indicates chemical degradation and contamination. Water content is measured in parts per million (ppm). Ferrous wear debris concentration is measured by inductive or magnetic particle counting.</p>
+        <p>Ferrous debris from early gear-tooth spalling appears in the oil before the damage produces detectable vibration, allowing maintenance planning and parts procurement. Early detection of water ingress from a failed shaft seal or breather allows intervention before water hydrolyses the additive package and corrodes the gear faces.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 35: In-Line Oil Condition Sensor Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Gear-tooth spalling, water ingress, oil degradation</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>Not applicable (drives)</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Kidney-loop filtration circuit of each main gearbox</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Dielectric constant, water content and ferrous debris concentration, trended</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Months</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Calibrate sensors periodically. Continue routine oil sampling and laboratory analysis to set baselines.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Detects drivetrain faults at an incipient stage. Chemical complement to vibration monitoring.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Fouls in heavily contaminated oil. Does not replace routine oil sampling.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$3,000 to $8,000 per gearbox</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="motor-current-signature-analysis-mcsa">
+        <h3>15.2 Motor Current Signature Analysis (MCSA)</h3>
+        <p>MCSA uses high-resolution current waveforms from current transformers in the motor supply, or from the VFD where it exports waveform data. Broken rotor bars, air-gap eccentricity, bearing defects, coupling misalignment and gearbox torsional resonance produce sidebands in the motor current. Fast Fourier transform (FFT) analysis extracts these fault frequencies without sensors on the motor or gearbox.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 36: Motor Current Signature Analysis Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Broken rotor bars, eccentricity, bearing and coupling faults, torsional resonance</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>Not applicable (drives)</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Current transformers in the motor supply, or VFD waveform data, with no sensors on the drivetrain</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Fault frequencies extracted from the current spectrum</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Weeks to months</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Record baseline current signatures at commissioning</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Uses existing VFD data, where available, with no sensors on the motor or gearbox</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Requires FFT software and reliability engineering expertise. Line-frequency harmonics can mask low-amplitude fault frequencies. Bearing defect signatures are weak in the current spectrum, so MCSA supplements but does not replace vibration monitoring.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>Software, plus current transformers where the VFD does not export waveform data</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="real-time-digital-twins-and-iiot-predictive-control">
+        <h2>16. Real-Time Digital Twins and IIoT (Predictive Control)</h2>
+        <p>Calculations to ISO 5048 / DIN 22101 / Conveyor Equipment Manufacturers Association (CEMA) methods set static operating parameters. A digital twin uses Industrial Internet of Things (IIoT) data to simulate the physical state of the conveyor in real time.</p>
+    </section>
+
+    <section id="integrating-the-iiot-sensor-network">
+        <h3>16.1 Integrating the IIoT Sensor Network</h3>
+        <p>A digital twin requires continuous, high-resolution data from the following sensors:</p>
+        <ul>
+            <li>Motor torque, current and active power (kW [hp]) from the VFD</li>
+            <li>Mass flow rate (t/h [stph]) from belt scales</li>
+            <li>Volumetric flow and burden profile from 3D laser scanners</li>
+            <li>Slack side tension (T2) from shear-pin load cells on the winch or gravity take-up</li>
+            <li>Ambient temperature, which changes cover stiffness and indentation resistance</li>
+        </ul>
+    </section>
+
+    <section id="dynamic-parameter-adjustment-prescriptive-control">
+        <h3>16.2 Dynamic Parameter Adjustment (Prescriptive Control)</h3>
+        <p>The digital twin compares the model with field data continuously. At reduced mass flow, for example 40% of design capacity, running at full belt speed wastes power and accelerates cover wear. The twin calculates the belt speed that maintains a full cross-section. It checks that tension in concave curves stays above the minimum needed to avoid belt buckling. It then commands the VFD to reduce speed and the winch to adjust tension.</p>
+    </section>
+
+    <section id="validating-low-rolling-resistance-lrr-in-real-time">
+        <h3>16.3 Validating Low Rolling Resistance (LRR) in Real-Time</h3>
+        <p>Indentation rolling resistance of the bottom cover accounts for up to 60% of power consumption on long overland conveyors, so low rolling resistance (LRR) compounds are specified to reduce energy demand.</p>
+        <p>Temperature cycling, ultraviolet (UV) exposure and ageing harden the viscoelastic cover over its life and increase indentation loss. The digital twin isolates the power absorbed by indentation by subtracting lift power and the other modelled resistances from the measured drive power. It compares that power with the laboratory value for the new compound, which quantifies energy savings and tracks LRR degradation.</p>
+        <p>When the cost of the additional energy loss exceeds the amortised cost of belt replacement, the belt has reached its economic end of life.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 37: Digital Twin Platform Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Energy inefficiency, belt buckling, LRR degradation</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Not applicable (software platform fed by VFD, belt scale, profile scanner and take-up load cell data)</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Real-time model comparison. Prescriptive belt speed and T2 commands. Tracking of LRR energy loss.</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Continuous, real-time prescriptive control</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Validate the model against measured power and tension at commissioning and after belt or major component changes</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Matches belt speed to flow, reducing energy use and cover wear at part load. Checks concave curve tension before speed changes. Quantifies LRR energy savings and identifies the economic end of belt life.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Accuracy depends on calibrated sensors and correct model parameters. Requires the full IIoT sensor network. High capital cost.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$200,000 to $1,000,000 or more</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="wireless-sensor-networks-lpwan-and-mems-vibration">
+        <h3>16.4 Wireless Sensor Networks (LPWAN) and MEMS Vibration</h3>
+        <p>Hard-wiring vibration and temperature sensors along long overland routes, for example 10 km [6.2 mi], requires extensive cabling. Battery-powered MEMS tri-axial accelerometers avoid this cabling. They are magnetically clamped or epoxy bonded to bearing housings and sample high-frequency vibration and surface temperature.</p>
+        <p>Low power wide area networks (LPWAN) such as LoRaWAN transmit the data across sites without standard wireless infrastructure. WirelessHART and ISA100.11a are short-range industrial mesh alternatives. Line-of-sight LPWAN range can reach 15 km [9.3 mi], but steel structures and EMI typically reduce it to 2 to 5 km [1.2 to 3.1 mi], so large sites require multiple gateways.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 38: Wireless Vibration Monitoring Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Pulley, gearbox and motor bearing degradation</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Pulley bearings, motor bearings and gearbox casings. Idler frames in critical or inaccessible zones such as stacker booms and enclosed ship-loader galleries, as a redundant layer to DAS.</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>Tri-axial vibration waveforms for FFT analysis and surface temperature, uploaded at the rate the duty cycle allows</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Weeks to months, depending on speed, load, defect type and severity</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Replace batteries at typically 3 to 5 years, unless kinetic energy harvesting is fitted. Check mounting security. Manage network cybersecurity.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Removes cabling, conduit and cable tray along long routes. Installs without specialist electrical labour. Waveforms support FFT bearing diagnostics. Encrypted telemetry independent of Wi-Fi and cellular networks.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Battery replacement across large arrays is an ongoing task. MEMS accelerometers have lower sensitivity and dynamic range than piezoelectric sensors, which can delay detection on low-speed bearings. Range limits require multiple gateways. Duty-cycle limits restrict waveform upload frequency. Magnetic mounts can detach under severe vibration, and epoxy mounts complicate replacement.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$200 to $800 per node, $5,000 to $15,000 per gateway</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="cloud-predictive-analytics-and-the-p-f-curve">
+        <h3>16.5 Cloud Predictive Analytics and the P-F Curve</h3>
+        <p>Threshold alarms in SCADA systems are reactive. A bearing temperature alarm at 85 deg C [185 deg F] typically actuates after spalling is established, requiring an immediate shutdown.</p>
+        <p>Cloud analytics apply FFT to high-resolution vibration waveforms. ML models identify the defect frequencies set by bearing geometry: ball pass frequency outer race (BPFO), ball pass frequency inner race (BPFI), fundamental train frequency (FTF) and ball spin frequency (BSF).</p>
+        <p>The P-F interval is the time between detectable potential failure (P) and functional failure (F). Continuous FFT analysis extends it from hours under temperature alarms to weeks or months, depending on speed, dynamic load and defect type. Lead times are longest on slow, lightly loaded bearings under stable conditions. Heavily loaded head pulleys have shorter P-F intervals and require continuous monitoring rather than reliance on a single remaining useful life (RUL) estimate.</p>
+        <p>The digital twin updates each degradation curve, issues alerts identifying the defect mechanism and estimates RUL. Parts can then be procured through normal logistics and replacement aligned with planned shutdowns.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 39: Cloud Predictive Analytics Summary</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Target Failure Mode</th><td>Rolling-element bearing defects</td></tr>
+                    <tr><th scope="row">Applicable Belt Type</th><td>All</td></tr>
+                    <tr><th scope="row">Installation Location</th><td>Cloud platform fed by vibration nodes through LPWAN gateways</td></tr>
+                    <tr><th scope="row">Settings and Response</th><td>FFT and ML classification of BPFO, BPFI, FTF and BSF. Degradation trend and RUL estimate for each bearing.</td></tr>
+                    <tr><th scope="row">Detection Lead Time</th><td>Weeks to months</td></tr>
+                    <tr><th scope="row">Testing and Maintenance</th><td>Allow an ML training period of typically 3 to 6 months to set baselines. Maintain sensor calibration and network continuity. Apply cybersecurity controls across the information technology and operational technology (IT/OT) interface.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Defect-specific diagnosis rather than generic alarms. RUL estimates support procurement and shutdown planning. Centralised monitoring of distributed conveyors. Accuracy improves as data accumulates.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Network interruptions break monitoring continuity. RUL is a probability, and shock events or operating changes can accelerate failure. Ongoing licensing cost. Accuracy depends on sensor calibration.</td></tr>
+                    <tr><th scope="row">Indicative Installed Cost</th><td>$50,000 to $200,000 or more per year in licensing</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+        Published <time datetime="2026-11-21">21 November 2026</time><br>
+        Updated <time datetime="2026-11-21">21 November 2026</time>
+    </footer>
+
+</main>
+
+<script src="chapters.js"></script>
+<script src="handbook.js"></script>
+
+</body>
+</html>

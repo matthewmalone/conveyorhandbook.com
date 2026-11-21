@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idler Engineering – Modern Conveyor Handbook</title>
+    <meta name="description" content="Conveyor idlers: load ratings, roller dimensions, bearings, seals, shells, spacing, alignment tolerances, QA/QC, storage, lifecycle cost and key formulae.">
+    <meta name="author" content="Jane Doe">
+    <link rel="canonical" href="https://www.conveyorhandbook.com/21-idler-engineering.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Idler Engineering – Modern Conveyor Handbook">
+    <meta property="og:description" content="Conveyor idlers: load ratings, roller dimensions, bearings, seals, shells, spacing, alignment tolerances, QA/QC, storage, lifecycle cost and key formulae.">
+    <meta property="og:url" content="https://www.conveyorhandbook.com/21-idler-engineering.html">
+    <meta property="og:site_name" content="Modern Conveyor Handbook">
+    <meta property="og:image" content="https://www.conveyorhandbook.com/images/og-21-idler-engineering.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Troughed carrying idler sets supporting a loaded conveyor belt">
+    <meta property="og:locale" content="en_AU">
+    <meta property="article:published_time" content="2026-11-21T00:00:00+11:00">
+    <meta property="article:modified_time" content="2026-11-21T00:00:00+11:00">
+    <meta property="article:author" content="Jane Doe">
+    <meta property="article:section" content="Engineering">
+    <meta property="article:tag" content="conveyors">
+    <meta property="article:tag" content="conveyor idlers">
+    <meta property="article:tag" content="idler bearings">
+    <meta property="article:tag" content="idler spacing">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Idler Engineering – Modern Conveyor Handbook">
+    <meta name="twitter:description" content="Conveyor idlers: load ratings, roller dimensions, bearings, seals, shells, spacing, alignment tolerances, QA/QC, storage, lifecycle cost and key formulae.">
+    <meta name="twitter:image" content="https://www.conveyorhandbook.com/images/og-21-idler-engineering.jpg">
+    <meta name="twitter:image:alt" content="Troughed carrying idler sets supporting a loaded conveyor belt">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="home" href="https://www.conveyorhandbook.com/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "TechArticle",
+                "headline": "Idler Engineering",
+                "description": "Conveyor idlers: load ratings, roller dimensions, bearings, seals, shells, spacing, alignment tolerances, QA/QC, storage, lifecycle cost and key formulae.",
+                "author": { "@type": "Person", "name": "Jane Doe" },
+                "publisher": { "@type": "Organization", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "datePublished": "2026-11-21",
+                "dateModified": "2026-11-21",
+                "mainEntityOfPage": "https://www.conveyorhandbook.com/21-idler-engineering.html",
+                "isPartOf": { "@type": "WebSite", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "image": "https://www.conveyorhandbook.com/images/og-21-idler-engineering.jpg",
+                "inLanguage": "en-AU",
+                "about": { "@type": "Thing", "name": "Conveyor Belts" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Modern Conveyor Handbook", "item": "https://www.conveyorhandbook.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Idler Engineering", "item": "https://www.conveyorhandbook.com/21-idler-engineering.html" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="handbook.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="topbar">
+    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Contents
+    </button>
+</div>
+
+<nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
+    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="chapterMenuBtn" aria-expanded="false" aria-controls="chapterMenu">Chapters</button>
+    </p>
+    <div class="chapter-menu" id="chapterMenu"></div>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-3">Table of Contents</p>
+    <div class="toc">
+        <a href="#idler-engineering">1. Idler Engineering</a>
+        <a href="#idler-load-ratings">2. Idler Load Ratings</a>
+        <a href="#the-north-american-system" class="sub">2.1 The North American System</a>
+        <a href="#global-standards" class="sub">2.2 Global Standards</a>
+        <a href="#australian-industry-practice-engineered-to-order" class="sub">2.3 Australian Industry Practice (Engineered-to-Order)</a>
+        <a href="#bearing-technology">3. Bearing Technology</a>
+        <a href="#idler-shaft-configurations">4. Idler Shaft Configurations</a>
+        <a href="#roller-diameter-bearing-life-and-resistance">5. Roller Diameter, Bearing Life and Resistance</a>
+        <a href="#bearing-life-l10h-and-roll-diameter" class="sub">5.1 Bearing Life (L10h) and Roll Diameter</a>
+        <a href="#impact-on-power-consumption-and-rolling-resistance" class="sub">5.2 Impact on Power Consumption and Rolling Resistance</a>
+        <a href="#idler-sealing-systems">6. Idler Sealing Systems</a>
+        <a href="#seal-type-comparison" class="sub">6.1 Seal Type Comparison</a>
+        <a href="#seal-material-selection" class="sub">6.2 Seal Material Selection</a>
+        <a href="#idler-configurations-and-frame-geometry">7. Idler Configurations and Frame Geometry</a>
+        <a href="#idler-frame-roller-quantity" class="sub">7.1 Idler Frame Roller Quantity</a>
+        <a href="#inline-versus-offset-versus-garland-suspended-configurations" class="sub">7.2 Inline Versus Offset Versus Garland (Suspended) Configurations</a>
+        <a href="#rules-of-thumb-for-idler-geometry" class="sub">7.3 Rules of Thumb for Idler Geometry</a>
+        <a href="#shell-materials-and-coatings">8. Shell Materials and Coatings</a>
+        <a href="#idler-shell-materials-comparison" class="sub">8.1 Idler Shell Materials Comparison</a>
+        <a href="#shell-surface-treatment-comparison" class="sub">8.2 Shell Surface Treatment Comparison</a>
+        <a href="#roller-dimensional-tolerances">9. Roller Dimensional Tolerances</a>
+        <a href="#dynamic-balancing-and-unbalance-limits">10. Dynamic Balancing and Unbalance Limits</a>
+        <a href="#sources-of-residual-unbalance" class="sub">10.1 Sources of Residual Unbalance</a>
+        <a href="#the-effect-of-unbalance" class="sub">10.2 The Effect of Unbalance</a>
+        <a href="#iso-21940-11-balance-grades" class="sub">10.3 ISO 21940-11 Balance Grades</a>
+        <a href="#balancing-methods" class="sub">10.4 Balancing Methods</a>
+        <a href="#impact-idlers-and-impact-cradles">11. Impact Idlers and Impact Cradles</a>
+        <a href="#idler-spacing-and-belt-sag">12. Idler Spacing and Belt Sag</a>
+        <a href="#dynamic-material-jump-trampoline-effect" class="sub">12.1 Dynamic Material Jump (Trampoline Effect)</a>
+        <a href="#carry-and-return-spacing" class="sub">12.2 Carry and Return Spacing</a>
+        <a href="#belt-tracking-and-self-aligning-training-idlers">13. Belt Tracking and Self-Aligning (Training) Idlers</a>
+        <a href="#how-self-aligning-idlers-work" class="sub">13.1 How Self-Aligning Idlers Work</a>
+        <a href="#rules-of-thumb-for-placement-and-spacing" class="sub">13.2 Rules of Thumb for Placement and Spacing</a>
+        <a href="#fixed-side-guide-rollers" class="sub">13.3 Fixed Side-Guide Rollers</a>
+        <a href="#idler-frame-corrosion-protection">14. Idler Frame Corrosion Protection</a>
+        <a href="#underground-and-modular-mounting-roof-hung-versus-floor-mounted-idler-frames">15. Underground and Modular Mounting: Roof-Hung Versus Floor-Mounted Idler Frames</a>
+        <a href="#idler-frame-alignment-tolerances">16. Idler Frame Alignment Tolerances</a>
+        <a href="#four-axes-of-idler-frame-alignment" class="sub">16.1 Four Axes of Idler Frame Alignment</a>
+        <a href="#alignment-tolerance-tables" class="sub">16.2 Alignment Tolerance Tables</a>
+        <a href="#alignment-methods-and-tools" class="sub">16.3 Alignment Methods and Tools</a>
+        <a href="#rules-of-thumb-for-alignment-practice" class="sub">16.4 Rules of Thumb for Alignment Practice</a>
+        <a href="#pipe-or-tube-conveyor-idler-arrangements">17. Pipe (or Tube) Conveyor Idler Arrangements</a>
+        <a href="#idler-panel-configurations" class="sub">17.1 Idler Panel Configurations</a>
+        <a href="#panel-spacing" class="sub">17.2 Panel Spacing</a>
+        <a href="#contact-pressure" class="sub">17.3 Contact Pressure</a>
+        <a href="#alignment-and-rotation-control" class="sub">17.4 Alignment and Rotation Control</a>
+        <a href="#idler-qa-qc-and-factory-acceptance-testing">18. Idler QA/QC and Factory Acceptance Testing</a>
+        <a href="#pre-production-requirements" class="sub">18.1 Pre-Production Requirements</a>
+        <a href="#in-production-testing-statistical-sampling" class="sub">18.2 In-Production Testing (Statistical Sampling)</a>
+        <a href="#100-testing-every-roller" class="sub">18.3 100% Testing (Every Roller)</a>
+        <a href="#type-testing-one-off-qualification" class="sub">18.4 Type Testing (One-Off Qualification)</a>
+        <a href="#documentation-and-traceability" class="sub">18.5 Documentation and Traceability</a>
+        <a href="#idler-storage-handling-and-shelf-life">19. Idler Storage, Handling and Shelf Life</a>
+        <a href="#false-brinelling-during-storage-and-transport" class="sub">19.1 False Brinelling During Storage and Transport</a>
+        <a href="#grease-degradation-during-extended-storage" class="sub">19.2 Grease Degradation During Extended Storage</a>
+        <a href="#seal-degradation" class="sub">19.3 Seal Degradation</a>
+        <a href="#polymer-shell-creep" class="sub">19.4 Polymer Shell Creep</a>
+        <a href="#temperature-effects-on-idler-performance">20. Temperature Effects on Idler Performance</a>
+        <a href="#noise-and-vibration-considerations">21. Noise and Vibration Considerations</a>
+        <a href="#sources-of-idler-noise" class="sub">21.1 Sources of Idler Noise</a>
+        <a href="#noise-mitigation" class="sub">21.2 Noise Mitigation</a>
+        <a href="#idler-maintenance-inspection-and-failure-modes">22. Idler Maintenance, Inspection and Failure Modes</a>
+        <a href="#common-failure-modes" class="sub">22.1 Common Failure Modes</a>
+        <a href="#inspection-methods" class="sub">22.2 Inspection Methods</a>
+        <a href="#lifecycle-cost-analysis-framework">23. Lifecycle Cost Analysis Framework</a>
+        <a href="#cost-components" class="sub">23.1 Cost Components</a>
+        <a href="#comparative-analysis-method" class="sub">23.2 Comparative Analysis Method</a>
+        <a href="#sensitivity-analysis" class="sub">23.3 Sensitivity Analysis</a>
+        <a href="#idler-fire-prevention-and-fras">24. Idler Fire Prevention and FRAS</a>
+        <a href="#idler-standards-cross-reference">25. Idler Standards Cross-Reference</a>
+        <a href="#key-formulae-for-idler-engineering">26. Key Formulae for Idler Engineering</a>
+    </div>
+</nav>
+
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+<main class="main-content" id="main" tabindex="-1">
+
+    <section id="idler-engineering">
+        <h1 class="mb-3">1. Idler Engineering</h1>
+        <p>Idler diameter, bearing selection, and spacing determine a large share of conveyor main resistance and drive power, and directly affect belt service life and system availability.</p>
+    </section>
+
+    <section id="idler-load-ratings">
+        <h2>2. Idler Load Ratings</h2>
+        <p>In North America, idlers are specified by Conveyor Equipment Manufacturers Association (CEMA) load class. Elsewhere, standards define roller geometry only, and the bearing, shaft, and shell are selected or engineered to suit the application load and speed.</p>
+    </section>
+
+    <section id="the-north-american-system">
+        <h3>2.1 The North American System</h3>
+        <p>In the USA and Canada, CEMA defines prescriptive idler classes (B through F). CEMA 502 defines each class by load rating, roll diameter, and frame mounting dimensions.</p>
+        <p>Ratings are based on a minimum L10 bearing life (the life that 90% of a bearing population reaches or exceeds) at 500 revolutions per minute (RPM). The class letter denotes the load rating and the number denotes the roll diameter in inches (e.g. D6). Shaft and bearing sizes are set by the manufacturer to meet the rating. Typical shaft sizes are:</p>
+        <ul>
+            <li><strong>CEMA B (Light Duty):</strong> 16 mm [5/8 in] shafts. Used for light materials such as grain, woodchips, and fine sand. Belt widths up to 1,200 mm [48 in].</li>
+            <li><strong>CEMA C (Medium Duty):</strong> 19 mm [3/4 in] shafts. Common for general plant use, crushed coal, and aggregate.</li>
+            <li><strong>CEMA D (Heavy Duty):</strong> 25 to 32 mm [1 to 1.25 in] shafts. Used for heavy ores, large lump sizes, and high-capacity mining operations.</li>
+            <li><strong>CEMA E (Extreme Duty):</strong> 32 to 35 mm [1.25 to 1.375 in] shafts. Used for Run-of-Mine (ROM) ore and primary crusher product.</li>
+            <li><strong>CEMA F (Ultra-Heavy Duty):</strong> 38 to 45 mm [1.5 to 1.75 in] shafts and larger. Used for high-tonnage, high-speed systems.</li>
+        </ul>
+        <p>CEMA tube diameters are:</p>
+        <ul>
+            <li><strong>102 mm [4 in]:</strong> Used for slow, light-duty applications or return rolls on narrow belts.</li>
+            <li><strong>127 mm [5 in]:</strong> Common size for light to medium duty.</li>
+            <li><strong>152 mm [6 in]:</strong> Common size for heavy-duty CEMA D and E applications.</li>
+            <li><strong>178 mm [7 in]:</strong> Used for high-capacity, high-speed overland systems (5.0 m/s [1,000 fpm] and above).</li>
+            <li><strong>203 mm [8 in]:</strong> CEMA F rollers for high-capacity, high-speed applications.</li>
+        </ul>
+    </section>
+
+    <section id="global-standards">
+        <h3>2.2 Global Standards</h3>
+        <p>Outside North America, ISO and DIN standards define roller geometry (roller lengths, diameters, and troughing angles) but do not prescribe load classes. Tube wall thickness, shaft diameter, and bearing series (e.g. 6204, 6306) are selected to achieve the required L10h life.</p>
+        <p>ISO/DIN and CEMA rollers are not interchangeable. ISO/DIN shells of 108, 133, and 159 mm [4.25, 5.25 and 6.25 in] are approximately 6 mm [0.25 in] larger than CEMA 102, 127 and 152 mm [4, 5 and 6 in] shells, and roll length and shaft end dimensions differ.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 1: Standard ISO / DIN Roller Outside Diameters</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Roller Outside Diameter mm [in]</th>
+                        <th scope="col">Typical Application / Duty Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">89 [3.5]</th><td>Light duty, slow speeds, or standard empty return runs.</td></tr>
+                    <tr><th scope="row">108 [4.25]</th><td>Medium duty aggregate and coal.</td></tr>
+                    <tr><th scope="row">133 [5.25]</th><td>Heavy duty mining and moderate overland conveyors, speeds less than 3.0 m/s [600 fpm].</td></tr>
+                    <tr><th scope="row">159 [6.25]</th><td>Extreme duty, heavy ROM ores, and high speed overland conveyors, up to 4.0 m/s [800 fpm].</td></tr>
+                    <tr><th scope="row">194 [7.6]</th><td>Heavy duty, high tonnages, and high speeds.</td></tr>
+                    <tr><th scope="row">219 [8.6]</th><td>Extreme overland installations, often used to reduce RPM on belts exceeding 6.0 m/s [1,200 fpm].</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>ISO 1537 and DIN 22107 define roller face length by belt width, giving supplier-independent frame geometry.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 2: ISO / DIN Roller Face Lengths, 3-Roll Equal Sets</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Belt Width mm [in]</th>
+                        <th scope="col">Roller Face Length mm [in]</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">650 [26]</th><td>250 [9.8]</td></tr>
+                    <tr><th scope="row">800 [31]</th><td>315 [12.4]</td></tr>
+                    <tr><th scope="row">1,000 [39]</th><td>380 [15.0]</td></tr>
+                    <tr><th scope="row">1,200 [48]</th><td>465 [18.3]</td></tr>
+                    <tr><th scope="row">1,400 [55]</th><td>530 [20.9]</td></tr>
+                    <tr><th scope="row">1,600 [63]</th><td>600 [23.6]</td></tr>
+                    <tr><th scope="row">1,800 [72]</th><td>670 [26.4]</td></tr>
+                    <tr><th scope="row">2,000 [79]</th><td>750 [29.5]</td></tr>
+                    <tr><th scope="row">2,200 [87]</th><td>800 [31.5]</td></tr>
+                    <tr><th scope="row">2,400 [96]</th><td>900 [35.4]</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Internal components are matched to the shell diameter and length to achieve the required dynamic load rating.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 3: Typical Engineered Internal Components</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Shaft Diameter at Bearing mm [in]</th>
+                        <th scope="col">Standard Bearing Series</th>
+                        <th scope="col">Typical Shaft Machining / Configuration</th>
+                        <th scope="col">Engineered Load Profile</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">20 [0.79]</th><td>6204</td><td>Standard milled flats.</td><td>Light / medium duty.</td></tr>
+                    <tr><th scope="row">25 [0.98]</th><td>6205 or 6305</td><td>Standard milled flats.</td><td>Medium / heavy duty.</td></tr>
+                    <tr><th scope="row">30 [1.18]</th><td>6206 or 6306</td><td>Stepped shaft, thick centre with turned down ends.</td><td>Heavy duty / high impact.</td></tr>
+                    <tr><th scope="row">40 [1.57]</th><td>6308</td><td>Heavy stepped shaft with large spindle boss.</td><td>Extreme duty / high speed overland.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> A stepped shaft uses a thicker central bar, machined down at each end to suit the bearing inner race. The larger central section limits shaft slope at the bearing, reducing edge loading and premature bearing failure.</p>
+        </div>
+    </section>
+
+    <section id="australian-industry-practice-engineered-to-order">
+        <h3>2.3 Australian Industry Practice (Engineered-to-Order)</h3>
+        <p>Australia has no national standard equivalent to CEMA load classes. Historical internal standards from state utilities and major mining companies (e.g. State Electricity Commission of Victoria (SECV) coal standards, BHP and Rio Tinto iron ore standards) established standard drop-in lengths and shaft end flats for cross-supplier interchangeability. Current geometric dimensions follow these legacy standards, while internal designs remain bespoke and are engineered-to-order for site tonnage and speed.</p>
+        <p>For major Australian iron ore and coal operations, 152 mm [6 in] or 159 mm [6.25 in] rollers are typically the minimum for carrying idlers. 127 mm [5 in] and 133 mm [5.25 in] sizes are rarely specified for heavy-duty carry duty due to higher rotational speed, shorter bearing life, and lower shell wear allowance. Return roller diameters are typically matched to carrying rollers to standardise spares and extend shell wear life against the dirty belt side.</p>
+    </section>
+
+    <section id="bearing-technology">
+        <h2>3. Bearing Technology</h2>
+        <p>Bearing selection determines the load capacity, fatigue life, and rotating resistance of an idler roll. The table below compares Deep Groove Ball Bearings (DGBB), Tapered Roller Bearings (TRB) and Spherical Roller Bearings (SRB).</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 4: Idler Bearing Type Comparison</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Property</th>
+                        <th scope="col">Deep Groove Ball Bearings (DGBB)</th>
+                        <th scope="col">Tapered Roller Bearings (TRB)</th>
+                        <th scope="col">Spherical Roller Bearings (SRB)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Contact type</th><td>Point contact (ball on raceway)</td><td>Line contact (tapered roller on conical raceways)</td><td>Line contact, double row (barrel roller on spherical outer race)</td></tr>
+                    <tr><th scope="row">Typical bearing series</th><td>6204, 6205, 6305, 6306, 6308</td><td>30205, 30206, 32208</td><td>22208, 22210, 22212</td></tr>
+                    <tr><th scope="row">Dynamic load rating (relative)</th><td>1.0x</td><td>1.5 to 2.5x</td><td>2.5 to 3.0x</td></tr>
+                    <tr><th scope="row">Static load rating (relative)</th><td>Baseline. Lowest of the three types</td><td>High. Resists axial thrust and shock</td><td>High. Resists radial and moderate axial load</td></tr>
+                    <tr><th scope="row">Angular misalignment tolerance</th><td>2 to 10 arc-min. Higher with C3 or C4 internal clearance</td><td>2 to 4 arc-min</td><td>90 to 150 arc-min (1.5 to 2.5 deg)</td></tr>
+                    <tr><th scope="row">Sensitivity to shaft deflection</th><td>Moderate. Limit shaft slope at the bearing to the manufacturer's misalignment limit</td><td>High. Spalling and raceway damage if the misalignment limit is exceeded</td><td>Low to moderate. Self-aligning outer race accommodates flex</td></tr>
+                    <tr><th scope="row">Shaft requirement</th><td>Standard (e.g. 20 to 40 mm [0.79 to 1.57 in] at bearing)</td><td>Stiff shaft with a larger central section than an equivalent DGBB design</td><td>Moderate. Heavier than DGBB but less critical than TRB</td></tr>
+                    <tr><th scope="row">Rolling resistance and drive power</th><td>Lowest. Preferred for long overland conveyors</td><td>Highest. Measurable drive power penalty on long systems</td><td>Intermediate. Justified only where load demands it</td></tr>
+                    <tr><th scope="row">Typical fit (stationary shaft, rotating outer ring)</th><td>Outer ring interference fit in housing. Inner ring transition fit on shaft</td><td>Cups interference fit in housings. Mounted as an opposed pair with axial end play set at assembly</td><td>Outer ring interference fit in housing. Inner ring transition fit or adapter sleeve</td></tr>
+                    <tr><th scope="row">Primary application</th><td>Common practice for idlers in all regions (ISO, DIN, Australia, global manufacturers). Long overland conveyors</td><td>CEMA C to F idlers (predominantly North America). Primary crusher discharge or short heavy plant conveyors</td><td>Specialised extreme-duty rolls with high load and significant shaft deflection or structural misalignment</td></tr>
+                    <tr><th scope="row">Primary limitation</th><td>Load capacity limit. Extreme-duty rolls require larger series bearings (e.g. 6308) and a stepped shaft</td><td>Shaft deflection sensitivity. Set end play at assembly</td><td>Not economical for system-wide use. Larger physical envelope</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="idler-shaft-configurations">
+        <h2>4. Idler Shaft Configurations</h2>
+        <p>Bearing size sets load capacity. Shaft construction between the bearing seats determines roll mass, shaft slope at the bearing, handling weight, and cost.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 5: Idler Shaft Configuration Comparison</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Property</th>
+                        <th scope="col">Solid Stepped Shaft</th>
+                        <th scope="col">Hollow (Stub-Shaft / Circular Hollow Section (CHS))</th>
+                        <th scope="col">Slim Shaft (Optimised Machined Solid)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Construction</th><td>Single continuous solid steel bar. Ends machined down to bearing seat diameter</td><td>CHS tube with two solid stub-shafts inserted at each end. Joined by crimping, friction welding, or shrink-fit</td><td>Single continuous solid bar. Central span machined to a reduced section</td></tr>
+                    <tr><th scope="row">Structural continuity and fatigue</th><td>Continuous. No joints. Low fatigue risk</td><td>Stub-to-tube joint is a stress raiser under fluctuating and impact loads. Highest fatigue risk</td><td>Continuous. No joints. Low fatigue risk</td></tr>
+                    <tr><th scope="row">Relative shaft mass</th><td>1.0x</td><td>0.5 to 0.6x</td><td>0.7 to 0.8x</td></tr>
+                    <tr><th scope="row">Relative cost</th><td>1.0x</td><td>1.1 to 1.2x (multi-part assembly and joining Quality Assurance / Quality Control (QA/QC))</td><td>1.2 to 1.3x (Computer Numerical Control (CNC) machining time)</td></tr>
+                    <tr><th scope="row">Manufacturing complexity</th><td>Low. Simple bar turning</td><td>Moderate. Multi-part assembly, secondary joining process, QA/QC on weld or crimp</td><td>Moderate to high. CNC machining of central profile</td></tr>
+                    <tr><th scope="row">Shaft slope at bearing</th><td>Low. Full solid section between bearings</td><td>Depends on tube section. Verify against bearing misalignment limit</td><td>Increased by the reduced central section. Size the section to keep slope within the bearing misalignment limit</td></tr>
+                    <tr><th scope="row">Maintenance ergonomics</th><td>Poor. Large-diameter rolls on wide belts can exceed 50 kg [110 lb]. Manual handling hazard</td><td>Good. Significant weight reduction improves handling</td><td>Good. Weight reduction may bring roll within single-person handling limits</td></tr>
+                    <tr><th scope="row">Primary failure mode</th><td>Overload or impact fracture of shaft</td><td>Fatigue fracture at stub-to-tube interface</td><td>Overload fracture at the reduced section</td></tr>
+                    <tr><th scope="row">Suited to</th><td>Standard and budget-driven applications. High-impact duty where shock resistance is the priority</td><td>Weight-critical applications where fatigue loading is moderate and joint QA/QC is controlled</td><td>Elevated galleries. Ergonomic maintenance requirements. Applications where stub-weld fatigue risk is unacceptable</td></tr>
+                    <tr><th scope="row">Lifecycle cost consideration</th><td>Lowest capital expenditure (CAPEX). Highest lifecycle freight and structural load cost on long systems</td><td>Moderate CAPEX. Freight and structural savings partially offset by joining QA cost</td><td>Higher CAPEX offset by freight savings and reduced gallery structure dead-load</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="roller-diameter-bearing-life-and-resistance">
+        <h2>5. Roller Diameter, Bearing Life and Resistance</h2>
+    </section>
+
+    <section id="bearing-life-l10h-and-roll-diameter">
+        <h3>5.1 Bearing Life (L10h) and Roll Diameter</h3>
+        <p>Idler service life is limited by bearing fatigue, seal failure and contamination, or shell wear. In dusty or wet service, seal performance typically governs. The L10h rating is the calculated operating time in hours by which 10% of a group of identical bearings will have failed by fatigue under a specific load and speed.</p>
+        <p>The target L10h for standard plant conveyors is typically 30,000 hours, whereas critical overland conveyors target 60,000 hours or more.</p>
+        <p>Bearing life L10h is inversely proportional to rotational speed and, for ball bearings, to the cube of bearing load. At constant belt speed, bearing and load, L10h is directly proportional to roll diameter.</p>
+    </section>
+
+    <section id="impact-on-power-consumption-and-rolling-resistance">
+        <h3>5.2 Impact on Power Consumption and Rolling Resistance</h3>
+        <p>Main resistance on long conveyors has three idler-related components:</p>
+        <ul>
+            <li><strong>Bearing and seal friction (rim drag):</strong> Bearing friction, grease churning, and seal drag. Contact seals and grease-filled labyrinths add drag. Low-drag labyrinth designs reduce this loss.</li>
+            <li><strong>Indentation hysteresis:</strong> As the belt rolls over the idler, the bottom cover is compressed and rebounds, converting energy into heat. A larger diameter idler creates a broader, shallower indentation, reducing hysteresis loss.</li>
+            <li><strong>Belt and material flexure:</strong> Belt sag between idlers flexes the belt and shears the bulk load, dissipating energy. Flexure resistance increases with idler spacing and sag ratio.</li>
+        </ul>
+    </section>
+
+    <section id="idler-sealing-systems">
+        <h2>6. Idler Sealing Systems</h2>
+    </section>
+
+    <section id="seal-type-comparison">
+        <h3>6.1 Seal Type Comparison</h3>
+        <p>Seal design determines rotating resistance, contamination exclusion, and bearing life.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 6: Seal Type Comparison</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Parameter</th>
+                        <th scope="col">Contact Lip Seal</th>
+                        <th scope="col">Non-Contact Labyrinth Seal</th>
+                        <th scope="col">Multi-Stage Hybrid Seal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Operating principle</th><td>Rubber or polyurethane lip presses against the shaft or a seal sleeve under a small interference fit, physically blocking the ingress path</td><td>Interlocking plastic or steel rings create a long grease-filled path. No contact between rotating and stationary elements</td><td>Outer contact lip as primary barrier. Inner non-contact labyrinth as secondary seal</td></tr>
+                    <tr><th scope="row">Physical contact</th><td>Yes. Continuous lip-to-shaft contact until worn.</td><td>None. Rotating and stationary elements maintain a grease-filled clearance gap</td><td>Partial. Outer lip in contact. Inner labyrinth contact-free</td></tr>
+                    <tr><th scope="row">Rim drag</th><td>Highest. Cumulative drag increases drive power on long conveyors</td><td>Lowest of the three configurations</td><td>Moderate. Outer lip sized for gross exclusion only, so friction is lower than a full-contact design but higher than a pure labyrinth</td></tr>
+                    <tr><th scope="row">Dust exclusion</th><td>Good in dry environments</td><td>Good. Centrifugal action expels particles outward before they reach the bearing</td><td>Excellent. Outer lip blocks bulk entry. Inner labyrinth intercepts fine particles</td></tr>
+                    <tr><th scope="row">Water and slurry exclusion</th><td>Good. Positive lip contact resists direct spray and low-pressure flooding</td><td>Poor. Water spray and washdown can bypass the labyrinth and displace grease</td><td>Good. Outer lip deflects direct spray and slurry before water can penetrate the labyrinth</td></tr>
+                    <tr><th scope="row">Wear and failure progression</th><td>Lip wears progressively. Once consumed, no secondary barrier exists and the bearing is exposed</td><td>No contact wear. Failure occurs when the grease charge is displaced by water or heat</td><td>Outer lip degrades progressively. Inner labyrinth continues to protect the bearing after outer lip failure</td></tr>
+                    <tr><th scope="row">Greasing requirements</th><td>Typically sealed-for-life. No field re-lubrication path</td><td>Correct initial grease fill required. No routine field purging under normal conditions</td><td>Precise fill at assembly. Under-fill leaves a void. Over-fill pressurises the inner labyrinth. Re-lubrication designs include a purge path</td></tr>
+                    <tr><th scope="row">Manufacturing cost</th><td>Low</td><td>Moderate</td><td>High</td></tr>
+                    <tr><th scope="row">Typical applications</th><td>Dry or low-contamination environments where capital cost is the primary constraint</td><td>Long conveyors where minimising rolling resistance and drive power is the primary objective</td><td>Iron ore and hard-rock mining. Wet tropical environments. Sites combining abrasive dust with heavy rainfall or washdown. Return idlers exposed to water and mud in underground coal mines</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="seal-material-selection">
+        <h3>6.2 Seal Material Selection</h3>
+        <p>Standard nitrile butadiene rubber (NBR) seals suit minus 20 to plus 100 deg C [minus 4 to plus 212 deg F]. For extreme cold (e.g. Arctic or high-altitude operations), specify low-temperature polyurethane or silicone compounds to resist embrittlement and cracking. For chemically aggressive environments (e.g. phosphate or sulphuric acid plants), specify fluoroelastomer (FKM) seals.</p>
+    </section>
+
+    <section id="idler-configurations-and-frame-geometry">
+        <h2>7. Idler Configurations and Frame Geometry</h2>
+        <p>The arrangement and quantity of rollers in the idler frame determine how the belt is folded, how the load is supported, and the transverse bending imposed on the carcass.</p>
+    </section>
+
+    <section id="idler-frame-roller-quantity">
+        <h3>7.1 Idler Frame Roller Quantity</h3>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 7: Idler Frame Roller Configurations</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Property</th>
+                        <th scope="col">1-Roll (Flat)</th>
+                        <th scope="col">2-Roll (V-Profile)</th>
+                        <th scope="col">3-Roll (Standard Troughing)</th>
+                        <th scope="col">4-Roll (Deep Trough)</th>
+                        <th scope="col">5-Roll (Ultra-Heavy Duty)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Configuration</th><td>Single flat horizontal roll spanning the full belt width</td><td>Two rolls meeting at a central hinge point</td><td>One flat centre roll and two angled wing rolls</td><td>Two shallow inner rolls and two steep outer wing rolls. No flat centre base</td><td>One flat centre roll, two shallow inner wing rolls, and two steep outer wing rolls</td></tr>
+                    <tr><th scope="row">Typical geometry</th><td>0 deg horizontal</td><td>Rolls angled 10 to 20 deg from horizontal</td><td>Wing rolls at 20, 30, 35, or 45 deg</td><td>Inner rolls 20 to 30 deg, outer wing rolls 45 to 60 deg</td><td>Inner wings 15 to 20 deg, outer wings 45 to 60 deg</td></tr>
+                    <tr><th scope="row">Load distribution</th><td>100% on single roll. Highest bearing load per roll</td><td>50% / 50% between the two rolls</td><td>Centre roll carries the largest share. Wing rolls carry the remainder</td><td>Inner rolls 40 to 45% each. Outer wing rolls 5 to 10% each. No single centre bearing</td><td>Centre roll carries the largest share, lower than an equivalent 3-roll centre roll. Inner wings carry a moderate share each. Outer wings carry a minor share each</td></tr>
+                    <tr><th scope="row">Belt bending transitions</th><td>None</td><td>One, at the belt centreline. Carcass stress concentration risk</td><td>Two (belt to wing roll)</td><td>Three, including a centre hinge</td><td>Four gradual transitions. Lowest belt bending stress per transition</td></tr>
+                    <tr><th scope="row">Belt carcass suitability</th><td>Any carcass type. No transverse bending</td><td>Carry duty: light-duty only. Requires flexible carcass</td><td>Standard multi-ply and steel-cord carcasses</td><td>Requires a carcass with troughability rated for the outer roll angle and sufficient transverse stiffness to resist creasing at the centre hinge</td><td>Suited to heavy steel-cord and multi-ply carcasses. Gentler transitions preserve carcass integrity</td></tr>
+                    <tr><th scope="row">Offset configuration available</th><td>No</td><td>No</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+                    <tr><th scope="row">Typical belt width</th><td>Return: all widths. Carry: 300 to 1,200 mm [12 to 48 in]</td><td>Return: all widths. Carry: less than 600 mm [24 in]</td><td>450 to 2,400 mm [18 to 96 in]</td><td>600 to 1,800 mm [24 to 72 in]</td><td>1,800 to 3,000 mm [72 to 120 in]</td></tr>
+                    <tr><th scope="row">Volumetric capacity</th><td>Lowest of all configurations</td><td>Low</td><td>Moderate</td><td>High</td><td>Highest</td></tr>
+                    <tr><th scope="row">Centre bearing load relative to 3-roll</th><td>Single roll carries full load. Highest bearing load</td><td>No centre bearing</td><td>Baseline. Highest centre bearing load</td><td>No single centre bearing. Load split across two inner roll bearings</td><td>Lower than equivalent 3-roll at same troughing angle</td></tr>
+                    <tr><th scope="row">Primary application</th><td>Return belts. Feeders and short-centre transfers handling dry free-flowing material. Under-belt scraper and cleaner support rolls</td><td>Empty return belts. Light-duty carry belts less than 600 mm [24 in] handling grain or similar light materials</td><td>Default carry configuration in all industries</td><td>Heavy-duty applications where a single centre bearing would be the limiting component. Transition and forming zones of pipe and tube conveyors</td><td>Wide belt, high-tonnage, dense ore applications where bearing life and belt carcass preservation govern design</td></tr>
+                    <tr><th scope="row">Primary limitation</th><td>No material containment. Carry duty limited to light, free-flowing material</td><td>Not suitable for heavy or wide carry duty. Belt stress concentration at hinge</td><td>Highest centre roll load in the set. At 45 deg, junction bending increases longitudinal carcass fatigue at the roll junctions</td><td>Centre hinge restricts carcass selection. Higher frame complexity than 3-roll</td><td>Highest frame complexity and cost</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="inline-versus-offset-versus-garland-suspended-configurations">
+        <h3>7.2 Inline Versus Offset Versus Garland (Suspended) Configurations</h3>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 8: Inline, Offset, and Garland Configurations</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Inline</th>
+                        <th scope="col">Offset</th>
+                        <th scope="col">Garland (Suspended)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Roll alignment</th><td>All rolls mounted in the same vertical plane</td><td>The centre roll is advanced and overlapped by a distance relative to the wing rolls</td><td>Rollers are linked by chain-link brackets and suspended from hooks on the stringers, forming a flexible assembly with no rigid frame</td></tr>
+                    <tr><th scope="row">Inter-roll gap</th><td>A gap exists between adjacent roll ends. Hold this gap small by manufacturing tolerance to reduce belt pinching</td><td>The longitudinal offset allows the ends of the wing rolls to overlap the ends of the centre roll, eliminating the inter-roll gap</td><td>As per inline</td></tr>
+                    <tr><th scope="row">Impact absorption</th><td>No impact absorption beyond belt elasticity</td><td>As per inline</td><td>The suspended assembly swings when struck by a large lump, converting impact energy into pendulum motion. This reduces peak belt and bearing loads in impact loading zones</td></tr>
+                    <tr><th scope="row">Maintenance</th><td>Roll replacement requires lifting the belt and removing the roll from the frame</td><td>As per inline</td><td>The belt is lifted and the garland unhooked from the stringer hooks. Individual rolls are exchanged without disturbing the structure</td></tr>
+                    <tr><th scope="row">Rolling resistance</th><td>Baseline. No additional losses from belt bending geometry</td><td>Marginally higher than inline due to added belt flexure over the staggered rolls</td><td>A well-loaded, centrally tracked belt running over correctly pre-angled garlands produces resistance comparable to inline idlers</td></tr>
+                    <tr><th scope="row">Pre-angle requirement</th><td>None. The rigid frame holds all rolls in their design position under all loading conditions</td><td>As per inline</td><td>A rearward tilt of 2 to 3 deg against the direction of belt travel is built into the support brackets. Belt drag pulls the suspended assembly forward under load, and the pre-angle allows the garland to run square at its operating condition</td></tr>
+                    <tr><th scope="row">Reversing conveyors</th><td>Suitable</td><td>Unsuitable. Offset geometry is designed for one direction of travel and can induce mistracking in reverse</td><td>Not suitable. Reverse belt travel drags the assembly backward against the pre-angle, skewing the garland and producing tracking instability, edge wear, and increased power consumption</td></tr>
+                    <tr><th scope="row">Eccentric or poorly tracked loads</th><td>Acceptable</td><td>Acceptable</td><td>Not preferred. Eccentric loading can cause excessive lateral swing, compounding tracking problems</td></tr>
+                    <tr><th scope="row">Typical application</th><td>General-purpose carry and return idlers. Default for reversing conveyors and applications requiring predictable, symmetric belt behaviour</td><td>Fixed-direction conveyors where eliminating the inter-roll gap is a priority, particularly with fines, granular material, or thin belts</td><td>Long overland conveyors where impact protection and maintenance speed are important. Primary crushing and ROM receiving stations where lump size and impact energy are high</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="rules-of-thumb-for-idler-geometry">
+        <h3>7.3 Rules of Thumb for Idler Geometry</h3>
+        <p>Limit the gap between adjacent rolls in an inline idler set to 10 to 15 mm [3/8 to 5/8 in], with a maximum of 20 mm [3/4 in]. Under load, the belt cover is forced into the gap. If the gap is excessive, the belt is drawn into the pinch point between rotating rolls. This failure mode, junction failure (nipping), progressively degrades the bottom cover and initiates longitudinal carcass fatigue. Replace or rectify frames that exceed this limit.</p>
+        <p>Each time a belt passes over an idler, it bends at the roll junctions. If the carry-side and return-side junction lines align on the same longitudinal axis, the same belt fibres are repeatedly bent and reverse-bent, accelerating carcass fatigue. Select carry and return idler configurations whose junction lines do not align. A 3-roll carry idler places junctions at approximately one-third and two-thirds of the belt width. A 2-roll V-return places its single junction at the belt centreline. The stress lines do not coincide.</p>
+    </section>
+
+    <section id="shell-materials-and-coatings">
+        <h2>8. Shell Materials and Coatings</h2>
+    </section>
+
+    <section id="idler-shell-materials-comparison">
+        <h3>8.1 Idler Shell Materials Comparison</h3>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 9: Shell Materials Comparison</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Property</th>
+                        <th scope="col">Carbon Steel</th>
+                        <th scope="col">Utility Ferritic Stainless, EN 1.4003</th>
+                        <th scope="col">High-Density Polyethylene (HDPE) / Polymer Composite</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Corrosion resistance</th><td>Poor. Susceptible to rust in wet, saline, fertiliser, and acidic leaching environments</td><td>Moderate. Better atmospheric and chemical corrosion resistance than carbon steel. Unsuitable for strongly acidic or high-chloride environments where 304 or 316 stainless is required</td><td>Excellent. Unaffected by corrosion in aggressive chemical environments including salt, fertiliser, and acidic copper leach circuits</td></tr>
+                    <tr><th scope="row">Material adhesion / carryback</th><td>High. Sticky materials (wet clay, bauxite, synthetic gypsum) adhere to steel, generating an asymmetric profile that induces belt mistracking</td><td>High. Comparable to carbon steel</td><td>Low. Sheds sticky materials more readily, maintaining a cleaner and rounder shell profile</td></tr>
+                    <tr><th scope="row">Relative shell mass</th><td>1.0x</td><td>1.0x</td><td>0.5x</td></tr>
+                    <tr><th scope="row">Relative shell cost</th><td>1.0x</td><td>1.4 to 1.6x</td><td>1.5 to 2.0x</td></tr>
+                    <tr><th scope="row">Impact resistance</th><td>High. Suitable for primary crusher discharge and lump sizes exceeding 150 mm [6 in]</td><td>High. Equivalent to carbon steel</td><td>Low. Unsuitable for primary crusher discharge or lump sizes exceeding 150 mm [6 in]</td></tr>
+                    <tr><th scope="row">Young's modulus</th><td>Approximately 210,000 MPa [30,500 ksi]</td><td>Approximately 200,000 MPa [29,000 ksi]</td><td>Approximately 1,000 MPa [145 ksi]. Low stiffness reduces critical (resonant) speed. Keep the maximum operating speed less than 70% of the first critical speed</td></tr>
+                    <tr><th scope="row">High-tolerance and high-temperature applications</th><td>Suitable where operating temperature exceeds 50 deg C [122 deg F] or dimensional precision is required</td><td>Suitable. Equivalent to carbon steel</td><td>Unsuitable. Above 50 deg C [122 deg F], diametral growth can exceed tolerance limits for weighing and high-speed applications</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="shell-surface-treatment-comparison">
+        <h3>8.2 Shell Surface Treatment Comparison</h3>
+        <p>Coating selection is driven primarily by the dominant wear mechanism and secondarily by the environment.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 10: Shell Surface Treatment Comparison</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Thermal Spray Ceramic</th>
+                        <th scope="col">Weld Overlay Hard-Face</th>
+                        <th scope="col">Polyurethane Coating</th>
+                        <th scope="col">Rubber Lagging</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Application process</th><td>High-Velocity Oxy-Fuel (HVOF) or plasma spray of tungsten carbide-cobalt (WC-Co) or chromium oxide (Cr2O3) powder onto prepared shell</td><td>Submerged Arc Welding (SAW) or Flux-Cored Arc Welding (FCAW) deposition of high-chromium cast iron or chromium carbide alloy</td><td>Factory-moulded, cast, or spray-applied bonded to shell. Cold-pour systems available</td><td>Vulcanised or cold-bonded rubber strip or moulded rubber cover bonded to prepared shell</td></tr>
+                    <tr><th scope="row">Typical thickness</th><td>0.2 to 0.5 mm [0.008 to 0.020 in]</td><td>3 to 6 mm [0.12 to 0.24 in]</td><td>8 to 20 mm [0.31 to 0.79 in]</td><td>6 to 15 mm [0.24 to 0.59 in]</td></tr>
+                    <tr><th scope="row">Surface hardness</th><td>1,000 to 1,500 HV</td><td>55 to 63 HRC</td><td>60 to 95 Shore A</td><td>40 to 70 Shore A</td></tr>
+                    <tr><th scope="row">Compound / grade variants</th><td>WC-Co: abrasion and moderate corrosion resistance. Cr2O3: wet and acidic environments. Superior corrosion resistance</td><td>High-chromium cast iron: abrasion-primary. Chromium carbide composite: abrasion with moderate impact. Martensitic alloy grades for combined abrasion-impact duty</td><td>Harder grades (85 to 95 Shore A): improved abrasion resistance. Softer grades (60 to 70 Shore A): maximum impact absorption. Food-grade and Fire Resistant and Anti-Static (FRAS) grades available</td><td>Natural rubber / styrene-butadiene rubber (NR/SBR): standard elasticity and impact performance. Polychloroprene (CR): oil and mild chemical resistance. Ethylene propylene diene monomer (EPDM): elevated temperature and ozone resistance. Food-grade and FRAS available</td></tr>
+                    <tr><th scope="row">Wear life versus uncoated steel</th><td>5 to 10x</td><td>10 to 20x</td><td>3 to 6x (fine or low-abrasion only)</td><td>2 to 4x (fine or low-abrasion only)</td></tr>
+                    <tr><th scope="row">Abrasion resistance</th><td>Excellent against fine sliding abrasion</td><td>Excellent against fine, sliding, and moderate impact abrasion</td><td>Good against fine abrasion. Higher cut resistance than rubber. Gouges under coarse or angular material</td><td>Good against fine abrasion. Cuts readily under coarse or angular material</td></tr>
+                    <tr><th scope="row">Impact resistance</th><td>Poor. Brittle coating susceptible to chipping and spalling under point loads</td><td>Good. Thick, tough overlay absorbs and distributes impact</td><td>Very good. Elasticity absorbs and distributes impact energy across the contact zone</td><td>Excellent. High elasticity and internal damping absorb heavy and repeated impact loads</td></tr>
+                    <tr><th scope="row">Mass addition (159 mm [6.25 in] diameter, 600 mm [23.6 in] face)</th><td>0.3 to 2 kg [0.7 to 4.4 lb]. Upper value for WC-Co</td><td>7 to 14 kg [15 to 31 lb]</td><td>3 to 8 kg [7 to 18 lb]</td><td>2 to 6 kg [4 to 13 lb]</td></tr>
+                    <tr><th scope="row">Total Indicator Runout (TIR) / balance effect</th><td>Negligible if applied uniformly</td><td>Requires post-weld machining or grinding to restore TIR. Bearing load recalculation required</td><td>Requires post-application machining or grinding to restore TIR</td><td>Requires post-application machining or grinding to restore TIR for high-speed applications</td></tr>
+                    <tr><th scope="row">Corrosion resistance</th><td>Excellent (Cr2O3). Good (WC-Co)</td><td>Moderate. Overlay is susceptible to oxidation unless alloyed</td><td>Good. Resistant to mild acids and alkalis. Not suitable for strong solvents</td><td>Good. Resistant to water and mild chemicals. Poor in hydrocarbon and solvent environments</td></tr>
+                    <tr><th scope="row">Operating temperature limit</th><td>Coating rated above 500 deg C [930 deg F]. Bearing grease and seals govern</td><td>Coating suitable to 400 deg C [750 deg F]. Bearing grease and seals govern</td><td>Standard grades: 80 deg C [175 deg F]. Select compound grades rated to 100 deg C [210 deg F]</td><td>NR/SBR: 70 deg C [160 deg F]. EPDM and polychloroprene grades: 120 deg C [250 deg F]</td></tr>
+                    <tr><th scope="row">Noise and vibration reduction</th><td>None</td><td>None</td><td>Good. Elastic layer damps belt-induced vibration and rolling noise</td><td>Excellent. High damping coefficient reduces belt-induced vibration and rolling noise</td></tr>
+                    <tr><th scope="row">Self-cleaning / non-stick</th><td>None</td><td>None</td><td>Good. Smooth, low-adhesion surface releases clay, wet fines, and sticky material</td><td>Good. Compliant surface releases sticky material</td></tr>
+                    <tr><th scope="row">Field repair / refurbishment</th><td>Not field-repairable. Full roller replacement on localised coating breakthrough</td><td>Rebuildable by weld overlay re-application after bearing and seal removal. Original shell substrate can be reused</td><td>Field-repairable by cold-pour patch. Full relining requires factory return</td><td>Cold-bond repair feasible in-field for minor damage. Vulcanised bonds require factory refurbishment</td></tr>
+                    <tr><th scope="row">Typical applications</th><td>Return idlers with fine carryback abrasion (coal dust, mineral sands, alumina). Wet or acidic environments where Cr2O3 is specified</td><td>Return idlers and spillage-exposed rolls in heavy coarse abrasion (ROM iron ore, crusher product)</td><td>Return idlers with sticky, cohesive, or wet material (clay, wet coal, bauxite, phosphate) and wet corrosive environments</td><td>Impact idlers and impact zones. Return idlers in wet or corrosive environments. Noise-sensitive installations (underground, enclosed conveyors)</td></tr>
+                    <tr><th scope="row">Unsuitable for</th><td>Impact zones and large-lump fall-on loading such as primary crusher discharge</td><td>Weigh-deck idlers or applications with defined rotating inertia limits</td><td>Sharp or coarse abrasive material. Service above temperature limit or strong solvent environments</td><td>Sharp or coarse abrasive material. Service above temperature limit. Hydrocarbon or solvent environments</td></tr>
+                    <tr><th scope="row">Relative unit cost</th><td>High. 2 to 5x uncoated</td><td>High. 3 to 6x uncoated (including post-weld machining)</td><td>Moderate to high. 1.5 to 3x uncoated</td><td>Moderate. 1.5 to 2.5x uncoated</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="roller-dimensional-tolerances">
+        <h2>9. Roller Dimensional Tolerances</h2>
+        <p>The roundness and diametrical accuracy of an idler roll affect conveyor vibration, noise, and belt scale accuracy.</p>
+        <p>TIR is the difference between the maximum and minimum radial readings over one full rotation. Elevated TIR produces harmonic belt flap and accelerates bearing failure.</p>
+        <p>TIR alone does not capture localised defects such as flat spots or weld seams. Maximum Indicated Slope (MIS) addresses this limitation and is defined as the maximum indicated runout per 6 deg of roller rotation.</p>
+        <p>A roller may exhibit acceptable TIR yet carry a high MIS, indicating a sharp geometric step on the surface. Specify both TIR and MIS for weigh idlers and high-speed overland conveyors.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 11: Roller Diameter Tolerance, TIR, and MIS</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Roller Shell Material / Type</th>
+                        <th scope="col">Nominal Outer Diameter Tolerance mm [in]</th>
+                        <th scope="col">Maximum TIR mm [in]</th>
+                        <th scope="col">Maximum MIS per 6 deg mm [in]</th>
+                        <th scope="col">Typical Application</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Standard steel tube, unmachined Electric Resistance Welded (ERW)</th><td>+/-1.0 to 1.5 [0.04 to 0.06]</td><td>0.8 to 1.2 [0.03 to 0.05]</td><td>0.05 to 0.10 [0.002 to 0.004]</td><td>General plant use and low to medium speeds.</td></tr>
+                    <tr><th scope="row">Machined steel, weigh quality</th><td>+/-0.1 to 0.2 [0.004 to 0.008]</td><td>0.1 to 0.2 [0.004 to 0.008]</td><td>0.015 [0.0006]</td><td>Required for belt scale weigh decks to maintain calibration accuracy.</td></tr>
+                    <tr><th scope="row">Plastic / polymer, precision machined HDPE / nylon</th><td>+/-0.5 [0.02]</td><td>0.4 to 0.5 [0.016 to 0.020]</td><td>0.025 [0.001]</td><td>Low-noise and weight-sensitive applications at moderate speed and temperature.</td></tr>
+                    <tr><th scope="row">Plastic / polymer, extruded, cast, or moulded, unmachined</th><td>+/-1.5 to 2.0 [0.06 to 0.08]</td><td>1.0 to 2.0 [0.04 to 0.08]</td><td>0.10 to 0.20 [0.004 to 0.008]</td><td>Low speed, corrosive environments. Moulding shrinkage limits precision.</td></tr>
+                    <tr><th scope="row">Rubber lagged steel shell, cold bond or hot vulcanised</th><td>+/-1.0 to 2.0 [0.04 to 0.08]</td><td>0.5 to 1.5 [0.02 to 0.06]</td><td>0.05 to 0.15 [0.002 to 0.006]</td><td>Impact zones and return idlers in wet or sticky material service. Lagging thickness variation and bond line influence the TIR.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="dynamic-balancing-and-unbalance-limits">
+        <h2>10. Dynamic Balancing and Unbalance Limits</h2>
+        <p>A roller can have acceptable TIR yet still vibrate if mass distribution within the rotating assembly is uneven. This condition is residual unbalance.</p>
+    </section>
+
+    <section id="sources-of-residual-unbalance">
+        <h3>10.1 Sources of Residual Unbalance</h3>
+        <p>Residual unbalance in an idler roller arises from:</p>
+        <ul>
+            <li>Wall thickness variation. Non-uniform tube wall around the circumference offsets the mass centre.</li>
+            <li>Weld seam mass concentration. The internal weld bead on ERW tube creates a localised heavy spot unless removed.</li>
+            <li>End plate eccentricity. If the pressed or welded end plates are not concentric with the shell bore, the mass centre of each end plate is offset from the rotational axis.</li>
+            <li>Bearing housing asymmetry. Cast or machined bearing housings may have slight mass variations due to porosity, machining tolerances, or asymmetric ribbing.</li>
+            <li>Rubber lagging thickness variation. On impact idlers, uneven rubber sleeve thickness creates unbalance.</li>
+        </ul>
+        <p>The shaft is stationary and does not contribute to unbalance.</p>
+    </section>
+
+    <section id="the-effect-of-unbalance">
+        <h3>10.2 The Effect of Unbalance</h3>
+        <p>Residual unbalance generates rotating radial forces transmitted through the bearings into the idler frame and conveyor structure. The force increases with the square of rotational speed. Doubling speed from 300 to 600 RPM quadruples the force.</p>
+    </section>
+
+    <section id="iso-21940-11-balance-grades">
+        <h3>10.3 ISO 21940-11 Balance Grades</h3>
+        <p>The international standard for specifying permissible residual unbalance is ISO 21940-11 (formerly ISO 1940-1).</p>
+        <p>Typical balance grades for conveyor idler rollers are:</p>
+        <ul>
+            <li><strong>G40:</strong> Standard conveyors below 500 RPM. Minimum grade commonly specified.</li>
+            <li><strong>G16:</strong> Conveyors at 500 to 700 RPM and return idlers in noise-sensitive areas.</li>
+            <li><strong>G6.3:</strong> Conveyors above 700 RPM, all weigh-deck idlers, and idlers within 50 m [165 ft] of noise-sensitive receptors. Requires two-plane balancing.</li>
+        </ul>
+    </section>
+
+    <section id="balancing-methods">
+        <h3>10.4 Balancing Methods</h3>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 12: Idler Balancing Comparison</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Feature / Criteria</th>
+                        <th scope="col">Single-Plane (Static) Balancing</th>
+                        <th scope="col">Two-Plane (Dynamic) Balancing</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Setup and Equipment</th><td>Horizontal knife-edges or a balancing machine with a single measurement plane</td><td>Dynamic balancing machine measuring vibration at both ends simultaneously</td></tr>
+                    <tr><th scope="row">Unbalance Identification</th><td>The heavy spot is found by letting the roller settle under gravity (knife-edge) or by measuring vibration amplitude and phase angle (machine)</td><td>The machine calculates static (force) unbalance and couple unbalance (opposing heavy spots creating a rocking moment)</td></tr>
+                    <tr><th scope="row">Correction Method</th><td>Mass is added to the light side of the shell or removed by drilling the heavy side of the end plate. Weld-on correction is completed before bearing and seal assembly, or with the earth clamp on the shell so welding current does not pass through the bearings</td><td>Correction mass is applied independently at both ends of the roller</td></tr>
+                    <tr><th scope="row">Scope of Correction</th><td>Corrects static unbalance only</td><td>Corrects both static (force) and dynamic (couple) unbalance</td></tr>
+                    <tr><th scope="row">Suitable Applications</th><td>Adequate for short rollers (face length less than 1.5 times shell diameter) and balance grades of G16 and coarser</td><td>Required for long rollers (face length greater than 1.5 times shell diameter), balance grades of G6.3 or finer, and rubber-lagged rollers on high-speed conveyors</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="impact-idlers-and-impact-cradles">
+        <h2>11. Impact Idlers and Impact Cradles</h2>
+        <p>At transfer points, chute discharges, and crusher feeds, falling material generates impact forces several times the steady-state belt load. Standard carrying idlers are not designed for repeated impact loading.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 13: Impact Idlers and Impact Cradles Comparison</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Parameter</th>
+                        <th scope="col">Impact Idlers (Rubber-Lagged Rolls)</th>
+                        <th scope="col">Impact Cradles (Slider Beds)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Mechanism</th><td>Rotating rolls with vulcanised rubber rings or continuous sleeve bonded to steel shell</td><td>Stationary bars with an Ultra-High Molecular Weight Polyethylene (UHMWPE) wear face on a rubber base, mounted on a rigid steel frame. Belt slides over low-friction surface</td></tr>
+                    <tr><th scope="row">Application limit</th><td>Drop heights up to 3.0 m [10 ft], lump sizes up to 300 mm [12 in]</td><td>Drop heights above 3.0 m [10 ft], lump sizes above 300 mm [12 in] where rubber-lagged rolls may fail</td></tr>
+                    <tr><th scope="row">Absorption method</th><td>Discrete rubber rings (15 to 25 mm [0.6 to 1.0 in] thick, 40 to 60 Shore A) compress radially under impact. Gaps between rings improve energy absorption over continuous sleeves</td><td>Full-width energy-absorbing bars distribute impact across a continuous contact area rather than discrete rolling points</td></tr>
+                    <tr><th scope="row">Spacing / coverage</th><td>Typically half standard carry spacing: 0.5 to 0.6 m [20 to 24 in]. Cover the full impact zone, typically the first 3 to 6 idler sets downstream of the loading point</td><td>Sized to the impact zone. Return to standard rotating idlers within 2 to 3 idler pitches downstream of the impact zone</td></tr>
+                    <tr><th scope="row">Belt friction</th><td>Low. Rotating rolls maintain normal friction levels</td><td>Higher. Sliding contact between belt bottom cover and stationary bar surface</td></tr>
+                    <tr><th scope="row">Bottom-cover wear</th><td>Standard wear rates</td><td>Accelerated wear due to sliding friction. Monitor bottom-cover thickness more frequently</td></tr>
+                    <tr><th scope="row">Spillage management</th><td>Discrete ring design leaves open gaps between rings, allowing fines and spillage to fall through rather than pack between belt and roller</td><td>Continuous flat support eliminates belt sag between supports, improving skirt sealing. Spillage management depends on bar profile and cradle drainage design</td></tr>
+                    <tr><th scope="row">Bearing load</th><td>Peak bearing stress reduced by rubber damping and load shared across more sets at closer spacing</td><td>No bearings. All impact load transferred directly into rigid steel frame and support structure</td></tr>
+                    <tr><th scope="row">Maintenance</th><td>Rubber rings can be replaced. Bearings require routine condition monitoring</td><td>Bar inserts replaceable. No bearing maintenance required. Primary wear items are bars and belt bottom cover</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="idler-spacing-and-belt-sag">
+        <h2>12. Idler Spacing and Belt Sag</h2>
+        <p>Idler spacing and belt tension determine belt sag between supports. Limit carry-side sag to 1.5% to 2.0% of idler spacing and return-side sag to 3.0%.</p>
+    </section>
+
+    <section id="dynamic-material-jump-trampoline-effect">
+        <h3>12.1 Dynamic Material Jump (Trampoline Effect)</h3>
+        <p>Where idler spacing is excessive for the applied tension, the belt sags between supports. The belt climbs out of this valley to pass over the next idler, where its path is abruptly flattened. At high belt speeds, this imparts a vertical velocity component to the load, launching material clear of the belt surface.</p>
+        <p>The resulting material jump increases cover abrasion, dust emission, spillage, and cyclic bearing loading.</p>
+    </section>
+
+    <section id="carry-and-return-spacing">
+        <h3>12.2 Carry and Return Spacing</h3>
+        <p>Carry spacing is set by loaded sag and idler load rating. Return spacing is wider because the return belt carries only its own mass.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 14: Carry and Return Spacing Ratios</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Parameter</th>
+                        <th scope="col">Standard Fixed Plant</th>
+                        <th scope="col">High-Tension Overland</th>
+                        <th scope="col">Underground Mine Development</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Carry-to-Return Ratio</th><td>1:2 or 1:3</td><td>1:2</td><td>1:2 or 1:3</td></tr>
+                    <tr><th scope="row">Carry Spacing</th><td>1.0 to 1.5 m [3.3 to 5.0 ft]</td><td>1.5 to 3.0 m [5.0 to 10 ft]</td><td>1.5 to 3.0 m [5.0 to 10 ft]</td></tr>
+                    <tr><th scope="row">Return Spacing</th><td>2.0 to 3.0 m [6.6 to 10 ft]</td><td>3.0 to 6.0 m [10 to 20 ft]</td><td>3.0 to 6.0 m [10 to 20 ft]</td></tr>
+                    <tr><th scope="row">Typical Applications</th><td>Ports, power plants, hard rock crushers, process plants</td><td>Long-distance steel cord belts</td><td>Coal, potash, and trona mines using continuous miners or longwall retreat. Conveyors whose length changes frequently to match the mine face</td></tr>
+                    <tr><th scope="row">Structure Type</th><td>Permanent bolted steelwork</td><td>Permanent bolted steelwork</td><td>Temporary floor-mounted wire-rope frames or roof-hung chain suspension</td></tr>
+                    <tr><th scope="row">Design Priority</th><td>Belt life and low maintenance</td><td>Capital cost reduction</td><td>Speed of installation and removal</td></tr>
+                    <tr><th scope="row">Trade-Off</th><td>Higher initial capital cost, offset by reliable, low-maintenance operation</td><td>High belt tension resists sag, allowing wider spacing. Increasing carry spacing from 1.2 m [3.9 ft] to 1.8 m [5.9 ft] reduces the number of carry idler sets by one third</td><td>Wide spacing reduces build time but increases belt sag, power draw, mistracking, cover wear, and splice fatigue. Belt and idler service life is reduced</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="belt-tracking-and-self-aligning-training-idlers">
+        <h2>13. Belt Tracking and Self-Aligning (Training) Idlers</h2>
+        <p>Off-centre loading, wind, material build-up, and ground movement cause mistracking even on a well-aligned conveyor, resulting in spillage, structure contact and belt edge damage. Self-aligning idlers (tracking or training idlers) are installed at intervals to correct this.</p>
+    </section>
+
+    <section id="how-self-aligning-idlers-work">
+        <h3>13.1 How Self-Aligning Idlers Work</h3>
+        <p>A self-aligning idler comprises a standard 3-roll troughing set (or 1-roll or 2-roll return set) mounted on a central pivot pin or slewing bearing.</p>
+        <p>Vertical guide rollers (sensor rollers) are mounted at the outer edges of the frame. When the belt wanders, its edge contacts a guide roller. Edge friction drags the guide roller forward, causing the frame to pivot (slew) on its central axis.</p>
+        <p>The skewed rolls steer the belt back toward the centre. Once the belt is centred, it no longer touches the guide rollers and the frame returns to its neutral position.</p>
+    </section>
+
+    <section id="rules-of-thumb-for-placement-and-spacing">
+        <h3>13.2 Rules of Thumb for Placement and Spacing</h3>
+        <p>Self-aligning idlers supplement, but do not replace, conveyor alignment and square splices. Do not install training idlers within pulley transition zones.</p>
+        <p>Standard self-aligning idlers are directional. On a reversing conveyor, a standard trainer steers the belt further off-centre when running in reverse. Specify bi-directional trainers on reversing conveyors.</p>
+        <p>On the return side, the critical tracking point is where the empty belt enters the tail pulley. If it enters off-centre, it loads off-centre, amplifying mistracking along the carry run.</p>
+        <p><strong>Rules of Thumb:</strong></p>
+        <ul>
+            <li>Place the first return training idler approximately 12 to 15 m [40 to 50 ft] upstream of the tail pulley.</li>
+            <li>Place additional return trainers every 30 to 60 m [100 to 200 ft] along the return run.</li>
+        </ul>
+        <p>On the carry side, wandering is usually caused by off-centre loading. Centre the belt before it reaches the head pulley.</p>
+        <p><strong>Rules of Thumb:</strong></p>
+        <ul>
+            <li>Place the first carry-side training idler approximately 12 to 15 m [40 to 50 ft] upstream of the head pulley.</li>
+            <li>Place additional carry-side trainers every 30 to 45 m [100 to 150 ft] along the carry run.</li>
+        </ul>
+    </section>
+
+    <section id="fixed-side-guide-rollers">
+        <h3>13.3 Fixed Side-Guide Rollers</h3>
+        <p>Fixed (non-pivoting) vertical edge rollers do not steer the belt. They resist lateral belt force through edge contact, which can fold and delaminate the belt edge to expose the carcass. Fit them only as emergency edge protection, set clear of the belt edge in normal running.</p>
+    </section>
+
+    <section id="idler-frame-corrosion-protection">
+        <h2>14. Idler Frame Corrosion Protection</h2>
+        <p>In coastal, underground, chemical plant, fertiliser terminal, and wet tropical environments, the idler frame often fails structurally before the roller bearings reach their L10h life. Select protection by environmental corrosivity, design life, maintenance access, and whether frames are reused or treated as consumables.</p>
+        <p>Replace any frame whose roller support slot has widened by more than 2 mm [0.08 in], whatever the protection system.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 15: Idler Frame Corrosion Protection Comparison</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Property</th>
+                        <th scope="col">Painted Steel</th>
+                        <th scope="col">Hot-Dip Galvanised</th>
+                        <th scope="col">Duplex (Galvanised and Painted)</th>
+                        <th scope="col">Stainless Steel</th>
+                        <th scope="col">Polymer / Composite</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Construction</th><td>Mild steel with 2 to 3 coat paint system (zinc-rich primer, epoxy intermediate, polyurethane (PU) topcoat). 150 to 250 µm [6 to 10 mil] total dry film thickness (DFT)</td><td>Mild steel immersed in molten zinc at approximately 450 deg C [840 deg F]. Minimum average coating 85 µm [3.3 mil] for steel thicker than 6 mm [0.24 in] per AS/NZS 4680 / ISO 1461</td><td>Hot-dip galvanised, then overcoated with 2 to 3 coat paint system (epoxy primer and PU topcoat) per ASTM D6386 surface preparation</td><td>Austenitic stainless (typically 316/316L, or 304 for milder environments). No coating. Chromium oxide passive layer provides protection</td><td>Fibre-reinforced polymer (FRP), typically glass-reinforced polyester (GRP) or glass-reinforced vinyl ester, pultruded or moulded into channel and angle sections. Density approximately 25% of steel</td></tr>
+                    <tr><th scope="row">Protection mechanism</th><td>Surface barrier only</td><td>Physical barrier and sacrificial anodic protection (zinc corrodes preferentially to protect exposed steel)</td><td>Paint shields zinc from atmospheric attack. Zinc provides sacrificial backup if paint is damaged</td><td>Corrosion resistance from chromium oxide passive layer</td><td>Resistant to galvanic and oxidative corrosion. Non-sparking. Standard FRP is non-conductive. FRAS grades include anti-static additives</td></tr>
+                    <tr><th scope="row">Slot / hole / crevice coverage</th><td>Poor. Roller support slots, bolt holes, and welds are difficult to coat uniformly</td><td>Excellent. Full immersion coats inside every hole, slot, and tube uniformly</td><td>Excellent. Galvanising base coats all surfaces. Paint topcoat applied over</td><td>Not applicable. No coating required</td><td>Not applicable. Roller support slots can wear and elongate from repeated roller insertion and removal</td></tr>
+                    <tr><th scope="row">Damage behaviour</th><td>Once paint film is breached, bare steel rusts. Corrosion creeps under film causing blistering and delamination</td><td>Small defects are cathodically protected by the surrounding zinc</td><td>Paint damage exposes zinc, which sacrificially protects</td><td>No coating to damage</td><td>Low impact resistance compared to steel. Point-load impacts can fracture polymer brackets</td></tr>
+                    <tr><th scope="row">Replacement trigger</th><td>Paint delamination exposing more than 25% of the frame surface where recoating is uneconomical</td><td>Red rust at holes and slot edges indicating local zinc depletion. Schedule replacement at the next shutdown</td><td>As per galvanised</td><td>Pitting or crevice corrosion visible at roller slots or fastener holes</td><td>Visible cracking, delamination, or fibre exposure on any structural member</td></tr>
+                    <tr><th scope="row">Relative cost</th><td>1.0x</td><td>1.05 to 1.15x</td><td>1.3 to 1.5x</td><td>4 to 6x</td><td>1.5 to 3x</td></tr>
+                    <tr><th scope="row">Field repair</th><td>Wire brush and aerosol zinc-rich primer</td><td>Zinc-rich cold-galvanising paint. Field welding requires respiratory protection (toxic ZnO fumes)</td><td>Per galvanised repair protocol for zinc layer. Paint touch-up over zinc with minimal surface preparation</td><td>Specialist welding procedures and tooling required</td><td>Limited. Cracked or shattered sections are replaced, not repaired</td></tr>
+                    <tr><th scope="row">Design constraints</th><td>None specific</td><td>Drainage and vent holes required in closed hollow sections to prevent air traps and steam explosions in the galvanising bath</td><td>As per galvanised. Notify the galvaniser of intent to overcoat (no quench post-treatment)</td><td>Harder to cut, drill, and weld. Electrically isolate dissimilar metal joints with galvanised or mild steel (plastic washers or gaskets) to prevent galvanic corrosion</td><td>Lower stiffness. Deflection under load can compromise alignment. Ultraviolet (UV) degradation outdoors unless UV-stabilised resin is specified. Verify FRAS compliance for underground coal</td></tr>
+                    <tr><th scope="row">Indicative service life, moderate outdoor</th><td>5 to 10 years</td><td>15 to 25 years</td><td>25 to 40 years or more</td><td>25 to 50 years or more</td><td>15 to 25 years or more</td></tr>
+                    <tr><th scope="row">Indicative service life, coastal / wet / chemical</th><td>2 to 5 years</td><td>10 to 15 years</td><td>15 to 25 years or more</td><td>15 to 30 years or more. Use Grade 2205 duplex stainless for concentrated chloride at elevated temperature</td><td>15 to 25 years or more. Limited by UV and mechanical wear</td></tr>
+                    <tr><th scope="row">Indicative service life, underground mine</th><td>1 to 3 years</td><td>5 to 10 years (pH dependent)</td><td>8 to 15 years (pH dependent). Justified only where frame replacement cost is very high</td><td>10 to 20 years or more (dependent on water chemistry). Rarely justified on cost</td><td>10 to 20 years or more. Limited by mechanical wear and impact</td></tr>
+                    <tr><th scope="row">Applicable standards</th><td>AS/NZS 2312.1 (paint systems)</td><td>AS/NZS 4680 / ISO 1461 (galvanising). AS/NZS 2312.2 (galvanised coating life)</td><td>AS/NZS 4680 and AS/NZS 2312.1. ASTM D6386 (surface prep for paint on zinc). ASTM D7803 (powder coat on zinc)</td><td>AS/NZS 1554.6 (stainless welding). ASTM A240 (plate/sheet). Material grade per AS 2837 or ASTM A276</td><td>AS 4606 (FRAS fire resistance and anti-static, for underground coal). ISO 14125 (flexural properties). ISO 527 (tensile properties)</td></tr>
+                    <tr><th scope="row">Typical applications</th><td>Dry indoor plant environments with 10 to 15 year maintenance cycle</td><td>General-purpose outdoor and plant conveyors. Default selection</td><td>Permanent high-value installations: elevated overland galleries, ship-loader booms, stacker-reclaimers</td><td>Food-grade, pharmaceutical or chemical plants, desalination and offshore, fertiliser handling (ammonium nitrate, urea, superphosphate)</td><td>Underground coal mines (lightweight, non-sparking, FRAS grades only). Chemical plants handling corrosive materials. Long elevated conveyors where dead-load saving reduces steelwork cost</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="underground-and-modular-mounting-roof-hung-versus-floor-mounted-idler-frames">
+        <h2>15. Underground and Modular Mounting: Roof-Hung Versus Floor-Mounted Idler Frames</h2>
+        <p>In underground development mining (longwall coal, potash, trona), the conveyor is temporary and advanced or retreated with the face. Frame mounting differs from surface practice accordingly.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 16: Underground and Modular Mounting Configurations</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Mounting Configuration</th>
+                        <th scope="col">Floor-Mounted: Rigid Stringers</th>
+                        <th scope="col">Floor-Mounted: Wire Rope</th>
+                        <th scope="col">Roof-Hung: Chain Suspension</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Structure description</th><td>Modular rigid steel frames, typically 3.0 m [10 ft] long, made from steel channel sections. Modules are bolted or pin-and-cuff connected end-to-end to form a stringer pair on the tunnel floor (drift or gate road)</td><td>Two steel wire ropes (typically 16 to 22 mm [5/8 to 7/8 in] diameter) tensioned between anchor stations 60 to 100 m [200 to 330 ft] apart and supported on intermediate stands. The ropes act as the longitudinal stringers</td><td>Conveyor structure (rigid modular stringers or tensioned wire ropes) suspended by steel chains attached to rock bolts drilled and grouted into the mine roof</td></tr>
+                    <tr><th scope="row">Floor support</th><td>Bolted or pinned to the floor. Two-bolt vertical height adjustment. Floor graded reasonably level before installation</td><td>Anchor stands at each tensioning station. Intermediate rope stands between</td><td>No floor contact. Floor kept clear for drainage, ventilation ducting, and pedestrian access</td></tr>
+                    <tr><th scope="row">Idler attachment</th><td>Carry and return idler frames bolted to the stringer hole pattern at fixed centres</td><td>Carry idler frames and flat return brackets fitted with wedge-clamps or J-hooks that clip onto the wire ropes</td><td>As per rigid stringer or wire rope variant. The chains support the structure, not the individual idler frames</td></tr>
+                    <tr><th scope="row">Typical idler spacing</th><td>Carry side 1.5 m [5 ft], return side 3.0 m [10 ft]</td><td>Same nominal spacing, but adjustable. Frames slide along the rope and are locked with the wedge-clamp at any position</td><td>As per rigid stringer or wire rope variant</td></tr>
+                    <tr><th scope="row">Stringer deflection limit</th><td>L/300 maximum under full rated belt and material load. Typically 100 to 150 mm [4 to 6 in] parallel flange channel</td><td>Not applicable. Ropes sag as a catenary between stands. Sag is controlled by rope tension and stand spacing</td><td>As per rigid stringer (L/300). Size chains so that stretch under load does not drop the structure below the return idler clearance</td></tr>
+                    <tr><th scope="row">Installation rate</th><td>Moderate. Each module levelled, aligned, and fastened. Typically 50 to 100 m [160 to 330 ft] per shift</td><td>Fast. Rope unspooled, tensioned with a come-along or hydraulic cylinder, and idler frames clipped on as the continuous miner advances. Typically 100 to 200 m [330 to 660 ft] per shift</td><td>Moderate to slow. Rock bolts drilled (subject to geotechnical assessment), resin-grouted, and cured before chains are rigged. Typically 30 to 60 m [100 to 200 ft] per shift</td></tr>
+                    <tr><th scope="row">Advancing with the mining face</th><td>Modules added at the tail end, transported, aligned, and bolted. Slowest to keep pace with advance</td><td>New rope unspooled and tensioned as the heading advances. Fastest to keep pace with advance</td><td>Rock bolts drilled ahead of the face and structure hung progressively. Slower than wire rope, faster than rigid stringers where a drilling rig is available</td></tr>
+                    <tr><th scope="row">Relocation and recovery</th><td>Modules unbolted and recovered in reverse order. Heavy modules may require mechanical handling (monorail or loader)</td><td>Frames unclipped, ropes slackened and recovered onto drums. Wire rope is reusable if not kinked or corroded</td><td>Chains disconnected, structure lowered and recovered. Rock bolts typically abandoned in place. Chains reusable</td></tr>
+                    <tr><th scope="row">Transverse levelling</th><td>Manual. Shimming, packing, and re-levelling as floor conditions change</td><td>Manual. Dependent on rope tension uniformity and stand alignment. Settlement of one stand tilts the span</td><td>Set by chain length adjustment at installation. Unaffected by floor movement</td></tr>
+                    <tr><th scope="row">Longitudinal alignment and floor heave</th><td>Stable on competent floors. Floor heave from pillar loading on soft floor strata twists the structure and misaligns idlers</td><td>Dependent on rope tension. Heave displaces stands, causing tension loss</td><td>Isolated from floor heave</td></tr>
+                    <tr><th scope="row">Belt tracking consequence of floor heave</th><td>Belt tracks into the rib (tunnel wall), damaging belt edges and potentially causing a friction fire against the tunnel lining or frame steelwork</td><td>Belt develops washboard sag profile from combined rope and belt sag. Material spillage and belt wander at each sag trough</td><td>No effect on belt tracking. Pendulum self-levelling maintains transverse alignment regardless of floor movement below</td></tr>
+                    <tr><th scope="row">Flooding and mud vulnerability</th><td>High. Return idlers typically sit only 200 to 300 mm [8 to 12 in] above the floor. Any rise in water level submerges them</td><td>High. Same floor proximity as rigid stringers</td><td>Low. Return idlers clear of standing water and mud. Drainage flows freely beneath the structure</td></tr>
+                    <tr><th scope="row">Impact and shock response</th><td>Rigid. Impact loads transfer directly into idler bearings and belt carcass</td><td>Semi-rigid. Ropes provide limited vertical compliance, partially cushioning large impacts</td><td>Compliant. The suspended structure deflects under surges and the chains damp impact energy, reducing peak bearing and belt loads</td></tr>
+                    <tr><th scope="row">Lateral stability</th><td>Inherently stable. Structure fixed to the floor. Off-centre loading does not displace the structure</td><td>Low. Rope tension is the only lateral restraint. Lateral forces from off-centre loading can displace the ropes sideways. Cross-bracing between rope pairs improves stiffness but adds complexity</td><td>Requires engineered control. Off-centre loading tilts the structure laterally, which drives further mistracking. Splay chains outward at 15 to 25 deg (rock bolts wider apart than frame attachment points) to triangulate the load and provide lateral stiffness</td></tr>
+                    <tr><th scope="row">Mass per metre of structure</th><td>Heavy. Steel channel modules typically 40 to 60 kg/m [27 to 40 lb/ft]</td><td>Light. Rope and clamps typically 5 to 10 kg/m [3.4 to 6.7 lb/ft] excluding idler frames</td><td>Moderate. As per rigid stringer or wire rope variant, plus chain mass. Verify total suspended load against rock bolt pull-out capacity</td></tr>
+                    <tr><th scope="row">Maintenance burden</th><td>High. Constant levelling, grading, and packing to compensate for floor movement</td><td>Moderate to high. Check and restore rope tension regularly in active headings. Idler repositioning is easy: unclamp, slide, reclamp</td><td>Low to moderate. No manual shimming. Periodic rock bolt pull-testing and inspection of chain wear, elongation, deformation, and corrosion</td></tr>
+                    <tr><th scope="row">Relative cost</th><td>Moderate. Steel channel is heavier and more expensive than wire rope, but no rock bolting cost</td><td>Low. Lowest installed cost. Anchor stands are the primary cost</td><td>High. Rock bolt drilling, resin, curing time, chain supply, and slower installation increase installed cost. Reduced maintenance can offset the premium over the conveyor life</td></tr>
+                    <tr><th scope="row">Typical application</th><td>Short-duration development conveyors and semi-permanent trunk conveyors on competent, stable floors. Room-and-pillar operations with stable geology</td><td>Development headings with high advance rates (longwall gate roads, continuous miner sections) where installation speed is the priority and conveyor life is months to a few years. The default structure for high-advance-rate coal mining</td><td>Development conveyors subject to floor heave, flooding, or both, where tracking reliability and low maintenance are required. Requires competent, stable roof strata</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="idler-frame-alignment-tolerances">
+        <h2>16. Idler Frame Alignment Tolerances</h2>
+        <p>Frame alignment governs belt tracking, bearing load, power consumption, and belt scale accuracy. Correctly manufactured rollers in misaligned frames can damage the belt.</p>
+    </section>
+
+    <section id="four-axes-of-idler-frame-alignment">
+        <h3>16.1 Four Axes of Idler Frame Alignment</h3>
+        <p>Alignment tolerances are specified across four independent geometric axes. Check and correct all four together, as an error in one axis can mask or amplify errors in another.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 17: Idler Frame Alignment Axes</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Alignment Aspect</th>
+                        <th scope="col">Definition</th>
+                        <th scope="col">Why It Matters</th>
+                        <th scope="col">Measurement Method</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Transverse Level (Roll / Tilt)</th><td>The side-to-side tilt of the idler frame, measured as the height difference between the left and right wing roll tips relative to a true horizontal datum.</td><td>The belt migrates toward the low side. An error of 2 to 3 mm [0.08 to 0.12 in] produces persistent one-directional wander that training idlers only partially correct.</td><td>Precision spirit level (sensitivity 0.1 mm/m [0.0012 in/ft] or finer) across the wing roll tips, or a laser level projected along the conveyor structure.</td></tr>
+                    <tr><th scope="row">Longitudinal Level (Pitch / Gradient Conformance)</th><td>The vertical position of each idler frame relative to the design grade line. Set frames at the same elevation (flat conveyor) or to follow the gradient without local humps or dips (inclined).</td><td>High frames cause the belt to crest and lift off adjacent idlers. Low frames cause it to bottom out in a valley. Both cause material bounce, uneven bearing loads, and local cover wear.</td><td>Taut piano wire or laser line set to the design gradient, with the vertical offset measured at each frame using a steel rule or dial indicator.</td></tr>
+                    <tr><th scope="row">Horizontal Squareness (Yaw / Skew)</th><td>The angular alignment of the idler frame centreline relative to the direction of belt travel (viewed from above). Square frames are perpendicular to belt travel.</td><td>Skewed frames apply steering forces. A 0.5 deg skew produces a lateral steering tendency of up to 9 mm per metre [0.1 in per ft] of belt travel. Multiple skewed frames create systematic lateral drift. Single skewed frames create local wobble.</td><td>Diagonal tape check against a centreline reference, or a laser line parallel to the centreline with perpendicular offsets measured at each end.</td></tr>
+                    <tr><th scope="row">Vertical Height Consistency (Frame-to-Frame Step)</th><td>The difference in the elevation of the centre roll contact surface between two adjacent idler frames.</td><td>A frame 3 to 5 mm [0.12 to 0.20 in] higher than its neighbours overloads its bearings, accelerates bottom cover wear, and causes thumping. A 1 mm [0.04 in] step on a scale section affects weighing accuracy.</td><td>Laser level or taut wire with vertical measurements taken at the centre roll crown of each frame.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="alignment-tolerance-tables">
+        <h3>16.2 Alignment Tolerance Tables</h3>
+        <p>Tolerances depend on application. A temporary underground development conveyor at 2.0 m/s [400 fpm] does not justify the precision required for a 6.0 m/s [1,200 fpm] overland conveyor with a belt scale.</p>
+        <p>Transverse level tolerance is the maximum allowable height difference between left and right wing roll tips on a single idler frame.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 18: Transverse Level Tolerance (Roll / Tilt)</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Application</th>
+                        <th scope="col">Maximum Transverse Level Error mm [in]</th>
+                        <th scope="col">Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Belt scale, weigh deck</th><td>0.5 [0.020]</td><td>Applies to the weigh idler plus a minimum of 2 approach and 2 retreat idlers. Level using precision shims and a calibrated digital spirit level.</td></tr>
+                    <tr><th scope="row">High speed overland, above 4.0 m/s [800 fpm]</th><td>1.0 [0.040]</td><td>Minor transverse errors generate large lateral forces at high speed. Use laser alignment for the full conveyor length.</td></tr>
+                    <tr><th scope="row">Standard fixed plant, 1.5 to 4.0 m/s [300 to 800 fpm]</th><td>2.0 [0.080]</td><td>Achievable by spirit level on rigid steel or concrete structures.</td></tr>
+                    <tr><th scope="row">Portable / relocatable plant</th><td>3.0 [0.12]</td><td>Wheeled or skid mounted conveyors on gravel pads. Re-check after each relocation and after seasonal ground movement.</td></tr>
+                    <tr><th scope="row">Underground development, temporary</th><td>5.0 [0.20]</td><td>Practical limit on wire rope or roof hung structures in an active mine heading. Manage mistracking with increased training idler density.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Longitudinal level tolerance is the maximum allowable vertical deviation of any single idler frame from the design grade line.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 19: Longitudinal Level Tolerance (Pitch / Grade Conformance)</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Application</th>
+                        <th scope="col">Maximum Vertical Deviation from Grade Line mm [in]</th>
+                        <th scope="col">Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Belt scale, weigh deck</th><td>0.5 [0.020] over the full scale length</td><td>Shim the entire scale deck, typically 3 to 5 idler pitches, to a single flat plane. Grade deviation introduces error in the mass measurement.</td></tr>
+                    <tr><th scope="row">High speed overland, above 4.0 m/s [800 fpm]</th><td>2.0 [0.080] per frame</td><td>Localised humps or dips at high speed cause belt flap and material bounce. Survey grade conformance by laser.</td></tr>
+                    <tr><th scope="row">Standard fixed plant, 1.5 to 4.0 m/s [300 to 800 fpm]</th><td>3.0 [0.12] per frame</td><td>Achievable with standard survey methods on permanent structures.</td></tr>
+                    <tr><th scope="row">Portable / relocatable plant</th><td>5.0 [0.20] per frame</td><td>Ground settlement under portable structures is expected. Re-survey at commissioning and at scheduled maintenance intervals, typically quarterly.</td></tr>
+                    <tr><th scope="row">Underground development, temporary</th><td>10.0 [0.40] per frame</td><td>Floor heave, rib convergence, and water accumulation make tight grade control impractical. Limit steps between frames to 15 mm [0.60 in].</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Horizontal squareness tolerance is the maximum allowable angular deviation of the idler frame axis from true perpendicular to the belt travel direction.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 20: Horizontal Squareness Tolerance (Yaw / Skew)</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Application</th>
+                        <th scope="col">Maximum Diagonal Difference mm [in]</th>
+                        <th scope="col">Equivalent Angular Skew deg</th>
+                        <th scope="col">Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Belt scale, weigh deck</th><td>0.5 [0.020]</td><td>0.02</td><td>Skewed weigh idlers apply a lateral drag component that biases the load cell reading. Use precision alignment jigs or laser tools.</td></tr>
+                    <tr><th scope="row">High speed overland, above 4.0 m/s [800 fpm]</th><td>1.5 [0.060]</td><td>0.05</td><td>Limit systematic skew (consecutive frames skewed in the same direction) to less than 0.03 deg per frame.</td></tr>
+                    <tr><th scope="row">Standard fixed plant, 1.5 to 4.0 m/s [300 to 800 fpm]</th><td>3.0 [0.12]</td><td>0.10</td><td>Practical limit for field installation using diagonal tape checks.</td></tr>
+                    <tr><th scope="row">Portable / relocatable plant</th><td>5.0 [0.20]</td><td>0.16</td><td>Quick deployment is prioritised over precision. Double training idler frequency, at 15 to 20 m [50 to 65 ft] spacing, to compensate.</td></tr>
+                    <tr><th scope="row">Underground development, temporary</th><td>8.0 [0.32]</td><td>0.25</td><td>Wire rope mounted frames can twist as rope tension changes. Re-check squareness whenever rope tension is adjusted.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Angular equivalents are approximate, based on a 1.8 m [6 ft] measurement base.</p>
+        </div>
+        <p>Vertical height consistency is the maximum allowable difference in centre roll elevation between any two adjacent idler frames.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 21: Vertical Height Consistency (Frame-to-Frame Step)</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Application</th>
+                        <th scope="col">Maximum Height Step Between Adjacent Frames mm [in]</th>
+                        <th scope="col">Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Belt scale, weigh deck</th><td>0.3 [0.012]</td><td>Align the approach and retreat idlers to form a step-free transition into and out of the weigh idler. Any step introduces a dynamic weighing error that increases with belt speed.</td></tr>
+                    <tr><th scope="row">High speed overland, above 4.0 m/s [800 fpm]</th><td>1.5 [0.060]</td><td>A 2 mm [0.08 in] step at 5.0 m/s [1,000 fpm] increases load on the high frame and excites belt and material bounce, shortening bearing life and producing periodic noise.</td></tr>
+                    <tr><th scope="row">Standard fixed plant, 1.5 to 4.0 m/s [300 to 800 fpm]</th><td>3.0 [0.12]</td><td>Achievable with careful shimming on permanent structures. Correct steps greater than 5 mm [0.20 in], which show as local belt bounce.</td></tr>
+                    <tr><th scope="row">Portable / relocatable plant</th><td>5.0 [0.20]</td><td>Ground settlement creates progressive steps. Inspect monthly and correct steps before they exceed 8 mm [0.32 in].</td></tr>
+                    <tr><th scope="row">Underground development, temporary</th><td>10.0 [0.40]</td><td>Floor heave can create height steps. Correct steps greater than 15 mm [0.60 in] by packing or re-grading.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="alignment-methods-and-tools">
+        <h3>16.3 Alignment Methods and Tools</h3>
+        <p>The choice of alignment method depends on conveyor length, required accuracy, and whether the work is a commissioning alignment or a routine maintenance investigation.</p>
+        <p>For day-to-day maintenance, the diagonal tape check is the first check when investigating a tracking problem. Measure from both ends of the frame to a fixed reference point on the conveyor centreline, or between corresponding points on adjacent frames. Equal readings within tolerance confirm the frame is square. Correct any skew before further investigation. The check requires only a steel tape.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 22: Idler Frame Alignment Methods</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Method</th>
+                        <th scope="col">Piano Wire</th>
+                        <th scope="col">Laser Alignment</th>
+                        <th scope="col">Total Station Survey</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Accuracy</th><td>+/-1.0 mm [+/-0.040 in] horizontal over rated span</td><td>+/-0.5 mm [+/-0.020 in] over rated span</td><td>+/-1 to 2 mm [+/-0.04 to 0.08 in] in three dimensions, degrading with sight distance</td></tr>
+                    <tr><th scope="row">Effective range</th><td>Up to 100 m [330 ft] per setup for horizontal readings. Wire sag reaches tens of millimetres over 100 m [330 ft] even at high tension. Use intermediate supports or calculated sag correction for vertical readings</td><td>Up to 200 m [650 ft] per setup without intermediate supports</td><td>Unlimited with multiple setups on a control network</td></tr>
+                    <tr><th scope="row">Axes checked</th><td>Squareness and vertical height only. Transverse level requires a separate spirit level at each frame</td><td>All four axes, plus frame spacing</td><td>Full 3D coordinates. As-built versus design model comparison</td></tr>
+                    <tr><th scope="row">Equipment</th><td>Steel piano wire 0.5 to 1.0 mm [0.020 to 0.040 in] diameter, tensioning device, fixed datum brackets, steel rule or vernier caliper, spirit level</td><td>Rotating or line laser transmitter, detector target on portable alignment jig, tripod or magnetic mount</td><td>Total station, prism or reflectorless target, data collector, post-processing software</td></tr>
+                    <tr><th scope="row">Procedure</th><td>Wire stretched between fixed datum points. Perpendicular offset measured from wire to each frame by steel rule. Spirit level applied separately for transverse level</td><td>Laser set up on a stable mount at one end. Detector jig placed at each frame. Horizontal and vertical offsets read from detector display</td><td>Control network established and stations occupied along the conveyor. Frame coordinates compared against design model</td></tr>
+                    <tr><th scope="row">Typical application</th><td>Commissioning and maintenance alignment on conveyors up to 100 m [330 ft]. Plant conveyors and short overland sections</td><td>Critical conveyors, belt scale zones, high-speed overland systems, and any application specifying +/-0.5 mm [+/-0.020 in]. Preferred for belt scale installations</td><td>Commissioning of major overland conveyors exceeding 500 m [1,640 ft]. Resolving systematic tracking problems not resolved by other methods</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Wind vibration affects readings outdoors. Cannot check transverse level without a spirit level</td><td>Heat shimmer (refraction) disrupts the beam in hot environments (kilns, direct desert sun). Align during cooler periods (early morning or night shift). Dust on optics degrades signal</td><td>Requires qualified surveyor with post-processing capability. Cost not justified for short conveyors or routine maintenance checks</td></tr>
+                    <tr><th scope="row">Personnel</th><td>Two-person crew (one to tension and hold wire, one to measure)</td><td>Two-person crew (one at laser, one moving detector jig)</td><td>Qualified surveyor plus assistant. Typically contracted</td></tr>
+                    <tr><th scope="row">Speed</th><td>Moderate. Approximately 2 to 4 min per frame including spirit level check</td><td>Fast. Approximately 1 to 2 min per frame for all four axes. Faster than piano wire above 50 m [165 ft]</td><td>Slow. Instrument setup, field observation, and office post-processing</td></tr>
+                    <tr><th scope="row">Output format</th><td>Manual record of offsets per frame on alignment data sheet</td><td>Manual record of offsets per frame. Some systems log digitally to tablet or data collector</td><td>Digital survey report with 3D coordinates, deviation plots, and calculated corrections for each frame</td></tr>
+                    <tr><th scope="row">Cost</th><td>Low. Wire, tape, and spirit level only</td><td>Moderate. Capital cost of laser and detector kit</td><td>High. Specialist instrument, qualified surveyor, and post-processing software. Typically contracted at daily survey rates</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="rules-of-thumb-for-alignment-practice">
+        <h3>16.4 Rules of Thumb for Alignment Practice</h3>
+        <p><strong>Rule of Thumb:</strong> Random alignment errors (some frames slightly left, some slightly right) are less damaging than systematic errors (every frame offset in the same direction). A random 2 mm [0.08 in] transverse error across 50 frames produces local belt wobble that training idlers can manage. A systematic 2 mm [0.08 in] transverse error across 50 frames produces cumulative lateral drift that can drive the belt off the structure. Keep residual errors random and self-cancelling.</p>
+        <p><strong>Rule of Thumb:</strong> Re-check every frame on the affected span after stringer replacement, foundation re-grouting, gallery re-levelling, or underground roof bolt re-tensioning. Moving one end of a stringer by 3 mm [0.12 in] can skew every frame on that stringer.</p>
+        <p><strong>Rule of Thumb:</strong> Foundation settlement, thermal cycling, and maintenance disturbance degrade commissioning alignment on permanent surface conveyors. Repeat a full alignment survey at least every 5 years on standard plant conveyors and every 2 to 3 years on high-speed overland systems. On underground conveyors subject to floor heave, check squareness and level at every scheduled maintenance shift (typically weekly).</p>
+        <p><strong>Rule of Thumb:</strong> Align the weigh idler, the two approach idlers upstream, and the two retreat idlers downstream as a single five-frame precision section. Level all five frames to within 0.5 mm [0.020 in] and limit frame-to-frame steps to 0.3 mm [0.012 in]. If the belt scale drifts out of calibration, re-check these five frames before investigating the load cells or electronics.</p>
+        <p><strong>Rule of Thumb:</strong> A 100 m [330 ft] steel stringer changes length by approximately 12 mm [0.47 in] per 10 deg C [18 deg F] temperature change (coefficient of thermal expansion 12 µm/m per deg C [6.7 µin/in per deg F]). On elevated galleries in direct sun, the top chord heats faster than the bottom chord, bowing the structure (thermal hogging). Midday surveys in direct sun produce different results from surveys at dawn. Take critical measurements at a consistent time when the structure is in thermal equilibrium, before sunrise or at night.</p>
+        <p><strong>Rule of Thumb:</strong> The three idler frames immediately downstream of the loading zone and the three frames immediately upstream of the head pulley set the belt position on the carry run and at the drive. Misalignment at the loading zone tracks the loaded belt off-centre along the carry run. Misalignment at the head pulley causes the belt to enter the drive off-centre, producing uneven belt tension, accelerated pulley lagging wear, and potential single-sided slip. Check these six frames at double the frequency of the rest of the conveyor.</p>
+    </section>
+
+    <section id="pipe-or-tube-conveyor-idler-arrangements">
+        <h2>17. Pipe (or Tube) Conveyor Idler Arrangements</h2>
+        <p>A pipe (tube) conveyor forms the flat belt into a fully enclosed tube after the loading point and opens it back to a flat trough at discharge. The belt is enclosed on all sides by idler rolls arranged in a polygonal panel.</p>
+    </section>
+
+    <section id="idler-panel-configurations">
+        <h3>17.1 Idler Panel Configurations</h3>
+        <ul>
+            <li><strong>Hexagonal (6-roll):</strong> Six rolls at 60 deg spacing. Common configuration for most pipe diameters. Provides uniform radial support and even contact pressure distribution around the full circumference.</li>
+            <li><strong>Octagonal (8-roll):</strong> Eight rolls at 45 deg spacing. Used on some large-diameter designs to reduce pressure per roll and improve pipe circularity.</li>
+            <li><strong>Pentagonal (5-roll) and other configurations:</strong> Less common. Used in specialised applications or by specific manufacturers.</li>
+        </ul>
+    </section>
+
+    <section id="panel-spacing">
+        <h3>17.2 Panel Spacing</h3>
+        <p>Set panel spacing to maintain the circular cross-section against material pressure and the belt's tendency to spring open. Reduce spacing on horizontal and vertical curves.</p>
+        <ul>
+            <li><strong>Carry side:</strong> 0.8 to 2.0 m [2.6 to 6.6 ft], depending on pipe diameter, belt stiffness, material density, and curve radius.</li>
+            <li><strong>Return side:</strong> 1.5 to 4.0 m [5.0 to 13 ft]. The empty return pipe carries no material pressure and is held closed by panel contact alone.</li>
+            <li><strong>Transition zones (forming and opening):</strong> 0.5 to 0.8 m [1.6 to 2.6 ft]. Closely spaced panels guide folding and unfolding without wrinkling or kinking the belt.</li>
+        </ul>
+    </section>
+
+    <section id="contact-pressure">
+        <h3>17.3 Contact Pressure</h3>
+        <p>Unlike a troughed conveyor, where the belt rests on the rolls under gravity, the pipe belt is pressed outward against all surrounding rolls by material pressure and the belt's elastic opening force. Every roll carries positive contact pressure.</p>
+        <p>Contact pressure determines:</p>
+        <ul>
+            <li>Belt cover wear rate. Higher contact pressure accelerates abrasion of the outer belt cover.</li>
+            <li>Rolling resistance. Resistance on each roll increases with contact pressure, and each panel typically contains six or more rolls. Idler resistance per metre is several times that of an equivalent troughed conveyor.</li>
+            <li>Belt overlap integrity. If contact pressure is too low (panels too far apart or too few rolls per panel), the overlap opens and material spills.</li>
+        </ul>
+    </section>
+
+    <section id="alignment-and-rotation-control">
+        <h3>17.4 Alignment and Rotation Control</h3>
+        <p>A closed tube can twist about its longitudinal axis. Excessive rotation moves the overlap to the side or bottom, compromising the seal and causing leakage. Rotation is controlled by:</p>
+        <ul>
+            <li>Precise panel alignment. Angular misalignment between successive panels induces twisting torque. Alignment tolerances are tighter than on troughed conveyors.</li>
+            <li>Skewed rolls or panels. Selected rolls or panels are deliberately skewed 1 to 3 deg relative to the conveyor centreline to apply corrective torque, particularly on horizontal curves.</li>
+            <li>Overlap monitoring. Inspection windows or electronic overlap sensors confirm the overlap remains in position (typically top-centre).</li>
+        </ul>
+    </section>
+
+    <section id="idler-qa-qc-and-factory-acceptance-testing">
+        <h2>18. Idler QA/QC and Factory Acceptance Testing</h2>
+        <p>On a long overland conveyor, idler procurement may exceed 10,000 rollers, and a 1% non-conformance rate is then 100 premature field failures. Factory Acceptance Testing (FAT) is the contractual mechanism to verify product meets specification before shipment.</p>
+    </section>
+
+    <section id="pre-production-requirements">
+        <h3>18.1 Pre-Production Requirements</h3>
+        <p>Before volume production, obtain the following from the manufacturer for review and approval:</p>
+        <ul>
+            <li>Manufacturing Procedure Specification (MPS) covering shell fabrication (rolling, welding, machining), shaft machining, bearing pressing, seal assembly, grease filling, and end-plate attachment.</li>
+            <li>Welding Procedure Specifications (WPS) and Welding Procedure Qualification Records (WPQR) for all structural welds on the shell and end plates.</li>
+            <li>Material certificates (mill certificates) for the shell tube and shaft bar, and bearing manufacturer certificates of conformance.</li>
+            <li>Grease data sheet confirming grease type, base oil viscosity, thickener type, operating temperature range, and speed factor (n_dm) limit.</li>
+            <li>Seal assembly drawing confirming seal type, material, and dimensional compliance.</li>
+        </ul>
+    </section>
+
+    <section id="in-production-testing-statistical-sampling">
+        <h3>18.2 In-Production Testing (Statistical Sampling)</h3>
+        <p>For high-volume production, 100% testing is impractical for most parameters. Apply statistical sampling per the contractual sampling plan, typically AS 1199 / ISO 2859 with an agreed Acceptance Quality Limit (AQL).</p>
+        <p>Verify dimensions on sampled rollers:</p>
+        <ul>
+            <li>Measure shell outside diameter at three points along the face length (both ends and centre) using a calibrated micrometer or laser diameter gauge. Reject rollers with any measurement outside the specified tolerance.</li>
+            <li>Measure shell face length with a vernier caliper against the ISO 1537 / DIN 22107 length for the specified belt width.</li>
+            <li>Measure shaft diameter at the bearing journals with a calibrated micrometer against the bearing manufacturer's shaft tolerance class.</li>
+        </ul>
+        <p>Measure TIR and MIS on sampled rollers:</p>
+        <ul>
+            <li>Support the shaft on precision V-blocks and rotate the shell through one revolution against a dial indicator or laser displacement sensor. Record the difference between maximum and minimum readings as TIR.</li>
+            <li>For MIS, record radial displacement at 6 deg increments (60 points per revolution). The maximum change between any two adjacent points is the MIS.</li>
+            <li>Reject rollers where TIR or MIS exceeds the specified limit.</li>
+        </ul>
+        <p>Verify grease fill on sampled rollers. Weigh sampled rollers before and after grease filling, or weigh the grease charge during assembly, and confirm the fill mass is within the manufacturer's specified range. Under-filling reduces bearing life. Over-filling pressurises the seals, increases rotating resistance, and can force grease past the labyrinth.</p>
+        <p>Test seal integrity on sampled rollers with contact seals. Labyrinth seals pass air by design and are qualified by dust and water ingress type testing. Apply a low-pressure air test (typically 15 to 20 kPa [2 to 3 psi]) to the bearing cavity through a test port. Submerge the roller in water, or coat the seal interface with soap solution, and observe for bubbles. Visible leakage indicates a non-conforming seal assembly.</p>
+    </section>
+
+    <section id="100-testing-every-roller">
+        <h3>18.3 100% Testing (Every Roller)</h3>
+        <p>Spin test every roller:</p>
+        <ul>
+            <li>Spin each roller on a motorised bench at design RPM (or a standard test speed, typically 500 RPM) for a minimum of 30 seconds and check for excessive noise (bearing defect), vibration (unbalance or TIR), and abnormal resistance (seal binding or bearing misalignment).</li>
+            <li>Where specified, measure rotating resistance torque with a calibrated torque transducer and reject rollers exceeding the specified maximum.</li>
+            <li>After the spin test, allow the roller to coast to a stop. Flag abnormally short free-spin times, which indicate excessive seal friction or bearing defects, for investigation.</li>
+        </ul>
+        <p>Inspect every roller visually and dimensionally:</p>
+        <ul>
+            <li>Inspect for weld defects (porosity, undercut, spatter), shell defects (dents, gouges, corrosion), seal damage, and correct marking.</li>
+            <li>Verify overall length and shaft protrusion with a go/no-go gauge or caliper to confirm fit in the specified frame.</li>
+        </ul>
+    </section>
+
+    <section id="type-testing-one-off-qualification">
+        <h3>18.4 Type Testing (One-Off Qualification)</h3>
+        <p>Type tests qualify each roller design for the application and are repeated only if the design is modified.</p>
+        <p>Test rotating resistance per DIN 22112-3 / SANS 1313:</p>
+        <ul>
+            <li>Mount a production-representative roller on a standardised rig. Measure rotating resistance at design load and speed and compare it against the specified maximum.</li>
+            <li>This verifies that the bearing, seal, and grease combination meets the rotating resistance assumed in the drive calculation.</li>
+        </ul>
+        <p>Test dust and water ingress per DIN 22112-3 / SANS 1313, or the manufacturer's standard:</p>
+        <ul>
+            <li>Expose sample rollers to controlled dust and water conditions per the standard, then disassemble them and inspect the bearings for contamination, corrosion, or wear.</li>
+            <li>Standard ingress tests may not represent heavily contaminated sites. Specify enhanced tests (e.g. inclined dust ingress under load) where field contamination exceeds the standard test conditions.</li>
+        </ul>
+    </section>
+
+    <section id="documentation-and-traceability">
+        <h3>18.5 Documentation and Traceability</h3>
+        <p>Mark each roller with a serial or batch number linking it to its production batch, material certificates, test results, and grease fill record. Traceability supports warranty claims, failure analysis, and life-cycle tracking.</p>
+        <p>FAT cost is minor compared with replacing non-conforming rollers on a remote site. For procurement exceeding 1,000 rollers, make a formal FAT programme with defined sampling plans, acceptance criteria, and hold and witness points a contractual requirement.</p>
+    </section>
+
+    <section id="idler-storage-handling-and-shelf-life">
+        <h2>19. Idler Storage, Handling and Shelf Life</h2>
+        <p>Idlers contain factory-filled grease, pressed bearings, and engineered seals. Improper storage, handling, or extended shelf time degrades the roller before installation and is a source of premature failure.</p>
+    </section>
+
+    <section id="false-brinelling-during-storage-and-transport">
+        <h3>19.1 False Brinelling During Storage and Transport</h3>
+        <p>False brinelling is wear at rolling element contact points on a stationary bearing, caused by micro-vibration. Without rotation there is no elastohydrodynamic film. Static load squeezes grease from the contact, and oscillation produces fretting wear at each ball position. After installation the marks act as stress raisers, producing early noise, vibration, and spalling before the calculated L10h life. This failure can be misdiagnosed as a manufacturing defect.</p>
+        <p>To reduce false brinelling:</p>
+        <ul>
+            <li>Store rollers horizontally on flat, vibration-free surfaces. Do not stand rollers on end, as this concentrates the roller weight on a single bearing.</li>
+            <li>For long road or rail transport, pack rollers in individual cardboard or foam cradles that isolate the bearing housings from vibration.</li>
+            <li>Do not stack rollers more than three layers high without intermediate timber or foam separators.</li>
+            <li>On sites with significant ambient vibration (crushers, screens, rail lines), store rollers in a separate, isolated laydown area.</li>
+            <li>For long-term storage of critical spares, rotate rollers several revolutions at regular intervals to redistribute grease and move rolling element contact positions.</li>
+        </ul>
+    </section>
+
+    <section id="grease-degradation-during-extended-storage">
+        <h3>19.2 Grease Degradation During Extended Storage</h3>
+        <p>Grease in a sealed-for-life bearing has a finite shelf life. Base oil separates from the thickener (oil bleed), migrates from the rolling elements, and collects at the lowest point of the cavity. On installation, the bearing can run with inadequate lubrication until the grease redistributes.</p>
+        <p>Obtain the shelf-life limit from the idler manufacturer for the specified grease. Without manufacturer data, apply the following conservative limits from date of manufacture:</p>
+        <ul>
+            <li><strong>Lithium complex grease:</strong> 12 months.</li>
+            <li><strong>Synthetic polyurea grease:</strong> 18 months.</li>
+            <li><strong>Perfluoropolyether (PFPE) grease:</strong> 24 months.</li>
+        </ul>
+        <p>These limits assume dry, shaded, temperature-stable storage at 10 to 30 deg C [50 to 86 deg F]. Direct sun, tropical humidity, or temperatures above 40 deg C [104 deg F] reduce shelf life.</p>
+        <p>To manage grease shelf life:</p>
+        <ul>
+            <li>Apply First-In-First-Out (FIFO) stock rotation.</li>
+            <li>Mark each roller carton with the date of manufacture and the grease type.</li>
+            <li>Verify grease condition before installing rollers beyond their shelf life. Purge and refill re-lubricatable rollers to specification. For sealed-for-life rollers, weigh premature failure risk against replacement cost. Scrap expired sealed rollers on critical conveyors.</li>
+        </ul>
+    </section>
+
+    <section id="seal-degradation">
+        <h3>19.3 Seal Degradation</h3>
+        <p>Rubber and polyurethane seals degrade in storage through ozone attack, UV exposure, and thermal ageing. Degraded seals crack once the roller rotates, admitting dust and water and causing bearing failure within weeks or months of commissioning.</p>
+        <p>To reduce seal degradation:</p>
+        <ul>
+            <li>Store rollers in their original packaging until installation.</li>
+            <li>Keep rollers out of direct sunlight and away from ozone-generating equipment (electric motors, welders, high-voltage switchgear).</li>
+        </ul>
+        <p>ISO 2230 initial storage periods under controlled conditions are 5 years for polyurethane, 7 years for nitrile (NBR), and 10 years for FKM. For assembled rollers, grease shelf life is normally the governing limit.</p>
+    </section>
+
+    <section id="polymer-shell-creep">
+        <h3>19.4 Polymer Shell Creep</h3>
+        <p>HDPE and polymer shells creep (permanently deform under sustained load) in storage. Bulk stacking or point support (e.g. a narrow shelf edge) creates a flat spot that does not recover.</p>
+        <p>To reduce creep damage:</p>
+        <ul>
+            <li>Store polymer rollers in V-cradles or on flat, wide surfaces that support the full face length.</li>
+            <li>Do not stack polymer rollers more than two layers high.</li>
+            <li>Before installing a polymer roller stored for more than 6 months, roll it on a flat surface and check for flat spots or out-of-roundness. Measure TIR on the bench if the roller is for a weigh deck or high-speed application.</li>
+        </ul>
+        <p>Storage damage to bearings, grease and seals is not externally visible. Specify a formal storage and stock management procedure in large idler procurement contracts.</p>
+    </section>
+
+    <section id="temperature-effects-on-idler-performance">
+        <h2>20. Temperature Effects on Idler Performance</h2>
+        <p>For conveyors operating outside minus 5 to plus 45 deg C [23 to 113 deg F], obtain confirmation from the idler manufacturer that grease, seal compounds, and shell material are rated for the temperature envelope.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 23: High and Low Temperature Idler Specifications</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Feature / Consideration</th>
+                        <th scope="col">High Ambient Temperature (above 50 deg C [122 deg F])</th>
+                        <th scope="col">Low Ambient Temperature (below minus 20 deg C [minus 4 deg F])</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Typical Environments</th><td>Clinker transport, hot sinter conveyors, desert environments (Middle East, Pilbara)</td><td>Arctic operations (Canadian oil sands, Scandinavian iron ore, Russian coal)</td></tr>
+                    <tr><th scope="row">Operational Challenges</th><td>Idler temperatures can exceed 80 deg C [176 deg F]. Grease life halves for approximately every 15 deg C [27 deg F] rise above 70 deg C [158 deg F].</td><td>Standard grease stiffens and can prevent idler start-up. The belt slides over the locked roller, wearing a flat spot before the grease warms.</td></tr>
+                    <tr><th scope="row">Grease Specification</th><td>Specify synthetic greases (polyurea or PFPE) rated for continuous duty at 120 to 150 deg C [248 to 302 deg F].</td><td>Specify low-temperature synthetic grease rated for operation below minus 40 deg C [minus 40 deg F].</td></tr>
+                    <tr><th scope="row">Standard Nitrile Seals</th><td>Unsuitable: Harden and crack above 100 deg C [212 deg F].</td><td>Unsuitable: Become brittle and crack.</td></tr>
+                    <tr><th scope="row">Seal Specification</th><td>Specify FKM or silicone seals.</td><td>Specify polyurethane or low-temperature elastomers.</td></tr>
+                    <tr><th scope="row">Shell Material Issues</th><td>HDPE and polymer shells soften and deform under sustained heat (unsuitable).</td><td>Standard steel shells can fracture under impact at low temperatures.</td></tr>
+                    <tr><th scope="row">Shell Specification</th><td>Avoid HDPE and polymer shells.</td><td>Specify shell steel with Charpy impact properties verified at or below the minimum design metal temperature (e.g. ASTM A333 Grade 6).</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> AS/NZS 1163 Grade C350L0 is impact tested at 0 deg C [32 deg F] only.</p>
+        </div>
+    </section>
+
+    <section id="noise-and-vibration-considerations">
+        <h2>21. Noise and Vibration Considerations</h2>
+    </section>
+
+    <section id="sources-of-idler-noise">
+        <h3>21.1 Sources of Idler Noise</h3>
+        <ul>
+            <li><strong>Bearing Noise:</strong> A correctly functioning idler generates minimal noise. As a bearing degrades (spalling, contamination, loss of lubrication), it emits a rumble or squeal that increases in amplitude and broadens in frequency content as the defect progresses.</li>
+            <li><strong>Shell resonance:</strong> The hollow steel shell can resonate when excited by belt splice irregularities or lump impacts. Thicker walls reduce shell response. Damped shells (polymer or rubber-lagged) reduce resonance further.</li>
+            <li><strong>Junction Noise (Roller Gap):</strong> The belt cover deflects into the gap between centre and wing rolls and rebounds, producing a periodic popping noise on fast, lightly loaded belts. Offset idlers or minimal gap widths reduce junction noise.</li>
+        </ul>
+    </section>
+
+    <section id="noise-mitigation">
+        <h3>21.2 Noise Mitigation</h3>
+        <ul>
+            <li>Specify larger roller diameters. Lower rotational speed reduces bearing and shell excitation.</li>
+            <li>Specify HDPE or polymer shell idlers for return runs. Polymer shells damp resonance more effectively than steel tubes.</li>
+            <li>Use rubber disc return idlers. The spaced rubber rings break up shell resonance and reduce contact noise.</li>
+            <li>Specify low TIR. An out-of-round roller generates a periodic thump every revolution. Specify TIR less than 0.5 mm [0.020 in] on rollers in noise-sensitive corridors and less than 0.3 mm [0.012 in] on rollers adjacent to populated areas.</li>
+            <li>Install noise barriers or earth bunds along overland conveyor corridors in noise-sensitive zones where idler noise cannot be reduced sufficiently at source.</li>
+        </ul>
+    </section>
+
+    <section id="idler-maintenance-inspection-and-failure-modes">
+        <h2>22. Idler Maintenance, Inspection and Failure Modes</h2>
+        <p>Replace any idler roller that exhibits a seized bearing, shell wear exceeding 2 mm [0.08 in], visible shaft deflection, or TIR greater than the purchase specification limit. On belt-scale (weigh) idlers, apply the scale manufacturer's TIR limit, typically 0.38 mm [0.015 in].</p>
+    </section>
+
+    <section id="common-failure-modes">
+        <h3>22.1 Common Failure Modes</h3>
+        <ul>
+            <li><strong>Seized (locked) rollers:</strong> Bearing seizes from contamination, lubrication failure, or fatigue. The belt slides over the stationary roller, wearing a flat spot on the shell and grinding the bottom cover. On fast, heavily loaded belts, frictional heat can ignite the belt and is a recognised cause of underground conveyor fires.</li>
+            <li><strong>Shell Wear (Grooving):</strong> On return idlers in particular, abrasive carryback on the dirty side of the belt grinds a circumferential groove into the steel shell. Once the shell wall is worn through, the exposed shell edge cuts the belt.</li>
+            <li><strong>Bearing Spalling:</strong> Rolling contact fatigue cracks initiate at or below the bearing raceway surface and propagate, causing pitting and rough running with increasing noise and vibration before seizure. Spalling is accelerated by overloading, misalignment, and contamination.</li>
+            <li><strong>Shaft Bending:</strong> Excessive concentrated load (e.g. large lump impact) permanently bends the idler shaft. The stationary shaft then holds the bearings out of alignment, producing edge loading, vibration and accelerated bearing fatigue, and the tilted roll axis degrades belt tracking.</li>
+        </ul>
+    </section>
+
+    <section id="inspection-methods">
+        <h3>22.2 Inspection Methods</h3>
+        <ul>
+            <li><strong>Visual inspection:</strong> Walk the conveyor to identify seized rollers (flat spots, discolouration, smoke, abnormal noise), shell wear, and frame damage. This is the baseline method. Set the interval by risk assessment and statutory requirements.</li>
+            <li><strong>Acoustic monitoring:</strong> Handheld ultrasonic detectors or fixed microphone arrays detect high-frequency bearing defect signatures before seizure. Fixed systems suit long conveyors with large idler populations.</li>
+            <li><strong>Thermal Imaging:</strong> Infrared cameras identify hot rollers (indicating a bearing that is binding or has seized) from a distance, which suits high-speed conveyors where close access is hazardous. Temperature rise occurs late in bearing degradation, so thermal imaging confirms rather than predicts failure.</li>
+            <li><strong>Vibration Analysis:</strong> Accelerometers mounted on the idler frame detect bearing defect frequencies (outer race, inner race, rolling element, and cage). Typically reserved for belt-scale idlers and high-value installations.</li>
+        </ul>
+    </section>
+
+    <section id="lifecycle-cost-analysis-framework">
+        <h2>23. Lifecycle Cost Analysis Framework</h2>
+        <p>Higher-specification idlers cost more at purchase (CAPEX) but can deliver lower operating expenditure (OPEX) through extended bearing life, reduced power consumption, fewer replacements, and less unplanned downtime.</p>
+    </section>
+
+    <section id="cost-components">
+        <h3>23.1 Cost Components</h3>
+        <ul>
+            <li><strong>Capital Cost (CAPEX):</strong> Unit purchase price of each roller (including bearing, seal, shaft, shell, and grease). Unit purchase price of each idler frame (including corrosion protection). Freight cost (driven by roller weight and site remoteness). Installation labour cost (driven by roller weight, frame complexity, and access difficulty).</li>
+            <li><strong>Energy Cost:</strong> Power demand attributable to idler rotating resistance, calculated from measured roller rotating resistance, roller quantity, and belt speed, multiplied by annual operating hours and energy price (AUD/kWh or local currency). This cost accumulates over the full design life and is most significant on long overland conveyors.</li>
+            <li><strong>Replacement Cost (Planned):</strong> The number of roller replacements expected over the design life, based on the calculated L10h bearing life, grease life, and shell wear life, multiplied by the unit cost of each replacement roller plus labour. Labour includes belt lifting, roller extraction, new roller insertion, and belt lowering, and is influenced by roller weight (manual handling or mechanical aids) and site access (surface plant, underground, or elevated gallery).</li>
+            <li><strong>Unplanned Downtime Cost:</strong> The cost per hour of unplanned conveyor stoppage (lost production revenue, contractual penalties, demurrage charges) multiplied by the expected frequency and duration of unplanned stoppages caused by idler failures (seized rollers, belt damage from locked rollers, fire incidents). This cost is difficult to quantify but can dominate total cost of ownership (TCO) on high-utilisation conveyors without redundancy (e.g. port ship-loading systems).</li>
+            <li><strong>Spare Parts Inventory Cost:</strong> Capital tied up in spare roller and frame inventory, storage cost (warehouse space, stock management labour), and shelf-life expiry of stored rollers (grease degradation, seal ageing).</li>
+        </ul>
+    </section>
+
+    <section id="comparative-analysis-method">
+        <h3>23.2 Comparative Analysis Method</h3>
+        <p>Calculate the TCO of each idler specification (e.g. standard versus premium) over the conveyor design life (typically 20 to 30 years for a permanent installation).</p>
+        <ol>
+            <li>Calculate CAPEX for each option (unit price multiplied by total quantity, plus freight and installation).</li>
+            <li>Calculate annual energy cost for each option. Do not represent seal options with different DIN 22101 artificial friction factors (f). The factor f also includes belt indentation and flexure losses that do not depend on idler specification.</li>
+            <li>Calculate planned replacement cost for each option. Divide the design life (in operating hours) by the expected replacement interval (the shortest of L10h, grease life, and shell wear life) to determine the number of replacement cycles. Multiply by the unit replacement cost (parts plus labour). L10h is the life exceeded by 90% of bearings, so using it as the interval overstates replacement quantity. Apply it consistently across all options.</li>
+            <li>Estimate unplanned downtime cost for each option using historical failure rate data from comparable installations, or a reliability model based on the calculated L10h and environmental factors.</li>
+            <li>Discount annual costs to present value at the owner's discount rate, including energy price escalation, then sum all cost components for each option. The option with the lowest TCO is the economically optimal specification, regardless of which option has the lowest CAPEX.</li>
+        </ol>
+    </section>
+
+    <section id="sensitivity-analysis">
+        <h3>23.3 Sensitivity Analysis</h3>
+        <p>Vary key inputs (energy price +/-30%, replacement labour +/-50%, discount rate, downtime cost, and failure rate) and confirm the option ranking holds. If ranking reverses under plausible variations, treat the options as economically equivalent and select on non-cost criteria (reliability, standardisation, vendor support).</p>
+        <p>On a long overland conveyor operating for 20 years, the energy cost difference between f = 0.020 and f = 0.030 can be a substantial proportion of the capital cost of the entire idler population. Idler rotating resistance is one contributor to this range, together with belt indentation, flexure and alignment.</p>
+    </section>
+
+    <section id="idler-fire-prevention-and-fras">
+        <h2>24. Idler Fire Prevention and FRAS</h2>
+        <p>Belt slip over a seized roller generates frictional heat capable of igniting coal dust, methane, or the belt.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 24: International FRAS Standards Comparison</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Jurisdiction</th>
+                        <th scope="col">Belting Standard</th>
+                        <th scope="col">Standard Scope</th>
+                        <th scope="col">Idler Component Requirements</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Australia</th><td>AS 4606 (Grade S)</td><td>Belting and conveyor accessories</td><td>Covered by AS 4606. In underground coal mines, all non-metallic idler components must be FRAS compliant.</td></tr>
+                    <tr><th scope="row">European Union (EU)</th><td>EN 14973</td><td>Belting only</td><td>Addressed by broader directives. Non-electrical idler accessories in explosive atmospheres fall under the ATEX (explosive atmospheres) equipment Directive 2014/34/EU, with ignition hazard assessment per EN ISO 80079-36, to control static discharge and frictional ignition.</td></tr>
+                    <tr><th scope="row">USA, Mine Safety and Health Administration (MSHA)</th><td>30 Code of Federal Regulations (CFR) Part 14</td><td>Belting only</td><td>No direct equivalent to AS 4606 for idler materials. 30 CFR Part 75 governs underground coal fire protection, including repair or replacement of damaged rollers that pose a fire hazard (30 CFR 75.1731).</td></tr>
+                    <tr><th scope="row">South Africa</th><td>SANS 971</td><td>Belting only</td><td>Regulated by separate equipment standards and mining codes. SANS 1313 governs idler manufacturing and dimensions, while local Mine Health and Safety Act (MHSA) risk assessments govern FRAS implementation.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>AS 4606 requires non-metallic components (polymer shells, seals, rubber lagging) to self-extinguish within prescribed time limits after exposure to a defined flame source. Steel shells are outside the scope of these requirements. Standard HDPE, NR/SBR lagging, and nitrile seal compounds do not comply.</p>
+        <p>AS 4606 also limits surface electrical resistance of non-metallic components to 3 * 10^8 Ohm, limiting triboelectric charge accumulation and incendive spark discharge in methane-rich atmospheres. Provide a continuous electrical path from the shell through the bearing housing and shaft to the earthed frame. FRAS compliance is a property of the specific compound formulation, not the material family.</p>
+    </section>
+
+    <section id="idler-standards-cross-reference">
+        <h2>25. Idler Standards Cross-Reference</h2>
+        <p>No single standard covers all aspects of idler specification. The table provides the starting point for identifying which standards apply to each aspect of the idler design.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 25: Idler Standards Cross-Reference</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Standard</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Application</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">AS 1199 / ISO 2859 Series</th><td>Sampling procedures for inspection by attributes.</td><td>Statistical sampling plans for factory acceptance testing.</td></tr>
+                    <tr><th scope="row">AS/NZS 1163</th><td>Cold-formed structural steel hollow sections.</td><td>Steel grade specification for roller shells, including C350L0 (impact tested at 0 deg C [32 deg F]) for low-temperature service.</td></tr>
+                    <tr><th scope="row">AS/NZS 2312.1 / AS/NZS 2312.2</th><td>Guide to the protection of structural steel against atmospheric corrosion by the use of protective coatings. Part 1: Paint coatings. Part 2: Hot dip galvanizing.</td><td>Paint system selection and galvanised coating life estimation for idler frames.</td></tr>
+                    <tr><th scope="row">AS 4606</th><td>Grade S fire resistant and antistatic requirements for conveyor belting and conveyor accessories.</td><td>FRAS requirements for non-metallic idler components in underground coal mines.</td></tr>
+                    <tr><th scope="row">AS/NZS 4680</th><td>Hot-dip galvanized (zinc) coatings on fabricated ferrous articles.</td><td>Galvanising thickness, adhesion, and uniformity requirements for idler frames.</td></tr>
+                    <tr><th scope="row">ISO 281</th><td>Rolling bearings. Dynamic load ratings and rating life.</td><td>L10h bearing life calculation.</td></tr>
+                    <tr><th scope="row">ISO 1537</th><td>Continuous mechanical handling equipment for loose bulk materials. Troughed belt conveyors, other than portable conveyors. Idlers.</td><td>Idler dimensions, arrangement, and clearances for three-roll troughed conveyors.</td></tr>
+                    <tr><th scope="row">ISO 2230</th><td>Rubber products. Guidelines for storage.</td><td>Initial storage periods for elastomer seals.</td></tr>
+                    <tr><th scope="row">ISO 21940-11</th><td>Mechanical vibration. Rotor balancing. Part 11: Procedures and tolerances for rotors with rigid behaviour.</td><td>Dynamic balancing and residual unbalance limits. Supersedes ISO 1940-1.</td></tr>
+                    <tr><th scope="row">DIN 22101</th><td>Continuous conveyors. Belt conveyors for loose bulk materials. Basics for calculation and dimensioning.</td><td>Main resistance and artificial friction factor (f).</td></tr>
+                    <tr><th scope="row">DIN 22107</th><td>Continuous mechanical handling equipment. Idler sets for belt conveyors for loose bulk materials. Principal dimensions.</td><td>Idler set principal dimensions. Comparable in scope to ISO 1537.</td></tr>
+                    <tr><th scope="row">DIN 22112, Parts 1 to 3</th><td>Belt conveyors for underground coal mining. Idlers.</td><td>Part 1: Dimensions. Part 2: Requirements. Part 3: Testing.</td></tr>
+                    <tr><th scope="row">SANS 1313</th><td>Conveyor belt idlers.</td><td>Idler construction and type testing, including dust and water ingress.</td></tr>
+                    <tr><th scope="row">CEMA Standard 502</th><td>Bulk Material Belt Conveyor Troughing and Return Idlers. Selection and Dimensions.</td><td>North American idler class definitions, B to F, standard tube diameters, load ratings, and bearing L10 life.</td></tr>
+                    <tr><th scope="row">Bearing manufacturer catalogue</th><td>Rolling Bearings, General Catalogue.</td><td>Bearing dynamic load ratings, C, speed limits, grease life estimation, and shaft tolerance recommendations.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="key-formulae-for-idler-engineering">
+        <h2>26. Key Formulae for Idler Engineering</h2>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 1: Roller RPM and Rotational Frequency (Hz)</figcaption>
+            <p class="mb-2">The rotational speed of an idler roll is a function of the belt linear speed and the roller outside diameter. It sets the number of bearing revolutions, which governs bearing L10h, grease life and seal wear.</p>
+            <p class="font-monospace my-3">RPM = (V * 60) / (PI * D)<br>f_r = RPM / 60 = V / (PI * D)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>RPM = Rotational speed of the roll (rev/min)</li>
+                <li>f_r = Rotational frequency of the roll (Hz)</li>
+                <li>V = Belt speed (m/s)</li>
+                <li>D = Roller outside diameter (m)</li>
+                <li>PI = 3.14159</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> For a fixed belt speed, RPM is inversely proportional to roller diameter. High-speed conveyors use large-diameter rollers to reduce bearing revolutions, which increases L10h and grease life.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 2: Total Static Idler Load (F_total)</figcaption>
+            <p class="mb-2">The total vertical gravitational force acting on one complete carrying idler set:</p>
+            <p class="font-monospace my-3">Metric: F_total = (W_b + W_m) * g * S_i<br>Imperial: F_total = (W_b + W_m) * S_i</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>F_total = Total static load on one carrying idler set (N) [lbf]</li>
+                <li>W_b = Mass of the belt per metre (kg/m) [lb/ft]</li>
+                <li>W_m = Mass of the conveyed material per metre (kg/m) [lb/ft]</li>
+                <li>g = Gravitational acceleration, 9.81 (m/s2), metric form only</li>
+                <li>S_i = Idler spacing (m) [ft]</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> The total static load is proportional to idler spacing. Reduce spacing where loads are concentrated, at loading zones and convex curves.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 3: Equivalent Dynamic Bearing Load (P)</figcaption>
+            <p class="mb-2">Multiply the static radial load (F_r) by impact and environmental factors to obtain the Equivalent Dynamic Load (P).</p>
+            <p class="font-monospace my-3">P = F_r * K_impact * K_env</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>P = Equivalent dynamic bearing load (N)</li>
+                <li>F_r = Radial load per bearing (N)</li>
+                <li>K_impact = Dynamic impact and shock factor (dimensionless)</li>
+                <li>K_env = Environmental and maintenance factor (dimensionless)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Where axial load is significant (wing rolls, misaligned frames), first calculate the equivalent load from the radial and axial components using the bearing manufacturer's X and Y factors. Where contamination is accounted for in the ISO 281 life modification factor (a_ISO), set K_env to 1.0 to avoid applying it twice.</p>
+        </div>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 26: Dynamic Load Multipliers (K-Factors)</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Operating Condition</th>
+                        <th scope="col">K_impact, Shock</th>
+                        <th scope="col">K_env, Environment</th>
+                        <th scope="col">Application Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Clean / controlled</th><td>1.0</td><td>1.0</td><td>Clean, indoor plant, fine materials, gentle loading.</td></tr>
+                    <tr><th scope="row">Normal / standard</th><td>1.1 to 1.2</td><td>1.1</td><td>Typical overland or plant conveyor, crushed ores less than 100 mm [4 in].</td></tr>
+                    <tr><th scope="row">Heavy duty</th><td>1.3 to 1.5</td><td>1.2 to 1.3</td><td>Lumps 100 mm [4 in] and larger, dusty environments, occasional washdowns.</td></tr>
+                    <tr><th scope="row">Severe / primary</th><td>1.6 to 2.0 or greater</td><td>1.4 to 1.5</td><td>ROM rock, bucket wheel reclaimer impact, corrosive or submerged.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> For ROM applications, the equivalent dynamic load can be 2 to 3 times the static radial load. Omitting K-factors overstates the calculated bearing life.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 4: L10h Bearing Life (ISO 281)</figcaption>
+            <p class="mb-2">The basic rating life of a rolling element bearing in hours:</p>
+            <p class="font-monospace my-3">L10h = (1,000,000 / (60 * RPM)) * (C / P)^p</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>L10h = Basic rating life (h)</li>
+                <li>RPM = Rotational speed of the idler roll (rev/min)</li>
+                <li>C = Basic dynamic load rating of the bearing (N)</li>
+                <li>P = Equivalent dynamic bearing load (N)</li>
+                <li>p = Life exponent (dimensionless): 3 for ball bearings (DGBB), 10/3 for roller bearings (TRB and SRB)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Bearing life is sensitive to load. Reducing the radial load by 10% increases L10h by approximately 37% for a ball bearing and 42% for a roller bearing.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 5: Absolute Belt Sag (y) and Sag Percentage (%)</figcaption>
+            <p class="mb-2">The vertical distance the belt drops between two idler sets, modelled as a parabolic approximation of the catenary:</p>
+            <p class="font-monospace my-3">y = [(W_b + W_m) * g * S_i^2] / (8 * T)</p>
+            <p class="mb-2">The sag of the belt expressed as a percentage of the idler spacing:</p>
+            <p class="font-monospace my-3">Sag = (y / S_i) * 100 = [(W_b + W_m) * g * S_i] / (8 * T) * 100</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>y = Absolute sag (m)</li>
+                <li>Sag = Belt sag as a percentage of idler spacing (%)</li>
+                <li>W_b = Belt mass per metre (kg/m)</li>
+                <li>W_m = Material mass per metre (kg/m)</li>
+                <li>g = Gravitational acceleration, 9.81 (m/s2)</li>
+                <li>S_i = Idler spacing (m)</li>
+                <li>T = Local longitudinal belt tension at the point under consideration (N)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Absolute sag is proportional to the square of idler spacing and sag percentage is proportional to spacing. Both are inversely proportional to belt tension. Check sag at the minimum tension point, typically the tail end of the carry side, under starting, running and stopping conditions.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 6: Maximum Allowable Idler Spacing from Sag Limit</figcaption>
+            <p class="mb-2">Rearranging the sag equation gives the maximum idler spacing for a design sag limit:</p>
+            <p class="font-monospace my-3">S_i_max = (8 * T * Sag_limit) / ((W_b + W_m) * g * 100)</p>
+            <p class="mb-2">Rearranged for tension, it gives the minimum belt tension required to hold the sag limit at a given spacing, which sets the minimum take-up tension:</p>
+            <p class="font-monospace my-3">T_min = ((W_b + W_m) * g * S_i * 100) / (8 * Sag_limit)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>S_i_max = Maximum allowable idler spacing (m)</li>
+                <li>T = Local belt tension at the point under consideration (N)</li>
+                <li>T_min = Minimum belt tension to satisfy the sag limit (N)</li>
+                <li>Sag_limit = Maximum allowable sag (%), typically 2.0 for carry and 3.0 for return</li>
+                <li>W_b = Belt mass per metre (kg/m)</li>
+                <li>W_m = Material mass per metre (kg/m). For return side calculations, W_m = 0.</li>
+                <li>g = Gravitational acceleration, 9.81 (m/s2)</li>
+                <li>S_i = Idler spacing (m)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Check both sag and bearing life. On high-tension belts, bearing life or structural cost governs spacing before sag. Sag governs at low-tension sections, typically the tail end of the carry side and the loading zone.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 7: Idler Indentation Rolling Resistance (F_ir)</figcaption>
+            <p class="mb-2">Indentation rolling resistance is the energy dissipated in the viscoelastic bottom cover as it deforms over each roll. On long horizontal conveyors it can be the largest component of main resistance. The governing proportional relationship (one-dimensional Winkler foundation model) is:</p>
+            <p class="font-monospace my-3">F_ir is proportional to (F_v^(4/3) * h^(1/3) * tan_delta) / (D^(2/3) * E_rubber^(1/3) * b^(1/3))</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>F_ir = Indentation rolling resistance per roll (N)</li>
+                <li>F_v = Vertical load on the roller (N)</li>
+                <li>D = Idler roller outside diameter (m)</li>
+                <li>E_rubber = Storage modulus (E') of the bottom cover rubber compound (MPa). A stiffer compound (higher E') produces less indentation and therefore lower rolling resistance.</li>
+                <li>tan_delta = Loss tangent of the bottom cover compound (dimensionless)</li>
+                <li>h = Bottom cover thickness (m)</li>
+                <li>b = Contact width of the roll (m)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> The loss tangent is the strongest compound variable. On long overland conveyors, specify a low rolling resistance bottom cover compound at the minimum practical bottom cover thickness, and evaluate compound properties at the minimum operating temperature, where indentation resistance is typically highest.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 8: Shaft Deflection and Bearing Misalignment Angle</figcaption>
+            <p class="mb-2">If the slope at the bearing journal exceeds the bearing manufacturer's limit, typically 10 arc-minutes or less for deep groove ball bearings and 2 to 4 arc-minutes for tapered roller bearings, increase the shaft diameter regardless of the L10h result.</p>
+            <p class="mb-2">Modelling the idler shaft as a simply supported beam with symmetrical point loads applied at the bearing centres, the standard equations are:</p>
+            <p class="font-monospace my-3">I = (PI * d^4) / 64<br>theta = [F_r * A * (L_s - 2 * A)] / [2 * E * I]<br>theta_arcmin = theta * (180 / PI) * 60<br>y_max = [(F_r * A) / (24 * E * I)] * (3 * L_s^2 - 4 * A^2)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>F_r = Radial load per bearing (N)</li>
+                <li>L_s = Distance between the idler frame support slots (m)</li>
+                <li>A = Distance from the idler frame support slot to the centre of the bearing (m)</li>
+                <li>d = Shaft diameter (m)</li>
+                <li>E = Young's Modulus of steel, 2.1 * 10^11 (N/m2) [30.5 * 10^6 psi]</li>
+                <li>I = Area Moment of Inertia of the shaft (m4)</li>
+                <li>PI = 3.14159</li>
+                <li>theta = Slope of the shaft at the bearing journal (radians)</li>
+                <li>theta_arcmin = Slope of the shaft at the bearing journal (arc-minutes)</li>
+                <li>y_max = Maximum centre shaft deflection (m)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Shaft slope and deflection are inversely proportional to the fourth power of the shaft diameter. Where the slope limit is exceeded, increase the shaft diameter or reduce the bearing distance A.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 9: Material Mass per Metre (W_m) from Design Tonnage</figcaption>
+            <p class="mb-2">Before calculating idler loads, convert the design throughput (t/h) into linear mass density (kg/m). W_m is the input for idler load, bearing load and belt sag calculations.</p>
+            <p class="font-monospace my-3">Metric: W_m = Q / (3.6 * V)<br>Imperial: W_m = (Q * 2,000) / (60 * V)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>W_m = Material mass per metre (kg/m) [lb/ft]</li>
+                <li>Q = Design throughput (t/h) [stph]</li>
+                <li>V = Belt speed (m/s) [fpm]</li>
+                <li>3.6 = Unit conversion factor, metric form (converts t/h and m/s into kg/m)</li>
+                <li>2,000 / 60 = Unit conversion factor, imperial form (converts stph and fpm into lb/ft)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Use the design (peak) throughput, not the average, when calculating for idler selection. On variable speed conveyors, calculate at the lowest belt speed that carries full throughput.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 10: Dynamic Impact Force at Loading Points (F_impact)</figcaption>
+            <p class="mb-2">At every transfer or loading point, the falling material stream strikes the belt with a force that exceeds the steady-state gravitational load. This impact force governs the selection of impact idlers, impact cradles, and the belt's impact rating.</p>
+            <p class="font-monospace my-3">F_impact = m_lump * SQRT(2 * g * h_d) / t_contact</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>F_impact = Mean impact force over the contact duration (N)</li>
+                <li>m_lump = Mass of the largest single lump (kg)</li>
+                <li>g = Gravitational acceleration, 9.81 (m/s2)</li>
+                <li>h_d = Free-fall drop height from the chute lip to the belt surface (m)</li>
+                <li>t_contact = Contact duration over which the vertical velocity of the lump is reduced to zero (s)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Indicative t_contact values: rigid steel idler 0.01 to 0.05 s, rubber-lagged impact idler 0.05 to 0.15 s, impact cradle 0.10 to 0.30 s. For a system of known stiffness k (N/m), t_contact = (PI / 2) * SQRT(m_lump / k), where PI = 3.14159. Doubling the contact time halves the impact force. Rubber-lagged impact idlers and impact cradles do not reduce the impact energy. They extend the contact duration, which reduces the peak force on the bearings and belt carcass.</p>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Reduce impact force by extending contact duration (rubber lagging, impact cradles) and by minimising free-fall height through chute design.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 11: Bearing Speed Factor (n_dm) and Grease Speed Limit</figcaption>
+            <p class="mb-2">The speed capability of a grease-lubricated bearing is governed by the product of the rotational speed (RPM) and the bearing mean diameter. Exceeding the grease manufacturer's rated limit causes accelerated thermal degradation of the lubricant.</p>
+            <p class="font-monospace my-3">n_dm = RPM * d_m<br>d_m = (d_bore + D_outer) / 2</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>n_dm = Bearing speed factor (mm/min)</li>
+                <li>RPM = Rotational speed of the idler roll (rev/min)</li>
+                <li>d_m = Mean bearing diameter (mm)</li>
+                <li>d_bore = Bearing bore diameter (mm)</li>
+                <li>D_outer = Bearing outside diameter (mm)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Typical grease speed limits are:</p>
+            <ul class="mt-2 mb-0">
+                <li><strong>Standard mineral grease (lithium complex):</strong> n_dm less than or equal to 300,000 to 350,000 mm/min</li>
+                <li><strong>Polyurea thickened grease:</strong> n_dm less than or equal to 500,000 to 600,000 mm/min</li>
+                <li><strong>High-speed synthetic (ester or polyalphaolefin (PAO) base):</strong> n_dm of 800,000 mm/min or greater</li>
+            </ul>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> The grease speed limit rarely governs idler roller diameter. Use this check to confirm grease suitability for small rollers at high speed and for non-standard bearings.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 12: Estimated Grease Service Life (t_grease)</figcaption>
+            <p class="mb-2">For sealed-for-life idler bearings (no re-lubrication port), estimate grease life using the bearing manufacturer's empirical relubrication method:</p>
+            <p class="font-monospace my-3">t_grease = K_t * K_f * ((14,000,000 / (RPM * SQRT(d_bore))) - 4 * d_bore)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>t_grease = Estimated grease service life (h)</li>
+                <li>K_t = Temperature correction factor (dimensionless): 1.0 at 70 deg C [158 deg F] bearing temperature, halving for every 15 deg C [27 deg F] above 70 deg C [158 deg F]</li>
+                <li>K_f = Bearing type factor (dimensionless): 10 for radial ball bearings (DGBB), 5 for cylindrical roller bearings, 1 for tapered and spherical roller bearings</li>
+                <li>RPM = Rotational speed (rev/min)</li>
+                <li>d_bore = Bearing bore diameter (mm)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> If the grease life is less than the L10h target, the bearing is likely to fail from lubricant degradation before mechanical fatigue. Specify a re-lubrication system, a higher-temperature synthetic grease, or a larger roller diameter to reduce RPM. For sealed-for-life bearings, confirm the result against the bearing manufacturer's grease life data for capped bearings.</p>
+        </div>
+        <p>Example: A 6205 bearing (25 mm [0.98 in] bore) at 503 RPM and 70 deg C [158 deg F]: t_grease = 1.0 * 10 * ((14,000,000 / (503 * 5)) - 4 * 25) = 10 * (5,567 - 100) = 54,700 hours. At 85 deg C [185 deg F], this halves to 27,300 hours.</p>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Grease life, rather than fatigue life, can limit sealed-for-life idler bearings, particularly above 70 deg C [158 deg F].</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 13: Idler Roll Critical (Resonant) Speed</figcaption>
+            <p class="mb-2">The first bending natural frequency of the roll shell is set by its length, cross-section and material. If the rotational speed of the roller approaches this frequency, the shell will resonate, causing vibration, belt flap, and accelerated bearing failure.</p>
+            <p class="font-monospace my-3">f_critical = (PI / 2) * (1 / L_shell^2) * SQRT(E * I_shell / (rho * A_shell))<br>N_critical = f_critical * 60</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>f_critical = First bending natural frequency of the shell (Hz)</li>
+                <li>N_critical = Critical speed of the roll (RPM)</li>
+                <li>L_shell = Unsupported face length of the roller shell between end plates (m)</li>
+                <li>E = Young's Modulus of the shell material (N/m2): steel 2.1 * 10^11 [30.5 * 10^6 psi], HDPE approximately 1.0 * 10^9 [0.145 * 10^6 psi]</li>
+                <li>I_shell = Area Moment of Inertia of the shell (m4) = (PI / 64) * (D^4 - D_i^4)</li>
+                <li>rho = Density of the shell material (kg/m3): steel 7,850 [490 lb/ft3], HDPE approximately 960 [60 lb/ft3]</li>
+                <li>A_shell = Cross-sectional area of the shell wall (m2) = (PI / 4) * (D^2 - D_i^2)</li>
+                <li>D = Shell outside diameter (m)</li>
+                <li>D_i = Shell inside diameter (m)</li>
+                <li>PI = 3.14159</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> The formula assumes pinned ends, which gives a lower and conservative frequency compared with clamped ends. Keep the operating RPM less than 70% of N_critical to avoid resonance amplification. If this is not met, reduce the unsupported face length, increase the shell diameter or use a material with a higher E / rho ratio. For identical geometry, an HDPE shell has approximately one fifth of the critical speed of a steel shell.</p>
+        </div>
+        <p>Example: A steel shell 152 mm [6 in] in diameter with a 4.5 mm [0.18 in] wall and 465 mm [18.3 in] face length: I_shell = 5.68 * 10^-6 m4, A_shell = 2.09 * 10^-3 m2 and f_critical = 1,960 Hz, giving N_critical of approximately 117,600 RPM. This is more than 200 times the 503 RPM of the same roller at 4.0 m/s [787 fpm]. The check is relevant to long-face polymer rolls on wide, high-speed belts.</p>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Critical speed is proportional to the shell radius of gyration, SQRT(D^2 + D_i^2) / 4, and inversely proportional to the square of the unsupported face length. Wall thickness has little effect because shell stiffness and mass increase together. Polymer rollers require a critical speed check due to their low modulus.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 14: Main Resistance (F_H), DIN 22101 Method</figcaption>
+            <p class="mb-2">DIN 22101 combines the main resistances (idler rotating resistance, belt indentation rolling resistance, and belt and material flexure resistance) into a single artificial friction factor applied to the moving masses.</p>
+            <p class="font-monospace my-3">F_H = f * L * g * (W_r + (2 * W_b + W_m) * COS(delta))</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>F_H = Main resistance (N)</li>
+                <li>f = Artificial friction factor (dimensionless)</li>
+                <li>L = Conveyor length (m)</li>
+                <li>g = Gravitational acceleration, 9.81 (m/s2)</li>
+                <li>W_r = Rotating mass of carry and return idler rolls per metre of conveyor (kg/m) = sum of (rotating mass of one idler set / idler spacing) for carry and return</li>
+                <li>W_b = Belt mass per metre (kg/m)</li>
+                <li>W_m = Material mass per metre (kg/m)</li>
+                <li>delta = Conveyor inclination angle (deg)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> F_H excludes secondary resistances (loading point acceleration, belt wrap at pulleys), special resistances (skirtboards, belt cleaners, idler forward tilt) and lift resistance, which are added separately.</p>
+        </div>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 27: Typical DIN 22101 Friction Factors (f)</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Installation Condition</th>
+                        <th scope="col">Friction Factor, f</th>
+                        <th scope="col">Typical Application</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Ideal, new, precision aligned, low TIR</th><td>0.017 to 0.020</td><td>New overland conveyor with non-contact labyrinth seals and low rolling resistance belt compound.</td></tr>
+                    <tr><th scope="row">Normal, well maintained plant</th><td>0.020 to 0.025</td><td>Standard fixed plant, regular maintenance, clean environment.</td></tr>
+                    <tr><th scope="row">Unfavourable, dusty, wet, poor maintenance</th><td>0.025 to 0.030</td><td>Dusty quarries, wet coal plants, infrequent idler replacement.</td></tr>
+                    <tr><th scope="row">Very unfavourable, extreme</th><td>0.030 to 0.040 or greater</td><td>Underground development with wide idler spacing, submerged return idlers, contact lip seals, and poor alignment.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Values are typical practice for use with the DIN 22101 method.</p>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> The friction factor f is an influential variable in conveyor power consumption after tonnage and lift. Use a conservative (high) f for drive sizing. For declined or regenerative conveyors, check the braking case with a low f, typically 0.012.</p>
+        </div>
+    </section>
+
+    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+        Published <time datetime="2026-11-21">21 November 2026</time><br>
+        Updated <time datetime="2026-11-21">21 November 2026</time>
+    </footer>
+
+</main>
+
+<script src="chapters.js"></script>
+<script src="handbook.js"></script>
+
+</body>
+</html>

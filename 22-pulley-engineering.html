@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulley Engineering – Modern Conveyor Handbook</title>
+    <meta name="description" content="Conveyor pulleys: minimum diameters, crowning, balancing, tolerances, lagging, shear mechanics, shafts, locking assemblies, end-discs, shells and bearings.">
+    <meta name="author" content="Jane Doe">
+    <link rel="canonical" href="https://www.conveyorhandbook.com/22-pulley-engineering.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Pulley Engineering – Modern Conveyor Handbook">
+    <meta property="og:description" content="Conveyor pulleys: minimum diameters, crowning, balancing, tolerances, lagging, shear mechanics, shafts, locking assemblies, end-discs, shells and bearings.">
+    <meta property="og:url" content="https://www.conveyorhandbook.com/22-pulley-engineering.html">
+    <meta property="og:site_name" content="Modern Conveyor Handbook">
+    <meta property="og:image" content="https://www.conveyorhandbook.com/images/og-22-pulley-engineering.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Ceramic-lagged conveyor drive pulley with shaft, locking assemblies and plummer block bearings">
+    <meta property="og:locale" content="en_AU">
+    <meta property="article:published_time" content="2026-11-21T00:00:00+11:00">
+    <meta property="article:modified_time" content="2026-11-21T00:00:00+11:00">
+    <meta property="article:author" content="Jane Doe">
+    <meta property="article:section" content="Engineering">
+    <meta property="article:tag" content="conveyors">
+    <meta property="article:tag" content="conveyor pulleys">
+    <meta property="article:tag" content="pulley lagging">
+    <meta property="article:tag" content="pulley shaft design">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pulley Engineering – Modern Conveyor Handbook">
+    <meta name="twitter:description" content="Conveyor pulleys: minimum diameters, crowning, balancing, tolerances, lagging, shear mechanics, shafts, locking assemblies, end-discs, shells and bearings.">
+    <meta name="twitter:image" content="https://www.conveyorhandbook.com/images/og-22-pulley-engineering.jpg">
+    <meta name="twitter:image:alt" content="Ceramic-lagged conveyor drive pulley with shaft, locking assemblies and plummer block bearings">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="home" href="https://www.conveyorhandbook.com/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "TechArticle",
+                "headline": "Pulley Engineering",
+                "description": "Conveyor pulleys: minimum diameters, crowning, balancing, tolerances, lagging, shear mechanics, shafts, locking assemblies, end-discs, shells and bearings.",
+                "author": { "@type": "Person", "name": "Jane Doe" },
+                "publisher": { "@type": "Organization", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "datePublished": "2026-11-21",
+                "dateModified": "2026-11-21",
+                "mainEntityOfPage": "https://www.conveyorhandbook.com/22-pulley-engineering.html",
+                "isPartOf": { "@type": "WebSite", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "image": "https://www.conveyorhandbook.com/images/og-22-pulley-engineering.jpg",
+                "inLanguage": "en-AU",
+                "about": { "@type": "Thing", "name": "Conveyor Belts" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Modern Conveyor Handbook", "item": "https://www.conveyorhandbook.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Pulley Engineering", "item": "https://www.conveyorhandbook.com/22-pulley-engineering.html" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="handbook.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="topbar">
+    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Contents
+    </button>
+</div>
+
+<nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
+    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="chapterMenuBtn" aria-expanded="false" aria-controls="chapterMenu">Chapters</button>
+    </p>
+    <div class="chapter-menu" id="chapterMenu"></div>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-3">Table of Contents</p>
+    <div class="toc">
+        <a href="#pulley-engineering">1. Pulley Engineering</a>
+        <a href="#pulley-diameters">2. Pulley Diameters</a>
+        <a href="#iso-3684-pulley-classifications-types-a-b-and-c" class="sub">2.1 ISO 3684 Pulley Classifications (Types A, B and C)</a>
+        <a href="#recommended-minimum-pulley-diameters-fabric" class="sub">2.2 Recommended Minimum Pulley Diameters (Fabric)</a>
+        <a href="#solid-woven-pvc-belting-pulley-diameters" class="sub">2.3 Solid Woven (PVC) Belting Pulley Diameters</a>
+        <a href="#minimum-pulley-diameters-for-steel-cord-belts" class="sub">2.4 Minimum Pulley Diameters for Steel Cord Belts</a>
+        <a href="#pulley-geometry">3. Pulley Geometry</a>
+        <a href="#parallel-face-pulleys-versus-crowned-pulleys" class="sub">3.1 Parallel Face Pulleys Versus Crowned Pulleys</a>
+        <a href="#pulley-face-width" class="sub">3.2 Pulley Face Width</a>
+        <a href="#pulley-balancing" class="sub">3.3 Pulley Balancing</a>
+        <a href="#pulley-manufacturing-tolerances" class="sub">3.4 Pulley Manufacturing Tolerances</a>
+        <a href="#pulley-lagging">4. Pulley Lagging</a>
+        <a href="#lagging-materials-and-compounds" class="sub">4.1 Lagging Materials and Compounds</a>
+        <a href="#ceramic-tile-configurations" class="sub">4.2 Ceramic Tile Configurations</a>
+        <a href="#groove-patterns-and-dimensions" class="sub">4.3 Groove Patterns and Dimensions</a>
+        <a href="#application-methods-vulcanisation" class="sub">4.4 Application Methods (Vulcanisation)</a>
+        <a href="#lagging-selection-cost-and-maintenance" class="sub">4.5 Lagging Selection, Cost and Maintenance</a>
+        <a href="#temperature-limits-for-lagging-materials" class="sub">4.6 Temperature Limits for Lagging Materials</a>
+        <a href="#tension-transfer-and-lagging-shear-mechanics">5. Tension Transfer and Lagging Shear Mechanics</a>
+        <a href="#the-t1-to-t2-transition-arc-of-contact" class="sub">5.1 The T1 to T2 Transition (Arc of Contact)</a>
+        <a href="#shear-stress-and-strain-in-pulley-lagging" class="sub">5.2 Shear Stress and Strain in Pulley Lagging</a>
+        <a href="#effect-of-lagging-type-on-shear-and-performance-limits" class="sub">5.3 Effect of Lagging Type on Shear and Performance Limits</a>
+        <a href="#pulley-structural-design-and-shaft-sizing">6. Pulley Structural Design and Shaft Sizing</a>
+        <a href="#shaft-design-standards-fatigue-and-stress-concentrations" class="sub">6.1 Shaft Design Standards, Fatigue and Stress Concentrations</a>
+        <a href="#shaft-deflection-limits-and-bearing-kinematics" class="sub">6.2 Shaft Deflection Limits and Bearing Kinematics</a>
+        <a href="#keyless-locking-assemblies" class="sub">6.3 Keyless Locking Assemblies</a>
+        <a href="#end-disc-and-hub-design" class="sub">6.4 End-Disc and Hub Design</a>
+        <a href="#shell-material-selection-and-minimum-thickness" class="sub">6.5 Shell Material Selection and Minimum Thickness</a>
+        <a href="#weld-quality-and-inspection" class="sub">6.6 Weld Quality and Inspection</a>
+        <a href="#bearing-housings-plummer-blocks" class="sub">6.7 Bearing Housings (Plummer Blocks)</a>
+        <a href="#fixed-and-float-free-bearing-arrangements" class="sub">6.8 Fixed and Float (Free) Bearing Arrangements</a>
+        <a href="#standard-formulas-for-conveyor-pulleys">7. Standard Formulas for Conveyor Pulleys</a>
+    </div>
+</nav>
+
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+<main class="main-content" id="main" tabindex="-1">
+
+    <section id="pulley-engineering">
+        <h1 class="mb-3">1. Pulley Engineering</h1>
+        <p>This chapter sets out minimum pulley diameters, pulley geometry, lagging selection, tension transfer and the structural design of shafts, shells, end-discs and bearings. Design formulas for these checks close the chapter.</p>
+    </section>
+
+    <section id="pulley-diameters">
+        <h2>2. Pulley Diameters</h2>
+        <p>Pulley diameter governs belt bending fatigue life and depends on carcass thickness, carcass modulus, operating tension and wrap angle. An undersized pulley overstrains the outer fibres to fracture and compresses the inner fibres, causing crinkling and delamination.</p>
+    </section>
+
+    <section id="iso-3684-pulley-classifications-types-a-b-and-c">
+        <h3>2.1 ISO 3684 Pulley Classifications (Types A, B and C)</h3>
+        <p>ISO 3684 sets out a method for determining minimum pulley diameters. Pulleys are classified into three types according to belt tension zone and wrap angle. ISO 3684 values are minimums for use where belt manufacturer data is unavailable.</p>
+        <p>The standard does not apply to carcasses thicker than 20 mm [0.79 in], belts with intermediate rubber or plastic layers thicker than 0.8 mm [0.03 in] between plies, hot materials above 100 deg C [212 deg F] or ambient temperatures below minus 40 deg C [minus 40 deg F].</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 1: ISO 3684 Pulley Types</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Pulley Type</th>
+                        <th scope="col">Wrap Angle</th>
+                        <th scope="col">Belt Tension Zone</th>
+                        <th scope="col">Typical Locations</th>
+                        <th scope="col">Relative Diameter</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Type A</th><td>30 deg or greater</td><td>High</td><td>Drive, Head, highly stressed Tripper and Shuttle pulleys</td><td>Largest</td></tr>
+                    <tr><th scope="row">Type B</th><td>30 deg or greater</td><td>Low</td><td>Tail, Gravity Take-Up, low-tension Bend pulleys</td><td>One step smaller than Type A</td></tr>
+                    <tr><th scope="row">Type C</th><td>Less than 30 deg</td><td>Any</td><td>Snub pulleys and Bend pulleys</td><td>One step smaller than Type B</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Where a belt is rated above the duty (over-belting), the tension ratio, defined as maximum belt tension at the pulley divided by rated working tension, falls, and ISO 3684 permits smaller pulley diameters. Reduce Type A, B and C diameters by one standard step for tension ratios of 30% to 60%, and by two steps for tension ratios less than 30%. The tables below include this shift for each tension range.</p>
+        <p>Imperial values are nominal pulley sizes, not exact conversions. Some are up to 5% smaller than the exact conversion, e.g. 630 mm converts to 24.8 in against a nominal 24 in. For imperial designs, select a pulley not smaller than the exact conversion of the metric minimum.</p>
+    </section>
+
+    <section id="recommended-minimum-pulley-diameters-fabric">
+        <h3>2.2 Recommended Minimum Pulley Diameters (Fabric)</h3>
+        <p>Values for polyester-polyamide (EP) belts are based on belt rating and are conservative relative to carcass-thickness based values. Where the belt manufacturer publishes minimum diameters for the specific carcass, those values govern.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 2: Minimum Pulley Diameters for Multi-Ply EP Fabric Belts (Belt Tension Greater Than 60% of Rated Working Tension)</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">ISO Designation</th>
+                        <th scope="col">Approximate US Rating</th>
+                        <th scope="col">Type A (High Tension) mm [in]</th>
+                        <th scope="col">Type B (Low Tension) mm [in]</th>
+                        <th scope="col">Type C (Snub/Bend) mm [in]</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">EP 315 / 2-ply</th><td>2-ply 180 PIW</td><td>315 [12]</td><td>250 [10]</td><td>200 [8]</td></tr>
+                    <tr><th scope="row">EP 400 / 2-ply</th><td>2-ply 228 PIW</td><td>400 [16]</td><td>315 [12]</td><td>250 [10]</td></tr>
+                    <tr><th scope="row">EP 500 / 3-ply</th><td>3-ply 286 PIW</td><td>500 [20]</td><td>400 [16]</td><td>315 [12]</td></tr>
+                    <tr><th scope="row">EP 630 / 3-ply</th><td>3-ply 360 PIW</td><td>630 [24]</td><td>500 [20]</td><td>400 [16]</td></tr>
+                    <tr><th scope="row">EP 800 / 4-ply</th><td>4-ply 457 PIW</td><td>800 [32]</td><td>630 [24]</td><td>500 [20]</td></tr>
+                    <tr><th scope="row">EP 1000 / 4-ply</th><td>4-ply 571 PIW</td><td>1,000 [40]</td><td>800 [32]</td><td>630 [24]</td></tr>
+                    <tr><th scope="row">EP 1250 / 5-ply</th><td>5-ply 714 PIW</td><td>1,250 [48]</td><td>1,000 [40]</td><td>800 [32]</td></tr>
+                    <tr><th scope="row">EP 1600 / 5-ply</th><td>5-ply 914 PIW</td><td>1,600 [64]</td><td>1,250 [48]</td><td>1,000 [40]</td></tr>
+                    <tr><th scope="row">EP 2000 / 5-ply</th><td>5-ply 1,140 PIW</td><td>2,000 [80]</td><td>1,600 [64]</td><td>1,250 [48]</td></tr>
+                    <tr><th scope="row">EP 2500 / 5-ply</th><td>5-ply 1,430 PIW</td><td>2,500 [100]</td><td>2,000 [80]</td><td>1,600 [64]</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 3: Minimum Pulley Diameters for Multi-Ply EP Fabric Belts (Belt Tension 30% to 60% of Rated Working Tension, One-Step Shift Applied)</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">ISO Designation</th>
+                        <th scope="col">Approximate US Rating</th>
+                        <th scope="col">Type A (High Tension) mm [in]</th>
+                        <th scope="col">Type B (Low Tension) mm [in]</th>
+                        <th scope="col">Type C (Snub/Bend) mm [in]</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">EP 315 / 2-ply</th><td>2-ply 180 PIW</td><td>250 [10]</td><td>200 [8]</td><td>160 [6]</td></tr>
+                    <tr><th scope="row">EP 400 / 2-ply</th><td>2-ply 228 PIW</td><td>315 [12]</td><td>250 [10]</td><td>200 [8]</td></tr>
+                    <tr><th scope="row">EP 500 / 3-ply</th><td>3-ply 286 PIW</td><td>400 [16]</td><td>315 [12]</td><td>250 [10]</td></tr>
+                    <tr><th scope="row">EP 630 / 3-ply</th><td>3-ply 360 PIW</td><td>500 [20]</td><td>400 [16]</td><td>315 [12]</td></tr>
+                    <tr><th scope="row">EP 800 / 4-ply</th><td>4-ply 457 PIW</td><td>630 [24]</td><td>500 [20]</td><td>400 [16]</td></tr>
+                    <tr><th scope="row">EP 1000 / 4-ply</th><td>4-ply 571 PIW</td><td>800 [32]</td><td>630 [24]</td><td>500 [20]</td></tr>
+                    <tr><th scope="row">EP 1250 / 5-ply</th><td>5-ply 714 PIW</td><td>1,000 [40]</td><td>800 [32]</td><td>630 [24]</td></tr>
+                    <tr><th scope="row">EP 1600 / 5-ply</th><td>5-ply 914 PIW</td><td>1,250 [48]</td><td>1,000 [40]</td><td>800 [32]</td></tr>
+                    <tr><th scope="row">EP 2000 / 5-ply</th><td>5-ply 1,140 PIW</td><td>1,600 [64]</td><td>1,250 [48]</td><td>1,000 [40]</td></tr>
+                    <tr><th scope="row">EP 2500 / 5-ply</th><td>5-ply 1,430 PIW</td><td>2,000 [80]</td><td>1,600 [64]</td><td>1,250 [48]</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 4: Minimum Pulley Diameters for Multi-Ply EP Fabric Belts (Belt Tension Less Than 30% of Rated Working Tension, Two-Step Shift Applied)</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">ISO Designation</th>
+                        <th scope="col">Approximate US Rating</th>
+                        <th scope="col">Type A (High Tension) mm [in]</th>
+                        <th scope="col">Type B (Low Tension) mm [in]</th>
+                        <th scope="col">Type C (Snub/Bend) mm [in]</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">EP 315 / 2-ply</th><td>2-ply 180 PIW</td><td>200 [8]</td><td>160 [6]</td><td>125 [5]</td></tr>
+                    <tr><th scope="row">EP 400 / 2-ply</th><td>2-ply 228 PIW</td><td>250 [10]</td><td>200 [8]</td><td>160 [6]</td></tr>
+                    <tr><th scope="row">EP 500 / 3-ply</th><td>3-ply 286 PIW</td><td>315 [12]</td><td>250 [10]</td><td>200 [8]</td></tr>
+                    <tr><th scope="row">EP 630 / 3-ply</th><td>3-ply 360 PIW</td><td>400 [16]</td><td>315 [12]</td><td>250 [10]</td></tr>
+                    <tr><th scope="row">EP 800 / 4-ply</th><td>4-ply 457 PIW</td><td>500 [20]</td><td>400 [16]</td><td>315 [12]</td></tr>
+                    <tr><th scope="row">EP 1000 / 4-ply</th><td>4-ply 571 PIW</td><td>630 [24]</td><td>500 [20]</td><td>400 [16]</td></tr>
+                    <tr><th scope="row">EP 1250 / 5-ply</th><td>5-ply 714 PIW</td><td>800 [32]</td><td>630 [24]</td><td>500 [20]</td></tr>
+                    <tr><th scope="row">EP 1600 / 5-ply</th><td>5-ply 914 PIW</td><td>1,000 [40]</td><td>800 [32]</td><td>630 [24]</td></tr>
+                    <tr><th scope="row">EP 2000 / 5-ply</th><td>5-ply 1,140 PIW</td><td>1,250 [48]</td><td>1,000 [40]</td><td>800 [32]</td></tr>
+                    <tr><th scope="row">EP 2500 / 5-ply</th><td>5-ply 1,430 PIW</td><td>1,600 [64]</td><td>1,250 [48]</td><td>1,000 [40]</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="solid-woven-pvc-belting-pulley-diameters">
+        <h3>2.3 Solid Woven (PVC) Belting Pulley Diameters</h3>
+        <p>Solid woven belts, primarily used in underground mining as polyvinyl chloride (PVC) fire resistant anti-static (FRAS) belting, have a single integrally woven carcass with no separate plies to delaminate. They can often tolerate smaller pulley diameters than an equivalent strength plied belt.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 5: Minimum Pulley Diameters for Solid Woven (PVC/FRAS) Belts</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Belt Breaking Strength kN/m [PIW]</th>
+                        <th scope="col">Nominal Thickness mm [in]</th>
+                        <th scope="col">Type A (Head/Drive) mm [in]</th>
+                        <th scope="col">Type B (Tail/Take-Up) mm [in]</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">600 [3,430]</th><td>8.0 [5/16]</td><td>400 [16]</td><td>315 [12]</td></tr>
+                    <tr><th scope="row">800 [4,570]</th><td>8.5 [11/32]</td><td>500 [20]</td><td>400 [16]</td></tr>
+                    <tr><th scope="row">1,000 [5,710]</th><td>9.0 [3/8]</td><td>500 [20]</td><td>400 [16]</td></tr>
+                    <tr><th scope="row">1,250 [7,140]</th><td>10.5 [7/16]</td><td>800 [32]</td><td>630 [24]</td></tr>
+                    <tr><th scope="row">1,600 [9,140]</th><td>12.0 [1/2]</td><td>800 [32]</td><td>630 [24]</td></tr>
+                    <tr><th scope="row">2,000 [11,400]</th><td>13.5 [9/16]</td><td>1,000 [40]</td><td>800 [32]</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Values assume 1 to 2 mm [0.04 to 0.08 in] PVC covers. Heavy rubber covers on a solid woven carcass increase overall stiffness. Increase pulley diameters accordingly. Values are rounded up to the ISO 3684 pulley diameter series, with Type B one step below Type A. Confirm with the belt manufacturer. Where mechanical fasteners are fitted, check the fastener minimum pulley diameter, which can govern.</p>
+        </div>
+    </section>
+
+    <section id="minimum-pulley-diameters-for-steel-cord-belts">
+        <h3>2.4 Minimum Pulley Diameters for Steel Cord Belts</h3>
+        <p>Steel cord belt pulley diameters are governed by cord diameter and construction. The high axial stiffness of the cords generates high bending stress at each pulley.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 6: Minimum Pulley Diameters for Steel Cord Belts (Belt Tension Greater Than 60% of Rated Working Tension)</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Designation</th>
+                        <th scope="col">High Tension (Type A) mm [in]</th>
+                        <th scope="col">Low Tension (Type B) mm [in]</th>
+                        <th scope="col">Snub / Bend (Type C) mm [in]</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">ST 500</th><td>400 [16]</td><td>315 [12]</td><td>250 [10]</td></tr>
+                    <tr><th scope="row">ST 800</th><td>500 [20]</td><td>400 [16]</td><td>315 [12]</td></tr>
+                    <tr><th scope="row">ST 1000</th><td>630 [24]</td><td>500 [20]</td><td>400 [16]</td></tr>
+                    <tr><th scope="row">ST 1600</th><td>800 [32]</td><td>630 [24]</td><td>500 [20]</td></tr>
+                    <tr><th scope="row">ST 2000</th><td>1,000 [40]</td><td>800 [32]</td><td>630 [24]</td></tr>
+                    <tr><th scope="row">ST 2500</th><td>1,120 [45]</td><td>900 [36]</td><td>710 [28]</td></tr>
+                    <tr><th scope="row">ST 3150</th><td>1,250 [48]</td><td>1,000 [40]</td><td>800 [32]</td></tr>
+                    <tr><th scope="row">ST 4000</th><td>1,400 [56]</td><td>1,120 [45]</td><td>900 [36]</td></tr>
+                    <tr><th scope="row">ST 5000</th><td>1,600 [64]</td><td>1,250 [48]</td><td>1,000 [40]</td></tr>
+                    <tr><th scope="row">ST 6300</th><td>2,000 [80]</td><td>1,600 [64]</td><td>1,250 [48]</td></tr>
+                    <tr><th scope="row">ST 7100</th><td>2,200 [88]</td><td>1,800 [72]</td><td>1,400 [56]</td></tr>
+                    <tr><th scope="row">ST 8000</th><td>2,400 [96]</td><td>2,000 [80]</td><td>1,600 [64]</td></tr>
+                    <tr><th scope="row">ST 10000</th><td>2,800 [112]</td><td>2,200 [88]</td><td>1,800 [72]</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 7: Minimum Pulley Diameters for Steel Cord Belts (Belt Tension 30% to 60% of Rated Working Tension, One-Step Shift Applied)</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Designation</th>
+                        <th scope="col">High Tension (Type A) mm [in]</th>
+                        <th scope="col">Low Tension (Type B) mm [in]</th>
+                        <th scope="col">Snub / Bend (Type C) mm [in]</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">ST 500</th><td>315 [12]</td><td>250 [10]</td><td>200 [8]</td></tr>
+                    <tr><th scope="row">ST 800</th><td>400 [16]</td><td>315 [12]</td><td>250 [10]</td></tr>
+                    <tr><th scope="row">ST 1000</th><td>500 [20]</td><td>400 [16]</td><td>315 [12]</td></tr>
+                    <tr><th scope="row">ST 1600</th><td>630 [24]</td><td>500 [20]</td><td>400 [16]</td></tr>
+                    <tr><th scope="row">ST 2000</th><td>800 [32]</td><td>630 [24]</td><td>500 [20]</td></tr>
+                    <tr><th scope="row">ST 2500</th><td>900 [36]</td><td>710 [28]</td><td>560 [22]</td></tr>
+                    <tr><th scope="row">ST 3150</th><td>1,000 [40]</td><td>800 [32]</td><td>630 [24]</td></tr>
+                    <tr><th scope="row">ST 4000</th><td>1,120 [45]</td><td>900 [36]</td><td>710 [28]</td></tr>
+                    <tr><th scope="row">ST 5000</th><td>1,250 [48]</td><td>1,000 [40]</td><td>800 [32]</td></tr>
+                    <tr><th scope="row">ST 6300</th><td>1,600 [64]</td><td>1,250 [48]</td><td>1,000 [40]</td></tr>
+                    <tr><th scope="row">ST 7100</th><td>1,800 [72]</td><td>1,400 [56]</td><td>1,120 [45]</td></tr>
+                    <tr><th scope="row">ST 8000</th><td>2,000 [80]</td><td>1,600 [64]</td><td>1,250 [48]</td></tr>
+                    <tr><th scope="row">ST 10000</th><td>2,200 [88]</td><td>1,800 [72]</td><td>1,400 [56]</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 8: Minimum Pulley Diameters for Steel Cord Belts (Belt Tension Less Than 30% of Rated Working Tension, Two-Step Shift Applied)</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Designation</th>
+                        <th scope="col">High Tension (Type A) mm [in]</th>
+                        <th scope="col">Low Tension (Type B) mm [in]</th>
+                        <th scope="col">Snub / Bend (Type C) mm [in]</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">ST 500</th><td>250 [10]</td><td>200 [8]</td><td>160 [6]</td></tr>
+                    <tr><th scope="row">ST 800</th><td>315 [12]</td><td>250 [10]</td><td>200 [8]</td></tr>
+                    <tr><th scope="row">ST 1000</th><td>400 [16]</td><td>315 [12]</td><td>250 [10]</td></tr>
+                    <tr><th scope="row">ST 1600</th><td>500 [20]</td><td>400 [16]</td><td>315 [12]</td></tr>
+                    <tr><th scope="row">ST 2000</th><td>630 [24]</td><td>500 [20]</td><td>400 [16]</td></tr>
+                    <tr><th scope="row">ST 2500</th><td>710 [28]</td><td>560 [22]</td><td>450 [18]</td></tr>
+                    <tr><th scope="row">ST 3150</th><td>800 [32]</td><td>630 [24]</td><td>500 [20]</td></tr>
+                    <tr><th scope="row">ST 4000</th><td>900 [36]</td><td>710 [28]</td><td>560 [22]</td></tr>
+                    <tr><th scope="row">ST 5000</th><td>1,000 [40]</td><td>800 [32]</td><td>630 [24]</td></tr>
+                    <tr><th scope="row">ST 6300</th><td>1,250 [48]</td><td>1,000 [40]</td><td>800 [32]</td></tr>
+                    <tr><th scope="row">ST 7100</th><td>1,400 [56]</td><td>1,120 [45]</td><td>900 [36]</td></tr>
+                    <tr><th scope="row">ST 8000</th><td>1,600 [64]</td><td>1,250 [48]</td><td>1,000 [40]</td></tr>
+                    <tr><th scope="row">ST 10000</th><td>1,800 [72]</td><td>1,400 [56]</td><td>1,120 [45]</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Tabulated values are based on typical cord diameters for each rating. The Type A diameter at a tension ratio greater than 60% is based on a minimum of 145 times the steel cord diameter. Where the specified belt has a larger cord diameter, recalculate the Type A diameter as 145 times the cord diameter, round up to the next standard pulley diameter, and apply the same step reductions for Type B, Type C and lower tension ratios. Confirm diameters at tension ratios less than 30% with the belt manufacturer.</p>
+        </div>
+    </section>
+
+    <section id="pulley-geometry">
+        <h2>3. Pulley Geometry</h2>
+    </section>
+
+    <section id="parallel-face-pulleys-versus-crowned-pulleys">
+        <h3>3.1 Parallel Face Pulleys Versus Crowned Pulleys</h3>
+        <p>Specify parallel face pulleys for steel cord, aramid and straight-warp belts, and for all Type A pulleys.</p>
+        <p>A belt running onto a crown steers toward the larger diameter, centring the belt. This centring effect requires sufficient unsupported belt lead-in length to permit lateral bending of the belt. High-modulus and steel cord belts lack the transverse flexibility to conform to crown profiles.</p>
+        <p>Crowned pulleys increase tension in the centre warp yarns or steel cords and reduce edge tension, accelerating carcass and splice fatigue.</p>
+        <p>Limit crowned pulleys to bucket elevators and to low-tension tail and take-up pulleys on low-modulus plied fabric belts with adequate lead-in length. Where crowning is required, calculate crown geometry to maintain centreline tension below the carcass fatigue limit. Apply the minimum pulley diameter at the smallest diameter of the crowned face.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 9: Pulley Crowning Method Comparison</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Feature / Characteristic</th>
+                        <th scope="col">Historical Taper Method (1 in 100 Taper)</th>
+                        <th scope="col">Fixed Drop Method</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Taper Ratio</th><td>1 in 100</td><td>Linear taper to a fixed drop</td></tr>
+                    <tr><th scope="row">Tapered Edge Distance</th><td>1/4 of the pulley face width from each edge</td><td>1/3 of the total face width from each edge</td></tr>
+                    <tr><th scope="row">Flat Centre Width</th><td>1/2 of the pulley face width</td><td>1/3 of the total face width</td></tr>
+                    <tr><th scope="row">Diametral Reduction (Drop)</th><td>Increases with face width</td><td>Fixed, typically 8.0 mm [5/16 in]</td></tr>
+                    <tr><th scope="row">Characteristics</th><td>Drop increases with face width, independent of pulley diameter.</td><td>Fixed proportions and drop, independent of pulley diameter and face width.</td></tr>
+                    <tr><th scope="row">Impact on Belt</th><td>Induces localised centre stretch in high-modulus belts.</td><td>Consistent centring effect with lower stress on centre warp yarns.</td></tr>
+                    <tr><th scope="row">Example: 500 mm [20 in] Diameter by 2,000 mm [79 in] Face</th><td>10.0 mm [0.39 in] diameter reduction, 25% greater than the fixed drop method</td><td>8.0 mm [5/16 in] diameter reduction</td></tr>
+                    <tr><th scope="row">Minimum Edge Shell Thickness</th><td>6.0 mm [1/4 in] after machining</td><td>6.0 mm [1/4 in] after machining</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="pulley-face-width">
+        <h3>3.2 Pulley Face Width</h3>
+        <p>Specify a pulley face width greater than the belt width to accommodate transverse wander and reduce edge damage. Typical face width allowances are:</p>
+        <ul>
+            <li><strong>Belt width up to 650 mm [26 in]:</strong> belt width plus 100 mm [4 in]</li>
+            <li><strong>Belt width greater than 650 mm and up to 1,400 mm [26 to 55 in]:</strong> belt width plus 150 mm [6 in]</li>
+            <li><strong>Belt width greater than 1,400 mm [55 in]:</strong> belt width plus 200 mm [8 in]</li>
+        </ul>
+        <p>Increase these allowances by 50 mm [2 in] for conveyors subject to structural movement or lateral wind load, e.g. underground coal mines, floating pontoons and overland conveyors.</p>
+    </section>
+
+    <section id="pulley-balancing">
+        <h3>3.3 Pulley Balancing</h3>
+        <p>Unbalanced rotating mass generates centrifugal force that causes vibration, bearing fatigue, structural fatigue of the conveyor frame and non-uniform lagging wear. Balance all pulleys and check runout before commissioning.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 10: Static Versus Dynamic Balancing</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Feature</th>
+                        <th scope="col">Static Balancing</th>
+                        <th scope="col">Dynamic Balancing</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Measurement Method</th><td>Pulley rotates freely under gravity on knife-edge rails or rollers to locate heavy spots.</td><td>Balancing machine spins pulley near operating speed to measure imbalance magnitude and angular position.</td></tr>
+                    <tr><th scope="row">Correction</th><td>Material added (welded weights) or removed (drilling) in a single plane.</td><td>Imbalance corrected in two planes.</td></tr>
+                    <tr><th scope="row">Application</th><td>Acceptable only for belt speeds less than 2.5 m/s [490 fpm].</td><td>Recommended for belt speeds greater than 2.5 m/s [490 fpm] and for all drive pulleys.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Balance conveyor pulleys to ISO 21940-11 (formerly ISO 1940-1) Grade G6.3 minimum. For belt speeds above 4.0 m/s [790 fpm], specify Grade G2.5 or better to reduce bearing vibration.</p>
+    </section>
+
+    <section id="pulley-manufacturing-tolerances">
+        <h3>3.4 Pulley Manufacturing Tolerances</h3>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 11: Pulley Manufacturing Tolerances</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Component / Category</th>
+                        <th scope="col">Parameter Evaluated</th>
+                        <th scope="col">Tolerance Limit</th>
+                        <th scope="col">Additional Remarks / Specifications</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Bare Steel Shell</th><td>Runout (Total Indicator Reading, TIR)</td><td>Up to 4.0 m/s [790 fpm]: max 0.5 mm [0.020 in]. Above 4.0 m/s [790 fpm]: max 0.25 mm [0.010 in]</td><td>Measured with a dial indicator at mid-span and near each end while rotating on journals. CEMA B105.1 compression-hub pulleys permit 3.2 mm [0.125 in] TIR at 200 to 610 mm [8 to 24 in] diameter, increasing for larger diameters.</td></tr>
+                    <tr><th scope="row">Bare Steel Shell</th><td>Outer Diameter (OD)</td><td>+/-0.5% of nominal OD, max +/-3.0 mm [0.12 in]</td><td>Bare diameter at mid-face (crown peak), before lagging. Match finished diameters of drive pulleys sharing load on one belt.</td></tr>
+                    <tr><th scope="row">Bare Steel Shell</th><td>Out-of-Roundness (D_max minus D_min)</td><td>Up to 4.0 m/s [790 fpm]: max 1.0 mm [0.039 in]. Above 4.0 m/s [790 fpm]: max 0.5 mm [0.020 in]</td><td>Measured after machining, before lagging. Consistent with the shell TIR limit.</td></tr>
+                    <tr><th scope="row">Bare Steel Shell</th><td>Face Width</td><td>+/-3.0 mm [0.12 in]</td><td>Rim length along the shaft axis (CEMA B105.1).</td></tr>
+                    <tr><th scope="row">Rubber and Polyurethane Lagging</th><td>Finished Outer Diameter (OD)</td><td>+/-0.5% of finished nominal OD</td><td>Applies to lagging ground or machined after curing (hot vulcanised rubber, cast PU). Cold-bonded strip lagging follows shell OD plus sheet thickness tolerance.</td></tr>
+                    <tr><th scope="row">Rubber and Polyurethane Lagging</th><td>Runout (TIR)</td><td>Up to 4.0 m/s [790 fpm]: max 1.0 mm [0.039 in]. Above 4.0 m/s [790 fpm]: max 0.5 mm [0.020 in]</td><td>Measured rotating on final shaft journals.</td></tr>
+                    <tr><th scope="row">Rubber Lagging</th><td>Groove Depth and Backing</td><td>Groove depth 6 mm [1/4 in] min. Rubber below groove 3 mm [1/8 in] min</td><td>Keep grooves clear of the shell.</td></tr>
+                    <tr><th scope="row">Ceramic Lagging</th><td>Finished Outer Diameter (OD)</td><td>+/-1.0% of finished nominal OD</td><td>Set by shell diameter and backing thickness.</td></tr>
+                    <tr><th scope="row">Ceramic Lagging</th><td>Runout (TIR)</td><td>Up to 4.0 m/s [790 fpm]: max 2.0 mm [0.079 in]. Above 4.0 m/s [790 fpm]: max 0.75 mm [0.030 in]</td><td>Ceramic lagging is not normally machined after application. Achieve runout through shell TIR and uniform backing thickness.</td></tr>
+                    <tr><th scope="row">Steel Shaft</th><td>Bearing Journals, Cylindrical Seat</td><td>For rotating inner ring load, typically m6 to p6</td><td>Interference increases with bore size and load.</td></tr>
+                    <tr><th scope="row">Steel Shaft</th><td>Bearing Journals, Adapter or Withdrawal Sleeve Seat</td><td>h9</td><td>Sleeves permit wider shaft tolerances than cylindrical seats.</td></tr>
+                    <tr><th scope="row">Steel Shaft</th><td>Bearing Journal Ovality (D_max minus D_min), After Machining</td><td>Max IT5, e.g. 0.018 mm [0.0007 in] at 150 mm [6 in] diameter</td><td>Applies to cylindrical and sleeve seats. Equivalent to a radial cylindricity tolerance of IT5/2. Use IT4 where higher running accuracy is required. Measure at both ends and the centre of each journal.</td></tr>
+                    <tr><th scope="row">Steel Shaft</th><td>Bearing Journal Runout</td><td>Max 0.025 mm [0.001 in]</td><td>Relative to shaft centres. Surface finish Ra 0.8 to 1.6 µm [32 to 63 µin].</td></tr>
+                    <tr><th scope="row">Steel Shaft</th><td>Locking Assembly Journals</td><td>To manufacturer, e.g. h9</td><td>Clearance fit. Ra 3.2 µm [125 µin]. Clean and lubricate contact faces only as the manufacturer specifies.</td></tr>
+                    <tr><th scope="row">End-Disc Hub</th><td>Hub Bore (Locking Assembly Seat)</td><td>To manufacturer, e.g. H9</td><td>Ra 3.2 µm [125 µin]. Where the manufacturer requires symmetric installation and the shaft is undersize, bore the hub oversize by the same amount.</td></tr>
+                    <tr><th scope="row">Steel Shaft</th><td>Locking Assembly Journal Runout</td><td>Max 0.05 mm [0.002 in]</td><td>Relative to shaft centres. Where the locking assembly is not self-centring, shell TIR depends on direct shaft-to-hub centring.</td></tr>
+                    <tr><th scope="row">Steel Shaft</th><td>Drive/Coupling Extension OD</td><td>ISO k6 or m6</td><td>To coupling or gearbox hub bore requirements.</td></tr>
+                    <tr><th scope="row">Steel Shaft</th><td>Drive/Coupling Runout (TIR)</td><td>Max 0.05 mm [0.002 in]</td><td>Relative to shaft centres. Tighter than the CEMA B105.1 limit of 0.002 mm/mm of extension beyond the bearing centre.</td></tr>
+                    <tr><th scope="row">Steel Shaft</th><td>Straightness</td><td>Max 0.05 mm/m [0.0006 in/ft]</td><td>Measured between centres before assembly.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="pulley-lagging">
+        <h2>4. Pulley Lagging</h2>
+        <p>Pulley lagging is a sacrificial, high-friction layer bonded to the steel pulley shell that resists macroscopic slip on drives, sheds water and dirt, and protects the shell from abrasive wear. On drive pulleys, a higher friction coefficient lowers the minimum slack side tension (T2) and belt tension, which can reduce the required carcass strength.</p>
+    </section>
+
+    <section id="lagging-materials-and-compounds">
+        <h3>4.1 Lagging Materials and Compounds</h3>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 12: Comparative Properties of Pulley Lagging Materials</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Property / Feature</th>
+                        <th scope="col">Bare Steel (No Lagging)</th>
+                        <th scope="col">Rubber</th>
+                        <th scope="col">Rubber-Backed Ceramic</th>
+                        <th scope="col">Direct-Bond Ceramic</th>
+                        <th scope="col">Polyurethane (PU)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Material Composition and Grades</th><td>Bare steel shell</td><td>Natural rubber and styrene-butadiene rubber (NR/SBR): general purpose, above ground. Polychloroprene and nitrile butadiene rubber (CR/NBR): FRAS.</td><td>Aluminium oxide (Al2O3) tiles vulcanised into a rubber backing. Smooth or dimpled tiles.</td><td>Al2O3 tiles bonded directly to the steel shell with epoxy.</td><td>Ester-based: higher abrasion and oil resistance, poor in constant moisture. Ether-based: good hydrolysis and microbial resistance, suited to wet and slurry duties.</td></tr>
+                    <tr><th scope="row">Hardness</th><td>Not applicable</td><td>55 Shore A: faster wear, chunking risk. 65 Shore A: longer life, marginally lower friction.</td><td>Rubber: 55 to 65 Shore A. Al2O3 tile: Vickers hardness HV 1200 or greater</td><td>Al2O3 tile: HV 1200 or greater</td><td>80 to 90 Shore A</td></tr>
+                    <tr><th scope="row">Total Thickness</th><td>None</td><td>6 to 24 mm [1/4 to 15/16 in]</td><td>12, 15 or 24 mm [1/2, 5/8 or 15/16 in]. Tiles 4 to 10 mm [5/32 to 3/8 in]</td><td>3 to 6 mm [1/8 to 1/4 in]</td><td>10 to 24 mm [3/8 to 15/16 in]</td></tr>
+                    <tr><th scope="row">Friction and Grip</th><td>Base reference</td><td>Grooves serve as water escape paths. They do not significantly increase dry friction.</td><td>Dimpled tiles provide the highest grip by indenting the belt bottom cover.</td><td>No drainage grooves, limiting wet performance. Relies on tile surface texture.</td><td>Friction coefficient decreases significantly when wet or dusty.</td></tr>
+                    <tr><th scope="row">Shock Absorption and Deflection Response</th><td>None</td><td>Good. Rubber compresses under the belt.</td><td>Moderate. Rubber backing absorbs shock and reduces tile cracking.</td><td>None. Tiles crack or debond if the shell deflects.</td><td>Moderate. PU compresses slightly.</td></tr>
+                    <tr><th scope="row">Abrasion and Chemical Resistance</th><td>Poor</td><td>Moderate</td><td>Good to Excellent</td><td>Excellent</td><td>Very Good</td></tr>
+                    <tr><th scope="row">Relative Wear Life</th><td>Not applicable</td><td>Lowest</td><td>Highest</td><td>High</td><td>Moderate to high</td></tr>
+                    <tr><th scope="row">Water Shedding</th><td>None</td><td>Good (diamond or herringbone grooves)</td><td>Good (rubber channels between tile rows)</td><td>Poor (no drainage grooves)</td><td>Poor (add grooving)</td></tr>
+                    <tr><th scope="row">Belt Wear Aggressiveness</th><td>Moderate (corrosion pitting)</td><td>Low</td><td>Moderate to high (dimpled tile protrusions indent the belt cover and can reduce splice life on thin bottom covers)</td><td>High</td><td>Low</td></tr>
+                    <tr><th scope="row">Repairability</th><td>Not applicable</td><td>Good (strip or sheet re-lag)</td><td>Moderate (tile replacement possible)</td><td>Poor (tile loss requires full re-bond)</td><td>Poor (cast PU is difficult to repair in situ)</td></tr>
+                    <tr><th scope="row">Suitable Pulley Positions</th><td>Non-drive only, low duty</td><td>All</td><td>Drive, high-tension drive, wet or contaminated duties</td><td>Low-tension tail and bend pulleys in abrasive duties with minimal shell deflection</td><td>Non-drive only (tail, bend, snub)</td></tr>
+                    <tr><th scope="row">Relative Cost (Installed)</th><td>Nil</td><td>1.0x</td><td>3.0x to 5.0x</td><td>2.0x to 3.0x</td><td>2.0x to 4.0x</td></tr>
+                    <tr><th scope="row">Application Guidance</th><td>Limit to lightly loaded non-drive pulleys in dry, non-abrasive duties.</td><td>Common practice for general duties. Balances friction, wear resistance and water shedding.</td><td>Highest friction drive lagging for wet or high-tension duties. Specify dimples only where the friction gain justifies belt wear.</td><td>Unsuitable for high-tension drives. Suited to low-tension tail pulleys requiring shell wear protection.</td><td>Unsuitable for drive pulleys. Use on non-drive pulleys where abrasive shell wear governs and the higher refurbishment cost is acceptable.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="ceramic-tile-configurations">
+        <h3>4.2 Ceramic Tile Configurations</h3>
+        <p>Specify ceramic lagging according to whether the pulley drives the belt or only redirects it.</p>
+        <ul>
+            <li><strong>Dimpled (Raised Nub) Tiles:</strong> Specify for drive pulleys. Raised ceramic nubs, typically 1 to 2 mm [0.04 to 0.08 in] high, indent the bottom cover under tension, maintaining friction in wet or contaminated conditions. Specify only where the friction gain justifies the increased bottom cover wear.</li>
+            <li><strong>Smooth (Flat) Tiles:</strong> Specify for non-drive pulleys (tail, take-up and bend). The belt micro-slips as it bends around non-drive pulleys, so dimpled tiles in these positions accelerate bottom cover wear. Smooth tiles protect the shell while permitting micro-slip.</li>
+        </ul>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 13: Ceramic Tile Coverage Configurations</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Coverage Ratio</th>
+                        <th scope="col">Configuration and Design</th>
+                        <th scope="col">Suitable Applications</th>
+                        <th scope="col">Mud-Shedding Ability</th>
+                        <th scope="col">Limitations and Maintenance Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">100% Full Coverage</th><td>Entire lagging face covered with ceramic tiles, often directly bonded with epoxy without a rubber backing.</td><td>Abrasive dry duties. Limit direct-bond variants to pulleys with minimal shell deflection.</td><td>Poor. Without rubber grooves, dimples can pack out with mud, reducing grip.</td><td>Not suited to wet or sloppy conditions. Lacks the compliance of rubber-backed lagging, increasing bottom cover wear if slip occurs.</td></tr>
+                    <tr><th scope="row">80% (High Coverage)</th><td>Closely spaced tiles with narrow rubber channels. Typical maximum for rubber-backed lagging.</td><td>Heavy-duty, high-tension drive pulleys with belt slip in dry, wet or variable conditions.</td><td>Low to moderate. Narrow rubber gaps provide limited drainage.</td><td>Highest friction of the rubber-backed options. Can pack out in thick mud.</td></tr>
+                    <tr><th scope="row">60% Coverage</th><td>Alternating rows of ceramic tiles and rubber, balancing grip and drainage.</td><td>Moderate to high tension drives in wet or outdoor conditions requiring moderate mud shedding.</td><td>Moderate. Better drainage than 80% coverage while retaining high traction.</td><td>Slightly lower friction than 80% coverage.</td></tr>
+                    <tr><th scope="row">30% to 40% Coverage</th><td>Alternating rows of ceramic tiles and grooved rubber.</td><td>Mid-range tension drives in muddy, wet or sloppy duties (e.g. clay, bark, woodchips).</td><td>Excellent. Rubber strips channel mud out, allowing the remaining ceramic to grip the belt cover.</td><td>Lower friction than high-coverage ceramic. Not suited to the highest tension belts.</td></tr>
+                    <tr><th scope="row">15% to 20% Coverage</th><td>Minimal ceramic (single widely spaced row or diamond pattern) in a mainly rubber matrix.</td><td>Lower tension pulleys or muddy duties where avoiding pack-out is the priority.</td><td>Maximum.</td><td>Lowest grip of the ceramic options. Modest friction gain over rubber.</td></tr>
+                    <tr><th scope="row">Edge-Only Coverage</th><td>Rubber centre with smooth ceramic tiles on the outer 150 to 300 mm [6 to 12 in] of each edge.</td><td>Non-drive pulleys with tapered edge wear from trapped spillage.</td><td>Not applicable (smooth tiles)</td><td>The rubber centre wears faster than the ceramic edges, producing a concave profile that sags the belt and risks carcass creasing and splitting. Differential grip increases bottom cover shear wear.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="groove-patterns-and-dimensions">
+        <h3>4.3 Groove Patterns and Dimensions</h3>
+        <p>Groove all rubber lagging on drive pulleys. Grooves provide an escape path for water, dirt and trapped air, improving traction and reducing the risk of hydroplaning.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 14: Standard Rubber Lagging Groove Patterns</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Lagging Type / Pattern</th>
+                        <th scope="col">Directionality</th>
+                        <th scope="col">Application / Pulley Type</th>
+                        <th scope="col">Key Characteristics and Benefits</th>
+                        <th scope="col">Limitations / Warnings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Diamond Grooved</th><td>Bi-directional</td><td>Drive pulleys, reversing conveyors, spare pulleys</td><td>Common pattern. Sheds water and dust in either direction.</td><td>Less effective outward water shedding than herringbone. Can accumulate debris in sticky duties.</td></tr>
+                    <tr><th scope="row">Herringbone (Chevron)</th><td>Directional</td><td>Forward-running drive pulleys in wet or dirty duties</td><td>Channels water and dirt toward the pulley edges.</td><td>Install with the apex of the V contacting the belt first, pointing in the direction of belt travel.</td></tr>
+                    <tr><th scope="row">Plain (Smooth) Rubber</th><td>Bi-directional</td><td>Non-drive pulleys (bend, snub, tail) in dry duties</td><td>Maximum wear surface.</td><td>No escape path for water or air. Unsuitable for drive pulleys or wet duties.</td></tr>
+                    <tr><th scope="row">Circumferential Grooved</th><td>Bi-directional</td><td>Non-drive pulleys in very wet, freezing or cold duties</td><td>Ribs flex and deflect, shedding ice and material build-up.</td><td>No cross-directional traction. Unsuitable for drive pulleys.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Cut or mould grooves 6 to 8 mm [1/4 to 5/16 in] wide and 6 to 8 mm [1/4 to 5/16 in] deep. Keep grooves clear of the steel shell. Exposed steel initiates corrosion and lagging delamination. With a minimum of 3 mm [1/8 in] of rubber below the groove, grooved lagging requires a total thickness of at least 9 mm [3/8 in].</p>
+    </section>
+
+    <section id="application-methods-vulcanisation">
+        <h3>4.4 Application Methods (Vulcanisation)</h3>
+        <p>The bonding method determines the maximum effective tension the pulley can transmit before the lagging debonds. Cold and hot vulcanising apply only to rubber and rubber-backed ceramic lagging, not to epoxy-bonded direct ceramic or cast polyurethane.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 15: Cold Vulcanised Versus Hot Vulcanised Lagging Application</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Feature / Parameter</th>
+                        <th scope="col">Cold Vulcanised (Cold Bonded)</th>
+                        <th scope="col">Hot Vulcanised</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Basic Process</th><td>Rubber or rubber-backed ceramic sheet bonded to a shell blasted to Sa 2.5 (near-white metal) using two-part CR adhesive and metal primer.</td><td>Shell wrapped in uncured rubber or hot-cure rubber-backed ceramic with metal primer, then cured under heat and pressure to cross-link the materials.</td></tr>
+                    <tr><th scope="row">Material and Backing Type</th><td>Pre-cured lagging with a buffed bonding layer designed to react with cold adhesives.</td><td>Uncured rubber. Rubber-backed ceramic requires an uncured tie-gum layer and a rubber compound that withstands autoclave curing.</td></tr>
+                    <tr><th scope="row">Application Environment</th><td>In situ on the conveyor or in a workshop. No specialised equipment. Control surface preparation, temperature and dew point during application.</td><td>Factory with a pressurised steam autoclave.</td></tr>
+                    <tr><th scope="row">Curing Conditions</th><td>Ambient, typically 15 to 40 deg C [59 to 104 deg F]</td><td>Typically 140 to 160 deg C [284 to 320 deg F] for 3 to 6 h</td></tr>
+                    <tr><th scope="row">Seams and Finish</th><td>Applied in strips. Joints filled with adhesive and filler, which can become failure points.</td><td>Layers fuse during curing, producing a continuous, seamless finish.</td></tr>
+                    <tr><th scope="row">Bond Strength</th><td>Limited to the adhesive bond strength. Typically 9 to 12 N/mm [51 to 69 lbf/in]</td><td>Typically 20 to 25 N/mm [114 to 143 lbf/in]. Achieves 100% rubber-tear adhesion, where the bond exceeds the cohesive strength of the rubber.</td></tr>
+                    <tr><th scope="row">Cost and Lead Time</th><td>Fast and relatively inexpensive. Suited to emergency maintenance.</td><td>More expensive unless batched. Longer lead time, as the pulley must be removed and sent off site.</td></tr>
+                    <tr><th scope="row">Common Failure Modes</th><td>Edge lifting and corrosion. Seam filler wears, allowing water ingress that corrodes the shell and lifts the lagging. High tension can shear the bond.</td><td>Resistant to debonding and edge lifting. Typically fails only by abrasive wear of the rubber or ceramic.</td></tr>
+                    <tr><th scope="row">Typical Applications</th><td>Light to medium tension drives, emergency repairs, temporary spare pulleys, and pulleys that cannot be removed.</td><td>High-tension drives, steel cord belts, high-speed conveyors, and harsh, wet or corrosive environments.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="lagging-selection-cost-and-maintenance">
+        <h3>4.5 Lagging Selection, Cost and Maintenance</h3>
+        <p><strong>Rules of Thumb:</strong></p>
+        <ul>
+            <li><strong>Standard plant drives (low to medium tension):</strong> hot vulcanised diamond grooved rubber.</li>
+            <li><strong>High-tension, wet or slipping drives:</strong> hot vulcanised dimpled rubber-backed ceramic. The higher friction factor reduces slip and permits a reduction in take-up mass.</li>
+            <li><strong>High-wear non-drive pulleys (tails and bends in abrasive ore):</strong> hot vulcanised smooth ceramic or cast polyurethane.</li>
+            <li><strong>Emergency field repair:</strong> cold vulcanised rubber or cold bonded ceramic. Replace with a hot vulcanised spare at the next major shutdown.</li>
+        </ul>
+        <p>The lagging type significantly affects the total pulley price.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 16: Relative Cost Indices for Lagged Pulleys</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Pulley and Lagging</th>
+                        <th scope="col">Relative Cost (Complete Pulley)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Bare Steel Pulley</th><td>1.0x</td></tr>
+                    <tr><th scope="row">Cold Vulcanised Rubber</th><td>1.5x to 2.0x</td></tr>
+                    <tr><th scope="row">Hot Vulcanised Rubber</th><td>2.5x to 3.0x</td></tr>
+                    <tr><th scope="row">Polyurethane (Cast)</th><td>3.5x to 4.5x</td></tr>
+                    <tr><th scope="row">Cold Vulcanised Ceramic</th><td>4.0x to 5.0x</td></tr>
+                    <tr><th scope="row">Hot Vulcanised Ceramic (Rubber-Backed)</th><td>6.0x to 8.0x</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Inspect lagging routinely. Re-lag or replace grooved rubber lagging when groove depth wears to 2 mm [5/64 in]. Worn grooves cannot shed water, increasing the risk of macroscopic slip and hydroplaning.</p>
+    </section>
+
+    <section id="temperature-limits-for-lagging-materials">
+        <h3>4.6 Temperature Limits for Lagging Materials</h3>
+        <p>Check the maximum continuous service temperature of the lagging when specifying pulleys for hot material such as sinter, clinker, hot pellets or kiln discharge.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 17: Temperature Limits of Pulley Lagging Materials</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Lagging Material</th>
+                        <th scope="col">Base Compound / Type</th>
+                        <th scope="col">Maximum Continuous Temperature deg C [deg F]</th>
+                        <th scope="col">Applications</th>
+                        <th scope="col">Limitations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Standard Rubber</th><td>NR/SBR</td><td>60 to 80 [140 to 176]</td><td>General-purpose conveying of ambient-temperature materials.</td><td>Exceeding the limit accelerates thermal ageing, hardening, loss of elasticity and surface cracking.</td></tr>
+                    <tr><th scope="row">Polyurethane</th><td>Cast PU</td><td>70 to 80 [158 to 176]</td><td>Moderate-temperature environments.</td><td>Hydrolysis in hot, humid environments breaks down chemical bonds, causing delamination from the shell.</td></tr>
+                    <tr><th scope="row">FRAS Rubber</th><td>CR/NBR</td><td>80 to 100 [176 to 212]</td><td>Moderately hot materials, elevated ambient temperatures and high fire-risk areas.</td><td>Thermal degradation, hardening and cracking above 100 deg C [212 deg F].</td></tr>
+                    <tr><th scope="row">Ceramic</th><td>Aluminium Oxide Tiles</td><td>80 to 100 [176 to 212]</td><td>Moderately hot environments, governed by the backing material.</td><td>Limited by the rubber backing and bonding adhesive. Tiles are rated above 500 deg C [932 deg F].</td></tr>
+                    <tr><th scope="row">Specialist High-Temperature</th><td>Ethylene propylene diene monomer (EPDM), Silicone</td><td>Greater than 100 [212]</td><td>Very hot materials such as sinter, clinker, hot pellets or kiln discharge.</td><td>Beyond the polymer limit, use sacrificial steel wear plates or thermal coatings.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="tension-transfer-and-lagging-shear-mechanics">
+        <h2>5. Tension Transfer and Lagging Shear Mechanics</h2>
+        <p>Lagging shear failure and macroscopic slip are governed by interfacial mechanics. Motor torque is transferred from the steel shell to the belt through surface friction and shear strain in the lagging.</p>
+    </section>
+
+    <section id="the-t1-to-t2-transition-arc-of-contact">
+        <h3>5.1 The T1 to T2 Transition (Arc of Contact)</h3>
+        <p>A driven belt enters the pulley at the tight side tension (T1) and exits at the slack side tension (T2). Tension does not drop uniformly around the wrap. The arc of contact has two zones:</p>
+        <ul>
+            <li><strong>Inactive (Static) Angle:</strong> Over the first portion of the wrap, the belt and lagging surface travel at the same speed. There is no relative movement and no tension change. The belt remains at T1.</li>
+            <li><strong>Active (Creep) Angle:</strong> Approaching the exit, the belt contracts elastically to the lower T2 tension and moves slightly slower than the pulley surface. This continuous micro-slip zone is the only part of the wrap where tension falls, decreasing exponentially from T1 to T2.</li>
+        </ul>
+    </section>
+
+    <section id="shear-stress-and-strain-in-pulley-lagging">
+        <h3>5.2 Shear Stress and Strain in Pulley Lagging</h3>
+        <p>The steel shell drives the base of the lagging forward while the belt resists at the surface, generating shear stress through the lagging thickness. Thin lagging accommodates belt micro-slip through high shear strain, concentrating shear stress at the bond line and promoting debonding. Thicker lagging distributes the same micro-slip over a greater thickness, reducing shear strain and peak shear stress at the bond line.</p>
+    </section>
+
+    <section id="effect-of-lagging-type-on-shear-and-performance-limits">
+        <h3>5.3 Effect of Lagging Type on Shear and Performance Limits</h3>
+        <p>Lagging limits are governed by material compliance. High-compliance elastomers absorb shear internally but are susceptible to cohesive tearing under peak loads. Low-compliance materials transfer shear directly to the bond line, causing delamination or brittle fracture under shell flexure.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 18: Lagging Shear Mechanics and Performance Limits</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Lagging Type</th>
+                        <th scope="col">Mechanics (Compliance and Stiffness)</th>
+                        <th scope="col">Shear Stress and Strain Transfer</th>
+                        <th scope="col">Failure Modes</th>
+                        <th scope="col">Operational Limits</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Grooved Rubber</th><td>High compliance. Homogeneous matrix that flexes uniformly.</td><td>Absorbs the T1 to T2 transition and micro-slip uniformly through the rubber.</td><td>Tearing and chunking. Micro-slip friction generates heat and localised tearing. Compounds that are too soft chunk out. Compounds that are too hard lose grip.</td><td>Limited by abrasion resistance and heat dissipation. Suited to low and medium tension drives.</td></tr>
+                    <tr><th scope="row">Rubber-Backed Ceramic</th><td>Mixed compliance. Rigid Al2O3 tiles in a compliant rubber matrix.</td><td>Negligible strain in the tiles. Shear strain is concentrated in the rubber channels between tiles and in the backing.</td><td>Bond peeling. Stress concentrates at the base of the rigid tiles. Poor surface preparation or shell deflection causes the lagging to peel from the shell.</td><td>Limited by bond integrity at the shell.</td></tr>
+                    <tr><th scope="row">Direct-Bond Ceramic (Epoxy)</th><td>Negligible compliance. Rigid tiles bonded to bare steel with rigid two-part epoxy.</td><td>No rubber to absorb shear strain or micro-slip. Stress transfers directly into the epoxy and tile.</td><td>Shattering and debonding. Shell bending can exceed the epoxy bond strength, fracturing or debonding tiles.</td><td>Limited by shell deflection. Confirm the allowable deflection with the lagging manufacturer.</td></tr>
+                    <tr><th scope="row">Polyurethane (PU)</th><td>Stiff elastomer. Higher shear modulus than rubber.</td><td>Higher shear modulus produces higher bond line shear stress for a given micro-slip displacement.</td><td>Bond line failure. The bond overloads and debonds.</td><td>Less tolerant of micro-slip than rubber.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="pulley-structural-design-and-shaft-sizing">
+        <h2>6. Pulley Structural Design and Shaft Sizing</h2>
+        <p>Pulleys are structural components subject to cyclic rotating bending, in which the resultant of T1 and T2 generates multi-axial stresses. Inadequate fatigue assessment of the shaft, locking assemblies and end-discs can cause fatigue fracture.</p>
+    </section>
+
+    <section id="shaft-design-standards-fatigue-and-stress-concentrations">
+        <h3>6.1 Shaft Design Standards, Fatigue and Stress Concentrations</h3>
+        <p>A conveyor pulley shaft is subject to two simultaneous loads:</p>
+        <ul>
+            <li><strong>Torsion:</strong> Drive torque (drive pulleys only).</li>
+            <li><strong>Reversing Bending:</strong> Radial load from belt tension, producing a completely reversed bending cycle as the shaft rotates under a fixed load direction.</li>
+        </ul>
+        <p>Designing solely for static yield permits fatigue cracks to initiate at stress concentrations such as shoulders, keyways and locking assembly edges. Assess shaft fatigue against the material endurance limit to AS 1403 or DIN 743.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 19: Comparison of AS 1403 and DIN 743 Shaft Design Standards</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Standard</th>
+                        <th scope="col">AS 1403</th>
+                        <th scope="col">DIN 743</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Primary Output</th><td>Minimum required shaft diameter</td><td>Safety factors against fatigue and yield</td></tr>
+                    <tr><th scope="row">Stress Modelling</th><td>Combined bending, torsion and axial load, with stress-raiser factors for shoulders, keyways and interference fits</td><td>Combined bending, axial and torsional stress with notch factors for shoulders, grooves and interference fits</td></tr>
+                    <tr><th scope="row">Locking Assembly Loading</th><td>Not explicitly addressed. Assess contact pressure separately.</td><td>Interference fit treated through notch factors. Assess contact pressure separately.</td></tr>
+                    <tr><th scope="row">Design Approach</th><td>Derates ultimate tensile strength (UTS) for size, surface finish and notch factors to derive an endurance limit</td><td>Calculates safety factors against fatigue failure and plastic yield</td></tr>
+                    <tr><th scope="row">Typical Use</th><td>Australian mining and bulk handling</td><td>European and global overland drive systems</td></tr>
+                    <tr><th scope="row">Target Safety Factor</th><td>Implied through minimum diameter sizing against endurance limit</td><td>Explicit. Standard minimum of 1.2. Specify a higher project minimum (e.g. 2.0) for critical drive pulleys.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Standard carbon steel (e.g. 1045 or K1040) can require an excessive shaft diameter to satisfy AS 1403 or DIN 743 fatigue requirements. Specify quenched and tempered high-tensile alloy steels (e.g. 4140, 4340 or EN26) to reduce shaft diameter and bearing housing size. Higher UTS raises the endurance limit but also increases notch sensitivity. Specify generous fillet radii at shaft shoulders.</p>
+    </section>
+
+    <section id="shaft-deflection-limits-and-bearing-kinematics">
+        <h3>6.2 Shaft Deflection Limits and Bearing Kinematics</h3>
+        <p>Compliance with fatigue criteria does not limit elastic shaft deflection. Excessive deflection causes micro-slip at the locking assemblies and binding of bearings and seals.</p>
+        <p>Shaft bending creates a slope through the hub. A steep slope pries the locking assembly, causing micro-slip and fretting corrosion (red oxide powder at the hub interface). The locking assembly can eventually lose grip, allowing the shaft to rotate within the hub. Limit shaft slope at the hub to 0.0015 rad, reduced to 0.0010 rad for steel cord belts.</p>
+        <p>Bearing self-alignment capacity typically exceeds the misalignment tolerance of rigid labyrinth seals. Limit the angular deflection of the shaft at the bearing journal to 5 to 10 arc-minutes (0.08 to 0.17 deg) to preserve seal integrity.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 20: Conveyor Pulley Bearing Technologies</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Parameter</th>
+                        <th scope="col">Spherical Roller Bearing (SRB)</th>
+                        <th scope="col">Toroidal Roller Bearing</th>
+                        <th scope="col">Self-Aligning Ball Bearing (SABB)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Contact Type</th><td>Line (barrel roller). Barrel-shaped rollers run between an inner ring with two raceways and an outer ring with a single spherical raceway.</td><td>Line (barrel roller). Long, slightly barrel-shaped rollers in torus-shaped raceways.</td><td>Point (ball). Two rows of steel balls on a spherical outer raceway.</td></tr>
+                    <tr><th scope="row">Misalignment Capacity</th><td>1.0 to 2.5 deg</td><td>Up to 0.5 deg</td><td>2.0 to 3.0 deg</td></tr>
+                    <tr><th scope="row">Axial Displacement Method</th><td>External. The free end outer ring slides axially in the housing bore.</td><td>Internal. Rollers displace axially between the raceways to accommodate shaft expansion and structural flexure.</td><td>External. As for SRB.</td></tr>
+                    <tr><th scope="row">Radial Load Capacity</th><td>Very high</td><td>Very high</td><td>Low to moderate</td></tr>
+                    <tr><th scope="row">Axial Load Capacity</th><td>Moderate (both directions)</td><td>None (radial only). Pair with a fixed SRB to carry all thrust.</td><td>Low</td></tr>
+                    <tr><th scope="row">Friction Coefficient</th><td>0.0018 to 0.0025</td><td>0.0015 to 0.0020</td><td>0.0010 to 0.0015</td></tr>
+                    <tr><th scope="row">Shock Load Tolerance</th><td>Good</td><td>Good</td><td>Poor</td></tr>
+                    <tr><th scope="row">Housing Bore Fretting Risk</th><td>Yes (free end). Outer ring sliding under heavy radial load causes fretting corrosion of the housing bore.</td><td>None. The outer ring is axially located in the housing, eliminating sliding.</td><td>Yes (free end)</td></tr>
+                    <tr><th scope="row">Max Bore Size (Standard Range)</th><td>Exceeds 1,000 mm [39 in]. Available from all major manufacturers.</td><td>Up to approximately 1,800 mm [71 in]. Limited supplier base.</td><td>Approximately 100 mm [4 in]</td></tr>
+                    <tr><th scope="row">Relative Cost</th><td>1.0x</td><td>1.5x to 2.5x</td><td>0.5x to 0.8x</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="keyless-locking-assemblies">
+        <h3>6.3 Keyless Locking Assemblies</h3>
+        <p>Specify keyless locking assemblies on high-tension pulleys to remove the keyway stress concentration that initiates fatigue cracks in keyed hub connections under cyclic bending. Locking assemblies consist of single or double tapered inner and outer steel rings. Tightening the high-tensile bolts wedges the rings together, expanding them into the hub and contracting them onto the shaft. The resulting uniform radial pressure locks the hub to the shaft by friction.</p>
+        <p>Locking assemblies differ from shrink discs, which clamp a hollow hub onto a shaft externally.</p>
+        <p>Do not select locking assemblies on torque alone. The cyclic bending moment from belt tension frequently exceeds drive torque, and non-drive pulleys carry bending alone. Excessive bending overcomes the clamping force on the tension side of the shaft, opening a radial gap that initiates slip, fretting corrosion and loss of interference fit.</p>
+        <p>Combine the applied torque and bending moment into a single equivalent torque using the manufacturer's method. Select an assembly whose rated torque, after the required service factor, equals or exceeds this equivalent torque. Each assembly also limits the proportion of rated torque that bending moment alone can consume. Exceeding this limit can gap or yield the tapered rings on the tension side.</p>
+        <p>Standard duty assemblies (single-taper or light-duty double-taper) are typically limited to a bending moment of 30% to 40% of rated torque. Heavy-duty assemblies with longer, shallower tapers and heavier clamping rings typically permit up to 60%. Confirm limits with the manufacturer.</p>
+    </section>
+
+    <section id="end-disc-and-hub-design">
+        <h3>6.4 End-Disc and Hub Design</h3>
+        <p>The end-disc connects the hub to the shell and transfers shaft bending and torque into the shell. Three configurations are in common use:</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 21: End-Disc Configuration Comparison</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Feature</th>
+                        <th scope="col">Welded-Hub Flat End-Disc</th>
+                        <th scope="col">Profiled (Turbine) End-Disc</th>
+                        <th scope="col">T-Bottom (T-Section) End-Disc</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Construction</th><td>Flat steel plate with a cast or forged hub welded into the centre</td><td>Hub and disc machined from a single forging or casting, with no hub weld</td><td>Outer edge of the forged end-disc machined with a 90 deg lip (T shape) matching the shell diameter</td></tr>
+                    <tr><th scope="row">Disc Profile</th><td>Flat plate</td><td>Parabolic taper, thick at the hub, thinning toward the shell</td><td>Flat or profiled disc with a machined T-section outer edge</td></tr>
+                    <tr><th scope="row">Disc-to-Shell Joint</th><td>90 deg corner weld</td><td>Corner weld, or butt weld when combined with a T-section edge</td><td>Circumferential butt weld on the cylindrical shell, clear of the disc corner</td></tr>
+                    <tr><th scope="row">Stress Behaviour</th><td>Hub and corner welds act as stress concentrations. Shaft flexure causes the flat disc to oil-can (flex in and out).</td><td>Tapered profile acts as a diaphragm, flexing with shaft bending at lower peak stress.</td><td>Removes the corner weld stress concentration by relocating the weld to a lower-stress zone.</td></tr>
+                    <tr><th scope="row">Fatigue Performance</th><td>Lowest. Cracks initiate at the hub weld from cyclic oil-canning.</td><td>Higher. No hub weld and stress distributed across the profile.</td><td>Higher. Shell weld removed from the corner stress concentration.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="shell-material-selection-and-minimum-thickness">
+        <h3>6.5 Shell Material Selection and Minimum Thickness</h3>
+        <p>The shell carries radial pressure, bending stress and compressive hoop stress from belt tension. Specify material grade and wall thickness to avoid shell buckling and fatigue cracking.</p>
+        <p>The shell is typically rolled and seam-welded from plate steel. Common grades include:</p>
+        <ul>
+            <li><strong>AS/NZS 3678-250 (Australia):</strong> Structural plate, minimum yield 250 MPa [36 ksi]. Specify AS/NZS 3678-350 (minimum yield 350 MPa [51 ksi]) for heavy-duty applications.</li>
+            <li><strong>AS 1548 PT460 (formerly 7-460) (Australia):</strong> Pressure vessel plate, minimum yield 305 MPa [44 ksi] at 16 mm [0.63 in] thickness or less, reducing with thickness, with controlled chemistry and good weldability.</li>
+            <li><strong>S355J2 (Europe, EN 10025-2):</strong> Structural steel, minimum yield 355 MPa [51 ksi].</li>
+            <li><strong>ASTM A36 (North America):</strong> Structural steel, minimum yield 250 MPa [36 ksi]. Specify ASTM A572 Grade 50 (minimum yield 345 MPa [50 ksi]) for heavy-duty applications.</li>
+        </ul>
+        <p>Determine minimum shell wall thickness from the combined radial pressure, hoop stress and shell bending stress.</p>
+        <p>Wide pulleys (face width greater than 1,800 mm [71 in]) deflect significantly at mid-span under distributed radial load. Do not use internal welded shell stiffener rings. Internal welds are difficult to access, preclude automated welding and make consistent weld quality and post-weld non-destructive testing (NDT) impractical.</p>
+        <p>Stiffener-to-shell fillet welds also introduce stress concentrations at the location of peak shell bending stress, reducing fatigue life. Instead, increase shell thickness or reduce the span between end-discs.</p>
+    </section>
+
+    <section id="weld-quality-and-inspection">
+        <h3>6.6 Weld Quality and Inspection</h3>
+        <p>Weld defects are the primary initiation sites for fatigue cracks in pulleys. Perform all structural welds to qualified Welding Procedure Specifications (WPS) under the applicable standard:</p>
+        <ul>
+            <li><strong>AS/NZS 1554.5 (Australia/New Zealand):</strong> Welding of Steel Structures Subject to High Levels of Fatigue Loading. Specify for conveyor pulley fabrication. Do not use AS/NZS 1554.1 Category SP for end-disc and shell welds. Its weld quality requirements do not address the completely reversed bending of these welds. AS/NZS 1554.5 specifies stricter weld profile control, imperfection acceptance criteria and inspection requirements for cyclic loading.</li>
+            <li><strong>EN ISO 5817 (Europe):</strong> Quality Levels for Imperfections in Fusion-Welded Joints. Specify quality level B (stringent) or C (intermediate) according to pulley duty.</li>
+            <li><strong>AWS D1.1 (North America):</strong> Structural Welding Code, Steel. Apply the cyclically loaded connection provisions.</li>
+        </ul>
+        <p>Specify full penetration welds for all circumferential end-disc to shell joints. The unfused root of a partial penetration weld acts as a crack-like defect perpendicular to the principal bending stress. Fatigue cracks initiate at the root, where surface NDT cannot detect them, and fatigue life is substantially lower than for a full penetration weld.</p>
+        <p>Specify post-weld heat treatment (PWHT) for heavy-duty pulleys and pulleys subject to high cyclic loading. Welding residual tensile stress can approach the yield strength of the parent material, adding a mean stress to the cyclic bending stress and accelerating fatigue crack initiation.</p>
+        <p>Specify the following minimum NDT regime for critical structural welds:</p>
+        <ul>
+            <li><strong>Shell Longitudinal Seam:</strong> 100% Ultrasonic Testing (UT) or Radiographic Testing (RT) to verify full penetration and absence of internal defects.</li>
+            <li><strong>End-Disc to Shell Welds:</strong> 100% Magnetic Particle Testing (MT) of the external surface to detect surface-breaking cracks. For heavy-duty and steel cord belt pulleys, add UT of the weld root to detect lack of fusion.</li>
+            <li><strong>Hub to Disc Welds (welded hub designs):</strong> 100% MT.</li>
+        </ul>
+        <p>Re-inspect weld repairs to the original standard. Retain NDT records and weld maps in the pulley's permanent quality record.</p>
+    </section>
+
+    <section id="bearing-housings-plummer-blocks">
+        <h3>6.7 Bearing Housings (Plummer Blocks)</h3>
+        <p>Pulley bearing housings are commonly referred to as plummer blocks or pillow blocks. Housing material governs load capacity, impact resistance, corrosion behaviour and suitability for the operating environment.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 22: Comparative Properties of Bearing Housing Materials</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Property</th>
+                        <th scope="col">Grey Cast Iron</th>
+                        <th scope="col">Spheroidal Graphite (Ductile) Cast Iron</th>
+                        <th scope="col">Cast Steel</th>
+                        <th scope="col">Fabricated Steel</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Typical Material Grades</th><td>EN-GJL-250 / ASTM A48 Class 35B</td><td>EN-GJS-400-15 / ASTM A536 Grade 60-40-18</td><td>EN 10293 Grade G17Mn5 / ASTM A27 Grade 65-35</td><td>S355J2 or ASTM A572 Grade 50</td></tr>
+                    <tr><th scope="row">Typical Tensile Strength MPa [ksi]</th><td>150 to 300 [22 to 44]</td><td>400 to 700 [58 to 102]</td><td>450 to 600 [65 to 87]</td><td>450 to 630 [65 to 91]</td></tr>
+                    <tr><th scope="row">Elongation at Fracture</th><td>Less than 1%</td><td>5% to 18%</td><td>22% to 30%</td><td>18% to 22% (plate grade dependent)</td></tr>
+                    <tr><th scope="row">Stress Concentration Sensitivity</th><td>High (flake tips act as crack initiators)</td><td>Low (nodular graphite eliminates flake stress raisers)</td><td>Low</td><td>Low (but weld-detail dependent)</td></tr>
+                    <tr><th scope="row">Impact Toughness</th><td>Poor</td><td>Moderate to Good</td><td>Good to Excellent</td><td>Good (weld-quality dependent)</td></tr>
+                    <tr><th scope="row">Vibration Damping</th><td>Good</td><td>Moderate</td><td>Poor</td><td>Poor</td></tr>
+                    <tr><th scope="row">Low-Temperature Suitability</th><td>Above minus 20 deg C [minus 4 deg F]</td><td>Above minus 30 deg C [minus 22 deg F]</td><td>Above minus 40 deg C [minus 40 deg F]</td><td>Above minus 40 deg C [minus 40 deg F] (plate grade dependent)</td></tr>
+                    <tr><th scope="row">Relative Cost (Versus Grey Iron)</th><td>1.0x</td><td>1.3x to 1.6x</td><td>2.0x to 3.0x</td><td>2.5x to 4.0x (volume dependent)</td></tr>
+                    <tr><th scope="row">Typical Housing Profiles</th><td>Standard split plummer blocks (ISO 113)</td><td>Standard and heavy-duty split plummer blocks</td><td>Heavy-duty and large-bore split plummer blocks</td><td>Custom</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Properties are typical ranges and depend on grade, section thickness, heat treatment and foundry quality.</p>
+        </div>
+    </section>
+
+    <section id="fixed-and-float-free-bearing-arrangements">
+        <h3>6.8 Fixed and Float (Free) Bearing Arrangements</h3>
+        <p>The pulley shaft and the conveyor structure expand at different rates. For 3 m [10 ft] bearing centres and a 30 deg C [54 deg F] temperature differential, axial shaft growth is approximately 1 mm [0.04 in]. Axially locking both bearings restricts this differential expansion, generating internal thrust loads that can cause bearing failure.</p>
+        <p>Install one fixed bearing and one float bearing per conveyor pulley.</p>
+        <ul>
+            <li><strong>Fixed bearing:</strong> The outer ring is axially locked in the housing by locating rings on both sides. This anchors the pulley axially and reacts thrust loads from belt tracking.</li>
+            <li><strong>Float bearing:</strong> The locating rings are omitted. The outer ring slides in the housing to accommodate shaft expansion. A toroidal roller bearing accommodates the same displacement internally with its outer ring located.</li>
+        </ul>
+        <p>On driven pulleys, locate the fixed bearing on the drive side (gearbox or motor end) and the float bearing on the non-drive side. This prevents shaft expansion from displacing the low-speed coupling and damaging drivetrain components.</p>
+    </section>
+
+    <section id="standard-formulas-for-conveyor-pulleys">
+        <h2>7. Standard Formulas for Conveyor Pulleys</h2>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 1: Equivalent Torque for Locking Assemblies</figcaption>
+            <p class="font-monospace my-3">T_eq = SQRT(M_t^2 + (k_b * M_b)^2)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>T_eq = Equivalent torque on the locking assembly (Nmm)</li>
+                <li>M_t = Transmitted torque at the hub (Nmm)</li>
+                <li>M_b = Bending moment at the hub (Nmm)</li>
+                <li>k_b = Bending weighting factor from the locking assembly manufacturer (dimensionless)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> This is the baseline relationship. Full multi-axial stress modelling requires finite element analysis (FEA). Obtain the bending weighting factor and the permissible bending moment from the manufacturer’s catalogue or selection program. Multiply catalogue values in Nm by 10^3 to obtain Nmm.</p>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Transmissible torque falls as bending moment rises. On non-drive pulleys, transmitted torque is zero and bending alone sets equivalent torque.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 2: Area Moment of Inertia for a Solid Circular Shaft</figcaption>
+            <p class="font-monospace my-3">I = (PI * d^4) / 64</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>I = Area moment of inertia (mm4)</li>
+                <li>d = Shaft diameter at the section evaluated (mm)</li>
+                <li>PI = Circle constant, 3.14159 (dimensionless)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Shaft stiffness increases with the fourth power of diameter. A 10% increase in shaft diameter reduces shaft deflection and slope by approximately 32%.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 3: Shaft Hub Bending Moment</figcaption>
+            <p class="font-monospace my-3">M_b = F_r * A<br>F_r = R_total / 2</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>M_b = Bending moment at the hub (Nmm)</li>
+                <li>F_r = Radial load supported by one bearing (N)</li>
+                <li>R_total = Resultant radial force on the pulley, belt tension resultant and pulley self-weight combined vectorially (N)</li>
+                <li>A = Axial distance from the bearing centreline to the hub centreline (mm)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> For a pulley centred between its bearings, bending moment is constant between the hubs and governs locking assembly selection, shaft fatigue and end-disc stress. Locate bearings as close to the end-discs as the structure and chutework permit to reduce the axial distance.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 4: Shaft Slope at the Bearing</figcaption>
+            <p class="font-monospace my-3">Theta_bearing = (F_r * A * (L - A)) / (2 * E * I)<br>Theta_arcmin = Theta_bearing * (180 / PI) * 60</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>Theta_bearing = Shaft slope at the bearing (rad)</li>
+                <li>Theta_arcmin = Shaft slope at the bearing (arc-minutes)</li>
+                <li>F_r = Radial load per bearing (N)</li>
+                <li>A = Axial distance from the bearing centreline to the hub centreline (mm)</li>
+                <li>L = Distance between bearing centrelines (mm)</li>
+                <li>E = Young’s modulus of steel, 2.1 * 10^5 (MPa)</li>
+                <li>I = Area moment of inertia of the shaft (mm4)</li>
+                <li>PI = Circle constant, 3.14159 (dimensionless)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Seal tolerance, not bearing misalignment capacity, sets the allowable slope. Where Theta_arcmin exceeds 5 to 10 arc-minutes, reduce A or increase the shaft diameter.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 5: Maximum Shaft Deflection at Mid-Span</figcaption>
+            <p class="font-monospace my-3">y_max = ((F_r * A) / (24 * E * I)) * (3 * L^2 - 4 * A^2)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>y_max = Maximum shaft deflection at mid-span (mm)</li>
+                <li>F_r = Radial load per bearing (N)</li>
+                <li>A = Axial distance from the bearing centreline to the hub centreline (mm)</li>
+                <li>L = Distance between bearing centrelines (mm)</li>
+                <li>E = Young’s modulus of steel, 2.1 * 10^5 (MPa)</li>
+                <li>I = Area moment of inertia of the shaft (mm4)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Check y_max against the project or pulley manufacturer limit, together with the slopes at the hub and bearing.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 6: Shaft Slope at the Hub</figcaption>
+            <p class="font-monospace my-3">Theta_hub = (F_r * A * (L - 2 * A)) / (2 * E * I)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>Theta_hub = Shaft slope at the hub (rad)</li>
+                <li>F_r = Radial load per bearing (N)</li>
+                <li>A = Axial distance from the bearing centreline to the hub centreline (mm)</li>
+                <li>L = Distance between bearing centrelines (mm)</li>
+                <li>E = Young’s modulus of steel, 2.1 * 10^5 (MPa)</li>
+                <li>I = Area moment of inertia of the shaft (mm4)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Where shaft slope exceeds the locking assembly manufacturer's limit, typically 0.0010 to 0.0015 rad, the prying force overcomes the contact pressure on the tension side of the shaft, causing the locking assembly to gap, micro-slip, fret and lose its frictional grip.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 7: Belt Radial Pressure on the Pulley Shell</figcaption>
+            <p class="font-monospace my-3">p_r = (2 * T_max) / (D * W_b)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>p_r = Radial pressure on the shell (MPa)</li>
+                <li>T_max = Belt tension at pulley entry (N)</li>
+                <li>D = Outer diameter of the pulley shell (mm)</li>
+                <li>W_b = Width of the conveyor belt (mm)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> On drive pulleys, pressure falls from entry to exit as tension falls from T1 to T2. The formula assumes uniform tension across the belt width, and mistracking concentrates tension and increases local pressure.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 8: Pulley Shell Membrane Hoop Stress</figcaption>
+            <p class="font-monospace my-3">Sigma_hoop = (p_r * D) / (2 * t_s)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>Sigma_hoop = Compressive membrane hoop stress (MPa)</li>
+                <li>p_r = Belt radial pressure on the shell (MPa)</li>
+                <li>D = Outer diameter of the pulley shell (mm)</li>
+                <li>t_s = Thickness of the steel shell plate (mm)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> The formula treats the shell as a thin cylinder under uniform external pressure.</p>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> The belt loads only the wrap arc, so the shell also ovalises, producing circumferential bending stresses that the membrane value does not capture. Check elastic buckling, which depends on the shell length to diameter ratio, the diameter to thickness ratio and end-disc restraint, using shell stability methods (e.g. Timoshenko, EN 1993-1-6). Use FEA for final shell design.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 9: Pulley Shell Bending Stress</figcaption>
+            <p class="font-monospace my-3">Sigma_shell = M_shell / Z_shell<br>M_shell = (R_belt * (2 * L_s - W_b)) / 8<br>Z_shell = (PI * (D^4 - D_i^4)) / (32 * D)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>Sigma_shell = Shell bending stress at mid-span (MPa)</li>
+                <li>M_shell = Maximum bending moment on the shell (Nmm)</li>
+                <li>Z_shell = Section modulus of the hollow cylindrical shell (mm3)</li>
+                <li>R_belt = Resultant radial force from belt tension (N)</li>
+                <li>L_s = Span between end-disc centrelines (mm)</li>
+                <li>W_b = Belt width (mm)</li>
+                <li>D = Outer diameter of the pulley shell (mm)</li>
+                <li>D_i = Inner diameter of the shell (mm)</li>
+                <li>PI = Circle constant, 3.14159 (dimensionless)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> The moment assumes simple supports at the end-discs and the load spread uniformly over the belt width, which is conservative at mid-span. For a given tension per unit belt width, shell thickness increases approximately with the square of the span. Wide pulleys need a thicker shell or a shorter span between end-discs.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 10: End-Disc Bending Stress from Shaft Deflection</figcaption>
+            <p class="font-monospace my-3">Sigma_disc = (K * E * t_d * Theta_hub) / (R_shell - R_hub)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>Sigma_disc = Disc bending stress at the hub (MPa)</li>
+                <li>K = Edge restraint constant for a disc welded to the shell, typically 1.15 to 1.5 (dimensionless)</li>
+                <li>E = Young's modulus of steel, 2.1 * 10^5 (MPa)</li>
+                <li>t_d = Thickness of the flat end-disc (mm)</li>
+                <li>Theta_hub = Shaft slope at the hub (rad)</li>
+                <li>R_shell = Disc outer radius at the shell (mm)</li>
+                <li>R_hub = Outer radius of the central hub (mm)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Approximation derived from Roark's formulas for circular plates. K falls from 1.5 for a small hub to 1.15 at a hub to disc diameter ratio of 0.3, from annular plate theory.</p>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> This approximation is suitable for comparing options, not for final design. Thickening a flat disc does not reduce hub weld stress where shaft flexibility governs Theta_hub, because stress at a given hub slope increases with disc thickness. Reduce Theta_hub (larger shaft, smaller overhang) or specify a profiled disc.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 11: Torsional Shear Stress in the Shaft</figcaption>
+            <p class="font-monospace my-3">Tau_shaft = (16 * M_t) / (PI * d^3)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>M_t = Transmitted torque (Nmm)</li>
+                <li>d = Shaft diameter at the section evaluated (mm)</li>
+                <li>Tau_shaft = Torsional shear stress (MPa)</li>
+                <li>PI = Circle constant, 3.14159 (dimensionless)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> A 10% increase in shaft diameter reduces torsional shear stress by 25%.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 12: Completely Reversed Bending Stress in the Shaft</figcaption>
+            <p class="font-monospace my-3">Sigma_shaft = (32 * M_b) / (PI * d^3)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>Sigma_shaft = Bending stress amplitude (MPa)</li>
+                <li>M_b = Hub bending moment (Nmm)</li>
+                <li>d = Shaft diameter at the section evaluated (mm)</li>
+                <li>PI = Circle constant, 3.14159 (dimensionless)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Rotation under a fixed load direction makes this a fully reversed stress amplitude. Evaluate the locking assembly seats and shaft shoulders. Apply the notch, size and surface factors of AS 1403 or DIN 743, and keep the result below the material endurance limit.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 13: Shell Edge Bending Stress at the End-Disc</figcaption>
+            <p class="font-monospace my-3">Lambda = (3 * (1 - nu^2) / (R_s^2 * t_s^2))^(1/4)<br>M_x = (p_r / (2 * Lambda^2)) * e^(-Lambda * x) * (SIN(Lambda * x) - COS(Lambda * x))<br>Sigma_axial = (6 * M_x) / t_s^2</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>Lambda = Shell decay parameter (1/mm)</li>
+                <li>nu = Poisson's ratio of steel, 0.3 (dimensionless)</li>
+                <li>R_s = Mean radius of the pulley shell (mm)</li>
+                <li>t_s = Thickness of the pulley shell (mm)</li>
+                <li>M_x = Shell bending moment per unit circumference (Nmm/mm)</li>
+                <li>p_r = Belt radial pressure on the shell (MPa)</li>
+                <li>x = Axial distance from the end-disc junction (mm)</li>
+                <li>e = Euler's number, 2.71828 (dimensionless)</li>
+                <li>Sigma_axial = Axial bending stress at distance x (MPa)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> This is the classical thin-shell edge solution for a cylinder clamped at the end-disc under uniform pressure (Timoshenko). Lange's analysis extends it with Fourier series for the non-uniform wrap load and the end-disc.</p>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> End-disc restraint adds a local axial bending stress at the shell-to-disc junction, a common site of fatigue cracking, that simple beam theory omits. At the junction (x = 0), this stress is approximately 1.8 times the membrane hoop stress.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 14: Flat End-Disc Radial Bending Stress</figcaption>
+            <p class="font-monospace my-3">Sigma_flat_radial = (3 * E * t_d * Theta_hub * D_shell) / (D_shell^2 - D_hub^2)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>Sigma_flat_radial = Maximum radial bending stress at the hub weld (MPa)</li>
+                <li>E = Young's modulus of steel, 2.1 * 10^5 (MPa)</li>
+                <li>t_d = Thickness of the flat steel end-disc (mm)</li>
+                <li>Theta_hub = Shaft slope at the hub (rad)</li>
+                <li>D_shell = Outer diameter of the end-disc where it meets the shell (mm)</li>
+                <li>D_hub = Outer diameter of the central rigid hub (mm)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Based on annular plate theory. Maximum radial bending stress occurs at the hub weld.</p>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> This annular plate estimate corresponds to an edge restraint constant K = 1.5 * D_shell / (D_shell + D_hub), giving K of 1.15 to 1.5 for hub-to-disc diameter ratios of 0.3 to 0. Plate bending stiffness increases with the cube of thickness, while stress at a given hub slope increases in direct proportion to thickness. Confirm by FEA for final design.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 15: Profiled (Turbine) End-Disc Thickness Curve</figcaption>
+            <p class="font-monospace my-3">t_r = t_hub * SQRT(R_hub / r)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>t_r = Disc thickness at radius r (mm)</li>
+                <li>r = Radius evaluated, between the hub radius and the disc outer radius (mm)</li>
+                <li>t_hub = Disc thickness at the hub junction (mm)</li>
+                <li>R_hub = Outer radius of the central hub (mm)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> This profile gives uniform surface bending stress where the radial bending moment per unit circumference varies inversely with radius. Treat it as an idealised starting geometry and confirm the final profile and stress by FEA. Tapering reduces stiffness toward the shell, lowering peak stress at the hub for a given hub slope.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 16: T-Bottom (T-Section) Shell Weld Axial Stress</figcaption>
+            <p class="font-monospace my-3">Sigma_T_weld = ABS((3 * p_r) / (Lambda^2 * t_s^2) * e^(-Lambda * L_T) * (SIN(Lambda * L_T) - COS(Lambda * L_T)))</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>Sigma_T_weld = Axial bending stress at the T-section weld (MPa)</li>
+                <li>p_r = Belt radial pressure on the shell (MPa)</li>
+                <li>Lambda = Shell decay parameter (1/mm)</li>
+                <li>t_s = Thickness of the pulley shell (mm)</li>
+                <li>L_T = Distance from the end-disc junction to the T-section weld (mm)</li>
+                <li>e = Euler's number, 2.71828 (dimensionless)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> The decay term e^(-Lambda * L_T) * ABS(SIN(Lambda * L_T) - COS(Lambda * L_T)) is 0.24 at Lambda * L_T = 0.5 and does not exceed this value at greater distances.</p>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> The edge bending stress decays exponentially with distance from the junction. Locating the T-section weld at L_T of 0.5 / Lambda or more reduces the axial bending stress at the weld to less than 25% of the corner weld value.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 17: Resultant Radial Force from Belt Tension</figcaption>
+            <p class="font-monospace my-3">R_belt = SQRT(T1^2 + T2^2 - 2 * T1 * T2 * COS(theta))</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>R_belt = Resultant radial force from belt tension (N)</li>
+                <li>T1 = Entry belt tension (N)</li>
+                <li>T2 = Exit belt tension (N)</li>
+                <li>theta = Wrap angle (rad)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> At 180 deg wrap, the radial force equals T1 + T2, and it is less at smaller wrap angles, so resolve the vector to avoid oversizing shafts and bearings. Add pulley, shaft and lagging weight vectorially to obtain bearing loads.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 18: Combined Shaft Stress (von Mises Equivalent)</figcaption>
+            <p class="font-monospace my-3">Sigma_eq = SQRT(Sigma_shaft^2 + 3 * Tau_shaft^2)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>Sigma_eq = von Mises equivalent stress (MPa)</li>
+                <li>Sigma_shaft = Completely reversed bending stress (MPa)</li>
+                <li>Tau_shaft = Torsional shear stress (MPa)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Compare von Mises stress with the modified endurance limit after notch, size and surface factors. Combining steady torsion with alternating bending in this way is conservative, whereas DIN 743 assesses alternating and mean stress components separately. Check static yield separately at peak torque and bending.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 19: Bearing Basic Rating Life</figcaption>
+            <p class="font-monospace my-3">L10h = (10^6 / (60 * n_pulley)) * (C / P)^p</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>L10h = Basic rating life (h)</li>
+                <li>n_pulley = Pulley shaft speed (rpm)</li>
+                <li>C = Basic dynamic load rating of the bearing (N)</li>
+                <li>P = Equivalent dynamic bearing load (N)</li>
+                <li>p = Life exponent: 3 for ball bearings, 10/3 for roller bearings (dimensionless)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Specify the minimum L10h in the project specification, e.g. 50,000 to 100,000 h. Calculate equivalent dynamic bearing load from radial and axial loads at the fixed bearing using the manufacturer's X and Y factors. Basic rating life excludes lubrication and contamination effects, so use the ISO 281 modified rating life for final selection.</p>
+        </div>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 20: Effective Motor Torque at the Pulley</figcaption>
+            <p class="font-monospace my-3">M_t = (P_motor * eta_drive * 10^3) / omega_pulley<br>omega_pulley = (2 * PI * n_pulley) / 60<br>n_pulley = (60,000 * v) / (PI * D_L)</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>M_t = Transmitted torque at the pulley shaft (Nmm)</li>
+                <li>P_motor = Motor rated power (W)</li>
+                <li>eta_drive = Overall drive train efficiency, typically 0.94 to 0.97 for helical gearboxes (dimensionless)</li>
+                <li>omega_pulley = Pulley angular velocity (rad/s)</li>
+                <li>n_pulley = Pulley speed (rpm)</li>
+                <li>v = Belt speed (m/s)</li>
+                <li>D_L = Pulley diameter over lagging (mm)</li>
+                <li>PI = Circle constant, 3.14159 (dimensionless)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> This gives torque at rated motor power. Design shafts and locking assemblies for peak torque during starting and braking, set by the motor starting torque or the soft starter or variable speed drive (VSD) torque limit. Non-drive pulleys carry no transmitted torque.</p>
+        </div>
+    </section>
+
+    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+        Published <time datetime="2026-11-21">21 November 2026</time><br>
+        Updated <time datetime="2026-11-21">21 November 2026</time>
+    </footer>
+
+</main>
+
+<script src="chapters.js"></script>
+<script src="handbook.js"></script>
+
+</body>
+</html>

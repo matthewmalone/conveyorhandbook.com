@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deceleration, Braking, and Anti-Runback – Modern Conveyor Handbook</title>
+    <meta name="description" content="Conveyor stopping: coasting, brake delay, anti-runback devices and sizing, brakes and pads, flywheels, regenerative conveyors and stop sequencing.">
+    <meta name="author" content="Jane Doe">
+    <link rel="canonical" href="https://www.conveyorhandbook.com/20-deceleration-braking-and-anti-runback.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Deceleration, Braking, and Anti-Runback – Modern Conveyor Handbook">
+    <meta property="og:description" content="Conveyor stopping: coasting, brake delay, anti-runback devices and sizing, brakes and pads, flywheels, regenerative conveyors and stop sequencing.">
+    <meta property="og:url" content="https://www.conveyorhandbook.com/20-deceleration-braking-and-anti-runback.html">
+    <meta property="og:site_name" content="Modern Conveyor Handbook">
+    <meta property="og:image" content="https://www.conveyorhandbook.com/images/og-20-deceleration-braking-and-anti-runback.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Low-speed calliper disc brake and holdback on a conveyor drive pulley">
+    <meta property="og:locale" content="en_AU">
+    <meta property="article:published_time" content="2026-11-21T00:00:00+11:00">
+    <meta property="article:modified_time" content="2026-11-21T00:00:00+11:00">
+    <meta property="article:author" content="Jane Doe">
+    <meta property="article:section" content="Engineering">
+    <meta property="article:tag" content="conveyors">
+    <meta property="article:tag" content="conveyor brakes">
+    <meta property="article:tag" content="anti-runback">
+    <meta property="article:tag" content="conveyor safety">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Deceleration, Braking, and Anti-Runback – Modern Conveyor Handbook">
+    <meta name="twitter:description" content="Conveyor stopping: coasting, brake delay, anti-runback devices and sizing, brakes and pads, flywheels, regenerative conveyors and stop sequencing.">
+    <meta name="twitter:image" content="https://www.conveyorhandbook.com/images/og-20-deceleration-braking-and-anti-runback.jpg">
+    <meta name="twitter:image:alt" content="Low-speed calliper disc brake and holdback on a conveyor drive pulley">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="home" href="https://www.conveyorhandbook.com/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "TechArticle",
+                "headline": "Deceleration, Braking, and Anti-Runback",
+                "description": "Conveyor stopping: coasting, brake delay, anti-runback devices and sizing, brakes and pads, flywheels, regenerative conveyors and stop sequencing.",
+                "author": { "@type": "Person", "name": "Jane Doe" },
+                "publisher": { "@type": "Organization", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "datePublished": "2026-11-21",
+                "dateModified": "2026-11-21",
+                "mainEntityOfPage": "https://www.conveyorhandbook.com/20-deceleration-braking-and-anti-runback.html",
+                "isPartOf": { "@type": "WebSite", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "image": "https://www.conveyorhandbook.com/images/og-20-deceleration-braking-and-anti-runback.jpg",
+                "inLanguage": "en-AU",
+                "about": { "@type": "Thing", "name": "Conveyor Belts" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Modern Conveyor Handbook", "item": "https://www.conveyorhandbook.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Deceleration, Braking, and Anti-Runback", "item": "https://www.conveyorhandbook.com/20-deceleration-braking-and-anti-runback.html" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="handbook.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="topbar">
+    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Contents
+    </button>
+</div>
+
+<nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
+    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="chapterMenuBtn" aria-expanded="false" aria-controls="chapterMenu">Chapters</button>
+    </p>
+    <div class="chapter-menu" id="chapterMenu"></div>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-3">Table of Contents</p>
+    <div class="toc">
+        <a href="#deceleration-braking-and-anti-runback">1. Deceleration, Braking, and Anti-Runback</a>
+        <a href="#coasting-and-transfer-chutes">2. Coasting and Transfer Chutes</a>
+        <a href="#brake-application-delay">3. Brake Application Delay</a>
+        <a href="#anti-runback-devices">4. Anti-Runback Devices</a>
+        <a href="#anti-runback-installation-locations" class="sub">4.1 Anti-Runback Installation Locations</a>
+        <a href="#sizing-the-anti-runback-device" class="sub">4.2 Sizing the Anti-Runback Device</a>
+        <a href="#multiple-anti-runbacks-and-load-sharing" class="sub">4.3 Multiple Anti-Runbacks and Load Sharing</a>
+        <a href="#anti-runback-maintenance-and-mechanical-disablement" class="sub">4.4 Anti-Runback Maintenance and Mechanical Disablement</a>
+        <a href="#braking-systems">5. Braking Systems</a>
+        <a href="#split-location-braking-risks" class="sub">5.1 Split-Location Braking Risks</a>
+        <a href="#brake-thermal-capacity-and-duty-cycle" class="sub">5.2 Brake Thermal Capacity and Duty Cycle</a>
+        <a href="#brake-pad-material-selection" class="sub">5.3 Brake Pad Material Selection</a>
+        <a href="#brake-rotor-material-selection" class="sub">5.4 Brake Rotor Material Selection</a>
+        <a href="#flywheel-and-inertia-control">6. Flywheel and Inertia Control</a>
+        <a href="#installation-location" class="sub">6.1 Installation Location</a>
+        <a href="#flywheel-and-brake-pairing" class="sub">6.2 Flywheel and Brake Pairing</a>
+        <a href="#flywheel-hazards-and-chute-capacity" class="sub">6.3 Flywheel Hazards and Chute Capacity</a>
+        <a href="#regenerative-downhill-conveyors">7. Regenerative (Downhill) Conveyors</a>
+        <a href="#braking-redundancy" class="sub">7.1 Braking Redundancy</a>
+        <a href="#transfer-point-overload" class="sub">7.2 Transfer Point Overload</a>
+        <a href="#stop-sequencing-and-geometry-specific-control">8. Stop Sequencing and Geometry-Specific Control</a>
+        <a href="#deceleration-limits-for-personnel-safety">9. Deceleration Limits for Personnel Safety</a>
+    </div>
+</nav>
+
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+<main class="main-content" id="main" tabindex="-1">
+
+    <section id="deceleration-braking-and-anti-runback">
+        <h1 class="mb-3">1. Deceleration, Braking, and Anti-Runback</h1>
+        <p>On drive motor de-energisation, the elevation profile governs the dynamic response.</p>
+        <p>Horizontal conveyors coast to rest, inclined conveyors decelerate and run back where the gravitational force on the loaded belt exceeds running resistance, and declined conveyors accelerate where the gravitational force exceeds running resistance.</p>
+    </section>
+
+    <section id="coasting-and-transfer-chutes">
+        <h2>2. Coasting and Transfer Chutes</h2>
+        <p>Coasting time is proportional to system inertia and belt speed, and inversely proportional to the net retarding force from running resistance and gravity.</p>
+        <p>Keep the receiving conveyor running until the feeding conveyor stops discharging. Otherwise, material discharges onto a stationary belt and blocks the transfer chute. Restarting a buried receiving belt increases breakaway torque and risks drive pulley slip, cover damage and splice overload.</p>
+        <p>Where the feeding conveyor coasts longer than the receiving conveyor, delay the receiving conveyor stop through the control sequence for controlled stops. For power loss, specify a brake on the feeding conveyor or install a flywheel on the receiving conveyor.</p>
+        <p>Size the downstream chute for the material discharged after a stop command under power loss and emergency stop cases.</p>
+    </section>
+
+    <section id="brake-application-delay">
+        <h2>3. Brake Application Delay</h2>
+        <p>Following a trip or power loss, a spring-applied brake develops torque after a delay while control relays open, hydraulic dump valves de-energise, fluid evacuates the calliper lines and springs close the rotor air gap.</p>
+        <p>This sequence typically takes 0.5 to 1.5 s. Obtain the value for the specific brake and hydraulic circuit from the supplier. The conveyor continues to discharge during this delay. Include this travel distance in transfer chute capacity calculations.</p>
+    </section>
+
+    <section id="anti-runback-devices">
+        <h2>4. Anti-Runback Devices</h2>
+        <p>Fit an anti-runback device where the net runback force is positive in any load case. Calculate runback force using the lowest credible friction factor. Unrestrained runback causes material spillage at the tail pulley, transfer chute blockages and driveline damage from reverse overspeed.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 1: Anti-Runback Device Types</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Device Type</th>
+                        <th scope="col">Operating Principle</th>
+                        <th scope="col">Application Profile</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Freewheeling Clutch (Sprag, Cam or Roller)</th><td>Passive mechanical one-way clutch, also called a holdback or backstop. Internal elements wedge between races during reverse shaft rotation.</td><td>Locks within a small rotation angle on reversal. Functions independently of external power. Common practice for primary runback prevention.</td></tr>
+                    <tr><th scope="row">Ratchet and Pawl</th><td>A pawl engages a toothed wheel during reverse rotation.</td><td>Engagement backlash of up to one tooth pitch generates shock load. Limit to low-speed, low-torque conveyors.</td></tr>
+                    <tr><th scope="row">Mechanical Brake</th><td>Spring-applied, electrically or hydraulically released friction pads engage a driveline rotor.</td><td>Provides controlled deceleration and static holding. Requires control sequencing and external power for release.</td></tr>
+                    <tr><th scope="row">Electrical Dynamic Braking (Chopper and Resistors)</th><td>The Variable Frequency Drive (VFD) dissipates regenerated energy through a direct current (DC) chopper and braking resistors.</td><td>Controls deceleration and continues braking on grid loss where drive control is backed by an Uninterruptible Power Supply (UPS). Does not provide fail-safe holding at standstill. Requires a fail-safe mechanical holding device.</td></tr>
+                    <tr><th scope="row">Electrical Regenerative Braking (Active Front End)</th><td>The Active Front End (AFE) exports regenerated energy to the site supply.</td><td>Controls deceleration. Loses braking torque on grid loss. Does not provide fail-safe holding at standstill. Requires a fail-safe mechanical holding device.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="anti-runback-installation-locations">
+        <h3>4.1 Anti-Runback Installation Locations</h3>
+        <p>Mounting location determines failure tolerance and cost.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 2: Anti-Runback Device Installation Locations</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Mounting Configuration</th>
+                        <th scope="col">Arrangement</th>
+                        <th scope="col">Advantages</th>
+                        <th scope="col">Limitations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">High-Speed Shaft (Motor or Gearbox Input)</th><td>Installed inside the gearbox or on the electric motor shaft.</td><td>Positioned before gear reduction, so holding torque is reduced by the gear ratio. Device size and cost are reduced.</td><td>Relies on driveline integrity. Gear, shaft or coupling failure disconnects the pulley from the holdback and permits uncontrolled runback.</td></tr>
+                    <tr><th scope="row">Low-Speed Shaft (Direct to Pulley Shaft)</th><td>Installed directly onto the extended shaft of the drive or head pulley.</td><td>Locks the pulley to the foundation independent of the driveline. Common practice for critical, heavy or high-angle incline conveyors.</td><td>Must withstand full runback torque, which increases mass and cost. Requires a floating torque arm and a structural reaction anchor.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="sizing-the-anti-runback-device">
+        <h3>4.2 Sizing the Anti-Runback Device</h3>
+        <p>When drive power is removed under load, the belt decelerates and gravity reverses it. The stretched belt recoils during holdback engagement and generates a transient tension wave. Locking against this wave produces a snap-back torque greater than the static runback torque. Calculate the dynamic runback torque by applying a dynamic multiplier to the static runback torque, or by dynamic analysis.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 3: Indicative Anti-Runback Dynamic Multipliers</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Belt Type</th>
+                        <th scope="col">Elastic Elongation at Rated Working Tension %</th>
+                        <th scope="col">Indicative Dynamic Multiplier % of Static Runback Torque</th>
+                        <th scope="col">Design Considerations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Fabric Belts, Polyester-Polyamide (EP, PN) or Polyamide-Polyamide (NN)</th><td>1.0 to 2.0</td><td>150 minimum</td><td>High elasticity dampens the snap-back wave.</td></tr>
+                    <tr><th scope="row">Standard Steel Cord Belts</th><td>Approximately 0.2</td><td>200 to 250</td><td>Low elasticity transfers the wave with minimal attenuation. Confirm by dynamic analysis.</td></tr>
+                    <tr><th scope="row">High-Speed or High-Tension Steel Cord Belts</th><td>Approximately 0.2</td><td>300 to 350</td><td>Applies to speeds greater than 5.0 m/s [985 fpm]. Verify torque rating by dynamic analysis.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>AS/NZS 4024.3610 sets the general requirements for systems that stop and hold a conveyor, and AS/NZS 4024.3611 adds requirements specific to belt conveyors. Rate each anti-runback device to stop and hold at least 150% of the maximum dynamic runback torque in the worst-case load case. Assess abnormal dynamic effects and conveyor overload.</p>
+        <p>Install redundant anti-runback systems where risk assessment identifies runback as a hazard to personnel or critical infrastructure. Redundant configurations include two identical mechanical holdbacks on the drive pulley shaft extensions, or one mechanical holdback paired with an independent fail-safe holding brake such as a spring-applied, hydraulically released low-speed calliper disc brake on the pulley. Rate each device independently to the 150% requirement.</p>
+    </section>
+
+    <section id="multiple-anti-runbacks-and-load-sharing">
+        <h3>4.3 Multiple Anti-Runbacks and Load Sharing</h3>
+        <p>On large dual-drive incline conveyors, the required holding torque can exceed the capacity of a single commercially available holdback. Do not split the required holding torque between passive mechanical holdbacks on physically adjacent drive pulleys.</p>
+        <p>Manufacturing tolerances and backlash stagger the engagement of sprag and cam clutches. The short belt span between adjacent drive pulleys provides minimal compliance. The first holdback to lock, sized for 50% of the load, absorbs the full snap-back load and overloads. If it fails, the full load transfers to the second holdback and can cause cascade failure.</p>
+        <p>Different device types may be installed on adjacent drive pulleys where engagement is sequential. A mechanical holdback arrests reverse rotation first. A fail-safe brake, sized to arrest and hold the full load independently, sets at zero speed and holds the belt if the holdback fails. Alternatively, specify torque-limiting holdbacks, which slip at a set torque and promote load sharing.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 4: Redundant Holdback Arrangements</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Feature</th>
+                        <th scope="col">Same-Shaft Redundancy (Preferred Solution)</th>
+                        <th scope="col">Separation by Distance (Acceptable Alternative)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Configuration</th><td>Two holdbacks are placed on the same pulley shaft.</td><td>Holdbacks on pulleys separated by a significant belt length e.g. head drive pulley and tail pulley.</td></tr>
+                    <tr><th scope="row">Operating Principle</th><td>The pulley shaft couples the holdbacks rigidly.</td><td>The belt between the holdbacks acts as an elastic buffer.</td></tr>
+                    <tr><th scope="row">Advantages</th><td>Shaft torsional deflection brings both holdbacks into engagement near-simultaneously, giving approximately equal load sharing.</td><td>Belt stretch after the first holdback locks delays load build-up until the second holdback engages, limiting peak load on the first holdback.</td></tr>
+                    <tr><th scope="row">Limitations</th><td>Requires a double-extended shaft and aligned torque-arm reaction anchors on both sides of the pulley. Confirm load sharing with the holdback supplier.</td><td>Load sharing is difficult to predict. Verify by dynamic analysis that belt modulus provides sufficient compliance for the engagement delay. Verify the remote pulley has sufficient wrap and tension to hold its share without slip.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="anti-runback-maintenance-and-mechanical-disablement">
+        <h3>4.4 Anti-Runback Maintenance and Mechanical Disablement</h3>
+        <p>Belt replacement and splice repairs can require reverse belt movement, which the anti-runback device prevents on an inclined conveyor.</p>
+        <p>Anti-runback devices can incorporate a mechanical override operated by lever, screw jack or hydraulic actuator. The override retracts the sprags or rollers from the race, lifts the pawl in ratchet mechanisms or releases holding torque by hydraulic pressure in brake-based systems, placing the device in a bidirectional freewheeling state.</p>
+        <p>Secure the belt before releasing the device. Apply belt clamps rated for the maximum runback tension, and ground and lock the counterweight where the work requires tension release. Releasing the device without securing the belt can cause uncontrolled runback.</p>
+        <p>Do not operate the conveyor with the device released. Before every start, verify that the engagement indicator shows the device engaged. Interlock the override with the conveyor start permissive where practicable.</p>
+    </section>
+
+    <section id="braking-systems">
+        <h2>5. Braking Systems</h2>
+        <p>Brakes are required to stop a conveyor faster than its natural coasting time, to prevent a declined conveyor from running away, and to hold the belt at standstill.</p>
+        <p>All mechanical conveyor brakes must be fail-safe. Springs apply the brake and electrical, hydraulic or pneumatic power releases it. Loss of power, a blown fuse or a burst hydraulic hose applies the brake.</p>
+        <p>Size brake torque from the loads on the conveyor, not from the drive motor rating. A brake rated as a multiple of motor torque can under-brake a declined conveyor, where the regenerative load plus the torque needed to decelerate the moving mass exceeds that multiple. It can also over-brake a horizontal conveyor, where the excess torque raises stopping tension, risks slip at the braked pulley and can lift the belt at concave curves.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 5: Conveyor Braking Systems</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Brake Type</th>
+                        <th scope="col">Operating Principle</th>
+                        <th scope="col">Advantages</th>
+                        <th scope="col">Limitations</th>
+                        <th scope="col">Hazards</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Thruster Brakes (Drum and Disc)</th><td>An electro-hydraulic thruster holds the shoes open against spring force. On loss of power, springs clamp the shoes onto a drum or disc. Typically mounted on the high-speed motor shaft. Low-speed mounting is uncommon due to brake size.</td><td>Suits horizontal and slightly declined conveyors. Self-contained with consistent braking torque. Low capital cost.</td><td>Exposed wear surfaces increase maintenance. Unsuitable for hazardous areas unless certified. On the high-speed shaft, gearbox failure disconnects the brake from the pulley.</td><td>Exposed friction surfaces generate heat and particulates, an ignition source in combustible dust or gas.</td></tr>
+                    <tr><th scope="row">Open Calliper Disc Brakes</th><td>Spring-applied hydraulic callipers clamp an exposed rotor on the low-speed pulley shaft.</td><td>Direct pulley mounting brakes the pulley regardless of gearbox condition. Exposed rotor mass assists heat dissipation and convective cooling between stops.</td><td>Unsuitable for underground coal mines, classified hazardous areas and locations with combustible dust accumulation unless an ignition risk assessment demonstrates otherwise.</td><td>Pad friction generates hot particulate debris. Elevated rotor surface temperatures present an auto-ignition risk.</td></tr>
+                    <tr><th scope="row">Enclosed Disc Brakes</th><td>Friction discs and separator plates run in oil within a sealed casing. A pump circulates oil through an external heat exchanger.</td><td>Suitable for hazardous areas subject to certification. Oil immersion excludes oxygen and contains sparks and incandescent debris. Oil cools the friction pack and stabilises the friction coefficient.</td><td>Higher capital cost and complexity from sealed housings, pumps and heat exchangers. Requires oil condition monitoring for viscosity and moisture, and filter changes.</td><td>Oil leaks present fire and environmental hazards. Overheated oil degrades and reduces braking performance. Specify fire-resistant fluids approved by the brake manufacturer (e.g. ISO 6743-4 category HFDU), leak detection and Programmable Logic Controller (PLC) shutdown on low oil pressure or high oil temperature.</td></tr>
+                    <tr><th scope="row">Fluid Brakes (Hydrodynamic Retarders)</th><td>A rotor turns in fluid against a stationary stator. Fluid circulating between the rotor and stator vanes converts kinetic energy to heat, rejected through an external cooler.</td><td>Dissipates continuous heat from regenerative downhill loads without rotor distortion or pad wear.</td><td>Retarding torque falls with the square of speed, so the retarder provides negligible torque at low speed and cannot stop or hold the belt. Pair with a fail-safe mechanical holding brake.</td><td>Loss of fluid fill or cooler failure reduces retarding torque and can cause overspeed.</td></tr>
+                    <tr><th scope="row">Electrical Dynamic Braking</th><td>The load drives the motor as a generator. The VFD routes regenerated power to a DC chopper and resistor bank.</td><td>Independent of the site grid while regenerated power sustains the DC bus and drive control is UPS-backed. Heat is rejected through resistor cooling.</td><td>All energy is dissipated as heat. Rate resistors for the worst-case stop energy and duty cycle. A drive fault removes braking torque.</td><td>A load-driven motor can generate hazardous terminal voltage, particularly a permanent magnet motor. DC bus capacitors retain charge after isolation. Lockout and tagout are insufficient without mechanical pulley locking.</td></tr>
+                    <tr><th scope="row">Electrical Regenerative Braking</th><td>The load drives the motor as a generator. An Active Front End (AFE) synchronises and exports the power to the site network.</td><td>High efficiency. Recovered energy supplies other site loads.</td><td>Dependent on grid availability. Requires a fail-safe mechanical brake, and a chopper and resistor bank where controlled braking on grid loss is required.</td><td>Grid loss trips the drive on DC bus overvoltage and removes braking torque, causing runaway on a declined conveyor. A load-driven motor can generate hazardous terminal voltage during maintenance. Lock the pulley mechanically.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="split-location-braking-risks">
+        <h3>5.1 Split-Location Braking Risks</h3>
+        <p>Avoid distributing fixed-torque mechanical brakes across separated pulleys e.g. head and tail pulleys to share thermal load, unless dynamic analysis verifies the tension response for every load case and brake timing tolerance.</p>
+        <p>On undulating profiles, material distribution determines whether the belt decelerates or accelerates during a stop, but spring-applied brakes apply constant torque. Simultaneous application of separated brakes generates transient stress waves, slack belt in low-tension zones and carcass overload.</p>
+        <p>Differential pad wear changes application delay and torque. This concentrates energy in one brake until it fails and transfers the full load to the remaining brake.</p>
+        <p>Alternatively, use VFD braking to modulate torque to suit the changing load profile.</p>
+        <p>Where mechanical braking is required on power loss, locate the brakes at a single pulley at the optimal braking location e.g. the tail pulley of a declined conveyor. A single location applies uniform torque and avoids asynchronous brake interaction.</p>
+    </section>
+
+    <section id="brake-thermal-capacity-and-duty-cycle">
+        <h3>5.2 Brake Thermal Capacity and Duty Cycle</h3>
+        <p>Mechanical brakes convert kinetic and potential energy to heat. Excess temperature causes rotor distortion and brake fade.</p>
+        <p>On declined conveyors, released potential energy often exceeds system kinetic energy. Brakes on regenerative conveyors therefore require greater thermal mass than brakes on equivalent horizontal conveyors.</p>
+        <p>Size brake thermal capacity for the worst-case duty cycle and for a minimum of three consecutive full-load emergency stops from rated speed without cooling. Keep the rotor temperature after the third stop below the pad manufacturer's limit. Otherwise, increase rotor mass, upgrade the material grade or add forced-air cooling.</p>
+    </section>
+
+    <section id="brake-pad-material-selection">
+        <h3>5.3 Brake Pad Material Selection</h3>
+        <p>The friction coefficient varies with temperature, sliding speed, contact pressure and contamination by water, dust or oil. Specify pad and rotor combinations with tested friction data across the operating envelope.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 6: Brake Pad Types</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Pad Type</th>
+                        <th scope="col">Composition</th>
+                        <th scope="col">Characteristics</th>
+                        <th scope="col">Limitations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Organic (Resin-Bonded) Pads</th><td>Aramid or glass fibres in a phenolic resin matrix with friction modifiers (graphite, metal powders).</td><td>Stable friction coefficient, typically 0.35 to 0.45, at moderate temperature. Smooth engagement with low noise. Maximum continuous temperature approximately 250 to 300 deg C [480 to 570 deg F]. Lowest spark generation of the three types where metal powder content is minimal.</td><td>Above rated temperature, the resin chars, causing irreversible fade. Unsuitable for high-energy regenerative braking. Wears faster than metallic pads. Reduced performance in wet or freezing conditions.</td></tr>
+                    <tr><th scope="row">Semi-Metallic Pads</th><td>Metallic fibres (steel, copper, iron) with organic binders and friction modifiers, typically 30% to 65% metal.</td><td>Friction coefficient typically 0.38 to 0.50. Continuous temperature typically 300 to 400 deg C [570 to 750 deg F]. Better fade resistance than organic pads and better cold friction than sintered pads.</td><td>Higher rotor wear, noise and dust. Corrodes in damp environments. Generates sparks. Generally unsuitable for hazardous areas.</td></tr>
+                    <tr><th scope="row">Sintered Metallic Pads</th><td>Metal powders (bronze, iron, copper) fused under heat and pressure without organic binders.</td><td>Continuous temperature typically greater than 400 deg C [750 deg F]. Friction coefficient typically 0.25 to 0.35, lower than organic pads at ambient temperature but stable across a wide temperature range. High wear resistance.</td><td>Higher cost. Lower friction coefficient requires greater spring force and heavier callipers. High thermal conductivity transfers heat into the calliper. Sparks under metal-on-metal friction. Unsuitable for hazardous areas.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Values are typical manufacturer ranges.</p>
+        </div>
+    </section>
+
+    <section id="brake-rotor-material-selection">
+        <h3>5.4 Brake Rotor Material Selection</h3>
+        <p>Specify grey cast iron (e.g. AS 1830 grade JL/250 / EN-GJL-250, formerly GG-25) for standard rotors for its thermal conductivity and vibration damping. Specify forged or cast steel rotors (e.g. AS 1442 Grade 1040) for heavy-duty applications above 400 deg C [750 deg F] or where thermal cracking of cast iron is a risk.</p>
+        <p>Friction data applies only to the pad and rotor combination tested. Do not substitute rotor material without supplier confirmation of the friction coefficient.</p>
+    </section>
+
+    <section id="flywheel-and-inertia-control">
+        <h2>6. Flywheel and Inertia Control</h2>
+        <p>Rotating components (motor rotors, couplings, gearbox internals and pulleys), together with belt and material mass, determine system inertia. On complex profiles, inherent inertia can be insufficient to prevent transient tension collapse during an uncontrolled stop. Add a flywheel to increase system inertia.</p>
+        <p>A typical application is a predominantly horizontal conveyor terminating in a steep incline to the head pulley e.g. an overland conveyor rising to a discharge structure. On power loss, gravity decelerates the loaded incline while the horizontal section maintains forward momentum. Carry-side tension at the base of the incline collapses. The belt sags, folds at the concave curve and spills material. Installing a head drive flywheel extends the deceleration period and maintains positive tension until the horizontal section stops.</p>
+    </section>
+
+    <section id="installation-location">
+        <h3>6.1 Installation Location</h3>
+        <p>Flywheel kinetic energy is proportional to its mass moment of inertia and the square of its rotational speed. Speed therefore has greater influence than inertia.</p>
+        <p>A flywheel on the low-speed pulley shaft e.g. 50 rpm requires large mass, typically with structural reinforcement and larger bearings.</p>
+        <p>A flywheel on the high-speed shaft e.g. 1,500 rpm typically rotates 30 to 46 times faster than the pulley. Reflected inertia scales with the square of the speed ratio, so the high-speed flywheel requires approximately 1/900 to 1/2,100 of the inertia of an equivalent low-speed flywheel.</p>
+        <p>Example: At a gear ratio of 30, a pulley-shaft inertia of 2,500 kg m2 [59,300 lb ft2] divided by 900 (the ratio squared) equals 2.8 kg m2 [66 lb ft2] at the motor shaft.</p>
+        <p>Check motor starting duty, coupling and gearbox input ratings for the added flywheel inertia. A high-speed flywheel acts on the belt only while the gearbox is intact.</p>
+    </section>
+
+    <section id="flywheel-and-brake-pairing">
+        <h3>6.2 Flywheel and Brake Pairing</h3>
+        <p>Adding a flywheel extends coasting time. Pair the flywheel with a controlled mechanical brake that applies a retarding force to stop the system within the required time. Set brake torque and application timing by dynamic analysis so carry-side tension at the concave curve remains positive.</p>
+    </section>
+
+    <section id="flywheel-hazards-and-chute-capacity">
+        <h3>6.3 Flywheel Hazards and Chute Capacity</h3>
+        <p>A flywheel extends run-on time after a stop. Include run-on time in the guarding and access risk assessment. Size the receiving transfer chute for the extended coasting volume.</p>
+        <p>Treat flywheels as stored energy sources. A driveline failure decouples the flywheel from the belt load, leaving it coasting at near operating speed.</p>
+        <p>Enclose flywheels in heavy-gauge steel guards. Monitor shaft bearings with continuous vibration sensors to detect degradation. Include flywheel run-down in isolation procedures and confirm zero speed before access.</p>
+    </section>
+
+    <section id="regenerative-downhill-conveyors">
+        <h2>7. Regenerative (Downhill) Conveyors</h2>
+        <p>A conveyor is regenerative where the net gravitational force on the material exceeds running resistance. Assess every load case, since partial loading can make a conveyor regenerative.</p>
+        <p>Treat a loaded declined conveyor as a stored-energy system. Without restraint, the belt accelerates toward a terminal velocity defined by gradient, moving mass and running resistance, which can exceed idler, pulley and belt design limits.</p>
+    </section>
+
+    <section id="braking-redundancy">
+        <h3>7.1 Braking Redundancy</h3>
+        <p>Provide independent primary and secondary braking systems. The primary system may be a non-fail-safe controlled braking system, such as VFD braking. The secondary brake must be fail-safe, independent and rated to stop and hold at least 150% of the maximum dynamic regenerative load per AS/NZS 4024.3610.</p>
+    </section>
+
+    <section id="transfer-point-overload">
+        <h3>7.2 Transfer Point Overload</h3>
+        <p>On overspeed, material overshoots the designed impact zone and exceeds the capacity of the receiving equipment. This causes chute impact damage, plugging, spillage and belt damage.</p>
+        <p>Establish exclusion zones at regenerative conveyor discharge areas unless the conveyor is fitted with a redundant fail-safe mechanical brake.</p>
+    </section>
+
+    <section id="stop-sequencing-and-geometry-specific-control">
+        <h2>8. Stop Sequencing and Geometry-Specific Control</h2>
+        <p>Distinguish in the control logic between a Category 1 stop, where the VFD ramps the belt to zero speed on an S-curve before removing power, and a Category 0 stop, where power is removed immediately and mechanical brakes apply. Power loss produces an uncontrolled stop equivalent to Category 0. Emergency stops and pull-wire trips may be Category 0 or Category 1 as determined by risk assessment.</p>
+        <p>The conveyor profile determines VFD torque commands and brake timing.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 7: Conveyor Geometry Stopping Configurations</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Configuration</th>
+                        <th scope="col">Governing Stop Hazard</th>
+                        <th scope="col">Controlled Stop Sequence</th>
+                        <th scope="col">Key Parameters</th>
+                        <th scope="col">Power Loss, Emergency Stop and Fail-Safe Response</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Steep incline, net motoring. Torque taper with holdback hand-off.</th><td>When drive torque is removed, the loaded carry side runs back. Holdback engagement after backlash shock-loads the driveline and releases stored belt strain as a tension wave. Material rolls back at the loading zone. Holdbacks on multi-drive systems share load unequally.</td><td>Stop the feed. Ramp down on an S-curve under closed-loop vector control with encoder feedback. Set the ramp slower than the natural stop of the lightest load case so drive torque stays positive and does not reverse through gear backlash. Hold at zero speed under torque. Command brake set and confirm by limit or pressure switch feedback. Taper torque to zero while monitoring the encoder for creep. Apply Safe Torque Off (STO).</td><td>Brake set confirmation timeout: 2 to 3 s. Torque taper: 100% to 0% over 3 to 5 s. If creep is detected during the taper, restore torque and raise a brake slip alarm. Rate each holdback to stop and hold at least 150% of the maximum dynamic runback torque, then apply the supplier service factor. On multi-drive systems, rate each holdback for the full runback torque or use torque-limiting holdbacks.</td><td>The holdback arrests runback and spring-applied brakes set on loss of power. Calculate runback travel to holdback engagement and the engagement shock torque. Add flywheel inertia where an uncontrolled stop causes transfer spillage or exceeds transient tension limits.</td></tr>
+                    <tr><th scope="row">Steep decline, net regenerative. Regenerative stop with brake hand-off.</th><td>Gravity-driven overspeed. Emergency brake torque that exceeds the friction capacity of the braked pulley slips the belt. Repeated high-energy stops on mechanical brakes glaze pads and thermally distort discs. On a head-driven decline, the slack side is the carry side approaching the head.</td><td>Stop the feed. Ramp down on an S-curve with brakes released. Return energy to the grid through an AFE or dissipate it through a DC chopper and braking resistors. Below the static brake threshold, set the brakes, confirm by feedback, then taper drive braking torque to zero. Confirm zero speed at a non-driven pulley to detect slip.</td><td>Static brake threshold: less than 0.1 m/s [20 fpm], or 2% to 5% of rated speed. Set emergency deceleration by dynamic analysis, limited by drive pulley slip, brake thermal capacity and transient tension. Use 0.2 to 0.3 m/s2 [0.66 to 0.98 ft/s2] as a starting value only. Brake torque must be greater than or equal to peak full-load regenerative torque plus inertial deceleration torque, with design margin. Under emergency braking, confirm that the braked pulley does not slip at the peak braking effective tension. If it slips, increase take-up tension or wrap angle, apply braking at additional pulleys subject to dynamic analysis, or relocate the take-up to the slack side near the drive.</td><td>Option A: closed-loop soft braking. A UPS-backed controller modulates a proportional valve on the Hydraulic Power Unit (HPU) against encoder speed. Accumulators supply hydraulic energy because the pump is lost with the grid. Option B: a drive with a DC chopper and braking resistors continues braking because regenerated energy sustains the DC bus, with control powered from the UPS. An AFE without a chopper cannot brake on grid loss. An independent overspeed trip, commonly set at 110% of rated speed, forces full brake application. Staged application, reduced pressure then full clamp, limits transients. Implement the stop as Safe Stop 1 with ramp monitoring (SS1-r) with Safe Brake Control (SBC).</td></tr>
+                    <tr><th scope="row">Long horizontal and overland. Drive-controlled stop with take-up coordination.</th><td>Abrupt torque removal produces a step change in tension. It generates longitudinal stress waves and collapses tension at the low-tension point. Results include carry-side sag and spillage near the tail, take-up carriage overshoot or bottoming, belt lift at concave curves from transient high tension and pulley slip.</td><td>Stop the feed upstream. Ramp drive torque down at or near the natural deceleration rate. On systems with head, tail and booster drives, stop all drives together under master torque control to preserve load share. Ramp the tail drive to keep the low-tension point positive. Switch active winch take-ups to the stop tension setpoint before the stop and hold carriage position at zero speed. Use natural coast only where dynamic analysis confirms the torque step is acceptable.</td><td>Natural deceleration: calculate for each load case, since loaded and empty stop times differ. Low-resistance overlands typically decelerate at 0.05 to 0.1 m/s2 [0.16 to 0.33 ft/s2]. Set ramp time greater than the stress wave round-trip time 2 * L / v_w, where L is conveyor length and v_w is the tension wave propagation velocity in the belt carcass, and confirm by dynamic analysis. Apply project sag limits, commonly 1% to 2% steady state and up to 3% transient. Include the stop transient in take-up travel.</td><td>Include power loss as an uncontrolled torque step in the dynamic analysis. Mitigate with drive flywheels and a damped or brake-held take-up. Fit brakes or holdbacks to any section that is net regenerative or net runback in any load case.</td></tr>
+                    <tr><th scope="row">Undulating terrain. Load-state-indexed stop profiles.</th><td>Concave curves: belt lift-off at high tension, worst with an empty belt. Convex curves: centre buckling at low tension and edge overstress at high tension. Valleys: sag and spillage at low tension. The system can switch between motoring and regenerative during the stop depending on which flights are loaded.</td><td>Stop the feed. Select a pre-computed stop profile for the current load case, identified by material tracking from belt scale and speed integration. Load cases include empty, full, loaded inclines with empty declines, and the reverse. Run the drives in torque control to hold span tension between a minimum set by sag and convex buckling and a maximum set by concave lift-off. Estimate span tension from drive torque, pulley load pins, take-up position and force, and drive versus non-drive pulley speed.</td><td>Derive the convex buckling limit from curve radius, trough angle and belt modulus. Derive the stop time for each profile by dynamic analysis. Extending the deceleration ramp protects valley tension only. Apply the maximum tension limit to protect concave curves.</td><td>Stop profiles cannot be enforced on power loss. Check the worst load case under coast. Fit controlled braking for regenerative cases and holdbacks for runback cases.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Timing values, deceleration rates and sag limits are indicative starting values from common practice. Confirm by dynamic analysis and commissioning.</p>
+        </div>
+    </section>
+
+    <section id="deceleration-limits-for-personnel-safety">
+        <h2>9. Deceleration Limits for Personnel Safety</h2>
+        <p>For conveyors with adjacent personnel access during operation, limit the emergency deceleration rate to 0.3 m/s2 [0.98 ft/s2] unless a site-specific risk assessment demonstrates otherwise.</p>
+        <p>On man-riding conveyors, limit deceleration to prevent riders sliding into fixed equipment. Apply the limit set by the applicable mining regulation and risk assessment. Use 0.1 to 0.15 m/s2 [0.33 to 0.49 ft/s2] as an indicative design range.</p>
+        <p>Where the deceleration needed to prevent runaway on a declined conveyor exceeds the personnel limit, prevent exposure with interlocked access gates or man-riding lockout so riders are not present when high deceleration rates apply.</p>
+    </section>
+
+    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+        Published <time datetime="2026-11-21">21 November 2026</time><br>
+        Updated <time datetime="2026-11-21">21 November 2026</time>
+    </footer>
+
+</main>
+
+<script src="chapters.js"></script>
+<script src="handbook.js"></script>
+
+</body>
+</html>

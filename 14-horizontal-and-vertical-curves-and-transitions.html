@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal and Vertical Curves and Transitions – Modern Conveyor Handbook</title>
+    <meta name="description" content="Conveyor curves: convex and concave vertical curve checks and load cases, horizontal curve radius and idler banking, and transition distances.">
+    <meta name="author" content="Jane Doe">
+    <link rel="canonical" href="https://www.conveyorhandbook.com/14-horizontal-and-vertical-curves-and-transitions.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Horizontal and Vertical Curves and Transitions – Modern Conveyor Handbook">
+    <meta property="og:description" content="Conveyor curves: convex and concave vertical curve checks and load cases, horizontal curve radius and idler banking, and transition distances.">
+    <meta property="og:url" content="https://www.conveyorhandbook.com/14-horizontal-and-vertical-curves-and-transitions.html">
+    <meta property="og:site_name" content="Modern Conveyor Handbook">
+    <meta property="og:image" content="https://www.conveyorhandbook.com/images/og-14-horizontal-and-vertical-curves-and-transitions.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Belt conveyor following a horizontal curve on banked idlers">
+    <meta property="og:locale" content="en_AU">
+    <meta property="article:published_time" content="2026-11-21T00:00:00+11:00">
+    <meta property="article:modified_time" content="2026-11-21T00:00:00+11:00">
+    <meta property="article:author" content="Jane Doe">
+    <meta property="article:section" content="Engineering">
+    <meta property="article:tag" content="conveyors">
+    <meta property="article:tag" content="horizontal curves">
+    <meta property="article:tag" content="vertical curves">
+    <meta property="article:tag" content="belt transitions">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Horizontal and Vertical Curves and Transitions – Modern Conveyor Handbook">
+    <meta name="twitter:description" content="Conveyor curves: convex and concave vertical curve checks and load cases, horizontal curve radius and idler banking, and transition distances.">
+    <meta name="twitter:image" content="https://www.conveyorhandbook.com/images/og-14-horizontal-and-vertical-curves-and-transitions.jpg">
+    <meta name="twitter:image:alt" content="Belt conveyor following a horizontal curve on banked idlers">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="home" href="https://www.conveyorhandbook.com/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "TechArticle",
+                "headline": "Horizontal and Vertical Curves and Transitions",
+                "description": "Conveyor curves: convex and concave vertical curve checks and load cases, horizontal curve radius and idler banking, and transition distances.",
+                "author": { "@type": "Person", "name": "Jane Doe" },
+                "publisher": { "@type": "Organization", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "datePublished": "2026-11-21",
+                "dateModified": "2026-11-21",
+                "mainEntityOfPage": "https://www.conveyorhandbook.com/14-horizontal-and-vertical-curves-and-transitions.html",
+                "isPartOf": { "@type": "WebSite", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "image": "https://www.conveyorhandbook.com/images/og-14-horizontal-and-vertical-curves-and-transitions.jpg",
+                "inLanguage": "en-AU",
+                "about": { "@type": "Thing", "name": "Conveyor Belts" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Modern Conveyor Handbook", "item": "https://www.conveyorhandbook.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Horizontal and Vertical Curves and Transitions", "item": "https://www.conveyorhandbook.com/14-horizontal-and-vertical-curves-and-transitions.html" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="handbook.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="topbar">
+    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Contents
+    </button>
+</div>
+
+<nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
+    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="chapterMenuBtn" aria-expanded="false" aria-controls="chapterMenu">Chapters</button>
+    </p>
+    <div class="chapter-menu" id="chapterMenu"></div>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-3">Table of Contents</p>
+    <div class="toc">
+        <a href="#horizontal-and-vertical-curves-and-transitions">1. Horizontal and Vertical Curves and Transitions</a>
+        <a href="#vertical-curves">2. Vertical Curves</a>
+        <a href="#convex-and-concave-vertical-curves" class="sub">2.1 Convex and Concave Vertical Curves</a>
+        <a href="#load-cases-and-design-checks" class="sub">2.2 Load Cases and Design Checks</a>
+        <a href="#horizontal-curves">3. Horizontal Curves</a>
+        <a href="#curve-mechanics" class="sub">3.1 Curve Mechanics</a>
+        <a href="#equilibrium-and-radius-selection" class="sub">3.2 Equilibrium and Radius Selection</a>
+        <a href="#superelevation-of-the-carry-strand" class="sub">3.3 Superelevation of the Carry Strand</a>
+        <a href="#superelevation-of-the-return-strand" class="sub">3.4 Superelevation of the Return Strand</a>
+        <a href="#governing-load-cases" class="sub">3.5 Governing Load Cases</a>
+        <a href="#idler-transitions">4. Idler Transitions</a>
+        <a href="#pulley-elevation-geometry-half-trough-versus-full-trough" class="sub">4.1 Pulley Elevation Geometry (Half-Trough versus Full-Trough)</a>
+        <a href="#transition-distances" class="sub">4.2 Transition Distances</a>
+        <a href="#transition-idler-placement-rules-of-thumb" class="sub">4.3 Transition Idler Placement Rules of Thumb</a>
+    </div>
+</nav>
+
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+<main class="main-content" id="main" tabindex="-1">
+
+    <section id="horizontal-and-vertical-curves-and-transitions">
+        <h1 class="mb-3">1. Horizontal and Vertical Curves and Transitions</h1>
+        <p>Curve radii and transition distances are determinants of belt, idler, pulley and splice life. Both are fixed by the conveyor profile and terminal geometry during design and are costly to correct after commissioning.</p>
+    </section>
+
+    <section id="vertical-curves">
+        <h2>2. Vertical Curves</h2>
+    </section>
+
+    <section id="convex-and-concave-vertical-curves">
+        <h3>2.1 Convex and Concave Vertical Curves</h3>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 1: Convex and Concave Vertical Curves</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Parameter</th>
+                        <th scope="col">Convex Curve (Crest)</th>
+                        <th scope="col">Concave Curve (Valley)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Strain distribution</th><td>The troughed belt edges sit above the belt centre, so at a crest the edges follow the longer path. Edge tension rises and centre tension falls, and can reach zero.</td><td>At a valley the edges follow the shorter path. Edge tension falls and centre tension rises.</td></tr>
+                    <tr><th scope="row">Carry strand effect</th><td>Belt tension presses the belt onto the idlers through the curve. Idler load is the static load plus a radial component proportional to tension and inversely proportional to radius.</td><td>Belt tension pulls the belt away from the idlers (bow-string effect). Contact load falls through the curve and reaches zero at the lift-off condition.</td></tr>
+                    <tr><th scope="row">Return strand effect</th><td>The return strand is also pressed onto the return rolls. Return roll load rises through the curve.</td><td>Return roll contact load also falls. The return strand carries no material, so belt self-weight alone resists uplift, and the strand is more prone to lift-off than the carry strand at similar tensions.</td></tr>
+                    <tr><th scope="row">Governing load case</th><td>Fully loaded start-up for edge tension and peak idler load. Fully loaded steady state for idler L10 life. Empty belt at running tension for centre tension.</td><td>Base design on the partial-load condition producing peak tension while the curve section is empty, where tension is highest and restraining weight is least. Also evaluate empty-belt start-up.</td></tr>
+                    <tr><th scope="row">Failure modes</th><td>Permanent edge elongation, edge tearing, longitudinal creasing and centre buckling on loss of centre tension.</td><td>Lift-off from the idlers with impact on overhead structure, loss of trough profile, spillage and tracking instability. Edge buckling at low tension.</td></tr>
+                    <tr><th scope="row">Idler pitch through the curve</th><td>Reduce pitch through the curve to limit the radial load carried by each idler set. Pitch has no effect on the belt-stress minimum radius.</td><td>Pitch has no effect on lift-off, which is set by tension, material load, radius and belt mass. Where calculation shows lift-off, increase the radius or reduce tension at the curve. Fit hold-down rollers only as a last resort.</td></tr>
+                    <tr><th scope="row">Remedial measures where radius is constrained</th><td>Reduce trough angle through the curve, which lowers the belt edge and reduces the radius required.</td><td>Fit hold-down rollers as a last resort.</td></tr>
+                    <tr><th scope="row">Commissioning verification</th><td>Inspect belt edges for elongation marking and cover cracking.</td><td>Inspect belt-lift clearance to overhead structure during empty start-up and the partial-load case.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="load-cases-and-design-checks">
+        <h3>2.2 Load Cases and Design Checks</h3>
+        <p>Evaluate every applicable check against every applicable load case. The largest minimum radius returned by any check governs the curve design.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 2: Load Cases for Vertical Curve Analysis</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Load Case (LC)</th>
+                        <th scope="col">Operating Condition</th>
+                        <th scope="col">Material at Curve</th>
+                        <th scope="col">Belt Tension Basis</th>
+                        <th scope="col">Typically Governs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">LC1</th><td>Empty belt, steady running and start-up at maximum drive acceleration</td><td>None</td><td>Empty running tension and maximum dynamic starting tension at the curve</td><td>Concave lift-off at starting tension. Convex centre tension and concave edge slackness at running tension.</td></tr>
+                    <tr><th scope="row">LC2</th><td>Partial load. Loading pattern producing peak tension at an empty curve, e.g. flat section loaded, curve and incline empty.</td><td>None</td><td>Peak tension from material drag on loaded sections adjoining the empty curve</td><td>Concave lift-off. Usually the worst case. Highest tension coincides with least holding mass at the curve.</td></tr>
+                    <tr><th scope="row">LC3</th><td>Fully loaded, steady state</td><td>Full design load</td><td>Steady-state operating tension</td><td>Convex material stability. Convex idler L10 life.</td></tr>
+                    <tr><th scope="row">LC4</th><td>Fully loaded start-up</td><td>Full design load</td><td>Maximum dynamic starting tension at the curve</td><td>Convex edge tension. Convex peak idler load.</td></tr>
+                    <tr><th scope="row">LC5</th><td>Stopping, aborted start or holdback engagement</td><td>Per dynamic analysis</td><td>Transient tension from the dynamic analysis, including drift-back arrest on inclines</td><td>Any curve near drives, brakes or holdbacks. Repeat the tension-dependent checks where transient values exceed starting values or fall below running values.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 3: Concave (Valley) Vertical Curve Checks</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Check</th>
+                        <th scope="col">Failure Mode Addressed</th>
+                        <th scope="col">Load Cases</th>
+                        <th scope="col">Notes and Design Rules</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Static lift-off</th><td>Belt lifting off the idlers during high-tension events.</td><td>LC1, LC2, LC3, LC5</td><td>Set material load to zero for the empty-belt and partial-load cases. The minimum radius is the local belt tension divided by the weight per unit length of belt and material at the curve.</td></tr>
+                    <tr><th scope="row">Dynamic lift-off (centrifugal effect)</th><td>Belt lifting off the idlers at operating speed.</td><td>As static lift-off, at full belt speed</td><td>Centrifugal force acts outward from the centre of curvature, downward at a valley, and improves belt seating. The dynamic radius is always smaller than the static result, so the static check governs. Retain as a verification step only.</td></tr>
+                    <tr><th scope="row">Edge slackness (belt stress)</th><td>Edge buckling and waviness from loss of edge tension. Centre overstress in high-modulus belts.</td><td>LC1 at running tension, at the lowest-tension location in the curve. LC4 and LC5 for the companion centre tension.</td><td>At a valley the edges follow the shorter path, so edge tension falls and centre tension rises. The edge tension drop grows with belt modulus and trough height and shrinks with larger radius. Set the minimum radius so the edges remain tensile. Check the companion centre tension against the allowable working tension. Rarely governs for fabric belts. Can govern for steel cord belts at low-tension locations near the tail.</td></tr>
+                    <tr><th scope="row">Belt seating and tracking</th><td>Belt wander, spillage and off-centre loading from reduced idler contact pressure.</td><td>LC1, LC2</td><td>High tension with low mass reduces the normal force between belt and idlers even where full lift-off is avoided, weakening the self-centring action of the troughed profile. Verify adequate seating pressure through the curve. Do not place training idlers, belt weighers or loading points within it.</td></tr>
+                    <tr><th scope="row">Lift clearance and containment</th><td>Belt striking hoods, walkways, cable trays or structure during a transient lift event.</td><td>LC5</td><td>Where momentary lift is accepted during rare transients such as an aborted start, calculate the lift height and verify clearance to overhead structure. Provide belt containment (inverted or hold-down rollers) where clearance cannot be achieved. These rollers introduce top-cover wear and are a last resort.</td></tr>
+                    <tr><th scope="row">Geometric placement</th><td>Compound belt stresses from overlapping curvature and troughing effects.</td><td>All</td><td>Keep the curve clear of troughing transitions at head and tail pulleys, loading zones, trippers and belt weighers. Locate concave curves in low-tension zones where the profile allows.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 4: Convex (Crest) Vertical Curve Checks</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Check</th>
+                        <th scope="col">Failure Mode Addressed</th>
+                        <th scope="col">Load Cases</th>
+                        <th scope="col">Notes and Design Rules</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Edge tension</th><td>Over-tensioning and rupture of the outer belt edges. Splice edge failure.</td><td>LC4, LC5</td><td>Derived from elastic strain compatibility. The edges travel a longer path over the crest, so edge tension rises above the mean belt tension. The rise grows with belt modulus and trough height and shrinks with larger radius. Evaluate at the maximum-tension load case, normally fully loaded start-up, and hold the edge tension within the allowable working tension including the splice rating.</td></tr>
+                    <tr><th scope="row">Centre tension</th><td>Centre buckling, longitudinal creasing and repeated-bending carcass fatigue.</td><td>LC1 at running tension. LC5 where stopping reduces tension at the curve.</td><td>At or below zero tension the belt centre buckles, and repeated bending fatigues the weft yarns and carcass. Hold the centre tension above the sag-limiting tension where practicable.</td></tr>
+                    <tr><th scope="row">Idler load</th><td>Idler bearing overload and reduced L10 life within the curve. Accelerated cover wear at idler junctions.</td><td>LC3 for L10 life. LC4 for peak load against the idler set rating.</td><td>The belt presses onto the idlers through a crest, adding a radial load that grows with belt tension and idler pitch and shrinks with larger radius. Add this to the static idler load and check against the idler set rating. Reduce idler pitch through the curve where needed. Elevated contact pressure at the wing-roller junctions accelerates junction fatigue and cover wear.</td></tr>
+                    <tr><th scope="row">Material stability over the crest</th><td>Material lift, spillage and segregation as the load passes over the crest at speed.</td><td>LC3, at full belt speed</td><td>Centrifugal force at a crest acts away from the belt, unloading the material. Where the centripetal demand at belt speed approaches the gravitational component holding the material down, the load becomes unstable, fines and lump separate, and spillage follows. Size the radius so the material remains seated with margin at maximum belt speed. At a near-horizontal crest the limiting radius is belt speed squared divided by gravitational acceleration, approximately 3.7 m [12 ft] at 6 m/s [1,200 fpm], so this check governs only where belt-stress radii are small.</td></tr>
+                    <tr><th scope="row">Geometric placement</th><td>Compound belt stresses from overlapping curvature and troughing effects.</td><td>All</td><td>Keep the curve clear of troughing transitions, loading zones, trippers and belt weighers. Locate convex curves away from peak-tension zones where the profile allows, since edge tension is the curve-entry tension plus a geometric increment. At low tension the centre-tension check governs instead.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="horizontal-curves">
+        <h2>3. Horizontal Curves</h2>
+        <p>Using a single continuous belt for a directional change eliminates transfer towers and the associated capital cost, dust generation and maintenance. Horizontal curve radii commonly range from 1,000 to 5,000 m [3,300 to 16,400 ft].</p>
+    </section>
+
+    <section id="curve-mechanics">
+        <h3>3.1 Curve Mechanics</h3>
+        <p>When negotiating a curve, longitudinal belt tension acts to straighten the belt, generating a resultant force directed toward the inside radius. The belt follows the curve by in-plane bending, which stretches the outer edge and relaxes the inner edge. Keep the inner edge in tension at the lowest-tension load case. The tension resultant displaces the belt laterally across the idler rolls until the restoring forces balance the radial load.</p>
+        <p>The restoring mechanisms are the gravity component from idler banking, the self-centring effect of the troughed profile (the belt climbing a wing roll generates a gravity restoring force) and belt-to-roll friction. Friction varies with moisture and contamination. Do not rely on it as the sole restoring mechanism.</p>
+        <p>Although centrifugal force acts on the material, the inward component of belt tension predominates at operating speeds. At 5 m/s [1,000 fpm] on a 1,500 m [4,900 ft] radius, centrifugal acceleration is less than 0.02 m/s2 [0.07 ft/s2] and is negligible in the lateral force balance.</p>
+    </section>
+
+    <section id="equilibrium-and-radius-selection">
+        <h3>3.2 Equilibrium and Radius Selection</h3>
+        <p>Size the radius from a first-pass balance between the inward tension resultant and the outward gravity component from banking.</p>
+        <figure class="my-4 p-3 border rounded">
+            <figcaption class="fig-caption mb-2">Formula 1: Horizontal Curve Equilibrium Radius</figcaption>
+            <p class="font-monospace my-3">Metric: R = T / (m * g * SIN(beta))<br>Imperial: R = T / (w * SIN(beta))</p>
+            <p class="mb-1">Where:</p>
+            <ul class="list-unstyled ms-3 mb-0">
+                <li>R = Curve radius (m) [ft]</li>
+                <li>T = Local belt tension at the idler station considered (N) [lbf]</li>
+                <li>m = Combined belt and material mass per unit length on the strand (kg/m)</li>
+                <li>w = Combined belt and material weight per unit length on the strand [lbf/ft]</li>
+                <li>g = Gravitational acceleration, 9.81 (m/s2)</li>
+                <li>beta = Idler banking angle (deg)</li>
+            </ul>
+        </figure>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Rearranged from the equilibrium condition SIN(beta) = T / (R * m * g). Friction and trough self-centring are ignored, so the radius is conservative.</p>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Required radius is inversely proportional to the sine of the banking angle, so increasing banking from 4 to 8 deg approximately halves it. Outward drift of the loaded belt at minimum tension sets the upper limit on banking.</p>
+        </div>
+        <p>Evaluate the balance at every idler station through the arc, using the local tension for each load case, and design to the worst-case envelope. Locate curves in low-tension regions of the tension profile where the alignment permits, since required radius is directly proportional to local tension.</p>
+    </section>
+
+    <section id="superelevation-of-the-carry-strand">
+        <h3>3.3 Superelevation of the Carry Strand</h3>
+        <p>To counteract inward tracking, raise the inside of each carry idler set through the curve. Superelevating (banking) the idlers directs a gravity component of the belt and material mass toward the outside of the curve.</p>
+        <p>Tilt the carry idlers progressively from 0 deg at the tangent point, increasing by 1 to 2 deg per idler frame, and hold the full superelevation (typically 4 to 8 deg) through the constant-radius arc.</p>
+    </section>
+
+    <section id="superelevation-of-the-return-strand">
+        <h3>3.4 Superelevation of the Return Strand</h3>
+        <p>Bank the return idlers to their own equilibrium requirement. The return strand carries no material, so its tension-to-mass ratio, and therefore its required banking angle, is often equal to or greater than that of the loaded carry strand.</p>
+        <p>Flat return rolls provide no self-centring, so fit two-roll V-return idlers (typically 10 to 15 deg) through the arc to restore a centring mechanism and retain the banking geometry.</p>
+    </section>
+
+    <section id="governing-load-cases">
+        <h3>3.5 Governing Load Cases</h3>
+        <p>The empty belt at maximum tension usually governs inward drift, because the tension-to-mass ratio is highest when only belt mass is present. The fully loaded belt at minimum tension governs outward drift over the banked idlers.</p>
+        <p>Check both against the transient tension envelope from the dynamic starting and stopping analysis, including aborted starts and drift-back, not the steady-state tensions alone.</p>
+    </section>
+
+    <section id="idler-transitions">
+        <h2>4. Idler Transitions</h2>
+        <p>The transition distance is the conveyor length between the last fully troughed idler and the flat terminal pulley. The troughed belt edges sit higher than the centre and travel a longer path to reach the pulley.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 5: Mechanical Failure Modes From Insufficient Transition Distance</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Feature</th>
+                        <th scope="col">Edge Stretch (Over-Tensioning)</th>
+                        <th scope="col">Centre Buckling (Loss of Tension)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Stress condition</th><td>Edge strain exceeds the elastic limit.</td><td>Tension drops to zero or enters compression.</td></tr>
+                    <tr><th scope="row">Mechanism</th><td>The edge travels a longer path, stretching outer warp yarns or steel cords until they permanently yield.</td><td>Over-tensioned edges carry a disproportionate share of the load, unloading the centre.</td></tr>
+                    <tr><th scope="row">Visual symptoms</th><td>On the flat run, edges are longer than the centre, producing permanent edge wave (flapping edges).</td><td>The belt centre buckles, creating a longitudinal crease.</td></tr>
+                    <tr><th scope="row">Resulting failures</th><td>Tracking instability and splice failure at the outer edges.</td><td>Repeated-bending fatigue of the weft yarns and carcass.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="pulley-elevation-geometry-half-trough-versus-full-trough">
+        <h3>4.1 Pulley Elevation Geometry (Half-Trough versus Full-Trough)</h3>
+        <p>The vertical elevation of the terminal pulley relative to the centre idler roll controls how the geometric strain is distributed.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 6: Terminal Pulley Elevation Geometries</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Configuration</th>
+                        <th scope="col">Geometry</th>
+                        <th scope="col">Strain Distribution</th>
+                        <th scope="col">Application</th>
+                        <th scope="col">Trade-Off</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Full-trough depth (flush pulley)</th><td>Pulley top flush with the top of the centre idler roll.</td><td>The belt centre travels a straight path with no additional strain. All geometric strain concentrates at the edges.</td><td>Tail pulleys. A flat, level belt line through the loading zone reduces lift-off and spillage at the skirtboards.</td><td>Requires the longest transition distance.</td></tr>
+                    <tr><th scope="row">Half-trough depth (elevated pulley)</th><td>Pulley top elevated one-third to one-half of the trough depth above the flush position.</td><td>Raising the pulley shortens the edge path but deflects the belt centre upward. Strain is shared between edges and centre, reducing the required transition distance by approximately 50%.</td><td>Head and drive pulleys, where a level belt line is not required and the shorter transition reduces structure length.</td><td>Elevation above one-half of the trough depth reverses the strain distribution. The over-tensioned centre bears on the centre roll of the final troughing sets, damaging the bottom cover, and the slack edges risk edge buckling.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="transition-distances">
+        <h3>4.2 Transition Distances</h3>
+        <p>As the troughed belt flattens onto the pulley, the differential edge path length forces a tension redistribution across the belt width. Edge tension rises and centre tension falls.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 7: Conveyor Belt Minimum Transition Length Criteria</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Criterion</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Critical Location</th>
+                        <th scope="col">Consequences of Failure</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Edge tension</th><td>Tension redistribution loads the edges. Hold operating tension plus the transition increment within the rated working tension.</td><td>High-tension locations, e.g. head and drive pulleys. Small tension margins require longer transitions.</td><td>Edge rupture, accelerated edge wear and edge fatigue.</td></tr>
+                    <tr><th scope="row">Centre buckling</th><td>As tension shifts to the edges, the centre unloads. Keep centre tension tensile through the transition.</td><td>Low-tension locations, e.g. tail and return pulleys. Edge margin is generous but centre tension is already low.</td><td>Centre buckling, collapsed profile, excessive sag between transition idlers, mistracking and spillage.</td></tr>
+                    <tr><th scope="row">Splice strain</th><td>Every splice passes through every transition on each belt revolution and carries differential strain between edge cords (high stretch) and centre cords (low stretch). The splice is the weakest element under this strain. Check the transition edge tension against the splice rating.</td><td>All transition zones (head, tail, tripper and take-up pulleys).</td><td>Splice deformation, cord pull-out and splice failure.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Where belt modulus data is unavailable at preliminary design, approximate the minimum transition distance as the belt width (W) multiplied by the applicable factor.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 8: Minimum Transition Distances as a Multiple of Belt Width</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Transition Geometry</th>
+                        <th scope="col">Trough Angle (deg)</th>
+                        <th scope="col">Fabric, Tension Greater Than 60%</th>
+                        <th scope="col">Fabric, Tension 60% or Less</th>
+                        <th scope="col">Steel Cord, Tension Greater Than 60%</th>
+                        <th scope="col">Steel Cord, Tension 60% or Less</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Half-trough (elevated)</th><td>20</td><td>0.9</td><td>0.8</td><td>2.0</td><td>1.6</td></tr>
+                    <tr><th scope="row">Half-trough (elevated)</th><td>35</td><td>1.6</td><td>1.3</td><td>3.2</td><td>2.7</td></tr>
+                    <tr><th scope="row">Half-trough (elevated)</th><td>45</td><td>2.0</td><td>1.6</td><td>4.0</td><td>3.2</td></tr>
+                    <tr><th scope="row">Full-trough (flush)</th><td>20</td><td>1.8</td><td>1.4</td><td>4.0</td><td>3.2</td></tr>
+                    <tr><th scope="row">Full-trough (flush)</th><td>35</td><td>3.2</td><td>2.4</td><td>6.6</td><td>5.2</td></tr>
+                    <tr><th scope="row">Full-trough (flush)</th><td>45</td><td>4.0</td><td>3.0</td><td>8.0</td><td>6.6</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Interpolate linearly for unlisted trough angles. These multipliers are envelope values, not substitutes for belt stress calculation.</p>
+        </div>
+    </section>
+
+    <section id="transition-idler-placement-rules-of-thumb">
+        <h3>4.3 Transition Idler Placement Rules of Thumb</h3>
+        <p>The belt leaves the terminal pulley flat and reaches full trough at the first fully troughed carrying idler. Across this distance the edge is stretched above its neutral length and the centre is relaxed. Transition idler sets at intermediate troughing angles hold the belt to a controlled profile, limiting edge strain and centre sag, reducing edge buckling and maintaining the skirt seal.</p>
+        <p>Limit the gap between successive transition idlers, and between the pulley and the first idler, to the standard carrying idler spacing (typically 1.2 to 1.5 m [4 to 5 ft]). Where the transition distance would leave a larger gap, insert additional intermediate-angle sets to maintain belt support.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="tbl-caption">Table 9: Intermediate Transition Idler Requirements</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Carrying Trough Angle (deg)</th>
+                        <th scope="col">Minimum Intermediate Sets</th>
+                        <th scope="col">Intermediate Angles (deg)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">20</th><td>0</td><td>Not required</td></tr>
+                    <tr><th scope="row">35</th><td>1</td><td>20</td></tr>
+                    <tr><th scope="row">45</th><td>2</td><td>35, then 20</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Angles are listed from the fully troughed idlers toward the pulley. Add sets beyond this minimum where the spacing limit above requires.</p>
+        </div>
+    </section>
+
+    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+        Published <time datetime="2026-11-21">21 November 2026</time><br>
+        Updated <time datetime="2026-11-21">21 November 2026</time>
+    </footer>
+
+</main>
+
+<script src="chapters.js"></script>
+<script src="handbook.js"></script>
+
+</body>
+</html>
