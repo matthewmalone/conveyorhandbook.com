@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .belt { fill: none; stroke: #343a40; stroke-width: 2.75; }
+    .pulley { fill: #e00000; }
+    @media (prefers-color-scheme: dark) {
+      .belt { stroke: #e9ecef; }
+      .pulley { fill: #ff3030; }
+    }
+  </style>
+  <rect class="belt" x="1.875" y="8.5" width="28.25" height="15" rx="7.5"/>
+  <circle class="pulley" cx="9.375" cy="16" r="4"/>
+  <circle class="pulley" cx="22.625" cy="16" r="4"/>
+</svg>
