@@ -153,19 +153,23 @@
                 </tbody>
             </table>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 1: Weibull Reliability Function</figcaption>
-            <p class="font-monospace my-3">R(t) = e^(-(t / eta)^beta)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>R(t) = Probability of survival to time t (dimensionless)</li>
-                <li>t = Operating time (h)</li>
-                <li>eta = Characteristic life, the time at which 63.2% of the population fails (h)</li>
-                <li>beta = Shape parameter defining the failure regime (dimensionless)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Weibull analysis applied to idler bearing life, belt splice life, and gearbox seal life distinguishes between failure regimes and supports assignment of the correct maintenance strategy to each component class. Plotting field failure data on Weibull probability paper, or fitting parameters using maximum likelihood estimation, converts raw maintenance records into quantitative replacement interval decisions. A preventive replacement programme applied to a component operating in the random failure regime (beta approximately 1.0) consumes maintenance resources without reducing the failure rate.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 1: Weibull Reliability Function</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">R(t) = e^(-(t / eta)^beta)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>R(t) = Probability of survival to time t (dimensionless)</li>
+                        <li>t = Operating time (h)</li>
+                        <li>eta = Characteristic life, the time at which 63.2% of the population fails (h)</li>
+                        <li>beta = Shape parameter defining the failure regime (dimensionless)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Weibull analysis applied to idler bearing life, belt splice life, and gearbox seal life distinguishes between failure regimes and supports assignment of the correct maintenance strategy to each component class. Plotting field failure data on Weibull probability paper, or fitting parameters using maximum likelihood estimation, converts raw maintenance records into quantitative replacement interval decisions. A preventive replacement programme applied to a component operating in the random failure regime (beta approximately 1.0) consumes maintenance resources without reducing the failure rate.</p>
+            </div>
         </div>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
@@ -197,20 +201,24 @@
     <section id="the-economic-cost-of-unplanned-downtime">
         <h2>4. The Economic Cost of Unplanned Downtime</h2>
         <p>Component selection requires quantifying the total cost of a downtime event. Count production loss only where it cannot be recovered through surge capacity or later catch-up production.</p>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 2: Total Cost of an Unplanned Downtime Event</figcaption>
-            <p class="font-monospace my-3">C_total = (Q_t * P_m * MTTR) + C_repair</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>C_total = Total cost of an unplanned downtime event ($)</li>
-                <li>Q_t = System throughput rate (t/h)</li>
-                <li>P_m = Commodity net profit margin ($/t)</li>
-                <li>MTTR = Mean Time To Repair (h)</li>
-                <li>C_repair = Cost of replacement parts and labour ($)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> On high-throughput commodity systems, production losses often dominate the total downtime cost. Demonstrate whether component cost is offset by avoided downtime cost.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 2: Total Cost of an Unplanned Downtime Event</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">C_total = (Q_t * P_m * MTTR) + C_repair</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>C_total = Total cost of an unplanned downtime event ($)</li>
+                        <li>Q_t = System throughput rate (t/h)</li>
+                        <li>P_m = Commodity net profit margin ($/t)</li>
+                        <li>MTTR = Mean Time To Repair (h)</li>
+                        <li>C_repair = Cost of replacement parts and labour ($)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> On high-throughput commodity systems, production losses often dominate the total downtime cost. Demonstrate whether component cost is offset by avoided downtime cost.</p>
+            </div>
         </div>
         <p>Example (indicative costs): A high-tension drive pulley requires lagging in a wet environment. Standard cold-bonded rubber lagging costs AUD 5,000 and hot-vulcanised ceramic lagging costs AUD 25,000.</p>
         <p>Under load in wet conditions, rubber lagging can hydroplane, resulting in slip, lagging delamination, and conveyor stoppage.</p>
@@ -225,23 +233,27 @@
         <p>For system-level investment decisions, evaluate total cost of ownership (TCO) across the installation's design life. Life Cycle Cost (LCC) analysis aggregates capital, maintenance, energy, and production loss costs, discounting them to a Net Present Cost (NPC) for financial comparison of design alternatives.</p>
         <p>Present LCC results as a sensitivity range. At minimum, evaluate three scenarios: a base case using median inputs, a high case using upper-bound failure rates, and a low case using lower-bound failure rates.</p>
         <p>Derive failure and maintenance cost inputs from FMEA failure rates and site-specific maintenance data, not generic industry averages. Use a real discount rate with costs in constant dollars, or a nominal rate with escalated costs.</p>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 3: Life Cycle Net Present Cost</figcaption>
-            <p class="font-monospace my-3">NPC = CAPEX + SUM(t=1 to n) of ((C_maint_t + C_energy_t + C_loss_t) / (1 + r)^t)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>NPC = Net Present Cost over the design life ($)</li>
-                <li>CAPEX = Initial capital expenditure including procurement, installation, and commissioning ($)</li>
-                <li>C_maint_t = Total maintenance cost in year t, including preventive, predictive, and corrective maintenance labour and materials ($)</li>
-                <li>C_energy_t = Energy consumption cost in year t ($)</li>
-                <li>C_loss_t = Estimated production loss cost in year t, derived from Failure Mode and Effects Analysis (FMEA) failure rates ($)</li>
-                <li>r = Discount rate, typically 0.06 to 0.10 for mining projects (dimensionless)</li>
-                <li>n = Design life (years)</li>
-                <li>t = Year index (dimensionless)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> LCC analysis can show that the lowest-CAPEX option does not yield the lowest total cost of ownership. For example, a belt rated at ST 2500 with a 25-year splice life can yield a lower NPC than a belt rated at ST 2000 requiring splice replacement every 8 years, even though the initial belt cost is higher. LCC analysis provides the quantitative framework for communicating this to procurement and project management stakeholders.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 3: Life Cycle Net Present Cost</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">NPC = CAPEX + SUM(t=1 to n) of ((C_maint_t + C_energy_t + C_loss_t) / (1 + r)^t)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>NPC = Net Present Cost over the design life ($)</li>
+                        <li>CAPEX = Initial capital expenditure including procurement, installation, and commissioning ($)</li>
+                        <li>C_maint_t = Total maintenance cost in year t, including preventive, predictive, and corrective maintenance labour and materials ($)</li>
+                        <li>C_energy_t = Energy consumption cost in year t ($)</li>
+                        <li>C_loss_t = Estimated production loss cost in year t, derived from Failure Mode and Effects Analysis (FMEA) failure rates ($)</li>
+                        <li>r = Discount rate, typically 0.06 to 0.10 for mining projects (dimensionless)</li>
+                        <li>n = Design life (years)</li>
+                        <li>t = Year index (dimensionless)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> LCC analysis can show that the lowest-CAPEX option does not yield the lowest total cost of ownership. For example, a belt rated at ST 2500 with a 25-year splice life can yield a lower NPC than a belt rated at ST 2000 requiring splice replacement every 8 years, even though the initial belt cost is higher. LCC analysis provides the quantitative framework for communicating this to procurement and project management stakeholders.</p>
+            </div>
         </div>
     </section>
 
@@ -266,19 +278,23 @@
                 </tbody>
             </table>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 4: Overall Equipment Effectiveness</figcaption>
-            <p class="font-monospace my-3">OEE = A * PE * QR</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>OEE = Overall Equipment Effectiveness (dimensionless)</li>
-                <li>A = Availability, operating hours divided by scheduled hours (dimensionless)</li>
-                <li>PE = Performance efficiency, average throughput during operation divided by design throughput (dimensionless)</li>
-                <li>QR = Quality rate, conforming tonnage divided by total tonnage conveyed (dimensionless)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Establish baseline OEE targets relative to the specific operating context and investigate any shortfall to identify and rectify system losses. Use OEE metrics to quantitatively evaluate CAPEX proposals against projected production yields.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 4: Overall Equipment Effectiveness</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">OEE = A * PE * QR</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>OEE = Overall Equipment Effectiveness (dimensionless)</li>
+                        <li>A = Availability, operating hours divided by scheduled hours (dimensionless)</li>
+                        <li>PE = Performance efficiency, average throughput during operation divided by design throughput (dimensionless)</li>
+                        <li>QR = Quality rate, conforming tonnage divided by total tonnage conveyed (dimensionless)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Establish baseline OEE targets relative to the specific operating context and investigate any shortfall to identify and rectify system losses. Use OEE metrics to quantitatively evaluate CAPEX proposals against projected production yields.</p>
+            </div>
         </div>
     </section>
 
@@ -286,19 +302,23 @@
         <h2>7. Failure Mode and Effects Analysis</h2>
         <p>FMEA is a framework for identifying potential failure modes, their causes, their effects on system operation, and the controls required to prevent or mitigate them. Maintain the register throughout the asset lifecycle and update it after design modifications and in-service failure events.</p>
         <p>For each subsystem, the FMEA specifies component function, failure mode, failure cause, subsystem and system availability effects, detection method and Risk Priority Number (RPN).</p>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 5: Risk Priority Number</figcaption>
-            <p class="font-monospace my-3">RPN = S * O * D</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>RPN = Risk Priority Number (dimensionless)</li>
-                <li>S = Severity of the failure effect, from 1 for negligible to 10 for system loss or safety event (dimensionless)</li>
-                <li>O = Occurrence likelihood within the maintenance interval, from 1 for highly improbable to 10 for near-certain (dimensionless)</li>
-                <li>D = Detectability, the likelihood of non-detection before the effect occurs, from 1 for certain detection to 10 for no detection mechanism (dimensionless)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> An RPN greater than 100 is a common threshold for engineering action via design modifications to reduce severity or occurrence, or the implementation of detection strategies to lower D. Act on any failure mode with S of 9 or 10 regardless of RPN, because low O and D scores can mask a safety-critical effect. The FMEA outputs dictate spare parts stockholding and maintenance schedules.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 5: Risk Priority Number</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">RPN = S * O * D</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>RPN = Risk Priority Number (dimensionless)</li>
+                        <li>S = Severity of the failure effect, from 1 for negligible to 10 for system loss or safety event (dimensionless)</li>
+                        <li>O = Occurrence likelihood within the maintenance interval, from 1 for highly improbable to 10 for near-certain (dimensionless)</li>
+                        <li>D = Detectability, the likelihood of non-detection before the effect occurs, from 1 for certain detection to 10 for no detection mechanism (dimensionless)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> An RPN greater than 100 is a common threshold for engineering action via design modifications to reduce severity or occurrence, or the implementation of detection strategies to lower D. Act on any failure mode with S of 9 or 10 regardless of RPN, because low O and D scores can mask a safety-critical effect. The FMEA outputs dictate spare parts stockholding and maintenance schedules.</p>
+            </div>
         </div>
     </section>
 

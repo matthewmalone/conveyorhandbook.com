@@ -232,24 +232,28 @@
     <section id="equilibrium-and-radius-selection">
         <h3>3.2 Equilibrium and Radius Selection</h3>
         <p>Size the radius from a first-pass balance between the inward tension resultant and the outward gravity component from banking.</p>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 1: Horizontal Curve Equilibrium Radius</figcaption>
-            <p class="font-monospace my-3">Metric: R = T / (m * g * SIN(beta))<br>Imperial: R = T / (w * SIN(beta))</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>R = Curve radius (m) [ft]</li>
-                <li>T = Local belt tension at the idler station considered (N) [lbf]</li>
-                <li>m = Combined belt and material mass per unit length on the strand (kg/m)</li>
-                <li>w = Combined belt and material weight per unit length on the strand [lbf/ft]</li>
-                <li>g = Gravitational acceleration, 9.81 (m/s2)</li>
-                <li>beta = Idler banking angle (deg)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> Rearranged from the equilibrium condition SIN(beta) = T / (R * m * g). Friction and trough self-centring are ignored, so the radius is conservative.</p>
-        </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Required radius is inversely proportional to the sine of the banking angle, so increasing banking from 4 to 8 deg approximately halves it. Outward drift of the loaded belt at minimum tension sets the upper limit on banking.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 1: Horizontal Curve Equilibrium Radius</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Metric: R = T / (m * g * SIN(beta))<br>Imperial: R = T / (w * SIN(beta))</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>R = Curve radius (m) [ft]</li>
+                        <li>T = Local belt tension at the idler station considered (N) [lbf]</li>
+                        <li>m = Combined belt and material mass per unit length on the strand (kg/m)</li>
+                        <li>w = Combined belt and material weight per unit length on the strand [lbf/ft]</li>
+                        <li>g = Gravitational acceleration, 9.81 (m/s2)</li>
+                        <li>beta = Idler banking angle (deg)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> Rearranged from the equilibrium condition SIN(beta) = T / (R * m * g). Friction and trough self-centring are ignored, so the radius is conservative.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Required radius is inversely proportional to the sine of the banking angle, so increasing banking from 4 to 8 deg approximately halves it. Outward drift of the loaded belt at minimum tension sets the upper limit on banking.</p>
+            </div>
         </div>
         <p>Evaluate the balance at every idler station through the arc, using the local tension for each load case, and design to the worst-case envelope. Locate curves in low-tension regions of the tension profile where the alignment permits, since required radius is directly proportional to local tension.</p>
     </section>

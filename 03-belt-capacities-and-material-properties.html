@@ -229,17 +229,21 @@
     <section id="volumetric-cross-section-and-edge-clearance">
         <h2>6. Volumetric Cross-Section and Edge Clearance</h2>
         <p>Material loaded onto a troughed belt forms a cross-section comprising a trapezoidal base (material within the trough) topped by a circular segment (the surcharge). Maintain an edge clearance, c, at each belt edge to limit spillage. DIN 22101 and CEMA define the minimum edge clearance for standard bulk materials.</p>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 1: Minimum Edge Clearance</figcaption>
-            <p class="font-monospace my-3">Metric: c = 0.05 * B + 25<br>Imperial: c = 0.05 * B + 1.0</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>c = Edge clearance at each belt edge (mm) [in]</li>
-                <li>B = Belt width (mm) [in]</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> The formula applies to belt widths up to 2,000 mm [79 in]. Above this width, DIN 22101 sets c at 125 mm [5 in].</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 1: Minimum Edge Clearance</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Metric: c = 0.05 * B + 25<br>Imperial: c = 0.05 * B + 1.0</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>c = Edge clearance at each belt edge (mm) [in]</li>
+                        <li>B = Belt width (mm) [in]</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> The formula applies to belt widths up to 2,000 mm [79 in]. Above this width, DIN 22101 sets c at 125 mm [5 in].</p>
+            </div>
         </div>
         <p>The standard formulas assume a homogeneous, relatively fine bulk material. For large ROM lumps or primary crusher discharge, the standard edge clearance is often insufficient.</p>
         <p>Large lumps do not flow as a homogeneous mass. They rest on the material profile and migrate toward the edges during idler transit. A lump whose dimension exceeds the edge clearance can roll off the belt edge.</p>
@@ -255,51 +259,63 @@
     <section id="capacity-calculations-volumetric-and-mass">
         <h2>8. Capacity Calculations (Volumetric and Mass)</h2>
         <p>Define system capacity volumetrically, then convert to mass.</p>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 2: Volumetric Capacity</figcaption>
-            <p class="font-monospace my-3">Metric: Q_v = 3600 * A * V<br>Imperial: Q_v = 60 * A * V</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>Q_v = Volumetric capacity (m3/h) [ft3/h]</li>
-                <li>A = Load cross-sectional area (m2) [ft2]</li>
-                <li>V = Belt speed (m/s) [fpm]</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Cross-sectional area is fixed once belt width, troughing angle and surcharge angle are set, leaving belt speed as the only variable that does not require structural change.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 2: Volumetric Capacity</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Metric: Q_v = 3600 * A * V<br>Imperial: Q_v = 60 * A * V</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>Q_v = Volumetric capacity (m3/h) [ft3/h]</li>
+                        <li>A = Load cross-sectional area (m2) [ft2]</li>
+                        <li>V = Belt speed (m/s) [fpm]</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Cross-sectional area is fixed once belt width, troughing angle and surcharge angle are set, leaving belt speed as the only variable that does not require structural change.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 3: Mass Capacity</figcaption>
-            <p class="font-monospace my-3">Metric: Q_m = 3.6 * A * V * rho<br>Imperial: Q_m = (A * V * rho * 60) / 2000</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>Q_m = Mass capacity (t/h) [stph]</li>
-                <li>A = Load cross-sectional area (m2) [ft2]</li>
-                <li>V = Belt speed (m/s) [fpm]</li>
-                <li>rho = Material bulk density (kg/m3) [lb/ft3]</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Check volumetric capacity at the lowest expected bulk density, and drive power and structural loads at the highest.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 3: Mass Capacity</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Metric: Q_m = 3.6 * A * V * rho<br>Imperial: Q_m = (A * V * rho * 60) / 2000</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>Q_m = Mass capacity (t/h) [stph]</li>
+                        <li>A = Load cross-sectional area (m2) [ft2]</li>
+                        <li>V = Belt speed (m/s) [fpm]</li>
+                        <li>rho = Material bulk density (kg/m3) [lb/ft3]</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Check volumetric capacity at the lowest expected bulk density, and drive power and structural loads at the highest.</p>
+            </div>
         </div>
         <p>On an incline, the gravity component along the belt reduces the effective surcharge angle and cross-sectional area. Multiply the horizontal capacity by the DIN 22101 incline reduction factor, k. A cosine correction understates the reduction.</p>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 4: Incline Capacity Reduction Factor</figcaption>
-            <p class="font-monospace my-3">k = 1 - (A_1 / A) * (1 - SQRT((COS(delta)^2 - COS(beta)^2) / (1 - COS(beta)^2)))</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>k = Incline capacity reduction factor (dimensionless)</li>
-                <li>A_1 = Surcharge (circular segment) area of the load cross-section on the horizontal (m2)</li>
-                <li>A = Load cross-sectional area on the horizontal (m2)</li>
-                <li>delta = Conveyor incline angle (deg)</li>
-                <li>beta = Surcharge angle (deg)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> Valid for delta less than or equal to beta.</p>
-        </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> The reduction acts only on the surcharge area, which is lost entirely when delta equals beta. Materials with a low surcharge angle lose capacity at shallower inclines.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 4: Incline Capacity Reduction Factor</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">k = 1 - (A_1 / A) * (1 - SQRT((COS(delta)^2 - COS(beta)^2) / (1 - COS(beta)^2)))</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>k = Incline capacity reduction factor (dimensionless)</li>
+                        <li>A_1 = Surcharge (circular segment) area of the load cross-section on the horizontal (m2)</li>
+                        <li>A = Load cross-sectional area on the horizontal (m2)</li>
+                        <li>delta = Conveyor incline angle (deg)</li>
+                        <li>beta = Surcharge angle (deg)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> Valid for delta less than or equal to beta.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> The reduction acts only on the surcharge area, which is lost entirely when delta equals beta. Materials with a low surcharge angle lose capacity at shallower inclines.</p>
+            </div>
         </div>
     </section>
 

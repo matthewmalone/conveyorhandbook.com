@@ -251,21 +251,25 @@
             </table>
         </div>
         <p>Multiply a tension in kN/m by 5.71 to obtain PIW. This conversion changes only the units and applies no safety factor. Because 1 kN/m equals 1 N/mm, the same factor converts N/mm to lbf/in. To obtain a safe working tension from a metric belt's ultimate strength, apply the safety factor as a separate step.</p>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 1: Safe Working Tension from Metric Ultimate Strength</figcaption>
-            <p class="font-monospace my-3">T_s = (5.71 * S_u) / SF</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>T_s = Safe working tension (PIW)</li>
-                <li>S_u = Ultimate breaking strength (kN/m)</li>
-                <li>SF = Safety factor (dimensionless)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> With a 10:1 safety factor, the formula reduces to T_s = S_u / 1.75, since 10 / 5.71 = 1.7513. The 1.75 constant is valid only for a 10:1 safety factor. For steel cord belting at 6.7:1, the constant becomes 6.7 / 5.71 = 1.173. Recalculate the constant for any other safety factor.</p>
-        </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> A constant derived for one safety factor misstates the safe working tension at any other. Applying the steel cord constant of 1.173 to a fabric belt rated at 10:1 overstates its safe working tension by approximately 49%.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 1: Safe Working Tension from Metric Ultimate Strength</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">T_s = (5.71 * S_u) / SF</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>T_s = Safe working tension (PIW)</li>
+                        <li>S_u = Ultimate breaking strength (kN/m)</li>
+                        <li>SF = Safety factor (dimensionless)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> With a 10:1 safety factor, the formula reduces to T_s = S_u / 1.75, since 10 / 5.71 = 1.7513. The 1.75 constant is valid only for a 10:1 safety factor. For steel cord belting at 6.7:1, the constant becomes 6.7 / 5.71 = 1.173. Recalculate the constant for any other safety factor.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> A constant derived for one safety factor misstates the safe working tension at any other. Applying the steel cord constant of 1.173 to a fabric belt rated at 10:1 overstates its safe working tension by approximately 49%.</p>
+            </div>
         </div>
     </section>
 
@@ -297,18 +301,22 @@
     <section id="carcass-selection-procedure">
         <h3>4.5 Carcass Selection Procedure</h3>
         <p>Calculate the required unit working tension:</p>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 2: Required Unit Working Tension</figcaption>
-            <p class="font-monospace my-3">T_w = T_max / B</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>T_w = Required unit working tension (kN/m)</li>
-                <li>T_max = Maximum steady-state belt tension (kN)</li>
-                <li>B = Belt width (m)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Required unit working tension is the primary input to the carcass rating. Widening the belt for capacity lowers the unit working tension but can exceed the load-support limit for the resulting lower ply count.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 2: Required Unit Working Tension</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">T_w = T_max / B</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>T_w = Required unit working tension (kN/m)</li>
+                        <li>T_max = Maximum steady-state belt tension (kN)</li>
+                        <li>B = Belt width (m)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Required unit working tension is the primary input to the carcass rating. Widening the belt for capacity lowers the unit working tension but can exceed the load-support limit for the resulting lower ply count.</p>
+            </div>
         </div>
         <p>Then proceed through the remaining checks:</p>
         <ol>
@@ -672,18 +680,22 @@
     <section id="cycle-time-calculation">
         <h3>6.2 Cycle Time Calculation</h3>
         <p>Cycle time (T_c), the period of one complete belt revolution, is a primary input to cover thickness selection.</p>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 3: Belt Cycle Time</figcaption>
-            <p class="font-monospace my-3">T_c = (2 * L) / v</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>T_c = Cycle time (s)</li>
-                <li>L = Conveyor centre-to-centre length (m)</li>
-                <li>v = Belt speed (m/s)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Each belt section passes the loading zone once per cycle. Halving the cycle time doubles the rate of impact and abrasion exposure, so short conveyors require thicker covers for the same material.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 3: Belt Cycle Time</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">T_c = (2 * L) / v</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>T_c = Cycle time (s)</li>
+                        <li>L = Conveyor centre-to-centre length (m)</li>
+                        <li>v = Belt speed (m/s)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Each belt section passes the loading zone once per cycle. Halving the cycle time doubles the rate of impact and abrasion exposure, so short conveyors require thicker covers for the same material.</p>
+            </div>
         </div>
         <p><strong>Rules of Thumb:</strong></p>
         <ul>

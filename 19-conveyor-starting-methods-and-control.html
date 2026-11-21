@@ -163,37 +163,45 @@
     <section id="tension-wave-propagation">
         <h3>3.1 Tension Wave Propagation</h3>
         <p>Drive torque application initiates a tension wave that propagates at a velocity dependent on belt construction.</p>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 1: Tension Wave Propagation Velocity (v_w)</figcaption>
-            <p class="font-monospace my-3">Metric: v_w = SQRT((E_b * B) / m_e)<br>Imperial: v_w = SQRT((g_c * E_b * B) / m_e)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>v_w = Tension wave propagation velocity in the belt carcass (m/s) [ft/s]</li>
-                <li>E_b = Longitudinal elastic modulus of the belt carcass per unit width (N/m) [lbf/ft]</li>
-                <li>B = Belt width (m) [ft]</li>
-                <li>m_e = Effective mass per unit length: belt, conveyed material where loaded, and the reduced rotating mass of the idlers (kg/m) [lb/ft]</li>
-                <li>g_c = Gravitational conversion constant, 32.174 [lb-ft/(lbf-s2)], imperial line only</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> E_b * B is the belt axial stiffness (force per unit strain). Use manufacturer stiffness data where available. Typical v_w is 1,000 to 3,000 m/s [3,300 to 9,800 ft/s] for steel cord belts and 250 to 850 m/s [820 to 2,800 ft/s] for EP fabric belts, at the lower end of each range when loaded.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 1: Tension Wave Propagation Velocity (v_w)</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Metric: v_w = SQRT((E_b * B) / m_e)<br>Imperial: v_w = SQRT((g_c * E_b * B) / m_e)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>v_w = Tension wave propagation velocity in the belt carcass (m/s) [ft/s]</li>
+                        <li>E_b = Longitudinal elastic modulus of the belt carcass per unit width (N/m) [lbf/ft]</li>
+                        <li>B = Belt width (m) [ft]</li>
+                        <li>m_e = Effective mass per unit length: belt, conveyed material where loaded, and the reduced rotating mass of the idlers (kg/m) [lb/ft]</li>
+                        <li>g_c = Gravitational conversion constant, 32.174 [lb-ft/(lbf-s2)], imperial line only</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> E_b * B is the belt axial stiffness (force per unit strain). Use manufacturer stiffness data where available. Typical v_w is 1,000 to 3,000 m/s [3,300 to 9,800 ft/s] for steel cord belts and 250 to 850 m/s [820 to 2,800 ft/s] for EP fabric belts, at the lower end of each range when loaded.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Wave speed rises with axial stiffness and falls with moving mass, so a steel cord belt carries tension waves faster than a fabric belt, and a loaded belt slower than an empty one.</p>
+            </div>
         </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Wave speed rises with axial stiffness and falls with moving mass, so a steel cord belt carries tension waves faster than a fabric belt, and a loaded belt slower than an empty one.</p>
-        </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 2: One-Way Wave Transit Time (t_transit)</figcaption>
-            <p class="font-monospace my-3">t_transit = L / v_w</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>t_transit = Time for the tension wave to travel from head to tail pulley (s)</li>
-                <li>L = Conveyor centre-to-centre length (m)</li>
-                <li>v_w = Tension wave propagation velocity in the belt carcass (m/s)</li>
-            </ul>
-        </figure>
-        <p>Example: On a 10 km [6.2 mi] conveyor, a fabric belt at 800 m/s [2,625 ft/s] gives t_transit = 10,000 / 800 = 12.5 s. A steel cord belt at 1,800 m/s [5,906 ft/s] gives t_transit = 10,000 / 1,800 = 5.6 s.</p>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> A control action at the head pulley reaches the tail only after the tension wave travel time. Base breakaway dwell, ramp segment timing and take-up response on this delay.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 2: One-Way Wave Transit Time (t_transit)</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">t_transit = L / v_w</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>t_transit = Time for the tension wave to travel from head to tail pulley (s)</li>
+                        <li>L = Conveyor centre-to-centre length (m)</li>
+                        <li>v_w = Tension wave propagation velocity in the belt carcass (m/s)</li>
+                    </ul>
+                </div>
+            </figure>
+            <p>Example: On a 10 km [6.2 mi] conveyor, a fabric belt at 800 m/s [2,625 ft/s] gives t_transit = 10,000 / 800 = 12.5 s. A steel cord belt at 1,800 m/s [5,906 ft/s] gives t_transit = 10,000 / 1,800 = 5.6 s.</p>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> A control action at the head pulley reaches the tail only after the tension wave travel time. Base breakaway dwell, ramp segment timing and take-up response on this delay.</p>
+            </div>
         </div>
         <p>Bulk material on the carry strand increases the effective mass per unit length and reduces wave velocity. Use the empty belt wave velocity for control loop and Programmable Logic Controller (PLC) scan limits, because it gives the shortest transit time. Use the loaded belt wave velocity for breakaway dwell and hold durations, because it gives the longest transit time, and for stopping calculations of peak dynamic tension.</p>
     </section>
@@ -245,21 +253,25 @@
     <section id="breakaway-dwell-overcoming-stiction">
         <h3>4.2 Breakaway Dwell (Overcoming Stiction)</h3>
         <p>Loaded conveyor belts exhibit static friction (stiction) higher than kinetic friction, due to idler seal and grease drag and to belt and material deformation over the idlers while stationary. Applying linear VFD torque ramps can induce drive pulley slip if the effective tension exceeds the traction limit set by the slack-side tension (T2) prior to overcoming stiction. Configure the VFD to ramp torque to a breakaway threshold (typically 110% to 125% of nominal torque) while holding speed at zero.</p>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 3: Minimum Breakaway Dwell Time (t_dwell)</figcaption>
-            <p class="font-monospace my-3">t_dwell = (L / v_w) + 1.0</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>t_dwell = Minimum breakaway dwell time (s)</li>
-                <li>L = Conveyor centre-to-centre length (m)</li>
-                <li>v_w = Tension wave propagation velocity in the belt carcass, loaded belt (m/s)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> The 1.0 s term is an empirical margin for torque build-up at the drive.</p>
-        </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> The dwell allows the initial stretch wave to propagate the full length of the belt, ensuring progressive stiction release. This formula provides a theoretical minimum based on wave propagation alone. In practice, increase the dwell time by 20% to 50% for belt sag between idlers, then apply the factors below.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 3: Minimum Breakaway Dwell Time (t_dwell)</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">t_dwell = (L / v_w) + 1.0</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>t_dwell = Minimum breakaway dwell time (s)</li>
+                        <li>L = Conveyor centre-to-centre length (m)</li>
+                        <li>v_w = Tension wave propagation velocity in the belt carcass, loaded belt (m/s)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> The 1.0 s term is an empirical margin for torque build-up at the drive.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> The dwell allows the initial stretch wave to propagate the full length of the belt, ensuring progressive stiction release. This formula provides a theoretical minimum based on wave propagation alone. In practice, increase the dwell time by 20% to 50% for belt sag between idlers, then apply the factors below.</p>
+            </div>
         </div>
         <p><strong>Rules of Thumb:</strong></p>
         <ul>

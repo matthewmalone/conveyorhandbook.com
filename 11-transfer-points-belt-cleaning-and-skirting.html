@@ -151,57 +151,69 @@
                 </tbody>
             </table>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 1: Material Centroid Velocity</figcaption>
-            <p class="font-monospace my-3">v_c = v_b * R_c / (R_p + t_b)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>v_c = Velocity of the material cross-section centroid at discharge (m/s)</li>
-                <li>v_b = Belt speed (m/s)</li>
-                <li>R_c = Centroid radius, equal to R_p + t_b + h_c (m)</li>
-                <li>R_p = Pulley radius, including lagging (m)</li>
-                <li>t_b = Belt thickness (m)</li>
-                <li>h_c = Height of the material cross-section centroid above the belt surface (m)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> The rigid-rotation assumption gives the centroid a higher speed than the belt. Deep beds on small pulleys therefore produce the longest predicted trajectories.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 1: Material Centroid Velocity</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">v_c = v_b * R_c / (R_p + t_b)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>v_c = Velocity of the material cross-section centroid at discharge (m/s)</li>
+                        <li>v_b = Belt speed (m/s)</li>
+                        <li>R_c = Centroid radius, equal to R_p + t_b + h_c (m)</li>
+                        <li>R_p = Pulley radius, including lagging (m)</li>
+                        <li>t_b = Belt thickness (m)</li>
+                        <li>h_c = Height of the material cross-section centroid above the belt surface (m)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> The rigid-rotation assumption gives the centroid a higher speed than the belt. Deep beds on small pulleys therefore produce the longest predicted trajectories.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 2: Discharge Separation Angle</figcaption>
-            <p class="font-monospace my-3">COS(theta) = v_c^2 / (g * R_c)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>theta = Separation angle, measured from the vertical through the pulley centre (deg)</li>
-                <li>v_c = Material centroid velocity (m/s)</li>
-                <li>g = Gravitational acceleration, 9.81 (m/s2)</li>
-                <li>R_c = Centroid radius (m)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> Where v_c^2 / (g * R_c) is greater than or equal to 1, material separates at the tangent point, and theta = 0 deg for a horizontal belt. On an inclined belt, material separates at the tangent point where the belt inclination is greater than or equal to theta.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 2: Discharge Separation Angle</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">COS(theta) = v_c^2 / (g * R_c)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>theta = Separation angle, measured from the vertical through the pulley centre (deg)</li>
+                        <li>v_c = Material centroid velocity (m/s)</li>
+                        <li>g = Gravitational acceleration, 9.81 (m/s2)</li>
+                        <li>R_c = Centroid radius (m)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> Where v_c^2 / (g * R_c) is greater than or equal to 1, material separates at the tangent point, and theta = 0 deg for a horizontal belt. On an inclined belt, material separates at the tangent point where the belt inclination is greater than or equal to theta.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Low belt speed on a large pulley carries material over the pulley before separation, which steepens the discharge and shortens the trajectory.</p>
+            </div>
         </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Low belt speed on a large pulley carries material over the pulley before separation, which steepens the discharge and shortens the trajectory.</p>
-        </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 3: Free-Fall Trajectory Coordinates</figcaption>
-            <p class="font-monospace my-3">X = v_c * t * COS(theta)<br>Y = v_c * t * SIN(theta) + 0.5 * g * t^2</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>X = Horizontal distance from the separation point (m)</li>
-                <li>Y = Vertical drop below the separation point (m)</li>
-                <li>v_c = Material centroid velocity (m/s)</li>
-                <li>t = Time after separation (s)</li>
-                <li>theta = Separation angle (deg), negative for an upward launch from the tangent point of an inclined belt</li>
-                <li>g = Gravitational acceleration, 9.81 (m/s2)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> The MHEA and Booth methods substitute the belt speed, v_b, for v_c.</p>
-        </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Plot the trajectory at minimum and maximum design throughput, since bed depth changes the centroid radius and velocity. Position the hood or impact plate so it intercepts the full stream envelope within the lined zone.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 3: Free-Fall Trajectory Coordinates</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">X = v_c * t * COS(theta)<br>Y = v_c * t * SIN(theta) + 0.5 * g * t^2</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>X = Horizontal distance from the separation point (m)</li>
+                        <li>Y = Vertical drop below the separation point (m)</li>
+                        <li>v_c = Material centroid velocity (m/s)</li>
+                        <li>t = Time after separation (s)</li>
+                        <li>theta = Separation angle (deg), negative for an upward launch from the tangent point of an inclined belt</li>
+                        <li>g = Gravitational acceleration, 9.81 (m/s2)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> The MHEA and Booth methods substitute the belt speed, v_b, for v_c.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Plot the trajectory at minimum and maximum design throughput, since bed depth changes the centroid radius and velocity. Position the hood or impact plate so it intercepts the full stream envelope within the lined zone.</p>
+            </div>
         </div>
     </section>
 
@@ -486,37 +498,45 @@
     <section id="re-acceleration-loading-on-the-receiving-belt">
         <h3>7.1 Re-Acceleration Loading on the Receiving Belt</h3>
         <p>Where a rock box or dead-stop transfer is used, bulk material arrives at the receiving belt with near-zero forward velocity. The receiving belt accelerates the material to belt speed through friction between the belt top cover and the material, adding tension to the carrying strand and wearing the cover while the material slips.</p>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 4: Material Acceleration Tension</figcaption>
-            <p class="font-monospace my-3">Metric: T_am = (Q / 3.6) * (v_b - v_0)<br>Imperial: T_am = 2.8755 * 10^-4 * Q * (v_b - v_0)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>T_am = Carrying strand tension to accelerate the material to belt speed (N) [lbf]</li>
-                <li>Q = Throughput (t/h) [stph]</li>
-                <li>v_b = Belt speed (m/s) [fpm]</li>
-                <li>v_0 = Material velocity component in the direction of belt travel at loading (m/s) [fpm]</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Tension depends on mass flow and the speed deficit at loading, not on skirt length or friction coefficient. Add tension to the effective tension when sizing the drive and checking the belt rating. Velocity-matched chutes reduce both tension and the slip that wears the top cover.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 4: Material Acceleration Tension</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Metric: T_am = (Q / 3.6) * (v_b - v_0)<br>Imperial: T_am = 2.8755 * 10^-4 * Q * (v_b - v_0)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>T_am = Carrying strand tension to accelerate the material to belt speed (N) [lbf]</li>
+                        <li>Q = Throughput (t/h) [stph]</li>
+                        <li>v_b = Belt speed (m/s) [fpm]</li>
+                        <li>v_0 = Material velocity component in the direction of belt travel at loading (m/s) [fpm]</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Tension depends on mass flow and the speed deficit at loading, not on skirt length or friction coefficient. Add tension to the effective tension when sizing the drive and checking the belt rating. Velocity-matched chutes reduce both tension and the slip that wears the top cover.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 5: Material Acceleration Length</figcaption>
-            <p class="font-monospace my-3">Metric: L_a = (v_b^2 - v_0^2) / (2 * mu_m * g)<br>Imperial: L_a = (v_b^2 - v_0^2) / (7,200 * mu_m * g)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>L_a = Length over which material slides on the belt before reaching belt speed (m) [ft]</li>
-                <li>v_b = Belt speed (m/s) [fpm]</li>
-                <li>v_0 = Material velocity component in the direction of belt travel at loading (m/s) [fpm]</li>
-                <li>mu_m = Coefficient of friction between bulk material and the belt top cover (dimensionless), typically 0.5 to 0.7 for dry granular material and 0.3 to 0.5 for wet or cohesive material</li>
-                <li>g = Gravitational acceleration, 9.81 (m/s2) [32.2 ft/s2]</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> The formula assumes a horizontal belt and sliding at the base of the material bed.</p>
-        </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Material slides on the top cover over L_a. Extend the skirtboard and impact support beyond L_a, and allow a longer L_a for wet or cohesive material with a lower mu_m.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 5: Material Acceleration Length</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Metric: L_a = (v_b^2 - v_0^2) / (2 * mu_m * g)<br>Imperial: L_a = (v_b^2 - v_0^2) / (7,200 * mu_m * g)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>L_a = Length over which material slides on the belt before reaching belt speed (m) [ft]</li>
+                        <li>v_b = Belt speed (m/s) [fpm]</li>
+                        <li>v_0 = Material velocity component in the direction of belt travel at loading (m/s) [fpm]</li>
+                        <li>mu_m = Coefficient of friction between bulk material and the belt top cover (dimensionless), typically 0.5 to 0.7 for dry granular material and 0.3 to 0.5 for wet or cohesive material</li>
+                        <li>g = Gravitational acceleration, 9.81 (m/s2) [32.2 ft/s2]</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> The formula assumes a horizontal belt and sliding at the base of the material bed.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Material slides on the top cover over L_a. Extend the skirtboard and impact support beyond L_a, and allow a longer L_a for wet or cohesive material with a lower mu_m.</p>
+            </div>
         </div>
     </section>
 

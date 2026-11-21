@@ -888,331 +888,411 @@
 
     <section id="standard-formulas-for-conveyor-pulleys">
         <h2>7. Standard Formulas for Conveyor Pulleys</h2>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 1: Equivalent Torque for Locking Assemblies</figcaption>
-            <p class="font-monospace my-3">T_eq = SQRT(M_t^2 + (k_b * M_b)^2)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>T_eq = Equivalent torque on the locking assembly (Nmm)</li>
-                <li>M_t = Transmitted torque at the hub (Nmm)</li>
-                <li>M_b = Bending moment at the hub (Nmm)</li>
-                <li>k_b = Bending weighting factor from the locking assembly manufacturer (dimensionless)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> This is the baseline relationship. Full multi-axial stress modelling requires finite element analysis (FEA). Obtain the bending weighting factor and the permissible bending moment from the manufacturer’s catalogue or selection program. Multiply catalogue values in Nm by 10^3 to obtain Nmm.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 1: Equivalent Torque for Locking Assemblies</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">T_eq = SQRT(M_t^2 + (k_b * M_b)^2)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>T_eq = Equivalent torque on the locking assembly (Nmm)</li>
+                        <li>M_t = Transmitted torque at the hub (Nmm)</li>
+                        <li>M_b = Bending moment at the hub (Nmm)</li>
+                        <li>k_b = Bending weighting factor from the locking assembly manufacturer (dimensionless)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> This is the baseline relationship. Full multi-axial stress modelling requires finite element analysis (FEA). Obtain the bending weighting factor and the permissible bending moment from the manufacturer’s catalogue or selection program. Multiply catalogue values in Nm by 10^3 to obtain Nmm.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Transmissible torque falls as bending moment rises. On non-drive pulleys, transmitted torque is zero and bending alone sets equivalent torque.</p>
+            </div>
         </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Transmissible torque falls as bending moment rises. On non-drive pulleys, transmitted torque is zero and bending alone sets equivalent torque.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 2: Area Moment of Inertia for a Solid Circular Shaft</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">I = (PI * d^4) / 64</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>I = Area moment of inertia (mm4)</li>
+                        <li>d = Shaft diameter at the section evaluated (mm)</li>
+                        <li>PI = Circle constant, 3.14159 (dimensionless)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Shaft stiffness increases with the fourth power of diameter. A 10% increase in shaft diameter reduces shaft deflection and slope by approximately 32%.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 2: Area Moment of Inertia for a Solid Circular Shaft</figcaption>
-            <p class="font-monospace my-3">I = (PI * d^4) / 64</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>I = Area moment of inertia (mm4)</li>
-                <li>d = Shaft diameter at the section evaluated (mm)</li>
-                <li>PI = Circle constant, 3.14159 (dimensionless)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Shaft stiffness increases with the fourth power of diameter. A 10% increase in shaft diameter reduces shaft deflection and slope by approximately 32%.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 3: Shaft Hub Bending Moment</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">M_b = F_r * A<br>F_r = R_total / 2</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>M_b = Bending moment at the hub (Nmm)</li>
+                        <li>F_r = Radial load supported by one bearing (N)</li>
+                        <li>R_total = Resultant radial force on the pulley, belt tension resultant and pulley self-weight combined vectorially (N)</li>
+                        <li>A = Axial distance from the bearing centreline to the hub centreline (mm)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> For a pulley centred between its bearings, bending moment is constant between the hubs and governs locking assembly selection, shaft fatigue and end-disc stress. Locate bearings as close to the end-discs as the structure and chutework permit to reduce the axial distance.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 3: Shaft Hub Bending Moment</figcaption>
-            <p class="font-monospace my-3">M_b = F_r * A<br>F_r = R_total / 2</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>M_b = Bending moment at the hub (Nmm)</li>
-                <li>F_r = Radial load supported by one bearing (N)</li>
-                <li>R_total = Resultant radial force on the pulley, belt tension resultant and pulley self-weight combined vectorially (N)</li>
-                <li>A = Axial distance from the bearing centreline to the hub centreline (mm)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> For a pulley centred between its bearings, bending moment is constant between the hubs and governs locking assembly selection, shaft fatigue and end-disc stress. Locate bearings as close to the end-discs as the structure and chutework permit to reduce the axial distance.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 4: Shaft Slope at the Bearing</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Theta_bearing = (F_r * A * (L - A)) / (2 * E * I)<br>Theta_arcmin = Theta_bearing * (180 / PI) * 60</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>Theta_bearing = Shaft slope at the bearing (rad)</li>
+                        <li>Theta_arcmin = Shaft slope at the bearing (arc-minutes)</li>
+                        <li>F_r = Radial load per bearing (N)</li>
+                        <li>A = Axial distance from the bearing centreline to the hub centreline (mm)</li>
+                        <li>L = Distance between bearing centrelines (mm)</li>
+                        <li>E = Young’s modulus of steel, 2.1 * 10^5 (MPa)</li>
+                        <li>I = Area moment of inertia of the shaft (mm4)</li>
+                        <li>PI = Circle constant, 3.14159 (dimensionless)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Seal tolerance, not bearing misalignment capacity, sets the allowable slope. Where Theta_arcmin exceeds 5 to 10 arc-minutes, reduce A or increase the shaft diameter.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 4: Shaft Slope at the Bearing</figcaption>
-            <p class="font-monospace my-3">Theta_bearing = (F_r * A * (L - A)) / (2 * E * I)<br>Theta_arcmin = Theta_bearing * (180 / PI) * 60</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>Theta_bearing = Shaft slope at the bearing (rad)</li>
-                <li>Theta_arcmin = Shaft slope at the bearing (arc-minutes)</li>
-                <li>F_r = Radial load per bearing (N)</li>
-                <li>A = Axial distance from the bearing centreline to the hub centreline (mm)</li>
-                <li>L = Distance between bearing centrelines (mm)</li>
-                <li>E = Young’s modulus of steel, 2.1 * 10^5 (MPa)</li>
-                <li>I = Area moment of inertia of the shaft (mm4)</li>
-                <li>PI = Circle constant, 3.14159 (dimensionless)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Seal tolerance, not bearing misalignment capacity, sets the allowable slope. Where Theta_arcmin exceeds 5 to 10 arc-minutes, reduce A or increase the shaft diameter.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 5: Maximum Shaft Deflection at Mid-Span</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">y_max = ((F_r * A) / (24 * E * I)) * (3 * L^2 - 4 * A^2)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>y_max = Maximum shaft deflection at mid-span (mm)</li>
+                        <li>F_r = Radial load per bearing (N)</li>
+                        <li>A = Axial distance from the bearing centreline to the hub centreline (mm)</li>
+                        <li>L = Distance between bearing centrelines (mm)</li>
+                        <li>E = Young’s modulus of steel, 2.1 * 10^5 (MPa)</li>
+                        <li>I = Area moment of inertia of the shaft (mm4)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Check y_max against the project or pulley manufacturer limit, together with the slopes at the hub and bearing.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 5: Maximum Shaft Deflection at Mid-Span</figcaption>
-            <p class="font-monospace my-3">y_max = ((F_r * A) / (24 * E * I)) * (3 * L^2 - 4 * A^2)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>y_max = Maximum shaft deflection at mid-span (mm)</li>
-                <li>F_r = Radial load per bearing (N)</li>
-                <li>A = Axial distance from the bearing centreline to the hub centreline (mm)</li>
-                <li>L = Distance between bearing centrelines (mm)</li>
-                <li>E = Young’s modulus of steel, 2.1 * 10^5 (MPa)</li>
-                <li>I = Area moment of inertia of the shaft (mm4)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Check y_max against the project or pulley manufacturer limit, together with the slopes at the hub and bearing.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 6: Shaft Slope at the Hub</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Theta_hub = (F_r * A * (L - 2 * A)) / (2 * E * I)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>Theta_hub = Shaft slope at the hub (rad)</li>
+                        <li>F_r = Radial load per bearing (N)</li>
+                        <li>A = Axial distance from the bearing centreline to the hub centreline (mm)</li>
+                        <li>L = Distance between bearing centrelines (mm)</li>
+                        <li>E = Young’s modulus of steel, 2.1 * 10^5 (MPa)</li>
+                        <li>I = Area moment of inertia of the shaft (mm4)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Where shaft slope exceeds the locking assembly manufacturer's limit, typically 0.0010 to 0.0015 rad, the prying force overcomes the contact pressure on the tension side of the shaft, causing the locking assembly to gap, micro-slip, fret and lose its frictional grip.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 6: Shaft Slope at the Hub</figcaption>
-            <p class="font-monospace my-3">Theta_hub = (F_r * A * (L - 2 * A)) / (2 * E * I)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>Theta_hub = Shaft slope at the hub (rad)</li>
-                <li>F_r = Radial load per bearing (N)</li>
-                <li>A = Axial distance from the bearing centreline to the hub centreline (mm)</li>
-                <li>L = Distance between bearing centrelines (mm)</li>
-                <li>E = Young’s modulus of steel, 2.1 * 10^5 (MPa)</li>
-                <li>I = Area moment of inertia of the shaft (mm4)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Where shaft slope exceeds the locking assembly manufacturer's limit, typically 0.0010 to 0.0015 rad, the prying force overcomes the contact pressure on the tension side of the shaft, causing the locking assembly to gap, micro-slip, fret and lose its frictional grip.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 7: Belt Radial Pressure on the Pulley Shell</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">p_r = (2 * T_max) / (D * W_b)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>p_r = Radial pressure on the shell (MPa)</li>
+                        <li>T_max = Belt tension at pulley entry (N)</li>
+                        <li>D = Outer diameter of the pulley shell (mm)</li>
+                        <li>W_b = Width of the conveyor belt (mm)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> On drive pulleys, pressure falls from entry to exit as tension falls from T1 to T2. The formula assumes uniform tension across the belt width, and mistracking concentrates tension and increases local pressure.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 7: Belt Radial Pressure on the Pulley Shell</figcaption>
-            <p class="font-monospace my-3">p_r = (2 * T_max) / (D * W_b)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>p_r = Radial pressure on the shell (MPa)</li>
-                <li>T_max = Belt tension at pulley entry (N)</li>
-                <li>D = Outer diameter of the pulley shell (mm)</li>
-                <li>W_b = Width of the conveyor belt (mm)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> On drive pulleys, pressure falls from entry to exit as tension falls from T1 to T2. The formula assumes uniform tension across the belt width, and mistracking concentrates tension and increases local pressure.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 8: Pulley Shell Membrane Hoop Stress</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Sigma_hoop = (p_r * D) / (2 * t_s)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>Sigma_hoop = Compressive membrane hoop stress (MPa)</li>
+                        <li>p_r = Belt radial pressure on the shell (MPa)</li>
+                        <li>D = Outer diameter of the pulley shell (mm)</li>
+                        <li>t_s = Thickness of the steel shell plate (mm)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> The formula treats the shell as a thin cylinder under uniform external pressure.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> The belt loads only the wrap arc, so the shell also ovalises, producing circumferential bending stresses that the membrane value does not capture. Check elastic buckling, which depends on the shell length to diameter ratio, the diameter to thickness ratio and end-disc restraint, using shell stability methods (e.g. Timoshenko, EN 1993-1-6). Use FEA for final shell design.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 8: Pulley Shell Membrane Hoop Stress</figcaption>
-            <p class="font-monospace my-3">Sigma_hoop = (p_r * D) / (2 * t_s)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>Sigma_hoop = Compressive membrane hoop stress (MPa)</li>
-                <li>p_r = Belt radial pressure on the shell (MPa)</li>
-                <li>D = Outer diameter of the pulley shell (mm)</li>
-                <li>t_s = Thickness of the steel shell plate (mm)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> The formula treats the shell as a thin cylinder under uniform external pressure.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 9: Pulley Shell Bending Stress</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Sigma_shell = M_shell / Z_shell<br>M_shell = (R_belt * (2 * L_s - W_b)) / 8<br>Z_shell = (PI * (D^4 - D_i^4)) / (32 * D)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>Sigma_shell = Shell bending stress at mid-span (MPa)</li>
+                        <li>M_shell = Maximum bending moment on the shell (Nmm)</li>
+                        <li>Z_shell = Section modulus of the hollow cylindrical shell (mm3)</li>
+                        <li>R_belt = Resultant radial force from belt tension (N)</li>
+                        <li>L_s = Span between end-disc centrelines (mm)</li>
+                        <li>W_b = Belt width (mm)</li>
+                        <li>D = Outer diameter of the pulley shell (mm)</li>
+                        <li>D_i = Inner diameter of the shell (mm)</li>
+                        <li>PI = Circle constant, 3.14159 (dimensionless)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> The moment assumes simple supports at the end-discs and the load spread uniformly over the belt width, which is conservative at mid-span. For a given tension per unit belt width, shell thickness increases approximately with the square of the span. Wide pulleys need a thicker shell or a shorter span between end-discs.</p>
+            </div>
         </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> The belt loads only the wrap arc, so the shell also ovalises, producing circumferential bending stresses that the membrane value does not capture. Check elastic buckling, which depends on the shell length to diameter ratio, the diameter to thickness ratio and end-disc restraint, using shell stability methods (e.g. Timoshenko, EN 1993-1-6). Use FEA for final shell design.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 10: End-Disc Bending Stress from Shaft Deflection</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Sigma_disc = (K * E * t_d * Theta_hub) / (R_shell - R_hub)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>Sigma_disc = Disc bending stress at the hub (MPa)</li>
+                        <li>K = Edge restraint constant for a disc welded to the shell, typically 1.15 to 1.5 (dimensionless)</li>
+                        <li>E = Young's modulus of steel, 2.1 * 10^5 (MPa)</li>
+                        <li>t_d = Thickness of the flat end-disc (mm)</li>
+                        <li>Theta_hub = Shaft slope at the hub (rad)</li>
+                        <li>R_shell = Disc outer radius at the shell (mm)</li>
+                        <li>R_hub = Outer radius of the central hub (mm)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> Approximation derived from Roark's formulas for circular plates. K falls from 1.5 for a small hub to 1.15 at a hub to disc diameter ratio of 0.3, from annular plate theory.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> This approximation is suitable for comparing options, not for final design. Thickening a flat disc does not reduce hub weld stress where shaft flexibility governs Theta_hub, because stress at a given hub slope increases with disc thickness. Reduce Theta_hub (larger shaft, smaller overhang) or specify a profiled disc.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 9: Pulley Shell Bending Stress</figcaption>
-            <p class="font-monospace my-3">Sigma_shell = M_shell / Z_shell<br>M_shell = (R_belt * (2 * L_s - W_b)) / 8<br>Z_shell = (PI * (D^4 - D_i^4)) / (32 * D)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>Sigma_shell = Shell bending stress at mid-span (MPa)</li>
-                <li>M_shell = Maximum bending moment on the shell (Nmm)</li>
-                <li>Z_shell = Section modulus of the hollow cylindrical shell (mm3)</li>
-                <li>R_belt = Resultant radial force from belt tension (N)</li>
-                <li>L_s = Span between end-disc centrelines (mm)</li>
-                <li>W_b = Belt width (mm)</li>
-                <li>D = Outer diameter of the pulley shell (mm)</li>
-                <li>D_i = Inner diameter of the shell (mm)</li>
-                <li>PI = Circle constant, 3.14159 (dimensionless)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> The moment assumes simple supports at the end-discs and the load spread uniformly over the belt width, which is conservative at mid-span. For a given tension per unit belt width, shell thickness increases approximately with the square of the span. Wide pulleys need a thicker shell or a shorter span between end-discs.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 11: Torsional Shear Stress in the Shaft</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Tau_shaft = (16 * M_t) / (PI * d^3)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>M_t = Transmitted torque (Nmm)</li>
+                        <li>d = Shaft diameter at the section evaluated (mm)</li>
+                        <li>Tau_shaft = Torsional shear stress (MPa)</li>
+                        <li>PI = Circle constant, 3.14159 (dimensionless)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> A 10% increase in shaft diameter reduces torsional shear stress by 25%.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 10: End-Disc Bending Stress from Shaft Deflection</figcaption>
-            <p class="font-monospace my-3">Sigma_disc = (K * E * t_d * Theta_hub) / (R_shell - R_hub)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>Sigma_disc = Disc bending stress at the hub (MPa)</li>
-                <li>K = Edge restraint constant for a disc welded to the shell, typically 1.15 to 1.5 (dimensionless)</li>
-                <li>E = Young's modulus of steel, 2.1 * 10^5 (MPa)</li>
-                <li>t_d = Thickness of the flat end-disc (mm)</li>
-                <li>Theta_hub = Shaft slope at the hub (rad)</li>
-                <li>R_shell = Disc outer radius at the shell (mm)</li>
-                <li>R_hub = Outer radius of the central hub (mm)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> Approximation derived from Roark's formulas for circular plates. K falls from 1.5 for a small hub to 1.15 at a hub to disc diameter ratio of 0.3, from annular plate theory.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 12: Completely Reversed Bending Stress in the Shaft</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Sigma_shaft = (32 * M_b) / (PI * d^3)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>Sigma_shaft = Bending stress amplitude (MPa)</li>
+                        <li>M_b = Hub bending moment (Nmm)</li>
+                        <li>d = Shaft diameter at the section evaluated (mm)</li>
+                        <li>PI = Circle constant, 3.14159 (dimensionless)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Rotation under a fixed load direction makes this a fully reversed stress amplitude. Evaluate the locking assembly seats and shaft shoulders. Apply the notch, size and surface factors of AS 1403 or DIN 743, and keep the result below the material endurance limit.</p>
+            </div>
         </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> This approximation is suitable for comparing options, not for final design. Thickening a flat disc does not reduce hub weld stress where shaft flexibility governs Theta_hub, because stress at a given hub slope increases with disc thickness. Reduce Theta_hub (larger shaft, smaller overhang) or specify a profiled disc.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 13: Shell Edge Bending Stress at the End-Disc</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Lambda = (3 * (1 - nu^2) / (R_s^2 * t_s^2))^(1/4)<br>M_x = (p_r / (2 * Lambda^2)) * e^(-Lambda * x) * (SIN(Lambda * x) - COS(Lambda * x))<br>Sigma_axial = (6 * M_x) / t_s^2</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>Lambda = Shell decay parameter (1/mm)</li>
+                        <li>nu = Poisson's ratio of steel, 0.3 (dimensionless)</li>
+                        <li>R_s = Mean radius of the pulley shell (mm)</li>
+                        <li>t_s = Thickness of the pulley shell (mm)</li>
+                        <li>M_x = Shell bending moment per unit circumference (Nmm/mm)</li>
+                        <li>p_r = Belt radial pressure on the shell (MPa)</li>
+                        <li>x = Axial distance from the end-disc junction (mm)</li>
+                        <li>e = Euler's number, 2.71828 (dimensionless)</li>
+                        <li>Sigma_axial = Axial bending stress at distance x (MPa)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> This is the classical thin-shell edge solution for a cylinder clamped at the end-disc under uniform pressure (Timoshenko). Lange's analysis extends it with Fourier series for the non-uniform wrap load and the end-disc.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> End-disc restraint adds a local axial bending stress at the shell-to-disc junction, a common site of fatigue cracking, that simple beam theory omits. At the junction (x = 0), this stress is approximately 1.8 times the membrane hoop stress.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 11: Torsional Shear Stress in the Shaft</figcaption>
-            <p class="font-monospace my-3">Tau_shaft = (16 * M_t) / (PI * d^3)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>M_t = Transmitted torque (Nmm)</li>
-                <li>d = Shaft diameter at the section evaluated (mm)</li>
-                <li>Tau_shaft = Torsional shear stress (MPa)</li>
-                <li>PI = Circle constant, 3.14159 (dimensionless)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> A 10% increase in shaft diameter reduces torsional shear stress by 25%.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 14: Flat End-Disc Radial Bending Stress</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Sigma_flat_radial = (3 * E * t_d * Theta_hub * D_shell) / (D_shell^2 - D_hub^2)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>Sigma_flat_radial = Maximum radial bending stress at the hub weld (MPa)</li>
+                        <li>E = Young's modulus of steel, 2.1 * 10^5 (MPa)</li>
+                        <li>t_d = Thickness of the flat steel end-disc (mm)</li>
+                        <li>Theta_hub = Shaft slope at the hub (rad)</li>
+                        <li>D_shell = Outer diameter of the end-disc where it meets the shell (mm)</li>
+                        <li>D_hub = Outer diameter of the central rigid hub (mm)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> Based on annular plate theory. Maximum radial bending stress occurs at the hub weld.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> This annular plate estimate corresponds to an edge restraint constant K = 1.5 * D_shell / (D_shell + D_hub), giving K of 1.15 to 1.5 for hub-to-disc diameter ratios of 0.3 to 0. Plate bending stiffness increases with the cube of thickness, while stress at a given hub slope increases in direct proportion to thickness. Confirm by FEA for final design.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 12: Completely Reversed Bending Stress in the Shaft</figcaption>
-            <p class="font-monospace my-3">Sigma_shaft = (32 * M_b) / (PI * d^3)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>Sigma_shaft = Bending stress amplitude (MPa)</li>
-                <li>M_b = Hub bending moment (Nmm)</li>
-                <li>d = Shaft diameter at the section evaluated (mm)</li>
-                <li>PI = Circle constant, 3.14159 (dimensionless)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Rotation under a fixed load direction makes this a fully reversed stress amplitude. Evaluate the locking assembly seats and shaft shoulders. Apply the notch, size and surface factors of AS 1403 or DIN 743, and keep the result below the material endurance limit.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 15: Profiled (Turbine) End-Disc Thickness Curve</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">t_r = t_hub * SQRT(R_hub / r)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>t_r = Disc thickness at radius r (mm)</li>
+                        <li>r = Radius evaluated, between the hub radius and the disc outer radius (mm)</li>
+                        <li>t_hub = Disc thickness at the hub junction (mm)</li>
+                        <li>R_hub = Outer radius of the central hub (mm)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> This profile gives uniform surface bending stress where the radial bending moment per unit circumference varies inversely with radius. Treat it as an idealised starting geometry and confirm the final profile and stress by FEA. Tapering reduces stiffness toward the shell, lowering peak stress at the hub for a given hub slope.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 13: Shell Edge Bending Stress at the End-Disc</figcaption>
-            <p class="font-monospace my-3">Lambda = (3 * (1 - nu^2) / (R_s^2 * t_s^2))^(1/4)<br>M_x = (p_r / (2 * Lambda^2)) * e^(-Lambda * x) * (SIN(Lambda * x) - COS(Lambda * x))<br>Sigma_axial = (6 * M_x) / t_s^2</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>Lambda = Shell decay parameter (1/mm)</li>
-                <li>nu = Poisson's ratio of steel, 0.3 (dimensionless)</li>
-                <li>R_s = Mean radius of the pulley shell (mm)</li>
-                <li>t_s = Thickness of the pulley shell (mm)</li>
-                <li>M_x = Shell bending moment per unit circumference (Nmm/mm)</li>
-                <li>p_r = Belt radial pressure on the shell (MPa)</li>
-                <li>x = Axial distance from the end-disc junction (mm)</li>
-                <li>e = Euler's number, 2.71828 (dimensionless)</li>
-                <li>Sigma_axial = Axial bending stress at distance x (MPa)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> This is the classical thin-shell edge solution for a cylinder clamped at the end-disc under uniform pressure (Timoshenko). Lange's analysis extends it with Fourier series for the non-uniform wrap load and the end-disc.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 16: T-Bottom (T-Section) Shell Weld Axial Stress</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Sigma_T_weld = ABS((3 * p_r) / (Lambda^2 * t_s^2) * e^(-Lambda * L_T) * (SIN(Lambda * L_T) - COS(Lambda * L_T)))</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>Sigma_T_weld = Axial bending stress at the T-section weld (MPa)</li>
+                        <li>p_r = Belt radial pressure on the shell (MPa)</li>
+                        <li>Lambda = Shell decay parameter (1/mm)</li>
+                        <li>t_s = Thickness of the pulley shell (mm)</li>
+                        <li>L_T = Distance from the end-disc junction to the T-section weld (mm)</li>
+                        <li>e = Euler's number, 2.71828 (dimensionless)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> The decay term e^(-Lambda * L_T) * ABS(SIN(Lambda * L_T) - COS(Lambda * L_T)) is 0.24 at Lambda * L_T = 0.5 and does not exceed this value at greater distances.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> The edge bending stress decays exponentially with distance from the junction. Locating the T-section weld at L_T of 0.5 / Lambda or more reduces the axial bending stress at the weld to less than 25% of the corner weld value.</p>
+            </div>
         </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> End-disc restraint adds a local axial bending stress at the shell-to-disc junction, a common site of fatigue cracking, that simple beam theory omits. At the junction (x = 0), this stress is approximately 1.8 times the membrane hoop stress.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 17: Resultant Radial Force from Belt Tension</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">R_belt = SQRT(T1^2 + T2^2 - 2 * T1 * T2 * COS(theta))</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>R_belt = Resultant radial force from belt tension (N)</li>
+                        <li>T1 = Entry belt tension (N)</li>
+                        <li>T2 = Exit belt tension (N)</li>
+                        <li>theta = Wrap angle (rad)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> At 180 deg wrap, the radial force equals T1 + T2, and it is less at smaller wrap angles, so resolve the vector to avoid oversizing shafts and bearings. Add pulley, shaft and lagging weight vectorially to obtain bearing loads.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 14: Flat End-Disc Radial Bending Stress</figcaption>
-            <p class="font-monospace my-3">Sigma_flat_radial = (3 * E * t_d * Theta_hub * D_shell) / (D_shell^2 - D_hub^2)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>Sigma_flat_radial = Maximum radial bending stress at the hub weld (MPa)</li>
-                <li>E = Young's modulus of steel, 2.1 * 10^5 (MPa)</li>
-                <li>t_d = Thickness of the flat steel end-disc (mm)</li>
-                <li>Theta_hub = Shaft slope at the hub (rad)</li>
-                <li>D_shell = Outer diameter of the end-disc where it meets the shell (mm)</li>
-                <li>D_hub = Outer diameter of the central rigid hub (mm)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> Based on annular plate theory. Maximum radial bending stress occurs at the hub weld.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 18: Combined Shaft Stress (von Mises Equivalent)</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Sigma_eq = SQRT(Sigma_shaft^2 + 3 * Tau_shaft^2)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>Sigma_eq = von Mises equivalent stress (MPa)</li>
+                        <li>Sigma_shaft = Completely reversed bending stress (MPa)</li>
+                        <li>Tau_shaft = Torsional shear stress (MPa)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Compare von Mises stress with the modified endurance limit after notch, size and surface factors. Combining steady torsion with alternating bending in this way is conservative, whereas DIN 743 assesses alternating and mean stress components separately. Check static yield separately at peak torque and bending.</p>
+            </div>
         </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> This annular plate estimate corresponds to an edge restraint constant K = 1.5 * D_shell / (D_shell + D_hub), giving K of 1.15 to 1.5 for hub-to-disc diameter ratios of 0.3 to 0. Plate bending stiffness increases with the cube of thickness, while stress at a given hub slope increases in direct proportion to thickness. Confirm by FEA for final design.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 19: Bearing Basic Rating Life</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">L10h = (10^6 / (60 * n_pulley)) * (C / P)^p</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>L10h = Basic rating life (h)</li>
+                        <li>n_pulley = Pulley shaft speed (rpm)</li>
+                        <li>C = Basic dynamic load rating of the bearing (N)</li>
+                        <li>P = Equivalent dynamic bearing load (N)</li>
+                        <li>p = Life exponent: 3 for ball bearings, 10/3 for roller bearings (dimensionless)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Specify the minimum L10h in the project specification, e.g. 50,000 to 100,000 h. Calculate equivalent dynamic bearing load from radial and axial loads at the fixed bearing using the manufacturer's X and Y factors. Basic rating life excludes lubrication and contamination effects, so use the ISO 281 modified rating life for final selection.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 15: Profiled (Turbine) End-Disc Thickness Curve</figcaption>
-            <p class="font-monospace my-3">t_r = t_hub * SQRT(R_hub / r)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>t_r = Disc thickness at radius r (mm)</li>
-                <li>r = Radius evaluated, between the hub radius and the disc outer radius (mm)</li>
-                <li>t_hub = Disc thickness at the hub junction (mm)</li>
-                <li>R_hub = Outer radius of the central hub (mm)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> This profile gives uniform surface bending stress where the radial bending moment per unit circumference varies inversely with radius. Treat it as an idealised starting geometry and confirm the final profile and stress by FEA. Tapering reduces stiffness toward the shell, lowering peak stress at the hub for a given hub slope.</p>
-        </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 16: T-Bottom (T-Section) Shell Weld Axial Stress</figcaption>
-            <p class="font-monospace my-3">Sigma_T_weld = ABS((3 * p_r) / (Lambda^2 * t_s^2) * e^(-Lambda * L_T) * (SIN(Lambda * L_T) - COS(Lambda * L_T)))</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>Sigma_T_weld = Axial bending stress at the T-section weld (MPa)</li>
-                <li>p_r = Belt radial pressure on the shell (MPa)</li>
-                <li>Lambda = Shell decay parameter (1/mm)</li>
-                <li>t_s = Thickness of the pulley shell (mm)</li>
-                <li>L_T = Distance from the end-disc junction to the T-section weld (mm)</li>
-                <li>e = Euler's number, 2.71828 (dimensionless)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> The decay term e^(-Lambda * L_T) * ABS(SIN(Lambda * L_T) - COS(Lambda * L_T)) is 0.24 at Lambda * L_T = 0.5 and does not exceed this value at greater distances.</p>
-        </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> The edge bending stress decays exponentially with distance from the junction. Locating the T-section weld at L_T of 0.5 / Lambda or more reduces the axial bending stress at the weld to less than 25% of the corner weld value.</p>
-        </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 17: Resultant Radial Force from Belt Tension</figcaption>
-            <p class="font-monospace my-3">R_belt = SQRT(T1^2 + T2^2 - 2 * T1 * T2 * COS(theta))</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>R_belt = Resultant radial force from belt tension (N)</li>
-                <li>T1 = Entry belt tension (N)</li>
-                <li>T2 = Exit belt tension (N)</li>
-                <li>theta = Wrap angle (rad)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> At 180 deg wrap, the radial force equals T1 + T2, and it is less at smaller wrap angles, so resolve the vector to avoid oversizing shafts and bearings. Add pulley, shaft and lagging weight vectorially to obtain bearing loads.</p>
-        </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 18: Combined Shaft Stress (von Mises Equivalent)</figcaption>
-            <p class="font-monospace my-3">Sigma_eq = SQRT(Sigma_shaft^2 + 3 * Tau_shaft^2)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>Sigma_eq = von Mises equivalent stress (MPa)</li>
-                <li>Sigma_shaft = Completely reversed bending stress (MPa)</li>
-                <li>Tau_shaft = Torsional shear stress (MPa)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Compare von Mises stress with the modified endurance limit after notch, size and surface factors. Combining steady torsion with alternating bending in this way is conservative, whereas DIN 743 assesses alternating and mean stress components separately. Check static yield separately at peak torque and bending.</p>
-        </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 19: Bearing Basic Rating Life</figcaption>
-            <p class="font-monospace my-3">L10h = (10^6 / (60 * n_pulley)) * (C / P)^p</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>L10h = Basic rating life (h)</li>
-                <li>n_pulley = Pulley shaft speed (rpm)</li>
-                <li>C = Basic dynamic load rating of the bearing (N)</li>
-                <li>P = Equivalent dynamic bearing load (N)</li>
-                <li>p = Life exponent: 3 for ball bearings, 10/3 for roller bearings (dimensionless)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Specify the minimum L10h in the project specification, e.g. 50,000 to 100,000 h. Calculate equivalent dynamic bearing load from radial and axial loads at the fixed bearing using the manufacturer's X and Y factors. Basic rating life excludes lubrication and contamination effects, so use the ISO 281 modified rating life for final selection.</p>
-        </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 20: Effective Motor Torque at the Pulley</figcaption>
-            <p class="font-monospace my-3">M_t = (P_motor * eta_drive * 10^3) / omega_pulley<br>omega_pulley = (2 * PI * n_pulley) / 60<br>n_pulley = (60,000 * v) / (PI * D_L)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>M_t = Transmitted torque at the pulley shaft (Nmm)</li>
-                <li>P_motor = Motor rated power (W)</li>
-                <li>eta_drive = Overall drive train efficiency, typically 0.94 to 0.97 for helical gearboxes (dimensionless)</li>
-                <li>omega_pulley = Pulley angular velocity (rad/s)</li>
-                <li>n_pulley = Pulley speed (rpm)</li>
-                <li>v = Belt speed (m/s)</li>
-                <li>D_L = Pulley diameter over lagging (mm)</li>
-                <li>PI = Circle constant, 3.14159 (dimensionless)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> This gives torque at rated motor power. Design shafts and locking assemblies for peak torque during starting and braking, set by the motor starting torque or the soft starter or variable speed drive (VSD) torque limit. Non-drive pulleys carry no transmitted torque.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 20: Effective Motor Torque at the Pulley</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">M_t = (P_motor * eta_drive * 10^3) / omega_pulley<br>omega_pulley = (2 * PI * n_pulley) / 60<br>n_pulley = (60,000 * v) / (PI * D_L)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>M_t = Transmitted torque at the pulley shaft (Nmm)</li>
+                        <li>P_motor = Motor rated power (W)</li>
+                        <li>eta_drive = Overall drive train efficiency, typically 0.94 to 0.97 for helical gearboxes (dimensionless)</li>
+                        <li>omega_pulley = Pulley angular velocity (rad/s)</li>
+                        <li>n_pulley = Pulley speed (rpm)</li>
+                        <li>v = Belt speed (m/s)</li>
+                        <li>D_L = Pulley diameter over lagging (mm)</li>
+                        <li>PI = Circle constant, 3.14159 (dimensionless)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> This gives torque at rated motor power. Design shafts and locking assemblies for peak torque during starting and braking, set by the motor starting torque or the soft starter or variable speed drive (VSD) torque limit. Non-drive pulleys carry no transmitted torque.</p>
+            </div>
         </div>
     </section>
 

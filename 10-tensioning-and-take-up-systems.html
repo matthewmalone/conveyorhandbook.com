@@ -262,35 +262,43 @@
 
     <section id="elastic-elongation-allowance">
         <h3>5.1 Elastic Elongation Allowance</h3>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 1: Elastic Elongation Take-Up Allowance</figcaption>
-            <p class="font-monospace my-3">TU_elas = (e_elas / 100) * C</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>TU_elas = Carriage travel required to absorb elastic belt elongation (m)</li>
-                <li>e_elas = Elastic elongation of the carcass at rated working tension (%)</li>
-                <li>C = Conveyor centre distance measured along the belt path between head and tail pulleys, including all rises and falls (m)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> The allowance is based on C rather than on belt circuit length because the circuit is approximately 2 times C and a single-pulley take-up absorbs twice its travel in belt length. Applying elongation at rated working tension over the full belt length is conservative, as the average belt tension is lower.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 1: Elastic Elongation Take-Up Allowance</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">TU_elas = (e_elas / 100) * C</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>TU_elas = Carriage travel required to absorb elastic belt elongation (m)</li>
+                        <li>e_elas = Elastic elongation of the carcass at rated working tension (%)</li>
+                        <li>C = Conveyor centre distance measured along the belt path between head and tail pulleys, including all rises and falls (m)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> The allowance is based on C rather than on belt circuit length because the circuit is approximately 2 times C and a single-pulley take-up absorbs twice its travel in belt length. Applying elongation at rated working tension over the full belt length is conservative, as the average belt tension is lower.</p>
+            </div>
         </div>
     </section>
 
     <section id="permanent-elongation-allowance">
         <h3>5.2 Permanent Elongation Allowance</h3>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 2: Permanent Elongation Take-Up Allowance</figcaption>
-            <p class="font-monospace my-3">TU_perm = (e_perm / 100) * C</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>TU_perm = Carriage travel required to absorb permanent constructional elongation (m)</li>
-                <li>e_perm = Permanent elongation of the carcass over the run-in period (%)</li>
-                <li>C = Conveyor centre distance measured along the belt path between head and tail pulleys, including all rises and falls (m)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Permanent elongation occurs progressively, typically over the first 3 to 6 months of operation, as the carcass weave or cable geometry settles under tension. For cotton and nylon carcasses, permanent elongation equals or exceeds elastic elongation and can govern take-up travel. For steel cord belts, permanent elongation is small as a percentage but amounts to several metres of carriage travel on long overland conveyors.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 2: Permanent Elongation Take-Up Allowance</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">TU_perm = (e_perm / 100) * C</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>TU_perm = Carriage travel required to absorb permanent constructional elongation (m)</li>
+                        <li>e_perm = Permanent elongation of the carcass over the run-in period (%)</li>
+                        <li>C = Conveyor centre distance measured along the belt path between head and tail pulleys, including all rises and falls (m)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Permanent elongation occurs progressively, typically over the first 3 to 6 months of operation, as the carcass weave or cable geometry settles under tension. For cotton and nylon carcasses, permanent elongation equals or exceeds elastic elongation and can govern take-up travel. For steel cord belts, permanent elongation is small as a percentage but amounts to several metres of carriage travel on long overland conveyors.</p>
+            </div>
         </div>
     </section>
 
@@ -298,37 +306,45 @@
         <h3>5.3 Splice Length Allowance</h3>
         <p>Splicing progressively reduces total belt length. Provide sufficient travel to absorb this reduction without relocating the take-up pulley.</p>
         <p>For surface conveyors with a design life of 15 to 20 years, the number of planned splices is typically 6 to 12 for a single-circuit belt. For underground development conveyors at high face advance rates, the planned splices can exceed 50 over a 12-month cycle.</p>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 3: Splice Length Take-Up Allowance</figcaption>
-            <p class="font-monospace my-3">TU_splc = n_s * (L_splice / 2)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>TU_splc = Carriage travel required to accommodate planned splicing (m)</li>
-                <li>n_s = Number of planned splices over the design service life (dimensionless)</li>
-                <li>L_splice = Length of belt consumed per splice joint (m)</li>
-                <li>2 = Belt-to-carriage travel ratio for standard single-pulley take-up configurations (dimensionless)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Omitting the splice allowance from the take-up specification causes the carriage to reach its end stop before the end of belt life, particularly on systems with long splices and high splice frequencies.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 3: Splice Length Take-Up Allowance</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">TU_splc = n_s * (L_splice / 2)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>TU_splc = Carriage travel required to accommodate planned splicing (m)</li>
+                        <li>n_s = Number of planned splices over the design service life (dimensionless)</li>
+                        <li>L_splice = Length of belt consumed per splice joint (m)</li>
+                        <li>2 = Belt-to-carriage travel ratio for standard single-pulley take-up configurations (dimensionless)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Omitting the splice allowance from the take-up specification causes the carriage to reach its end stop before the end of belt life, particularly on systems with long splices and high splice frequencies.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 4: Belt Length Consumed per Splice</figcaption>
-            <p class="font-monospace my-3">L_splice = (n_st * L_st) + (k_b * B)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>L_splice = Length of belt consumed per splice event (m) [ft]</li>
-                <li>n_st = Number of steps in the splice (dimensionless). For multi-ply fabric, n_st = N - 1, where N is the number of plies. For steel cord, take n_st from the splice design.</li>
-                <li>L_st = Step length from the belt manufacturer’s splice design (m) [ft]</li>
-                <li>k_b = Bias factor: 0.3 or 0.4 as specified, or 0 for a square splice (dimensionless)</li>
-                <li>B = Belt width (m) [ft]</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> A splice that replaces an existing splice shortens the belt loop by approximately 2 * L_splice, because the old splice is cut out before the new one is made. Use 2 * L_splice for each planned replacement splice.</p>
-        </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Bias length rises with belt width and can exceed the total step length on wide belts with few plies. A 4-ply belt 1,200 mm [48 in] wide with 300 mm [12 in] steps and a 0.3 bias consumes 3 * 0.30 + 0.3 * 1.2 = 1.26 m [4.1 ft] per splice.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 4: Belt Length Consumed per Splice</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">L_splice = (n_st * L_st) + (k_b * B)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>L_splice = Length of belt consumed per splice event (m) [ft]</li>
+                        <li>n_st = Number of steps in the splice (dimensionless). For multi-ply fabric, n_st = N - 1, where N is the number of plies. For steel cord, take n_st from the splice design.</li>
+                        <li>L_st = Step length from the belt manufacturer’s splice design (m) [ft]</li>
+                        <li>k_b = Bias factor: 0.3 or 0.4 as specified, or 0 for a square splice (dimensionless)</li>
+                        <li>B = Belt width (m) [ft]</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> A splice that replaces an existing splice shortens the belt loop by approximately 2 * L_splice, because the old splice is cut out before the new one is made. Use 2 * L_splice for each planned replacement splice.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Bias length rises with belt width and can exceed the total step length on wide belts with few plies. A 4-ply belt 1,200 mm [48 in] wide with 300 mm [12 in] steps and a 0.3 bias consumes 3 * 0.30 + 0.3 * 1.2 = 1.26 m [4.1 ft] per splice.</p>
+            </div>
         </div>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
@@ -367,16 +383,20 @@
             <li><strong>Fully active winch:</strong> 800 to 1,500 mm [31 to 59 in] each end</li>
             <li><strong>Multilayer loop take-up:</strong> 1,000 to 2,000 mm [39 to 79 in] each end</li>
         </ul>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 5: Safety Buffer Take-Up Allowance</figcaption>
-            <p class="font-monospace my-3">TU_safe = d_ext + d_ret</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>TU_safe = Total safety buffer contribution to minimum take-up travel (m)</li>
-                <li>d_ext = Safety clearance at the extended (maximum elongation) end of travel (m)</li>
-                <li>d_ret = Safety clearance at the retracted (minimum elongation) end of travel (m)</li>
-            </ul>
-        </figure>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 5: Safety Buffer Take-Up Allowance</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">TU_safe = d_ext + d_ret</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>TU_safe = Total safety buffer contribution to minimum take-up travel (m)</li>
+                        <li>d_ext = Safety clearance at the extended (maximum elongation) end of travel (m)</li>
+                        <li>d_ret = Safety clearance at the retracted (minimum elongation) end of travel (m)</li>
+                    </ul>
+                </div>
+            </figure>
+        </div>
         <p>On active winch systems, the extended-end safety buffer functions as a response-time reserve. Size d_ext so that the time for the carriage to traverse it exceeds the combined PID loop response and mechanical brake release times. For example, at a carriage velocity of 0.5 m/s [100 fpm], a 1.0 m [39 in] buffer provides 1.0 / 0.5 = 2.0 s of response time before end-stop contact.</p>
         <div class="callout" role="note">
             <p><strong>Engineering Takeaway:</strong> For marginal response-time budgets, increase the safety buffer rather than retuning the PID loop aggressively, which can induce sustained carriage oscillation and accelerate component wear.</p>
@@ -385,62 +405,74 @@
 
     <section id="total-minimum-take-up-travel-for-a-standard-single-pulley-configuration">
         <h3>5.5 Total Minimum Take-Up Travel for a Standard Single-Pulley Configuration</h3>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 6: Minimum Take-Up Travel, Standard Configuration (TU_min)</figcaption>
-            <p class="font-monospace my-3">TU_min = ((e_elas + e_perm) / 100) * C + (n_s * L_splice / 2) + (d_ext + d_ret)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>TU_min = Minimum required take-up travel for a standard single-pulley take-up (m)</li>
-                <li>e_elas = Elastic elongation at rated working tension (%)</li>
-                <li>e_perm = Permanent elongation over the run-in period (%)</li>
-                <li>C = Conveyor centre distance measured along the belt path between head and tail pulleys, including all rises and falls (m)</li>
-                <li>n_s = Number of planned splices over the design service life (dimensionless)</li>
-                <li>L_splice = Length of belt consumed per splice (m)</li>
-                <li>d_ext = Safety clearance at extended end of travel (m)</li>
-                <li>d_ret = Safety clearance at retracted end of travel (m)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> This calculation assumes a reference temperature of 20 deg C [68 deg F]. For elevated or sub-zero environments, adjust TU_min for the temperature dependence of carcass elongation and belt length. Add the design contingency for the conveyor category before specifying the take-up frame length.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 6: Minimum Take-Up Travel, Standard Configuration (TU_min)</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">TU_min = ((e_elas + e_perm) / 100) * C + (n_s * L_splice / 2) + (d_ext + d_ret)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>TU_min = Minimum required take-up travel for a standard single-pulley take-up (m)</li>
+                        <li>e_elas = Elastic elongation at rated working tension (%)</li>
+                        <li>e_perm = Permanent elongation over the run-in period (%)</li>
+                        <li>C = Conveyor centre distance measured along the belt path between head and tail pulleys, including all rises and falls (m)</li>
+                        <li>n_s = Number of planned splices over the design service life (dimensionless)</li>
+                        <li>L_splice = Length of belt consumed per splice (m)</li>
+                        <li>d_ext = Safety clearance at extended end of travel (m)</li>
+                        <li>d_ret = Safety clearance at retracted end of travel (m)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> This calculation assumes a reference temperature of 20 deg C [68 deg F]. For elevated or sub-zero environments, adjust TU_min for the temperature dependence of carcass elongation and belt length. Add the design contingency for the conveyor category before specifying the take-up frame length.</p>
+            </div>
         </div>
     </section>
 
     <section id="total-minimum-take-up-travel-for-a-multilayer-configuration">
         <h3>5.6 Total Minimum Take-Up Travel for a Multilayer Configuration</h3>
         <p>Underground development conveyors with a multilayer loop take-up require internal belt storage capacity to sustain face advance operations between planned splices. This requirement is independent of elongation and splice parameters and adds to them in the total carriage travel.</p>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 7: Required Multilayer Belt Storage Capacity</figcaption>
-            <p class="font-monospace my-3">BSC = R_adv * n_w * 2</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>BSC = Minimum belt storage capacity required in the BSU (m)</li>
-                <li>R_adv = Mining face advance per planned maintenance window (m)</li>
-                <li>n_w = Number of planned maintenance windows between each belt splice event (dimensionless)</li>
-                <li>2 = Carry and return strand factor (dimensionless)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Each metre of conveyor extension draws 2 m of belt from storage. Lengthening the interval between splice events reduces splicing frequency but increases BSC and the required carriage travel.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 7: Required Multilayer Belt Storage Capacity</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">BSC = R_adv * n_w * 2</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>BSC = Minimum belt storage capacity required in the BSU (m)</li>
+                        <li>R_adv = Mining face advance per planned maintenance window (m)</li>
+                        <li>n_w = Number of planned maintenance windows between each belt splice event (dimensionless)</li>
+                        <li>2 = Carry and return strand factor (dimensionless)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Each metre of conveyor extension draws 2 m of belt from storage. Lengthening the interval between splice events reduces splicing frequency but increases BSC and the required carriage travel.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 8: Total Minimum Carriage Travel, BSU Configuration</figcaption>
-            <p class="font-monospace my-3">TU_BSU = (((e_elas + e_perm) / 100) * L_belt + (n_s * L_splice) + BSC) / N + (d_ext + d_ret)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>TU_BSU = Total minimum take-up carriage travel for a BSU configuration (m)</li>
-                <li>e_elas = Elastic elongation at rated working tension (%)</li>
-                <li>e_perm = Permanent elongation over the run-in period (%)</li>
-                <li>L_belt = Total belt circuit length at maximum development extent (m)</li>
-                <li>n_s = Total number of planned splices over the development cycle (dimensionless)</li>
-                <li>L_splice = Length of belt consumed per splice (m)</li>
-                <li>BSC = Required belt storage capacity (m)</li>
-                <li>N = Number of belt strands in the BSU loop (dimensionless)</li>
-                <li>d_ext = Safety clearance at extended end of carriage travel (m)</li>
-                <li>d_ret = Safety clearance at retracted end of carriage travel (m)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> In a multilayer loop take-up, carriage translation absorbs N times its displacement in belt length, compared to the 2 times multiplier of a standard single-pulley configuration. Safety clearances (d_ext + d_ret) are physical carriage position limits on the rails and are added directly without division by N. Base all elongation and splice calculations on the total belt circuit length at maximum development extent.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 8: Total Minimum Carriage Travel, BSU Configuration</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">TU_BSU = (((e_elas + e_perm) / 100) * L_belt + (n_s * L_splice) + BSC) / N + (d_ext + d_ret)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>TU_BSU = Total minimum take-up carriage travel for a BSU configuration (m)</li>
+                        <li>e_elas = Elastic elongation at rated working tension (%)</li>
+                        <li>e_perm = Permanent elongation over the run-in period (%)</li>
+                        <li>L_belt = Total belt circuit length at maximum development extent (m)</li>
+                        <li>n_s = Total number of planned splices over the development cycle (dimensionless)</li>
+                        <li>L_splice = Length of belt consumed per splice (m)</li>
+                        <li>BSC = Required belt storage capacity (m)</li>
+                        <li>N = Number of belt strands in the BSU loop (dimensionless)</li>
+                        <li>d_ext = Safety clearance at extended end of carriage travel (m)</li>
+                        <li>d_ret = Safety clearance at retracted end of carriage travel (m)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> In a multilayer loop take-up, carriage translation absorbs N times its displacement in belt length, compared to the 2 times multiplier of a standard single-pulley configuration. Safety clearances (d_ext + d_ret) are physical carriage position limits on the rails and are added directly without division by N. Base all elongation and splice calculations on the total belt circuit length at maximum development extent.</p>
+            </div>
         </div>
     </section>
 

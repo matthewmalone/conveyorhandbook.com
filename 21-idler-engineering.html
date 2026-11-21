@@ -1311,52 +1311,64 @@
 
     <section id="key-formulae-for-idler-engineering">
         <h2>26. Key Formulae for Idler Engineering</h2>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 1: Roller RPM and Rotational Frequency (Hz)</figcaption>
-            <p class="mb-2">The rotational speed of an idler roll is a function of the belt linear speed and the roller outside diameter. It sets the number of bearing revolutions, which governs bearing L10h, grease life and seal wear.</p>
-            <p class="font-monospace my-3">RPM = (V * 60) / (PI * D)<br>f_r = RPM / 60 = V / (PI * D)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>RPM = Rotational speed of the roll (rev/min)</li>
-                <li>f_r = Rotational frequency of the roll (Hz)</li>
-                <li>V = Belt speed (m/s)</li>
-                <li>D = Roller outside diameter (m)</li>
-                <li>PI = 3.14159</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> For a fixed belt speed, RPM is inversely proportional to roller diameter. High-speed conveyors use large-diameter rollers to reduce bearing revolutions, which increases L10h and grease life.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 1: Roller RPM and Rotational Frequency (Hz)</figcaption>
+                <div class="formula-box">
+                    <p class="mb-2">The rotational speed of an idler roll is a function of the belt linear speed and the roller outside diameter. It sets the number of bearing revolutions, which governs bearing L10h, grease life and seal wear.</p>
+                    <p class="font-monospace mt-3 mb-3">RPM = (V * 60) / (PI * D)<br>f_r = RPM / 60 = V / (PI * D)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>RPM = Rotational speed of the roll (rev/min)</li>
+                        <li>f_r = Rotational frequency of the roll (Hz)</li>
+                        <li>V = Belt speed (m/s)</li>
+                        <li>D = Roller outside diameter (m)</li>
+                        <li>PI = 3.14159</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> For a fixed belt speed, RPM is inversely proportional to roller diameter. High-speed conveyors use large-diameter rollers to reduce bearing revolutions, which increases L10h and grease life.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 2: Total Static Idler Load (F_total)</figcaption>
-            <p class="mb-2">The total vertical gravitational force acting on one complete carrying idler set:</p>
-            <p class="font-monospace my-3">Metric: F_total = (W_b + W_m) * g * S_i<br>Imperial: F_total = (W_b + W_m) * S_i</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>F_total = Total static load on one carrying idler set (N) [lbf]</li>
-                <li>W_b = Mass of the belt per metre (kg/m) [lb/ft]</li>
-                <li>W_m = Mass of the conveyed material per metre (kg/m) [lb/ft]</li>
-                <li>g = Gravitational acceleration, 9.81 (m/s2), metric form only</li>
-                <li>S_i = Idler spacing (m) [ft]</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> The total static load is proportional to idler spacing. Reduce spacing where loads are concentrated, at loading zones and convex curves.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 2: Total Static Idler Load (F_total)</figcaption>
+                <div class="formula-box">
+                    <p class="mb-2">The total vertical gravitational force acting on one complete carrying idler set:</p>
+                    <p class="font-monospace mt-3 mb-3">Metric: F_total = (W_b + W_m) * g * S_i<br>Imperial: F_total = (W_b + W_m) * S_i</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>F_total = Total static load on one carrying idler set (N) [lbf]</li>
+                        <li>W_b = Mass of the belt per metre (kg/m) [lb/ft]</li>
+                        <li>W_m = Mass of the conveyed material per metre (kg/m) [lb/ft]</li>
+                        <li>g = Gravitational acceleration, 9.81 (m/s2), metric form only</li>
+                        <li>S_i = Idler spacing (m) [ft]</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> The total static load is proportional to idler spacing. Reduce spacing where loads are concentrated, at loading zones and convex curves.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 3: Equivalent Dynamic Bearing Load (P)</figcaption>
-            <p class="mb-2">Multiply the static radial load (F_r) by impact and environmental factors to obtain the Equivalent Dynamic Load (P).</p>
-            <p class="font-monospace my-3">P = F_r * K_impact * K_env</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>P = Equivalent dynamic bearing load (N)</li>
-                <li>F_r = Radial load per bearing (N)</li>
-                <li>K_impact = Dynamic impact and shock factor (dimensionless)</li>
-                <li>K_env = Environmental and maintenance factor (dimensionless)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> Where axial load is significant (wing rolls, misaligned frames), first calculate the equivalent load from the radial and axial components using the bearing manufacturer's X and Y factors. Where contamination is accounted for in the ISO 281 life modification factor (a_ISO), set K_env to 1.0 to avoid applying it twice.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 3: Equivalent Dynamic Bearing Load (P)</figcaption>
+                <div class="formula-box">
+                    <p class="mb-2">Multiply the static radial load (F_r) by impact and environmental factors to obtain the Equivalent Dynamic Load (P).</p>
+                    <p class="font-monospace mt-3 mb-3">P = F_r * K_impact * K_env</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>P = Equivalent dynamic bearing load (N)</li>
+                        <li>F_r = Radial load per bearing (N)</li>
+                        <li>K_impact = Dynamic impact and shock factor (dimensionless)</li>
+                        <li>K_env = Environmental and maintenance factor (dimensionless)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> Where axial load is significant (wing rolls, misaligned frames), first calculate the equivalent load from the radial and axial components using the bearing manufacturer's X and Y factors. Where contamination is accounted for in the ISO 281 life modification factor (a_ISO), set K_env to 1.0 to avoid applying it twice.</p>
+            </div>
         </div>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
@@ -1380,225 +1392,269 @@
         <div class="callout" role="note">
             <p><strong>Engineering Takeaway:</strong> For ROM applications, the equivalent dynamic load can be 2 to 3 times the static radial load. Omitting K-factors overstates the calculated bearing life.</p>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 4: L10h Bearing Life (ISO 281)</figcaption>
-            <p class="mb-2">The basic rating life of a rolling element bearing in hours:</p>
-            <p class="font-monospace my-3">L10h = (1,000,000 / (60 * RPM)) * (C / P)^p</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>L10h = Basic rating life (h)</li>
-                <li>RPM = Rotational speed of the idler roll (rev/min)</li>
-                <li>C = Basic dynamic load rating of the bearing (N)</li>
-                <li>P = Equivalent dynamic bearing load (N)</li>
-                <li>p = Life exponent (dimensionless): 3 for ball bearings (DGBB), 10/3 for roller bearings (TRB and SRB)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Bearing life is sensitive to load. Reducing the radial load by 10% increases L10h by approximately 37% for a ball bearing and 42% for a roller bearing.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 4: L10h Bearing Life (ISO 281)</figcaption>
+                <div class="formula-box">
+                    <p class="mb-2">The basic rating life of a rolling element bearing in hours:</p>
+                    <p class="font-monospace mt-3 mb-3">L10h = (1,000,000 / (60 * RPM)) * (C / P)^p</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>L10h = Basic rating life (h)</li>
+                        <li>RPM = Rotational speed of the idler roll (rev/min)</li>
+                        <li>C = Basic dynamic load rating of the bearing (N)</li>
+                        <li>P = Equivalent dynamic bearing load (N)</li>
+                        <li>p = Life exponent (dimensionless): 3 for ball bearings (DGBB), 10/3 for roller bearings (TRB and SRB)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Bearing life is sensitive to load. Reducing the radial load by 10% increases L10h by approximately 37% for a ball bearing and 42% for a roller bearing.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 5: Absolute Belt Sag (y) and Sag Percentage (%)</figcaption>
-            <p class="mb-2">The vertical distance the belt drops between two idler sets, modelled as a parabolic approximation of the catenary:</p>
-            <p class="font-monospace my-3">y = [(W_b + W_m) * g * S_i^2] / (8 * T)</p>
-            <p class="mb-2">The sag of the belt expressed as a percentage of the idler spacing:</p>
-            <p class="font-monospace my-3">Sag = (y / S_i) * 100 = [(W_b + W_m) * g * S_i] / (8 * T) * 100</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>y = Absolute sag (m)</li>
-                <li>Sag = Belt sag as a percentage of idler spacing (%)</li>
-                <li>W_b = Belt mass per metre (kg/m)</li>
-                <li>W_m = Material mass per metre (kg/m)</li>
-                <li>g = Gravitational acceleration, 9.81 (m/s2)</li>
-                <li>S_i = Idler spacing (m)</li>
-                <li>T = Local longitudinal belt tension at the point under consideration (N)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Absolute sag is proportional to the square of idler spacing and sag percentage is proportional to spacing. Both are inversely proportional to belt tension. Check sag at the minimum tension point, typically the tail end of the carry side, under starting, running and stopping conditions.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 5: Absolute Belt Sag (y) and Sag Percentage (%)</figcaption>
+                <div class="formula-box">
+                    <p class="mb-2">The vertical distance the belt drops between two idler sets, modelled as a parabolic approximation of the catenary:</p>
+                    <p class="font-monospace mt-3 mb-3">y = [(W_b + W_m) * g * S_i^2] / (8 * T)</p>
+                    <p class="mb-2">The sag of the belt expressed as a percentage of the idler spacing:</p>
+                    <p class="font-monospace mt-3 mb-3">Sag = (y / S_i) * 100 = [(W_b + W_m) * g * S_i] / (8 * T) * 100</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>y = Absolute sag (m)</li>
+                        <li>Sag = Belt sag as a percentage of idler spacing (%)</li>
+                        <li>W_b = Belt mass per metre (kg/m)</li>
+                        <li>W_m = Material mass per metre (kg/m)</li>
+                        <li>g = Gravitational acceleration, 9.81 (m/s2)</li>
+                        <li>S_i = Idler spacing (m)</li>
+                        <li>T = Local longitudinal belt tension at the point under consideration (N)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Absolute sag is proportional to the square of idler spacing and sag percentage is proportional to spacing. Both are inversely proportional to belt tension. Check sag at the minimum tension point, typically the tail end of the carry side, under starting, running and stopping conditions.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 6: Maximum Allowable Idler Spacing from Sag Limit</figcaption>
-            <p class="mb-2">Rearranging the sag equation gives the maximum idler spacing for a design sag limit:</p>
-            <p class="font-monospace my-3">S_i_max = (8 * T * Sag_limit) / ((W_b + W_m) * g * 100)</p>
-            <p class="mb-2">Rearranged for tension, it gives the minimum belt tension required to hold the sag limit at a given spacing, which sets the minimum take-up tension:</p>
-            <p class="font-monospace my-3">T_min = ((W_b + W_m) * g * S_i * 100) / (8 * Sag_limit)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>S_i_max = Maximum allowable idler spacing (m)</li>
-                <li>T = Local belt tension at the point under consideration (N)</li>
-                <li>T_min = Minimum belt tension to satisfy the sag limit (N)</li>
-                <li>Sag_limit = Maximum allowable sag (%), typically 2.0 for carry and 3.0 for return</li>
-                <li>W_b = Belt mass per metre (kg/m)</li>
-                <li>W_m = Material mass per metre (kg/m). For return side calculations, W_m = 0.</li>
-                <li>g = Gravitational acceleration, 9.81 (m/s2)</li>
-                <li>S_i = Idler spacing (m)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Check both sag and bearing life. On high-tension belts, bearing life or structural cost governs spacing before sag. Sag governs at low-tension sections, typically the tail end of the carry side and the loading zone.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 6: Maximum Allowable Idler Spacing from Sag Limit</figcaption>
+                <div class="formula-box">
+                    <p class="mb-2">Rearranging the sag equation gives the maximum idler spacing for a design sag limit:</p>
+                    <p class="font-monospace mt-3 mb-3">S_i_max = (8 * T * Sag_limit) / ((W_b + W_m) * g * 100)</p>
+                    <p class="mb-2">Rearranged for tension, it gives the minimum belt tension required to hold the sag limit at a given spacing, which sets the minimum take-up tension:</p>
+                    <p class="font-monospace mt-3 mb-3">T_min = ((W_b + W_m) * g * S_i * 100) / (8 * Sag_limit)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>S_i_max = Maximum allowable idler spacing (m)</li>
+                        <li>T = Local belt tension at the point under consideration (N)</li>
+                        <li>T_min = Minimum belt tension to satisfy the sag limit (N)</li>
+                        <li>Sag_limit = Maximum allowable sag (%), typically 2.0 for carry and 3.0 for return</li>
+                        <li>W_b = Belt mass per metre (kg/m)</li>
+                        <li>W_m = Material mass per metre (kg/m). For return side calculations, W_m = 0.</li>
+                        <li>g = Gravitational acceleration, 9.81 (m/s2)</li>
+                        <li>S_i = Idler spacing (m)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Check both sag and bearing life. On high-tension belts, bearing life or structural cost governs spacing before sag. Sag governs at low-tension sections, typically the tail end of the carry side and the loading zone.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 7: Idler Indentation Rolling Resistance (F_ir)</figcaption>
-            <p class="mb-2">Indentation rolling resistance is the energy dissipated in the viscoelastic bottom cover as it deforms over each roll. On long horizontal conveyors it can be the largest component of main resistance. The governing proportional relationship (one-dimensional Winkler foundation model) is:</p>
-            <p class="font-monospace my-3">F_ir is proportional to (F_v^(4/3) * h^(1/3) * tan_delta) / (D^(2/3) * E_rubber^(1/3) * b^(1/3))</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>F_ir = Indentation rolling resistance per roll (N)</li>
-                <li>F_v = Vertical load on the roller (N)</li>
-                <li>D = Idler roller outside diameter (m)</li>
-                <li>E_rubber = Storage modulus (E') of the bottom cover rubber compound (MPa). A stiffer compound (higher E') produces less indentation and therefore lower rolling resistance.</li>
-                <li>tan_delta = Loss tangent of the bottom cover compound (dimensionless)</li>
-                <li>h = Bottom cover thickness (m)</li>
-                <li>b = Contact width of the roll (m)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> The loss tangent is the strongest compound variable. On long overland conveyors, specify a low rolling resistance bottom cover compound at the minimum practical bottom cover thickness, and evaluate compound properties at the minimum operating temperature, where indentation resistance is typically highest.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 7: Idler Indentation Rolling Resistance (F_ir)</figcaption>
+                <div class="formula-box">
+                    <p class="mb-2">Indentation rolling resistance is the energy dissipated in the viscoelastic bottom cover as it deforms over each roll. On long horizontal conveyors it can be the largest component of main resistance. The governing proportional relationship (one-dimensional Winkler foundation model) is:</p>
+                    <p class="font-monospace mt-3 mb-3">F_ir is proportional to (F_v^(4/3) * h^(1/3) * tan_delta) / (D^(2/3) * E_rubber^(1/3) * b^(1/3))</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>F_ir = Indentation rolling resistance per roll (N)</li>
+                        <li>F_v = Vertical load on the roller (N)</li>
+                        <li>D = Idler roller outside diameter (m)</li>
+                        <li>E_rubber = Storage modulus (E') of the bottom cover rubber compound (MPa). A stiffer compound (higher E') produces less indentation and therefore lower rolling resistance.</li>
+                        <li>tan_delta = Loss tangent of the bottom cover compound (dimensionless)</li>
+                        <li>h = Bottom cover thickness (m)</li>
+                        <li>b = Contact width of the roll (m)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> The loss tangent is the strongest compound variable. On long overland conveyors, specify a low rolling resistance bottom cover compound at the minimum practical bottom cover thickness, and evaluate compound properties at the minimum operating temperature, where indentation resistance is typically highest.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 8: Shaft Deflection and Bearing Misalignment Angle</figcaption>
-            <p class="mb-2">If the slope at the bearing journal exceeds the bearing manufacturer's limit, typically 10 arc-minutes or less for deep groove ball bearings and 2 to 4 arc-minutes for tapered roller bearings, increase the shaft diameter regardless of the L10h result.</p>
-            <p class="mb-2">Modelling the idler shaft as a simply supported beam with symmetrical point loads applied at the bearing centres, the standard equations are:</p>
-            <p class="font-monospace my-3">I = (PI * d^4) / 64<br>theta = [F_r * A * (L_s - 2 * A)] / [2 * E * I]<br>theta_arcmin = theta * (180 / PI) * 60<br>y_max = [(F_r * A) / (24 * E * I)] * (3 * L_s^2 - 4 * A^2)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>F_r = Radial load per bearing (N)</li>
-                <li>L_s = Distance between the idler frame support slots (m)</li>
-                <li>A = Distance from the idler frame support slot to the centre of the bearing (m)</li>
-                <li>d = Shaft diameter (m)</li>
-                <li>E = Young's Modulus of steel, 2.1 * 10^11 (N/m2) [30.5 * 10^6 psi]</li>
-                <li>I = Area Moment of Inertia of the shaft (m4)</li>
-                <li>PI = 3.14159</li>
-                <li>theta = Slope of the shaft at the bearing journal (radians)</li>
-                <li>theta_arcmin = Slope of the shaft at the bearing journal (arc-minutes)</li>
-                <li>y_max = Maximum centre shaft deflection (m)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Shaft slope and deflection are inversely proportional to the fourth power of the shaft diameter. Where the slope limit is exceeded, increase the shaft diameter or reduce the bearing distance A.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 8: Shaft Deflection and Bearing Misalignment Angle</figcaption>
+                <div class="formula-box">
+                    <p class="mb-2">If the slope at the bearing journal exceeds the bearing manufacturer's limit, typically 10 arc-minutes or less for deep groove ball bearings and 2 to 4 arc-minutes for tapered roller bearings, increase the shaft diameter regardless of the L10h result.</p>
+                    <p class="mb-2">Modelling the idler shaft as a simply supported beam with symmetrical point loads applied at the bearing centres, the standard equations are:</p>
+                    <p class="font-monospace mt-3 mb-3">I = (PI * d^4) / 64<br>theta = [F_r * A * (L_s - 2 * A)] / [2 * E * I]<br>theta_arcmin = theta * (180 / PI) * 60<br>y_max = [(F_r * A) / (24 * E * I)] * (3 * L_s^2 - 4 * A^2)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>F_r = Radial load per bearing (N)</li>
+                        <li>L_s = Distance between the idler frame support slots (m)</li>
+                        <li>A = Distance from the idler frame support slot to the centre of the bearing (m)</li>
+                        <li>d = Shaft diameter (m)</li>
+                        <li>E = Young's Modulus of steel, 2.1 * 10^11 (N/m2) [30.5 * 10^6 psi]</li>
+                        <li>I = Area Moment of Inertia of the shaft (m4)</li>
+                        <li>PI = 3.14159</li>
+                        <li>theta = Slope of the shaft at the bearing journal (radians)</li>
+                        <li>theta_arcmin = Slope of the shaft at the bearing journal (arc-minutes)</li>
+                        <li>y_max = Maximum centre shaft deflection (m)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Shaft slope and deflection are inversely proportional to the fourth power of the shaft diameter. Where the slope limit is exceeded, increase the shaft diameter or reduce the bearing distance A.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 9: Material Mass per Metre (W_m) from Design Tonnage</figcaption>
-            <p class="mb-2">Before calculating idler loads, convert the design throughput (t/h) into linear mass density (kg/m). W_m is the input for idler load, bearing load and belt sag calculations.</p>
-            <p class="font-monospace my-3">Metric: W_m = Q / (3.6 * V)<br>Imperial: W_m = (Q * 2,000) / (60 * V)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>W_m = Material mass per metre (kg/m) [lb/ft]</li>
-                <li>Q = Design throughput (t/h) [stph]</li>
-                <li>V = Belt speed (m/s) [fpm]</li>
-                <li>3.6 = Unit conversion factor, metric form (converts t/h and m/s into kg/m)</li>
-                <li>2,000 / 60 = Unit conversion factor, imperial form (converts stph and fpm into lb/ft)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Use the design (peak) throughput, not the average, when calculating for idler selection. On variable speed conveyors, calculate at the lowest belt speed that carries full throughput.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 9: Material Mass per Metre (W_m) from Design Tonnage</figcaption>
+                <div class="formula-box">
+                    <p class="mb-2">Before calculating idler loads, convert the design throughput (t/h) into linear mass density (kg/m). W_m is the input for idler load, bearing load and belt sag calculations.</p>
+                    <p class="font-monospace mt-3 mb-3">Metric: W_m = Q / (3.6 * V)<br>Imperial: W_m = (Q * 2,000) / (60 * V)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>W_m = Material mass per metre (kg/m) [lb/ft]</li>
+                        <li>Q = Design throughput (t/h) [stph]</li>
+                        <li>V = Belt speed (m/s) [fpm]</li>
+                        <li>3.6 = Unit conversion factor, metric form (converts t/h and m/s into kg/m)</li>
+                        <li>2,000 / 60 = Unit conversion factor, imperial form (converts stph and fpm into lb/ft)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Use the design (peak) throughput, not the average, when calculating for idler selection. On variable speed conveyors, calculate at the lowest belt speed that carries full throughput.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 10: Dynamic Impact Force at Loading Points (F_impact)</figcaption>
-            <p class="mb-2">At every transfer or loading point, the falling material stream strikes the belt with a force that exceeds the steady-state gravitational load. This impact force governs the selection of impact idlers, impact cradles, and the belt's impact rating.</p>
-            <p class="font-monospace my-3">F_impact = m_lump * SQRT(2 * g * h_d) / t_contact</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>F_impact = Mean impact force over the contact duration (N)</li>
-                <li>m_lump = Mass of the largest single lump (kg)</li>
-                <li>g = Gravitational acceleration, 9.81 (m/s2)</li>
-                <li>h_d = Free-fall drop height from the chute lip to the belt surface (m)</li>
-                <li>t_contact = Contact duration over which the vertical velocity of the lump is reduced to zero (s)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> Indicative t_contact values: rigid steel idler 0.01 to 0.05 s, rubber-lagged impact idler 0.05 to 0.15 s, impact cradle 0.10 to 0.30 s. For a system of known stiffness k (N/m), t_contact = (PI / 2) * SQRT(m_lump / k), where PI = 3.14159. Doubling the contact time halves the impact force. Rubber-lagged impact idlers and impact cradles do not reduce the impact energy. They extend the contact duration, which reduces the peak force on the bearings and belt carcass.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 10: Dynamic Impact Force at Loading Points (F_impact)</figcaption>
+                <div class="formula-box">
+                    <p class="mb-2">At every transfer or loading point, the falling material stream strikes the belt with a force that exceeds the steady-state gravitational load. This impact force governs the selection of impact idlers, impact cradles, and the belt's impact rating.</p>
+                    <p class="font-monospace mt-3 mb-3">F_impact = m_lump * SQRT(2 * g * h_d) / t_contact</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>F_impact = Mean impact force over the contact duration (N)</li>
+                        <li>m_lump = Mass of the largest single lump (kg)</li>
+                        <li>g = Gravitational acceleration, 9.81 (m/s2)</li>
+                        <li>h_d = Free-fall drop height from the chute lip to the belt surface (m)</li>
+                        <li>t_contact = Contact duration over which the vertical velocity of the lump is reduced to zero (s)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> Indicative t_contact values: rigid steel idler 0.01 to 0.05 s, rubber-lagged impact idler 0.05 to 0.15 s, impact cradle 0.10 to 0.30 s. For a system of known stiffness k (N/m), t_contact = (PI / 2) * SQRT(m_lump / k), where PI = 3.14159. Doubling the contact time halves the impact force. Rubber-lagged impact idlers and impact cradles do not reduce the impact energy. They extend the contact duration, which reduces the peak force on the bearings and belt carcass.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Reduce impact force by extending contact duration (rubber lagging, impact cradles) and by minimising free-fall height through chute design.</p>
+            </div>
         </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Reduce impact force by extending contact duration (rubber lagging, impact cradles) and by minimising free-fall height through chute design.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 11: Bearing Speed Factor (n_dm) and Grease Speed Limit</figcaption>
+                <div class="formula-box">
+                    <p class="mb-2">The speed capability of a grease-lubricated bearing is governed by the product of the rotational speed (RPM) and the bearing mean diameter. Exceeding the grease manufacturer's rated limit causes accelerated thermal degradation of the lubricant.</p>
+                    <p class="font-monospace mt-3 mb-3">n_dm = RPM * d_m<br>d_m = (d_bore + D_outer) / 2</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>n_dm = Bearing speed factor (mm/min)</li>
+                        <li>RPM = Rotational speed of the idler roll (rev/min)</li>
+                        <li>d_m = Mean bearing diameter (mm)</li>
+                        <li>d_bore = Bearing bore diameter (mm)</li>
+                        <li>D_outer = Bearing outside diameter (mm)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> Typical grease speed limits are:</p>
+                <ul class="mt-2 mb-0">
+                    <li><strong>Standard mineral grease (lithium complex):</strong> n_dm less than or equal to 300,000 to 350,000 mm/min</li>
+                    <li><strong>Polyurea thickened grease:</strong> n_dm less than or equal to 500,000 to 600,000 mm/min</li>
+                    <li><strong>High-speed synthetic (ester or polyalphaolefin (PAO) base):</strong> n_dm of 800,000 mm/min or greater</li>
+                </ul>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> The grease speed limit rarely governs idler roller diameter. Use this check to confirm grease suitability for small rollers at high speed and for non-standard bearings.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 11: Bearing Speed Factor (n_dm) and Grease Speed Limit</figcaption>
-            <p class="mb-2">The speed capability of a grease-lubricated bearing is governed by the product of the rotational speed (RPM) and the bearing mean diameter. Exceeding the grease manufacturer's rated limit causes accelerated thermal degradation of the lubricant.</p>
-            <p class="font-monospace my-3">n_dm = RPM * d_m<br>d_m = (d_bore + D_outer) / 2</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>n_dm = Bearing speed factor (mm/min)</li>
-                <li>RPM = Rotational speed of the idler roll (rev/min)</li>
-                <li>d_m = Mean bearing diameter (mm)</li>
-                <li>d_bore = Bearing bore diameter (mm)</li>
-                <li>D_outer = Bearing outside diameter (mm)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> Typical grease speed limits are:</p>
-            <ul class="mt-2 mb-0">
-                <li><strong>Standard mineral grease (lithium complex):</strong> n_dm less than or equal to 300,000 to 350,000 mm/min</li>
-                <li><strong>Polyurea thickened grease:</strong> n_dm less than or equal to 500,000 to 600,000 mm/min</li>
-                <li><strong>High-speed synthetic (ester or polyalphaolefin (PAO) base):</strong> n_dm of 800,000 mm/min or greater</li>
-            </ul>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 12: Estimated Grease Service Life (t_grease)</figcaption>
+                <div class="formula-box">
+                    <p class="mb-2">For sealed-for-life idler bearings (no re-lubrication port), estimate grease life using the bearing manufacturer's empirical relubrication method:</p>
+                    <p class="font-monospace mt-3 mb-3">t_grease = K_t * K_f * ((14,000,000 / (RPM * SQRT(d_bore))) - 4 * d_bore)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>t_grease = Estimated grease service life (h)</li>
+                        <li>K_t = Temperature correction factor (dimensionless): 1.0 at 70 deg C [158 deg F] bearing temperature, halving for every 15 deg C [27 deg F] above 70 deg C [158 deg F]</li>
+                        <li>K_f = Bearing type factor (dimensionless): 10 for radial ball bearings (DGBB), 5 for cylindrical roller bearings, 1 for tapered and spherical roller bearings</li>
+                        <li>RPM = Rotational speed (rev/min)</li>
+                        <li>d_bore = Bearing bore diameter (mm)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> If the grease life is less than the L10h target, the bearing is likely to fail from lubricant degradation before mechanical fatigue. Specify a re-lubrication system, a higher-temperature synthetic grease, or a larger roller diameter to reduce RPM. For sealed-for-life bearings, confirm the result against the bearing manufacturer's grease life data for capped bearings.</p>
+            </div>
+            <p>Example: A 6205 bearing (25 mm [0.98 in] bore) at 503 RPM and 70 deg C [158 deg F]: t_grease = 1.0 * 10 * ((14,000,000 / (503 * 5)) - 4 * 25) = 10 * (5,567 - 100) = 54,700 hours. At 85 deg C [185 deg F], this halves to 27,300 hours.</p>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Grease life, rather than fatigue life, can limit sealed-for-life idler bearings, particularly above 70 deg C [158 deg F].</p>
+            </div>
         </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> The grease speed limit rarely governs idler roller diameter. Use this check to confirm grease suitability for small rollers at high speed and for non-standard bearings.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 13: Idler Roll Critical (Resonant) Speed</figcaption>
+                <div class="formula-box">
+                    <p class="mb-2">The first bending natural frequency of the roll shell is set by its length, cross-section and material. If the rotational speed of the roller approaches this frequency, the shell will resonate, causing vibration, belt flap, and accelerated bearing failure.</p>
+                    <p class="font-monospace mt-3 mb-3">f_critical = (PI / 2) * (1 / L_shell^2) * SQRT(E * I_shell / (rho * A_shell))<br>N_critical = f_critical * 60</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>f_critical = First bending natural frequency of the shell (Hz)</li>
+                        <li>N_critical = Critical speed of the roll (RPM)</li>
+                        <li>L_shell = Unsupported face length of the roller shell between end plates (m)</li>
+                        <li>E = Young's Modulus of the shell material (N/m2): steel 2.1 * 10^11 [30.5 * 10^6 psi], HDPE approximately 1.0 * 10^9 [0.145 * 10^6 psi]</li>
+                        <li>I_shell = Area Moment of Inertia of the shell (m4) = (PI / 64) * (D^4 - D_i^4)</li>
+                        <li>rho = Density of the shell material (kg/m3): steel 7,850 [490 lb/ft3], HDPE approximately 960 [60 lb/ft3]</li>
+                        <li>A_shell = Cross-sectional area of the shell wall (m2) = (PI / 4) * (D^2 - D_i^2)</li>
+                        <li>D = Shell outside diameter (m)</li>
+                        <li>D_i = Shell inside diameter (m)</li>
+                        <li>PI = 3.14159</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> The formula assumes pinned ends, which gives a lower and conservative frequency compared with clamped ends. Keep the operating RPM less than 70% of N_critical to avoid resonance amplification. If this is not met, reduce the unsupported face length, increase the shell diameter or use a material with a higher E / rho ratio. For identical geometry, an HDPE shell has approximately one fifth of the critical speed of a steel shell.</p>
+            </div>
+            <p>Example: A steel shell 152 mm [6 in] in diameter with a 4.5 mm [0.18 in] wall and 465 mm [18.3 in] face length: I_shell = 5.68 * 10^-6 m4, A_shell = 2.09 * 10^-3 m2 and f_critical = 1,960 Hz, giving N_critical of approximately 117,600 RPM. This is more than 200 times the 503 RPM of the same roller at 4.0 m/s [787 fpm]. The check is relevant to long-face polymer rolls on wide, high-speed belts.</p>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Critical speed is proportional to the shell radius of gyration, SQRT(D^2 + D_i^2) / 4, and inversely proportional to the square of the unsupported face length. Wall thickness has little effect because shell stiffness and mass increase together. Polymer rollers require a critical speed check due to their low modulus.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 12: Estimated Grease Service Life (t_grease)</figcaption>
-            <p class="mb-2">For sealed-for-life idler bearings (no re-lubrication port), estimate grease life using the bearing manufacturer's empirical relubrication method:</p>
-            <p class="font-monospace my-3">t_grease = K_t * K_f * ((14,000,000 / (RPM * SQRT(d_bore))) - 4 * d_bore)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>t_grease = Estimated grease service life (h)</li>
-                <li>K_t = Temperature correction factor (dimensionless): 1.0 at 70 deg C [158 deg F] bearing temperature, halving for every 15 deg C [27 deg F] above 70 deg C [158 deg F]</li>
-                <li>K_f = Bearing type factor (dimensionless): 10 for radial ball bearings (DGBB), 5 for cylindrical roller bearings, 1 for tapered and spherical roller bearings</li>
-                <li>RPM = Rotational speed (rev/min)</li>
-                <li>d_bore = Bearing bore diameter (mm)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> If the grease life is less than the L10h target, the bearing is likely to fail from lubricant degradation before mechanical fatigue. Specify a re-lubrication system, a higher-temperature synthetic grease, or a larger roller diameter to reduce RPM. For sealed-for-life bearings, confirm the result against the bearing manufacturer's grease life data for capped bearings.</p>
-        </div>
-        <p>Example: A 6205 bearing (25 mm [0.98 in] bore) at 503 RPM and 70 deg C [158 deg F]: t_grease = 1.0 * 10 * ((14,000,000 / (503 * 5)) - 4 * 25) = 10 * (5,567 - 100) = 54,700 hours. At 85 deg C [185 deg F], this halves to 27,300 hours.</p>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Grease life, rather than fatigue life, can limit sealed-for-life idler bearings, particularly above 70 deg C [158 deg F].</p>
-        </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 13: Idler Roll Critical (Resonant) Speed</figcaption>
-            <p class="mb-2">The first bending natural frequency of the roll shell is set by its length, cross-section and material. If the rotational speed of the roller approaches this frequency, the shell will resonate, causing vibration, belt flap, and accelerated bearing failure.</p>
-            <p class="font-monospace my-3">f_critical = (PI / 2) * (1 / L_shell^2) * SQRT(E * I_shell / (rho * A_shell))<br>N_critical = f_critical * 60</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>f_critical = First bending natural frequency of the shell (Hz)</li>
-                <li>N_critical = Critical speed of the roll (RPM)</li>
-                <li>L_shell = Unsupported face length of the roller shell between end plates (m)</li>
-                <li>E = Young's Modulus of the shell material (N/m2): steel 2.1 * 10^11 [30.5 * 10^6 psi], HDPE approximately 1.0 * 10^9 [0.145 * 10^6 psi]</li>
-                <li>I_shell = Area Moment of Inertia of the shell (m4) = (PI / 64) * (D^4 - D_i^4)</li>
-                <li>rho = Density of the shell material (kg/m3): steel 7,850 [490 lb/ft3], HDPE approximately 960 [60 lb/ft3]</li>
-                <li>A_shell = Cross-sectional area of the shell wall (m2) = (PI / 4) * (D^2 - D_i^2)</li>
-                <li>D = Shell outside diameter (m)</li>
-                <li>D_i = Shell inside diameter (m)</li>
-                <li>PI = 3.14159</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> The formula assumes pinned ends, which gives a lower and conservative frequency compared with clamped ends. Keep the operating RPM less than 70% of N_critical to avoid resonance amplification. If this is not met, reduce the unsupported face length, increase the shell diameter or use a material with a higher E / rho ratio. For identical geometry, an HDPE shell has approximately one fifth of the critical speed of a steel shell.</p>
-        </div>
-        <p>Example: A steel shell 152 mm [6 in] in diameter with a 4.5 mm [0.18 in] wall and 465 mm [18.3 in] face length: I_shell = 5.68 * 10^-6 m4, A_shell = 2.09 * 10^-3 m2 and f_critical = 1,960 Hz, giving N_critical of approximately 117,600 RPM. This is more than 200 times the 503 RPM of the same roller at 4.0 m/s [787 fpm]. The check is relevant to long-face polymer rolls on wide, high-speed belts.</p>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Critical speed is proportional to the shell radius of gyration, SQRT(D^2 + D_i^2) / 4, and inversely proportional to the square of the unsupported face length. Wall thickness has little effect because shell stiffness and mass increase together. Polymer rollers require a critical speed check due to their low modulus.</p>
-        </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 14: Main Resistance (F_H), DIN 22101 Method</figcaption>
-            <p class="mb-2">DIN 22101 combines the main resistances (idler rotating resistance, belt indentation rolling resistance, and belt and material flexure resistance) into a single artificial friction factor applied to the moving masses.</p>
-            <p class="font-monospace my-3">F_H = f * L * g * (W_r + (2 * W_b + W_m) * COS(delta))</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>F_H = Main resistance (N)</li>
-                <li>f = Artificial friction factor (dimensionless)</li>
-                <li>L = Conveyor length (m)</li>
-                <li>g = Gravitational acceleration, 9.81 (m/s2)</li>
-                <li>W_r = Rotating mass of carry and return idler rolls per metre of conveyor (kg/m) = sum of (rotating mass of one idler set / idler spacing) for carry and return</li>
-                <li>W_b = Belt mass per metre (kg/m)</li>
-                <li>W_m = Material mass per metre (kg/m)</li>
-                <li>delta = Conveyor inclination angle (deg)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> F_H excludes secondary resistances (loading point acceleration, belt wrap at pulleys), special resistances (skirtboards, belt cleaners, idler forward tilt) and lift resistance, which are added separately.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 14: Main Resistance (F_H), DIN 22101 Method</figcaption>
+                <div class="formula-box">
+                    <p class="mb-2">DIN 22101 combines the main resistances (idler rotating resistance, belt indentation rolling resistance, and belt and material flexure resistance) into a single artificial friction factor applied to the moving masses.</p>
+                    <p class="font-monospace mt-3 mb-3">F_H = f * L * g * (W_r + (2 * W_b + W_m) * COS(delta))</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>F_H = Main resistance (N)</li>
+                        <li>f = Artificial friction factor (dimensionless)</li>
+                        <li>L = Conveyor length (m)</li>
+                        <li>g = Gravitational acceleration, 9.81 (m/s2)</li>
+                        <li>W_r = Rotating mass of carry and return idler rolls per metre of conveyor (kg/m) = sum of (rotating mass of one idler set / idler spacing) for carry and return</li>
+                        <li>W_b = Belt mass per metre (kg/m)</li>
+                        <li>W_m = Material mass per metre (kg/m)</li>
+                        <li>delta = Conveyor inclination angle (deg)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> F_H excludes secondary resistances (loading point acceleration, belt wrap at pulleys), special resistances (skirtboards, belt cleaners, idler forward tilt) and lift resistance, which are added separately.</p>
+            </div>
         </div>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">

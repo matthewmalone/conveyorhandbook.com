@@ -210,23 +210,27 @@
     <section id="tension-wave-mechanics">
         <h3>9.1 Tension Wave Mechanics</h3>
         <p>Torque variations at the drive or brake pulleys generate tension disturbances that propagate as longitudinal elastic waves through the belt carcass at a finite speed.</p>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 1: Tension Wave Propagation Velocity (v_w)</figcaption>
-            <p class="font-monospace my-3">Metric: v_w = SQRT((E_b * B) / m_e)<br>Imperial: v_w = SQRT((g_c * E_b * B) / m_e)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>v_w = Tension wave propagation velocity in the belt carcass (m/s) [ft/s]</li>
-                <li>E_b = Longitudinal elastic modulus of the belt carcass per unit width (N/m) [lbf/ft]</li>
-                <li>B = Belt width (m) [ft]</li>
-                <li>m_e = Effective mass per unit length: belt, conveyed material where loaded, and the reduced rotating mass of the idlers (kg/m) [lb/ft]</li>
-                <li>g_c = Gravitational conversion constant, 32.174 [lb-ft/(lbf-s2)], imperial line only</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> E_b * B is the belt axial stiffness (force per unit strain). Use manufacturer stiffness data where available. Typical v_w is 1,000 to 3,000 m/s [3,300 to 9,800 ft/s] for steel cord belts and 250 to 850 m/s [820 to 2,800 ft/s] for EP fabric belts, at the lower end of each range when loaded.</p>
-        </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Wave speed rises with axial stiffness and falls with moving mass, so a steel cord belt carries tension waves faster than a fabric belt, and a loaded belt slower than an empty one.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 1: Tension Wave Propagation Velocity (v_w)</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Metric: v_w = SQRT((E_b * B) / m_e)<br>Imperial: v_w = SQRT((g_c * E_b * B) / m_e)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>v_w = Tension wave propagation velocity in the belt carcass (m/s) [ft/s]</li>
+                        <li>E_b = Longitudinal elastic modulus of the belt carcass per unit width (N/m) [lbf/ft]</li>
+                        <li>B = Belt width (m) [ft]</li>
+                        <li>m_e = Effective mass per unit length: belt, conveyed material where loaded, and the reduced rotating mass of the idlers (kg/m) [lb/ft]</li>
+                        <li>g_c = Gravitational conversion constant, 32.174 [lb-ft/(lbf-s2)], imperial line only</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> E_b * B is the belt axial stiffness (force per unit strain). Use manufacturer stiffness data where available. Typical v_w is 1,000 to 3,000 m/s [3,300 to 9,800 ft/s] for steel cord belts and 250 to 850 m/s [820 to 2,800 ft/s] for EP fabric belts, at the lower end of each range when loaded.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Wave speed rises with axial stiffness and falls with moving mass, so a steel cord belt carries tension waves faster than a fabric belt, and a loaded belt slower than an empty one.</p>
+            </div>
         </div>
     </section>
 
@@ -240,23 +244,27 @@
     <section id="controlled-acceleration-profiles">
         <h3>9.3 Controlled Acceleration Profiles</h3>
         <p>To limit the amplitude of tension waves during starting and stopping, apply VFD torque changes along a controlled acceleration profile rather than a step input. The S-curve (raised cosine or polynomial ramp) is common practice. It limits both the rate of change of belt velocity and the rate of change of acceleration (jerk).</p>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 2: Transient Tension Ratio (Screening Estimate)</figcaption>
-            <p class="font-monospace my-3">T_transient / T_steady = 1 + L_span / (v_w * t_ramp)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>T_transient = Peak transient tension during start or stop (N)</li>
-                <li>T_steady = Steady-state operating tension (N)</li>
-                <li>L_span = Length of the longest span between drive stations (m)</li>
-                <li>v_w = Tension wave propagation velocity in the belt carcass (m/s)</li>
-                <li>t_ramp = Duration of the acceleration or deceleration ramp (s)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> This is an empirical screening estimate, not a closed-form solution. It becomes unbounded as t_ramp approaches zero, whereas a step torque input produces a peak of approximately twice the applied tension change. Use it only to set an initial ramp time for dynamic simulation.</p>
-        </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Longer ramp times permit the tension wave to propagate across the full span and dissipate before the next torque change. On multi-drive conveyors, base the ramp time on wave propagation across the longest individual span, not the total conveyor length. Specify an initial minimum ramp time equal to 2 to 3 times the wave transit time across the longest span (L_span / v_w), pending validation via dynamic simulation.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 2: Transient Tension Ratio (Screening Estimate)</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">T_transient / T_steady = 1 + L_span / (v_w * t_ramp)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>T_transient = Peak transient tension during start or stop (N)</li>
+                        <li>T_steady = Steady-state operating tension (N)</li>
+                        <li>L_span = Length of the longest span between drive stations (m)</li>
+                        <li>v_w = Tension wave propagation velocity in the belt carcass (m/s)</li>
+                        <li>t_ramp = Duration of the acceleration or deceleration ramp (s)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> This is an empirical screening estimate, not a closed-form solution. It becomes unbounded as t_ramp approaches zero, whereas a step torque input produces a peak of approximately twice the applied tension change. Use it only to set an initial ramp time for dynamic simulation.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Longer ramp times permit the tension wave to propagate across the full span and dissipate before the next torque change. On multi-drive conveyors, base the ramp time on wave propagation across the longest individual span, not the total conveyor length. Specify an initial minimum ramp time equal to 2 to 3 times the wave transit time across the longest span (L_span / v_w), pending validation via dynamic simulation.</p>
+            </div>
         </div>
     </section>
 

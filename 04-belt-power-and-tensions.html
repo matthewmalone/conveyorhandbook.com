@@ -139,42 +139,50 @@
     <section id="effective-tension-and-power-calculation">
         <h2>3. Effective Tension and Power Calculation</h2>
         <p>Effective tension, T_e, is the net peripheral force required to drive or brake the loaded conveyor, equal to the sum of all resistances resolved at the drive pulley (F_U in ISO 5048).</p>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 1: Drive Pulley Power</figcaption>
-            <p class="font-monospace my-3">Metric: P = T_e * v<br>Imperial: P = (T_e * v) / 33,000</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>P = Drive pulley power (kW) [hp]</li>
-                <li>T_e = Effective tension (kN) [lbf]</li>
-                <li>v = Belt speed (m/s) [fpm]</li>
-                <li>33,000 = Conversion constant [ft-lbf/min per hp]</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> At a fixed mass flow, the load and lift components of effective tension vary inversely with belt speed, so their power demand is independent of speed, while empty running power rises in proportion to speed. Size the motor from P divided by the drive train efficiency, at the peak effective tension of the governing load case.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 1: Drive Pulley Power</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Metric: P = T_e * v<br>Imperial: P = (T_e * v) / 33,000</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>P = Drive pulley power (kW) [hp]</li>
+                        <li>T_e = Effective tension (kN) [lbf]</li>
+                        <li>v = Belt speed (m/s) [fpm]</li>
+                        <li>33,000 = Conversion constant [ft-lbf/min per hp]</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> At a fixed mass flow, the load and lift components of effective tension vary inversely with belt speed, so their power demand is independent of speed, while empty running power rises in proportion to speed. Size the motor from P divided by the drive train efficiency, at the peak effective tension of the governing load case.</p>
+            </div>
         </div>
     </section>
 
     <section id="belt-slip-and-the-euler-eytelwein-equation">
         <h2>4. Belt Slip and the Euler-Eytelwein Equation</h2>
         <p>Transmitting the effective tension, without slip requires a minimum slack-side tension, T2, leaving the drive pulley. The Euler-Eytelwein (capstan) equation defines the maximum tension ratio before slip.</p>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 2: Euler-Eytelwein Slip Limit</figcaption>
-            <p class="font-monospace my-3">T1 / T2 less than or equal to e^(mu * theta)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>T1 = Tight-side tension entering the drive pulley (kN)</li>
-                <li>T2 = Slack-side tension leaving the drive pulley (kN)</li>
-                <li>mu = Friction coefficient between belt and pulley surface (dimensionless)</li>
-                <li>theta = Wrap angle of belt around the drive pulley (rad)</li>
-                <li>e = Base of the natural logarithm, 2.71828 (dimensionless)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> Convert theta to radians (deg * PI / 180).</p>
-        </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> The permissible tension ratio rises exponentially with mu * theta. Increase the wrap angle with a snub pulley or a dual-pulley drive, or the friction coefficient with lagging, to reduce the slack-side tension required for a given effective tension. This reduces total belt tension, the required belt rating and take-up mass.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 2: Euler-Eytelwein Slip Limit</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">T1 / T2 less than or equal to e^(mu * theta)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>T1 = Tight-side tension entering the drive pulley (kN)</li>
+                        <li>T2 = Slack-side tension leaving the drive pulley (kN)</li>
+                        <li>mu = Friction coefficient between belt and pulley surface (dimensionless)</li>
+                        <li>theta = Wrap angle of belt around the drive pulley (rad)</li>
+                        <li>e = Base of the natural logarithm, 2.71828 (dimensionless)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> Convert theta to radians (deg * PI / 180).</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> The permissible tension ratio rises exponentially with mu * theta. Increase the wrap angle with a snub pulley or a dual-pulley drive, or the friction coefficient with lagging, to reduce the slack-side tension required for a given effective tension. This reduces total belt tension, the required belt rating and take-up mass.</p>
+            </div>
         </div>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
@@ -204,37 +212,45 @@
         <div class="callout" role="note">
             <p><strong>Note:</strong> Values are typical design values for clean conditions. Design with the lower bound of the wet range where the pulley runs wet or contaminated. Upper-range values for profiled and direct-bonded ceramic lagging are based on manufacturer data.</p>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 3: Minimum Slack-Side Tension</figcaption>
-            <p class="font-monospace my-3">T2_min = T_e / (e^(mu * theta) - 1)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>T2_min = Minimum slack-side tension to prevent slip (kN)</li>
-                <li>T_e = Effective tension, T1 - T2 (kN)</li>
-                <li>mu = Friction coefficient between belt and pulley surface (dimensionless)</li>
-                <li>theta = Wrap angle of belt around the drive pulley (rad)</li>
-                <li>e = Base of the natural logarithm, 2.71828 (dimensionless)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> Apply a slip safety factor of 1.2 or greater to T2_min and evaluate the worst case of a wet or cold pulley at peak starting and braking effective tension.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 3: Minimum Slack-Side Tension</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">T2_min = T_e / (e^(mu * theta) - 1)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>T2_min = Minimum slack-side tension to prevent slip (kN)</li>
+                        <li>T_e = Effective tension, T1 - T2 (kN)</li>
+                        <li>mu = Friction coefficient between belt and pulley surface (dimensionless)</li>
+                        <li>theta = Wrap angle of belt around the drive pulley (rad)</li>
+                        <li>e = Base of the natural logarithm, 2.71828 (dimensionless)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> Apply a slip safety factor of 1.2 or greater to T2_min and evaluate the worst case of a wet or cold pulley at peak starting and braking effective tension.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Set the take-up so that slack-side tension is not less than T2_min with the slip safety factor applied, and belt tension at the lowest-tension point of the carry and return runs is not less than the tension needed to hold the sag limit. On horizontal and low-lift conveyors the greater of the two sets the take-up force, and any excess slack-side tension adds directly to T1 and the required belt rating.</p>
+            </div>
         </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Set the take-up so that slack-side tension is not less than T2_min with the slip safety factor applied, and belt tension at the lowest-tension point of the carry and return runs is not less than the tension needed to hold the sag limit. On horizontal and low-lift conveyors the greater of the two sets the take-up force, and any excess slack-side tension adds directly to T1 and the required belt rating.</p>
-        </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 4: Drive Factor (C_w)</figcaption>
-            <p class="font-monospace my-3">C_w = e^(mu * theta) / (e^(mu * theta) - 1)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>C_w = Drive factor, the minimum ratio of tight-side tension to effective tension without slip (dimensionless)</li>
-                <li>mu = Friction coefficient between belt and pulley surface (dimensionless)</li>
-                <li>theta = Wrap angle of belt around the drive pulley (rad)</li>
-                <li>e = Base of the natural logarithm, 2.71828 (dimensionless)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> The minimum tight-side tension is C_w * T_e. A higher friction coefficient or a larger wrap angle lowers C_w, and with it the tight-side tension and belt rating needed to transmit a given effective tension.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 4: Drive Factor (C_w)</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">C_w = e^(mu * theta) / (e^(mu * theta) - 1)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>C_w = Drive factor, the minimum ratio of tight-side tension to effective tension without slip (dimensionless)</li>
+                        <li>mu = Friction coefficient between belt and pulley surface (dimensionless)</li>
+                        <li>theta = Wrap angle of belt around the drive pulley (rad)</li>
+                        <li>e = Base of the natural logarithm, 2.71828 (dimensionless)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> The minimum tight-side tension is C_w * T_e. A higher friction coefficient or a larger wrap angle lowers C_w, and with it the tight-side tension and belt rating needed to transmit a given effective tension.</p>
+            </div>
         </div>
     </section>
 

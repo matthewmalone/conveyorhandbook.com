@@ -116,50 +116,62 @@
     <section id="belt-mass-and-thickness">
         <h2>2. Belt Mass and Thickness</h2>
         <p>The cover mass factor is numerically equal to the specific gravity of the cover compound, typically 1.10 to 1.15 kg/m2 per mm [5.7 to 6.0 lb/ft2 per in] for standard grades. Fire-resistant and oil-resistant compounds are denser.</p>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 1: Total Belt Thickness (G)</figcaption>
-            <p class="font-monospace my-3">G = t_c + t_top + t_bot</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>G = Total belt thickness (mm)</li>
-                <li>t_c = Carcass thickness (mm)</li>
-                <li>t_top = Top cover thickness (mm)</li>
-                <li>t_bot = Bottom cover thickness (mm)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Total belt thickness governs roll diameter and therefore transport height. For a given belt length, roll cross-sectional area is proportional to G, so cover thickness added for wear life reduces the belt length that fits within a transport height limit.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 1: Total Belt Thickness (G)</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">G = t_c + t_top + t_bot</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>G = Total belt thickness (mm)</li>
+                        <li>t_c = Carcass thickness (mm)</li>
+                        <li>t_top = Top cover thickness (mm)</li>
+                        <li>t_bot = Bottom cover thickness (mm)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Total belt thickness governs roll diameter and therefore transport height. For a given belt length, roll cross-sectional area is proportional to G, so cover thickness added for wear life reduces the belt length that fits within a transport height limit.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 2: Belt Mass per Unit Area (m_A)</figcaption>
-            <p class="font-monospace my-3">m_A = m_c + (t_top + t_bot) * k_cov</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>m_A = Belt mass per unit area (kg/m2)</li>
-                <li>m_c = Carcass mass per unit area (kg/m2)</li>
-                <li>t_top = Top cover thickness (mm)</li>
-                <li>t_bot = Bottom cover thickness (mm)</li>
-                <li>k_cov = Cover mass factor (kg/m2 per mm)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> On fabric belts, cover mass can exceed carcass mass, so cover thickness and compound specific gravity govern belt mass. A fire-resistant above-ground cover compound is approximately 26% heavier per unit thickness than a general purpose compound.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 2: Belt Mass per Unit Area (m_A)</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">m_A = m_c + (t_top + t_bot) * k_cov</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>m_A = Belt mass per unit area (kg/m2)</li>
+                        <li>m_c = Carcass mass per unit area (kg/m2)</li>
+                        <li>t_top = Top cover thickness (mm)</li>
+                        <li>t_bot = Bottom cover thickness (mm)</li>
+                        <li>k_cov = Cover mass factor (kg/m2 per mm)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> On fabric belts, cover mass can exceed carcass mass, so cover thickness and compound specific gravity govern belt mass. A fire-resistant above-ground cover compound is approximately 26% heavier per unit thickness than a general purpose compound.</p>
+            </div>
         </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 3: Belt Mass per Unit Length (W_b)</figcaption>
-            <p class="font-monospace my-3">W_b = m_A * B</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>W_b = Belt mass per unit length (kg/m)</li>
-                <li>m_A = Belt mass per unit area (kg/m2)</li>
-                <li>B = Belt width (m)</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> Add the spool or core tare mass, obtained from the manufacturer, to the total belt mass to determine shipping mass.</p>
-        </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Belt mass is the belt mass input to idler loads, sag tension, effective tension and drive inertia. The minimum belt tension for sag control on the return run is directly proportional to belt mass.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 3: Belt Mass per Unit Length (W_b)</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">W_b = m_A * B</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>W_b = Belt mass per unit length (kg/m)</li>
+                        <li>m_A = Belt mass per unit area (kg/m2)</li>
+                        <li>B = Belt width (m)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> Add the spool or core tare mass, obtained from the manufacturer, to the total belt mass to determine shipping mass.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Belt mass is the belt mass input to idler loads, sag tension, effective tension and drive inertia. The minimum belt tension for sag control on the return run is directly proportional to belt mass.</p>
+            </div>
         </div>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
@@ -283,55 +295,67 @@
     <section id="roll-dimensions">
         <h2>3. Roll Dimensions</h2>
         <p>Calculate roll dimensions to confirm the belt meets transport height and width limits.</p>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 4: Circular Roll Outer Diameter (D)</figcaption>
-            <p class="font-monospace my-3">Metric: D = SQRT(d^2 + 0.001273 * L * G)<br>Imperial: D = SQRT(d^2 + 15.3 * L * G)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>D = Outer roll diameter (m) [in]</li>
-                <li>d = Core or spool outer diameter (m) [in]</li>
-                <li>L = Belt length (m) [ft]</li>
-                <li>G = Total belt thickness (mm) [in]</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> The core or spool outer diameter is typically 0.30 to 0.60 m [12 to 24 in]. Add the packaging allowance to the calculated diameter. Confirm the minimum core diameter and the packaging allowance with the manufacturer.</p>
-        </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Where d is small relative to D, D increases with the square root of L, so doubling the belt length increases D by approximately 41%. Splitting the belt into shorter rolls reduces D but adds one field splice per additional roll.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 4: Circular Roll Outer Diameter (D)</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Metric: D = SQRT(d^2 + 0.001273 * L * G)<br>Imperial: D = SQRT(d^2 + 15.3 * L * G)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>D = Outer roll diameter (m) [in]</li>
+                        <li>d = Core or spool outer diameter (m) [in]</li>
+                        <li>L = Belt length (m) [ft]</li>
+                        <li>G = Total belt thickness (mm) [in]</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> The core or spool outer diameter is typically 0.30 to 0.60 m [12 to 24 in]. Add the packaging allowance to the calculated diameter. Confirm the minimum core diameter and the packaging allowance with the manufacturer.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Where d is small relative to D, D increases with the square root of L, so doubling the belt length increases D by approximately 41%. Splitting the belt into shorter rolls reduces D but adds one field splice per additional roll.</p>
+            </div>
         </div>
         <p>Where a circular roll exceeds the transport height limit, wind the belt around two cores to form a racetrack roll of reduced height.</p>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 5: Racetrack Roll Core Centre Distance (C)</figcaption>
-            <p class="font-monospace my-3">Metric: C = ((L * G / 1000) - 0.7854 * (D^2 - d^2)) / (D - d)<br>Imperial: C = ((12 * L * G) - 0.7854 * (D^2 - d^2)) / (D - d)</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>C = Centre distance between the two cores (m) [in]</li>
-                <li>D = Outer roll diameter at the racetrack ends, set to the maximum allowable roll height less the packaging allowance (m) [in]</li>
-                <li>d = Core outer diameter (m) [in]</li>
-                <li>L = Belt length (m) [ft]</li>
-                <li>G = Total belt thickness (mm) [in]</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Note:</strong> The overall racetrack roll length is C + D.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 5: Racetrack Roll Core Centre Distance (C)</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Metric: C = ((L * G / 1000) - 0.7854 * (D^2 - d^2)) / (D - d)<br>Imperial: C = ((12 * L * G) - 0.7854 * (D^2 - d^2)) / (D - d)</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>C = Centre distance between the two cores (m) [in]</li>
+                        <li>D = Outer roll diameter at the racetrack ends, set to the maximum allowable roll height less the packaging allowance (m) [in]</li>
+                        <li>d = Core outer diameter (m) [in]</li>
+                        <li>L = Belt length (m) [ft]</li>
+                        <li>G = Total belt thickness (mm) [in]</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> The overall racetrack roll length is C + D.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> A negative centre distance indicates that a circular roll fits within the height limit. Reducing outer diameter increases centre distance, so check the overall roll length against the trailer deck length and the laydown area.</p>
+            </div>
         </div>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> A negative centre distance indicates that a circular roll fits within the height limit. Reducing outer diameter increases centre distance, so check the overall roll length against the trailer deck length and the laydown area.</p>
-        </div>
-        <figure class="my-4 p-3 border rounded">
-            <figcaption class="fig-caption mb-2">Formula 6: Belt Length on an Existing Roll (L)</figcaption>
-            <p class="font-monospace my-3">Metric: L = PI * N * (D + d) / 2<br>Imperial: L = PI * N * (D + d) / 24</p>
-            <p class="mb-1">Where:</p>
-            <ul class="list-unstyled ms-3 mb-0">
-                <li>L = Belt length on the roll (m) [ft]</li>
-                <li>N = Number of complete wraps (dimensionless)</li>
-                <li>D = Outer roll diameter (m) [in]</li>
-                <li>d = Core outer diameter (m) [in]</li>
-            </ul>
-        </figure>
-        <div class="callout" role="note">
-            <p><strong>Engineering Takeaway:</strong> Confirm the length on a spare or part-used roll before allocating it to a replacement, as the label length may not reflect earlier cuts. A miscount of one wrap introduces an error equal to one mean wrap circumference.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="fig-caption">Formula 6: Belt Length on an Existing Roll (L)</figcaption>
+                <div class="formula-box">
+                    <p class="font-monospace mt-0 mb-3">Metric: L = PI * N * (D + d) / 2<br>Imperial: L = PI * N * (D + d) / 24</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>L = Belt length on the roll (m) [ft]</li>
+                        <li>N = Number of complete wraps (dimensionless)</li>
+                        <li>D = Outer roll diameter (m) [in]</li>
+                        <li>d = Core outer diameter (m) [in]</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> Confirm the length on a spare or part-used roll before allocating it to a replacement, as the label length may not reflect earlier cuts. A miscount of one wrap introduces an error equal to one mean wrap circumference.</p>
+            </div>
         </div>
     </section>
 
