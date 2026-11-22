@@ -67,19 +67,15 @@
 </head>
 <body>
 
-<a href="#main" class="skip-link">Skip to main content</a>
-
-<div class="topbar">
-    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         Contents
     </button>
 </div>
 
 <nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
-    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
     <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
     <hr class="my-2">
     <p class="sidebar-heading mb-2">
@@ -115,7 +111,7 @@
     </section>
 
     <section id="factors-governing-belt-capacity">
-        <h2>2. Factors Governing Belt Capacity</h2>
+        <h2 class="border-top pt-4 mt-5">2. Factors Governing Belt Capacity</h2>
         <p>Operating close to the full cross-sectional profile maximises power efficiency (fixed belt, idler and drive losses spread across maximum payload) and improves tracking, as a centred load stabilises the belt. Belt capacity depends on four interrelated factors:</p>
         <ul>
             <li><strong>Belt width and edge clearance:</strong> set by required capacity and material lump size.</li>
@@ -126,7 +122,7 @@
     </section>
 
     <section id="properties-of-bulk-materials">
-        <h2>3. Properties of Bulk Materials</h2>
+        <h2 class="border-top pt-4 mt-5">3. Properties of Bulk Materials</h2>
     </section>
 
     <section id="angle-of-repose-versus-surcharge-angle">
@@ -143,7 +139,7 @@
         <p>The maximum incline is typically 15 to 18 deg for dry bulk materials. Exceeding this limit induces material rollback. Free surface water lubricates the belt interface and reduces the allowable incline. Moisture without free surface water increases cohesion and can permit a steeper incline, as for damp sand. Inclines above 20 deg typically require moulded cleats, chevrons or corrugated sidewall belts.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 1: Material Density, Surcharge and Maximum Incline</caption>
+                <caption class="small fw-semibold">Table 1: Material Density, Surcharge and Maximum Incline</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Material</th>
@@ -177,7 +173,7 @@
     </section>
 
     <section id="maximum-lump-sizes-and-particle-ratios">
-        <h2>4. Maximum Lump Sizes and Particle Ratios</h2>
+        <h2 class="border-top pt-4 mt-5">4. Maximum Lump Sizes and Particle Ratios</h2>
         <p>Maximum lump size, the largest a belt can carry without excessive spillage or carcass damage, depends on belt width and whether lumps are uniform or mixed with fines. Conveyor Equipment Manufacturers Association (CEMA) practice sets the following limits:</p>
         <ul>
             <li><strong>Uniform lumps:</strong> For screened, predominantly uniform material (e.g. ballast rock), limit lump size to one fifth of belt width at a 20 deg surcharge angle, or one sixth at a 30 deg surcharge angle.</li>
@@ -185,7 +181,7 @@
         </ul>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 2: Maximum Lump Size by Belt Width (CEMA)</caption>
+                <caption class="small fw-semibold">Table 2: Maximum Lump Size by Belt Width (CEMA)</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Belt Width mm [in]</th>
@@ -212,7 +208,7 @@
     </section>
 
     <section id="typical-belt-speeds">
-        <h2>5. Typical Belt Speeds</h2>
+        <h2 class="border-top pt-4 mt-5">5. Typical Belt Speeds</h2>
         <p>Material degradation, dust generation and transfer chute geometry limit belt speed.</p>
         <ul>
             <li><strong>Dusty materials:</strong> limit to 2.5 m/s [500 fpm] to reduce windage stripping of fines from the belt.</li>
@@ -222,12 +218,12 @@
     </section>
 
     <section id="volumetric-cross-section-and-edge-clearance">
-        <h2>6. Volumetric Cross-Section and Edge Clearance</h2>
+        <h2 class="border-top pt-4 mt-5">6. Volumetric Cross-Section and Edge Clearance</h2>
         <p>Material loaded onto a troughed belt forms a cross-section comprising a trapezoidal base (material within the trough) topped by a circular segment (the surcharge). Maintain an edge clearance, c, at each belt edge to limit spillage. DIN 22101 and CEMA define the minimum edge clearance for standard bulk materials.</p>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 1: Minimum Edge Clearance</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 1: Minimum Edge Clearance</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">Metric: c = 0.05 * B + 25<br>Imperial: c = 0.05 * B + 1.0</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -246,18 +242,18 @@
     </section>
 
     <section id="effect-of-troughing-angle-on-capacity">
-        <h2>7. Effect of Troughing Angle on Capacity</h2>
+        <h2 class="border-top pt-4 mt-5">7. Effect of Troughing Angle on Capacity</h2>
         <p>The troughing idler angle dictates the cross-sectional area. Increasing the troughing angle from 20 deg to 35 or 45 deg increases volumetric capacity and can permit a narrower belt for the same throughput, reducing structural capital cost.</p>
         <p>A 45 deg trough imposes higher bending stress at the idler junctions and requires a carcass rated for the trough angle. It also requires longer transition distances at the terminal pulleys to limit edge tension and fatigue. Deep troughing also restricts maximum lump size. Large lumps can wedge in the deep trough profile, jamming the loading chute or gouging the belt cover.</p>
     </section>
 
     <section id="capacity-calculations-volumetric-and-mass">
-        <h2>8. Capacity Calculations (Volumetric and Mass)</h2>
+        <h2 class="border-top pt-4 mt-5">8. Capacity Calculations (Volumetric and Mass)</h2>
         <p>Define system capacity volumetrically, then convert to mass.</p>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 2: Volumetric Capacity</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 2: Volumetric Capacity</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">Metric: Q_v = 3600 * A * V<br>Imperial: Q_v = 60 * A * V</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -273,8 +269,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 3: Mass Capacity</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 3: Mass Capacity</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">Metric: Q_m = 3.6 * A * V * rho<br>Imperial: Q_m = (A * V * rho * 60) / 2000</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -292,8 +288,8 @@
         <p>On an incline, the gravity component along the belt reduces the effective surcharge angle and cross-sectional area. Multiply the horizontal capacity by the DIN 22101 incline reduction factor, k. A cosine correction understates the reduction.</p>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 4: Incline Capacity Reduction Factor</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 4: Incline Capacity Reduction Factor</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">k = 1 - (A_1 / A) * (1 - SQRT((COS(delta)^2 - COS(beta)^2) / (1 - COS(beta)^2)))</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -315,18 +311,18 @@
     </section>
 
     <section id="design-capacity-versus-nominal-capacity-surge-handling">
-        <h2>9. Design Capacity versus Nominal Capacity (Surge Handling)</h2>
+        <h2 class="border-top pt-4 mt-5">9. Design Capacity versus Nominal Capacity (Surge Handling)</h2>
         <p>Upstream flow is rarely uniform. Do not design a conveyor to operate continuously at 100% of calculated volumetric capacity.</p>
         <p>Nominal capacity is the average feed rate required per operating hour.</p>
         <p>Design (peak) capacity is the maximum surge rate the conveyor must handle without spillage or drivetrain overload. Design capacity is typically 115% to 125% of nominal capacity.</p>
     </section>
 
     <section id="factors-affecting-volumetric-capacity">
-        <h2>10. Factors Affecting Volumetric Capacity</h2>
+        <h2 class="border-top pt-4 mt-5">10. Factors Affecting Volumetric Capacity</h2>
         <p>The theoretical cross-sectional area is not achieved where conveyor geometry or material behaviour causes the load to shift or flatten. The following material properties and belt configurations reduce volumetric capacity.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 3: Material Properties Affecting Volumetric Capacity</caption>
+                <caption class="small fw-semibold">Table 3: Material Properties Affecting Volumetric Capacity</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Material Type</th>
@@ -351,7 +347,7 @@
         </div>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 4: Belt Geometry and Configuration Affecting Volumetric Capacity</caption>
+                <caption class="small fw-semibold">Table 4: Belt Geometry and Configuration Affecting Volumetric Capacity</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Factor</th>
@@ -374,11 +370,11 @@
     </section>
 
     <section id="increasing-capacity-by-belt-speed">
-        <h2>11. Increasing Capacity by Belt Speed</h2>
+        <h2 class="border-top pt-4 mt-5">11. Increasing Capacity by Belt Speed</h2>
         <p>Where mass capacity must increase on a conveyor already at full volumetric capacity, a wider belt is the direct solution, but the structural replacement is frequently capital-prohibitive. Increasing belt speed by gear ratio change or variable frequency drive (VFD) raises mass throughput at constant cross-section. Verify each component in the table below before modification.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 5: Consequential Effects of Belt Speed Increase</caption>
+                <caption class="small fw-semibold">Table 5: Consequential Effects of Belt Speed Increase</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Component</th>
@@ -398,7 +394,7 @@
         </div>
     </section>
 
-    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
         Published <time datetime="2026-11-21">21 November 2026</time><br>
         Updated <time datetime="2026-11-21">21 November 2026</time><br>
         &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>

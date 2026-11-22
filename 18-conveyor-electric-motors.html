@@ -67,19 +67,15 @@
 </head>
 <body>
 
-<a href="#main" class="skip-link">Skip to main content</a>
-
-<div class="topbar">
-    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         Contents
     </button>
 </div>
 
 <nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
-    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
     <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
     <hr class="my-2">
     <p class="sidebar-heading mb-2">
@@ -118,10 +114,10 @@
     </section>
 
     <section id="motor-technology-selection">
-        <h2>2. Motor Technology Selection</h2>
+        <h2 class="border-top pt-4 mt-5">2. Motor Technology Selection</h2>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 1: Conveyor Drive Electric Motor Technologies</caption>
+                <caption class="small fw-semibold">Table 1: Conveyor Drive Electric Motor Technologies</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Motor Type</th>
@@ -145,13 +141,13 @@
     </section>
 
     <section id="energy-efficiency">
-        <h2>3. Energy Efficiency</h2>
+        <h2 class="border-top pt-4 mt-5">3. Energy Efficiency</h2>
         <p>Motor efficiency classes follow the International Efficiency (IE) designation in IEC 60034-30-1. Australian minimum energy performance standards (MEPS) under the Greenhouse and Energy Minimum Standards (GEMS) Act 2012 apply to motors supplied in Australia and are set at IE2-equivalent levels for three-phase cage induction motors from 0.73 kW [1 hp] to less than 185 kW [248 hp].</p>
         <p>For motors operating 8,000 h per year over a 20-year life, electricity typically accounts for over 90% of the Total Cost of Ownership (TCO), initial capital expenditure for 2% to 5% and maintenance for the remainder.</p>
         <p>Example (indicative costs): A 500 kW [670 hp] drive operates 8,000 h per year for 20 years at 0.12 AUD/kWh. A 1% efficiency improvement reduces input power by approximately 500 kW * 0.01 = 5 kW [6.7 hp]. Annual energy reduction is 5 kW * 8,000 h = 40,000 kWh, worth 40,000 kWh * 0.12 AUD/kWh = 4,800 AUD per year, or 96,000 AUD over 20 years.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 2: International Electrotechnical Commission (IEC) Motor Efficiency Classes</caption>
+                <caption class="small fw-semibold">Table 2: International Electrotechnical Commission (IEC) Motor Efficiency Classes</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Motor Class</th>
@@ -176,12 +172,12 @@
     </section>
 
     <section id="ingress-protection-ratings">
-        <h2>4. Ingress Protection Ratings</h2>
+        <h2 class="border-top pt-4 mt-5">4. Ingress Protection Ratings</h2>
         <p>Ingress Protection (IP) ratings, defined by AS 60529 / IEC 60529, classify the degree of protection provided by motor enclosures against solid objects and water.</p>
         <p>Fit a rain guard or canopy to vertically mounted motors. IP ratings apply only in the mounting position tested by the manufacturer. This guard reduces the falling water and debris that bypass the enclosure protection.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 3: Ingress Protection Rating Comparison</caption>
+                <caption class="small fw-semibold">Table 3: Ingress Protection Rating Comparison</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">IP Rating</th>
@@ -206,11 +202,11 @@
     </section>
 
     <section id="hazardous-area-classifications">
-        <h2>5. Hazardous Area Classifications</h2>
+        <h2 class="border-top pt-4 mt-5">5. Hazardous Area Classifications</h2>
         <p>Conveyors handling combustible materials or operating in the presence of flammable gases require certified explosion-protected motors.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 4: Hazardous Area Zone or Class/Division Frameworks</caption>
+                <caption class="small fw-semibold">Table 4: Hazardous Area Zone or Class/Division Frameworks</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Framework / Standard</th>
@@ -230,11 +226,11 @@
     </section>
 
     <section id="motor-thermal-safety-factors">
-        <h2>6. Motor Thermal Safety Factors</h2>
+        <h2 class="border-top pt-4 mt-5">6. Motor Thermal Safety Factors</h2>
         <p>Motor thermal limits are governed by the temperature rating of the stator winding insulation, the rotor cage, and bearing lubrication. Winding insulation systems are categorised by maximum continuous operating temperature per IEC 60085.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 5: Motor Insulation Classes</caption>
+                <caption class="small fw-semibold">Table 5: Motor Insulation Classes</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Insulation Class</th>
@@ -258,7 +254,7 @@
     </section>
 
     <section id="motor-duty-cycle-safety-factors">
-        <h2>7. Motor Duty Cycle Safety Factors</h2>
+        <h2 class="border-top pt-4 mt-5">7. Motor Duty Cycle Safety Factors</h2>
         <p>IEC 60034-1 defines motor duty cycles based on load profiles and thermal equilibrium limits. Specify the correct duty cycle to limit insulation degradation under transient operating conditions.</p>
         <p>Motors rated for S4 or S9 duty typically differ from S1 continuous-duty motors in one or more of the following:</p>
         <ul>
@@ -269,7 +265,7 @@
         </ul>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 6: Motor Duty Cycle Rating</caption>
+                <caption class="small fw-semibold">Table 6: Motor Duty Cycle Rating</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Duty Cycle</th>
@@ -289,12 +285,12 @@
     </section>
 
     <section id="bearing-currents-and-mitigation">
-        <h2>8. Bearing Currents and Mitigation</h2>
+        <h2 class="border-top pt-4 mt-5">8. Bearing Currents and Mitigation</h2>
         <p>VFD PWM induces high-frequency common-mode voltages that accumulate on the motor shaft. When these exceed the lubricant's dielectric breakdown threshold, they discharge through the bearings, and repeated discharges cause Electrical Discharge Machining (EDM), resulting in transverse grooves (fluting) across the bearing races and premature bearing failure.</p>
         <p>Fit a shaft grounding ring to every VFD-driven conveyor motor. Above 200 kW [268 hp], also fit an insulated non-drive-end (NDE) bearing.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 7: Motor Modifications for VFD Operation</caption>
+                <caption class="small fw-semibold">Table 7: Motor Modifications for VFD Operation</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Mitigation Technology</th>
@@ -318,11 +314,11 @@
     </section>
 
     <section id="motor-protection-and-monitoring-devices">
-        <h2>9. Motor Protection and Monitoring Devices</h2>
+        <h2 class="border-top pt-4 mt-5">9. Motor Protection and Monitoring Devices</h2>
         <p>Thermal protection devices embedded in the stator winding end-turns during manufacture monitor winding temperature and initiate an alarm or trip before the insulation thermal limit is reached. Define in the motor specification the type, quantity, and wiring configuration (e.g. 2-wire, 3-wire, or 4-wire for Pt100) of all embedded and externally mounted protection and monitoring devices.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 8: Motor Protection and Monitoring Devices</caption>
+                <caption class="small fw-semibold">Table 8: Motor Protection and Monitoring Devices</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Sensor</th>
@@ -346,18 +342,18 @@
     </section>
 
     <section id="space-heaters">
-        <h2>10. Space Heaters</h2>
+        <h2 class="border-top pt-4 mt-5">10. Space Heaters</h2>
         <p>Space heaters are low-wattage resistive elements installed inside the motor frame. When the motor is de-energised, they maintain internal temperatures 5 to 10 deg C [9 to 18 deg F] above ambient, keeping the windings above the dew point and preventing condensation on the winding insulation. This reduces dielectric degradation, surface tracking, and phase-to-earth faults at start-up.</p>
         <p>Specify space heaters for drive motors installed outdoors, underground, or in unconditioned facilities, and where relative humidity continuously exceeds 80%, ambient temperature falls below 5 deg C [41 deg F], or diurnal temperature variation exceeds 15 deg C [27 deg F].</p>
         <p>Interlock the space heater circuit with the motor controller so that it energises only when the motor is idle. Ratings are typically 50 to 200 W, depending on motor frame size.</p>
     </section>
 
     <section id="motor-specification-data-sheet">
-        <h2>11. Motor Specification Data Sheet</h2>
+        <h2 class="border-top pt-4 mt-5">11. Motor Specification Data Sheet</h2>
         <p>Conveyor drive motor procurement requires the following minimum specification data to reduce manufacturing delays, incorrect supply, or rework.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 9: Motor Minimum Purchase Specification</caption>
+                <caption class="small fw-semibold">Table 9: Motor Minimum Purchase Specification</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Category</th>
@@ -410,14 +406,14 @@
     </section>
 
     <section id="motor-failure-modes-and-root-cause-analysis">
-        <h2>12. Motor Failure Modes and Root Cause Analysis</h2>
+        <h2 class="border-top pt-4 mt-5">12. Motor Failure Modes and Root Cause Analysis</h2>
     </section>
 
     <section id="bearing-failure-modes">
         <h3>12.1 Bearing Failure Modes</h3>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 10: Motor Bearing Failure Modes</caption>
+                <caption class="small fw-semibold">Table 10: Motor Bearing Failure Modes</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Failure Mode</th>
@@ -440,7 +436,7 @@
         <h3>12.2 Stator Winding Failure Modes</h3>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 11: Motor Stator Winding Failure Modes</caption>
+                <caption class="small fw-semibold">Table 11: Motor Stator Winding Failure Modes</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Failure Mode</th>
@@ -464,7 +460,7 @@
         <h3>12.3 Rotor Failure Modes</h3>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 12: Motor Rotor Failure Modes</caption>
+                <caption class="small fw-semibold">Table 12: Motor Rotor Failure Modes</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Failure Mode</th>
@@ -486,7 +482,7 @@
         <h3>12.4 Cooling and Thermal Failure Modes</h3>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 13: Motor Cooling and Thermal Failure Modes</caption>
+                <caption class="small fw-semibold">Table 13: Motor Cooling and Thermal Failure Modes</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Failure Mode</th>
@@ -504,7 +500,7 @@
         </div>
     </section>
 
-    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
         Published <time datetime="2026-11-21">21 November 2026</time><br>
         Updated <time datetime="2026-11-22">22 November 2026</time><br>
         &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>

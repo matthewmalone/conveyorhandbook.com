@@ -67,19 +67,15 @@
 </head>
 <body>
 
-<a href="#main" class="skip-link">Skip to main content</a>
-
-<div class="topbar">
-    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         Contents
     </button>
 </div>
 
 <nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
-    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
     <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
     <hr class="my-2">
     <p class="sidebar-heading mb-2">
@@ -123,7 +119,7 @@
     </section>
 
     <section id="tension-distribution-fundamentals">
-        <h2>2. Tension Distribution Fundamentals</h2>
+        <h2 class="border-top pt-4 mt-5">2. Tension Distribution Fundamentals</h2>
         <p>As the belt traverses the idlers, idler rotating resistance, belt indentation, belt and material flexure, and gravity act against the drive. Tension distribution is non-linear and governed by localised material loading, conveyor geometry, and dynamic operating states.</p>
         <p>On horizontal or shallow incline conveyors with a head drive, tension typically starts at its lowest point as the empty belt leaves the drive (T2) and progressively climbs until reaching its peak (T1) at the primary drive pulley. On steep inclines, gravity on the return strand can move the minimum to the tail. Undulating or regenerative decline geometries shift tension maxima and minima away from the primary drive to tail or intermediate stations. Transient conditions including starting acceleration, braking deceleration, and elastic stress-wave propagation generate localised peak tensions that exceed steady-state values and frequently govern component ratings.</p>
         <p>Installing an intermediate drive at the conveyor midpoint reduces the head pulley tension (T1). As the belt exits the intermediate drive, its tension drops to a localised T2 value before continuing to the head pulley. On a flat, uniformly loaded conveyor with a midpoint drive, the effective tension carried by each span is approximately halved, and peak tension falls by less than half because the minimum tension (T2) is unchanged.</p>
@@ -131,15 +127,15 @@
     </section>
 
     <section id="traction-at-return-side-drives">
-        <h2>3. Traction at Return-Side Drives</h2>
+        <h2 class="border-top pt-4 mt-5">3. Traction at Return-Side Drives</h2>
         <p>Return-side intermediate drives operate at the low slack-side tension of the empty return run and are susceptible to slip. Specify an S-drive (dual-pulley) wrap and high-friction lagging for high-power return-side drives. A single high-wrap pulley is acceptable on lower-power return-side drives where the effective tension permits.</p>
     </section>
 
     <section id="intermediate-drive-locations">
-        <h2>4. Intermediate Drive Locations</h2>
+        <h2 class="border-top pt-4 mt-5">4. Intermediate Drive Locations</h2>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 1: Intermediate Drive Arrangement Comparison</caption>
+                <caption class="small fw-semibold">Table 1: Intermediate Drive Arrangement Comparison</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Feature</th>
@@ -162,7 +158,7 @@
     </section>
 
     <section id="intermediate-braking-trippers">
-        <h2>5. Intermediate Braking Trippers</h2>
+        <h2 class="border-top pt-4 mt-5">5. Intermediate Braking Trippers</h2>
         <p>Braking systems reduce stopping times and restrain regenerative conveyors against runaway. Applying the required retarding torque at a single location can generate localised tension exceeding the belt's allowable working tension. Intermediate braking trippers distribute braking forces along the conveyor profile, limiting localised tension, and can allow a lower-rated belt class than a single-point braking arrangement.</p>
         <p>Do not distribute fixed-torque caliper disc brakes across multiple stations along a conveyor profile. Identical brakes diverge in operation through differential pad wear, which varies with the local tension and retarding torque at each station. As pads wear, the air gap between pad and disc increases, and a brake with a larger air gap takes longer to reach full clamping force.</p>
         <p>Brakes with smaller air gaps engage first, absorbing a disproportionate share of the retarding force and generating localised tension spikes. This overload accelerates pad wear at those stations, which changes their air gap, spring force, and response time, so the load share between stations varies unpredictably over the wear cycle. Staggered pad replacement adds further variation unless all calipers are simultaneously overhauled, re-shimmed, and calibrated.</p>
@@ -171,14 +167,14 @@
     </section>
 
     <section id="drive-placement-optimisation">
-        <h2>6. Drive Placement Optimisation</h2>
+        <h2 class="border-top pt-4 mt-5">6. Drive Placement Optimisation</h2>
         <p>Locate an intermediate drive or brake at the chainage that minimises peak tension in the steady-state and dynamic tension profiles.</p>
         <p>An intermediate drive or brake divides the system into separate spans, each with its own T2 minimum and T1 peak. The optimal drive location is the chainage minimising the higher of the adjacent span T1 values. On a horizontal conveyor with uniform loading and constant friction, this is approximately the geometric midpoint. On conveyors with variable elevation profiles, concentrated loads, or curves, determine the optimal position iteratively.</p>
         <p>On undulating terrain, gradient variations generate multiple local tension minima and maxima. Position the intermediate drive at the downstream end of the section with the greatest cumulative tension rise. Final placement is constrained by physical access, electrical supply routing, and geotechnical foundation suitability.</p>
     </section>
 
     <section id="take-up-system-requirements">
-        <h2>7. Take-Up System Requirements</h2>
+        <h2 class="border-top pt-4 mt-5">7. Take-Up System Requirements</h2>
         <p>Intermediate drives or brakes modify tension distribution and introduce constraints on take-up system design. Maintain minimum belt tension along the entire profile to limit idler sag.</p>
         <p>Intermediate drives create additional local tension minima at their respective slack sides. Size the take-up to hold tension above the sag-limit minimum at every local minimum during steady-state and transient operation.</p>
         <p>Position the take-up at the point of lowest steady-state tension, typically downstream of the intermediate drive or at the tail pulley. Incorrect positioning induces localised excessive sag or over-tensioning.</p>
@@ -187,7 +183,7 @@
     </section>
 
     <section id="belt-tracking-and-alignment-at-intermediate-drive-stations">
-        <h2>8. Belt Tracking and Alignment at Intermediate Drive Stations</h2>
+        <h2 class="border-top pt-4 mt-5">8. Belt Tracking and Alignment at Intermediate Drive Stations</h2>
         <p>Carry-side tripper drives involve multiple direction changes, belt flattening from troughed to flat profiles, and re-troughing after material transfer. Apply tighter mechanical alignment tolerances at tripper stations than on the conveyor run to limit tracking deviations.</p>
         <p>Keep self-aligning (tracking) idlers out of the transition zones, the lengths over which the belt changes between the troughed profile and the flat pulley face. Install them at the following locations:</p>
         <ul>
@@ -198,7 +194,7 @@
     </section>
 
     <section id="transient-tension-analysis-and-wave-propagation">
-        <h2>9. Transient Tension Analysis and Wave Propagation</h2>
+        <h2 class="border-top pt-4 mt-5">9. Transient Tension Analysis and Wave Propagation</h2>
         <p>Transient conditions (starting, stopping, braking, and load fluctuations) induce longitudinal stress waves that propagate along the belt and interact with each drive station.</p>
     </section>
 
@@ -207,8 +203,8 @@
         <p>Torque variations at the drive or brake pulleys generate tension disturbances that propagate as longitudinal elastic waves through the belt carcass at a finite speed.</p>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 1: Tension Wave Propagation Velocity (v_w)</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 1: Tension Wave Propagation Velocity (v_w)</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">Metric: v_w = SQRT((E_b * B) / m_e)<br>Imperial: v_w = SQRT((g_c * E_b * B) / m_e)</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -241,8 +237,8 @@
         <p>To limit the amplitude of tension waves during starting and stopping, apply VFD torque changes along a controlled acceleration profile rather than a step input. The S-curve (raised cosine or polynomial ramp) is common practice. It limits both the rate of change of belt velocity and the rate of change of acceleration (jerk).</p>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 2: Transient Tension Ratio (Screening Estimate)</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 2: Transient Tension Ratio (Screening Estimate)</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">T_transient / T_steady = 1 + L_span / (v_w * t_ramp)</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -271,7 +267,7 @@
     </section>
 
     <section id="control-architecture-for-multi-drive-systems">
-        <h2>10. Control Architecture for Multi-Drive Systems</h2>
+        <h2 class="border-top pt-4 mt-5">10. Control Architecture for Multi-Drive Systems</h2>
         <p>Intermediate drives divide the conveyor into distinct spans and introduce tension reset points in the cumulative tension diagram, requiring coordinated control.</p>
     </section>
 
@@ -313,7 +309,7 @@
     </section>
 
     <section id="belt-cost-considerations">
-        <h2>11. Belt Cost Considerations</h2>
+        <h2 class="border-top pt-4 mt-5">11. Belt Cost Considerations</h2>
         <p>On long conveyor systems, the belt is often the largest single capital expense. A single-drive conveyor accumulates tension continuously along the belt profile and requires a higher-rated belt to withstand the peak tension. This increases component specifications and costs throughout the system.</p>
         <p>Higher-rated belts require larger pulleys to limit carcass fatigue, which in turn require increased shaft diameters and higher-capacity spherical roller bearings. Higher-rated belts require extended transition distances and longer terminal structures, while the increased belt and component mass increases the dead load on terminals and foundations.</p>
         <p>Adding an intermediate drive at a suitable location reduces the maximum operating tension. Despite the mechanical cost reductions, intermediate drives are not always justified due to infrastructure requirements for remote power distribution. Installing an intermediate drive at a remote location requires an additional local electrical substation and VFDs.</p>
@@ -321,7 +317,7 @@
         <p>Base the decision to implement an intermediate drive on a techno-economic analysis. Compare the capital savings from downgrading the belt carcass, pulleys, and structural steel against the capital cost of the intermediate drive station, electrical substation, fibre-optic network, and VFDs. The intermediate drive is viable only when mechanical savings exceed the cost of the additional drive station, electrical infrastructure, and ongoing operational maintenance.</p>
     </section>
 
-    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
         Published <time datetime="2026-11-21">21 November 2026</time><br>
         Updated <time datetime="2026-11-21">21 November 2026</time><br>
         &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>

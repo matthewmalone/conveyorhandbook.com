@@ -67,19 +67,15 @@
 </head>
 <body>
 
-<a href="#main" class="skip-link">Skip to main content</a>
-
-<div class="topbar">
-    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         Contents
     </button>
 </div>
 
 <nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
-    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
     <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
     <hr class="my-2">
     <p class="sidebar-heading mb-2">
@@ -173,7 +169,7 @@
     </section>
 
     <section id="idler-load-ratings">
-        <h2>2. Idler Load Ratings</h2>
+        <h2 class="border-top pt-4 mt-5">2. Idler Load Ratings</h2>
         <p>In North America, idlers are specified by Conveyor Equipment Manufacturers Association (CEMA) load class. Elsewhere, standards define roller geometry only, and the bearing, shaft, and shell are selected or engineered to suit the application load and speed.</p>
     </section>
 
@@ -204,7 +200,7 @@
         <p>ISO/DIN and CEMA rollers are not interchangeable. ISO/DIN shells of 108, 133, and 159 mm [4.25, 5.25 and 6.25 in] are approximately 6 mm [0.25 in] larger than CEMA 102, 127 and 152 mm [4, 5 and 6 in] shells, and roll length and shaft end dimensions differ.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 1: Standard ISO / DIN Roller Outside Diameters</caption>
+                <caption class="small fw-semibold">Table 1: Standard ISO / DIN Roller Outside Diameters</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Roller Outside Diameter mm [in]</th>
@@ -224,7 +220,7 @@
         <p>ISO 1537 and DIN 22107 define roller face length by belt width, giving supplier-independent frame geometry.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 2: ISO / DIN Roller Face Lengths, 3-Roll Equal Sets</caption>
+                <caption class="small fw-semibold">Table 2: ISO / DIN Roller Face Lengths, 3-Roll Equal Sets</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Belt Width mm [in]</th>
@@ -248,7 +244,7 @@
         <p>Internal components are matched to the shell diameter and length to achieve the required dynamic load rating.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 3: Typical Engineered Internal Components</caption>
+                <caption class="small fw-semibold">Table 3: Typical Engineered Internal Components</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Shaft Diameter at Bearing mm [in]</th>
@@ -277,11 +273,11 @@
     </section>
 
     <section id="bearing-technology">
-        <h2>3. Bearing Technology</h2>
+        <h2 class="border-top pt-4 mt-5">3. Bearing Technology</h2>
         <p>Bearing selection determines the load capacity, fatigue life, and rotating resistance of an idler roll. The table below compares Deep Groove Ball Bearings (DGBB), Tapered Roller Bearings (TRB) and Spherical Roller Bearings (SRB).</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 4: Idler Bearing Type Comparison</caption>
+                <caption class="small fw-semibold">Table 4: Idler Bearing Type Comparison</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Property</th>
@@ -308,11 +304,11 @@
     </section>
 
     <section id="idler-shaft-configurations">
-        <h2>4. Idler Shaft Configurations</h2>
+        <h2 class="border-top pt-4 mt-5">4. Idler Shaft Configurations</h2>
         <p>Bearing size sets load capacity. Shaft construction between the bearing seats determines roll mass, shaft slope at the bearing, handling weight, and cost.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 5: Idler Shaft Configuration Comparison</caption>
+                <caption class="small fw-semibold">Table 5: Idler Shaft Configuration Comparison</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Property</th>
@@ -338,7 +334,7 @@
     </section>
 
     <section id="roller-diameter-bearing-life-and-resistance">
-        <h2>5. Roller Diameter, Bearing Life and Resistance</h2>
+        <h2 class="border-top pt-4 mt-5">5. Roller Diameter, Bearing Life and Resistance</h2>
     </section>
 
     <section id="bearing-life-l10h-and-roll-diameter">
@@ -359,7 +355,7 @@
     </section>
 
     <section id="idler-sealing-systems">
-        <h2>6. Idler Sealing Systems</h2>
+        <h2 class="border-top pt-4 mt-5">6. Idler Sealing Systems</h2>
     </section>
 
     <section id="seal-type-comparison">
@@ -367,7 +363,7 @@
         <p>Seal design determines rotating resistance, contamination exclusion, and bearing life.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 6: Seal Type Comparison</caption>
+                <caption class="small fw-semibold">Table 6: Seal Type Comparison</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Parameter</th>
@@ -397,7 +393,7 @@
     </section>
 
     <section id="idler-configurations-and-frame-geometry">
-        <h2>7. Idler Configurations and Frame Geometry</h2>
+        <h2 class="border-top pt-4 mt-5">7. Idler Configurations and Frame Geometry</h2>
         <p>The arrangement and quantity of rollers in the idler frame determine how the belt is folded, how the load is supported, and the transverse bending imposed on the carcass.</p>
     </section>
 
@@ -405,7 +401,7 @@
         <h3>7.1 Idler Frame Roller Quantity</h3>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 7: Idler Frame Roller Configurations</caption>
+                <caption class="small fw-semibold">Table 7: Idler Frame Roller Configurations</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Property</th>
@@ -437,7 +433,7 @@
         <h3>7.2 Inline Versus Offset Versus Garland (Suspended) Configurations</h3>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 8: Inline, Offset, and Garland Configurations</caption>
+                <caption class="small fw-semibold">Table 8: Inline, Offset, and Garland Configurations</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -468,14 +464,14 @@
     </section>
 
     <section id="shell-materials-and-coatings">
-        <h2>8. Shell Materials and Coatings</h2>
+        <h2 class="border-top pt-4 mt-5">8. Shell Materials and Coatings</h2>
     </section>
 
     <section id="idler-shell-materials-comparison">
         <h3>8.1 Idler Shell Materials Comparison</h3>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 9: Shell Materials Comparison</caption>
+                <caption class="small fw-semibold">Table 9: Shell Materials Comparison</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Property</th>
@@ -502,7 +498,7 @@
         <p>Coating selection is driven primarily by the dominant wear mechanism and secondarily by the environment.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 10: Shell Surface Treatment Comparison</caption>
+                <caption class="small fw-semibold">Table 10: Shell Surface Treatment Comparison</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -536,14 +532,14 @@
     </section>
 
     <section id="roller-dimensional-tolerances">
-        <h2>9. Roller Dimensional Tolerances</h2>
+        <h2 class="border-top pt-4 mt-5">9. Roller Dimensional Tolerances</h2>
         <p>The roundness and diametrical accuracy of an idler roll affect conveyor vibration, noise, and belt scale accuracy.</p>
         <p>TIR is the difference between the maximum and minimum radial readings over one full rotation. Elevated TIR produces harmonic belt flap and accelerates bearing failure.</p>
         <p>TIR alone does not capture localised defects such as flat spots or weld seams. Maximum Indicated Slope (MIS) addresses this limitation and is defined as the maximum indicated runout per 6 deg of roller rotation.</p>
         <p>A roller may exhibit acceptable TIR yet carry a high MIS, indicating a sharp geometric step on the surface. Specify both TIR and MIS for weigh idlers and high-speed overland conveyors.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 11: Roller Diameter Tolerance, TIR, and MIS</caption>
+                <caption class="small fw-semibold">Table 11: Roller Diameter Tolerance, TIR, and MIS</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Roller Shell Material / Type</th>
@@ -565,7 +561,7 @@
     </section>
 
     <section id="dynamic-balancing-and-unbalance-limits">
-        <h2>10. Dynamic Balancing and Unbalance Limits</h2>
+        <h2 class="border-top pt-4 mt-5">10. Dynamic Balancing and Unbalance Limits</h2>
         <p>A roller can have acceptable TIR yet still vibrate if mass distribution within the rotating assembly is uneven. This condition is residual unbalance.</p>
     </section>
 
@@ -602,7 +598,7 @@
         <h3>10.4 Balancing Methods</h3>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 12: Idler Balancing Comparison</caption>
+                <caption class="small fw-semibold">Table 12: Idler Balancing Comparison</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Feature / Criteria</th>
@@ -622,11 +618,11 @@
     </section>
 
     <section id="impact-idlers-and-impact-cradles">
-        <h2>11. Impact Idlers and Impact Cradles</h2>
+        <h2 class="border-top pt-4 mt-5">11. Impact Idlers and Impact Cradles</h2>
         <p>At transfer points, chute discharges, and crusher feeds, falling material generates impact forces several times the steady-state belt load. Standard carrying idlers are not designed for repeated impact loading.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 13: Impact Idlers and Impact Cradles Comparison</caption>
+                <caption class="small fw-semibold">Table 13: Impact Idlers and Impact Cradles Comparison</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Parameter</th>
@@ -650,7 +646,7 @@
     </section>
 
     <section id="idler-spacing-and-belt-sag">
-        <h2>12. Idler Spacing and Belt Sag</h2>
+        <h2 class="border-top pt-4 mt-5">12. Idler Spacing and Belt Sag</h2>
         <p>Idler spacing and belt tension determine belt sag between supports. Limit carry-side sag to 1.5% to 2.0% of idler spacing and return-side sag to 3.0%.</p>
     </section>
 
@@ -665,7 +661,7 @@
         <p>Carry spacing is set by loaded sag and idler load rating. Return spacing is wider because the return belt carries only its own mass.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 14: Carry and Return Spacing Ratios</caption>
+                <caption class="small fw-semibold">Table 14: Carry and Return Spacing Ratios</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Parameter</th>
@@ -688,7 +684,7 @@
     </section>
 
     <section id="belt-tracking-and-self-aligning-training-idlers">
-        <h2>13. Belt Tracking and Self-Aligning (Training) Idlers</h2>
+        <h2 class="border-top pt-4 mt-5">13. Belt Tracking and Self-Aligning (Training) Idlers</h2>
         <p>Off-centre loading, wind, material build-up, and ground movement cause mistracking even on a well-aligned conveyor, resulting in spillage, structure contact and belt edge damage. Self-aligning idlers (tracking or training idlers) are installed at intervals to correct this.</p>
     </section>
 
@@ -723,12 +719,12 @@
     </section>
 
     <section id="idler-frame-corrosion-protection">
-        <h2>14. Idler Frame Corrosion Protection</h2>
+        <h2 class="border-top pt-4 mt-5">14. Idler Frame Corrosion Protection</h2>
         <p>In coastal, underground, chemical plant, fertiliser terminal, and wet tropical environments, the idler frame often fails structurally before the roller bearings reach their L10h life. Select protection by environmental corrosivity, design life, maintenance access, and whether frames are reused or treated as consumables.</p>
         <p>Replace any frame whose roller support slot has widened by more than 2 mm [0.08 in], whatever the protection system.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 15: Idler Frame Corrosion Protection Comparison</caption>
+                <caption class="small fw-semibold">Table 15: Idler Frame Corrosion Protection Comparison</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Property</th>
@@ -759,11 +755,11 @@
     </section>
 
     <section id="underground-and-modular-mounting-roof-hung-versus-floor-mounted-idler-frames">
-        <h2>15. Underground and Modular Mounting: Roof-Hung Versus Floor-Mounted Idler Frames</h2>
+        <h2 class="border-top pt-4 mt-5">15. Underground and Modular Mounting: Roof-Hung Versus Floor-Mounted Idler Frames</h2>
         <p>In underground development mining (longwall coal, potash, trona), the conveyor is temporary and advanced or retreated with the face. Frame mounting differs from surface practice accordingly.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 16: Underground and Modular Mounting Configurations</caption>
+                <caption class="small fw-semibold">Table 16: Underground and Modular Mounting Configurations</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Mounting Configuration</th>
@@ -797,7 +793,7 @@
     </section>
 
     <section id="idler-frame-alignment-tolerances">
-        <h2>16. Idler Frame Alignment Tolerances</h2>
+        <h2 class="border-top pt-4 mt-5">16. Idler Frame Alignment Tolerances</h2>
         <p>Frame alignment governs belt tracking, bearing load, power consumption, and belt scale accuracy. Correctly manufactured rollers in misaligned frames can damage the belt.</p>
     </section>
 
@@ -806,7 +802,7 @@
         <p>Alignment tolerances are specified across four independent geometric axes. Check and correct all four together, as an error in one axis can mask or amplify errors in another.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 17: Idler Frame Alignment Axes</caption>
+                <caption class="small fw-semibold">Table 17: Idler Frame Alignment Axes</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Alignment Aspect</th>
@@ -831,7 +827,7 @@
         <p>Transverse level tolerance is the maximum allowable height difference between left and right wing roll tips on a single idler frame.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 18: Transverse Level Tolerance (Roll / Tilt)</caption>
+                <caption class="small fw-semibold">Table 18: Transverse Level Tolerance (Roll / Tilt)</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Application</th>
@@ -851,7 +847,7 @@
         <p>Longitudinal level tolerance is the maximum allowable vertical deviation of any single idler frame from the design grade line.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 19: Longitudinal Level Tolerance (Pitch / Grade Conformance)</caption>
+                <caption class="small fw-semibold">Table 19: Longitudinal Level Tolerance (Pitch / Grade Conformance)</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Application</th>
@@ -871,7 +867,7 @@
         <p>Horizontal squareness tolerance is the maximum allowable angular deviation of the idler frame axis from true perpendicular to the belt travel direction.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 20: Horizontal Squareness Tolerance (Yaw / Skew)</caption>
+                <caption class="small fw-semibold">Table 20: Horizontal Squareness Tolerance (Yaw / Skew)</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Application</th>
@@ -895,7 +891,7 @@
         <p>Vertical height consistency is the maximum allowable difference in centre roll elevation between any two adjacent idler frames.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 21: Vertical Height Consistency (Frame-to-Frame Step)</caption>
+                <caption class="small fw-semibold">Table 21: Vertical Height Consistency (Frame-to-Frame Step)</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Application</th>
@@ -920,7 +916,7 @@
         <p>For day-to-day maintenance, the diagonal tape check is the first check when investigating a tracking problem. Measure from both ends of the frame to a fixed reference point on the conveyor centreline, or between corresponding points on adjacent frames. Equal readings within tolerance confirm the frame is square. Correct any skew before further investigation. The check requires only a steel tape.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 22: Idler Frame Alignment Methods</caption>
+                <caption class="small fw-semibold">Table 22: Idler Frame Alignment Methods</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Method</th>
@@ -957,7 +953,7 @@
     </section>
 
     <section id="pipe-or-tube-conveyor-idler-arrangements">
-        <h2>17. Pipe (or Tube) Conveyor Idler Arrangements</h2>
+        <h2 class="border-top pt-4 mt-5">17. Pipe (or Tube) Conveyor Idler Arrangements</h2>
         <p>A pipe (tube) conveyor forms the flat belt into a fully enclosed tube after the loading point and opens it back to a flat trough at discharge. The belt is enclosed on all sides by idler rolls arranged in a polygonal panel.</p>
     </section>
 
@@ -1002,7 +998,7 @@
     </section>
 
     <section id="idler-qa-qc-and-factory-acceptance-testing">
-        <h2>18. Idler QA/QC and Factory Acceptance Testing</h2>
+        <h2 class="border-top pt-4 mt-5">18. Idler QA/QC and Factory Acceptance Testing</h2>
         <p>On a long overland conveyor, idler procurement may exceed 10,000 rollers, and a 1% non-conformance rate is then 100 premature field failures. Factory Acceptance Testing (FAT) is the contractual mechanism to verify product meets specification before shipment.</p>
     </section>
 
@@ -1074,7 +1070,7 @@
     </section>
 
     <section id="idler-storage-handling-and-shelf-life">
-        <h2>19. Idler Storage, Handling and Shelf Life</h2>
+        <h2 class="border-top pt-4 mt-5">19. Idler Storage, Handling and Shelf Life</h2>
         <p>Idlers contain factory-filled grease, pressed bearings, and engineered seals. Improper storage, handling, or extended shelf time degrades the roller before installation and is a source of premature failure.</p>
     </section>
 
@@ -1133,11 +1129,11 @@
     </section>
 
     <section id="temperature-effects-on-idler-performance">
-        <h2>20. Temperature Effects on Idler Performance</h2>
+        <h2 class="border-top pt-4 mt-5">20. Temperature Effects on Idler Performance</h2>
         <p>For conveyors operating outside minus 5 to plus 45 deg C [23 to 113 deg F], obtain confirmation from the idler manufacturer that grease, seal compounds, and shell material are rated for the temperature envelope.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 23: High and Low Temperature Idler Specifications</caption>
+                <caption class="small fw-semibold">Table 23: High and Low Temperature Idler Specifications</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Feature / Consideration</th>
@@ -1162,7 +1158,7 @@
     </section>
 
     <section id="noise-and-vibration-considerations">
-        <h2>21. Noise and Vibration Considerations</h2>
+        <h2 class="border-top pt-4 mt-5">21. Noise and Vibration Considerations</h2>
     </section>
 
     <section id="sources-of-idler-noise">
@@ -1186,7 +1182,7 @@
     </section>
 
     <section id="idler-maintenance-inspection-and-failure-modes">
-        <h2>22. Idler Maintenance, Inspection and Failure Modes</h2>
+        <h2 class="border-top pt-4 mt-5">22. Idler Maintenance, Inspection and Failure Modes</h2>
         <p>Replace any idler roller that exhibits a seized bearing, shell wear exceeding 2 mm [0.08 in], visible shaft deflection, or TIR greater than the purchase specification limit. On belt-scale (weigh) idlers, apply the scale manufacturer's TIR limit, typically 0.38 mm [0.015 in].</p>
     </section>
 
@@ -1211,7 +1207,7 @@
     </section>
 
     <section id="lifecycle-cost-analysis-framework">
-        <h2>23. Lifecycle Cost Analysis Framework</h2>
+        <h2 class="border-top pt-4 mt-5">23. Lifecycle Cost Analysis Framework</h2>
         <p>Higher-specification idlers cost more at purchase (CAPEX) but can deliver lower operating expenditure (OPEX) through extended bearing life, reduced power consumption, fewer replacements, and less unplanned downtime.</p>
     </section>
 
@@ -1245,11 +1241,11 @@
     </section>
 
     <section id="idler-fire-prevention-and-fras">
-        <h2>24. Idler Fire Prevention and FRAS</h2>
+        <h2 class="border-top pt-4 mt-5">24. Idler Fire Prevention and FRAS</h2>
         <p>Belt slip over a seized roller generates frictional heat capable of igniting coal dust, methane, or the belt.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 24: International FRAS Standards Comparison</caption>
+                <caption class="small fw-semibold">Table 24: International FRAS Standards Comparison</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Jurisdiction</th>
@@ -1271,11 +1267,11 @@
     </section>
 
     <section id="idler-standards-cross-reference">
-        <h2>25. Idler Standards Cross-Reference</h2>
+        <h2 class="border-top pt-4 mt-5">25. Idler Standards Cross-Reference</h2>
         <p>No single standard covers all aspects of idler specification. The table provides the starting point for identifying which standards apply to each aspect of the idler design.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 25: Idler Standards Cross-Reference</caption>
+                <caption class="small fw-semibold">Table 25: Idler Standards Cross-Reference</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Standard</th>
@@ -1305,11 +1301,11 @@
     </section>
 
     <section id="key-formulae-for-idler-engineering">
-        <h2>26. Key Formulae for Idler Engineering</h2>
+        <h2 class="border-top pt-4 mt-5">26. Key Formulae for Idler Engineering</h2>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 1: Roller RPM and Rotational Frequency (Hz)</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 1: Roller RPM and Rotational Frequency (Hz)</figcaption>
+                <div class="border rounded p-3">
                     <p class="mb-2">The rotational speed of an idler roll is a function of the belt linear speed and the roller outside diameter. It sets the number of bearing revolutions, which governs bearing L10h, grease life and seal wear.</p>
                     <p class="font-monospace mt-3 mb-3">RPM = (V * 60) / (PI * D)<br>f_r = RPM / 60 = V / (PI * D)</p>
                     <p class="mb-1">Where:</p>
@@ -1328,8 +1324,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 2: Total Static Idler Load (F_total)</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 2: Total Static Idler Load (F_total)</figcaption>
+                <div class="border rounded p-3">
                     <p class="mb-2">The total vertical gravitational force acting on one complete carrying idler set:</p>
                     <p class="font-monospace mt-3 mb-3">Metric: F_total = (W_b + W_m) * g * S_i<br>Imperial: F_total = (W_b + W_m) * S_i</p>
                     <p class="mb-1">Where:</p>
@@ -1348,8 +1344,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 3: Equivalent Dynamic Bearing Load (P)</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 3: Equivalent Dynamic Bearing Load (P)</figcaption>
+                <div class="border rounded p-3">
                     <p class="mb-2">Multiply the static radial load (F_r) by impact and environmental factors to obtain the Equivalent Dynamic Load (P).</p>
                     <p class="font-monospace mt-3 mb-3">P = F_r * K_impact * K_env</p>
                     <p class="mb-1">Where:</p>
@@ -1367,7 +1363,7 @@
         </div>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 26: Dynamic Load Multipliers (K-Factors)</caption>
+                <caption class="small fw-semibold">Table 26: Dynamic Load Multipliers (K-Factors)</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Operating Condition</th>
@@ -1389,8 +1385,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 4: L10h Bearing Life (ISO 281)</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 4: L10h Bearing Life (ISO 281)</figcaption>
+                <div class="border rounded p-3">
                     <p class="mb-2">The basic rating life of a rolling element bearing in hours:</p>
                     <p class="font-monospace mt-3 mb-3">L10h = (1,000,000 / (60 * RPM)) * (C / P)^p</p>
                     <p class="mb-1">Where:</p>
@@ -1409,8 +1405,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 5: Absolute Belt Sag (y) and Sag Percentage (%)</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 5: Absolute Belt Sag (y) and Sag Percentage (%)</figcaption>
+                <div class="border rounded p-3">
                     <p class="mb-2">The vertical distance the belt drops between two idler sets, modelled as a parabolic approximation of the catenary:</p>
                     <p class="font-monospace mt-3 mb-3">y = [(W_b + W_m) * g * S_i^2] / (8 * T)</p>
                     <p class="mb-2">The sag of the belt expressed as a percentage of the idler spacing:</p>
@@ -1433,8 +1429,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 6: Maximum Allowable Idler Spacing from Sag Limit</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 6: Maximum Allowable Idler Spacing from Sag Limit</figcaption>
+                <div class="border rounded p-3">
                     <p class="mb-2">Rearranging the sag equation gives the maximum idler spacing for a design sag limit:</p>
                     <p class="font-monospace mt-3 mb-3">S_i_max = (8 * T * Sag_limit) / ((W_b + W_m) * g * 100)</p>
                     <p class="mb-2">Rearranged for tension, it gives the minimum belt tension required to hold the sag limit at a given spacing, which sets the minimum take-up tension:</p>
@@ -1458,8 +1454,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 7: Idler Indentation Rolling Resistance (F_ir)</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 7: Idler Indentation Rolling Resistance (F_ir)</figcaption>
+                <div class="border rounded p-3">
                     <p class="mb-2">Indentation rolling resistance is the energy dissipated in the viscoelastic bottom cover as it deforms over each roll. On long horizontal conveyors it can be the largest component of main resistance. The governing proportional relationship (one-dimensional Winkler foundation model) is:</p>
                     <p class="font-monospace mt-3 mb-3">F_ir is proportional to (F_v^(4/3) * h^(1/3) * tan_delta) / (D^(2/3) * E_rubber^(1/3) * b^(1/3))</p>
                     <p class="mb-1">Where:</p>
@@ -1480,8 +1476,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 8: Shaft Deflection and Bearing Misalignment Angle</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 8: Shaft Deflection and Bearing Misalignment Angle</figcaption>
+                <div class="border rounded p-3">
                     <p class="mb-2">If the slope at the bearing journal exceeds the bearing manufacturer's limit, typically 10 arc-minutes or less for deep groove ball bearings and 2 to 4 arc-minutes for tapered roller bearings, increase the shaft diameter regardless of the L10h result.</p>
                     <p class="mb-2">Modelling the idler shaft as a simply supported beam with symmetrical point loads applied at the bearing centres, the standard equations are:</p>
                     <p class="font-monospace mt-3 mb-3">I = (PI * d^4) / 64<br>theta = [F_r * A * (L_s - 2 * A)] / [2 * E * I]<br>theta_arcmin = theta * (180 / PI) * 60<br>y_max = [(F_r * A) / (24 * E * I)] * (3 * L_s^2 - 4 * A^2)</p>
@@ -1506,8 +1502,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 9: Material Mass per Metre (W_m) from Design Tonnage</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 9: Material Mass per Metre (W_m) from Design Tonnage</figcaption>
+                <div class="border rounded p-3">
                     <p class="mb-2">Before calculating idler loads, convert the design throughput (t/h) into linear mass density (kg/m). W_m is the input for idler load, bearing load and belt sag calculations.</p>
                     <p class="font-monospace mt-3 mb-3">Metric: W_m = Q / (3.6 * V)<br>Imperial: W_m = (Q * 2,000) / (60 * V)</p>
                     <p class="mb-1">Where:</p>
@@ -1526,8 +1522,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 10: Dynamic Impact Force at Loading Points (F_impact)</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 10: Dynamic Impact Force at Loading Points (F_impact)</figcaption>
+                <div class="border rounded p-3">
                     <p class="mb-2">At every transfer or loading point, the falling material stream strikes the belt with a force that exceeds the steady-state gravitational load. This impact force governs the selection of impact idlers, impact cradles, and the belt's impact rating.</p>
                     <p class="font-monospace mt-3 mb-3">F_impact = m_lump * SQRT(2 * g * h_d) / t_contact</p>
                     <p class="mb-1">Where:</p>
@@ -1549,8 +1545,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 11: Bearing Speed Factor (n_dm) and Grease Speed Limit</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 11: Bearing Speed Factor (n_dm) and Grease Speed Limit</figcaption>
+                <div class="border rounded p-3">
                     <p class="mb-2">The speed capability of a grease-lubricated bearing is governed by the product of the rotational speed (RPM) and the bearing mean diameter. Exceeding the grease manufacturer's rated limit causes accelerated thermal degradation of the lubricant.</p>
                     <p class="font-monospace mt-3 mb-3">n_dm = RPM * d_m<br>d_m = (d_bore + D_outer) / 2</p>
                     <p class="mb-1">Where:</p>
@@ -1577,8 +1573,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 12: Estimated Grease Service Life (t_grease)</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 12: Estimated Grease Service Life (t_grease)</figcaption>
+                <div class="border rounded p-3">
                     <p class="mb-2">For sealed-for-life idler bearings (no re-lubrication port), estimate grease life using the bearing manufacturer's empirical relubrication method:</p>
                     <p class="font-monospace mt-3 mb-3">t_grease = K_t * K_f * ((14,000,000 / (RPM * SQRT(d_bore))) - 4 * d_bore)</p>
                     <p class="mb-1">Where:</p>
@@ -1601,8 +1597,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 13: Idler Roll Critical (Resonant) Speed</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 13: Idler Roll Critical (Resonant) Speed</figcaption>
+                <div class="border rounded p-3">
                     <p class="mb-2">The first bending natural frequency of the roll shell is set by its length, cross-section and material. If the rotational speed of the roller approaches this frequency, the shell will resonate, causing vibration, belt flap, and accelerated bearing failure.</p>
                     <p class="font-monospace mt-3 mb-3">f_critical = (PI / 2) * (1 / L_shell^2) * SQRT(E * I_shell / (rho * A_shell))<br>N_critical = f_critical * 60</p>
                     <p class="mb-1">Where:</p>
@@ -1630,8 +1626,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 14: Main Resistance (F_H), DIN 22101 Method</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 14: Main Resistance (F_H), DIN 22101 Method</figcaption>
+                <div class="border rounded p-3">
                     <p class="mb-2">DIN 22101 combines the main resistances (idler rotating resistance, belt indentation rolling resistance, and belt and material flexure resistance) into a single artificial friction factor applied to the moving masses.</p>
                     <p class="font-monospace mt-3 mb-3">F_H = f * L * g * (W_r + (2 * W_b + W_m) * COS(delta))</p>
                     <p class="mb-1">Where:</p>
@@ -1653,7 +1649,7 @@
         </div>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 27: Typical DIN 22101 Friction Factors (f)</caption>
+                <caption class="small fw-semibold">Table 27: Typical DIN 22101 Friction Factors (f)</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Installation Condition</th>
@@ -1677,7 +1673,7 @@
         </div>
     </section>
 
-    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
         Published <time datetime="2026-11-21">21 November 2026</time><br>
         Updated <time datetime="2026-11-22">22 November 2026</time><br>
         &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>

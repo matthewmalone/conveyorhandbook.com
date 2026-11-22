@@ -67,19 +67,15 @@
 </head>
 <body>
 
-<a href="#main" class="skip-link">Skip to main content</a>
-
-<div class="topbar">
-    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         Contents
     </button>
 </div>
 
 <nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
-    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
     <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
     <hr class="my-2">
     <p class="sidebar-heading mb-2">
@@ -129,11 +125,11 @@
     </section>
 
     <section id="gearbox-types">
-        <h2>2. Gearbox Types</h2>
+        <h2 class="border-top pt-4 mt-5">2. Gearbox Types</h2>
         <p>Conveyor gearboxes fall into the following common types.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 1: Gearbox Type Comparison</caption>
+                <caption class="small fw-semibold">Table 1: Gearbox Type Comparison</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Specification</th>
@@ -154,10 +150,10 @@
     </section>
 
     <section id="drive-mounting-types">
-        <h2>3. Drive Mounting Types</h2>
+        <h2 class="border-top pt-4 mt-5">3. Drive Mounting Types</h2>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 2: Drive Mounting Comparison</caption>
+                <caption class="small fw-semibold">Table 2: Drive Mounting Comparison</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Feature</th>
@@ -178,11 +174,11 @@
     </section>
 
     <section id="shaft-connection-methods">
-        <h2>4. Shaft Connection Methods</h2>
+        <h2 class="border-top pt-4 mt-5">4. Shaft Connection Methods</h2>
         <p>The connection between the gearbox output and the pulley shaft sets shaft fatigue life, maintainability and ease of disassembly.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 3: Shaft-to-Hub Connection Methods</caption>
+                <caption class="small fw-semibold">Table 3: Shaft-to-Hub Connection Methods</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Connection Method</th>
@@ -204,7 +200,7 @@
     </section>
 
     <section id="torque-arms-and-reaction-systems">
-        <h2>5. Torque Arms and Reaction Systems</h2>
+        <h2 class="border-top pt-4 mt-5">5. Torque Arms and Reaction Systems</h2>
         <p>On shaft-mounted drives, the torque arm transfers the gearbox housing reaction torque to the conveyor frame, preventing housing rotation.</p>
     </section>
 
@@ -219,7 +215,7 @@
         <p>Specify the torque arm lug as an Original Equipment Manufacturer (OEM) machined component rated for the peak torque. Do not field-weld lugs to housings. Welding introduces localised heat-affected zones and can distort bearing bores.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 4: Torque Arm End Connections</caption>
+                <caption class="small fw-semibold">Table 4: Torque Arm End Connections</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Parameter</th>
@@ -242,11 +238,11 @@
     </section>
 
     <section id="mechanical-service-factors">
-        <h2>6. Mechanical Service Factors</h2>
+        <h2 class="border-top pt-4 mt-5">6. Mechanical Service Factors</h2>
         <p>Apply a mechanical service factor to the nominal motor rating when selecting the gearbox, to accommodate dynamic shock loads, starting torque transients, and fatigue. Calculate gear tooth bending and contact stress ratings to ISO 6336 / American Gear Manufacturers Association (AGMA) 2001 for helical stages, and ISO 10300 / AGMA 2003 for bevel stages. Calculate bearing fatigue life to ISO 281 (L10m modified rating life method). The service factor covers the dynamic load spectrum not represented by the nominal motor rating.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 5: Minimum Gearbox Mechanical Service Factors by Starting Method</caption>
+                <caption class="small fw-semibold">Table 5: Minimum Gearbox Mechanical Service Factors by Starting Method</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Starting Method</th>
@@ -271,7 +267,7 @@
     </section>
 
     <section id="thermal-ratings-and-lubricant-selection">
-        <h2>7. Thermal Ratings and Lubricant Selection</h2>
+        <h2 class="border-top pt-4 mt-5">7. Thermal Ratings and Lubricant Selection</h2>
         <p>Lubricant thermal degradation is a common gearbox failure mode in heavy-duty service and typically precedes mechanical tooth breakage. Evaluate gearboxes against both a mechanical rating (torque capacity) and a thermal rating (heat dissipation capacity before lubricant degradation). For a given heat dissipation capacity, the lubricant temperature limit sets the gearbox thermal limit.</p>
         <p>Limit continuous sump temperature to 90 deg C [194 deg F] for mineral gear oils. Exceeding this threshold accelerates oxidation and reduces viscosity and film thickness, increasing gear wear (scuffing and micropitting). Synthetic Polyalphaolefin (PAO) and Polyalkylene Glycol (PAG) gear oils operate continuously at sump temperatures of 100 to 110 deg C [212 to 230 deg F] while maintaining operational viscosity, increasing the gearbox thermal rating.</p>
         <p>In high-ambient environments, temperatures can exceed 45 deg C [113 deg F], compounded by direct solar radiation.</p>
@@ -279,11 +275,11 @@
     </section>
 
     <section id="cooling-methods">
-        <h2>8. Cooling Methods</h2>
+        <h2 class="border-top pt-4 mt-5">8. Cooling Methods</h2>
         <p>Apply a thermal safety factor of at least 1.2. Where the safety factor falls below 1.2, upsize the gearbox frame or add active cooling. Extended low-speed operation through fluid couplings or VFD jogging generates continuous thermal load with reduced fan cooling, and requires an increased thermal safety factor.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 6: Comparison of Cooling Methods</caption>
+                <caption class="small fw-semibold">Table 6: Comparison of Cooling Methods</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Cooling Strategy</th>
@@ -302,11 +298,11 @@
     </section>
 
     <section id="gearbox-thermal-safety-factors">
-        <h2>9. Gearbox Thermal Safety Factors</h2>
+        <h2 class="border-top pt-4 mt-5">9. Gearbox Thermal Safety Factors</h2>
         <p>Evaluate motor and gearbox thermal limits separately. The gearbox thermal safety factor confirms that the casing surface area and auxiliary cooling systems can dissipate heat generated by friction, churning losses and prolonged starting loads. It is the ratio of the thermal rating, corrected for ambient temperature and cooling method, to the transmitted power.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 7: Minimum Thermal Safety Factors by Starting Method</caption>
+                <caption class="small fw-semibold">Table 7: Minimum Thermal Safety Factors by Starting Method</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Starting Method</th>
@@ -330,7 +326,7 @@
     </section>
 
     <section id="gearbox-housing-design-and-mounting-interfaces">
-        <h2>10. Gearbox Housing Design and Mounting Interfaces</h2>
+        <h2 class="border-top pt-4 mt-5">10. Gearbox Housing Design and Mounting Interfaces</h2>
         <p>Housing design dictates field maintainability, thermal dissipation, and rigging requirements.</p>
     </section>
 
@@ -346,11 +342,11 @@
     </section>
 
     <section id="gearbox-lubrication-systems">
-        <h2>11. Gearbox Lubrication Systems</h2>
+        <h2 class="border-top pt-4 mt-5">11. Gearbox Lubrication Systems</h2>
         <p>The lubrication system determines whether the oil reaches all gear meshes and bearings at the required flow rate and temperature.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 8: Splash versus Forced Lubrication</caption>
+                <caption class="small fw-semibold">Table 8: Splash versus Forced Lubrication</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Feature</th>
@@ -379,7 +375,7 @@
         <p>ISO Viscosity Grade (VG) is specified at 40 deg C [104 deg F] per ISO 3448. Synthetic lubricants have a higher viscosity index, allowing a lower ISO VG grade to achieve required operating viscosity at elevated sump temperatures and reduce churning losses.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 9: Typical Viscosity Grade Selection by Sump Temperature</caption>
+                <caption class="small fw-semibold">Table 9: Typical Viscosity Grade Selection by Sump Temperature</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Sump Temperature Range deg C [deg F]</th>
@@ -402,7 +398,7 @@
         <p><strong>Rule of Thumb:</strong> Every 10 deg C [18 deg F] increase in sustained operating temperature approximately doubles the oil oxidation rate and halves effective lubricant life (Arrhenius relationship).</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 10: Oil Change Intervals</caption>
+                <caption class="small fw-semibold">Table 10: Oil Change Intervals</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Lubricant</th>
@@ -430,11 +426,11 @@
     </section>
 
     <section id="gearbox-specification-and-procurement-datasheet">
-        <h2>12. Gearbox Specification and Procurement Datasheet</h2>
+        <h2 class="border-top pt-4 mt-5">12. Gearbox Specification and Procurement Datasheet</h2>
         <p>Specification omissions risk operational non-compliance and component failure. Issue the datasheet below as the governing contractual document.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 11: Drive Minimum Purchase Specification</caption>
+                <caption class="small fw-semibold">Table 11: Drive Minimum Purchase Specification</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Category</th>
@@ -531,11 +527,11 @@
     </section>
 
     <section id="gearbox-spare-parts-and-inventory-strategy">
-        <h2>13. Gearbox Spare Parts and Inventory Strategy</h2>
+        <h2 class="border-top pt-4 mt-5">13. Gearbox Spare Parts and Inventory Strategy</h2>
         <p>Balance spares holding costs against downtime from unplanned failures. Set inventory levels by system criticality, procurement lead times, and internal maintenance capabilities.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 12: Recommended Gearbox Spares by Category</caption>
+                <caption class="small fw-semibold">Table 12: Recommended Gearbox Spares by Category</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Category</th>
@@ -564,7 +560,7 @@
     </section>
 
     <section id="gearbox-failure-modes-and-root-cause-analysis">
-        <h2>14. Gearbox Failure Modes and Root Cause Analysis</h2>
+        <h2 class="border-top pt-4 mt-5">14. Gearbox Failure Modes and Root Cause Analysis</h2>
         <p>The tables below list common gearbox failure modes with root cause, diagnostic evidence and corrective action. Diagnose the root cause before repair to avoid repeat failure.</p>
     </section>
 
@@ -572,7 +568,7 @@
         <h3>14.1 Gear Tooth Failures</h3>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 13: Gear Tooth Failure Modes</caption>
+                <caption class="small fw-semibold">Table 13: Gear Tooth Failure Modes</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Failure Mode</th>
@@ -597,7 +593,7 @@
         <h3>14.2 Bearing Failures</h3>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 14: Bearing Failure Modes</caption>
+                <caption class="small fw-semibold">Table 14: Bearing Failure Modes</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Failure Mode</th>
@@ -621,7 +617,7 @@
         <h3>14.3 Shaft and Assembly Failures</h3>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 15: Shaft and Assembly Failure Modes</caption>
+                <caption class="small fw-semibold">Table 15: Shaft and Assembly Failure Modes</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Failure Mode</th>
@@ -644,7 +640,7 @@
         <h3>14.4 Lubrication, Contamination, and Thermal Failures</h3>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 16: Lubrication, Contamination, and Thermal Failure Modes</caption>
+                <caption class="small fw-semibold">Table 16: Lubrication, Contamination, and Thermal Failure Modes</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Failure Mode</th>
@@ -664,7 +660,7 @@
         </div>
     </section>
 
-    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
         Published <time datetime="2026-11-21">21 November 2026</time><br>
         Updated <time datetime="2026-11-22">22 November 2026</time><br>
         &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>

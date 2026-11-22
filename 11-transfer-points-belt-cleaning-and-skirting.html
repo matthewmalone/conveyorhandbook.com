@@ -67,19 +67,15 @@
 </head>
 <body>
 
-<a href="#main" class="skip-link">Skip to main content</a>
-
-<div class="topbar">
-    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         Contents
     </button>
 </div>
 
 <nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
-    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
     <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
     <hr class="my-2">
     <p class="sidebar-heading mb-2">
@@ -121,7 +117,7 @@
     </section>
 
     <section id="transfer-chute-design-and-material-trajectory">
-        <h2>2. Transfer Chute Design and Material Trajectory</h2>
+        <h2 class="border-top pt-4 mt-5">2. Transfer Chute Design and Material Trajectory</h2>
         <p>Transfer chute design dictates top cover wear, dust generation, material degradation, and flow continuity. Centre-load bulk material at a velocity and direction matching the receiving belt.</p>
     </section>
 
@@ -130,7 +126,7 @@
         <p>Discharged bulk material follows an approximately parabolic trajectory governed by gravity, belt speed, pulley radius and material bed depth. If the impact wall is too close to the head pulley, material ricochets backward onto the belt cleaners. If it is too far, material misses the wear liners and wears the unlined chute wall.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 1: Material Trajectory Calculation Method Comparison</caption>
+                <caption class="small fw-semibold">Table 1: Material Trajectory Calculation Method Comparison</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Method</th>
@@ -148,8 +144,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 1: Material Centroid Velocity</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 1: Material Centroid Velocity</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">v_c = v_b * R_c / (R_p + t_b)</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -168,8 +164,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 2: Discharge Separation Angle</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 2: Discharge Separation Angle</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">COS(theta) = v_c^2 / (g * R_c)</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -189,8 +185,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 3: Free-Fall Trajectory Coordinates</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 3: Free-Fall Trajectory Coordinates</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">X = v_c * t * COS(theta)<br>Y = v_c * t * SIN(theta) + 0.5 * g * t^2</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -217,7 +213,7 @@
         <p>The two primary chute fabrication methods are true curved (rolled plate) and lobster-back (faceted flat plate). Both maintain continuous material flow but differ in fabrication and maintenance cost.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 2: Chute Fabrication Comparison</caption>
+                <caption class="small fw-semibold">Table 2: Chute Fabrication Comparison</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Feature</th>
@@ -256,7 +252,7 @@
         <p>Line transfer chute structural steel with sacrificial wear liners. Liner selection governs service life, and incorrect selection results in impact fracture, accelerated abrasive wear or material bridging.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 3: Chute Wear Liner Selection and Materials</caption>
+                <caption class="small fw-semibold">Table 3: Chute Wear Liner Selection and Materials</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Material</th>
@@ -291,7 +287,7 @@
         <p>Where structural layout cannot reduce drop heights sufficiently, select a configuration from the table below to control impact velocity and attrition.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 4: Transfer Chute Configurations</caption>
+                <caption class="small fw-semibold">Table 4: Transfer Chute Configurations</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Chute Type</th>
@@ -315,7 +311,7 @@
     </section>
 
     <section id="material-degradation-and-attrition">
-        <h2>3. Material Degradation and Attrition</h2>
+        <h2 class="border-top pt-4 mt-5">3. Material Degradation and Attrition</h2>
         <p>Friable bulk materials (e.g. coal, calcined coke, chemical granules, sintered ore and agricultural pellets) degrade during transfer, and the fines generated by high-velocity impact reduce product yield, increase dust generation and degrade downstream process efficiency. Degradation correlates directly with particle impact velocity at the chute wall or receiving belt, which is governed by discharge velocity and vertical drop height.</p>
         <p>Published indices (e.g. the Hardgrove Grindability Index or the brittleness test friability value) indicate material susceptibility to degradation. Establish the permissible drop height by site-specific drop testing of product samples. In the absence of test data, typical maximum drop heights are:</p>
         <ul>
@@ -327,7 +323,7 @@
     </section>
 
     <section id="skirting-and-load-containment">
-        <h2>4. Skirting and Load Containment</h2>
+        <h2 class="border-top pt-4 mt-5">4. Skirting and Load Containment</h2>
     </section>
 
     <section id="skirtboard-length-and-geometry">
@@ -345,7 +341,7 @@
         <p>Support the skirted zone with continuous impact beds or close-pitch impact idlers to maintain the liner clearances and reduce material entrapment.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 5: Impact Bed versus Idler for Skirted Zone</caption>
+                <caption class="small fw-semibold">Table 5: Impact Bed versus Idler for Skirted Zone</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Load Support Configuration</th>
@@ -369,7 +365,7 @@
         <p>For high-dust applications, specify a dual-lip seal. The primary lip contains bulk material, while the secondary lip lies flat on the belt edge to capture particulate emissions.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 6: Skirting Configuration Comparison</caption>
+                <caption class="small fw-semibold">Table 6: Skirting Configuration Comparison</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Configuration</th>
@@ -389,11 +385,11 @@
     </section>
 
     <section id="belt-cleaning-systems">
-        <h2>5. Belt Cleaning Systems</h2>
+        <h2 class="border-top pt-4 mt-5">5. Belt Cleaning Systems</h2>
         <p>Fines and moisture adhere to the belt cover after discharge over the head pulley. Remove this carryback in stages and direct it into the discharge chute.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 7: Belt Cleaner Types</caption>
+                <caption class="small fw-semibold">Table 7: Belt Cleaner Types</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Feature</th>
@@ -419,7 +415,7 @@
     </section>
 
     <section id="dust-control-and-environmental-management">
-        <h2>6. Dust Control and Environmental Management</h2>
+        <h2 class="border-top pt-4 mt-5">6. Dust Control and Environmental Management</h2>
         <p>Transfer points are the main source of fugitive dust, as falling material displaces air and the turbulent updraft carries fines out through skirt gaps. Control dust by wet suppression, dry extraction or enclosure.</p>
     </section>
 
@@ -428,7 +424,7 @@
         <p>Wet suppression systems increase cohesive forces between particles to retain dust within the material flow, or capture airborne dust using fine water mist.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 8: Dust Suppression Systems</caption>
+                <caption class="small fw-semibold">Table 8: Dust Suppression Systems</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Method</th>
@@ -464,7 +460,7 @@
         <p>Crosswind accelerating over the troughed belt profile lowers the pressure above the belt and generates aerodynamic lift. Lift can raise an empty or lightly loaded belt out of the idler trough and, at sufficient wind speed, displace it from the conveyor structure. Provide wind protection where sustained crosswind exceeds 20 m/s [45 mph].</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 9: Wind Guard Methods and Options</caption>
+                <caption class="small fw-semibold">Table 9: Wind Guard Methods and Options</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Protection Method</th>
@@ -486,7 +482,7 @@
     </section>
 
     <section id="conveyor-to-conveyor-speed-and-direction-alignment">
-        <h2>7. Conveyor-to-Conveyor Speed and Direction Alignment</h2>
+        <h2 class="border-top pt-4 mt-5">7. Conveyor-to-Conveyor Speed and Direction Alignment</h2>
         <p>The interface between the discharging and receiving conveyors imposes two mechanical demands on the receiving belt: a re-acceleration tension load, and a lateral momentum correction where the two conveyors are not parallel.</p>
     </section>
 
@@ -495,8 +491,8 @@
         <p>Where a rock box or dead-stop transfer is used, bulk material arrives at the receiving belt with near-zero forward velocity. The receiving belt accelerates the material to belt speed through friction between the belt top cover and the material, adding tension to the carrying strand and wearing the cover while the material slips.</p>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 4: Material Acceleration Tension</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 4: Material Acceleration Tension</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">Metric: T_am = (Q / 3.6) * (v_b - v_0)<br>Imperial: T_am = 2.8755 * 10^-4 * Q * (v_b - v_0)</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -513,8 +509,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 5: Material Acceleration Length</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 5: Material Acceleration Length</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">Metric: L_a = (v_b^2 - v_0^2) / (2 * mu_m * g)<br>Imperial: L_a = (v_b^2 - v_0^2) / (7,200 * mu_m * g)</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -535,7 +531,7 @@
         </div>
     </section>
 
-    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
         Published <time datetime="2026-11-21">21 November 2026</time><br>
         Updated <time datetime="2026-11-21">21 November 2026</time><br>
         &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>

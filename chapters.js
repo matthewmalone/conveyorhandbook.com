@@ -69,12 +69,14 @@
     if (index && !index.children.length) {
         chapters.forEach(function (ch, i) {
             var li = document.createElement('li');
+            li.className = 'list-group-item list-group-item-action p-0';
             var a = document.createElement('a');
             a.href = ch[0];
-            a.appendChild(span('chapter-num', 'Chapter ' + (i + 1)));
-            var text = span('chapter-text', '');
-            text.appendChild(span('chapter-title', ch[1]));
-            if (ch[2]) { text.appendChild(span('chapter-desc', ch[2])); }
+            a.className = 'd-flex gap-3 px-1 py-3 text-body text-decoration-none';
+            a.appendChild(span('chapter-num text-body-secondary', 'Chapter ' + (i + 1)));
+            var text = span('d-flex flex-column', '');
+            text.appendChild(span('fw-medium', ch[1]));
+            if (ch[2]) { text.appendChild(span('small text-body-secondary', ch[2])); }
             a.appendChild(text);
             li.appendChild(a);
             index.appendChild(li);

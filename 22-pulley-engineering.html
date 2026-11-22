@@ -67,19 +67,15 @@
 </head>
 <body>
 
-<a href="#main" class="skip-link">Skip to main content</a>
-
-<div class="topbar">
-    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         Contents
     </button>
 </div>
 
 <nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
-    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
     <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
     <hr class="my-2">
     <p class="sidebar-heading mb-2">
@@ -134,7 +130,7 @@
     </section>
 
     <section id="pulley-diameters">
-        <h2>2. Pulley Diameters</h2>
+        <h2 class="border-top pt-4 mt-5">2. Pulley Diameters</h2>
         <p>Pulley diameter governs belt bending fatigue life and depends on carcass thickness, carcass modulus, operating tension and wrap angle. An undersized pulley overstrains the outer fibres to fracture and compresses the inner fibres, causing crinkling and delamination.</p>
     </section>
 
@@ -144,7 +140,7 @@
         <p>The standard does not apply to carcasses thicker than 20 mm [0.79 in], belts with intermediate rubber or plastic layers thicker than 0.8 mm [0.03 in] between plies, hot materials above 100 deg C [212 deg F] or ambient temperatures below minus 40 deg C [minus 40 deg F].</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 1: ISO 3684 Pulley Types</caption>
+                <caption class="small fw-semibold">Table 1: ISO 3684 Pulley Types</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Pulley Type</th>
@@ -170,7 +166,7 @@
         <p>Values for polyester-polyamide (EP) belts are based on belt rating and are conservative relative to carcass-thickness based values. Where the belt manufacturer publishes minimum diameters for the specific carcass, those values govern.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 2: Minimum Pulley Diameters for Multi-Ply EP Fabric Belts (Belt Tension Greater Than 60% of Rated Working Tension)</caption>
+                <caption class="small fw-semibold">Table 2: Minimum Pulley Diameters for Multi-Ply EP Fabric Belts (Belt Tension Greater Than 60% of Rated Working Tension)</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">ISO Designation</th>
@@ -196,7 +192,7 @@
         </div>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 3: Minimum Pulley Diameters for Multi-Ply EP Fabric Belts (Belt Tension 30% to 60% of Rated Working Tension, One-Step Shift Applied)</caption>
+                <caption class="small fw-semibold">Table 3: Minimum Pulley Diameters for Multi-Ply EP Fabric Belts (Belt Tension 30% to 60% of Rated Working Tension, One-Step Shift Applied)</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">ISO Designation</th>
@@ -222,7 +218,7 @@
         </div>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 4: Minimum Pulley Diameters for Multi-Ply EP Fabric Belts (Belt Tension Less Than 30% of Rated Working Tension, Two-Step Shift Applied)</caption>
+                <caption class="small fw-semibold">Table 4: Minimum Pulley Diameters for Multi-Ply EP Fabric Belts (Belt Tension Less Than 30% of Rated Working Tension, Two-Step Shift Applied)</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">ISO Designation</th>
@@ -253,7 +249,7 @@
         <p>Solid woven belts, primarily used in underground mining as polyvinyl chloride (PVC) fire resistant anti-static (FRAS) belting, have a single integrally woven carcass with no separate plies to delaminate. They can often tolerate smaller pulley diameters than an equivalent strength plied belt.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 5: Minimum Pulley Diameters for Solid Woven (PVC/FRAS) Belts</caption>
+                <caption class="small fw-semibold">Table 5: Minimum Pulley Diameters for Solid Woven (PVC/FRAS) Belts</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Belt Breaking Strength kN/m [PIW]</th>
@@ -282,7 +278,7 @@
         <p>Steel cord belt pulley diameters are governed by cord diameter and construction. The high axial stiffness of the cords generates high bending stress at each pulley.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 6: Minimum Pulley Diameters for Steel Cord Belts (Belt Tension Greater Than 60% of Rated Working Tension)</caption>
+                <caption class="small fw-semibold">Table 6: Minimum Pulley Diameters for Steel Cord Belts (Belt Tension Greater Than 60% of Rated Working Tension)</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Designation</th>
@@ -310,7 +306,7 @@
         </div>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 7: Minimum Pulley Diameters for Steel Cord Belts (Belt Tension 30% to 60% of Rated Working Tension, One-Step Shift Applied)</caption>
+                <caption class="small fw-semibold">Table 7: Minimum Pulley Diameters for Steel Cord Belts (Belt Tension 30% to 60% of Rated Working Tension, One-Step Shift Applied)</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Designation</th>
@@ -338,7 +334,7 @@
         </div>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 8: Minimum Pulley Diameters for Steel Cord Belts (Belt Tension Less Than 30% of Rated Working Tension, Two-Step Shift Applied)</caption>
+                <caption class="small fw-semibold">Table 8: Minimum Pulley Diameters for Steel Cord Belts (Belt Tension Less Than 30% of Rated Working Tension, Two-Step Shift Applied)</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Designation</th>
@@ -370,7 +366,7 @@
     </section>
 
     <section id="pulley-geometry">
-        <h2>3. Pulley Geometry</h2>
+        <h2 class="border-top pt-4 mt-5">3. Pulley Geometry</h2>
     </section>
 
     <section id="parallel-face-pulleys-versus-crowned-pulleys">
@@ -381,7 +377,7 @@
         <p>Limit crowned pulleys to bucket elevators and to low-tension tail and take-up pulleys on low-modulus plied fabric belts with adequate lead-in length. Where crowning is required, calculate crown geometry to maintain centreline tension below the carcass fatigue limit. Apply the minimum pulley diameter at the smallest diameter of the crowned face.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 9: Pulley Crowning Method Comparison</caption>
+                <caption class="small fw-semibold">Table 9: Pulley Crowning Method Comparison</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Feature / Characteristic</th>
@@ -419,7 +415,7 @@
         <p>Unbalanced rotating mass generates centrifugal force that causes vibration, bearing fatigue, structural fatigue of the conveyor frame and non-uniform lagging wear. Balance all pulleys and check runout before commissioning.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 10: Static Versus Dynamic Balancing</caption>
+                <caption class="small fw-semibold">Table 10: Static Versus Dynamic Balancing</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Feature</th>
@@ -441,7 +437,7 @@
         <h3>3.4 Pulley Manufacturing Tolerances</h3>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 11: Pulley Manufacturing Tolerances</caption>
+                <caption class="small fw-semibold">Table 11: Pulley Manufacturing Tolerances</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Component / Category</th>
@@ -476,7 +472,7 @@
     </section>
 
     <section id="pulley-lagging">
-        <h2>4. Pulley Lagging</h2>
+        <h2 class="border-top pt-4 mt-5">4. Pulley Lagging</h2>
         <p>Pulley lagging is a sacrificial, high-friction layer bonded to the steel pulley shell that resists macroscopic slip on drives, sheds water and dirt, and protects the shell from abrasive wear. On drive pulleys, a higher friction coefficient lowers the minimum slack side tension (T2) and belt tension, which can reduce the required carcass strength.</p>
     </section>
 
@@ -484,7 +480,7 @@
         <h3>4.1 Lagging Materials and Compounds</h3>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 12: Comparative Properties of Pulley Lagging Materials</caption>
+                <caption class="small fw-semibold">Table 12: Comparative Properties of Pulley Lagging Materials</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Property / Feature</th>
@@ -523,7 +519,7 @@
         </ul>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 13: Ceramic Tile Coverage Configurations</caption>
+                <caption class="small fw-semibold">Table 13: Ceramic Tile Coverage Configurations</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Coverage Ratio</th>
@@ -550,7 +546,7 @@
         <p>Groove all rubber lagging on drive pulleys. Grooves provide an escape path for water, dirt and trapped air, improving traction and reducing the risk of hydroplaning.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 14: Standard Rubber Lagging Groove Patterns</caption>
+                <caption class="small fw-semibold">Table 14: Standard Rubber Lagging Groove Patterns</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Lagging Type / Pattern</th>
@@ -576,7 +572,7 @@
         <p>The bonding method determines the maximum effective tension the pulley can transmit before the lagging debonds. Cold and hot vulcanising apply only to rubber and rubber-backed ceramic lagging, not to epoxy-bonded direct ceramic or cast polyurethane.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 15: Cold Vulcanised Versus Hot Vulcanised Lagging Application</caption>
+                <caption class="small fw-semibold">Table 15: Cold Vulcanised Versus Hot Vulcanised Lagging Application</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Feature / Parameter</th>
@@ -611,7 +607,7 @@
         <p>The lagging type significantly affects the total pulley price.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 16: Relative Cost Indices for Lagged Pulleys</caption>
+                <caption class="small fw-semibold">Table 16: Relative Cost Indices for Lagged Pulleys</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Pulley and Lagging</th>
@@ -636,7 +632,7 @@
         <p>Check the maximum continuous service temperature of the lagging when specifying pulleys for hot material such as sinter, clinker, hot pellets or kiln discharge.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 17: Temperature Limits of Pulley Lagging Materials</caption>
+                <caption class="small fw-semibold">Table 17: Temperature Limits of Pulley Lagging Materials</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Lagging Material</th>
@@ -658,7 +654,7 @@
     </section>
 
     <section id="tension-transfer-and-lagging-shear-mechanics">
-        <h2>5. Tension Transfer and Lagging Shear Mechanics</h2>
+        <h2 class="border-top pt-4 mt-5">5. Tension Transfer and Lagging Shear Mechanics</h2>
         <p>Lagging shear failure and macroscopic slip are governed by interfacial mechanics. Motor torque is transferred from the steel shell to the belt through surface friction and shear strain in the lagging.</p>
     </section>
 
@@ -681,7 +677,7 @@
         <p>Lagging limits are governed by material compliance. High-compliance elastomers absorb shear internally but are susceptible to cohesive tearing under peak loads. Low-compliance materials transfer shear directly to the bond line, causing delamination or brittle fracture under shell flexure.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 18: Lagging Shear Mechanics and Performance Limits</caption>
+                <caption class="small fw-semibold">Table 18: Lagging Shear Mechanics and Performance Limits</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Lagging Type</th>
@@ -702,7 +698,7 @@
     </section>
 
     <section id="pulley-structural-design-and-shaft-sizing">
-        <h2>6. Pulley Structural Design and Shaft Sizing</h2>
+        <h2 class="border-top pt-4 mt-5">6. Pulley Structural Design and Shaft Sizing</h2>
         <p>Pulleys are structural components subject to cyclic rotating bending, in which the resultant of T1 and T2 generates multi-axial stresses. Inadequate fatigue assessment of the shaft, locking assemblies and end-discs can cause fatigue fracture.</p>
     </section>
 
@@ -716,7 +712,7 @@
         <p>Designing solely for static yield permits fatigue cracks to initiate at stress concentrations such as shoulders, keyways and locking assembly edges. Assess shaft fatigue against the material endurance limit to AS 1403 or DIN 743.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 19: Comparison of AS 1403 and DIN 743 Shaft Design Standards</caption>
+                <caption class="small fw-semibold">Table 19: Comparison of AS 1403 and DIN 743 Shaft Design Standards</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Standard</th>
@@ -744,7 +740,7 @@
         <p>Bearing self-alignment capacity typically exceeds the misalignment tolerance of rigid labyrinth seals. Limit the angular deflection of the shaft at the bearing journal to 5 to 10 arc-minutes (0.08 to 0.17 deg) to preserve seal integrity.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 20: Conveyor Pulley Bearing Technologies</caption>
+                <caption class="small fw-semibold">Table 20: Conveyor Pulley Bearing Technologies</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Parameter</th>
@@ -783,7 +779,7 @@
         <p>The end-disc connects the hub to the shell and transfers shaft bending and torque into the shell. Three configurations are in common use:</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 21: End-Disc Configuration Comparison</caption>
+                <caption class="small fw-semibold">Table 21: End-Disc Configuration Comparison</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Feature</th>
@@ -842,7 +838,7 @@
         <p>Pulley bearing housings are commonly referred to as plummer blocks or pillow blocks. Housing material governs load capacity, impact resistance, corrosion behaviour and suitability for the operating environment.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 22: Comparative Properties of Bearing Housing Materials</caption>
+                <caption class="small fw-semibold">Table 22: Comparative Properties of Bearing Housing Materials</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Property</th>
@@ -882,11 +878,11 @@
     </section>
 
     <section id="standard-formulas-for-conveyor-pulleys">
-        <h2>7. Standard Formulas for Conveyor Pulleys</h2>
+        <h2 class="border-top pt-4 mt-5">7. Standard Formulas for Conveyor Pulleys</h2>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 1: Equivalent Torque for Locking Assemblies</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 1: Equivalent Torque for Locking Assemblies</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">T_eq = SQRT(M_t^2 + (k_b * M_b)^2)</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -906,8 +902,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 2: Area Moment of Inertia for a Solid Circular Shaft</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 2: Area Moment of Inertia for a Solid Circular Shaft</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">I = (PI * d^4) / 64</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -923,8 +919,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 3: Shaft Hub Bending Moment</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 3: Shaft Hub Bending Moment</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">M_b = F_r * A<br>F_r = R_total / 2</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -941,8 +937,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 4: Shaft Slope at the Bearing</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 4: Shaft Slope at the Bearing</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">Theta_bearing = (F_r * A * (L - A)) / (2 * E * I)<br>Theta_arcmin = Theta_bearing * (180 / PI) * 60</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -963,8 +959,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 5: Maximum Shaft Deflection at Mid-Span</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 5: Maximum Shaft Deflection at Mid-Span</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">y_max = ((F_r * A) / (24 * E * I)) * (3 * L^2 - 4 * A^2)</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -983,8 +979,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 6: Shaft Slope at the Hub</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 6: Shaft Slope at the Hub</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">Theta_hub = (F_r * A * (L - 2 * A)) / (2 * E * I)</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -1003,8 +999,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 7: Belt Radial Pressure on the Pulley Shell</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 7: Belt Radial Pressure on the Pulley Shell</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">p_r = (2 * T_max) / (D * W_b)</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -1021,8 +1017,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 8: Pulley Shell Membrane Hoop Stress</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 8: Pulley Shell Membrane Hoop Stress</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">Sigma_hoop = (p_r * D) / (2 * t_s)</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -1042,8 +1038,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 9: Pulley Shell Bending Stress</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 9: Pulley Shell Bending Stress</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">Sigma_shell = M_shell / Z_shell<br>M_shell = (R_belt * (2 * L_s - W_b)) / 8<br>Z_shell = (PI * (D^4 - D_i^4)) / (32 * D)</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -1065,8 +1061,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 10: End-Disc Bending Stress from Shaft Deflection</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 10: End-Disc Bending Stress from Shaft Deflection</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">Sigma_disc = (K * E * t_d * Theta_hub) / (R_shell - R_hub)</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -1089,8 +1085,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 11: Torsional Shear Stress in the Shaft</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 11: Torsional Shear Stress in the Shaft</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">Tau_shaft = (16 * M_t) / (PI * d^3)</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -1107,8 +1103,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 12: Completely Reversed Bending Stress in the Shaft</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 12: Completely Reversed Bending Stress in the Shaft</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">Sigma_shaft = (32 * M_b) / (PI * d^3)</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -1125,8 +1121,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 13: Shell Edge Bending Stress at the End-Disc</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 13: Shell Edge Bending Stress at the End-Disc</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">Lambda = (3 * (1 - nu^2) / (R_s^2 * t_s^2))^(1/4)<br>M_x = (p_r / (2 * Lambda^2)) * e^(-Lambda * x) * (SIN(Lambda * x) - COS(Lambda * x))<br>Sigma_axial = (6 * M_x) / t_s^2</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -1151,8 +1147,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 14: Flat End-Disc Radial Bending Stress</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 14: Flat End-Disc Radial Bending Stress</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">Sigma_flat_radial = (3 * E * t_d * Theta_hub * D_shell) / (D_shell^2 - D_hub^2)</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -1174,8 +1170,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 15: Profiled (Turbine) End-Disc Thickness Curve</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 15: Profiled (Turbine) End-Disc Thickness Curve</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">t_r = t_hub * SQRT(R_hub / r)</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -1192,8 +1188,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 16: T-Bottom (T-Section) Shell Weld Axial Stress</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 16: T-Bottom (T-Section) Shell Weld Axial Stress</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">Sigma_T_weld = ABS((3 * p_r) / (Lambda^2 * t_s^2) * e^(-Lambda * L_T) * (SIN(Lambda * L_T) - COS(Lambda * L_T)))</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -1215,8 +1211,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 17: Resultant Radial Force from Belt Tension</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 17: Resultant Radial Force from Belt Tension</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">R_belt = SQRT(T1^2 + T2^2 - 2 * T1 * T2 * COS(theta))</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -1233,8 +1229,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 18: Combined Shaft Stress (von Mises Equivalent)</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 18: Combined Shaft Stress (von Mises Equivalent)</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">Sigma_eq = SQRT(Sigma_shaft^2 + 3 * Tau_shaft^2)</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -1250,8 +1246,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 19: Bearing Basic Rating Life</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 19: Bearing Basic Rating Life</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">L10h = (10^6 / (60 * n_pulley)) * (C / P)^p</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -1269,8 +1265,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 20: Effective Motor Torque at the Pulley</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 20: Effective Motor Torque at the Pulley</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">M_t = (P_motor * eta_drive * 10^3) / omega_pulley<br>omega_pulley = (2 * PI * n_pulley) / 60<br>n_pulley = (60,000 * v) / (PI * D_L)</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -1291,7 +1287,7 @@
         </div>
     </section>
 
-    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
         Published <time datetime="2026-11-21">21 November 2026</time><br>
         Updated <time datetime="2026-11-22">22 November 2026</time><br>
         &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>

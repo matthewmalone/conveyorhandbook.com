@@ -67,19 +67,15 @@
 </head>
 <body>
 
-<a href="#main" class="skip-link">Skip to main content</a>
-
-<div class="topbar">
-    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         Contents
     </button>
 </div>
 
 <nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
-    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
     <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
     <hr class="my-2">
     <p class="sidebar-heading mb-2">
@@ -121,12 +117,12 @@
     </section>
 
     <section id="feeder-type-technical-comparison">
-        <h2>2. Feeder Type Technical Comparison</h2>
+        <h2 class="border-top pt-4 mt-5">2. Feeder Type Technical Comparison</h2>
         <p>Specify belt feeders for pre-screened or secondary-crushed material (lump size typically less than 300 mm [12 in]), head heights less than 10 m [33 ft] and applications requiring higher extraction speeds.</p>
         <p>Specify apron feeders for Run-of-Mine (ROM) extraction from dump pockets, primary crusher feed under deep bins and applications where lump size, impact severity or head load exceeds belt feeder limits.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 1: Feeder Type Technical Comparison</caption>
+                <caption class="small fw-semibold">Table 1: Feeder Type Technical Comparison</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Parameter</th>
@@ -161,11 +157,11 @@
     </section>
 
     <section id="mass-flow-versus-funnel-flow">
-        <h2>3. Mass Flow versus Funnel Flow</h2>
+        <h2 class="border-top pt-4 mt-5">3. Mass Flow versus Funnel Flow</h2>
         <p>Undersized hopper openings induce cohesive arching, restricting discharge. Base hopper geometry on laboratory shear testing of the bulk material to quantify unconfined yield strength, bulk density as a function of consolidation stress, effective angle of internal friction and wall friction angle.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 2: Mass Flow versus Funnel Flow</caption>
+                <caption class="small fw-semibold">Table 2: Mass Flow versus Funnel Flow</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Feature / Characteristic</th>
@@ -186,11 +182,11 @@
     </section>
 
     <section id="wall-friction-angles-and-liner-selection">
-        <h2>4. Wall Friction Angles and Liner Selection</h2>
+        <h2 class="border-top pt-4 mt-5">4. Wall Friction Angles and Liner Selection</h2>
         <p>Mass flow requires hopper walls steeper than the limit set by the wall friction angle. Low-friction liners permit shallower walls and reduce vessel height, subject to the wear, impact and temperature limits in the table below.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 3: Wear Material Property Comparison</caption>
+                <caption class="small fw-semibold">Table 3: Wear Material Property Comparison</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Material</th>
@@ -224,11 +220,11 @@
     </section>
 
     <section id="hopper-wall-angles-for-mass-flow">
-        <h2>5. Hopper Wall Angles for Mass Flow</h2>
+        <h2 class="border-top pt-4 mt-5">5. Hopper Wall Angles for Mass Flow</h2>
         <p>Tabulated angles are maximum allowable wall angles for mass flow, measured from vertical, so a smaller angle is a steeper wall. Conical values are cone half-angles and wedge values are the wall inclination of a plane-flow geometry.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 4: Maximum Hopper Wall Angles from Vertical for Mass Flow</caption>
+                <caption class="small fw-semibold">Table 4: Maximum Hopper Wall Angles from Vertical for Mass Flow</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Material</th>
@@ -367,12 +363,12 @@
     </section>
 
     <section id="pressure-relief-breaks-and-stepped-hopper-geometry">
-        <h2>6. Pressure Relief Breaks and Stepped Hopper Geometry</h2>
+        <h2 class="border-top pt-4 mt-5">6. Pressure Relief Breaks and Stepped Hopper Geometry</h2>
         <p>In high-aspect-ratio silos, a continuous converging hopper transmits high vertical consolidating stress to the discharge opening under initial fill (active stress) conditions, and the resulting head load can exceed feeder shear and breakaway torque capacities.</p>
         <p>Segment the hopper with vertical expansion zones or stepped inclinations to induce bulk solid dilation, which reduces consolidation strength and the active vertical stress at the feeder interface.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 5: Hopper Head Load Relief Configurations</caption>
+                <caption class="small fw-semibold">Table 5: Hopper Head Load Relief Configurations</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Configuration</th>
@@ -393,11 +389,11 @@
     </section>
 
     <section id="dead-bed-protection-sacrificial-material-cushion">
-        <h2>7. Dead Bed Protection (Sacrificial Material Cushion)</h2>
+        <h2 class="border-top pt-4 mt-5">7. Dead Bed Protection (Sacrificial Material Cushion)</h2>
         <p>Maintain a dead bed of material above the discharge opening during normal operation to attenuate impact energy. Direct free-fall onto an empty hopper can fracture wear liners, damage conveyor belts and apron pans, and initiate fatigue cracking.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 6: Dead Bed Protection Requirements</caption>
+                <caption class="small fw-semibold">Table 6: Dead Bed Protection Requirements</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Category</th>
@@ -415,11 +411,11 @@
     </section>
 
     <section id="bin-impact-protection-systems">
-        <h2>8. Bin Impact Protection Systems</h2>
+        <h2 class="border-top pt-4 mt-5">8. Bin Impact Protection Systems</h2>
         <p>Install replaceable impact-resistant elements on bin structural zones exposed to direct material impact, particularly the impact plate at the load point and the upper hopper walls. These elements limit shell plate deformation and perforation, and provide a sacrificial wear surface replaceable without cutting and re-welding the primary structure.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 7: Bin Impact Protection Liner Systems</caption>
+                <caption class="small fw-semibold">Table 7: Bin Impact Protection Liner Systems</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Type</th>
@@ -444,7 +440,7 @@
     </section>
 
     <section id="hopper-and-discharge-geometry">
-        <h2>9. Hopper and Discharge Geometry</h2>
+        <h2 class="border-top pt-4 mt-5">9. Hopper and Discharge Geometry</h2>
     </section>
 
     <section id="upper-hopper-geometry">
@@ -452,7 +448,7 @@
         <p>The upper hopper geometry governs gravity flow. Correct geometry reduces bridging, ratholing and material hang-up.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 8: Upper Hopper Geometry Features</caption>
+                <caption class="small fw-semibold">Table 8: Upper Hopper Geometry Features</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Geometry Feature</th>
@@ -481,7 +477,7 @@
         <p>The lower feeder hopper geometry controls the discharge. Correct geometry lets material decompress, shear smoothly and transition onto the feeder and to the next stage without spillage or belt damage.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 9: Lower Hopper Geometry Features</caption>
+                <caption class="small fw-semibold">Table 9: Lower Hopper Geometry Features</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Geometry Feature</th>
@@ -507,11 +503,11 @@
     </section>
 
     <section id="active-bulk-flow-aids">
-        <h2>10. Active Bulk Flow Aids</h2>
+        <h2 class="border-top pt-4 mt-5">10. Active Bulk Flow Aids</h2>
         <p>Even with correct mass flow geometry and low-friction liners, cohesive materials (e.g. wet clays, bauxite or frozen coal) may still bridge or rathole due to fluctuating moisture content or prolonged storage. When passive geometric design is insufficient, install active flow aids to break blockages and restore material flow into the feeder shear plane.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 10: Flow Aid Systems</caption>
+                <caption class="small fw-semibold">Table 10: Flow Aid Systems</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Flow Aid System</th>
@@ -531,7 +527,7 @@
     </section>
 
     <section id="feeder-belt-selection">
-        <h2>11. Feeder Belt Selection</h2>
+        <h2 class="border-top pt-4 mt-5">11. Feeder Belt Selection</h2>
         <p>Belt feeder selection is governed by tension and load support, not speed. The controlling load case is breakaway under an initially filled hopper, where shear resistance across the outlet aperture dominates.</p>
     </section>
 
@@ -540,7 +536,7 @@
         <p>Establish the inputs below before nominating any belt construction.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 11: Belt Selection Criteria for Feeders</caption>
+                <caption class="small fw-semibold">Table 11: Belt Selection Criteria for Feeders</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Input</th>
@@ -568,7 +564,7 @@
         <p>Belt ply count is set by the greater of the tensile requirement and the load-support requirement. Two-ply constructions satisfy many rating requirements but are not suited to feeder duty, because carcass thickness governs transverse load support and impact distribution.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 12: Feeder Belt Minimum Ply Count</caption>
+                <caption class="small fw-semibold">Table 12: Feeder Belt Minimum Ply Count</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Duty</th>
@@ -593,7 +589,7 @@
         <p>Specify abrasion-resistant cover grades as a minimum. Use AS 1332 grade N / ISO 14890 L / DIN 22102 grade Y for normal duty, and AS 1332 grade M / ISO 14890 H / DIN 22102 grade X for cutting, gouging and impact from large lumps. Use ISO 14890 D / DIN 22102 grade W where sliding abrasion governs.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 13: Feeder Belt Top Cover Thickness Guideline</caption>
+                <caption class="small fw-semibold">Table 13: Feeder Belt Top Cover Thickness Guideline</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Duty</th>
@@ -616,7 +612,7 @@
         <p>Bottom cover thickness is set by the belt support type. The values below are starting thicknesses for tender enquiry. Check the resulting selection against the top-to-bottom cover ratio limit of approximately 3:1.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 14: Feeder Belt Bottom Cover Thickness Guideline</caption>
+                <caption class="small fw-semibold">Table 14: Feeder Belt Bottom Cover Thickness Guideline</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Belt Support Type</th>
@@ -640,7 +636,7 @@
         <p>A breaker ply distributes point impact, limits cover penetration, resists longitudinal ripping and improves mechanical fastener retention. It does not contribute to the belt tensile rating and is not counted in the ply designation. Rip protection is not a substitute for tramp metal detection and removal in the materials handling circuit.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 15: Feeder Belt Breaker Ply Guideline</caption>
+                <caption class="small fw-semibold">Table 15: Feeder Belt Breaker Ply Guideline</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Parameter</th>
@@ -660,14 +656,14 @@
     </section>
 
     <section id="feeder-belt-tension-and-drive-power">
-        <h2>12. Feeder Belt Tension and Drive Power</h2>
+        <h2 class="border-top pt-4 mt-5">12. Feeder Belt Tension and Drive Power</h2>
         <p>Feeder drive sizing is governed by two load cases. The initial fill case sets breakaway torque, while the flow case sets continuous running duty.</p>
         <p>Under initial fill, material charged into an empty hopper above a stationary feeder develops an active stress field and high vertical stress at the shear plane. Once discharge commences, the stress field converts to a passive arched state in which the hopper walls carry a greater share of the material weight, and the vertical load at the outlet falls substantially. Initial fill loads are typically 2 to 4 times established flow loads.</p>
         <p>Time consolidation during extended shutdowns increases shear strength at the shear plane, and refilling over a stopped feeder restores the initial fill stress field. Retain breakaway capacity for the life of the installation, not only for first fill.</p>
         <p>Compute the vertical shear plane force from measured flow properties using the Jenike or Roberts methods. Select the gearbox against peak breakaway torque with a service factor of 1.5 to 2.0 for feeder duty, and verify the motor, coupling and holdback ratings against the same torque, not against nameplate power.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 16: Effective Tension Components</caption>
+                <caption class="small fw-semibold">Table 16: Effective Tension Components</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Component</th>
@@ -687,7 +683,7 @@
         </div>
     </section>
 
-    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
         Published <time datetime="2026-11-21">21 November 2026</time><br>
         Updated <time datetime="2026-11-21">21 November 2026</time><br>
         &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>

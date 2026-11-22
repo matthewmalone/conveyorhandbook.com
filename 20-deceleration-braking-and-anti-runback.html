@@ -67,19 +67,15 @@
 </head>
 <body>
 
-<a href="#main" class="skip-link">Skip to main content</a>
-
-<div class="topbar">
-    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         Contents
     </button>
 </div>
 
 <nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
-    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
     <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
     <hr class="my-2">
     <p class="sidebar-heading mb-2">
@@ -125,7 +121,7 @@
     </section>
 
     <section id="coasting-and-transfer-chutes">
-        <h2>2. Coasting and Transfer Chutes</h2>
+        <h2 class="border-top pt-4 mt-5">2. Coasting and Transfer Chutes</h2>
         <p>Coasting time is proportional to system inertia and belt speed, and inversely proportional to the net retarding force from running resistance and gravity.</p>
         <p>Keep the receiving conveyor running until the feeding conveyor stops discharging. Otherwise, material discharges onto a stationary belt and blocks the transfer chute. Restarting a buried receiving belt increases breakaway torque and risks drive pulley slip, cover damage and splice overload.</p>
         <p>Where the feeding conveyor coasts longer than the receiving conveyor, delay the receiving conveyor stop through the control sequence for controlled stops. For power loss, specify a brake on the feeding conveyor or install a flywheel on the receiving conveyor.</p>
@@ -133,17 +129,17 @@
     </section>
 
     <section id="brake-application-delay">
-        <h2>3. Brake Application Delay</h2>
+        <h2 class="border-top pt-4 mt-5">3. Brake Application Delay</h2>
         <p>Following a trip or power loss, a spring-applied brake develops torque after a delay while control relays open, hydraulic dump valves de-energise, fluid evacuates the calliper lines and springs close the rotor air gap.</p>
         <p>This sequence typically takes 0.5 to 1.5 s. Obtain the value for the specific brake and hydraulic circuit from the supplier. The conveyor continues to discharge during this delay. Include this travel distance in transfer chute capacity calculations.</p>
     </section>
 
     <section id="anti-runback-devices">
-        <h2>4. Anti-Runback Devices</h2>
+        <h2 class="border-top pt-4 mt-5">4. Anti-Runback Devices</h2>
         <p>Fit an anti-runback device where the net runback force is positive in any load case. Calculate runback force using the lowest credible friction factor. Unrestrained runback causes material spillage at the tail pulley, transfer chute blockages and driveline damage from reverse overspeed.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 1: Anti-Runback Device Types</caption>
+                <caption class="small fw-semibold">Table 1: Anti-Runback Device Types</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Device Type</th>
@@ -167,7 +163,7 @@
         <p>Mounting location determines failure tolerance and cost.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 2: Anti-Runback Device Installation Locations</caption>
+                <caption class="small fw-semibold">Table 2: Anti-Runback Device Installation Locations</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Mounting Configuration</th>
@@ -189,7 +185,7 @@
         <p>When drive power is removed under load, the belt decelerates and gravity reverses it. The stretched belt recoils during holdback engagement and generates a transient tension wave. Locking against this wave produces a snap-back torque greater than the static runback torque. Calculate the dynamic runback torque by applying a dynamic multiplier to the static runback torque, or by dynamic analysis.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 3: Indicative Anti-Runback Dynamic Multipliers</caption>
+                <caption class="small fw-semibold">Table 3: Indicative Anti-Runback Dynamic Multipliers</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Belt Type</th>
@@ -216,7 +212,7 @@
         <p>Different device types may be installed on adjacent drive pulleys where engagement is sequential. A mechanical holdback arrests reverse rotation first. A fail-safe brake, sized to arrest and hold the full load independently, sets at zero speed and holds the belt if the holdback fails. Alternatively, specify torque-limiting holdbacks, which slip at a set torque and promote load sharing.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 4: Redundant Holdback Arrangements</caption>
+                <caption class="small fw-semibold">Table 4: Redundant Holdback Arrangements</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Feature</th>
@@ -243,13 +239,13 @@
     </section>
 
     <section id="braking-systems">
-        <h2>5. Braking Systems</h2>
+        <h2 class="border-top pt-4 mt-5">5. Braking Systems</h2>
         <p>Brakes are required to stop a conveyor faster than its natural coasting time, to prevent a declined conveyor from running away, and to hold the belt at standstill.</p>
         <p>All mechanical conveyor brakes must be fail-safe. Springs apply the brake and electrical, hydraulic or pneumatic power releases it. Loss of power, a blown fuse or a burst hydraulic hose applies the brake.</p>
         <p>Size brake torque from the loads on the conveyor, not from the drive motor rating. A brake rated as a multiple of motor torque can under-brake a declined conveyor, where the regenerative load plus the torque needed to decelerate the moving mass exceeds that multiple. It can also over-brake a horizontal conveyor, where the excess torque raises stopping tension, risks slip at the braked pulley and can lift the belt at concave curves.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 5: Conveyor Braking Systems</caption>
+                <caption class="small fw-semibold">Table 5: Conveyor Braking Systems</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Brake Type</th>
@@ -292,7 +288,7 @@
         <p>The friction coefficient varies with temperature, sliding speed, contact pressure and contamination by water, dust or oil. Specify pad and rotor combinations with tested friction data across the operating envelope.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 6: Brake Pad Types</caption>
+                <caption class="small fw-semibold">Table 6: Brake Pad Types</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Pad Type</th>
@@ -320,7 +316,7 @@
     </section>
 
     <section id="flywheel-and-inertia-control">
-        <h2>6. Flywheel and Inertia Control</h2>
+        <h2 class="border-top pt-4 mt-5">6. Flywheel and Inertia Control</h2>
         <p>Rotating components (motor rotors, couplings, gearbox internals and pulleys), together with belt and material mass, determine system inertia. On complex profiles, inherent inertia can be insufficient to prevent transient tension collapse during an uncontrolled stop. Add a flywheel to increase system inertia.</p>
         <p>A typical application is a predominantly horizontal conveyor terminating in a steep incline to the head pulley e.g. an overland conveyor rising to a discharge structure. On power loss, gravity decelerates the loaded incline while the horizontal section maintains forward momentum. Carry-side tension at the base of the incline collapses. The belt sags, folds at the concave curve and spills material. Installing a head drive flywheel extends the deceleration period and maintains positive tension until the horizontal section stops.</p>
     </section>
@@ -347,7 +343,7 @@
     </section>
 
     <section id="regenerative-downhill-conveyors">
-        <h2>7. Regenerative (Downhill) Conveyors</h2>
+        <h2 class="border-top pt-4 mt-5">7. Regenerative (Downhill) Conveyors</h2>
         <p>A conveyor is regenerative where the net gravitational force on the material exceeds running resistance. Assess every load case, since partial loading can make a conveyor regenerative.</p>
         <p>Treat a loaded declined conveyor as a stored-energy system. Without restraint, the belt accelerates toward a terminal velocity defined by gradient, moving mass and running resistance, which can exceed idler, pulley and belt design limits.</p>
     </section>
@@ -364,12 +360,12 @@
     </section>
 
     <section id="stop-sequencing-and-geometry-specific-control">
-        <h2>8. Stop Sequencing and Geometry-Specific Control</h2>
+        <h2 class="border-top pt-4 mt-5">8. Stop Sequencing and Geometry-Specific Control</h2>
         <p>Distinguish in the control logic between a Category 1 stop, where the VFD ramps the belt to zero speed on an S-curve before removing power, and a Category 0 stop, where power is removed immediately and mechanical brakes apply. Power loss produces an uncontrolled stop equivalent to Category 0. Emergency stops and pull-wire trips may be Category 0 or Category 1 as determined by risk assessment.</p>
         <p>The conveyor profile determines VFD torque commands and brake timing.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 7: Conveyor Geometry Stopping Configurations</caption>
+                <caption class="small fw-semibold">Table 7: Conveyor Geometry Stopping Configurations</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Configuration</th>
@@ -393,13 +389,13 @@
     </section>
 
     <section id="deceleration-limits-for-personnel-safety">
-        <h2>9. Deceleration Limits for Personnel Safety</h2>
+        <h2 class="border-top pt-4 mt-5">9. Deceleration Limits for Personnel Safety</h2>
         <p>For conveyors with adjacent personnel access during operation, limit the emergency deceleration rate to 0.3 m/s2 [0.98 ft/s2] unless a site-specific risk assessment demonstrates otherwise.</p>
         <p>On man-riding conveyors, limit deceleration to prevent riders sliding into fixed equipment. Apply the limit set by the applicable mining regulation and risk assessment. Use 0.1 to 0.15 m/s2 [0.33 to 0.49 ft/s2] as an indicative design range.</p>
         <p>Where the deceleration needed to prevent runaway on a declined conveyor exceeds the personnel limit, prevent exposure with interlocked access gates or man-riding lockout so riders are not present when high deceleration rates apply.</p>
     </section>
 
-    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
         Published <time datetime="2026-11-21">21 November 2026</time><br>
         Updated <time datetime="2026-11-21">21 November 2026</time><br>
         &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>

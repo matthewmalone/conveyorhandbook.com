@@ -67,19 +67,15 @@
 </head>
 <body>
 
-<a href="#main" class="skip-link">Skip to main content</a>
-
-<div class="topbar">
-    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         Contents
     </button>
 </div>
 
 <nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
-    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
     <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
     <hr class="my-2">
     <p class="sidebar-heading mb-2">
@@ -110,7 +106,7 @@
         <p>Manufacturing processes differ across multi-ply fabric, straight-warp, solid woven polyvinyl chloride (PVC), steel cord, aramid and thermoplastic polyurethane (TPU) constructions.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 1: Primary Belt Construction Matrix</caption>
+                <caption class="small fw-semibold">Table 1: Primary Belt Construction Matrix</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Construction Type</th>
@@ -136,11 +132,11 @@
     </section>
 
     <section id="compounding-and-adhesion-treatment">
-        <h2>2. Compounding and Adhesion Treatment</h2>
+        <h2 class="border-top pt-4 mt-5">2. Compounding and Adhesion Treatment</h2>
         <p>Compounding and adhesion treatment are common to all vulcanised rubber constructions. Adhesion between reinforcement and rubber governs delamination resistance and cord pull-out strength.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 2: Compounding and Adhesion Treatment</caption>
+                <caption class="small fw-semibold">Table 2: Compounding and Adhesion Treatment</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Stage or Reinforcement</th>
@@ -161,11 +157,11 @@
     </section>
 
     <section id="multi-ply-fabric-belting">
-        <h2>3. Multi-Ply Fabric Belting</h2>
+        <h2 class="border-top pt-4 mt-5">3. Multi-Ply Fabric Belting</h2>
         <p>Multi-ply belts are built from separately calendered fabric plies bonded by rubber skim coats and cured as a single assembly.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 3: Multi-Ply Fabric Belt Manufacture</caption>
+                <caption class="small fw-semibold">Table 3: Multi-Ply Fabric Belt Manufacture</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Stage</th>
@@ -183,7 +179,7 @@
         </div>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 4: Vulcanisation Press Types</caption>
+                <caption class="small fw-semibold">Table 4: Vulcanisation Press Types</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Press Type</th>
@@ -202,11 +198,11 @@
     </section>
 
     <section id="straight-warp-and-aramid-belting">
-        <h2>4. Straight-Warp and Aramid Belting</h2>
+        <h2 class="border-top pt-4 mt-5">4. Straight-Warp and Aramid Belting</h2>
         <p>Straight-warp belts carry load on uncrimped warp yarns in a single integrally woven carcass, which reduces constructional stretch and yarn-on-yarn abrasion and improves rip propagation resistance and impact fatigue life. Aramid belts are manufactured by the same process.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 5: Straight-Warp and Aramid Belt Manufacture</caption>
+                <caption class="small fw-semibold">Table 5: Straight-Warp and Aramid Belt Manufacture</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Stage</th>
@@ -226,11 +222,11 @@
     </section>
 
     <section id="solid-woven-pvc-belting">
-        <h2>5. Solid Woven PVC Belting</h2>
+        <h2 class="border-top pt-4 mt-5">5. Solid Woven PVC Belting</h2>
         <p>Solid woven belts have an integrally woven carcass saturated with PVC and fused by heat. The interlocked weave has no plies to separate, and the construction is widely used for FRAS-certified underground coal belting.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 6: Solid Woven PVC Belt Manufacture</caption>
+                <caption class="small fw-semibold">Table 6: Solid Woven PVC Belt Manufacture</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Stage</th>
@@ -251,11 +247,11 @@
     </section>
 
     <section id="steel-cord-belting">
-        <h2>6. Steel Cord Belting</h2>
+        <h2 class="border-top pt-4 mt-5">6. Steel Cord Belting</h2>
         <p>Steel cord belts have a single layer of longitudinal galvanised steel cords embedded in core rubber. Without a woven carcass, cord tension and position during manufacture govern belt straightness and tracking.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 7: Steel Cord Belt Manufacture</caption>
+                <caption class="small fw-semibold">Table 7: Steel Cord Belt Manufacture</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Stage</th>
@@ -276,11 +272,11 @@
     </section>
 
     <section id="thermoplastic-polyurethane-belting">
-        <h2>7. Thermoplastic Polyurethane Belting</h2>
+        <h2 class="border-top pt-4 mt-5">7. Thermoplastic Polyurethane Belting</h2>
         <p>TPU belts are thin, low-tension constructions with limited impact capacity, used in food processing, packaging and logistics. They are generally outside the scope of heavy-duty bulk materials handling.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 8: TPU Belt Manufacture</caption>
+                <caption class="small fw-semibold">Table 8: TPU Belt Manufacture</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Stage</th>
@@ -298,11 +294,11 @@
     </section>
 
     <section id="edge-finishing">
-        <h2>8. Edge Finishing</h2>
+        <h2 class="border-top pt-4 mt-5">8. Edge Finishing</h2>
         <p>Select the edge finish to suit the operating environment. Steel cord belts are manufactured with moulded edges to protect the outer cords from corrosion.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 9: Edge Finishing Configurations</caption>
+                <caption class="small fw-semibold">Table 9: Edge Finishing Configurations</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Edge Type</th>
@@ -322,12 +318,12 @@
     </section>
 
     <section id="factory-acceptance-testing">
-        <h2>9. Factory Acceptance Testing</h2>
+        <h2 class="border-top pt-4 mt-5">9. Factory Acceptance Testing</h2>
         <p>Factory Acceptance Testing (FAT) verifies finished belt integrity against the purchase specification. Manufacturing defects, including uneven cord tension, entrapped air and incorrect cure, cannot be rectified in situ and shorten belt life.</p>
         <p>State the required tests, sampling frequency and acceptance criteria in the purchase specification. Destructive tests are performed on samples cut from the belt before shipment.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 10: Belt Testing Standards</caption>
+                <caption class="small fw-semibold">Table 10: Belt Testing Standards</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Test Protocol</th>
@@ -356,7 +352,7 @@
         </div>
     </section>
 
-    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
         Published <time datetime="2026-11-21">21 November 2026</time><br>
         Updated <time datetime="2026-11-21">21 November 2026</time><br>
         &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>

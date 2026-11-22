@@ -67,19 +67,15 @@
 </head>
 <body>
 
-<a href="#main" class="skip-link">Skip to main content</a>
-
-<div class="topbar">
-    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         Contents
     </button>
 </div>
 
 <nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
-    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
     <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
     <hr class="my-2">
     <p class="sidebar-heading mb-2">
@@ -116,14 +112,14 @@
     </section>
 
     <section id="vertical-curves">
-        <h2>2. Vertical Curves</h2>
+        <h2 class="border-top pt-4 mt-5">2. Vertical Curves</h2>
     </section>
 
     <section id="convex-and-concave-vertical-curves">
         <h3>2.1 Convex and Concave Vertical Curves</h3>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 1: Convex and Concave Vertical Curves</caption>
+                <caption class="small fw-semibold">Table 1: Convex and Concave Vertical Curves</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Parameter</th>
@@ -150,7 +146,7 @@
         <p>Evaluate every applicable check against every applicable load case. The largest minimum radius returned by any check governs the curve design.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 2: Load Cases for Vertical Curve Analysis</caption>
+                <caption class="small fw-semibold">Table 2: Load Cases for Vertical Curve Analysis</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Load Case (LC)</th>
@@ -171,7 +167,7 @@
         </div>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 3: Concave (Valley) Vertical Curve Checks</caption>
+                <caption class="small fw-semibold">Table 3: Concave (Valley) Vertical Curve Checks</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Check</th>
@@ -192,7 +188,7 @@
         </div>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 4: Convex (Crest) Vertical Curve Checks</caption>
+                <caption class="small fw-semibold">Table 4: Convex (Crest) Vertical Curve Checks</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Check</th>
@@ -213,7 +209,7 @@
     </section>
 
     <section id="horizontal-curves">
-        <h2>3. Horizontal Curves</h2>
+        <h2 class="border-top pt-4 mt-5">3. Horizontal Curves</h2>
         <p>Using a single continuous belt for a directional change eliminates transfer towers and the associated capital cost, dust generation and maintenance. Horizontal curve radii commonly range from 1,000 to 5,000 m [3,300 to 16,400 ft].</p>
     </section>
 
@@ -229,8 +225,8 @@
         <p>Size the radius from a first-pass balance between the inward tension resultant and the outward gravity component from banking.</p>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 1: Horizontal Curve Equilibrium Radius</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 1: Horizontal Curve Equilibrium Radius</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">Metric: R = T / (m * g * SIN(beta))<br>Imperial: R = T / (w * SIN(beta))</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -272,11 +268,11 @@
     </section>
 
     <section id="idler-transitions">
-        <h2>4. Idler Transitions</h2>
+        <h2 class="border-top pt-4 mt-5">4. Idler Transitions</h2>
         <p>The transition distance is the conveyor length between the last fully troughed idler and the flat terminal pulley. The troughed belt edges sit higher than the centre and travel a longer path to reach the pulley.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 5: Mechanical Failure Modes From Insufficient Transition Distance</caption>
+                <caption class="small fw-semibold">Table 5: Mechanical Failure Modes From Insufficient Transition Distance</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Feature</th>
@@ -299,7 +295,7 @@
         <p>The vertical elevation of the terminal pulley relative to the centre idler roll controls how the geometric strain is distributed.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 6: Terminal Pulley Elevation Geometries</caption>
+                <caption class="small fw-semibold">Table 6: Terminal Pulley Elevation Geometries</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Configuration</th>
@@ -322,7 +318,7 @@
         <p>As the troughed belt flattens onto the pulley, the differential edge path length forces a tension redistribution across the belt width. Edge tension rises and centre tension falls.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 7: Conveyor Belt Minimum Transition Length Criteria</caption>
+                <caption class="small fw-semibold">Table 7: Conveyor Belt Minimum Transition Length Criteria</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Criterion</th>
@@ -341,7 +337,7 @@
         <p>Where belt modulus data is unavailable at preliminary design, approximate the minimum transition distance as the belt width (W) multiplied by the applicable factor.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 8: Minimum Transition Distances as a Multiple of Belt Width</caption>
+                <caption class="small fw-semibold">Table 8: Minimum Transition Distances as a Multiple of Belt Width</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Transition Geometry</th>
@@ -373,7 +369,7 @@
         <p>Limit the gap between successive transition idlers, and between the pulley and the first idler, to the standard carrying idler spacing (typically 1.2 to 1.5 m [4 to 5 ft]). Where the transition distance would leave a larger gap, insert additional intermediate-angle sets to maintain belt support.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 9: Intermediate Transition Idler Requirements</caption>
+                <caption class="small fw-semibold">Table 9: Intermediate Transition Idler Requirements</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Carrying Trough Angle (deg)</th>
@@ -393,7 +389,7 @@
         </div>
     </section>
 
-    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
         Published <time datetime="2026-11-21">21 November 2026</time><br>
         Updated <time datetime="2026-11-21">21 November 2026</time><br>
         &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>

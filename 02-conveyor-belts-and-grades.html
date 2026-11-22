@@ -67,19 +67,15 @@
 </head>
 <body>
 
-<a href="#main" class="skip-link">Skip to main content</a>
-
-<div class="topbar">
-    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         Contents
     </button>
 </div>
 
 <nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
-    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
     <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
     <hr class="my-2">
     <p class="sidebar-heading mb-2">
@@ -143,11 +139,11 @@
     </section>
 
     <section id="belt-constructions">
-        <h2>2. Belt Constructions</h2>
+        <h2 class="border-top pt-4 mt-5">2. Belt Constructions</h2>
         <p>The conveyor belt industry uses three predominant carcass constructions: multi-ply fabric (polyester/nylon EP or PN, nylon/nylon NN and polyester/polyester EE), solid woven (SW) and steel cord (ST). Each has distinct mechanical properties, splicing requirements and application domains.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 1: Belt Construction Selection Comparison</caption>
+                <caption class="small fw-semibold">Table 1: Belt Construction Selection Comparison</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Characteristic</th>
@@ -176,11 +172,11 @@
     </section>
 
     <section id="carcass-reinforcements">
-        <h2>3. Carcass Reinforcements</h2>
+        <h2 class="border-top pt-4 mt-5">3. Carcass Reinforcements</h2>
         <p>The table below lists common carcass reinforcements. Fabric designations state the warp (longitudinal) material first and the weft (transverse) material second, e.g. PN (or EP) denotes a polyester warp and nylon weft.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 2: Carcass Reinforcements</caption>
+                <caption class="small fw-semibold">Table 2: Carcass Reinforcements</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Carcass Type</th>
@@ -211,7 +207,7 @@
     </section>
 
     <section id="belt-carcass-selection">
-        <h2>4. Belt Carcass Selection</h2>
+        <h2 class="border-top pt-4 mt-5">4. Belt Carcass Selection</h2>
         <p>Carcass selection balances flexibility against rigidity. The belt requires sufficient tensile strength to carry the operating tension, adequate transverse rigidity to support material across the idler junctions, sufficient transverse flexibility to conform to the trough and adequate longitudinal flexibility to wrap the pulleys.</p>
         <p>Evaluate five criteria to select the carcass:</p>
         <ul>
@@ -228,7 +224,7 @@
         <p>Establish the applicable regional strength designation, Conveyor Equipment Manufacturers Association (CEMA) or ISO / DIN, before carcass selection.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 3: Regional Belt Strength Designation Systems</caption>
+                <caption class="small fw-semibold">Table 3: Regional Belt Strength Designation Systems</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Designation System</th>
@@ -248,8 +244,8 @@
         <p>Multiply a tension in kN/m by 5.71 to obtain PIW. This conversion changes only the units and applies no safety factor. Because 1 kN/m equals 1 N/mm, the same factor converts N/mm to lbf/in. To obtain a safe working tension from a metric belt's ultimate strength, apply the safety factor as a separate step.</p>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 1: Safe Working Tension from Metric Ultimate Strength</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 1: Safe Working Tension from Metric Ultimate Strength</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">T_s = (5.71 * S_u) / SF</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -298,8 +294,8 @@
         <p>Calculate the required unit working tension:</p>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 2: Required Unit Working Tension</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 2: Required Unit Working Tension</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">T_w = T_max / B</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -327,7 +323,7 @@
         <h3>4.6 Standard Carcass Selection Tables</h3>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 4: Allowable Working Tensions (Standard EP/PN Fabric)</caption>
+                <caption class="small fw-semibold">Table 4: Allowable Working Tensions (Standard EP/PN Fabric)</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">ISO Designation (Ultimate Strength)</th>
@@ -355,7 +351,7 @@
         <p>The table below gives the minimum belt width for empty-belt contact with the centre roll.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 5: Troughability (Minimum Belt Width) for Multi-Ply Fabric</caption>
+                <caption class="small fw-semibold">Table 5: Troughability (Minimum Belt Width) for Multi-Ply Fabric</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Number of Plies</th>
@@ -376,7 +372,7 @@
         <p>The table below gives the maximum belt width before the load forces the carcass into the idler junctions, based on a 35 deg trough.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 6: Load Support (Maximum Belt Width) for Multi-Ply Fabric</caption>
+                <caption class="small fw-semibold">Table 6: Load Support (Maximum Belt Width) for Multi-Ply Fabric</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Number of Plies</th>
@@ -399,7 +395,7 @@
     </section>
 
     <section id="general-properties-of-belt-covers-and-grades">
-        <h2>5. General Properties of Belt Covers and Grades</h2>
+        <h2 class="border-top pt-4 mt-5">5. General Properties of Belt Covers and Grades</h2>
         <p>Compounding modifies baseline polymer properties. The cover grade defines the minimum tensile, elongation and abrasion properties of the compound and its resistance to heat, oil and fire.</p>
     </section>
 
@@ -413,7 +409,7 @@
         </ul>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 7: Maximum Abrasion Volume Loss by Cover Grade</caption>
+                <caption class="small fw-semibold">Table 7: Maximum Abrasion Volume Loss by Cover Grade</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Cover Grade (AS / DIN / RMA)</th>
@@ -447,7 +443,7 @@
         <p>The table below gives minimum adhesion values for fabric belts. Cover-to-ply limits depend on cover thickness.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 8: Minimum Cover-to-Carcass Adhesion Requirements</caption>
+                <caption class="small fw-semibold">Table 8: Minimum Cover-to-Carcass Adhesion Requirements</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Adhesion Type</th>
@@ -480,7 +476,7 @@
         <h3>5.4 General Service Cover Grades</h3>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 9: Covers for General Service Applications</caption>
+                <caption class="small fw-semibold">Table 9: Covers for General Service Applications</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Property</th>
@@ -515,7 +511,7 @@
         <p>Thermal degradation mechanisms vary by material size: fine powders trap heat against the cover, causing hardening and cracking, whereas coarse materials permit air circulation but cause localised thermal degradation. Select the elastomer to suit the degradation mechanism.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 10: Heat Resistant Grades</caption>
+                <caption class="small fw-semibold">Table 10: Heat Resistant Grades</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Property</th>
@@ -543,7 +539,7 @@
         <p>Oil swells natural rubber covers, causing blistering and cover separation from the carcass. Terpenes (found in woodchips) and vegetable and animal oils (grain, fertiliser) require moderate oil resistance (MOR), whereas mineral oils (treated coal, petroleum coke) require nitrile-based super oil resistance (SOR).</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 11: Oil and Chemical Resistant Grades</caption>
+                <caption class="small fw-semibold">Table 11: Oil and Chemical Resistant Grades</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Property</th>
@@ -570,7 +566,7 @@
         <p>Regional regulations dictate the use of these belts. Underground operations usually require self-extinguishing properties with gallery fire tests: AS 4606 (Australia), EN 14973 (Europe) and MSHA Part 14 (USA).</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 12: Fire Resistant and Anti-Static (FRAS) Grades</caption>
+                <caption class="small fw-semibold">Table 12: Fire Resistant and Anti-Static (FRAS) Grades</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Property</th>
@@ -605,7 +601,7 @@
         <p>Fire-resistance terminology overlaps between regions. The table below cross-references grades, test standards and regional equivalents.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 13: Global Fire-Resistance Cross-Reference</caption>
+                <caption class="small fw-semibold">Table 13: Global Fire-Resistance Cross-Reference</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Level of Fire Compliance</th>
@@ -626,7 +622,7 @@
         </div>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 14: Abrasion Grade Equivalence (Non-Fire)</caption>
+                <caption class="small fw-semibold">Table 14: Abrasion Grade Equivalence (Non-Fire)</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Service Level</th>
@@ -655,7 +651,7 @@
     </section>
 
     <section id="cover-gauges-and-qualities">
-        <h2>6. Cover Gauges and Qualities</h2>
+        <h2 class="border-top pt-4 mt-5">6. Cover Gauges and Qualities</h2>
         <p>The top cover resists impact, abrasion, cutting and gouging from the load. The bottom (pulley-side) cover resists abrasion and friction from idlers and drive pulleys.</p>
         <p>Disproportionate cover wear relative to carcass fatigue indicates insufficient cover thickness or suboptimal grade selection. Conversely, carcass failure with substantial cover remaining indicates excessive cover thickness or an under-rated carcass. Match cover wear life to carcass fatigue life.</p>
     </section>
@@ -677,8 +673,8 @@
         <p>Cycle time (T_c), the period of one complete belt revolution, is a primary input to cover thickness selection.</p>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 3: Belt Cycle Time</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 3: Belt Cycle Time</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">T_c = (2 * L) / v</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -720,7 +716,7 @@
         <p>Where the tabulated thickness exceeds standard manufacturing capability or prevents the belt from troughing, specify a fabric belt with a greater number of thinner plies or a straight-warp construction, reduce the lump size before loading, or reduce belt speed and increase belt width to lengthen the cycle time.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 15: Recommended Top Cover Thickness</caption>
+                <caption class="small fw-semibold">Table 15: Recommended Top Cover Thickness</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Cycle Time (s)</th>
@@ -750,7 +746,7 @@
     </section>
 
     <section id="solid-woven-belting">
-        <h2>7. Solid Woven Belting</h2>
+        <h2 class="border-top pt-4 mt-5">7. Solid Woven Belting</h2>
         <p>Solid woven belting replaces discrete fabric plies bonded with rubber skim coats with a single interlocked weave of synthetic fibres impregnated with PVC. With no individual plies, it cannot delaminate, which makes it the common construction for underground coal mining, potash mining and other enclosed, high-hazard environments where fire resistance and anti-static performance are regulated.</p>
     </section>
 
@@ -772,7 +768,7 @@
         <p>The table below correlates imperial (lbf/in) class designations with metric (kN/m) strength ratings and lists generic thicknesses and masses.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 16: Solid Woven Belt Specifications</caption>
+                <caption class="small fw-semibold">Table 16: Solid Woven Belt Specifications</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Belt Designation (PIW Class)</th>
@@ -811,7 +807,7 @@
         <p>The table below gives the minimum belt width for empty-belt contact with the centre roll.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 17: Troughability (Minimum Belt Width) for Solid Woven</caption>
+                <caption class="small fw-semibold">Table 17: Troughability (Minimum Belt Width) for Solid Woven</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Belt Designation (PIW Class)</th>
@@ -836,7 +832,7 @@
     </section>
 
     <section id="steel-cord-belting">
-        <h2>8. Steel Cord Belting</h2>
+        <h2 class="border-top pt-4 mt-5">8. Steel Cord Belting</h2>
         <p>Steel cord belting is the highest-tension standard construction for bulk handling. It is used on conveyors where high belt tension, limited take-up travel or the requirement for a high elastic modulus makes a fabric multi-ply belt unsuitable.</p>
         <p>Steel cord belts carry a higher initial cost than fabric belting but provide high splice efficiency, smaller pulleys relative to tension rating and reduced take-up travel owing to low elongation.</p>
     </section>
@@ -847,7 +843,7 @@
         <p>With no transverse fabric plies to arrest a sharp lump penetrating the cover, ST belts require a thicker top cover than fabric belts. Specify a top cover of at least 1.5 times the cord diameter.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 18: Standard Steel Cord Constructions (ISO / DIN / AS)</caption>
+                <caption class="small fw-semibold">Table 18: Standard Steel Cord Constructions (ISO / DIN / AS)</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Designation (kN/m)</th>
@@ -894,7 +890,7 @@
         <p>Use safety factors of 4.5:1 and 5.5:1 only where the conveyor is equipped with controlled soft-start drives (VFD or fluid coupling), the system has been dynamically modelled to confirm transient tensions during starting and stopping and the splice design has been verified for the actual peak tension. Select the safety factor appropriate to the installed drive and control system. The table below gives the allowable working tension for each ST rating at each safety factor (SF).</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 19: Steel Cord Allowable Working Tensions</caption>
+                <caption class="small fw-semibold">Table 19: Steel Cord Allowable Working Tensions</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Designation</th>
@@ -936,7 +932,7 @@
         <p>Steel cord belts have no transverse fabric layer and therefore low transverse rigidity, which facilitates troughing. Transverse stiffness increases with cord diameter and cover thickness at higher ST ratings. A belt narrower than the tabulated minimum for its ST rating will not contact the centre roll.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 20: Troughability (Minimum Belt Width) for Steel Cord</caption>
+                <caption class="small fw-semibold">Table 20: Troughability (Minimum Belt Width) for Steel Cord</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Designation</th>
@@ -962,11 +958,11 @@
     </section>
 
     <section id="specialty-belt-configurations">
-        <h2>9. Specialty Belt Configurations</h2>
+        <h2 class="border-top pt-4 mt-5">9. Specialty Belt Configurations</h2>
         <p>Specialty belt configurations address conveying requirements beyond standard flat or troughed profiles: steep inclines, tight curves, vertical lifting and dust containment. Selection depends on conveying angle, material characteristics and routing geometry.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 21: Specialty Belt Types</caption>
+                <caption class="small fw-semibold">Table 21: Specialty Belt Types</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Belt Type</th>
@@ -990,7 +986,7 @@
     </section>
 
     <section id="belt-manufacturing-tolerances">
-        <h2>10. Belt Manufacturing Tolerances</h2>
+        <h2 class="border-top pt-4 mt-5">10. Belt Manufacturing Tolerances</h2>
         <p>Conveyor belting is manufactured to specified dimensional tolerances. Distinguish tracking deviations caused by structural misalignment from those caused by out-of-specification belt geometry.</p>
     </section>
 
@@ -1024,7 +1020,7 @@
         <p>A conveyor belt must be manufactured straight along its length. A permanent lateral curve (camber or bow) induces persistent asymmetric tracking irrespective of structural alignment. The maximum permissible camber per ISO 14890 / DIN 22102 is 0.5% of the measured length. Over a 10 m [33 ft] sample laid flat, the belt edge must not deviate from a straight line by more than 50 mm [2 in].</p>
     </section>
 
-    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
         Published <time datetime="2026-11-21">21 November 2026</time><br>
         Updated <time datetime="2026-11-22">22 November 2026</time><br>
         &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>

@@ -67,19 +67,15 @@
 </head>
 <body>
 
-<a href="#main" class="skip-link">Skip to main content</a>
-
-<div class="topbar">
-    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         Contents
     </button>
 </div>
 
 <nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
-    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
     <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
     <hr class="my-2">
     <p class="sidebar-heading mb-2">
@@ -145,7 +141,7 @@
     </section>
 
     <section id="basic-condition-monitoring-and-running-sensors">
-        <h2>2. Basic Condition Monitoring and Running Sensors</h2>
+        <h2 class="border-top pt-4 mt-5">2. Basic Condition Monitoring and Running Sensors</h2>
     </section>
 
     <section id="pull-wire-emergency-stop-systems">
@@ -155,7 +151,7 @@
         <p>The switch is hard-wired into the conveyor safety circuit, de-energises the drive and, where the risk assessment requires, applies the brakes. Pull-wire switches must latch and require a manual local reset. Switches with broken-wire detection trip when rope tension falls to zero.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 1: Pull-Wire Emergency Stop Summary</caption>
+                <caption class="small fw-semibold">Table 1: Pull-Wire Emergency Stop Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -191,7 +187,7 @@
         <p>Encoders, resolvers and Hall-effect sensors on Variable Frequency Drive (VFD) motor shafts serve drive control only and do not replace independent belt-speed sensors.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 2: Under-Speed and Drive Slip Detection Summary</caption>
+                <caption class="small fw-semibold">Table 2: Under-Speed and Drive Slip Detection Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -218,7 +214,7 @@
         <p>Belt misalignment causes spillage and abrasive damage to the belt edge and structure. Drift switches use a roller lever adjacent to the belt edge and operate in two stages, alarm then trip. Locate drift switches by risk assessment, typically as follows.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 3: Belt Drift Switch Placement</caption>
+                <caption class="small fw-semibold">Table 3: Belt Drift Switch Placement</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Location</th>
@@ -237,7 +233,7 @@
         </div>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 4: Belt Drift Switch Summary</caption>
+                <caption class="small fw-semibold">Table 4: Belt Drift Switch Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -260,7 +256,7 @@
         <p>Two-dimensional (2D) laser edge scanners monitor transverse belt position continuously and detect progressive wander before a drift switch actuates.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 5: Laser Edge Scanner Summary</caption>
+                <caption class="small fw-semibold">Table 5: Laser Edge Scanner Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -288,7 +284,7 @@
         <p>Microwave detectors sense material accumulation across the chute without contact.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 6: Microwave Blocked Chute Detector Summary</caption>
+                <caption class="small fw-semibold">Table 6: Microwave Blocked Chute Detector Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -311,7 +307,7 @@
         <p>Tilt switches detect material by probe deflection or angle change.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 7: Tilt Switch Blocked Chute Detector Summary</caption>
+                <caption class="small fw-semibold">Table 7: Tilt Switch Blocked Chute Detector Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -334,7 +330,7 @@
         <p>Vibrating fork switches detect material by damping of the tine vibration.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 8: Vibrating Fork Blocked Chute Detector Summary</caption>
+                <caption class="small fw-semibold">Table 8: Vibrating Fork Blocked Chute Detector Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -357,7 +353,7 @@
     </section>
 
     <section id="tramp-metal-detectors-and-magnetic-separators">
-        <h2>3. Tramp Metal Detectors and Magnetic Separators</h2>
+        <h2 class="border-top pt-4 mt-5">3. Tramp Metal Detectors and Magnetic Separators</h2>
         <p>Tramp metal, such as broken excavator teeth or rock bolts, can damage downstream processing equipment. Overband magnets remove ferrous tramp metal, and metal detectors stop the conveyor for conductive metals that magnets cannot remove, such as manganese steel and austenitic stainless steel.</p>
     </section>
 
@@ -366,7 +362,7 @@
         <p>Electromagnets or permanent magnets suspended over the belt extract ferrous tramp metal from the burden. Select the location as follows.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 9: Overband Magnet Installation Locations</caption>
+                <caption class="small fw-semibold">Table 9: Overband Magnet Installation Locations</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Installation Location</th>
@@ -385,7 +381,7 @@
         <p>The field is a hazard to personnel with pacemakers or other implanted medical devices and damages unshielded electronics and mechanical watches. Establish barriered exclusion zones with warning signage, with boundaries set by International Commission on Non-Ionizing Radiation Protection (ICNIRP) occupational exposure guidelines and the applicable national requirements.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 10: Overband Magnet Summary</caption>
+                <caption class="small fw-semibold">Table 10: Overband Magnet Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -414,7 +410,7 @@
         <p>Mechanical belt fasteners trip the detector unless the control system suppresses detection as each splice passes, which leaves that belt length unprotected.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 11: Metal Detector Summary</caption>
+                <caption class="small fw-semibold">Table 11: Metal Detector Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -437,12 +433,12 @@
     </section>
 
     <section id="belt-scales-belt-weighers-gravimetric-weighing">
-        <h2>4. Belt Scales / Belt Weighers (Gravimetric Weighing)</h2>
+        <h2 class="border-top pt-4 mt-5">4. Belt Scales / Belt Weighers (Gravimetric Weighing)</h2>
         <p>Belt scales measure mass flow rate continuously for process control, inventory management and trade settlement. Keep belt tension at the weigh frame stable to limit errors from belt stiffness.</p>
         <p>Weigh frames mount either one carrying idler or two to four consecutive idlers on an extended weigh bridge.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 12: Belt Scale Summary</caption>
+                <caption class="small fw-semibold">Table 12: Belt Scale Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -468,7 +464,7 @@
     </section>
 
     <section id="3d-material-profile-scanning-volumetric-capacity-measurement">
-        <h2>5. 3D Material Profile Scanning (Volumetric Capacity Measurement)</h2>
+        <h2 class="border-top pt-4 mt-5">5. 3D Material Profile Scanning (Volumetric Capacity Measurement)</h2>
         <p>Three-dimensional (3D) laser scanning of the burden profile supports volumetric capacity optimisation, loading and unloading sequencing, and real-time digital twin modelling.</p>
         <p>A laser scanner above the carrying belt sweeps a line across the burden surface. Multiplying the cross-sectional area by belt speed gives instantaneous volumetric flow rate (m3/h [ft3/h]), and comparing the area with the design cross-section gives the volumetric fill ratio. Conversion to mass flow requires independent bulk density data.</p>
         <p>On systems feeding multiple bins, silos or ships, the scanner tracks the leading and trailing edges of material slugs. The control system predicts their arrival at each discharge point and actuates diverter gates or tripper cars. This reduces material run off the belt end or into the wrong bin during changeover.</p>
@@ -476,7 +472,7 @@
         <p>An asymmetric profile indicates a misaligned chute, worn skirting or feed segregation, allowing correction before off-centre loading causes mistracking.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 13: 3D Material Profile Scanning Summary</caption>
+                <caption class="small fw-semibold">Table 13: 3D Material Profile Scanning Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -499,7 +495,7 @@
     </section>
 
     <section id="longitudinal-rip-detection">
-        <h2>6. Longitudinal Rip Detection</h2>
+        <h2 class="border-top pt-4 mt-5">6. Longitudinal Rip Detection</h2>
         <p>Tramp metal wedged in a transfer chute can cut a longitudinal rip as the drive pulls the belt past it.</p>
     </section>
 
@@ -508,7 +504,7 @@
         <p>Conductive sensor loops are embedded in the bottom cover at set intervals and pass a transmitter and receiver mounted downstream of high-risk loading zones. An intact loop couples the signal between them. A rip that severs a loop interrupts the signal and trips the conveyor. Radio frequency identification (RFID) tags beside each loop identify it for location and fault tracking.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 14: Inductive Sensor Loop Rip Detection Summary</caption>
+                <caption class="small fw-semibold">Table 14: Inductive Sensor Loop Rip Detection Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -536,7 +532,7 @@
         <p>Laser line scanners under the loaded carrying belt measure the bottom cover profile across the full belt width and trip when protruding material distorts it.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 15: Laser Profile Rip Detection Summary</caption>
+                <caption class="small fw-semibold">Table 15: Laser Profile Rip Detection Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -559,7 +555,7 @@
         <p>Ultrasonic rip detectors use non-contact probes at each belt edge to measure belt width continuously. A rip that separates the belt changes the measured width and trips the conveyor.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 16: Ultrasonic Belt Width Rip Detection Summary</caption>
+                <caption class="small fw-semibold">Table 16: Ultrasonic Belt Width Rip Detection Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -582,7 +578,7 @@
         <p>A catch pan suspended under the impact zone is the mechanical alternative. Material falling through a rip loads the pan, which pulls a cable and actuates a limit switch.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 17: Catch Pan Rip Detection Summary</caption>
+                <caption class="small fw-semibold">Table 17: Catch Pan Rip Detection Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -605,7 +601,7 @@
     </section>
 
     <section id="real-time-cover-wear-monitoring">
-        <h2>7. Real-Time Cover Wear Monitoring</h2>
+        <h2 class="border-top pt-4 mt-5">7. Real-Time Cover Wear Monitoring</h2>
         <p>The top belt cover is a sacrificial layer protecting the carcass, and in abrasive duties, its measured wear rate sets belt life and capital forecasts. Continuous measurement reduces the need for manual depth-gauge readings, which require a shutdown and isolation.</p>
     </section>
 
@@ -614,7 +610,7 @@
         <p>A high-speed laser array facing the top cover scans the cover across its width to build a 3D surface map. Software compares the profile with the as-new specification. It identifies asymmetric wear and localised gouging from misaligned chutes or poor material trajectories, allowing chute geometry corrections.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 18: Laser Thickness Mapping Summary</caption>
+                <caption class="small fw-semibold">Table 18: Laser Thickness Mapping Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -642,7 +638,7 @@
         <p>Replace the belt before the top cover falls to typically 2.0 mm [0.08 in] above the carcass. An exposed carcass wicks moisture, causing cord corrosion or ply delamination.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 19: Ultrasonic Thickness Gauge Summary</caption>
+                <caption class="small fw-semibold">Table 19: Ultrasonic Thickness Gauge Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -665,7 +661,7 @@
     </section>
 
     <section id="steel-cord-scanning-internal-carcass-ndt">
-        <h2>8. Steel Cord Scanning (Internal Carcass NDT)</h2>
+        <h2 class="border-top pt-4 mt-5">8. Steel Cord Scanning (Internal Carcass NDT)</h2>
         <p>In steel cord (ST) belts, the cords carry the full belt tension, and moisture entering through cover damage corrodes them locally, breaking down cord adhesion and transferring load to adjacent cords. Two non-destructive testing (NDT) methods detect this damage.</p>
     </section>
 
@@ -675,7 +671,7 @@
         <p>Each hot-vulcanised splice has a magnetic signature set by its step pattern. When the rubber between the cords yields in shear, the cords pull apart and the splice elongates and narrows (hourglassing). Tracking this allows planned splice replacement before failure and before hourglassing is visible on the surface.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 20: Magnetic Flux Leakage Summary</caption>
+                <caption class="small fw-semibold">Table 20: Magnetic Flux Leakage Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -704,7 +700,7 @@
         <p>Verify the rubber gap between adjacent cords against the splice design gap. Reject splices with cord convergence.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 21: X-Ray Radiography Summary</caption>
+                <caption class="small fw-semibold">Table 21: X-Ray Radiography Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -727,7 +723,7 @@
     </section>
 
     <section id="automated-splice-condition-monitoring">
-        <h2>9. Automated Splice Condition Monitoring</h2>
+        <h2 class="border-top pt-4 mt-5">9. Automated Splice Condition Monitoring</h2>
         <p>Visual inspection alone does not detect internal splice failures, which can propagate without surface symptoms.</p>
     </section>
 
@@ -736,7 +732,7 @@
         <p>Metallic targets, such as copper inductive loops or magnetic transponders, are embedded at each end of the splice during vulcanising. Fixed sensors measure the target spacing on each pass. Yielding of the splice shear matrix lengthens the splice and increases the spacing. MFL and X-ray do not apply to non-magnetic tension members, so this is the principal internal diagnostic for multi-ply and solid woven belts. It tracks finger pull-out and step separation.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 22: Splice Elongation Monitoring Summary</caption>
+                <caption class="small fw-semibold">Table 22: Splice Elongation Monitoring Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -763,7 +759,7 @@
         <p>3D laser scanners and high-speed cameras above and below the belt map the belt surface at full speed. Machine vision detects defects by belt type and presents the results as colour-coded degradation maps. In multi-ply belts it detects blistering and bulging from step delamination. In ST belts it detects protruding cords and edge (zipper) delamination. In solid woven belts it detects progressive edge fraying.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 23: Splice Surface Monitoring Summary</caption>
+                <caption class="small fw-semibold">Table 23: Splice Surface Monitoring Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -790,7 +786,7 @@
         <p>RFID transponders embedded in the splice cover during vulcanising are read by fixed scanners. They link MFL signatures, elongation data and vision maps to each splice. On long conveyors, locating splices by calculation from speed sensors and reference marks introduces position error. RFID tags identify each splice directly.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 24: RFID Splice Tagging Summary</caption>
+                <caption class="small fw-semibold">Table 24: RFID Splice Tagging Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -813,13 +809,13 @@
     </section>
 
     <section id="automated-belt-cleaner-scraper-monitoring">
-        <h2>10. Automated Belt Cleaner (Scraper) Monitoring</h2>
+        <h2 class="border-top pt-4 mt-5">10. Automated Belt Cleaner (Scraper) Monitoring</h2>
         <p>Undetected cleaner failure allows carryback to accumulate on the return run, causing return idler bearing failure, mistracking and spillage.</p>
         <p>Position sensors, such as linear potentiometers, measure remaining blade wear, and load cells measure blade pressure. This reduces routine inspection inside chutes.</p>
         <p>Pneumatic or electromechanical tensioners hold blade pressure within the optimum range as the blade wears, removing manual retensioning. Pressure above this range increases blade wear, belt wear and drive power without further reducing carryback. Pressure below it reduces cleaning and can accelerate blade wear.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 25: Automated Belt Cleaner Summary</caption>
+                <caption class="small fw-semibold">Table 25: Automated Belt Cleaner Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -842,13 +838,13 @@
     </section>
 
     <section id="take-up-carriage-position-and-skew-monitoring">
-        <h2>11. Take-Up Carriage Position and Skew Monitoring</h2>
+        <h2 class="border-top pt-4 mt-5">11. Take-Up Carriage Position and Skew Monitoring</h2>
         <p>The take-up maintains the belt tension needed for drive traction and tracking. In gravity take-up (GTU) and winch configurations, monitor carriage position and squareness in addition to tension.</p>
         <p>String potentiometers, linear encoders or laser distance meters measure carriage travel. Approaching an end stop raises an alarm and stops the conveyor before impact. Excessive travel indicates belt elongation requiring resplicing, drive slip, or failure of a take-up rope or chain.</p>
         <p>A GTU carriage can skew in its guides from structural settlement, debris, asymmetric pulley loads or worn guide shoes. A skewed carriage can bind, losing tension control and causing slip or mistracking. Compare the position sensors on each side of the carriage and alarm on divergence before binding occurs.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 26: Take-Up Carriage Monitoring Summary</caption>
+                <caption class="small fw-semibold">Table 26: Take-Up Carriage Monitoring Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -871,14 +867,14 @@
     </section>
 
     <section id="belt-sag-and-catenary-monitoring">
-        <h2>12. Belt Sag and Catenary Monitoring</h2>
+        <h2 class="border-top pt-4 mt-5">12. Belt Sag and Catenary Monitoring</h2>
         <p>Excessive sag increases belt and bulk material flexure resistance, reduces the troughed cross-section, and causes material rollback and spillage in low-tension zones.</p>
         <p>Sag is greatest in low-tension zones, such as the tail end of inclined conveyors. Loss of take-up tension, for example from a binding GTU, increases sag there. It can cause rollback and belt instability before speed or drift switches actuate. High sag increases spillage and idler resistance and causes belt bounce at high speed.</p>
         <p>Sag monitoring identifies symptoms only. Determine the cause with complementary diagnostics.</p>
         <p>Laser rangefinders at mid-span measure upward to the underside of the loaded carrying belt. A gradual increase in sag indicates local tension loss from take-up degradation or belt elongation.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 27: Laser Rangefinder Sag Monitoring Summary</caption>
+                <caption class="small fw-semibold">Table 27: Laser Rangefinder Sag Monitoring Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -901,7 +897,7 @@
         <p>High-resolution cameras capture the catenary profile for image analysis.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 28: Machine Vision Sag Monitoring Summary</caption>
+                <caption class="small fw-semibold">Table 28: Machine Vision Sag Monitoring Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -924,7 +920,7 @@
         <p>Where no sag sensors are installed, a digital twin can calculate sag in every span.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 29: Digital Twin Sag Model Summary</caption>
+                <caption class="small fw-semibold">Table 29: Digital Twin Sag Model Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -947,7 +943,7 @@
     </section>
 
     <section id="acoustic-idler-bearing-monitoring">
-        <h2>13. Acoustic Idler Bearing Monitoring</h2>
+        <h2 class="border-top pt-4 mt-5">13. Acoustic Idler Bearing Monitoring</h2>
         <p>Idler bearing failure can cause longitudinal rips and frictional ignition. As raceways spall or lubrication fails, a bearing emits ultrasonic frequencies before it generates enough heat to trigger thermal or fire detection, but manual acoustic inspection is impractical on long conveyors with tens of thousands of bearings.</p>
     </section>
 
@@ -956,7 +952,7 @@
         <p>A DAS interrogator sends laser pulses along a fibre-optic cable routed the full length of the conveyor. It measures changes in Rayleigh backscatter caused by vibration and acoustic waves acting on the cable, so the fibre becomes a continuous acoustic sensor. Machine learning (ML) algorithms filter broadband operating noise and isolate bearing fault signatures. Optical time-domain reflectometry (OTDR) locates the faulty idler.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 30: Distributed Acoustic Sensing Summary</caption>
+                <caption class="small fw-semibold">Table 30: Distributed Acoustic Sensing Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -983,7 +979,7 @@
         <p>Mobile platforms verify continuous monitoring results visually, acoustically and thermally. Unmanned aerial vehicles (UAVs) with directional ultrasonic microphones and radiometric thermal cameras fly pre-programmed routes. They correlate acoustic anomalies with thermal signatures.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 31: UAV Inspection Summary</caption>
+                <caption class="small fw-semibold">Table 31: UAV Inspection Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -1006,7 +1002,7 @@
         <p>In enclosed or underground conveyors without GPS coverage, robotic crawlers on an overhead monorail scan the belt edge with light detection and ranging (LiDAR). They also record the acoustic and thermal condition of each idler frame.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 32: Robotic Crawler Inspection Summary</caption>
+                <caption class="small fw-semibold">Table 32: Robotic Crawler Inspection Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -1029,7 +1025,7 @@
     </section>
 
     <section id="thermal-and-temperature-monitoring">
-        <h2>14. Thermal and Temperature Monitoring</h2>
+        <h2 class="border-top pt-4 mt-5">14. Thermal and Temperature Monitoring</h2>
         <p>Distributed temperature sensing (DTS) along a fibre-optic cable gives continuous linear temperature coverage. Fixed infrared (IR) cameras monitor individual equipment. Both complement acoustic and vibration monitoring.</p>
     </section>
 
@@ -1039,7 +1035,7 @@
         <p>A single fibre can serve DAS and DTS only where the interrogator supports concurrent Raman and Rayleigh measurement. Otherwise, install separate fibres.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 33: Distributed Temperature Sensing Summary</caption>
+                <caption class="small fw-semibold">Table 33: Distributed Temperature Sensing Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -1067,7 +1063,7 @@
         <p>Map region-of-interest (ROI) alarm zones to equipment surfaces. Give each ROI an absolute alarm and a differential alarm on the maximum-to-minimum temperature difference within the ROI to identify hot spots. Align thresholds with the manufacturer's maximum continuous operating temperature.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 34: Fixed Thermal Imaging Summary</caption>
+                <caption class="small fw-semibold">Table 34: Fixed Thermal Imaging Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -1090,7 +1086,7 @@
     </section>
 
     <section id="drivetrain-condition-monitoring-gearbox-oil-and-mcsa">
-        <h2>15. Drivetrain Condition Monitoring (Gearbox Oil and MCSA)</h2>
+        <h2 class="border-top pt-4 mt-5">15. Drivetrain Condition Monitoring (Gearbox Oil and MCSA)</h2>
         <p>The motor, coupling, gearbox, low-speed shaft and drive pulley concentrate mechanical failure risk. Micro-electro-mechanical systems (MEMS) vibration sensors monitor bearing condition, and oil condition sensors and motor current signature analysis (MCSA) give complementary indication of drivetrain degradation.</p>
     </section>
 
@@ -1100,7 +1096,7 @@
         <p>Ferrous debris from early gear-tooth spalling appears in the oil before the damage produces detectable vibration, allowing maintenance planning and parts procurement. Early detection of water ingress from a failed shaft seal or breather allows intervention before water hydrolyses the additive package and corrodes the gear faces.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 35: In-Line Oil Condition Sensor Summary</caption>
+                <caption class="small fw-semibold">Table 35: In-Line Oil Condition Sensor Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -1127,7 +1123,7 @@
         <p>MCSA uses high-resolution current waveforms from current transformers in the motor supply, or from the VFD where it exports waveform data. Broken rotor bars, air-gap eccentricity, bearing defects, coupling misalignment and gearbox torsional resonance produce sidebands in the motor current. Fast Fourier transform (FFT) analysis extracts these fault frequencies without sensors on the motor or gearbox.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 36: Motor Current Signature Analysis Summary</caption>
+                <caption class="small fw-semibold">Table 36: Motor Current Signature Analysis Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -1150,7 +1146,7 @@
     </section>
 
     <section id="real-time-digital-twins-and-iiot-predictive-control">
-        <h2>16. Real-Time Digital Twins and IIoT (Predictive Control)</h2>
+        <h2 class="border-top pt-4 mt-5">16. Real-Time Digital Twins and IIoT (Predictive Control)</h2>
         <p>Calculations to ISO 5048 / DIN 22101 / Conveyor Equipment Manufacturers Association (CEMA) methods set static operating parameters. A digital twin uses Industrial Internet of Things (IIoT) data to simulate the physical state of the conveyor in real time.</p>
     </section>
 
@@ -1178,7 +1174,7 @@
         <p>When the cost of the additional energy loss exceeds the amortised cost of belt replacement, the belt has reached its economic end of life.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 37: Digital Twin Platform Summary</caption>
+                <caption class="small fw-semibold">Table 37: Digital Twin Platform Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -1206,7 +1202,7 @@
         <p>Low power wide area networks (LPWAN) such as LoRaWAN transmit the data across sites without standard wireless infrastructure. WirelessHART and ISA100.11a are short-range industrial mesh alternatives. Line-of-sight LPWAN range can reach 15 km [9.3 mi], but steel structures and EMI typically reduce it to 2 to 5 km [1.2 to 3.1 mi], so large sites require multiple gateways.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 38: Wireless Vibration Monitoring Summary</caption>
+                <caption class="small fw-semibold">Table 38: Wireless Vibration Monitoring Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -1236,7 +1232,7 @@
         <p>The digital twin updates each degradation curve, issues alerts identifying the defect mechanism and estimates RUL. Parts can then be procured through normal logistics and replacement aligned with planned shutdowns.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 39: Cloud Predictive Analytics Summary</caption>
+                <caption class="small fw-semibold">Table 39: Cloud Predictive Analytics Summary</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Attribute</th>
@@ -1258,7 +1254,7 @@
         </div>
     </section>
 
-    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
         Published <time datetime="2026-11-21">21 November 2026</time><br>
         Updated <time datetime="2026-11-21">21 November 2026</time><br>
         &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>

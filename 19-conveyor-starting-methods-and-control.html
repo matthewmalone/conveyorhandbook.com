@@ -67,19 +67,15 @@
 </head>
 <body>
 
-<a href="#main" class="skip-link">Skip to main content</a>
-
-<div class="topbar">
-    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         Contents
     </button>
 </div>
 
 <nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
-    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
     <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
     <hr class="my-2">
     <p class="sidebar-heading mb-2">
@@ -120,11 +116,11 @@
     </section>
 
     <section id="starting-technologies">
-        <h2>2. Starting Technologies</h2>
+        <h2 class="border-top pt-4 mt-5">2. Starting Technologies</h2>
         <p>Select the starting method from conveyor length, drive power, belt carcass and the degree of tension control required.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 1: Conveyor Starting Technologies</caption>
+                <caption class="small fw-semibold">Table 1: Conveyor Starting Technologies</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Starting Method</th>
@@ -152,7 +148,7 @@
     </section>
 
     <section id="control-architecture-and-network-requirements">
-        <h2>3. Control Architecture and Network Requirements</h2>
+        <h2 class="border-top pt-4 mt-5">3. Control Architecture and Network Requirements</h2>
     </section>
 
     <section id="tension-wave-propagation">
@@ -160,8 +156,8 @@
         <p>Drive torque application initiates a tension wave that propagates at a velocity dependent on belt construction.</p>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 1: Tension Wave Propagation Velocity (v_w)</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 1: Tension Wave Propagation Velocity (v_w)</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">Metric: v_w = SQRT((E_b * B) / m_e)<br>Imperial: v_w = SQRT((g_c * E_b * B) / m_e)</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -182,8 +178,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 2: One-Way Wave Transit Time (t_transit)</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 2: One-Way Wave Transit Time (t_transit)</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">t_transit = L / v_w</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -218,7 +214,7 @@
     </section>
 
     <section id="startup-algorithms-and-sequencing">
-        <h2>4. Startup Algorithms and Sequencing</h2>
+        <h2 class="border-top pt-4 mt-5">4. Startup Algorithms and Sequencing</h2>
         <p>Common practice for VFD-controlled conveyors is a six-phase start: pre-magnetisation, a zero-speed breakaway dwell, a three-segment S-curve velocity ramp and post-ramp tension stabilisation. The S-curve controls jerk (the rate of change of acceleration) to avoid abrupt tension changes that damage splices and destabilise take-ups.</p>
     </section>
 
@@ -250,8 +246,8 @@
         <p>Loaded conveyor belts exhibit static friction (stiction) higher than kinetic friction, due to idler seal and grease drag and to belt and material deformation over the idlers while stationary. Applying linear VFD torque ramps can induce drive pulley slip if the effective tension exceeds the traction limit set by the slack-side tension (T2) prior to overcoming stiction. Configure the VFD to ramp torque to a breakaway threshold (typically 110% to 125% of nominal torque) while holding speed at zero.</p>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 3: Minimum Breakaway Dwell Time (t_dwell)</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 3: Minimum Breakaway Dwell Time (t_dwell)</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">t_dwell = (L / v_w) + 1.0</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -311,7 +307,7 @@
         <p>The complete VFD startup sequence consists of six phases executed in series, each with distinct control parameters in the VFD and PLC. The table below summarises the phase, its function, the governing parameters, typical values and the primary constraint that limits each parameter.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 2: VFD Startup Sequence Parameters</caption>
+                <caption class="small fw-semibold">Table 2: VFD Startup Sequence Parameters</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Phase</th>
@@ -342,7 +338,7 @@
     </section>
 
     <section id="multi-motor-load-sharing">
-        <h2>5. Multi-Motor Load Sharing</h2>
+        <h2 class="border-top pt-4 mt-5">5. Multi-Motor Load Sharing</h2>
         <p>If two separate drives power the same belt without load-sharing controls, differences in pulley diameter (due to lagging wear), control system lag or motor slip cause unequal load distribution. Unbalanced loading overloads individual motors and reduces service life.</p>
     </section>
 
@@ -360,11 +356,11 @@
     </section>
 
     <section id="application-specific-startup-sequences">
-        <h2>6. Application-Specific Startup Sequences</h2>
+        <h2 class="border-top pt-4 mt-5">6. Application-Specific Startup Sequences</h2>
         <p>Complex conveyor geometries such as vertical or horizontal curves and declines cause non-uniform tension during startup that a single S-curve does not control. A mid-ramp speed hold pauses the S-curve at a target speed for a set duration so the belt tension profile redistributes and stabilises before acceleration resumes.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 3: Special Geometry Conveyor Starting Considerations</caption>
+                <caption class="small fw-semibold">Table 3: Special Geometry Conveyor Starting Considerations</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Conveyor Profile / Condition</th>
@@ -394,7 +390,7 @@
     </section>
 
     <section id="drive-protection-and-fault-handling">
-        <h2>7. Drive Protection and Fault Handling</h2>
+        <h2 class="border-top pt-4 mt-5">7. Drive Protection and Fault Handling</h2>
         <p>Program the PLC and VFD with a protection response for each fault type, balancing equipment protection against the consequence of an unplanned shutdown. Hard-trip faults require an immediate shutdown and manual investigation before restart, while managed faults are absorbed by the VFD through ride-through, foldback or auto-restart to keep the belt running or recover without operator intervention.</p>
     </section>
 
@@ -402,7 +398,7 @@
         <h3>7.1 Hard-Trip Faults</h3>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 4: Hard-Trip Faults (Immediate Shutdown, Manual Restart)</caption>
+                <caption class="small fw-semibold">Table 4: Hard-Trip Faults (Immediate Shutdown, Manual Restart)</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Fault Category</th>
@@ -426,7 +422,7 @@
         <h3>7.2 Managed Faults</h3>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 5: Managed Faults (VFD Ride-Through, Foldback and Auto-Restart)</caption>
+                <caption class="small fw-semibold">Table 5: Managed Faults (VFD Ride-Through, Foldback and Auto-Restart)</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Fault / Condition</th>
@@ -449,7 +445,7 @@
         </div>
     </section>
 
-    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
         Published <time datetime="2026-11-21">21 November 2026</time><br>
         Updated <time datetime="2026-11-21">21 November 2026</time><br>
         &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>

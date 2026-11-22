@@ -1,23 +1,8 @@
-/* ── Base ── */
-@media (prefers-reduced-motion: no-preference) {
-    html { scroll-behavior: smooth; }
-}
-main:focus { outline: none; }
+/* handbook.css – only what Bootstrap's own classes do not cover.
+   Colours and corners use Bootstrap's variables so the site follows Bootstrap in one place. */
 
-/* ── Skip link ── */
-.skip-link {
-    position: absolute;
-    top: 0.5rem;
-    left: 0.5rem;
-    z-index: 2000;
-    padding: 0.5rem 0.9rem;
-    background: #212529;
-    color: #fff;
-    border-radius: 4px;
-    text-decoration: none;
-    transform: translateY(-200%);
-}
-.skip-link:focus { transform: none; color: #fff; }
+/* ── Base ── */
+main:focus { outline: none; }
 
 /* ── Sidebar ── */
 .sidebar {
@@ -29,8 +14,8 @@ main:focus { outline: none; }
     height: 100dvh;
     overflow-y: auto;
     overscroll-behavior: contain;
-    border-right: 1px solid #dee2e6;
-    background: #f8f9fa;
+    border-right: 1px solid var(--bs-border-color);
+    background: var(--bs-tertiary-bg);
     padding: 1.25rem 1rem;
     z-index: 1000;
 }
@@ -40,23 +25,23 @@ main:focus { outline: none; }
     padding: 2rem 3rem 3rem;
 }
 .sidebar-title {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #212529;
-    text-decoration: none;
     display: block;
     padding: 0 2px;
+    font-size: 0.95rem;
+    font-weight: 700;
     line-height: 1.3;
+    color: var(--bs-body-color);
+    text-decoration: none;
 }
-.sidebar-title:hover { color: #0d6efd; }
+.sidebar-title:hover { color: var(--bs-primary); }
 .sidebar-heading {
+    margin: 0;
+    padding: 0 2px;
     font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
     color: #888;
-    margin: 0;
-    padding: 0 2px;
 }
 
 /* "Chapters" toggle: a real button styled as the heading */
@@ -75,7 +60,7 @@ main:focus { outline: none; }
     text-align: left;
     cursor: pointer;
 }
-.chapter-toggle:hover { color: #495057; }
+.chapter-toggle:hover { color: var(--bs-gray-700); }
 .chapter-toggle::after {
     content: "";
     width: 0.42em;
@@ -87,83 +72,60 @@ main:focus { outline: none; }
 }
 .chapter-toggle[aria-expanded="true"]::after { transform: translateY(-0.12em) rotate(45deg); }
 
+/* Sidebar links: chapter menu and table of contents */
 .chapter-menu { display: none; padding: 0.4rem 0; }
 .chapter-menu.open { display: block; }
-.chapter-menu a {
-    display: block;
-    padding: 4px 10px;
-    color: #495057;
-    text-decoration: none;
-    font-size: 0.82rem;
-    border-radius: 4px;
-    border-left: 3px solid transparent;
-}
-.chapter-menu a:hover { background: #e9ecef; color: #212529; }
-.chapter-menu a.chapter-active {
-    border-left-color: #198754;
-    color: #198754;
-    background: #e8f5e9;
-    font-weight: 500;
-}
+.chapter-menu a,
 .toc a {
     display: block;
     padding: 5px 10px;
-    color: #495057;
+    color: var(--bs-gray-700);
     text-decoration: none;
     font-size: 0.9rem;
-    border-radius: 4px;
+    border-radius: var(--bs-border-radius-sm);
     border-left: 3px solid transparent;
-    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
-.toc a:hover { background: #e9ecef; color: #212529; }
+.chapter-menu a { padding-top: 4px; padding-bottom: 4px; font-size: 0.82rem; }
+.toc a { transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease; }
+.chapter-menu a:hover,
+.toc a:hover { background: var(--bs-secondary-bg); color: var(--bs-body-color); }
+.chapter-menu a.chapter-active {
+    border-left-color: var(--bs-success);
+    color: var(--bs-success);
+    background: #e8f5e9;
+    font-weight: 500;
+}
 .toc a.active {
-    border-left-color: #0d6efd;
-    color: #0d6efd;
+    border-left-color: var(--bs-primary);
+    color: var(--bs-primary);
     background: #e7f1ff;
     font-weight: 500;
 }
 .toc .sub { padding-left: 1.5rem; font-size: 0.85rem; }
 
-/* Visible keyboard focus */
+/* Visible keyboard focus (Bootstrap buttons have their own) */
 .sidebar a:focus-visible,
 .chapter-toggle:focus-visible,
-.sidebar-toggle:focus-visible,
-.sidebar-close:focus-visible,
 .chapter-index a:focus-visible {
-    outline: 2px solid #0d6efd;
+    outline: 2px solid var(--bs-primary);
     outline-offset: 2px;
 }
 
-/* Mobile-only controls are hidden on desktop */
-.topbar,
-.sidebar-close,
+/* Backdrop behind the sidebar on tablets and phones */
 .sidebar-backdrop { display: none; }
 .sidebar-backdrop[hidden] { display: none !important; }
 
 /* ── Content ── */
-.main-content > section h2 {
-    margin-top: 3rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid #e9ecef;
-}
-.main-content > section:first-of-type h2 { margin-top: 0; padding-top: 0; border-top: none; }
 .main-content > section h3 { margin-top: 2rem; }
 section[id] { scroll-margin-top: 1rem; }
-.meta-box {
-    border: 1px solid #dee2e6;
-    border-radius: 6px;
-    padding: 1.25rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-}
-.meta-box dt { font-weight: 600; }
-.meta-box dd { color: #555; }
-/* Engineering Takeaway and Note boxes */
+
+/* Engineering Takeaway, Note and boxed paragraphs */
 .callout {
     margin: 1.5rem 0;
     padding: 0.6rem 1rem;
-    border-left: 4px solid #6c757d;
-    border-radius: 0 4px 4px 0;
-    background: #f8f9fa;
+    border-left: 4px solid var(--bs-secondary);
+    border-radius: 0 var(--bs-border-radius-sm) var(--bs-border-radius-sm) 0;
+    background: var(--bs-tertiary-bg);
 }
 .callout p { margin-bottom: 0; }
 
@@ -171,95 +133,18 @@ section[id] { scroll-margin-top: 1rem; }
 .main-content section ul:not(.list-unstyled) > li + li,
 .main-content section ol > li + li { margin-top: 0.5rem; }
 
-.fig-caption, .tbl-caption {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #6c757d;
-}
-
-/* Formulas: caption above the box (same style and spacing as a table caption),
-   equations and Where list in the box, Notes, Examples and Takeaways attached below */
+/* Formulas: caption above the box, Notes, Examples and Takeaways attached below */
 .formula-block { margin: 1.5rem 0; }
 .formula-block + .formula-block { margin-top: 2.75rem; }
 .formula { margin: 0; }
-.formula .fig-caption { display: block; padding: 0.5rem 0; }
-.formula-box {
-    border: 1px solid #dee2e6;
-    border-radius: 0.375rem;
-    padding: 1rem 1.25rem;
-}
 .formula-block > .callout,
 .formula-block > p { margin: 0.75rem 0 0; }
 
-/* ── Figures: the viewBox sets the aspect ratio ── */
-.handbook-figure svg {
-    display: block;
-    width: 100%;
-    max-width: 640px;
-    height: auto;
-    margin: 0 auto;
-}
-
-/* ── Contents list (landing page) ── */
-.chapter-index {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    border-top: 1px solid #e9ecef;
-}
-.chapter-index a {
-    display: flex;
-    gap: 1.25rem;
-    padding: 0.75rem 0.25rem;
-    border-bottom: 1px solid #e9ecef;
-    color: #212529;
-    text-decoration: none;
-}
-.chapter-index a:hover .chapter-title { color: #0d6efd; }
-.chapter-num {
-    flex: 0 0 6rem;
-    color: #6c757d;
-    font-variant-numeric: tabular-nums;
-}
-.chapter-text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.125rem;
-    min-width: 0;
-}
-.chapter-title { font-weight: 500; }
-.chapter-desc {
-    color: #6c757d;
-    font-size: 0.875rem;
-}
+/* Contents list (landing page): fixed-width chapter number column */
+.chapter-num { flex: 0 0 6rem; font-variant-numeric: tabular-nums; }
 
 /* ── Tablets and phones: off-canvas sidebar ── */
 @media (max-width: 991.98px) {
-    .topbar {
-        display: flex;
-        align-items: center;
-        position: sticky;
-        top: 0;
-        z-index: 1010;
-        padding: 0.5rem 1rem;
-        background: rgba(255, 255, 255, 0.96);
-        border-bottom: 1px solid #dee2e6;
-    }
-    .sidebar-toggle {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
-        font-weight: 600;
-        color: #212529;
-        background: #fff;
-        border: 1px solid #ced4da;
-        border-radius: 6px;
-        cursor: pointer;
-    }
-    .sidebar-toggle:hover { border-color: #adb5bd; background: #f8f9fa; }
-
     .sidebar {
         width: min(300px, 85vw);
         z-index: 1040;
@@ -274,23 +159,6 @@ section[id] { scroll-margin-top: 1rem; }
         transition: transform 0.2s ease;
     }
     .sidebar-title { padding-right: 2.75rem; }
-    .sidebar-close {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 0.75rem;
-        right: 0.75rem;
-        width: 2.25rem;
-        height: 2.25rem;
-        padding: 0;
-        color: #495057;
-        background: transparent;
-        border: 0;
-        border-radius: 6px;
-        cursor: pointer;
-    }
-    .sidebar-close:hover { background: #e9ecef; color: #212529; }
     .sidebar-backdrop {
         display: block;
         position: fixed;
@@ -324,16 +192,13 @@ section[id] { scroll-margin-top: 1rem; }
 /* ── Print ── */
 @media print {
     .sidebar,
-    .topbar,
-    .sidebar-backdrop,
-    .skip-link { display: none !important; }
+    .sidebar-backdrop { display: none !important; }
     body { overflow: visible !important; }
     .main-content { margin-left: 0; padding: 0; max-width: 100%; }
     section[id] { scroll-margin-top: 0; }
     a { color: inherit; text-decoration: none; }
     h1, h2, h3, h4 { break-after: avoid; page-break-after: avoid; }
-    figure, table, pre, .meta-box, .callout { break-inside: avoid; page-break-inside: avoid; }
-    .formula .fig-caption { break-after: avoid; page-break-after: avoid; }
-    pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+    figure, table, .callout { break-inside: avoid; page-break-inside: avoid; }
+    .formula figcaption { break-after: avoid; page-break-after: avoid; }
     .table-responsive { overflow: visible !important; }
 }

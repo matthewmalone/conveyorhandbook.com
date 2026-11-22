@@ -67,19 +67,15 @@
 </head>
 <body>
 
-<a href="#main" class="skip-link">Skip to main content</a>
-
-<div class="topbar">
-    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         Contents
     </button>
 </div>
 
 <nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
-    <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close contents">
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
     <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
     <hr class="my-2">
     <p class="sidebar-heading mb-2">
@@ -116,7 +112,7 @@
     </section>
 
     <section id="series-reliability-and-availability">
-        <h2>2. Series Reliability and Availability</h2>
+        <h2 class="border-top pt-4 mt-5">2. Series Reliability and Availability</h2>
         <p>A single-flight conveyor operates as a series reliability system where overall reliability equals the product of individual component reliabilities. Failure of any single component stops the conveyor.</p>
         <p>System availability is maximised by optimising two independent variables:</p>
         <ul>
@@ -126,12 +122,12 @@
     </section>
 
     <section id="failure-distribution-modelling">
-        <h2>3. Failure Distribution Modelling</h2>
+        <h2 class="border-top pt-4 mt-5">3. Failure Distribution Modelling</h2>
         <p>MTBF does not isolate specific failure mechanisms. A component with an MTBF of 20,000 h may exhibit early-life manufacturing defects, random mid-life failures, or end-of-life wear-out, each requiring a different maintenance response.</p>
         <p>The two-parameter Weibull distribution is the common statistical model for conveyor component reliability. The Weibull distribution is defined by two parameters: the shape parameter (beta) dictating the failure regime, and the characteristic life parameter (eta) defining the time at which 63.2% of the population fails.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 1: Weibull Shape Parameter Interpretation</caption>
+                <caption class="small fw-semibold">Table 1: Weibull Shape Parameter Interpretation</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Weibull Shape Parameter (beta)</th>
@@ -150,8 +146,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 1: Weibull Reliability Function</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 1: Weibull Reliability Function</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">R(t) = e^(-(t / eta)^beta)</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -168,7 +164,7 @@
         </div>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 2: Typical Conveyor Component Weibull Parameter Ranges</caption>
+                <caption class="small fw-semibold">Table 2: Typical Conveyor Component Weibull Parameter Ranges</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Component</th>
@@ -194,12 +190,12 @@
     </section>
 
     <section id="the-economic-cost-of-unplanned-downtime">
-        <h2>4. The Economic Cost of Unplanned Downtime</h2>
+        <h2 class="border-top pt-4 mt-5">4. The Economic Cost of Unplanned Downtime</h2>
         <p>Component selection requires quantifying the total cost of a downtime event. Count production loss only where it cannot be recovered through surge capacity or later catch-up production.</p>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 2: Total Cost of an Unplanned Downtime Event</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 2: Total Cost of an Unplanned Downtime Event</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">C_total = (Q_t * P_m * MTTR) + C_repair</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -224,14 +220,14 @@
     </section>
 
     <section id="life-cycle-cost-analysis">
-        <h2>5. Life Cycle Cost Analysis</h2>
+        <h2 class="border-top pt-4 mt-5">5. Life Cycle Cost Analysis</h2>
         <p>For system-level investment decisions, evaluate total cost of ownership (TCO) across the installation's design life. Life Cycle Cost (LCC) analysis aggregates capital, maintenance, energy, and production loss costs, discounting them to a Net Present Cost (NPC) for financial comparison of design alternatives.</p>
         <p>Present LCC results as a sensitivity range. At minimum, evaluate three scenarios: a base case using median inputs, a high case using upper-bound failure rates, and a low case using lower-bound failure rates.</p>
         <p>Derive failure and maintenance cost inputs from FMEA failure rates and site-specific maintenance data, not generic industry averages. Use a real discount rate with costs in constant dollars, or a nominal rate with escalated costs.</p>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 3: Life Cycle Net Present Cost</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 3: Life Cycle Net Present Cost</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">NPC = CAPEX + SUM(t=1 to n) of ((C_maint_t + C_energy_t + C_loss_t) / (1 + r)^t)</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -253,11 +249,11 @@
     </section>
 
     <section id="key-performance-indicators-and-overall-equipment-effectiveness">
-        <h2>6. Key Performance Indicators and Overall Equipment Effectiveness</h2>
+        <h2 class="border-top pt-4 mt-5">6. Key Performance Indicators and Overall Equipment Effectiveness</h2>
         <p>Track conveyor operational performance using Key Performance Indicators (KPIs) to establish benchmarks, identify fault trends, and quantify system improvements. Record and report the following KPIs monthly for each production-critical conveyor.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 3: Conveyor Key Performance Indicators</caption>
+                <caption class="small fw-semibold">Table 3: Conveyor Key Performance Indicators</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">KPI</th>
@@ -275,8 +271,8 @@
         </div>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 4: Overall Equipment Effectiveness</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 4: Overall Equipment Effectiveness</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">OEE = A * PE * QR</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -294,13 +290,13 @@
     </section>
 
     <section id="failure-mode-and-effects-analysis">
-        <h2>7. Failure Mode and Effects Analysis</h2>
+        <h2 class="border-top pt-4 mt-5">7. Failure Mode and Effects Analysis</h2>
         <p>FMEA is a framework for identifying potential failure modes, their causes, their effects on system operation, and the controls required to prevent or mitigate them. Maintain the register throughout the asset lifecycle and update it after design modifications and in-service failure events.</p>
         <p>For each subsystem, the FMEA specifies component function, failure mode, failure cause, subsystem and system availability effects, detection method and Risk Priority Number (RPN).</p>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="fig-caption">Formula 5: Risk Priority Number</figcaption>
-                <div class="formula-box">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 5: Risk Priority Number</figcaption>
+                <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">RPN = S * O * D</p>
                     <p class="mb-1">Where:</p>
                     <ul class="list-unstyled ms-3 mb-0">
@@ -318,7 +314,7 @@
     </section>
 
     <section id="reliability-centred-maintenance">
-        <h2>8. Reliability-Centred Maintenance</h2>
+        <h2 class="border-top pt-4 mt-5">8. Reliability-Centred Maintenance</h2>
         <p>Reliability-Centred Maintenance (RCM) establishes the appropriate maintenance strategy for each failure mode identified in the FMEA. RCM selects condition-based, time-based or run-to-failure tasks according to the failure consequences in each operating context.</p>
         <p>The RCM logic dictates the following maintenance responses per FMEA failure mode:</p>
         <ul>
@@ -332,7 +328,7 @@
     </section>
 
     <section id="preventive-and-predictive-maintenance-scheduling">
-        <h2>9. Preventive and Predictive Maintenance Scheduling</h2>
+        <h2 class="border-top pt-4 mt-5">9. Preventive and Predictive Maintenance Scheduling</h2>
         <p>Maintenance tasks are categorised as preventive (time-based) or predictive (condition-based).</p>
         <p>Preventive maintenance tasks are executed at fixed calendar or runtime intervals where failure modes follow a time-dependent degradation pattern, or where failure consequences preclude exclusive reliance on condition monitoring. Typical tasks include idler roll replacement based on bearing L10 life calculations verified against field failure data, gearbox oil and coupling element replacement at manufacturer-specified intervals, and structural bolt torque verification following commissioning and dynamic loading events.</p>
         <p>Predictive maintenance tasks are condition-triggered, where intervention occurs when monitoring data exceeds defined degradation thresholds. Techniques include vibration analysis of drive motors against ISO 20816-3 zone boundaries and of gear units against ISO 20816-9 zone boundaries, and infrared thermography of idlers, switchgear, and drive components to detect thermal anomalies. Drive pulley bearings typically run below 120 rpm, outside the scope of ISO 20816-3. Set their alarm levels from baseline trends.</p>
@@ -340,7 +336,7 @@
     </section>
 
     <section id="maintainability-design-requirements">
-        <h2>10. Maintainability Design Requirements</h2>
+        <h2 class="border-top pt-4 mt-5">10. Maintainability Design Requirements</h2>
         <p>MTTR depends on the physical conveyor design and its supporting infrastructure.</p>
         <p>Integrate the following maintainability provisions into the conveyor design:</p>
         <ul>
@@ -354,7 +350,7 @@
         </ul>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 4: Maintenance Activity MTTR Design Benchmarks</caption>
+                <caption class="small fw-semibold">Table 4: Maintenance Activity MTTR Design Benchmarks</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Maintenance Activity</th>
@@ -384,11 +380,11 @@
     </section>
 
     <section id="critical-spare-parts-strategy">
-        <h2>11. Critical Spare Parts Strategy</h2>
+        <h2 class="border-top pt-4 mt-5">11. Critical Spare Parts Strategy</h2>
         <p>MTTR depends on the availability of replacement components. A stock-out of a long-lead or high-consequence item extends MTTR by up to the replenishment lead time.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 5: Spare Parts Classifications</caption>
+                <caption class="small fw-semibold">Table 5: Spare Parts Classifications</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Tier</th>
@@ -409,11 +405,11 @@
     </section>
 
     <section id="system-redundancy-and-decoupling">
-        <h2>12. System Redundancy and Decoupling</h2>
+        <h2 class="border-top pt-4 mt-5">12. System Redundancy and Decoupling</h2>
         <p>Build fault tolerance into the broader material handling system through redundancy and decoupling. For operationally critical conveying paths, such as blast furnace feed or ship-loading with demurrage exposure, use parallel conveyor configurations.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="tbl-caption">Table 6: Conveyor Redundancy Options</caption>
+                <caption class="small fw-semibold">Table 6: Conveyor Redundancy Options</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Configuration</th>
@@ -436,7 +432,7 @@
     </section>
 
     <section id="availability-modelling">
-        <h2>13. Availability Modelling</h2>
+        <h2 class="border-top pt-4 mt-5">13. Availability Modelling</h2>
         <p>For complex multi-conveyor systems with multiple transfer points, parallel paths, surge storage, and variable maintenance shift patterns, analytical availability calculation using steady-state series-parallel models is insufficient. The interactions between component failure distributions, repair logistics, shift rosters, spare parts availability, and surge bin capacities preclude closed-form analytical solutions.</p>
         <p>Monte Carlo simulation is common practice for system-level availability modelling. The simulation generates stochastic failure and repair scenarios until the output distribution converges, typically after 10,000 or more iterations, sampling from the Weibull failure distributions of each component and the log-normal or empirical repair time distributions derived from site maintenance data.</p>
         <p>Required inputs for each component or subsystem include Weibull failure distribution parameters (beta and eta) derived from field data or manufacturer life estimates. Build repair time distributions (mean and standard deviation) from fault diagnosis, parts retrieval, labour mobilisation, lifting equipment scheduling, and testing times. Additional inputs comprise maintenance rosters, resource constraints, permitting delays, inventory levels, supplier lead times, and surge capacities modelled as time buffers.</p>
@@ -444,7 +440,7 @@
     </section>
 
     <section id="commissioning-validation-of-rams-targets">
-        <h2>14. Commissioning Validation of RAMS Targets</h2>
+        <h2 class="border-top pt-4 mt-5">14. Commissioning Validation of RAMS Targets</h2>
         <p>Design-phase RAMS targets are theoretical baselines requiring empirical validation. Commissioning and early operations (typically 12 to 24 months) yield the operational data required to reconcile predicted and actual metrics.</p>
         <p>Initial operation requires logging failure events to facilitate Weibull analysis. Burn-in tracking isolates infant mortality (beta less than 1.0) caused by manufacturing, installation, or commissioning anomalies from steady-state failure rates dictating lifecycle maintenance.</p>
         <p>Record the following in a dedicated failure register, functioning independently of the primary CMMS during burn-in: component identification (type, Original Equipment Manufacturer (OEM), serial number, installation location), Time to Failure (TTF), failure mode, root cause classification, repair time breakdown (diagnosis, parts retrieval, labour, reinstallation, testing), and failure categorisation (infant mortality, random, or wear-out).</p>
@@ -452,7 +448,7 @@
         <p>Post-burn-in, a formal RAMS validation review is required to benchmark empirical MTBF, MTTR, Mechanical Availability, and OEE against design thresholds. Sub-optimal performance requires root cause isolation and remediation through design modifications, maintenance strategy revision, spare parts stockholding adjustments, or operator retraining.</p>
     </section>
 
-    <footer class="mt-5 pt-3 pb-4 border-top text-muted" style="font-size:0.85rem;">
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
         Published <time datetime="2026-11-21">21 November 2026</time><br>
         Updated <time datetime="2026-11-21">21 November 2026</time><br>
         &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>
