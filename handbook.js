@@ -51,7 +51,7 @@
         }
     }
 
-    /* ── Chapter menu toggle (open by default; a collapse is remembered) ── */
+    /* ── Chapter menu toggle (closed by default; opening it is remembered) ── */
     var chapterBtn = document.getElementById('chapterMenuBtn');
     var chapterMenu = document.getElementById('chapterMenu');
     if (chapterBtn && chapterMenu) {
@@ -59,9 +59,9 @@
             chapterMenu.classList.toggle('open', open);
             chapterBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
         };
-        try {
-            if (localStorage.getItem('handbook.chapterMenu') === 'closed') { setChapterMenu(false); }
-        } catch (e) { /* storage unavailable: keep the default */ }
+        var savedState = null;
+        try { savedState = localStorage.getItem('handbook.chapterMenu'); } catch (e) { /* storage unavailable: use the default */ }
+        setChapterMenu(savedState === 'open');
 
         chapterBtn.addEventListener('click', function () {
             var open = !chapterMenu.classList.contains('open');

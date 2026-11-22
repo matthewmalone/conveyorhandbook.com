@@ -221,7 +221,17 @@ section[id] { scroll-margin-top: 1rem; }
     color: #6c757d;
     font-variant-numeric: tabular-nums;
 }
+.chapter-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    min-width: 0;
+}
 .chapter-title { font-weight: 500; }
+.chapter-desc {
+    color: #6c757d;
+    font-size: 0.875rem;
+}
 
 /* ── Tablets and phones: off-canvas sidebar ── */
 @media (max-width: 991.98px) {
