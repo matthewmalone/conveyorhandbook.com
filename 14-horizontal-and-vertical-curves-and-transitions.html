@@ -15,7 +15,7 @@
     <meta property="og:site_name" content="Modern Conveyor Handbook">
     <meta property="og:locale" content="en_AU">
     <meta property="article:published_time" content="2026-11-21T00:00:00+11:00">
-    <meta property="article:modified_time" content="2026-11-21T00:00:00+11:00">
+    <meta property="article:modified_time" content="2026-11-22T00:00:00+11:00">
     <meta property="article:author" content="Matthew Malone">
     <meta property="article:section" content="Engineering">
     <meta property="article:tag" content="conveyors">
@@ -45,7 +45,7 @@
                 "copyrightHolder": { "@type": "Person", "name": "Matthew Malone" },
                 "publisher": { "@type": "Organization", "@id": "https://www.conveyorhandbook.com/#organization", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
                 "datePublished": "2026-11-21",
-                "dateModified": "2026-11-21",
+                "dateModified": "2026-11-22",
                 "mainEntityOfPage": "https://www.conveyorhandbook.com/14-horizontal-and-vertical-curves-and-transitions.html",
                 "isPartOf": { "@type": "WebSite", "@id": "https://www.conveyorhandbook.com/#website", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
                 "inLanguage": "en-AU",
@@ -89,6 +89,7 @@
         <a href="#vertical-curves">2. Vertical Curves</a>
         <a href="#convex-and-concave-vertical-curves" class="sub">2.1 Convex and Concave Vertical Curves</a>
         <a href="#load-cases-and-design-checks" class="sub">2.2 Load Cases and Design Checks</a>
+        <a href="#minimum-radius-formulas" class="sub">2.3 Minimum Radius Formulas</a>
         <a href="#horizontal-curves">3. Horizontal Curves</a>
         <a href="#curve-mechanics" class="sub">3.1 Curve Mechanics</a>
         <a href="#equilibrium-and-radius-selection" class="sub">3.2 Equilibrium and Radius Selection</a>
@@ -208,6 +209,106 @@
         </div>
     </section>
 
+    <section id="minimum-radius-formulas">
+        <h3>2.3 Minimum Radius Formulas</h3>
+        <p>Use the formulas below to set the minimum vertical curve radius for each check in the concave and convex check tables. The largest radius governs.</p>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 1: Concave Curve Radius to Prevent Lift-Off</figcaption>
+                <div class="border rounded p-3">
+                    <p class="font-monospace mt-0 mb-3">Metric: R = (F_s * T_i * 1000) / (W_b * g)<br>Imperial: R = (F_s * T_i) / w_b</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>R = Minimum curve radius (m) [ft]</li>
+                        <li>F_s = Starting factor: 2.0 to 2.5 for a squirrel-cage motor with a direct-on-line start; 1.7 to 2.0 with a traction-type fluid coupling or centrifugal clutch; 1.3 to 1.6 with a scoop-type fluid coupling or eddy-current clutch, a slip-ring motor, or an electrically controlled start such as a variable frequency drive; and not less than 1.8 at the foot of a steep regenerative decline (dimensionless)</li>
+                        <li>T_i = Maximum operating tension across the full belt width at the tangent point (kN) [lbf]</li>
+                        <li>W_b = Belt mass per unit length (kg/m)</li>
+                        <li>w_b = Belt weight per unit length [lbf/ft]</li>
+                        <li>g = Gravitational acceleration, 9.81 (m/s2)</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> Calculate T_i at design capacity. Select F_s within each range to suit the motor and starter characteristics. On regenerative declines, reduce the idler spacing immediately after the foot of a steep decline.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> The lift-off radius rises in proportion to belt tension and falls as belt mass rises, so a light belt on a hard start needs the largest radius. A controlled start reduces the radius required.</p>
+            </div>
+        </div>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 2: Concave Curve Radius to Prevent Edge Buckling</figcaption>
+                <div class="border rounded p-3">
+                    <p class="font-monospace mt-0 mb-3">R = (SIN(theta) * W * E * N) / (4.5 * (T_c - T_min))</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>R = Minimum curve radius (m) [ft]</li>
+                        <li>theta = Troughing angle of the carrying idlers (deg)</li>
+                        <li>W = Belt width (m) [ft]</li>
+                        <li>E = Elastic modulus per ply, from the belt manufacturer (kN/m) [lbf/in]. For steel cord belts, the belt modulus.</li>
+                        <li>N = Number of plies (dimensionless). For steel cord belts, N = 1.</li>
+                        <li>T_c = Maximum operating tension per unit width at the tangent point (kN/m) [PIW]</li>
+                        <li>T_min = Minimum edge tension, typically 4.4 kN/m [25 PIW]. A value of zero gives the zero edge tension limit.</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> Calculate T_c at the actual operating capacity where the design capacity is well above the rate achieved in practice.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> The radius rises with belt modulus, belt width and troughing angle, and falls as the operating tension rises above the minimum edge tension. High-modulus and steel cord belts at low-tension locations need the largest concave radii.</p>
+            </div>
+        </div>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 3: Convex Curve Radius to Limit Edge Tension</figcaption>
+                <div class="border rounded p-3">
+                    <p class="font-monospace mt-0 mb-3">R = (SIN(theta) * W * E * N) / (4.5 * (T_a - T_c))</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>R = Minimum curve radius (m) [ft]</li>
+                        <li>theta = Troughing angle of the carrying idlers (deg)</li>
+                        <li>W = Belt width (m) [ft]</li>
+                        <li>E = Elastic modulus per ply, from the belt manufacturer (kN/m) [lbf/in]. For steel cord belts, the belt modulus.</li>
+                        <li>N = Number of plies (dimensionless). For steel cord belts, N = 1.</li>
+                        <li>T_a = Allowable working tension per unit width (kN/m) [PIW] (refer to Chapter 2)</li>
+                        <li>T_c = Maximum operating tension per unit width at the tangent point (kN/m) [PIW]</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> Calculate T_c at design capacity. Confirm the radial idler load with the idler supplier.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> The radius rises sharply as the operating tension approaches the allowable working tension. Locate convex curves in low-tension zones, or reduce the troughing angle through the curve.</p>
+            </div>
+        </div>
+        <div class="formula-block">
+            <figure class="formula">
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 4: Convex Curve Radius to Maintain Centre Tension</figcaption>
+                <div class="border rounded p-3">
+                    <p class="font-monospace mt-0 mb-3">R = (SIN(theta) * W * E * N) / (9 * (T_c - T_min))</p>
+                    <p class="mb-1">Where:</p>
+                    <ul class="list-unstyled ms-3 mb-0">
+                        <li>R = Minimum curve radius (m) [ft]</li>
+                        <li>theta = Troughing angle of the carrying idlers (deg)</li>
+                        <li>W = Belt width (m) [ft]</li>
+                        <li>E = Elastic modulus per ply, from the belt manufacturer (kN/m) [lbf/in]. For steel cord belts, the belt modulus.</li>
+                        <li>N = Number of plies (dimensionless). For steel cord belts, N = 1.</li>
+                        <li>T_c = Maximum operating tension per unit width at the tangent point (kN/m) [PIW]</li>
+                        <li>T_min = Minimum centre tension, typically 4.4 kN/m [25 PIW]. A value of zero gives the zero centre tension limit.</li>
+                    </ul>
+                </div>
+            </figure>
+            <div class="callout" role="note">
+                <p><strong>Note:</strong> Calculate T_c at the actual operating capacity where the design capacity is well above the rate achieved in practice.</p>
+            </div>
+            <div class="callout" role="note">
+                <p><strong>Engineering Takeaway:</strong> The required radius grows very large as the operating tension falls towards the minimum centre tension, so this check controls convex curves in low-tension zones. Raising tension at the curve or reducing the troughing angle reduces the radius.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="horizontal-curves">
         <h2 class="border-top pt-4 mt-5">3. Horizontal Curves</h2>
         <p>Using a single continuous belt for a directional change eliminates transfer towers and the associated capital cost, dust generation and maintenance. Horizontal curve radii commonly range from 1,000 to 5,000 m [3,300 to 16,400 ft].</p>
@@ -225,7 +326,7 @@
         <p>Size the radius from a first-pass balance between the inward tension resultant and the outward gravity component from banking.</p>
         <div class="formula-block">
             <figure class="formula">
-                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 1: Horizontal Curve Equilibrium Radius</figcaption>
+                <figcaption class="small fw-semibold text-body-secondary py-2">Formula 5: Horizontal Curve Equilibrium Radius</figcaption>
                 <div class="border rounded p-3">
                     <p class="font-monospace mt-0 mb-3">Metric: R = T / (m * g * SIN(beta))<br>Imperial: R = T / (w * SIN(beta))</p>
                     <p class="mb-1">Where:</p>
@@ -391,7 +492,7 @@
 
     <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
         Published <time datetime="2026-11-21">21 November 2026</time><br>
-        Updated <time datetime="2026-11-21">21 November 2026</time><br>
+        Updated <time datetime="2026-11-22">22 November 2026</time><br>
         &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>
     </footer>
 
