@@ -15,7 +15,7 @@
     <meta property="og:site_name" content="Modern Conveyor Handbook">
     <meta property="og:locale" content="en_AU">
     <meta property="article:published_time" content="2026-11-21T00:00:00+11:00">
-    <meta property="article:modified_time" content="2026-11-21T00:00:00+11:00">
+    <meta property="article:modified_time" content="2026-11-22T00:00:00+11:00">
     <meta property="article:author" content="Matthew Malone">
     <meta property="article:section" content="Engineering">
     <meta property="article:tag" content="conveyors">
@@ -45,7 +45,7 @@
                 "copyrightHolder": { "@type": "Person", "name": "Matthew Malone" },
                 "publisher": { "@type": "Organization", "@id": "https://www.conveyorhandbook.com/#organization", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
                 "datePublished": "2026-11-21",
-                "dateModified": "2026-11-21",
+                "dateModified": "2026-11-22",
                 "mainEntityOfPage": "https://www.conveyorhandbook.com/03-belt-capacities-and-material-properties.html",
                 "isPartOf": { "@type": "WebSite", "@id": "https://www.conveyorhandbook.com/#website", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
                 "inLanguage": "en-AU",
@@ -135,37 +135,176 @@
 
     <section id="typical-material-values">
         <h3>3.2 Typical Material Values</h3>
-        <p>Material density and angles vary with moisture content, lump size and cohesion. The table below gives typical values for commonly conveyed materials. Confirm design values by testing the specific material.</p>
-        <p>The maximum incline is typically 15 to 18 deg for dry bulk materials. Exceeding this limit induces material rollback. Free surface water lubricates the belt interface and reduces the allowable incline. Moisture without free surface water increases cohesion and can permit a steeper incline, as for damp sand. Inclines above 20 deg typically require moulded cleats, chevrons or corrugated sidewall belts.</p>
+        <p>Material density and angles vary with moisture content, lump size and cohesion. The tables below give typical values for commonly conveyed materials. Confirm design values by testing the specific material.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="small fw-semibold">Table 1: Material Density, Surcharge and Maximum Incline</caption>
+                <caption class="small fw-semibold">Table 1: Material Density, Repose and Surcharge Angles</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Material</th>
                         <th scope="col">Bulk Density kg/m3 [lb/ft3]</th>
                         <th scope="col">Angle of Repose deg</th>
                         <th scope="col">Surcharge Angle deg</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Acid Phosphate</th><td>1,540 [96]</td><td>26</td><td>10</td></tr>
+                    <tr><th scope="row">Alum (Lump)</th><td>800 to 960 [50 to 60]</td><td>27</td><td>10</td></tr>
+                    <tr><th scope="row">Alum (Pulverised)</th><td>720 to 800 [45 to 50]</td><td>35</td><td>25</td></tr>
+                    <tr><th scope="row">Alumina</th><td>800 to 960 [50 to 60]</td><td>22</td><td>5</td></tr>
+                    <tr><th scope="row">Ashes (Boiler-house, dry, loose)</th><td>560 to 690 [35 to 43]</td><td>38 to 45</td><td>25</td></tr>
+                    <tr><th scope="row">Asphalt</th><td>1,280 to 1,360 [80 to 85]</td><td>45</td><td>30</td></tr>
+                    <tr><th scope="row">Bagasse (Dry, loose)</th><td>80 [5]</td><td>45</td><td>25</td></tr>
+                    <tr><th scope="row">Bagasse (Fresh, moist)</th><td>120 [7]</td><td>45</td><td>25</td></tr>
+                    <tr><th scope="row">Barytes (15 mm screenings)</th><td>2,080 to 2,320 [130 to 145]</td><td>30</td><td>20</td></tr>
+                    <tr><th scope="row">Barytes (50 to 75 mm lumps)</th><td>2,320 to 2,400 [145 to 150]</td><td>30</td><td>25</td></tr>
+                    <tr><th scope="row">Barytes (Dust)</th><td>1,760 to 2,080 [110 to 130]</td><td>30</td><td>15</td></tr>
+                    <tr><th scope="row">Basalt (15 mm screenings)</th><td>2,080 to 2,320 [130 to 145]</td><td>30 to 34</td><td>20</td></tr>
+                    <tr><th scope="row">Basalt (50 to 75 mm lumps)</th><td>1,680 to 1,760 [105 to 110]</td><td>35 to 39</td><td>25</td></tr>
+                    <tr><th scope="row">Bauxite (Crushed)</th><td>1,200 to 1,360 [75 to 85]</td><td>30 to 35</td><td>15</td></tr>
+                    <tr><th scope="row">Borax (Solid, 40 to 50 mm lumps)</th><td>880 to 960 [55 to 60]</td><td>30 to 45</td><td>20 to 30</td></tr>
+                    <tr><th scope="row">Borax (Solid, 50 to 100 mm lumps)</th><td>960 to 1,040 [60 to 65]</td><td>40</td><td>30</td></tr>
+                    <tr><th scope="row">Brewers' Grain (Dry)</th><td>400 to 480 [25 to 30]</td><td>45</td><td>30</td></tr>
+                    <tr><th scope="row">Brewers' Grain (Wet)</th><td>880 to 960 [55 to 60]</td><td>45</td><td>30</td></tr>
+                    <tr><th scope="row">Brick (Hard)</th><td>2,000 [125]</td><td>30 to 45</td><td>20 to 30</td></tr>
+                    <tr><th scope="row">Brick (Soft)</th><td>1,600 [100]</td><td>30 to 45</td><td>20 to 30</td></tr>
+                    <tr><th scope="row">Carbon Black (Pellets)</th><td>400 [25]</td><td>40</td><td>5</td></tr>
+                    <tr><th scope="row">Cement (Portland, Dry)</th><td>1,200 to 1,360 [75 to 85]</td><td>40</td><td>10</td></tr>
+                    <tr><th scope="row">Cement Clinker</th><td>1,280 to 1,520 [80 to 95]</td><td>33</td><td>25</td></tr>
+                    <tr><th scope="row">Cement Slurry</th><td>1,440 [90]</td><td>0 to 19</td><td>5</td></tr>
+                    <tr><th scope="row">Chalk (40 to 50 mm lumps)</th><td>1,200 to 1,280 [75 to 80]</td><td>40 to 45</td><td>30</td></tr>
+                    <tr><th scope="row">Chalk (50 to 75 mm lumps)</th><td>1,280 to 1,360 [80 to 85]</td><td>45</td><td>30</td></tr>
+                    <tr><th scope="row">Clay (Brick, ground fine)</th><td>1,760 [110]</td><td>35</td><td>15</td></tr>
+                    <tr><th scope="row">Clay (Dry, loose)</th><td>1,010 to 1,440 [63 to 90]</td><td>40 to 45</td><td>15 to 25</td></tr>
+                    <tr><th scope="row">Coal (150 mm domestic sizes)</th><td>830 to 900 [52 to 56]</td><td>35</td><td>25</td></tr>
+                    <tr><th scope="row">Coal (Bituminous, Run-of-Mine (ROM))</th><td>720 to 880 [45 to 55]</td><td>35</td><td>20 to 25</td></tr>
+                    <tr><th scope="row">Coal (Lignite/Brown)</th><td>640 to 800 [40 to 50]</td><td>35</td><td>25</td></tr>
+                    <tr><th scope="row">Coal (Pulverised for coking)</th><td>480 to 590 [30 to 37]</td><td>45</td><td>10</td></tr>
+                    <tr><th scope="row">Coal (Slack)</th><td>690 to 800 [43 to 50]</td><td>37</td><td>25</td></tr>
+                    <tr><th scope="row">Coke (Breeze)</th><td>380 to 560 [24 to 35]</td><td>30 to 45</td><td>20</td></tr>
+                    <tr><th scope="row">Coke (Screened)</th><td>400 to 480 [25 to 30]</td><td>30</td><td>25</td></tr>
+                    <tr><th scope="row">Concrete (Wet, on conveyor)</th><td>1,760 to 2,400 [110 to 150]</td><td>20 to 29</td><td>5</td></tr>
+                    <tr><th scope="row">Copper Ore (Crushed)</th><td>2,080 to 2,400 [130 to 150]</td><td>30 to 34</td><td>25</td></tr>
+                    <tr><th scope="row">Corn Grits</th><td>670 [42]</td><td>30 to 45</td><td>20 to 30</td></tr>
+                    <tr><th scope="row">Cryolite (15 mm screenings)</th><td>1,440 to 1,600 [90 to 100]</td><td>30 to 45</td><td>15</td></tr>
+                    <tr><th scope="row">Cryolite (50 to 75 mm lumps)</th><td>1,600 to 1,680 [100 to 105]</td><td>30 to 45</td><td>20</td></tr>
+                    <tr><th scope="row">Cryolite (Dust)</th><td>1,200 to 1,440 [75 to 90]</td><td>30 to 45</td><td>5</td></tr>
+                    <tr><th scope="row">Dolomite (Lump)</th><td>1,440 to 1,600 [90 to 100]</td><td>30 to 45</td><td>20</td></tr>
+                    <tr><th scope="row">Earth (Dry, loose)</th><td>1,120 to 1,280 [70 to 80]</td><td>30 to 45</td><td>20 to 25</td></tr>
+                    <tr><th scope="row">Earth (Wet, mud)</th><td>1,600 to 1,760 [100 to 110]</td><td>45</td><td>5</td></tr>
+                    <tr><th scope="row">Foundry Refuse (Old sand, cores)</th><td>960 to 1,280 [60 to 80]</td><td>35 to 39</td><td>15</td></tr>
+                    <tr><th scope="row">Garbage (Household)</th><td>800 [50]</td><td>30</td><td>20</td></tr>
+                    <tr><th scope="row">Glass (Batch)</th><td>1,680 [105]</td><td>20 to 29</td><td>10</td></tr>
+                    <tr><th scope="row">Glass (Broken)</th><td>1,280 to 1,600 [80 to 100]</td><td>30 to 45</td><td>20 to 30</td></tr>
+                    <tr><th scope="row">Grains (Wheat/Corn)</th><td>720 to 770 [45 to 48]</td><td>28</td><td>10</td></tr>
+                    <tr><th scope="row">Granite (15 mm screenings)</th><td>1,280 to 1,440 [80 to 90]</td><td>20 to 29</td><td>10</td></tr>
+                    <tr><th scope="row">Granite (40 to 50 mm lumps)</th><td>1,360 to 1,440 [85 to 90]</td><td>25</td><td>20</td></tr>
+                    <tr><th scope="row">Granite (Broken)</th><td>1,520 to 1,600 [95 to 100]</td><td>35 to 40</td><td>20</td></tr>
+                    <tr><th scope="row">Gravel (Dry, sharp)</th><td>1,440 to 1,600 [90 to 100]</td><td>30 to 45</td><td>25</td></tr>
+                    <tr><th scope="row">Gravel (Wet)</th><td>1,600 to 1,920 [100 to 120]</td><td>32</td><td>25</td></tr>
+                    <tr><th scope="row">Gypsum (15 mm screenings)</th><td>1,120 to 1,280 [70 to 80]</td><td>40</td><td>15</td></tr>
+                    <tr><th scope="row">Gypsum (50 to 75 mm lumps)</th><td>1,200 to 1,280 [75 to 80]</td><td>30</td><td>20</td></tr>
+                    <tr><th scope="row">Gypsum (Dust)</th><td>960 to 1,120 [60 to 70]</td><td>42</td><td>30</td></tr>
+                    <tr><th scope="row">Hops (Brewery, moist)</th><td>560 [35]</td><td>30 to 45</td><td>20 to 30</td></tr>
+                    <tr><th scope="row">Ice (Crushed)</th><td>640 [40]</td><td>0 to 19</td><td>5</td></tr>
+                    <tr><th scope="row">Iron Ore (Crushed)</th><td>2,200 to 2,900 [137 to 181]</td><td>35</td><td>20 to 25</td></tr>
+                    <tr><th scope="row">Iron Pyrites (50 to 75 mm lumps)</th><td>2,160 to 2,320 [135 to 145]</td><td>30 to 34</td><td>20</td></tr>
+                    <tr><th scope="row">Lead Ore (Varies with lead content)</th><td>3,200 to 4,320 [200 to 270]</td><td>30</td><td>15</td></tr>
+                    <tr><th scope="row">Limestone (50 to 75 mm lumps)</th><td>1,440 to 1,520 [90 to 95]</td><td>30 to 40</td><td>25</td></tr>
+                    <tr><th scope="row">Limestone (Crushed)</th><td>1,280 to 1,440 [80 to 90]</td><td>30 to 40</td><td>20</td></tr>
+                    <tr><th scope="row">Limestone (Dust)</th><td>1,200 to 1,280 [75 to 80]</td><td>45</td><td>5</td></tr>
+                    <tr><th scope="row">Manganese Ore</th><td>2,000 to 2,240 [125 to 140]</td><td>39</td><td>25</td></tr>
+                    <tr><th scope="row">Paper Pulp</th><td>640 to 960 [40 to 60]</td><td>0 to 19</td><td>5</td></tr>
+                    <tr><th scope="row">Petroleum Coke</th><td>560 to 640 [35 to 40]</td><td>20 to 29</td><td>10</td></tr>
+                    <tr><th scope="row">Phosphate Rock</th><td>1,360 [85]</td><td>25 to 30</td><td>10</td></tr>
+                    <tr><th scope="row">Quartz (Dust)</th><td>1,120 to 1,280 [70 to 80]</td><td>40</td><td>30</td></tr>
+                    <tr><th scope="row">Quartz (Solid, 40 to 50 mm lumps)</th><td>1,360 to 1,440 [85 to 90]</td><td>35</td><td>20</td></tr>
+                    <tr><th scope="row">Quartz (Solid, 50 to 75 mm lumps)</th><td>1,440 to 1,520 [90 to 95]</td><td>35</td><td>20</td></tr>
+                    <tr><th scope="row">Rock (Soft, excavated)</th><td>1,600 to 1,760 [100 to 110]</td><td>35 to 39</td><td>20</td></tr>
+                    <tr><th scope="row">Rubber</th><td>930 [58]</td><td>35</td><td>25</td></tr>
+                    <tr><th scope="row">Rubber (Reclaim)</th><td>560 [35]</td><td>32</td><td>20</td></tr>
+                    <tr><th scope="row">Salt (Coarse)</th><td>640 to 900 [40 to 56]</td><td>30 to 45</td><td>25</td></tr>
+                    <tr><th scope="row">Salt (Fines)</th><td>720 [45]</td><td>25</td><td>5</td></tr>
+                    <tr><th scope="row">Salt (Lump, for stock)</th><td>1,600 [100]</td><td>35 to 39</td><td>25</td></tr>
+                    <tr><th scope="row">Sand (Beach or river, wet)</th><td>1,600 to 2,080 [100 to 130]</td><td>15 to 30</td><td>5 to 15</td></tr>
+                    <tr><th scope="row">Sand (Damp)</th><td>1,600 to 2,080 [100 to 130]</td><td>40 to 45</td><td>25</td></tr>
+                    <tr><th scope="row">Sand (Dry)</th><td>1,440 to 1,600 [90 to 100]</td><td>30 to 35</td><td>15</td></tr>
+                    <tr><th scope="row">Sand (Foundry, loose)</th><td>1,280 to 1,440 [80 to 90]</td><td>39</td><td>15</td></tr>
+                    <tr><th scope="row">Sand (Foundry, rammed lumps)</th><td>1,600 to 1,760 [100 to 110]</td><td>20 to 29</td><td>10</td></tr>
+                    <tr><th scope="row">Sandstone</th><td>1,360 to 1,440 [85 to 90]</td><td>30 to 34</td><td>20</td></tr>
+                    <tr><th scope="row">Sawdust</th><td>160 to 200 [10 to 12]</td><td>35</td><td>25</td></tr>
+                    <tr><th scope="row">Shale (Broken)</th><td>1,440 to 1,600 [90 to 100]</td><td>30 to 45</td><td>20 to 30</td></tr>
+                    <tr><th scope="row">Shale (Crushed)</th><td>1,360 to 1,440 [85 to 90]</td><td>39</td><td>25</td></tr>
+                    <tr><th scope="row">Slag (Blast furnace, crushed)</th><td>1,280 to 1,440 [80 to 90]</td><td>25</td><td>25</td></tr>
+                    <tr><th scope="row">Slag (Granulated, dry)</th><td>960 to 1,040 [60 to 65]</td><td>25</td><td>10</td></tr>
+                    <tr><th scope="row">Slag (Granulated, wet)</th><td>1,440 to 1,600 [90 to 100]</td><td>45</td><td>10</td></tr>
+                    <tr><th scope="row">Slate (15 mm screenings)</th><td>1,280 to 1,440 [80 to 90]</td><td>28</td><td>20</td></tr>
+                    <tr><th scope="row">Slate (40 to 75 mm lumps)</th><td>1,360 to 1,520 [85 to 95]</td><td>30 to 34</td><td>20</td></tr>
+                    <tr><th scope="row">Soda Ash</th><td>800 to 1,040 [50 to 65]</td><td>32</td><td>20</td></tr>
+                    <tr><th scope="row">Sugar (Raw)</th><td>880 to 1,040 [55 to 65]</td><td>37</td><td>25</td></tr>
+                    <tr><th scope="row">Sugar (Refined)</th><td>880 [55]</td><td>30 to 45</td><td>10</td></tr>
+                    <tr><th scope="row">Sulphur (15 mm screenings)</th><td>1,200 to 1,360 [75 to 85]</td><td>30 to 45</td><td>15</td></tr>
+                    <tr><th scope="row">Sulphur (50 to 75 mm lumps)</th><td>1,360 to 1,440 [85 to 90]</td><td>35</td><td>25</td></tr>
+                    <tr><th scope="row">Talc (Dust)</th><td>1,220 to 1,280 [76 to 80]</td><td>45</td><td>30</td></tr>
+                    <tr><th scope="row">Woodchips</th><td>190 to 480 [12 to 30]</td><td>45</td><td>25</td></tr>
+                    <tr><th scope="row">Woodchips (Yellow pine)</th><td>320 to 400 [20 to 25]</td><td>45</td><td>25</td></tr>
+                    <tr><th scope="row">Zinc Ore (Crushed)</th><td>2,400 to 2,560 [150 to 160]</td><td>38</td><td>20</td></tr>
+                    <tr><th scope="row">Zinc Oxide (Heavy)</th><td>480 to 560 [30 to 35]</td><td>45</td><td>10</td></tr>
+                    <tr><th scope="row">Zinc Oxide (Light)</th><td>160 to 480 [10 to 30]</td><td>45</td><td>10</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Values are for dry material broken to the sizes most common in conveyor systems, unless the material description states otherwise. Where only one of the two angles is published, the other is estimated from the CEMA relationship between angle of repose and surcharge angle.</p>
+        </div>
+        <p>The maximum incline is typically 15 to 18 deg for dry bulk materials. Exceeding this limit induces material rollback. Free surface water lubricates the belt interface and reduces the allowable incline. Moisture without free surface water increases cohesion and can permit a steeper incline, as for damp sand. Inclines above 20 deg typically require moulded cleats, chevrons or corrugated sidewall belts.</p>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="small fw-semibold">Table 2: Maximum Conveyor Incline by Material</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Material</th>
                         <th scope="col">Maximum Conveyor Incline deg</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><th scope="row">Alumina</th><td>800 to 960 [50 to 60]</td><td>22</td><td>5</td><td>12</td></tr>
-                    <tr><th scope="row">Bauxite (Crushed)</th><td>1,200 to 1,360 [75 to 85]</td><td>30 to 35</td><td>15</td><td>15</td></tr>
-                    <tr><th scope="row">Cement (Portland, Dry)</th><td>1,200 to 1,360 [75 to 85]</td><td>40</td><td>10</td><td>20</td></tr>
-                    <tr><th scope="row">Coal (Bituminous, Run-of-Mine (ROM))</th><td>720 to 880 [45 to 55]</td><td>35</td><td>20 to 25</td><td>16 to 18</td></tr>
-                    <tr><th scope="row">Coal (Lignite/Brown)</th><td>640 to 800 [40 to 50]</td><td>35</td><td>25</td><td>18</td></tr>
-                    <tr><th scope="row">Coke (Screened)</th><td>400 to 480 [25 to 30]</td><td>30</td><td>25</td><td>15</td></tr>
-                    <tr><th scope="row">Earth (Dry, loose)</th><td>1,120 to 1,280 [70 to 80]</td><td>30 to 45</td><td>20 to 25</td><td>18 to 20</td></tr>
-                    <tr><th scope="row">Grains (Wheat/Corn)</th><td>720 to 770 [45 to 48]</td><td>28</td><td>10</td><td>12 to 14</td></tr>
-                    <tr><th scope="row">Gravel (Dry, sharp)</th><td>1,440 to 1,600 [90 to 100]</td><td>30 to 45</td><td>25</td><td>15</td></tr>
-                    <tr><th scope="row">Iron Ore (Crushed)</th><td>2,200 to 2,900 [137 to 181]</td><td>35</td><td>20 to 25</td><td>18</td></tr>
-                    <tr><th scope="row">Limestone (Crushed)</th><td>1,280 to 1,440 [80 to 90]</td><td>30 to 40</td><td>20</td><td>15</td></tr>
-                    <tr><th scope="row">Sand (Dry)</th><td>1,440 to 1,600 [90 to 100]</td><td>30 to 35</td><td>15</td><td>15</td></tr>
-                    <tr><th scope="row">Sand (Damp)</th><td>1,600 to 2,080 [100 to 130]</td><td>40 to 45</td><td>25</td><td>20</td></tr>
-                    <tr><th scope="row">Woodchips</th><td>190 to 480 [12 to 30]</td><td>45</td><td>25</td><td>23 to 25</td></tr>
+                    <tr><th scope="row">Alumina</th><td>12</td></tr>
+                    <tr><th scope="row">Bauxite (Crushed)</th><td>15</td></tr>
+                    <tr><th scope="row">Cement (Portland, Dry)</th><td>20</td></tr>
+                    <tr><th scope="row">Clay (Fine and dry)</th><td>22</td></tr>
+                    <tr><th scope="row">Clay (Wet lump)</th><td>18</td></tr>
+                    <tr><th scope="row">Coal (Bituminous, Run-of-Mine (ROM))</th><td>16 to 18</td></tr>
+                    <tr><th scope="row">Coal (Bituminous, sized)</th><td>15 to 16</td></tr>
+                    <tr><th scope="row">Coal (Bituminous, slack)</th><td>20</td></tr>
+                    <tr><th scope="row">Coal (Lignite/Brown)</th><td>18</td></tr>
+                    <tr><th scope="row">Coke (Breeze)</th><td>20</td></tr>
+                    <tr><th scope="row">Coke (Screened)</th><td>15</td></tr>
+                    <tr><th scope="row">Concrete (Normal)</th><td>15</td></tr>
+                    <tr><th scope="row">Concrete (Wet)</th><td>10 to 12</td></tr>
+                    <tr><th scope="row">Earth (Dry, loose)</th><td>18 to 20</td></tr>
+                    <tr><th scope="row">Grains (Wheat/Corn)</th><td>12 to 14</td></tr>
+                    <tr><th scope="row">Gravel (Dry, sharp)</th><td>15</td></tr>
+                    <tr><th scope="row">Gravel (Washed)</th><td>12 to 15</td></tr>
+                    <tr><th scope="row">Gravel and Sand</th><td>18 to 20</td></tr>
+                    <tr><th scope="row">Gravel and Sand (Wet)</th><td>20 to 22</td></tr>
+                    <tr><th scope="row">Iron Ore (Crushed)</th><td>18</td></tr>
+                    <tr><th scope="row">Lime (Powdered)</th><td>22</td></tr>
+                    <tr><th scope="row">Limestone (Crushed)</th><td>15</td></tr>
+                    <tr><th scope="row">Ores (Fines only)</th><td>20</td></tr>
+                    <tr><th scope="row">Ores (Mixed lumps and fines)</th><td>18</td></tr>
+                    <tr><th scope="row">Ores (Sized)</th><td>16</td></tr>
+                    <tr><th scope="row">Rock (Fines only)</th><td>20</td></tr>
+                    <tr><th scope="row">Rock (Mixed lumps and fines)</th><td>18</td></tr>
+                    <tr><th scope="row">Rock (Sized)</th><td>16</td></tr>
+                    <tr><th scope="row">Sand (Damp)</th><td>20</td></tr>
+                    <tr><th scope="row">Sand (Dry)</th><td>15</td></tr>
+                    <tr><th scope="row">Sulphur (Powdered)</th><td>22</td></tr>
+                    <tr><th scope="row">Woodchips</th><td>23 to 25</td></tr>
                 </tbody>
             </table>
+        </div>
+        <div class="callout" role="note">
+            <p><strong>Note:</strong> Tabulated inclines assume material without unusual slumping characteristics. Where the material slumps readily, or enough water is present to lubricate the interface between the belt cover and the load, the permissible incline is appreciably lower than tabulated; determine it by test or from field experience. Moulded cleats raise the permissible incline where the load would otherwise slip on a plain belt.</p>
         </div>
         <div class="callout" role="note">
             <p><strong>Note:</strong> Underground drift conveyors handling ROM bituminous coal are typically inclined at 15 to 16 deg, incorporating a margin below the 18 deg limit to accommodate localised moisture or loading surges.</p>
@@ -181,7 +320,7 @@
         </ul>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="small fw-semibold">Table 2: Maximum Lump Size by Belt Width (CEMA)</caption>
+                <caption class="small fw-semibold">Table 3: Maximum Lump Size by Belt Width (CEMA)</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Belt Width mm [in]</th>
@@ -322,7 +461,7 @@
         <p>The theoretical cross-sectional area is not achieved where conveyor geometry or material behaviour causes the load to shift or flatten. The following material properties and belt configurations reduce volumetric capacity.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="small fw-semibold">Table 3: Material Properties Affecting Volumetric Capacity</caption>
+                <caption class="small fw-semibold">Table 4: Material Properties Affecting Volumetric Capacity</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Material Type</th>
@@ -347,7 +486,7 @@
         </div>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="small fw-semibold">Table 4: Belt Geometry and Configuration Affecting Volumetric Capacity</caption>
+                <caption class="small fw-semibold">Table 5: Belt Geometry and Configuration Affecting Volumetric Capacity</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Factor</th>
@@ -374,7 +513,7 @@
         <p>Where mass capacity must increase on a conveyor already at full volumetric capacity, a wider belt is the direct solution, but the structural replacement is frequently capital-prohibitive. Increasing belt speed by gear ratio change or variable frequency drive (VFD) raises mass throughput at constant cross-section. Verify each component in the table below before modification.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="small fw-semibold">Table 5: Consequential Effects of Belt Speed Increase</caption>
+                <caption class="small fw-semibold">Table 6: Consequential Effects of Belt Speed Increase</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Component</th>
@@ -396,7 +535,7 @@
 
     <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
         Published <time datetime="2026-11-21">21 November 2026</time><br>
-        Updated <time datetime="2026-11-21">21 November 2026</time><br>
+        Updated <time datetime="2026-11-22">22 November 2026</time><br>
         &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>
     </footer>
 
