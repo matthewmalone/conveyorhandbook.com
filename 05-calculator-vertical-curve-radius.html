@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator 5 Vertical Curve Radius – Modern Conveyor Handbook</title>
+    <meta name="description" content="Vertical curve radius calculator: the concave or convex radius needed for lift-off, edge buckling, edge tension and centre tension in each load case, for flat, 2, 3, 4 and 5-roll idlers, with a nominal radius check, a to-scale curve profile, the tension across the belt width and a troughing angle comparison.">
+    <meta name="author" content="Matthew Malone">
+    <link rel="canonical" href="https://www.conveyorhandbook.com/05-calculator-vertical-curve-radius.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Calculator 5 Vertical Curve Radius – Modern Conveyor Handbook">
+    <meta property="og:description" content="Vertical curve radius calculator: the concave or convex radius needed for lift-off, edge buckling, edge tension and centre tension in each load case, for flat, 2, 3, 4 and 5-roll idlers, with a nominal radius check, a to-scale curve profile, the tension across the belt width and a troughing angle comparison.">
+    <meta property="og:url" content="https://www.conveyorhandbook.com/05-calculator-vertical-curve-radius.html">
+    <meta property="og:site_name" content="Modern Conveyor Handbook">
+    <meta property="og:locale" content="en_AU">
+    <meta property="article:published_time" content="2026-11-23T00:00:00+11:00">
+    <meta property="article:modified_time" content="2026-11-24T00:00:00+11:00">
+    <meta property="article:author" content="Matthew Malone">
+    <meta property="article:section" content="Engineering">
+    <meta property="article:tag" content="conveyors">
+    <meta property="article:tag" content="vertical curves">
+    <meta property="article:tag" content="belt tension">
+    <meta property="article:tag" content="engineering calculator">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Calculator 5 Vertical Curve Radius – Modern Conveyor Handbook">
+    <meta name="twitter:description" content="Vertical curve radius calculator: the concave or convex radius needed for lift-off, edge buckling, edge tension and centre tension in each load case, for flat, 2, 3, 4 and 5-roll idlers, with a nominal radius check, a to-scale curve profile, the tension across the belt width and a troughing angle comparison.">
+
+    <link rel="icon" type="image/svg+xml" href="ico/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+    <link rel="home" href="https://www.conveyorhandbook.com/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "TechArticle",
+                "headline": "Calculator 5 Vertical Curve Radius",
+                "description": "Vertical curve radius calculator: the concave or convex radius needed for lift-off, edge buckling, edge tension and centre tension in each load case, for flat, 2, 3, 4 and 5-roll idlers, with a nominal radius check, a to-scale curve profile, the tension across the belt width and a troughing angle comparison.",
+                "author": { "@type": "Person", "name": "Matthew Malone" },
+                "copyrightYear": "2026",
+                "copyrightHolder": { "@type": "Person", "name": "Matthew Malone" },
+                "publisher": { "@type": "Organization", "@id": "https://www.conveyorhandbook.com/#organization", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "datePublished": "2026-11-23",
+                "dateModified": "2026-11-24",
+                "mainEntityOfPage": "https://www.conveyorhandbook.com/05-calculator-vertical-curve-radius.html",
+                "isPartOf": { "@type": "WebSite", "@id": "https://www.conveyorhandbook.com/#website", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "inLanguage": "en-AU",
+                "about": { "@type": "Thing", "name": "Calculator 5 Vertical Curve Radius" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Modern Conveyor Handbook", "item": "https://www.conveyorhandbook.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Calculator 5 Vertical Curve Radius", "item": "https://www.conveyorhandbook.com/05-calculator-vertical-curve-radius.html" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+    <link rel="stylesheet" href="handbook.css">
+    <style>
+        /* Calculator page: only what Bootstrap's classes and handbook.css do not cover */
+        .calc-page { padding-bottom: 6rem; }
+        .calc-group { margin: 2rem 0 0.25rem; }
+
+        /* One input or result per row: label and hint on the left, field or value on the right */
+        .calc-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            column-gap: 1.5rem;
+            row-gap: 0.35rem;
+            align-items: center;
+            padding: 0.6rem 0.5rem;
+            border-bottom: 1px solid var(--bs-border-color);
+        }
+        .calc-row > label { margin: 0; }
+        .calc-hint { display: block; margin-top: 0.1rem; font-size: 0.8125rem; font-weight: 400; color: var(--bs-secondary-color); }
+        .calc-num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+        .input-group > .form-select.calc-dir { flex: 0 0 8.5rem; width: 8.5rem; }
+        @media (max-width: 575.98px) {
+            .calc-row { grid-template-columns: minmax(0, 1fr); padding-left: 0; padding-right: 0; }
+        }
+        #results { scroll-margin-top: 1rem; }
+
+        /* Charts and the curve profile */
+        .calc-drawing { position: relative; }
+        .calc-drawing svg { display: block; width: 100%; overflow: visible; }
+        .calc-drawing text { font-size: 12px; fill: var(--bs-secondary-color); font-variant-numeric: tabular-nums; }
+        .calc-drawing text.calc-dark { fill: #212529; }
+        .calc-drawing text.calc-group-label { fill: #212529; font-weight: 600; font-size: 13px; }
+        .calc-drawing text.calc-gov { fill: #212529; font-weight: 600; }
+        .calc-drawing text.calc-halo { paint-order: stroke; stroke: var(--bs-body-bg); stroke-width: 4px; stroke-linejoin: round; }
+        .calc-tip {
+            position: absolute;
+            z-index: 5;
+            padding: 0.3rem 0.55rem;
+            border: 1px solid var(--bs-border-color);
+            border-radius: var(--bs-border-radius-sm);
+            background: var(--bs-body-bg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            max-width: min(360px, 90vw);
+            font-size: 0.8rem;
+            white-space: pre-line;
+            pointer-events: none;
+        }
+
+        /* Result bar fixed to the bottom of the window while the inputs are on screen */
+        .calc-bar {
+            position: fixed;
+            left: 260px;
+            right: 0;
+            bottom: 0;
+            z-index: 1010;
+            padding: 0.6rem 3rem;
+            border-top: 1px solid var(--bs-border-color);
+            background: var(--bs-body-bg);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.06);
+        }
+        @media (max-width: 991.98px) {
+            .calc-bar { left: 0; padding: 0.55rem 1rem; }
+        }
+        @media print {
+            .calc-page { padding-bottom: 0; }
+            .calc-bar, .calc-tip { display: none !important; }
+            .calc-drawing svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Contents
+    </button>
+</div>
+
+<nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
+    <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="chapterMenuBtn" aria-expanded="false" aria-controls="chapterMenu">Chapters</button>
+    </p>
+    <div class="chapter-menu" id="chapterMenu"></div>
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="calcMenuBtn" aria-expanded="false" aria-controls="calcMenu">Calculators</button>
+    </p>
+    <div class="chapter-menu" id="calcMenu"></div>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-3">Table of Contents</p>
+    <div class="toc">
+        <a href="#calculator-5-vertical-curve-radius">1. Calculator 5. Vertical Curve Radius</a>
+        <a href="#inputs">2. Inputs</a>
+        <a href="#results">3. Results</a>
+    </div>
+</nav>
+
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+<main class="main-content calc-page" id="main" tabindex="-1">
+
+    <section id="calculator-5-vertical-curve-radius">
+        <h1 class="mb-3">1. Calculator 5. Vertical Curve Radius</h1>
+        <p>Finds the radius a concave (valley) or convex (crest) curve needs on a flat or troughed belt, from lift-off, edge buckling, edge tension and centre tension in each load case, with the governing radius highlighted. It also checks a nominal radius, draws the curve to scale, shows the tension across the belt width and compares troughing angles.</p>
+        <noscript><div class="alert alert-warning">This calculator needs JavaScript.</div></noscript>
+    </section>
+
+    <form id="calcForm" autocomplete="off" novalidate>
+    <section id="inputs">
+        <h2 class="border-top pt-4 mt-5">2. Inputs</h2>
+
+        <div>
+            <div class="calc-row mt-3">
+                <label for="units">Units</label>
+                <select class="form-select" id="units">
+                    <option value="met" selected>Metric</option>
+                    <option value="imp">Imperial</option>
+                </select>
+            </div>
+
+            <h3 class="h5 calc-group">Curve</h3>
+            <div class="calc-row">
+                <label for="a1">Belt slope entering the curve<span class="calc-hint">In the direction of belt travel; 0 for horizontal</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="a1" data-kind="deg" min="0" step="any" value="0">
+                    <span class="input-group-text">deg</span>
+                    <select class="form-select calc-dir" id="d1" aria-label="Direction of the slope entering the curve">
+                        <option value="up" selected>Uphill</option>
+                        <option value="down">Downhill</option>
+                    </select>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="a2">Belt slope leaving the curve<span class="calc-hint">In the direction of belt travel; 0 for horizontal</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="a2" data-kind="deg" min="0" step="any" value="10">
+                    <span class="input-group-text">deg</span>
+                    <select class="form-select calc-dir" id="d2" aria-label="Direction of the slope leaving the curve">
+                        <option value="up" selected>Uphill</option>
+                        <option value="down">Downhill</option>
+                    </select>
+                </div>
+            </div>
+            <div class="calc-row">
+                <span>Curve type<span class="calc-hint">Set by the two slopes: concave (valley) where the belt turns upwards, convex (crest) where it turns downwards</span></span>
+                <output class="fw-semibold" id="ctypeOut" for="a1 a2"></output>
+            </div>
+            <div class="calc-row">
+                <label for="Rn">Nominal curve radius (optional)<span class="calc-hint">The radius as designed; it is checked against each requirement and drawn with the required radius</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="Rn" data-kind="m" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Belt</h3>
+            <div class="calc-row">
+                <label for="W">Belt width</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="W" data-kind="mm" min="0" step="any" value="1200">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="mb">Belt mass per metre<span class="calc-hint">Belt only</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="mb" data-kind="kgm" min="0" step="any" value="38">
+                    <span class="input-group-text" data-unit="kgm">kg/m</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="mbw">Worn belt mass per metre (optional)<span class="calc-hint">The belt near the end of its life, with the covers worn, for lift-off; a heavily worn belt can be 30% lighter. Leave blank to use the belt mass</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="mbw" data-kind="kgm" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="kgm">kg/m</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="E">Belt elastic modulus<span class="calc-hint">Whole carcass, per unit width. Fabric belts: about 10 times the rated breaking strength. Steel cord belts: the belt modulus</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="E" data-kind="kNm" min="0" step="any" value="100000">
+                    <span class="input-group-text" data-unit="kNm">kN/m</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="Ta">Allowable working tension<span class="calc-hint">Per unit width, from the belt rating and safety factor</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="Ta" data-kind="kNm" min="0" step="any" value="240">
+                    <span class="input-group-text" data-unit="kNm">kN/m</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="TaT">Allowable starting and stopping tension (optional)<span class="calc-hint">Per unit width. Belts are often allowed more tension for the short time of a start or stop; leave blank to use the allowable working tension</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="TaT" data-kind="kNm" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="kNm">kN/m</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="edgeA">Edge tension allowance (optional)<span class="calc-hint">How far above the allowable tension the belt edge may go in a curve; leave blank for none</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="edgeA" data-kind="pct" min="0" step="any" value="">
+                    <span class="input-group-text">%</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Carry Idlers at the Curve</h3>
+            <div class="calc-row">
+                <label for="arr">Idler arrangement</label>
+                <select class="form-select" id="arr">
+                    <option value="flat">Flat (1 roll)</option>
+                    <option value="two">2-roll</option>
+                    <option value="three" selected>3-roll</option>
+                    <option value="four">4-roll</option>
+                    <option value="five">5-roll</option>
+                </select>
+            </div>
+            <div class="calc-row" data-show="inner">
+                <label for="lamIn">Inner roll angle<span class="calc-hint" id="lamIn-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="lamIn" data-kind="deg" min="0" step="any" value="20">
+                    <span class="input-group-text">deg</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="trough">
+                <label for="lam"><span id="lam-label">Troughing angle</span><span class="calc-hint" id="lam-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="lam" data-kind="deg" min="0" step="any" value="35">
+                    <span class="input-group-text">deg</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="lroll">Roll length (optional)<span class="calc-hint" id="lroll-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="lroll" data-kind="mm" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="gap">
+                <label for="gap">Roll gap<span class="calc-hint">Gap between the ends of adjacent rolls, typically 10 to 20 mm for inline sets. Enter a negative value for offset sets, where the wing rolls overlap the inner rolls.</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="gap" data-kind="mm" step="any" value="10">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="sp">Idler spacing (optional)<span class="calc-hint">Draws the idler sets in the curve and gives the load on each set</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="sp" data-kind="m" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="rate">Idler set load rating (optional)<span class="calc-hint">Gives the largest idler spacing through a convex curve and checks the load on each set</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="rate" data-kind="kN" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="kN">kN</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Material on the Belt</h3>
+            <div class="calc-row">
+                <label for="Q">Throughput (optional)<span class="calc-hint">Leave blank for an empty belt. When entered, the belt is loaded at the curve when running full, and for a concave curve a part-loaded case adds the running full tension with the belt empty at the curve</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="Q" data-kind="cap" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="cap">t/h</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="v">Belt speed<span class="calc-hint">Used with the throughput, for the material on the belt and, over a crest, whether the load stays seated</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="v" data-kind="speed" min="0" step="any" value="4">
+                    <span class="input-group-text" data-unit="speed">m/s</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="loaded">
+                <label for="loaded">Belt at the curve when starting or stopping<span class="calc-hint">Sets the weight on the belt at the curve. An empty belt at the curve while the rest of the conveyor is loaded is the usual worst case for lift-off</span></label>
+                <select class="form-select" id="loaded">
+                    <option value="no" selected>Empty</option>
+                    <option value="yes">Loaded</option>
+                </select>
+            </div>
+
+            <h3 class="h5 calc-group">Belt Tension at the Curve</h3>
+            <div class="calc-row">
+                <label for="Tfull">Belt tension when running full<span class="calc-hint">Across the full belt width, at design capacity</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="Tfull" data-kind="kN" min="0" step="any" value="120">
+                    <span class="input-group-text" data-unit="kN">kN</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="Tempty">Belt tension when running empty<span class="calc-hint">If a part-loaded belt has a lower tension at the curve, enter that instead</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="Tempty" data-kind="kN" min="0" step="any" value="40">
+                    <span class="input-group-text" data-unit="kN">kN</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="start">Starting method<span class="calc-hint">Sets the starting tension: the starting factor times the running full tension</span></label>
+                <select class="form-select" id="start">
+                    <option value="dol">Squirrel-cage motor, direct-on-line start</option>
+                    <option value="fluid">Traction-type fluid coupling or centrifugal clutch</option>
+                    <option value="soft" selected>Controlled start: variable frequency drive, scoop-type fluid coupling, eddy-current clutch or slip-ring motor</option>
+                    <option value="regen">Foot of a steep regenerative decline</option>
+                    <option value="enter">Enter a starting factor</option>
+                </select>
+            </div>
+            <div class="calc-row">
+                <label for="Fs">Starting factor<span class="calc-hint" id="Fs-hint"></span></label>
+                <input type="number" class="form-control" id="Fs" data-kind="n" min="0" step="any" value="1.6">
+            </div>
+            <div class="calc-row">
+                <label for="Tstop">Belt tension when stopping (optional)<span class="calc-hint">For example on a decline with a brake, where the tension at the curve rises during a stop; leave blank to leave out the stopping case</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="Tstop" data-kind="kN" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="kN">kN</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="Tmin">Minimum edge and centre tension<span class="calc-hint" id="Tmin-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="Tmin" data-kind="kNm" min="0" step="any" value="4.4">
+                    <span class="input-group-text" data-unit="kNm">kN/m</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="Fl">Lift-off design factor (optional)<span class="calc-hint">Multiplies the belt tension in the lift-off check. About 1.1 allows for the belt lifting near the ends of the curve; leave blank for 1</span></label>
+                <input type="number" class="form-control" id="Fl" data-kind="n" min="0" step="any" value="">
+            </div>
+            </div>
+        </div>
+    </section>
+    </form>
+
+    <section id="results">
+        <h2 class="border-top pt-4 mt-5">3. Results</h2>
+        <div class="alert alert-danger" id="resultError" role="alert" hidden></div>
+        <div id="resultBody">
+            <figure class="mt-4 mb-4">
+                <figcaption class="small fw-semibold mb-2">Required Radius by Check</figcaption>
+                <div class="calc-drawing" id="chart"></div>
+            </figure>
+            <div class="calc-tip" id="tip" hidden></div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold" id="checkCap">Required Radius</caption>
+                    <thead class="table-light" id="checkHead"></thead>
+                    <tbody id="checkBody"></tbody>
+                </table>
+            </div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Load Cases</caption>
+                    <thead class="table-light" id="caseHead"></thead>
+                    <tbody id="caseBody"></tbody>
+                </table>
+            </div>
+            <figure class="mt-5 mb-4">
+                <figcaption class="small fw-semibold mb-2">Curve Profile to Scale</figcaption>
+                <div class="calc-drawing" id="profile"></div>
+            </figure>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Curve Geometry</caption>
+                    <thead class="table-light" id="geoHead"></thead>
+                    <tbody id="geoBody"></tbody>
+                </table>
+            </div>
+            <figure class="mt-5 mb-4">
+                <figcaption class="small fw-semibold mb-2">Tension Across the Belt Width</figcaption>
+                <div class="row g-4">
+                    <div class="col-12" id="tenReqCol"><div class="calc-drawing" id="tenReq"></div></div>
+                    <div class="col-md-6" id="tenNomCol"><div class="calc-drawing" id="tenNom"></div></div>
+                </div>
+            </figure>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Belt, Idlers and Tension</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tenBody"></tbody>
+                </table>
+            </div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Troughing Angle Comparison</caption>
+                    <thead class="table-light" id="cmpHead"></thead>
+                    <tbody id="cmpBody"></tbody>
+                </table>
+            </div>
+            <div class="alert alert-warning mt-4" id="warnBox" hidden>
+                <p class="fw-semibold mb-2">Check</p>
+                <ul class="mb-0 ps-3" id="warnList"></ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="calc-bar d-print-none" id="calcBar">
+        <div class="d-flex flex-wrap align-items-baseline column-gap-3 row-gap-1">
+            <span class="fw-semibold">Radius</span>
+            <span class="fs-5 fw-semibold calc-num" id="barValue" role="status"></span>
+            <a href="#results" class="small">Results</a>
+        </div>
+    </div>
+
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
+        Published <time datetime="2026-11-23">23 November 2026</time><br>
+        Updated <time datetime="2026-11-24">24 November 2026</time><br>
+        &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>
+    </footer>
+
+</main>
+
+<script src="chapters.js"></script>
+<script>
+/* Calculator 5 Vertical Curve Radius. Plain JavaScript; every value is held in SI units (m, kg/m, kN, kN/m).
+   Lift-off (concave curves): the belt tension pulls the belt off the idlers once T / R exceeds the weight per metre of the
+   belt (and any material on it) pressing on the idlers, g cos(slope).
+   Belt stress: the belt lies on the rolls from its centre out to its edges, so each strip of belt sits at its own height above
+   the belt centre, rising to h at the edge. Through a curve of radius R a strip's strain differs by its height / R, and the
+   mean tension is unchanged, so each strip's tension shifts by E (height - mean height) / R: at the edge by E (h - mean) / R
+   and at the centre by E mean / R. A concave curve lowers the edge tension and raises the centre; a convex curve does the
+   opposite. A 3-roll set with a third of the belt on each roll gives two thirds and one third of E h / R, the handbook
+   formulas. The roll profile follows Calculator 3: rolls of one length, and the belt bends midway across each roll gap.
+   The entered belt tensions apply through the whole curve. Every check is made in every load case; the case needing the largest radius
+   sets each check. Beyond the handbook: an optional lift-off design factor, a worn belt mass for lift-off, the lift height of a nominal
+   curve that is too tight, and the idler spacing for an idler load rating. */
+(function () {
+    'use strict';
+
+    var G = 9.81;
+
+    /* ── Idler arrangements (as Calculator 3) ── */
+    var ROLLS = {      /* roll length (mm) by belt width (mm); 4-roll sets take a length between the 3-roll and 5-roll values */
+        flat:  [[400, 500], [500, 600], [650, 750], [800, 950], [1000, 1150], [1200, 1400], [1400, 1600], [1600, 1800], [1800, 2000], [2000, 2200], [2200, 2500]],
+        two:   [[400, 250], [500, 315], [650, 380], [800, 465], [1000, 600], [1200, 700], [1400, 800], [1600, 900], [1800, 1000], [2000, 1100], [2200, 1250], [2400, 1400], [2600, 1500]],
+        three: [[400, 160], [500, 200], [650, 250], [800, 315], [1000, 380], [1200, 465], [1400, 530], [1600, 600], [1800, 670], [2000, 750], [2200, 800], [2400, 900], [2600, 950]],
+        five:  [[800, 165], [1000, 205], [1200, 250], [1400, 290], [1600, 340], [1800, 380], [2000, 420], [2200, 460], [2400, 500], [2600, 540]]
+    };
+    var ARR_NAME = { flat: 'Flat (1 roll)', two: '2-roll', three: '3-roll', four: '4-roll', five: '5-roll' };
+    var ARR_DEFAULT_ANGLE = { two: 20, three: 35, four: 45, five: 45 };
+    var ARR_DEFAULT_INNER = { four: 15, five: 20 };
+    var ARR_HINT = {
+        two: 'Typically 10 to 30 deg',
+        three: 'Typically 20 to 45 deg',
+        four: 'Angle of the outer rolls, typically 40 to 60 deg',
+        five: 'Angle of the outer rolls, typically 45 to 60 deg'
+    };
+    var INNER_HINT = {
+        four: 'Angle of the two inner rolls, typically 10 to 20 deg; a third of the outer roll angle gives an evenly curved garland',
+        five: 'Angle of the inner wing rolls, typically 20 to 30 deg; half the outer roll angle gives an evenly curved garland'
+    };
+    var SEG_NAME = { flat: ['Flat roll'], two: ['Roll'], three: ['Centre roll', 'Wing roll'], four: ['Inner roll', 'Outer roll'],
+                     five: ['Centre roll', 'Inner wing roll', 'Outer wing roll'] };
+    var COMPARE = { two: [10, 15, 20, 25, 30], three: [20, 25, 30, 35, 40, 45], four: [30, 40, 45, 50, 55, 60], five: [30, 40, 45, 50, 55, 60] };
+    function multi(arr) { return arr === 'four' || arr === 'five'; }
+    function round5(x) { return Math.round(x / 5) * 5; }
+    function tableRoll(key, B) {     /* roll length (mm) from a table, interpolated, or in proportion beyond its ends */
+        var t = ROLLS[key], n = t.length;
+        if (B <= t[0][0]) { return t[0][1] * B / t[0][0]; }
+        if (B >= t[n - 1][0]) { return t[n - 1][1] * B / t[n - 1][0]; }
+        for (var i = 0; i < n - 1; i++) {
+            if (B >= t[i][0] && B <= t[i + 1][0]) {
+                return t[i][1] + (t[i + 1][1] - t[i][1]) * (B - t[i][0]) / (t[i + 1][0] - t[i][0]);
+            }
+        }
+        return NaN;
+    }
+    function stdRoll(arr, Bm) {      /* standard roll length (m) for the belt width, to the nearest 5 mm */
+        var B = Bm * 1000;
+        if (arr === 'four') { return round5((3 * tableRoll('three', B) + 5 * tableRoll('five', B)) / 8) / 1000; }
+        return round5(tableRoll(arr, B)) / 1000;
+    }
+    /* Roll-top profile from the belt centre outwards as [length along the belt, angle deg]; the last runs on to the belt edge.
+       The belt bends midway across each roll gap; rolls meeting at the belt centre (2 and 4-roll sets) take half of a positive gap each side. */
+    function rollSegs(arr, lam, lamIn, l, g) {
+        var h = g / 2, hc = Math.max(0, g) / 2;
+        if (arr === 'flat') { return [[l / 2, 0]]; }
+        if (arr === 'two') { return [[hc + l, lam]]; }
+        if (arr === 'four') { return [[hc + l + h, lamIn], [h + l, lam]]; }
+        var b1 = l / 2 + h;
+        if (arr === 'three') { return [[b1, 0], [h + l, lam]]; }
+        return [[b1, 0], [l + g, lamIn], [h + l, lam]];
+    }
+    /* Height of the belt across half its width: points [distance from the belt centre along the belt, height], the edge height,
+       the mean height and the edge and centre shifts (edge height less the mean, and the mean) */
+    function trough(arr, lam, lamIn, l, g, W) {
+        var segs = rollSegs(arr, lam, lamIn, l, g), half = W / 2, pts = [[0, 0]], names = [], d = 0, y = 0, area = 0;
+        for (var i = 0; i < segs.length && d < half - 1e-12; i++) {
+            var run = i === segs.length - 1 ? half - d : Math.min(segs[i][0], half - d);
+            if (run <= 1e-12) { continue; }
+            var y1 = y + run * Math.sin(segs[i][1] * Math.PI / 180);
+            area += run * (y + y1) / 2;
+            d += run;
+            y = y1;
+            pts.push([d, y]);
+            names.push(SEG_NAME[arr][i]);
+        }
+        var mean = area / half;
+        return { pts: pts, names: names, h: y, mean: mean, de: y - mean, dc: mean, flat: y <= 1e-12 };
+    }
+    function heightAt(t, d) {                                     /* belt height at distance d from the belt centre */
+        for (var i = 1; i < t.pts.length; i++) {
+            if (d <= t.pts[i][0] + 1e-12) {
+                var a = t.pts[i - 1], b = t.pts[i], f = b[0] > a[0] ? (d - a[0]) / (b[0] - a[0]) : 0;
+                return a[1] + f * (b[1] - a[1]);
+            }
+        }
+        return t.h;
+    }
+    function segAt(t, d) {
+        for (var i = 1; i < t.pts.length; i++) { if (d <= t.pts[i][0] + 1e-12) { return i - 1; } }
+        return t.pts.length - 2;
+    }
+
+    /* ── Units ── */
+    var sys = 'met';
+    var UNIT = {
+        m:     { met: 'm', imp: 'ft', f: 1 / 0.3048, dp: { met: 2, imp: 2 } },
+        mm:    { met: 'mm', imp: 'in', f: 1 / 0.0254, si: 0.001, dp: { met: 0, imp: 1 } },
+        kgm:   { met: 'kg/m', imp: 'lb/ft', f: 0.6719690, dp: { met: 1, imp: 1 } },
+        kN:    { met: 'kN', imp: 'lbf', f: 224.80894, dp: { met: 1, imp: 0 } },
+        kNm:   { met: 'kN/m', imp: 'PIW', f: 5.7101471, dp: { met: 1, imp: 1 } },
+        cap:   { met: 't/h', imp: 'stph', f: 1.1023113, dp: { met: 0, imp: 0 } },
+        speed: { met: 'm/s', imp: 'fpm', f: 196.8504, dp: { met: 2, imp: 0 } }
+
+    };
+    function toSI(kind, v) {
+        var u = UNIT[kind];
+        if (!u) { return v; }
+        if (sys === 'met') { return v * (u.si || 1); }
+        return kind === 'mm' ? v * 0.0254 : v / u.f;
+    }
+    function fromSI(kind, v) {
+        var u = UNIT[kind];
+        if (!u) { return v; }
+        if (sys === 'met') { return v / (u.si || 1); }
+        return kind === 'mm' ? v / 0.0254 : v * u.f;
+    }
+
+    /* ── Formatting ── */
+    function num(v, dp) {
+        if (Math.abs(v) < 0.5 * Math.pow(10, -dp)) { v = 0; }
+        return v.toLocaleString('en-AU', { minimumFractionDigits: dp, maximumFractionDigits: dp });
+    }
+    function pair(a, b) { return sys === 'met' ? a + ' [' + b + ']' : b + ' [' + a + ']'; }
+    function first(text) { return text.split(' [')[0]; }
+    function rad(m) { return pair(num(m, 0) + ' m', num(m / 0.3048, 0) + ' ft'); }
+    function radUp(m) {                                           /* a required radius, rounded up so the shown value is never short */
+        return pair(num(Math.ceil(m - 1e-9), 0) + ' m', num(Math.ceil(m / 0.3048 - 1e-9), 0) + ' ft');
+    }
+    function speedText(v) { return pair(num(v, 2) + ' m/s', num(v * 196.8504, 0) + ' fpm'); }
+    function dist(m) { return pair(num(m, 1) + ' m', num(m / 0.3048, 0) + ' ft'); }
+    function len(m) { return pair(num(m * 1000, 0) + ' mm', num(m / 0.0254, 1) + ' in'); }
+    function force(kN) { return pair(num(kN, 1) + ' kN', num(kN * 224.80894, 0) + ' lbf'); }
+    function tpw(kNm) { return pair(num(kNm, 1) + ' kN/m', num(kNm * 5.7101471, 0) + ' PIW'); }
+    function kgm(m) { return pair(num(m, 1) + ' kg/m', num(m * 0.6719690, 1) + ' lb/ft'); }
+    function pct(p) { return num(p, 0) + '%'; }
+    function deg(d) { return num(d, Math.abs(d - Math.round(d)) < 1e-9 ? 0 : 1) + '°'; }
+    function slopeText(e) { return Math.abs(e) < 1e-9 ? 'horizontal' : deg(Math.abs(e)) + (e > 0 ? ' uphill' : ' downhill'); }
+    function lc1(text) { return text.charAt(0).toLowerCase() + text.slice(1); }
+    function ok(text) { return '<span class="text-success fw-semibold">' + text + '</span>'; }
+    function bad(text) { return '<span class="text-danger fw-semibold">' + text + '</span>'; }
+
+    /* ── Starting factor by starting method ── */
+    var START = {
+        dol:   { lo: 2.0, hi: 2.5, text: 'Typically 2.0 to 2.5 for a direct-on-line start' },
+        fluid: { lo: 1.7, hi: 2.0, text: 'Typically 1.7 to 2.0 for a traction-type fluid coupling or centrifugal clutch' },
+        soft:  { lo: 1.3, hi: 1.6, text: 'Typically 1.3 to 1.6 for a controlled start' },
+        regen: { lo: 1.8, hi: Infinity, def: 1.8, text: 'Not less than 1.8 at the foot of a steep regenerative decline' }
+    };
+    function startDefault(s0) { return s0.def || s0.hi; }
+    function inRange(s0, v) { return v >= s0.lo - 1e-9 && v <= s0.hi + 1e-9; }
+
+    /* ── Elements and stored values ── */
+    var $ = function (id) { return document.getElementById(id); };
+    var form = $('calcForm');
+    var numInputs = Array.prototype.slice.call(form.querySelectorAll('input[data-kind]'));
+    var si = {};
+    function kindOf(el) { return el.getAttribute('data-kind'); }
+    function display(el) {
+        var v = si[el.id], k = kindOf(el);
+        if (!isFinite(v)) { el.value = ''; return; }
+        var dp = UNIT[k] ? UNIT[k].dp[sys] : 2;
+        el.value = String(Number(fromSI(k, v).toFixed(dp)));
+    }
+    function setSI(id, v) { si[id] = v; display($(id)); }
+    function readInput(el) {
+        var t = el.value.trim();
+        si[el.id] = t === '' ? NaN : toSI(kindOf(el), parseFloat(t));
+    }
+    function show(key, on) {
+        form.querySelectorAll('[data-show="' + key + '"]').forEach(function (e) { e.hidden = !on; });
+    }
+
+    /* ── Tooltip ── */
+    var tip = $('tip');
+    function showTip(text, anchor, x, y) {
+        anchor.appendChild(tip);
+        tip.textContent = text;
+        tip.hidden = false;
+        var w = tip.offsetWidth, wrap = anchor.clientWidth;
+        tip.style.left = Math.max(0, Math.min(wrap - w, x - w / 2)) + 'px';
+        tip.style.top = Math.max(-tip.offsetHeight - 4, y - tip.offsetHeight - 10) + 'px';
+    }
+    function hideTip() { tip.hidden = true; }
+    function hoverOn(box, node, text) {
+        function at(e) { var b = box.getBoundingClientRect(); showTip(text, box, e.clientX - b.left, e.clientY - b.top); }
+        node.addEventListener('mouseenter', at);
+        node.addEventListener('mousemove', at);
+        node.addEventListener('mouseleave', hideTip);
+    }
+
+    /* ── Results helpers ── */
+    function cell(value, hint, cls) {
+        return '<td' + (cls ? ' class="' + cls + '"' : '') + '><span class="calc-num">' + value + '</span>' + (hint ? '<span class="calc-hint">' + hint + '</span>' : '') + '</td>';
+    }
+    function row(label, value, cls, hint) {
+        return '<tr' + (cls ? ' class="' + cls + '"' : '') + '><th scope="row">' + label + '</th>' + cell(value, hint) + '</tr>';
+    }
+    function rowN(label, cells, cls, labelHint) {                 /* cells: [[value, hint, class], ...]; a cell with .span spans that many columns */
+        return '<tr' + (cls ? ' class="' + cls + '"' : '') + '><th scope="row">' + label + (labelHint ? '<span class="calc-hint">' + labelHint + '</span>' : '') + '</th>' +
+            cells.map(function (c) { return c.span ? cell(c[0], c[1], c[2]).replace('<td', '<td colspan="' + c.span + '"') : cell(c[0], c[1], c[2]); }).join('') + '</tr>';
+    }
+    function head(cols) { return '<tr>' + cols.map(function (c) { return '<th scope="col">' + c + '</th>'; }).join('') + '</tr>'; }
+    function radText(r) { return r === 0 ? 'No limit' : isFinite(r) ? radUp(r) : bad('No radius is enough'); }
+    function radShort(r) { return r === 0 ? 'no limit' : isFinite(r) ? first(radUp(r)) : 'no radius is enough'; }
+    function governing(list) {                 /* the largest required radius; infinite where a check cannot be met */
+        var g = null;
+        list.forEach(function (c) { if (!g || c.r > g.r) { g = c; } });
+        return g;
+    }
+
+    /* ── Main calculation ── */
+    var last = null;
+    function compute() {
+        var arr = $('arr').value, multiRoll = multi(arr);
+        /* the two slopes in the direction of travel, uphill positive (deg); the curve is concave where the slope increases */
+        var e1 = si.a1 * ($('d1').value === 'up' ? 1 : -1), e2 = si.a2 * ($('d2').value === 'up' ? 1 : -1), conc = e2 > e1;
+        var slopesOK = si.a1 >= 0 && si.a1 < 90 && si.a2 >= 0 && si.a2 < 90;
+        $('ctypeOut').textContent = !slopesOK ? 'Check the two slopes' : Math.abs(e2 - e1) < 1e-9 ? 'No curve: the two slopes are the same'
+            : (conc ? 'Concave (valley): the belt turns ' : 'Convex (crest): the belt turns ') + deg(Math.abs(e2 - e1)) + (conc ? ' upwards' : ' downwards');
+        show('trough', arr !== 'flat');
+        show('inner', multiRoll);
+        show('gap', arr !== 'flat');
+        show('loaded', isFinite(si.Q) && si.Q > 0);
+        if (arr !== 'flat') { $('lam-hint').textContent = ARR_HINT[arr]; }
+        if (multiRoll) { $('lamIn-hint').textContent = INNER_HINT[arr]; }
+        $('lam-label').textContent = multiRoll ? 'Outer roll angle' : 'Troughing angle';
+        var lStd = isFinite(si.W) && si.W > 0 ? stdRoll(arr, si.W) : NaN;
+        $('lroll-hint').textContent = 'Leave blank for ' + (arr === 'four' ? 'a typical' : 'the standard') + ' length for this belt width' +
+            (isFinite(lStd) ? ': ' + len(lStd) : '');
+        $('lroll').placeholder = isFinite(lStd) ? first(len(lStd)).replace(/ (mm|in)$/, '') : '';
+        $('Tmin-hint').textContent = 'Typically ' + tpw(4.4) + '; 0 gives the zero tension limit';
+        var st = START[$('start').value];
+        $('Fs-hint').textContent = st ? st.text : 'Typically 1.3 to 2.5, depending on the starting method';
+
+        /* validation */
+        var errs = [];
+        numInputs.forEach(function (el) { el.classList.remove('is-invalid'); });
+        function fin(id) { return isFinite(si[id]); }
+        function blank(id) { return $(id).value.trim() === ''; }
+        function need(id, good, label) { if (!good) { $(id).classList.add('is-invalid'); errs.push(label); } }
+        need('a1', fin('a1') && si.a1 >= 0 && si.a1 < 90, 'belt slope entering the curve (0 to below 90 deg, with uphill or downhill beside it)');
+        need('a2', fin('a2') && si.a2 >= 0 && si.a2 < 90, 'belt slope leaving the curve (0 to below 90 deg, with uphill or downhill beside it)');
+        if (isFinite(e1) && isFinite(e2) && Math.abs(e2 - e1) < 1e-9) { need('a2', false, 'belt slopes (they are the same, so there is no curve)'); }
+        need('Rn', blank('Rn') || fin('Rn') && si.Rn > 0, 'nominal curve radius');
+        need('W', fin('W') && si.W > 0, 'belt width');
+        need('mb', fin('mb') && si.mb > 0, 'belt mass per metre');
+        need('E', fin('E') && si.E > 0, 'belt elastic modulus');
+        need('Ta', fin('Ta') && si.Ta > 0, 'allowable working tension');
+        need('TaT', blank('TaT') || fin('TaT') && si.TaT > 0, 'allowable starting and stopping tension');
+        need('edgeA', blank('edgeA') || fin('edgeA') && si.edgeA >= 0 && si.edgeA <= 100, 'edge tension allowance (0 to 100%)');
+        if (arr !== 'flat') { need('lam', fin('lam') && si.lam > 0 && si.lam < 80, (multiRoll ? 'outer roll angle' : 'troughing angle') + ' (above 0 and below 80 deg)'); }
+        if (multiRoll) { need('lamIn', fin('lamIn') && si.lamIn > 0 && si.lamIn < 80, 'inner roll angle (above 0 and below 80 deg)'); }
+        need('lroll', blank('lroll') || fin('lroll') && si.lroll > 0, 'roll length');
+        var lChk = fin('lroll') ? si.lroll : lStd;
+        if (arr !== 'flat') {
+            need('gap', fin('gap') && (!isFinite(lChk) || (arr === 'two' ? si.gap >= 0 : si.gap > -lChk / 2) && si.gap < lChk),
+                arr === 'two' ? 'roll gap (zero or more for a 2-roll set)' : 'roll gap (more than minus half the roll length)');
+        }
+        need('sp', blank('sp') || fin('sp') && si.sp > 0, 'idler spacing');
+        need('Q', blank('Q') || fin('Q') && si.Q >= 0, 'throughput');
+        need('v', !(fin('Q') && si.Q > 0) || fin('v') && si.v > 0, 'belt speed (needed with a throughput)');
+        need('Tfull', fin('Tfull') && si.Tfull > 0, 'belt tension when running full');
+        need('Tempty', fin('Tempty') && si.Tempty > 0, 'belt tension when running empty');
+        need('Fs', fin('Fs') && si.Fs >= 1, 'starting factor (1 or more)');
+        need('Tstop', blank('Tstop') || fin('Tstop') && si.Tstop > 0, 'belt tension when stopping');
+        need('Tmin', fin('Tmin') && si.Tmin >= 0, 'minimum edge and centre tension');
+        need('mbw', blank('mbw') || fin('mbw') && si.mbw > 0 && (!fin('mb') || si.mbw <= si.mb), 'worn belt mass per metre (above 0 and not more than the belt mass)');
+        need('Fl', blank('Fl') || fin('Fl') && si.Fl >= 1 && si.Fl <= 2, 'lift-off design factor (1 to 2)');
+        need('rate', blank('rate') || fin('rate') && si.rate > 0, 'idler set load rating');
+        if (errs.length) {
+            $('resultError').hidden = false;
+            $('resultError').textContent = 'Check these inputs: ' + errs.join('; ') + '.';
+            $('resultBody').hidden = true;
+            $('barValue').textContent = 'Check the inputs';
+            last = null;
+            return;
+        }
+        $('resultError').hidden = true;
+        $('resultBody').hidden = false;
+
+        var W = si.W, mb = si.mb, E = si.E, Ta = si.Ta, TaT = fin('TaT') ? si.TaT : Ta, allow = fin('edgeA') ? si.edgeA : 0, edgeF = 1 + allow / 100;
+        var lam = arr === 'flat' ? 0 : si.lam, lamIn = multiRoll ? si.lamIn : 0, l = fin('lroll') ? si.lroll : lStd, g = arr === 'flat' ? 0 : si.gap;
+        var Q = fin('Q') ? si.Q : 0, mm = Q > 0 ? Q / (3.6 * si.v) : 0;            /* material, kg/m: t/h over 3.6 m/s */
+        var Fs = si.Fs, Tmin = si.Tmin, Rn = fin('Rn') ? si.Rn : NaN, hasNom = isFinite(Rn);
+        var dA = Math.abs(e2 - e1), steep = Math.max(Math.abs(e1), Math.abs(e2)), cosS = Math.cos(steep * Math.PI / 180), word = conc ? 'concave' : 'convex';
+        var loadedTS = mm > 0 && $('loaded').value === 'yes';
+        var worn = fin('mbw'), mbHold = worn ? si.mbw : mb, Fl = fin('Fl') ? si.Fl : 1;
+        var rating = fin('rate') ? si.rate : NaN;
+
+        var r1 = e1 * Math.PI / 180, r2 = e2 * Math.PI / 180, D = dA * Math.PI / 180;
+        var hU = (conc ? 1 : -1) * (Math.cos(r1) - Math.cos(r2));     /* rise from the start to the end of the curve, per metre of radius */
+        var xU = Math.abs(Math.sin(r2) - Math.sin(r1));                 /* horizontal length, per metre of radius */
+
+        /* load cases: belt tension at the curve, whether the belt is loaded at the curve, and the allowable tension that applies */
+        var cases = [
+            { key: 'full', name: 'Running full', T: si.Tfull, loaded: mm > 0, transient: false },
+            { key: 'part', name: 'Part loaded', T: si.Tfull, loaded: false, transient: false },
+            { key: 'empty', name: 'Running empty', T: si.Tempty, loaded: false, transient: false },
+            { key: 'start', name: 'Starting', T: Fs * si.Tfull, loaded: loadedTS, transient: true }
+        ];
+        if (fin('Tstop')) { cases.push({ key: 'stop', name: 'Stopping', T: si.Tstop, loaded: loadedTS, transient: true }); }
+        if (!(mm > 0) || !conc) { cases.splice(1, 1); }           /* part loaded (running full tension, empty belt at the curve): concave lift-off, with material */
+        cases.forEach(function (c) {
+            c.t = c.T / W;
+            c.w = mb + (c.loaded ? mm : 0);                       /* belt and material on the curve, for the idler loads */
+            c.wh = mbHold + (c.loaded ? mm : 0);                  /* mass holding the belt down against lift-off (worn belt where entered) */
+            c.Ta = c.transient ? TaT : Ta;
+            c.TaE = c.Ta * edgeF;
+        });
+        function limName(c, edge) {
+            return edge && allow > 0 ? 'allowable edge tension' : c.transient && fin('TaT') ? 'allowable starting and stopping tension' : 'allowable working tension';
+        }
+
+        /* the checks for this curve type; falls: the tension there drops through the curve, so its limit is the minimum edge and centre tension */
+        var CHECKS = conc ? [{ key: 'lift', name: 'Lift-off' }, { key: 'edge', name: 'Edge buckling', falls: true }, { key: 'cent', name: 'Centre tension' }]
+                          : [{ key: 'edge', name: 'Edge tension' }, { key: 'cent', name: 'Centre tension', falls: true }];
+        if (!conc && mm > 0) { CHECKS.push({ key: 'mat', name: 'Material stability' }); }
+        var vBelt = mm > 0 ? si.v : 0, matR = vBelt * vBelt / (G * cosS);   /* radius where the pull over the crest at belt speed equals the weight holding the load down */
+        function shiftOf(k, t) { return k.key === 'edge' ? t.de : t.dc; }
+        function limitOf(k, c) { return k.falls ? Tmin : k.key === 'edge' ? c.TaE : c.Ta; }
+        function passes(k, c, t, R) {                             /* the check at radius R */
+            if (k.key === 'mat') { return !c.loaded || R >= matR * (1 - 1e-12); }
+            if (k.key === 'lift') { return Fl * c.T <= R * c.wh * G / 1000 * cosS * (1 + 1e-12); }
+            if (t.flat) { return true; }
+            var sh = E * shiftOf(k, t) / R;
+            return k.falls ? c.t - sh >= Tmin - 1e-9 : c.t + sh <= limitOf(k, c) + 1e-9;
+        }
+        function req(k, c, t) {                                   /* required radius for one check in one load case */
+            if (k.key === 'mat') { return c.loaded ? matR : 0; }
+            if (k.key === 'lift') { return Fl * c.T / (c.wh * G / 1000 * cosS); }
+            if (t.flat) { return 0; }
+            var margin = k.falls ? c.t - Tmin : limitOf(k, c) - c.t;
+            return margin > 0 ? E * shiftOf(k, t) / margin : Infinity;
+        }
+        function solve(lamX, lamInX) {
+            var t = trough(arr, lamX, lamInX, l, g, W);
+            var checks = CHECKS.map(function (k) {
+                var per = cases.map(function (c) { return req(k, c, t); }), gi = 0;
+                per.forEach(function (r, i) { if (r > per[gi]) { gi = i; } });
+                return { key: k.key, name: k.name, falls: k.falls, per: per, r: per[gi], c: cases[gi] };
+            });
+            var caseR = cases.map(function (c, i) { return Math.max.apply(null, checks.map(function (k) { return k.per[i]; })); });
+            return { t: t, checks: checks, gov: governing(checks), caseR: caseR };
+        }
+        var main = solve(lam, lamIn), tr = main.t, checks = main.checks, gov = main.gov;
+        var FLAT = 'A flat belt keeps the same tension across its width';
+        function allPass(R, cList) {                              /* every check in the listed load cases at radius R */
+            return checks.every(function (k) { return cList.every(function (c) { return passes(k, c, tr, R); }); });
+        }
+        function beltDesc(c) {                                    /* the belt holding itself down against lift-off */
+            var noQ = c.key === 'full' && !(mm > 0);
+            var d = c.loaded ? (worn ? 'worn belt and material' : 'belt and material') : noQ ? (worn ? 'worn belt only' : 'belt only') + ' (no throughput entered)' : worn ? 'empty worn belt' : 'empty belt';
+            return d + (c.loaded || worn ? ', ' + first(kgm(c.wh)) : '');
+        }
+        var factorText = Fl !== 1 ? ', with the lift-off design factor of ' + num(Fl, 2) : '';
+
+        /* required radius by check */
+        function checkHint(k) {
+            if (k.key === 'mat') {
+                return k.r > 0 ? k.c.name + ': the load starts to lift off the belt over the crest at ' + first(speedText(vBelt)) + ' below this radius; allow a margin' : 'The belt is empty in every load case';
+            }
+            var c = k.c, who = k.key === 'edge' ? 'edge' : 'centre', R = k.r;
+            if (k.key === 'lift') {
+                return c.name + ': ' + beltDesc(c) + ', ' + first(force(c.T)) + ' tension' + factorText +
+                    (steep > 0 ? ', on the steeper slope of ' + deg(steep) : '');
+            }
+            if (tr.flat) { return FLAT; }
+            var lim = limitOf(k, c);
+            if (!isFinite(R)) {
+                return c.name + ': the tension per unit width, ' + first(tpw(c.t)) + ', is ' + (k.falls ? 'not above the minimum edge and centre tension of '
+                    : 'not below the ' + limName(c, k.key === 'edge') + ' of ') + first(tpw(lim));
+            }
+            return c.name + ': ' + who + ' tension ' + (k.falls ? 'falls' : 'rises') + ' from ' + first(tpw(c.t)) + ' to ' + first(tpw(lim)) +
+                (k.falls ? '' : ', the ' + limName(c, k.key === 'edge'));
+        }
+        function atNominal(k) {                                   /* the check at the nominal radius, in the load case that is worst there */
+            if (k.key === 'mat') {
+                var lc = cases.filter(function (c) { return c.loaded; })[0];
+                if (!lc) { return ['No limit', 'The belt is empty in every load case']; }
+                return [passes(k, lc, tr, Rn) ? ok('Stays seated') : bad('Lifts'), lc.name + ': the pull over the crest is ' + pct(matR / Rn * 100) + ' of the weight holding the load down'];
+            }
+            var worst = null, worstV = null;
+            cases.forEach(function (c) {
+                var v;
+                if (k.key === 'lift') { v = -Fl * c.T / (Rn * c.wh * G / 1000 * cosS); }
+                else if (!tr.flat) { var sh = E * shiftOf(k, tr) / Rn; v = k.falls ? c.t - sh - Tmin : limitOf(k, c) - (c.t + sh); }
+                else { v = 0; }
+                if (!worst || v < worstV) { worst = c; worstV = v; }
+            });
+            var cw = worst;
+            if (k.key === 'lift') {
+                var hold = Rn * cw.wh * G / 1000 * cosS, good = passes(k, cw, tr, Rn), Rf = cw.T / (cw.wh * G / 1000 * cosS);
+                var lift = Rf > Rn ? (Rf - Rn) * (1 / Math.cos(D / 2) - 1) : 0;   /* the lifted belt takes the radius its tension and weight allow, between the same slopes */
+                return [good ? ok('Stays on') : bad('Lifts off'), cw.name + ': lift-off begins at ' + first(force(hold)) + '; the belt tension is ' + first(force(cw.T)) +
+                    ', ' + pct(cw.T / hold * 100) + ' of it' + (Fl !== 1 ? ', or ' + pct(Fl * cw.T / hold * 100) + ' with the lift-off design factor of ' + num(Fl, 2) : '') +
+                    (good ? '' : lift > 0 ? '. The belt would rise about ' + first(len(lift)) + ' off the idlers at the middle of the curve' : '. It stays on the idlers without the design factor')];
+            }
+            if (tr.flat) { return ['No limit', FLAT]; }
+            var vw = cw.t + (k.falls ? -1 : 1) * E * shiftOf(k, tr) / Rn, lim = limitOf(k, cw);
+            return [first(tpw(vw)) + ' ' + (passes(k, cw, tr, Rn) ? ok('OK') : bad('Fails')),
+                cw.name + ': ' + (k.key === 'edge' ? 'edge' : 'centre') + ' tension; the ' + (k.falls ? 'lowest allowed' : 'limit') + ' is ' + first(tpw(lim))];
+        }
+        var nomOK = hasNom ? allPass(Rn, cases) : null;
+        function nomGov(r) {
+            if (r === 0 && nomOK) { return [ok('OK'), 'No limit for a flat belt']; }
+            if (nomOK) { var p = (Rn / r - 1) * 100; return [first(rad(Rn)) + ' ' + ok('OK'), pct(p) + ' above the required radius']; }
+            if (!isFinite(r)) { return [first(rad(Rn)) + ' ' + bad('Fails'), 'No radius is enough']; }
+            return [first(rad(Rn)) + ' ' + bad('Fails'), pct((1 - Rn / r) * 100) + ' below the required radius'];
+        }
+        $('checkCap').textContent = conc ? 'Concave (Valley) Curve' : 'Convex (Crest) Curve';
+        $('checkHead').innerHTML = head(['Check', 'Required Radius'].concat(hasNom ? ['At the Nominal Radius'] : []));
+        var ckRows = checks.map(function (k) {
+            var cells = [[radText(k.r), checkHint(k)]];
+            if (hasNom) { cells.push(atNominal(k)); }
+            return rowN(k.name, cells, k === gov ? 'fw-semibold' : '');
+        });
+        var govHint = gov.r === 0 ? 'A flat belt has no edge or centre tension limit' : isFinite(gov.r) ? 'Set by ' + lc1(gov.name) + ' when ' + lc1(gov.c.name)
+            : 'The ' + lc1(gov.name) + ' check cannot be met';
+        var gcells = [[radText(gov.r), govHint]];
+        if (hasNom) { gcells.push(nomGov(gov.r)); }
+        ckRows.push(rowN('Governing ' + word + ' radius', gcells, 'table-primary fw-semibold'));
+        $('checkBody').innerHTML = ckRows.join('');
+
+        /* load cases: every check in every case */
+        var govCase = gov.c, Rref = isFinite(gov.r) && gov.r > 0 ? gov.r : NaN;
+        function tensionHint(c) {
+            return first(tpw(c.t)) + '; ' + (c.loaded ? 'belt and material' : c.key === 'full' && !(mm > 0) ? 'belt only (no throughput entered)' : 'belt empty') + ' at the curve';
+        }
+        $('caseHead').innerHTML = head(['Load Case', 'Belt Tension'].concat(checks.map(function (k) { return k.name; }), ['Required Radius'], hasNom ? ['At the Nominal Radius'] : []));
+        $('caseBody').innerHTML = cases.map(function (c, i) {
+            var cells = [[force(c.T), tensionHint(c)]];
+            checks.forEach(function (k) { cells.push([radText(k.per[i]), '', k.c === c && k.r > 0 ? 'fw-semibold' : '']); });
+            cells.push([radText(main.caseR[i]), '', 'fw-semibold']);
+            if (hasNom) { cells.push([allPass(Rn, [c]) ? ok('OK') : bad('Fails'), '']); }
+            return rowN(c.name, cells, c === govCase && gov.r > 0 ? 'table-primary' : '',
+                c.key === 'start' ? num(Fs, 2) + ' × running full' : c.key === 'stop' ? 'Entered' : c.key === 'part' ? 'Running full tension, belt empty at the curve' : '');
+        }).join('');
+
+        /* curve geometry, drawn in the direction of travel */
+        function shape(R) {
+            if (!(R > 0) || !isFinite(R)) { return null; }
+            return { R: R, L: R * D, Tn: R * Math.tan(D / 2), Ext: R * (1 / Math.cos(D / 2) - 1), dx: R * xU, dy: R * hU };
+        }
+        var cols = [];
+        if (hasNom) { cols.push({ s: shape(Rn), role: 'nominal' }); }
+        cols.push({ s: shape(gov.r), role: 'required' });
+        var span = cols.length, gt = [];
+        function each(f, hint) { return cols.map(function (c) { return c.s ? [f(c.s), typeof hint === 'function' ? hint(c.s) : hint] : ['–', '']; }); }
+        function shared(v, h) { var c = [v, h]; c.span = span; return [c]; }
+        function spacingText(x) { return pair(num(x, 2) + ' m', num(x / 0.3048, 2) + ' ft'); }
+        gt.push(rowN('Belt slope entering and leaving', shared(slopeText(e1) + ' to ' + slopeText(e2), 'In the direction of travel')));
+        gt.push(rowN('Radius', cols.map(function (c) { return c.role === 'nominal' ? [rad(Rn), 'Entered'] : [radText(gov.r), govHint]; })));
+        gt.push(rowN('Length of the curve', each(function (s) { return dist(s.L); }, 'Along the belt, between the two ends of the curve')));
+        gt.push(rowN('Tangent length', each(function (s) { return dist(s.Tn); }, 'From each end of the curve to where the two slopes meet')));
+        gt.push(rowN('Horizontal length of the curve', each(function (s) { return dist(s.dx); })));
+        gt.push(rowN((hU >= 0 ? 'Rise' : 'Fall') + ' through the curve', each(function (s) { return dist(Math.abs(s.dy)); }, 'From the start to the end of the curve')));
+        gt.push(rowN('Offset from where the slopes meet', each(function (s) { return dist(s.Ext); }, 'To the middle of the curve, which passes ' + (conc ? 'above' : 'below') + ' the meeting point')));
+        var full = cases[0];
+        var tHigh = function (c) { return c.T; };
+        if (fin('sp')) {
+            var sp = si.sp, wSet = full.w * G / 1000 * sp;           /* belt and material weight on one idler set, kN */
+            gt.push(rowN('Idler sets in the curve', each(function (s) { return 'About ' + Math.max(1, Math.round(s.L / sp)); },
+                function (s) { return 'At ' + first(spacingText(sp)) + ' spacing, each set turned ' + num(sp / s.R * 180 / Math.PI, 2) + '° from the next'; })));
+            if (!conc) {
+                gt.push(rowN('Extra load on each idler set', each(function (s) { return force(tHigh(full, s.R) * sp / s.R); },
+                    function (s) { return 'Running full; up to ' + first(force(Math.max.apply(null, cases.map(function (c) { return tHigh(c, s.R); })) * sp / s.R)) + ' in other load cases'; })));
+                gt.push(rowN('Total load on each idler set', each(function (s) {
+                    var tot = wSet + tHigh(full, s.R) * sp / s.R;
+                    return force(tot) + (isFinite(rating) ? ' ' + (tot <= rating ? ok('OK') : bad('Over rating')) : '');
+                }, function (s) {
+                    var peak = cases.filter(function (c) { return c.key === 'start'; })[0];
+                    return 'Running full: ' + (full.loaded ? 'belt and material' : 'belt') + ' weight of ' + first(force(wSet)) + ' plus the extra load; ' +
+                        first(force(wSet + tHigh(peak, s.R) * sp / s.R)) + ' at the starting tension with the same weight';
+                })));
+            }
+        }
+        if (!conc && isFinite(rating)) {                          /* largest idler spacing for the rating, at the peak: full weight with the highest tension */
+            gt.push(rowN('Largest idler spacing for the load rating', each(function (s) {
+                var Tpk = Math.max.apply(null, cases.map(function (c) { return tHigh(c, s.R); })), sMax = rating / (full.w * G / 1000 + Tpk / s.R);
+                return spacingText(sMax) + (fin('sp') ? ' ' + (si.sp <= sMax * (1 + 1e-9) ? ok('OK') : bad('Too wide')) : '');
+            }, 'For the running full weight with the highest belt tension in any load case')));
+        }
+        $('geoHead').innerHTML = head(['Item'].concat(hasNom ? ['At the Nominal Radius', 'At the Required Radius'] : ['Value']));
+        $('geoBody').innerHTML = gt.join('');
+        var curves = cols.filter(function (c) { return c.s; });
+        var geo = curves.length ? { ok: true, isConc: conc, r1: r1, r2: r2, a1: e1, a2: e2, sp: fin('sp') ? si.sp : 0, curves: curves }
+            : { ok: false, msg: !isFinite(gov.r) ? 'No ' + word + ' radius is enough, so there is no curve to draw.' : 'A flat belt sets no convex radius, so there is no curve to draw.' };
+
+        /* belt, idlers and tension */
+        var tn = [];
+        var setText = arr === 'flat' ? ARR_NAME.flat : ARR_NAME[arr] + ', ' + (multiRoll ? deg(lamIn) + ' and ' : '') + deg(lam);
+        tn.push(row('Idler set', setText + ', ' + first(len(l)) + ' rolls', '', fin('lroll') ? 'Entered roll length' : (arr === 'four' ? 'Typical' : 'Standard') + ' roll length for this belt width'));
+        tn.push(row('Height of the belt edge above the belt centre', len(tr.h), '', tr.flat ? 'Flat belt' : ''));
+        if (worn) { tn.push(row('Worn belt mass per metre', kgm(mbHold), '', pct((1 - mbHold / mb) * 100) + ' lighter than the belt; used for lift-off')); }
+        if (mm > 0) { tn.push(row('Material mass per metre', kgm(mm), '', 'From the throughput and belt speed; with the belt, ' + first(kgm(mb + mm)))); }
+        tn.push(row('Allowable working tension', tpw(Ta), '', 'When running'));
+        if (fin('TaT')) { tn.push(row('Allowable starting and stopping tension', tpw(TaT))); }
+        if (allow > 0) { tn.push(row('Allowable edge tension', tpw(Ta * edgeF) + (fin('TaT') ? '; ' + first(tpw(TaT * edgeF)) : ''), '', num(allow, allow % 1 ? 1 : 0) + '% above the allowable tension' + (fin('TaT') ? '; running, then starting and stopping' : ''))); }
+        cases.forEach(function (c) {
+            tn.push(row(c.name + ', tension per unit width', tpw(c.t), '', pct(c.t / c.Ta * 100) + ' of the ' + limName(c, false)));
+        });
+        $('tenBody').innerHTML = tn.join('');
+
+        /* troughing angle comparison, with the same rolls, belt and load cases; 4 and 5-roll inner angles keep their share of the outer angle */
+        $('cmpHead').innerHTML = head([multiRoll ? 'Outer Roll Angle' : 'Troughing Angle', 'Edge Height', 'Required ' + (conc ? 'Concave' : 'Convex') + ' Radius']);
+        if (arr === 'flat') {
+            $('cmpBody').innerHTML = '<tr><td colspan="3" class="text-body-secondary">A flat idler has no troughing angle to compare.</td></tr>';
+        } else {
+            var angles = COMPARE[arr].slice();
+            if (angles.every(function (a) { return Math.abs(a - lam) > 1e-9; })) {
+                angles.push(lam);
+                angles.sort(function (a, b) { return a - b; });
+            }
+            $('cmpBody').innerHTML = angles.map(function (a) {
+                var inner = multiRoll ? lamIn * a / lam : 0, s = solve(a, inner), entered = Math.abs(a - lam) < 1e-9;
+                var noteText = [entered ? 'Entered' : '', multiRoll ? 'Inner rolls ' + deg(inner) : ''].filter(Boolean).join('; ');
+                return '<tr' + (entered ? ' class="table-primary fw-semibold"' : '') + '><th scope="row">' + deg(a) +
+                    (noteText ? '<span class="calc-hint">' + noteText + '</span>' : '') + '</th>' + cell(len(s.t.h)) +
+                    cell(radText(s.gov.r), s.gov.r > 0 && isFinite(s.gov.r) ? s.gov.name + ' when ' + lc1(s.gov.c.name) : '') + '</tr>';
+            }).join('');
+        }
+
+        /* warnings */
+        var warn = [];
+        checks.forEach(function (k) {
+            cases.forEach(function (c, i) {
+                if (isFinite(k.per[i])) { return; }
+                warn.push(c.name + ': the tension per unit width is ' + (k.falls ? 'at or below the minimum edge and centre tension' : 'at or above the ' + limName(c, k.key === 'edge')) +
+                    ', so no radius keeps the belt ' + (k.key === 'edge' ? 'edge' : 'centre') + (k.falls ? ' above it. Raise the take-up tension.' : ' within it.'));
+            });
+        });
+        if (multiRoll && lamIn >= lam) { warn.push('The inner roll angle is not less than the outer roll angle.'); }
+        if (hasNom && !nomOK) {
+            warn.push('The nominal radius of ' + first(rad(Rn)) + ' fails' + (isFinite(gov.r) && Rn < gov.r ? ': the required radius is ' + first(radUp(gov.r)) + ', set by ' + lc1(gov.name) + ' when ' + lc1(gov.c.name) : '') + '.');
+        }
+        $('warnList').innerHTML = warn.map(function (t) { return '<li>' + t + '</li>'; }).join('');
+        $('warnBox').hidden = !warn.length;
+
+        $('barValue').textContent = (conc ? 'Concave ' : 'Convex ') + radShort(gov.r) + (hasNom ? ', nominal ' + first(rad(Rn)) + (nomOK ? ' OK' : ' fails') : '');
+
+        last = { conc: conc, checks: checks, gov: gov, geo: geo, nom: hasNom ? Rn : null,
+            ten: { W: W, t: tr, E: E, cases: cases, govCase: govCase, Ta: Ta, TaT: TaT, hasTaT: fin('TaT'), edgeF: edgeF, allow: allow, Tmin: Tmin } };
+        renderAll();
+    }
+
+    /* ── Drawing helpers ── */
+    var SVGNS = 'http://www.w3.org/2000/svg';
+    function el(name, attrs, parent) {
+        var e = document.createElementNS(SVGNS, name);
+        Object.keys(attrs).forEach(function (key) { e.setAttribute(key, attrs[key]); });
+        if (parent) { parent.appendChild(e); }
+        return e;
+    }
+    function note(box, text, cls) {
+        var p = document.createElement('p');
+        p.className = 'small mb-1 ' + (cls || '');
+        p.textContent = text;
+        box.appendChild(p);
+    }
+    function niceStep(x) {                                        /* 1, 2, 2.5 or 5 times a power of ten, at or above x */
+        var p = Math.pow(10, Math.floor(Math.log(x) / Math.LN10)), m = x / p;
+        return (m > 5 ? 10 : m > 2.5 ? 5 : m > 2 ? 2.5 : m > 1 ? 2 : 1) * p;
+    }
+    function niceLen(x) {                                         /* 1, 2 or 5 times a power of ten, at or below x */
+        var p = Math.pow(10, Math.floor(Math.log(x) / Math.LN10)), m = x / p;
+        return (m >= 5 ? 5 : m >= 2 ? 2 : 1) * p;
+    }
+    function renderAll() {
+        hideTip();
+        renderChart();
+        renderProfile();
+        var two = last && last.nom !== null;
+        $('tenReqCol').className = two ? 'col-md-6' : 'col-12';
+        $('tenNomCol').hidden = !two;
+        renderTension($('tenReq'), last ? last.gov.r : NaN, 'required');
+        if (two) { renderTension($('tenNom'), last.nom, 'nominal'); } else { $('tenNom').innerHTML = ''; }
+    }
+
+    /* ── Required radius chart: one bar per check (the load case needing most), the governing check in dark grey, the nominal radius as a blue line ── */
+    function renderChart() {
+        var box = $('chart');
+        box.innerHTML = '';
+        if (!last) { return; }
+        var W = Math.max(280, box.clientWidth), narrow = W < 560;
+        var labelW = narrow ? 0 : Math.min(200, W * 0.3), valueW = narrow ? 0 : 230;
+        var rowH = narrow ? 44 : 30, groupH = 28, barH = 16, list = last.checks;
+        var maxR = last.nom || 0;
+        list.forEach(function (c) { if (isFinite(c.r)) { maxR = Math.max(maxR, c.r); } });
+        if (maxR <= 0) { maxR = 1; }
+        var barMax = W - labelW - valueW - 8;
+        var y = groupH, H = groupH + list.length * rowH + 8;
+        var svg = el('svg', { width: W, height: H, viewBox: '0 0 ' + W + ' ' + H, role: 'img',
+            'aria-label': 'Required radius by check. Governing ' + (last.conc ? 'concave' : 'convex') + ' radius ' + radShort(last.gov.r) +
+                (last.nom ? ', nominal radius ' + first(rad(last.nom)) : '') }, box);
+        var gl = el('text', { x: 0, y: 18, 'class': 'calc-group-label' }, svg);
+        gl.textContent = last.conc ? 'Concave (valley) curve' : 'Convex (crest) curve';
+        if (!narrow) { el('line', { x1: labelW, x2: labelW, y1: y, y2: y + list.length * rowH, stroke: '#adb5bd', 'stroke-width': 1 }, svg); }
+        var xn = last.nom ? labelW + last.nom / maxR * barMax : 0;
+        if (last.nom) {                                           /* nominal radius across the bars, under the value labels */
+            el('line', { x1: xn, x2: xn, y1: groupH - 4, y2: groupH + list.length * rowH, stroke: '#0d6efd', 'stroke-width': 1.5, 'stroke-dasharray': '4 3' }, svg);
+        }
+        list.forEach(function (c) {
+            var gov = c === last.gov, inf = !isFinite(c.r);
+            var yb = narrow ? y + 18 : y + (rowH - barH) / 2;
+            var valText = (c.r === 0 ? 'No limit' : inf ? 'No radius is enough' : first(radUp(c.r))) + (c.r > 0 ? ', ' + lc1(c.c.name) : '');
+            el('text', { x: 0, y: narrow ? y + 13 : yb + 12, 'class': (gov ? 'calc-gov' : 'calc-dark') + ' calc-halo' }, svg).textContent = c.name + (narrow ? ': ' + lc1(valText) : '');
+            var wBar = inf ? barMax : Math.max(c.r > 0 ? 2 : 0, c.r / maxR * barMax);
+            el('rect', { x: labelW, y: yb, width: wBar, height: barH, rx: 3,
+                fill: inf ? 'none' : gov ? '#343a40' : '#ced4da',
+                stroke: inf ? '#b02a37' : 'none', 'stroke-width': 1.5, 'stroke-dasharray': inf ? '5 4' : '' }, svg);
+            hoverOn(box, el('rect', { x: labelW, y: y, width: barMax, height: rowH, fill: 'transparent' }, svg),
+                c.name + ': ' + lc1(valText) + (gov ? ' (governing)' : ''));
+            if (!narrow) { el('text', { x: labelW + wBar + 8, y: yb + 12, 'class': (gov ? 'calc-gov ' : '') + 'calc-halo' }, svg).textContent = valText; }
+            y += rowH;
+        });
+        if (last.nom) {                                           /* the nominal radius label and hover target */
+            var top = groupH;
+            var nt = el('text', { x: xn + 4, y: top - 6, 'class': 'calc-dark' }, svg);
+            nt.textContent = 'Nominal ' + first(rad(last.nom));
+            var glEnd = gl.getComputedTextLength(), ntW = nt.getComputedTextLength();
+            if (xn + 4 + ntW > W) { nt.setAttribute('x', xn - 4); nt.setAttribute('text-anchor', 'end'); }
+            var x0 = nt.getAttribute('text-anchor') === 'end' ? xn - 4 - ntW : xn + 4;
+            if (x0 < glEnd + 8) { nt.setAttribute('y', y + 12); y += 14; }   /* below the bars when the curve name is in the way */
+            hoverOn(box, el('line', { x1: xn, x2: xn, y1: top - 4, y2: y, stroke: 'transparent', 'stroke-width': 12 }, svg), 'Nominal radius: ' + first(rad(last.nom)));
+        }
+        if (y + 8 > H) { svg.setAttribute('height', y + 8); svg.setAttribute('viewBox', '0 0 ' + W + ' ' + (y + 8)); }
+    }
+
+    /* ── Curve profile to scale: both slopes meeting at a fixed point; the nominal curve (when entered) is the belt line,
+       with the required curve dashed ── */
+    function renderProfile() {
+        var box = $('profile');
+        box.innerHTML = '';
+        if (!last) { return; }
+        var g = last.geo;
+        if (!g.ok) { note(box, g.msg, 'text-body-secondary'); return; }
+        var Wpx = Math.max(280, box.clientWidth), narrow = Wpx < 560;
+        var d1 = [Math.cos(g.r1), Math.sin(g.r1)], d2 = [Math.cos(g.r2), Math.sin(g.r2)], sgn = g.isConc ? 1 : -1;
+        var Tbig = 0, Lbig = 0;
+        g.curves.forEach(function (c) { Tbig = Math.max(Tbig, c.s.Tn); Lbig = Math.max(Lbig, c.s.L); });
+        var A = 0.3 * Lbig, reach = Tbig + A;
+        var p0 = [-reach * d1[0], -reach * d1[1]], p3 = [reach * d2[0], reach * d2[1]], pm = [0, 0];
+        function arcAt(s, c) {                                    /* point and slope at distance s along curve c from its start */
+            var k = sgn / c.s.R, f = g.r1 + k * s;
+            return [-c.s.Tn * d1[0] + (Math.sin(f) - Math.sin(g.r1)) / k, -c.s.Tn * d1[1] + (Math.cos(g.r1) - Math.cos(f)) / k, f];
+        }
+        g.curves.forEach(function (c) {
+            c.arc = [];
+            for (var i = 0; i <= 64; i++) { c.arc.push(arcAt(c.s.L * i / 64, c)); }
+            c.tp1 = [-c.s.Tn * d1[0], -c.s.Tn * d1[1]];
+            c.tp2 = [c.s.Tn * d2[0], c.s.Tn * d2[1]];
+        });
+        var all = [p0, p3, pm];
+        g.curves.forEach(function (c) { all = all.concat(c.arc); });
+        var xmin = Infinity, xmax = -Infinity, ymin = Infinity, ymax = -Infinity;
+        all.forEach(function (q) { xmin = Math.min(xmin, q[0]); xmax = Math.max(xmax, q[0]); ymin = Math.min(ymin, q[1]); ymax = Math.max(ymax, q[1]); });
+        var padX = 12, padTop = 38, padBot = 38, maxH = narrow ? 180 : 280;
+        var availW = Wpx - 2 * padX, xs = Math.max(xmax - xmin, 1e-9), ys = ymax - ymin;
+        var sc = Math.min(availW / xs, ys > 0 ? maxH / ys : Infinity);   /* pixels per metre, the same both ways */
+        var X0 = padX + (availW - xs * sc) / 2, H = Math.round(padTop + ys * sc + padBot);
+        function X(x) { return X0 + (x - xmin) * sc; }
+        function Y(y) { return padTop + (ymax - y) * sc; }
+        function pts(list) { return list.map(function (q) { return X(q[0]).toFixed(1) + ',' + Y(q[1]).toFixed(1); }).join(' '); }
+        var main = g.curves[0], other = g.curves[1] || null;
+        function rname(c) { return c.role === 'nominal' ? 'Nominal' : 'Required'; }
+        function rtext(c) { return first(c.role === 'nominal' ? rad(c.s.R) : radUp(c.s.R)); }
+        var svg = el('svg', { width: Wpx, height: H, viewBox: '0 0 ' + Wpx + ' ' + H, role: 'img',
+            'aria-label': (g.isConc ? 'Concave' : 'Convex') + ' curve drawn to scale from ' + slopeText(g.a1) + ' to ' + slopeText(g.a2) + ': ' +
+                g.curves.map(function (c) { return rname(c).toLowerCase() + ' radius ' + rtext(c) + ', ' + first(dist(c.s.L)) + ' long'; }).join('; ') }, box);
+
+        el('polyline', { points: pts([main.tp1, pm, main.tp2]), fill: 'none', stroke: '#adb5bd', 'stroke-width': 1, 'stroke-dasharray': '4 4' }, svg);
+        var s1 = reach - main.s.Tn;
+        function P(s) {                                           /* the belt along the main curve, by distance from the start of the drawing */
+            if (s <= s1) { return [p0[0] + s * d1[0], p0[1] + s * d1[1], g.r1]; }
+            if (s >= s1 + main.s.L) { var e = s - s1 - main.s.L; return [main.tp2[0] + e * d2[0], main.tp2[1] + e * d2[1], g.r2]; }
+            return arcAt(s - s1, main);
+        }
+        if (g.sp > 0 && g.sp * sc >= 3) {                         /* idler sets as short marks under the belt, one at the start of the curve */
+            var total = 2 * s1 + main.s.L, n0 = -Math.floor(s1 / g.sp), n1 = Math.floor((total - s1) / g.sp), dd = '';
+            if (n1 - n0 < 1000) {
+                for (var j = n0; j <= n1; j++) {
+                    var q = P(s1 + j * g.sp), nx = Math.sin(q[2]), ny = Math.cos(q[2]), sx = X(q[0]), sy = Y(q[1]);
+                    dd += 'M' + (sx + nx * 3).toFixed(1) + ' ' + (sy + ny * 3).toFixed(1) + 'L' + (sx + nx * 9).toFixed(1) + ' ' + (sy + ny * 9).toFixed(1);
+                }
+                el('path', { d: dd, stroke: '#adb5bd', 'stroke-width': 1.5, fill: 'none' }, svg);
+            }
+        }
+        el('polyline', { points: pts([p0, main.tp1]), fill: 'none', stroke: '#868e96', 'stroke-width': 2, 'stroke-linecap': 'round' }, svg);
+        el('polyline', { points: pts([main.tp2, p3]), fill: 'none', stroke: '#868e96', 'stroke-width': 2, 'stroke-linecap': 'round' }, svg);
+        if (other) {
+            el('polyline', { points: pts(other.arc), fill: 'none', stroke: '#868e96', 'stroke-width': 2, 'stroke-dasharray': '6 4' }, svg);
+            [other.tp1, other.tp2].forEach(function (q) { el('circle', { cx: X(q[0]), cy: Y(q[1]), r: 3, fill: '#fff', stroke: '#868e96', 'stroke-width': 1.5 }, svg); });
+        }
+        el('polyline', { points: pts(main.arc), fill: 'none', stroke: '#212529', 'stroke-width': 2.5, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, svg);
+        el('circle', { cx: X(0), cy: Y(0), r: 3, fill: '#adb5bd' }, svg);
+        [main.tp1, main.tp2].forEach(function (q) { el('circle', { cx: X(q[0]), cy: Y(q[1]), r: 4, fill: '#fff', stroke: '#212529', 'stroke-width': 1.5 }, svg); });
+
+        /* labels run along the belt. One curve: the ends and the radius sit inside the curve, the meeting point outside.
+           Two curves: each curve's labels sit on the side away from the other curve (the larger radius lies further inside). */
+        var spanPx = Math.hypot(X(main.tp2[0]) - X(main.tp1[0]), Y(main.tp2[1]) - Y(main.tp1[1])), marks = [];
+        function label(q, ang, text, inside, cls, extra) {
+            var up = inside === g.isConc;                         /* concave curves bend upwards, so their inside is above the belt */
+            var off = (up ? 9 : 22) + (extra || 0), nx = -Math.sin(ang) * (up ? 1 : -1), ny = -Math.cos(ang) * (up ? 1 : -1);
+            var cx = X(q[0]) + nx * off, cy = Y(q[1]) + ny * off;
+            el('text', { x: cx.toFixed(1), y: cy.toFixed(1), 'text-anchor': 'middle', 'class': (cls ? cls + ' ' : '') + 'calc-halo',
+                transform: 'rotate(' + (-ang * 180 / Math.PI).toFixed(2) + ' ' + cx.toFixed(1) + ' ' + cy.toFixed(1) + ')' }, svg).textContent = text;
+            marks.push([cx, cy - 5]);
+        }
+        var mainInside = !other || main.s.R >= other.s.R;
+        if (spanPx > 95) {
+            label(main.tp1, g.r1, 'Start of curve', mainInside);
+            label(main.tp2, g.r2, 'End of curve', mainInside);
+            if (!other) { label(pm, (g.r1 + g.r2) / 2, 'Slopes meet', false); }
+        }
+        if (spanPx > 190) {
+            var mid = arcAt(main.s.L / 2, main);
+            label(mid, mid[2], rtext(main) + (other ? ' nominal' : ' radius'), mainInside, 'calc-gov', other && !mainInside ? main.s.Ext * sc : 0);
+            if (other) {
+                var mid2 = arcAt(other.s.L / 2, other);
+                /* the curve nearer the meeting point labels beyond it, clear of the meeting point mark */
+                label(mid2, mid2[2], rtext(other) + ' required', !mainInside, '', mainInside ? other.s.Ext * sc : 0);
+            }
+        }
+
+        /* direction of travel: a short arrow beside the approach, outside the curve */
+        if (s1 * sc > 90) {
+            var pA = P(0.2 * s1), pB = P(0.2 * s1 + 36 / sc), outUp = !g.isConc, offA = outUp ? 12 : 24;
+            var nxA = -Math.sin(g.r1) * (outUp ? 1 : -1), nyA = -Math.cos(g.r1) * (outUp ? 1 : -1);
+            var ax1 = X(pA[0]) + nxA * offA, ay1 = Y(pA[1]) + nyA * offA, ax2 = X(pB[0]) + nxA * offA, ay2 = Y(pB[1]) + nyA * offA;
+            var ux = (ax2 - ax1) / 36, uy = (ay2 - ay1) / 36;
+            el('line', { x1: ax1.toFixed(1), y1: ay1.toFixed(1), x2: (ax2 - 4 * ux).toFixed(1), y2: (ay2 - 4 * uy).toFixed(1), stroke: '#495057', 'stroke-width': 1.5 }, svg);
+            el('path', { d: 'M' + ax2.toFixed(1) + ' ' + ay2.toFixed(1) + 'L' + (ax2 - 8 * ux - 4 * uy).toFixed(1) + ' ' + (ay2 - 8 * uy + 4 * ux).toFixed(1) +
+                'L' + (ax2 - 8 * ux + 4 * uy).toFixed(1) + ' ' + (ay2 - 8 * uy - 4 * ux).toFixed(1) + 'Z', fill: '#495057' }, svg);
+            var tx = ax2 + 6 * ux, ty = ay2 + 6 * uy + 4;
+            el('text', { x: tx.toFixed(1), y: ty.toFixed(1), 'class': 'calc-halo',
+                transform: 'rotate(' + (-g.r1 * 180 / Math.PI).toFixed(2) + ' ' + ax2.toFixed(1) + ' ' + ay2.toFixed(1) + ')' }, svg).textContent = 'Belt travel';
+            marks.push([ax1, ay1], [ax2 + 40 * ux, ay2 + 40 * uy]);
+        }
+
+        /* scale bar in the corner farthest from the belt and its labels */
+        var unitM = sys === 'met' ? 1 : 0.3048, nice = niceLen(xs * 0.18 / unitM), barPx = nice * unitM * sc;
+        var dots = all.map(function (p) { return [X(p[0]), Y(p[1])]; }).concat(marks);
+        var corners = [[padX, H - 10], [Wpx - padX - barPx, H - 10], [padX, 24], [Wpx - padX - barPx, 24]], best = corners[0], bestD = -1;
+        corners.forEach(function (c) {
+            var dmin = Infinity;
+            dots.forEach(function (p) { dmin = Math.min(dmin, Math.hypot(p[0] - (c[0] + barPx / 2), p[1] - c[1])); });
+            if (dmin > bestD) { bestD = dmin; best = c; }
+        });
+        el('path', { d: 'M' + best[0] + ' ' + (best[1] - 4) + 'v4h' + barPx.toFixed(1) + 'v-4', stroke: '#6c757d', 'stroke-width': 1, fill: 'none' }, svg);
+        el('text', { x: (best[0] + barPx / 2).toFixed(1), y: best[1] - 8, 'text-anchor': 'middle' }, svg).textContent =
+            num(nice, nice < 1 ? 1 : 0) + ' ' + UNIT.m[sys];
+
+        function hitLine(list, text) { hoverOn(box, el('polyline', { points: pts(list), fill: 'none', stroke: 'transparent', 'stroke-width': 16 }, svg), text); }
+        function hitDot(q, text) { hoverOn(box, el('circle', { cx: X(q[0]), cy: Y(q[1]), r: 10, fill: 'transparent' }, svg), text); }
+        hitLine([p0, main.tp1], 'Belt slope entering the curve: ' + slopeText(g.a1));
+        hitLine([main.tp2, p3], 'Belt slope leaving the curve: ' + slopeText(g.a2));
+        g.curves.slice().reverse().forEach(function (c) {
+            var n = g.sp > 0 ? Math.max(1, Math.round(c.s.L / g.sp)) : 0;
+            hitLine(c.arc, rname(c) + ' ' + (g.isConc ? 'concave' : 'convex') + ' curve: ' + rtext(c) + ' radius, ' + first(dist(c.s.L)) + ' long' +
+                (n ? ', about ' + n + ' idler sets' : ''));
+            hitDot(c.tp1, rname(c) + ' curve starts');
+            hitDot(c.tp2, rname(c) + ' curve ends');
+        });
+        hitDot(pm, 'Slopes meet; ' + g.curves.map(function (c) { return rname(c).toLowerCase() + ' tangent length ' + first(dist(c.s.Tn)); }).join(', '));
+    }
+
+    /* ── Tension across the belt width in each load case, at the required or the nominal radius ── */
+    function renderTension(box, R, role) {
+        box.innerHTML = '';
+        if (!last) { return; }
+        var d = last.ten, t = d.t, conc = last.conc, name = conc ? 'Concave curve' : 'Convex curve';
+        if (!isFinite(R)) {
+            note(box, name);
+            note(box, 'No radius is enough, so there is no tension to show.', 'text-danger');
+            return;
+        }
+        note(box, R === 0 ? name + ', flat belt' : name + ' at the ' + role + ' ' + first(role === 'nominal' ? rad(R) : radUp(R)) + ' radius');
+        var Wpx = Math.max(260, box.clientWidth), left = 44, right = 150, top = 20, ph = 200, bottom = 30;
+        if (Wpx < 420) { right = 118; }
+        var pw = Wpx - left - right, H = top + ph + bottom;
+        var sgn = conc ? -1 : 1, k = R > 0 && !t.flat ? d.E / R : 0, half = d.W / 2;
+        function ten(u, t0) { return t0 + sgn * k * (heightAt(t, Math.abs(u - half)) - t.mean); }
+        var us = [];                                              /* bends across the full width, left edge to right edge */
+        for (var i = t.pts.length - 1; i >= 0; i--) { us.push(half - t.pts[i][0]); }
+        for (i = 1; i < t.pts.length; i++) { us.push(half + t.pts[i][0]); }
+        var lines = d.cases.map(function (c) { return { c: c, vals: us.map(function (u) { return ten(u, c.t); }) }; });
+        var vTop = d.Ta, vBot = 0;
+        lines.forEach(function (ln) { vTop = Math.max(vTop, Math.max.apply(null, ln.vals)); vBot = Math.min(vBot, Math.min.apply(null, ln.vals)); });
+        var limits = [[d.Ta, 'Allowable', '#6c757d']];
+        if (d.hasTaT && Math.abs(d.TaT - d.Ta) > 1e-9) { limits.push([d.TaT, 'Allowable, start/stop', '#6c757d']); }
+        if (d.allow > 0) {
+            limits.push([d.Ta * d.edgeF, 'Edge allowable', '#adb5bd']);
+            if (d.hasTaT && Math.abs(d.TaT - d.Ta) > 1e-9) { limits.push([d.TaT * d.edgeF, 'Edge, start/stop', '#adb5bd']); }
+        }
+        limits.forEach(function (lm) { vTop = Math.max(vTop, lm[0]); });
+        var rawTop = fromSI('kNm', vTop), rawBot = fromSI('kNm', vBot), step = niceStep(Math.max(rawTop - rawBot, 1e-9) * 1.1 / 4);
+        var dBot = rawBot < 0 ? Math.floor(rawBot * 1.05 / step) * step : 0, dTop = rawTop + 0.1 * (rawTop - dBot);
+        function X(u) { return left + u / d.W * pw; }
+        function Y(v) { return top + ph - (fromSI('kNm', v) - dBot) / (dTop - dBot) * ph; }
+        function line(vals) { return us.map(function (u, n) { return X(u).toFixed(1) + ',' + Y(vals[n]).toFixed(1); }); }
+        var svg = el('svg', { width: Wpx, height: H, viewBox: '0 0 ' + Wpx + ' ' + H, role: 'img',
+            'aria-label': name + ' at ' + radShort(R) + ': ' + lines.map(function (ln) {
+                return lc1(ln.c.name) + ' edge ' + first(tpw(ln.vals[0])) + ' and centre ' + first(tpw(ten(half, ln.c.t)));
+            }).join('; ') }, box);
+
+        /* roll bands (alternate rolls shaded), grid and axes */
+        var nSeg = t.pts.length - 1, merged = t.names[0] === 'Centre roll' || t.names[0] === 'Flat roll', bands = [];
+        for (i = 0; i < nSeg; i++) {
+            var a = t.pts[i][0], b = t.pts[i + 1][0];
+            if (i === 0 && merged) { bands.push([half - b, half + b, i]); }
+            else { bands.push([half - b, half - a, i]); bands.push([half + a, half + b, i]); }
+        }
+        bands.forEach(function (bd) {
+            if (nSeg > 1 && bd[2] % 2 === 0) { el('rect', { x: X(bd[0]), y: top, width: Math.max(0, X(bd[1]) - X(bd[0])), height: ph, fill: '#f1f3f5' }, svg); }
+        });
+        for (i = Math.ceil(dBot / step - 1e-9); i * step <= dTop + 1e-9; i++) {
+            var yy = top + ph - (i * step - dBot) / (dTop - dBot) * ph;
+            el('line', { x1: left, x2: left + pw, y1: yy, y2: yy, stroke: i === 0 ? '#adb5bd' : '#e9ecef', 'stroke-width': 1 }, svg);
+            el('text', { x: left - 6, y: yy + 4, 'text-anchor': 'end' }, svg).textContent = num(i * step, step < 1 ? 1 : 0);
+        }
+        el('text', { x: left - 6, y: top - 8, 'text-anchor': 'end' }, svg).textContent = UNIT.kNm[sys];
+        bands.forEach(function (bd) {                             /* roll names under the plot where they fit */
+            var lab = el('text', { x: X((bd[0] + bd[1]) / 2), y: top + ph + 18, 'text-anchor': 'middle' }, svg);
+            lab.textContent = t.names[bd[2]];
+            if (lab.getComputedTextLength() + 6 > X(bd[1]) - X(bd[0])) { lab.remove(); }
+        });
+
+        /* limits as dashed lines; each load case as a solid line (the case that sets the required radius in dark grey);
+           names in the right margin, spread so they do not overlap */
+        var labels = [];
+        limits.concat([[d.Tmin, 'Minimum allowed', '#6c757d']]).forEach(function (lm) {
+            el('line', { x1: left, x2: left + pw, y1: Y(lm[0]), y2: Y(lm[0]), stroke: lm[2], 'stroke-width': 1.25, 'stroke-dasharray': '5 4' }, svg);
+            labels.push({ y: Y(lm[0]), text: lm[1], cls: '' });
+        });
+        lines.slice().sort(function (p, q) { return (p.c === d.govCase) - (q.c === d.govCase); }).forEach(function (ln) {
+            var dark = ln.c === d.govCase;
+            el('polyline', { points: line(ln.vals).join(' '), fill: 'none', stroke: dark ? '#212529' : '#868e96', 'stroke-width': dark ? 2.25 : 1.75, 'stroke-linejoin': 'round' }, svg);
+            labels.push({ y: Y(ln.vals[ln.vals.length - 1]), text: ln.c.name, cls: 'calc-dark' });
+        });
+        labels.sort(function (p, q) { return p.y - q.y; });
+        var gap = 14, n;
+        for (n = 1; n < labels.length; n++) { labels[n].y = Math.max(labels[n].y, labels[n - 1].y + gap); }
+        labels[labels.length - 1].y = Math.min(labels[labels.length - 1].y, top + ph + 2);     /* keep the lowest name beside the plot */
+        for (n = labels.length - 2; n >= 0; n--) { labels[n].y = Math.min(labels[n].y, labels[n + 1].y - gap); }
+        labels.forEach(function (lb) { el('text', { x: left + pw + 6, y: (lb.y + 4).toFixed(1), 'class': lb.cls }, svg).textContent = lb.text; });
+
+        /* hover: a line across the plot and the tension at that point in each load case */
+        var cross = el('line', { x1: 0, x2: 0, y1: top, y2: top + ph, stroke: '#495057', 'stroke-width': 1, visibility: 'hidden' }, svg);
+        var dotsEl = lines.map(function (ln) {
+            return el('circle', { r: 3.5, fill: ln.c === d.govCase ? '#212529' : '#868e96', stroke: '#fff', 'stroke-width': 2, visibility: 'hidden' }, svg);
+        });
+        var hit = el('rect', { x: left, y: top, width: pw, height: ph, fill: 'transparent' }, svg);
+        function showMarks(on) { [cross].concat(dotsEl).forEach(function (m) { m.setAttribute('visibility', on ? 'visible' : 'hidden'); }); }
+        function move(e) {
+            var bx = box.getBoundingClientRect(), sb = svg.getBoundingClientRect();
+            var u = Math.max(0, Math.min(d.W, (e.clientX - sb.left - left) / pw * d.W)), xx = X(u), dc = Math.abs(u - half), s0 = segAt(t, dc);
+            cross.setAttribute('x1', xx); cross.setAttribute('x2', xx);
+            var text = t.names[s0] + ', ' + (s0 === 0 ? first(len(dc)) + ' from the belt centre' : first(len(half - dc)) + ' from the edge');
+            lines.forEach(function (ln, m) {
+                var v = ten(u, ln.c.t);
+                dotsEl[m].setAttribute('cx', xx);
+                dotsEl[m].setAttribute('cy', Y(v));
+                text += '\n' + ln.c.name + ': ' + first(tpw(v));
+            });
+            showMarks(true);
+            showTip(text, box, e.clientX - bx.left, e.clientY - bx.top);
+        }
+        hit.addEventListener('mouseenter', move);
+        hit.addEventListener('mousemove', move);
+        hit.addEventListener('mouseleave', function () { hideTip(); showMarks(false); });
+    }
+
+    var resizeTimer = null;
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(renderAll, 120);
+    });
+
+    /* ── Events ── */
+    numInputs.forEach(function (e) {
+        e.addEventListener('input', function () {
+            readInput(e);
+            if (e.id === 'Fs') {                     /* a factor outside the method's typical range becomes an entered factor */
+                var s0 = START[$('start').value];
+                if (s0 && !(isFinite(si.Fs) && inRange(s0, si.Fs))) { $('start').value = 'enter'; }
+            }
+            compute();
+        });
+    });
+    $('start').addEventListener('change', function () {
+        var s0 = START[this.value];
+        if (s0) { setSI('Fs', startDefault(s0)); }
+        compute();
+    });
+    $('arr').addEventListener('change', function () {
+        if (ARR_DEFAULT_ANGLE[this.value]) { setSI('lam', ARR_DEFAULT_ANGLE[this.value]); }
+        if (ARR_DEFAULT_INNER[this.value]) { setSI('lamIn', ARR_DEFAULT_INNER[this.value]); }
+        compute();
+    });
+    $('d1').addEventListener('change', compute);
+    $('d2').addEventListener('change', compute);
+    $('loaded').addEventListener('change', compute);
+    form.addEventListener('submit', function (e) { e.preventDefault(); });
+    $('units').addEventListener('change', function () {
+        sys = this.value;
+        numInputs.forEach(display);
+        document.querySelectorAll('[data-unit]').forEach(function (s) { s.textContent = UNIT[s.getAttribute('data-unit')][sys]; });
+        compute();
+    });
+
+    /* The bottom result bar hides while the results are on screen */
+    var bar = $('calcBar');
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) { bar.hidden = e.isIntersecting; });
+        }, { rootMargin: '0px 0px -15% 0px' }).observe($('results'));
+    }
+
+    /* ── Start from the example values (metric), whatever the browser restored ── */
+    numInputs.forEach(function (e) {
+        var v = e.getAttribute('value');
+        e.value = v === null ? '' : v;
+        readInput(e);
+    });
+    form.querySelectorAll('select').forEach(function (s) {
+        var sel = s.querySelector('option[selected]');
+        if (sel) { s.value = sel.value; }
+    });
+    compute();
+})();
+</script>
+<script src="handbook.js"></script>
+
+</body>
+</html>
