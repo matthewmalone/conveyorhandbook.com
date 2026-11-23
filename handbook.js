@@ -1,4 +1,4 @@
-/* handbook.js – mobile sidebar, chapter-menu toggle, scrollspy */
+/* handbook.js – mobile sidebar, chapter and calculator menu toggles, scrollspy */
 (function () {
     var sidebar = document.getElementById('sidebar');
     var sidebarToggle = document.getElementById('sidebarToggle');
@@ -51,24 +51,25 @@
         }
     }
 
-    /* ── Chapter menu toggle (closed by default; opening it is remembered) ── */
-    var chapterBtn = document.getElementById('chapterMenuBtn');
-    var chapterMenu = document.getElementById('chapterMenu');
-    if (chapterBtn && chapterMenu) {
-        var setChapterMenu = function (open) {
-            chapterMenu.classList.toggle('open', open);
-            chapterBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    /* ── Chapter and calculator menu toggles (closed by default; opening each is remembered) ── */
+    [['chapterMenuBtn', 'chapterMenu', 'handbook.chapterMenu'], ['calcMenuBtn', 'calcMenu', 'handbook.calcMenu']].forEach(function (m) {
+        var btn = document.getElementById(m[0]);
+        var list = document.getElementById(m[1]);
+        if (!btn || !list) { return; }
+        var setMenu = function (open) {
+            list.classList.toggle('open', open);
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
         };
         var savedState = null;
-        try { savedState = localStorage.getItem('handbook.chapterMenu'); } catch (e) { /* storage unavailable: use the default */ }
-        setChapterMenu(savedState === 'open');
+        try { savedState = localStorage.getItem(m[2]); } catch (e) { /* storage unavailable: use the default */ }
+        setMenu(savedState === 'open');
 
-        chapterBtn.addEventListener('click', function () {
-            var open = !chapterMenu.classList.contains('open');
-            setChapterMenu(open);
-            try { localStorage.setItem('handbook.chapterMenu', open ? 'open' : 'closed'); } catch (e) { /* ignore */ }
+        btn.addEventListener('click', function () {
+            var open = !list.classList.contains('open');
+            setMenu(open);
+            try { localStorage.setItem(m[2], open ? 'open' : 'closed'); } catch (e) { /* ignore */ }
         });
-    }
+    });
 
     /* ── Scrollspy ── */
     var sections = document.querySelectorAll('section[id]');

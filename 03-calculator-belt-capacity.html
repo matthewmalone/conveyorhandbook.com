@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator 3 Belt Capacity – Modern Conveyor Handbook</title>
+    <meta name="description" content="Belt capacity calculator: load cross-section, volumetric and mass capacity, incline reduction, edge clearance and percentage loading for flat, 2-roll, 3-roll, 4-roll and 5-roll idlers.">
+    <meta name="author" content="Matthew Malone">
+    <link rel="canonical" href="https://www.conveyorhandbook.com/03-calculator-belt-capacity.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Calculator 3 Belt Capacity – Modern Conveyor Handbook">
+    <meta property="og:description" content="Belt capacity calculator: load cross-section, volumetric and mass capacity, incline reduction, edge clearance and percentage loading for flat, 2-roll, 3-roll, 4-roll and 5-roll idlers.">
+    <meta property="og:url" content="https://www.conveyorhandbook.com/03-calculator-belt-capacity.html">
+    <meta property="og:site_name" content="Modern Conveyor Handbook">
+    <meta property="og:locale" content="en_AU">
+    <meta property="article:published_time" content="2026-11-22T00:00:00+11:00">
+    <meta property="article:modified_time" content="2026-11-23T00:00:00+11:00">
+    <meta property="article:author" content="Matthew Malone">
+    <meta property="article:section" content="Engineering">
+    <meta property="article:tag" content="conveyors">
+    <meta property="article:tag" content="belt capacity">
+    <meta property="article:tag" content="troughing idlers">
+    <meta property="article:tag" content="engineering calculator">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Calculator 3 Belt Capacity – Modern Conveyor Handbook">
+    <meta name="twitter:description" content="Belt capacity calculator: load cross-section, volumetric and mass capacity, incline reduction, edge clearance and percentage loading for flat, 2-roll, 3-roll, 4-roll and 5-roll idlers.">
+
+    <link rel="icon" type="image/svg+xml" href="ico/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+    <link rel="home" href="https://www.conveyorhandbook.com/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "TechArticle",
+                "headline": "Calculator 3 Belt Capacity",
+                "description": "Belt capacity calculator: load cross-section, volumetric and mass capacity, incline reduction, edge clearance and percentage loading for flat, 2-roll, 3-roll, 4-roll and 5-roll idlers.",
+                "author": { "@type": "Person", "name": "Matthew Malone" },
+                "copyrightYear": "2026",
+                "copyrightHolder": { "@type": "Person", "name": "Matthew Malone" },
+                "publisher": { "@type": "Organization", "@id": "https://www.conveyorhandbook.com/#organization", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "datePublished": "2026-11-22",
+                "dateModified": "2026-11-23",
+                "mainEntityOfPage": "https://www.conveyorhandbook.com/03-calculator-belt-capacity.html",
+                "isPartOf": { "@type": "WebSite", "@id": "https://www.conveyorhandbook.com/#website", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "inLanguage": "en-AU",
+                "about": { "@type": "Thing", "name": "Calculator 3 Belt Capacity" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Modern Conveyor Handbook", "item": "https://www.conveyorhandbook.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Calculator 3 Belt Capacity", "item": "https://www.conveyorhandbook.com/03-calculator-belt-capacity.html" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+    <link rel="stylesheet" href="handbook.css">
+    <style>
+        /* Calculator page: only what Bootstrap's classes and handbook.css do not cover */
+        .calc-page { padding-bottom: 6rem; }
+        .calc-group { margin: 2rem 0 0.25rem; }
+
+        /* One input or result per row: label and hint on the left, field or value on the right */
+        .calc-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            column-gap: 1.5rem;
+            row-gap: 0.35rem;
+            align-items: center;
+            padding: 0.6rem 0.5rem;
+            border-bottom: 1px solid var(--bs-border-color);
+        }
+        .calc-row > label { margin: 0; }
+        .calc-hint { display: block; margin-top: 0.1rem; font-size: 0.8125rem; font-weight: 400; color: var(--bs-secondary-color); }
+        .calc-num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+        @media (max-width: 575.98px) {
+            .calc-row { grid-template-columns: minmax(0, 1fr); padding-left: 0; padding-right: 0; }
+        }
+        #results { scroll-margin-top: 1rem; }
+
+        /* Cross-section drawn to scale */
+        .calc-drawing { position: relative; }
+        .calc-drawing svg { display: block; width: 100%; overflow: visible; }
+        .calc-drawing text { font-size: 12px; fill: var(--bs-secondary-color); font-variant-numeric: tabular-nums; }
+        .calc-drawing text.calc-on-fill { fill: #212529; paint-order: stroke; stroke: rgba(255, 255, 255, 0.85); stroke-width: 3px; }
+        .calc-tip {
+            position: absolute;
+            z-index: 5;
+            padding: 0.3rem 0.55rem;
+            border: 1px solid var(--bs-border-color);
+            border-radius: var(--bs-border-radius-sm);
+            background: var(--bs-body-bg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            font-size: 0.8rem;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        /* Result bar fixed to the bottom of the window while the inputs are on screen */
+        .calc-bar {
+            position: fixed;
+            left: 260px;
+            right: 0;
+            bottom: 0;
+            z-index: 1010;
+            padding: 0.6rem 3rem;
+            border-top: 1px solid var(--bs-border-color);
+            background: var(--bs-body-bg);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.06);
+        }
+        @media (max-width: 991.98px) {
+            .calc-bar { left: 0; padding: 0.55rem 1rem; }
+        }
+        @media print {
+            .calc-page { padding-bottom: 0; }
+            .calc-bar, .calc-tip { display: none !important; }
+            .calc-drawing svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Contents
+    </button>
+</div>
+
+<nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
+    <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="chapterMenuBtn" aria-expanded="false" aria-controls="chapterMenu">Chapters</button>
+    </p>
+    <div class="chapter-menu" id="chapterMenu"></div>
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="calcMenuBtn" aria-expanded="false" aria-controls="calcMenu">Calculators</button>
+    </p>
+    <div class="chapter-menu" id="calcMenu"></div>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-3">Table of Contents</p>
+    <div class="toc">
+        <a href="#calculator-3-belt-capacity">1. Calculator 3 Belt Capacity</a>
+        <a href="#inputs">2. Inputs</a>
+        <a href="#results">3. Results</a>
+    </div>
+</nav>
+
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+<main class="main-content calc-page" id="main" tabindex="-1">
+
+    <section id="calculator-3-belt-capacity">
+        <h1 class="mb-3">1. Calculator 3 Belt Capacity</h1>
+        <p>Checks whether a belt carries the required throughput, with the load cross-section drawn to scale and compared across flat, 2-roll, 3-roll, 4-roll and 5-roll idler arrangements and a range of belt speeds.</p>
+        <noscript><div class="alert alert-warning">This calculator needs JavaScript.</div></noscript>
+    </section>
+
+    <form id="calcForm" autocomplete="off" novalidate>
+    <section id="inputs">
+        <h2 class="border-top pt-4 mt-5">2. Inputs</h2>
+
+        <div>
+            <div class="calc-row mt-3">
+                <label for="units">Units</label>
+                <select class="form-select" id="units">
+                    <option value="met" selected>Metric</option>
+                    <option value="imp">Imperial</option>
+                </select>
+            </div>
+
+            <h3 class="h5 calc-group">Belt and Idlers</h3>
+            <div class="calc-row">
+                <label for="B">Belt width</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="B" data-kind="mm" min="0" step="any" value="1200">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="thick">Belt thickness<span class="calc-hint">Total thickness including covers</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="thick" data-kind="mm" min="0" step="any" value="20">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="arr">Idler arrangement</label>
+                <select class="form-select" id="arr">
+                    <option value="flat">Flat (1 roll)</option>
+                    <option value="two">2-roll</option>
+                    <option value="three" selected>3-roll</option>
+                    <option value="four">4-roll</option>
+                    <option value="five">5-roll</option>
+                </select>
+            </div>
+            <div class="calc-row" data-show="inner">
+                <label for="lamIn">Inner roll angle<span class="calc-hint" id="lamIn-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="lamIn" data-kind="deg" min="0" step="any" value="20">
+                    <span class="input-group-text">deg</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="trough">
+                <label for="lam"><span id="lam-label">Troughing angle</span><span class="calc-hint" id="lam-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="lam" data-kind="deg" min="0" step="any" value="35">
+                    <span class="input-group-text">deg</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="lroll">Roll length (optional)<span class="calc-hint" id="lroll-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="lroll" data-kind="mm" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="gap">
+                <label for="gap">Roll gap<span class="calc-hint">Gap between the ends of adjacent rolls, typically 10 to 20 mm for inline sets. Enter a negative value for offset sets, where the wing rolls overlap the inner rolls.</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="gap" data-kind="mm" step="any" value="10">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="clear">Edge clearance (optional)<span class="calc-hint" id="clear-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="clear" data-kind="mm" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="v">Belt speed</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="v" data-kind="speed" min="0" step="any" value="4">
+                    <span class="input-group-text" data-unit="speed">m/s</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Material</h3>
+            <div class="calc-row">
+                <label for="mat">Material</label>
+                <select class="form-select" id="mat"></select>
+            </div>
+            <div class="calc-row">
+                <label for="rho">Bulk density<span class="calc-hint" id="rho-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="rho" data-kind="dens" min="0" step="any" value="2200">
+                    <span class="input-group-text" data-unit="dens">kg/m3</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="beta">Surcharge angle<span class="calc-hint" id="beta-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="beta" data-kind="deg" min="0" step="any" value="20">
+                    <span class="input-group-text">deg</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Conveyor</h3>
+            <div class="calc-row">
+                <label for="delta">Incline<span class="calc-hint" id="delta-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="delta" data-kind="deg" min="0" step="any" value="10">
+                    <span class="input-group-text">deg</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="qreq">Required throughput</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="qreq" data-kind="cap" min="0" step="any" value="4000">
+                    <span class="input-group-text" data-unit="cap">t/h</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    </form>
+
+    <section id="results">
+        <h2 class="border-top pt-4 mt-5">3. Results</h2>
+        <div class="alert alert-danger" id="resultError" role="alert" hidden></div>
+        <div id="resultBody">
+            <figure class="mt-4 mb-4">
+                <figcaption class="small fw-semibold mb-2">Cross-Section to Scale</figcaption>
+                <div class="calc-drawing" id="drawing"></div>
+            </figure>
+            <div class="calc-tip" id="tip" hidden></div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Capacity</caption>
+                    <thead class="table-light" id="capHead"></thead>
+                    <tbody id="capBody"></tbody>
+                </table>
+            </div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Load and Idler Geometry</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody id="geoBody"></tbody>
+                </table>
+            </div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold" id="arrCaption">Idler Arrangements at the Entered Belt Speed</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Idler Arrangement</th>
+                            <th scope="col">Roll Length</th>
+                            <th scope="col">Cross-Section</th>
+                            <th scope="col">Mass Capacity</th>
+                            <th scope="col">Loading</th>
+                            <th scope="col">Speed for the Required Throughput</th>
+                        </tr>
+                    </thead>
+                    <tbody id="arrBody"></tbody>
+                </table>
+            </div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold" id="speedCaption">Belt Speeds</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Belt Speed</th>
+                            <th scope="col">Volumetric Capacity</th>
+                            <th scope="col">Mass Capacity</th>
+                            <th scope="col">Loading</th>
+                        </tr>
+                    </thead>
+                    <tbody id="speedBody"></tbody>
+                </table>
+            </div>
+            <div class="alert alert-warning mt-4" id="warnBox" hidden>
+                <p class="fw-semibold mb-2">Check</p>
+                <ul class="mb-0 ps-3" id="warnList"></ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="calc-bar d-print-none" id="calcBar">
+        <div class="d-flex flex-wrap align-items-baseline column-gap-3 row-gap-1">
+            <span class="fw-semibold">Capacity</span>
+            <span class="fs-5 fw-semibold calc-num" id="barValue" role="status"></span>
+            <a href="#results" class="small">Results</a>
+        </div>
+    </div>
+
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
+        Published <time datetime="2026-11-22">22 November 2026</time><br>
+        Updated <time datetime="2026-11-23">23 November 2026</time><br>
+        &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>
+    </footer>
+
+</main>
+
+<script src="chapters.js"></script>
+<script src="handbook.js"></script>
+<script>
+/* Calculator 3 Belt Capacity. Plain JavaScript; every value is held in SI units (m, m/s, kg/m3, t/h, deg).
+   The load cross-section is a polygon on the idler profile within the loaded width, topped by a
+   surcharge of area w^2 * tan(surcharge) / 6 over the surface width w. */
+(function () {
+    'use strict';
+
+    /* Material: name, bulk density kg/m3 [low, high], surcharge angle deg [low, high], maximum incline deg [low, high] or null */
+    var MATERIALS = [
+        ["Acid Phosphate", 1540, 1540, 10, 10, null],
+        ["Alum (Lump)", 800, 960, 10, 10, null],
+        ["Alum (Pulverised)", 720, 800, 25, 25, null],
+        ["Alumina", 800, 960, 5, 5, [12, 12]],
+        ["Ashes (Boiler-house, dry, loose)", 560, 690, 25, 25, null],
+        ["Asphalt", 1280, 1360, 30, 30, null],
+        ["Bagasse (Dry, loose)", 80, 80, 25, 25, null],
+        ["Bagasse (Fresh, moist)", 120, 120, 25, 25, null],
+        ["Barytes (15 mm screenings)", 2080, 2320, 20, 20, null],
+        ["Barytes (50 to 75 mm lumps)", 2320, 2400, 25, 25, null],
+        ["Barytes (Dust)", 1760, 2080, 15, 15, null],
+        ["Basalt (15 mm screenings)", 2080, 2320, 20, 20, null],
+        ["Basalt (50 to 75 mm lumps)", 1680, 1760, 25, 25, null],
+        ["Bauxite (Crushed)", 1200, 1360, 15, 15, [15, 15]],
+        ["Borax (Solid, 40 to 50 mm lumps)", 880, 960, 20, 30, null],
+        ["Borax (Solid, 50 to 100 mm lumps)", 960, 1040, 30, 30, null],
+        ["Brewers' Grain (Dry)", 400, 480, 30, 30, null],
+        ["Brewers' Grain (Wet)", 880, 960, 30, 30, null],
+        ["Brick (Hard)", 2000, 2000, 20, 30, null],
+        ["Brick (Soft)", 1600, 1600, 20, 30, null],
+        ["Carbon Black (Pellets)", 400, 400, 5, 5, null],
+        ["Cement (Portland, Dry)", 1200, 1360, 10, 10, [20, 20]],
+        ["Cement Clinker", 1280, 1520, 25, 25, null],
+        ["Cement Slurry", 1440, 1440, 5, 5, null],
+        ["Chalk (40 to 50 mm lumps)", 1200, 1280, 30, 30, null],
+        ["Chalk (50 to 75 mm lumps)", 1280, 1360, 30, 30, null],
+        ["Clay (Brick, ground fine)", 1760, 1760, 15, 15, null],
+        ["Clay (Dry, loose)", 1010, 1440, 15, 25, null],
+        ["Coal (150 mm domestic sizes)", 830, 900, 25, 25, null],
+        ["Coal (Bituminous, Run-of-Mine (ROM))", 720, 880, 20, 25, [16, 18]],
+        ["Coal (Lignite/Brown)", 640, 800, 25, 25, [18, 18]],
+        ["Coal (Pulverised for coking)", 480, 590, 10, 10, null],
+        ["Coal (Slack)", 690, 800, 25, 25, null],
+        ["Coke (Breeze)", 380, 560, 20, 20, [20, 20]],
+        ["Coke (Screened)", 400, 480, 25, 25, [15, 15]],
+        ["Concrete (Wet, on conveyor)", 1760, 2400, 5, 5, null],
+        ["Copper Ore (Crushed)", 2080, 2400, 25, 25, null],
+        ["Corn Grits", 670, 670, 20, 30, null],
+        ["Cryolite (15 mm screenings)", 1440, 1600, 15, 15, null],
+        ["Cryolite (50 to 75 mm lumps)", 1600, 1680, 20, 20, null],
+        ["Cryolite (Dust)", 1200, 1440, 5, 5, null],
+        ["Dolomite (Lump)", 1440, 1600, 20, 20, null],
+        ["Earth (Dry, loose)", 1120, 1280, 20, 25, [18, 20]],
+        ["Earth (Wet, mud)", 1600, 1760, 5, 5, null],
+        ["Foundry Refuse (Old sand, cores)", 960, 1280, 15, 15, null],
+        ["Garbage (Household)", 800, 800, 20, 20, null],
+        ["Glass (Batch)", 1680, 1680, 10, 10, null],
+        ["Glass (Broken)", 1280, 1600, 20, 30, null],
+        ["Grains (Wheat/Corn)", 720, 770, 10, 10, [12, 14]],
+        ["Granite (15 mm screenings)", 1280, 1440, 10, 10, null],
+        ["Granite (40 to 50 mm lumps)", 1360, 1440, 20, 20, null],
+        ["Granite (Broken)", 1520, 1600, 20, 20, null],
+        ["Gravel (Dry, sharp)", 1440, 1600, 25, 25, [15, 15]],
+        ["Gravel (Wet)", 1600, 1920, 25, 25, null],
+        ["Gypsum (15 mm screenings)", 1120, 1280, 15, 15, null],
+        ["Gypsum (50 to 75 mm lumps)", 1200, 1280, 20, 20, null],
+        ["Gypsum (Dust)", 960, 1120, 30, 30, null],
+        ["Hops (Brewery, moist)", 560, 560, 20, 30, null],
+        ["Ice (Crushed)", 640, 640, 5, 5, null],
+        ["Iron Ore (Crushed)", 2200, 2900, 20, 25, [18, 18]],
+        ["Iron Pyrites (50 to 75 mm lumps)", 2160, 2320, 20, 20, null],
+        ["Lead Ore (Varies with lead content)", 3200, 4320, 15, 15, null],
+        ["Limestone (50 to 75 mm lumps)", 1440, 1520, 25, 25, null],
+        ["Limestone (Crushed)", 1280, 1440, 20, 20, [15, 15]],
+        ["Limestone (Dust)", 1200, 1280, 5, 5, null],
+        ["Manganese Ore", 2000, 2240, 25, 25, null],
+        ["Paper Pulp", 640, 960, 5, 5, null],
+        ["Petroleum Coke", 560, 640, 10, 10, null],
+        ["Phosphate Rock", 1360, 1360, 10, 10, null],
+        ["Quartz (Dust)", 1120, 1280, 30, 30, null],
+        ["Quartz (Solid, 40 to 50 mm lumps)", 1360, 1440, 20, 20, null],
+        ["Quartz (Solid, 50 to 75 mm lumps)", 1440, 1520, 20, 20, null],
+        ["Rock (Soft, excavated)", 1600, 1760, 20, 20, null],
+        ["Rubber", 930, 930, 25, 25, null],
+        ["Rubber (Reclaim)", 560, 560, 20, 20, null],
+        ["Salt (Coarse)", 640, 900, 25, 25, null],
+        ["Salt (Fines)", 720, 720, 5, 5, null],
+        ["Salt (Lump, for stock)", 1600, 1600, 25, 25, null],
+        ["Sand (Beach or river, wet)", 1600, 2080, 5, 15, null],
+        ["Sand (Damp)", 1600, 2080, 25, 25, [20, 20]],
+        ["Sand (Dry)", 1440, 1600, 15, 15, [15, 15]],
+        ["Sand (Foundry, loose)", 1280, 1440, 15, 15, null],
+        ["Sand (Foundry, rammed lumps)", 1600, 1760, 10, 10, null],
+        ["Sandstone", 1360, 1440, 20, 20, null],
+        ["Sawdust", 160, 200, 25, 25, null],
+        ["Shale (Broken)", 1440, 1600, 20, 30, null],
+        ["Shale (Crushed)", 1360, 1440, 25, 25, null],
+        ["Slag (Blast furnace, crushed)", 1280, 1440, 25, 25, null],
+        ["Slag (Granulated, dry)", 960, 1040, 10, 10, null],
+        ["Slag (Granulated, wet)", 1440, 1600, 10, 10, null],
+        ["Slate (15 mm screenings)", 1280, 1440, 20, 20, null],
+        ["Slate (40 to 75 mm lumps)", 1360, 1520, 20, 20, null],
+        ["Soda Ash", 800, 1040, 20, 20, null],
+        ["Sugar (Raw)", 880, 1040, 25, 25, null],
+        ["Sugar (Refined)", 880, 880, 10, 10, null],
+        ["Sulphur (15 mm screenings)", 1200, 1360, 15, 15, null],
+        ["Sulphur (50 to 75 mm lumps)", 1360, 1440, 25, 25, null],
+        ["Talc (Dust)", 1220, 1280, 30, 30, null],
+        ["Woodchips", 190, 480, 25, 25, [23, 25]],
+        ["Woodchips (Yellow pine)", 320, 400, 25, 25, null],
+        ["Zinc Ore (Crushed)", 2400, 2560, 20, 20, null],
+        ["Zinc Oxide (Heavy)", 480, 560, 10, 10, null],
+        ["Zinc Oxide (Light)", 160, 480, 10, 10, null]
+    ];
+
+    /* Roll length (mm) by belt width (mm) for each idler arrangement; all rolls in a set are the same length.
+       4-roll sets take a length between the 3-roll and 5-roll values (see stdRoll). */
+    var ROLLS = {
+        flat:  [[400, 500], [500, 600], [650, 750], [800, 950], [1000, 1150], [1200, 1400], [1400, 1600], [1600, 1800], [1800, 2000], [2000, 2200], [2200, 2500]],
+        two:   [[400, 250], [500, 315], [650, 380], [800, 465], [1000, 600], [1200, 700], [1400, 800], [1600, 900], [1800, 1000], [2000, 1100], [2200, 1250], [2400, 1400], [2600, 1500]],
+        three: [[400, 160], [500, 200], [650, 250], [800, 315], [1000, 380], [1200, 465], [1400, 530], [1600, 600], [1800, 670], [2000, 750], [2200, 800], [2400, 900], [2600, 950]],
+        five:  [[800, 165], [1000, 205], [1200, 250], [1400, 290], [1600, 340], [1800, 380], [2000, 420], [2200, 460], [2400, 500], [2600, 540]]
+    };
+    var ARR_NAME = { flat: 'Flat (1 roll)', two: '2-roll', three: '3-roll', four: '4-roll', five: '5-roll' };
+    var ARR_DEFAULT_ANGLE = { two: 20, three: 35, four: 45, five: 45 };
+    var ARR_DEFAULT_INNER = { four: 15, five: 20 };
+    var ARR_HINT = {
+        two: 'Typically 10 to 30 deg',
+        three: 'Typically 20 to 45 deg',
+        four: 'Angle of the outer rolls, typically 40 to 60 deg',
+        five: 'Angle of the outer rolls, typically 45 to 60 deg'
+    };
+    var INNER_HINT = {
+        four: 'Angle of the two inner rolls, typically 10 to 20 deg; a third of the outer roll angle gives an evenly curved garland',
+        five: 'Angle of the inner wing rolls, typically 20 to 30 deg; half the outer roll angle gives an evenly curved garland'
+    };
+    /* [arrangement, troughing or outer angle, inner angle] */
+    var COMPARE = [['flat', 0], ['two', 10], ['two', 15], ['two', 20], ['two', 25], ['two', 30],
+                   ['three', 20], ['three', 25], ['three', 30], ['three', 35], ['three', 40], ['three', 45],
+                   ['four', 45, 15], ['four', 60, 20], ['five', 45, 22.5], ['five', 50, 25], ['five', 60, 30]];
+    function multi(arr) { return arr === 'four' || arr === 'five'; }
+    /* Belt speed table: equal steps from 0.5 m/s up to the entered speed and the same number of steps above it.
+       The roundest step that lands exactly on the entered speed in 4 to 12 steps is used; otherwise the gap is split evenly. */
+    function speedSteps(v) {
+        var below = v - 0.5, best = null, list = [], i;
+        if (below <= 1e-9) {
+            for (i = 1; i <= 8; i++) { list.push(v * i / 4); }
+            return { list: list, nom: 3 };
+        }
+        [0.5, 0.25, 1, 0.1, 0.2, 0.05, 0.75, 1.5, 2].forEach(function (st) {
+            var n = Math.round(below / st);
+            if (!best && Math.abs(below / st - n) < 1e-6 && n >= 4 && n <= 12) { best = { st: st, n: n }; }
+        });
+        if (!best) {
+            var nn = Math.min(12, Math.max(2, Math.round(below / 0.5)));
+            best = { st: below / nn, n: nn };
+        }
+        for (i = 0; i <= 2 * best.n; i++) { list.push(0.5 + best.st * i); }
+        return { list: list, nom: best.n };
+    }
+
+    /* ── Units ── */
+    var sys = 'met';
+    var UNIT = {
+        mm:    { met: 'mm', imp: 'in', toM: 0.001, toI: 0.0254, dp: { met: 0, imp: 1 } },
+        speed: { met: 'm/s', imp: 'fpm', toM: 1, toI: 1 / 196.8504, dp: { met: 2, imp: 0 } },
+        dens:  { met: 'kg/m3', imp: 'lb/ft3', toM: 1, toI: 1 / 0.06242796, dp: { met: 0, imp: 1 } },
+        cap:   { met: 't/h', imp: 'stph', toM: 1, toI: 1 / 1.1023113, dp: { met: 0, imp: 0 } }
+    };
+    function toSI(kind, v) { var u = UNIT[kind]; return u ? v * (sys === 'met' ? u.toM : u.toI) : v; }
+    function fromSI(kind, v) { var u = UNIT[kind]; return u ? v / (sys === 'met' ? u.toM : u.toI) : v; }
+
+    /* ── Formatting ── */
+    function num(v, dp) {
+        if (Math.abs(v) < 0.5 * Math.pow(10, -dp)) { v = 0; }
+        return v.toLocaleString('en-AU', { minimumFractionDigits: dp, maximumFractionDigits: dp });
+    }
+    function pair(a, b) { return sys === 'met' ? a + ' [' + b + ']' : b + ' [' + a + ']'; }
+    function first(text) { return text.split(' [')[0]; }
+    function mm(m) { return pair(num(m * 1000, 0) + ' mm', num(m / 0.0254, 1) + ' in'); }
+    function area(m2) { return pair(num(m2, 3) + ' m2', num(m2 * 10.763910, 2) + ' ft2'); }
+    function qv(m3h) { return pair(num(m3h, 0) + ' m3/h', num(m3h * 35.314667, 0) + ' ft3/h'); }
+    function qm(th) { return pair(num(th, 0) + ' t/h', num(th * 1.1023113, 0) + ' stph'); }
+    function speed(v) { return isFinite(v) ? pair(num(v, 2) + ' m/s', num(v * 196.8504, 0) + ' fpm') : 'Not possible'; }
+    function dens(r) { return pair(num(r, 0) + ' kg/m3', num(r * 0.06242796, 1) + ' lb/ft3'); }
+    function pct(p) { return isFinite(p) ? num(p, 0) + '%' : 'No capacity'; }
+    function loadCell(p) { return p > 100 ? '<span class="text-danger fw-semibold">' + pct(p) + '</span>' : pct(p); }
+    function deg(a) { return num(a, a % 1 ? 1 : 0) + ' deg'; }
+    function range(r, f) { return r[0] === r[1] ? f(r[0]) : f(r[0]) + ' to ' + f(r[1]); }
+
+    /* ── Elements and stored values ── */
+    var $ = function (id) { return document.getElementById(id); };
+    var form = $('calcForm');
+    var numInputs = Array.prototype.slice.call(form.querySelectorAll('input[data-kind]'));
+    var si = {};
+    function kindOf(el) { return el.getAttribute('data-kind'); }
+    function display(el) {
+        var v = si[el.id], k = kindOf(el);
+        if (!isFinite(v)) { el.value = ''; return; }
+        var dp = UNIT[k] ? UNIT[k].dp[sys] : 2;
+        el.value = String(Number(fromSI(k, v).toFixed(dp)));
+    }
+    function setSI(id, v) { si[id] = v; display($(id)); }
+    function readInput(el) {
+        var t = el.value.trim();
+        si[el.id] = t === '' ? NaN : toSI(kindOf(el), parseFloat(t));
+    }
+    function show(key, on) {
+        form.querySelectorAll('[data-show="' + key + '"]').forEach(function (e) { e.hidden = !on; });
+    }
+
+    var matSel = $('mat');
+    MATERIALS.forEach(function (m, i) {
+        var o = document.createElement('option');
+        o.value = String(i);
+        o.textContent = m[0];
+        matSel.appendChild(o);
+    });
+    var other = document.createElement('option');
+    other.value = 'other';
+    other.textContent = 'Other (enter values)';
+    matSel.appendChild(other);
+    function material() { return matSel.value === 'other' ? null : MATERIALS[parseInt(matSel.value, 10)]; }
+    function fillMaterial() {
+        var m = material();
+        if (m) {
+            setSI('rho', m[1]);
+            setSI('beta', m[3]);
+        }
+    }
+
+    /* ── Geometry ── */
+    function round5(x) { return Math.round(x / 5) * 5; }
+    function tableRoll(key, B) {     /* roll length (mm) from a table, interpolated, or in proportion beyond its ends */
+        var t = ROLLS[key], n = t.length;
+        if (B <= t[0][0]) { return t[0][1] * B / t[0][0]; }
+        if (B >= t[n - 1][0]) { return t[n - 1][1] * B / t[n - 1][0]; }
+        for (var i = 0; i < n - 1; i++) {
+            if (B >= t[i][0] && B <= t[i + 1][0]) {
+                return t[i][1] + (t[i + 1][1] - t[i][1]) * (B - t[i][0]) / (t[i + 1][0] - t[i][0]);
+            }
+        }
+        return NaN;
+    }
+    function stdRoll(arr, Bm) {      /* standard roll length (m) for the belt width, to the nearest 5 mm */
+        var B = Bm * 1000;
+        if (arr === 'four') { return round5((3 * tableRoll('three', B) + 5 * tableRoll('five', B)) / 8) / 1000; }
+        return round5(tableRoll(arr, B)) / 1000;
+    }
+    function stdClear(Bm) { return Bm <= 2.0 ? 0.05 * Bm + 0.025 : 0.125; }
+    /* Roll-top profile (the underside of the belt) from the centre outwards as [length, angle deg], and the right-hand rolls under it,
+       each placed by its top inner corner. The belt bends midway between adjacent roll ends: with a positive gap each roll stops half
+       the gap short of the bend, and with a negative gap (offset sets) each roll runs half the overlap past it. Rolls that meet at the
+       belt centre (2 and 4-roll sets) take half of a positive gap each side. */
+    function rollSet(arr, lam, lamIn, l, g) {
+        var h = g / 2, hc = Math.max(0, g) / 2;
+        function dir(a) { var r = a * Math.PI / 180; return [Math.cos(r), Math.sin(r)]; }
+        var ci = { x: -l / 2, y: 0, a: 0, len: l, centre: true };
+        if (arr === 'flat') { return { segs: [[l / 2, 0]], rolls: [ci] }; }
+        if (arr === 'two') {
+            var u2 = dir(lam);
+            return { segs: [[hc + l, lam]], rolls: [{ x: hc * u2[0], y: hc * u2[1], a: lam, len: l, name: 'Roll' }] };
+        }
+        if (arr === 'four') {
+            var u4 = dir(lamIn), v4 = dir(lam), s1 = hc + l + h;      /* s1: centre to the bend between the inner and outer rolls */
+            return { segs: [[s1, lamIn], [h + l, lam]],
+                     rolls: [{ x: hc * u4[0], y: hc * u4[1], a: lamIn, len: l, name: 'Inner roll' },
+                             { x: s1 * u4[0] + h * v4[0], y: s1 * u4[1] + h * v4[1], a: lam, len: l, name: 'Outer roll' }] };
+        }
+        var b1 = l / 2 + h;
+        if (arr === 'three') {
+            var u3 = dir(lam);
+            return { segs: [[b1, 0], [h + l, lam]], rolls: [ci, { x: b1 + h * u3[0], y: h * u3[1], a: lam, len: l, name: 'Wing roll' }] };
+        }
+        var li = lamIn, ui = dir(li), uo = dir(lam);
+        var b2 = [b1 + (l + g) * ui[0], (l + g) * ui[1]];
+        return { segs: [[b1, 0], [l + g, li], [h + l, lam]],
+                 rolls: [ci, { x: b1 + h * ui[0], y: h * ui[1], a: li, len: l, name: 'Inner wing roll' },
+                         { x: b2[0] + h * uo[0], y: b2[1] + h * uo[1], a: lam, len: l, name: 'Outer wing roll' }] };
+    }
+    function walk(segs, s) {               /* profile points over a developed half-length s; the last segment extends if needed */
+        var pts = [[0, 0]], x = 0, y = 0, rem = s;
+        for (var i = 0; i < segs.length && rem > 1e-12; i++) {
+            var len = i === segs.length - 1 ? rem : Math.min(segs[i][0], rem);
+            if (len <= 1e-12) { continue; }
+            var a = segs[i][1] * Math.PI / 180;
+            x += len * Math.cos(a);
+            y += len * Math.sin(a);
+            pts.push([x, y]);
+            rem -= len;
+        }
+        return pts;
+    }
+    function offsetTop(P, t) {             /* top surface of a belt of thickness t lying on the profile P */
+        var n = [], Q = [], i;
+        for (i = 0; i < P.length - 1; i++) {
+            var dx = P[i + 1][0] - P[i][0], dy = P[i + 1][1] - P[i][1], L = Math.sqrt(dx * dx + dy * dy);
+            n.push([-dy / L, dx / L]);
+        }
+        if (!n.length) { return [[P[0][0], P[0][1] + t]]; }
+        Q.push([0, P[0][1] + (t + n[0][0] * P[0][0]) / n[0][1]]);
+        for (i = 1; i < P.length - 1; i++) {
+            var a = n[i - 1], b = n[i], det = a[0] * b[1] - a[1] * b[0];
+            if (Math.abs(det) < 1e-9) { Q.push([P[i][0] + t * b[0], P[i][1] + t * b[1]]); continue; }
+            var ca = a[0] * P[i][0] + a[1] * P[i][1] + t, cb = b[0] * P[i][0] + b[1] * P[i][1] + t;
+            Q.push([(ca * b[1] - a[1] * cb) / det, (a[0] * cb - ca * b[0]) / det]);
+        }
+        var m = n[n.length - 1], e = P[P.length - 1];
+        Q.push([e[0] + t * m[0], e[1] + t * m[1]]);
+        return Q;
+    }
+    /* The load sits on the top surface of the belt, over the loaded width b = B - 2c measured along the belt */
+    function section(B, arr, lam, lamIn, l, g, t, c, beta) {
+        var set = rollSet(arr, lam, lamIn, l, g), segs = set.segs;
+        var b = B - 2 * c, pts = offsetTop(walk(segs, b / 2), t);
+        var e = pts[pts.length - 1], intY = 0, ok = true;
+        for (var i = 0; i < pts.length - 1; i++) {
+            if (pts[i + 1][0] < pts[i][0] - 1e-9) { ok = false; }
+            intY += (pts[i + 1][0] - pts[i][0]) * (pts[i][1] + pts[i + 1][1]) / 2;
+        }
+        var A2 = 2 * (e[0] * e[1] - intY);
+        var w = 2 * e[0], tb = Math.tan(beta * Math.PI / 180);
+        var A1 = w * w * tb / 6;
+        return { B: B, b: b, l: l, g: g, t: t, c: c, arr: arr, lam: lam, lamIn: lamIn, segs: segs, rolls: set.rolls, pts: pts, xe: e[0], ye: e[1], w: w,
+                 base: pts[0][1], h: e[0] * tb / 2, A1: A1, A2: A2, A: A1 + A2, ok: ok && A2 > -1e-12 };
+    }
+    function surchargeFactor(delta, beta) {   /* share of the surcharge kept on the incline */
+        if (beta <= 0) { return 1; }
+        if (delta >= beta) { return 0; }
+        var cd = Math.cos(delta * Math.PI / 180), cb = Math.cos(beta * Math.PI / 180);
+        return Math.sqrt((cd * cd - cb * cb) / (1 - cb * cb));
+    }
+    function inclineK(s, delta, beta) { return s.A > 0 ? 1 - s.A1 / s.A * (1 - surchargeFactor(delta, beta)) : 1; }
+
+    /* ── Tooltip ── */
+    var tip = $('tip');
+    function showTip(text, anchor, x, y) {
+        anchor.appendChild(tip);
+        tip.textContent = text;
+        tip.hidden = false;
+        var w = tip.offsetWidth, wrap = anchor.clientWidth;
+        tip.style.left = Math.max(0, Math.min(wrap - w, x - w / 2)) + 'px';
+        tip.style.top = Math.max(-tip.offsetHeight - 4, y - tip.offsetHeight - 10) + 'px';
+    }
+    function hideTip() { tip.hidden = true; }
+
+    /* ── Results helpers ── */
+    function row(label, value, cls, hint) {
+        return '<tr' + (cls ? ' class="' + cls + '"' : '') + '><th scope="row">' + label + '</th><td><span class="calc-num">' + value + '</span>' +
+            (hint ? '<span class="calc-hint">' + hint + '</span>' : '') + '</td></tr>';
+    }
+    function cells(values, cls, head) {
+        return '<tr' + (cls ? ' class="' + cls + '"' : '') + '>' + values.map(function (v, i) {
+            return i === 0 && head ? '<th scope="row">' + v + '</th>' : '<td class="calc-num">' + v + '</td>';
+        }).join('') + '</tr>';
+    }
+    function angles(arr, lam, lamIn) {
+        return multi(arr) ? num(lamIn, lamIn % 1 ? 1 : 0) + ' / ' + deg(lam) : deg(lam);
+    }
+    function arrLabel(arr, lam, lamIn) {
+        return arr === 'flat' ? ARR_NAME.flat : ARR_NAME[arr] + ', ' + angles(arr, lam, lamIn);
+    }
+
+    /* ── Main calculation ── */
+    var last = null;
+    function compute() {
+        var arr = $('arr').value, m = material();
+        var five = multi(arr);
+        show('trough', arr !== 'flat');
+        show('inner', five);
+        show('gap', arr !== 'flat');
+        if (arr !== 'flat') { $('lam-hint').textContent = ARR_HINT[arr]; }
+        if (five) { $('lamIn-hint').textContent = INNER_HINT[arr]; }
+        $('lam-label').textContent = five ? 'Outer roll angle' : 'Troughing angle';
+
+        var Bv = si.B;
+        var lStd = isFinite(Bv) && Bv > 0 ? stdRoll(arr, Bv) : NaN;
+        var cStd = isFinite(Bv) && Bv > 0 ? stdClear(Bv) : NaN;
+        var lWord = arr === 'four' ? 'a typical' : 'the standard';
+        $('lroll-hint').textContent = 'Leave blank for ' + lWord + ' length for this belt width' + (isFinite(lStd) ? ': ' + mm(lStd) : '');
+        $('lroll').placeholder = isFinite(lStd) ? first(mm(lStd)).replace(/ (mm|in)$/, '') : '';
+        var cForm = '0.05 × belt width + ' + (sys === 'met' ? '25 mm' : '1.0 in');
+        var cRule = isFinite(Bv) && Bv > 2.0 ? 'the standard for belts wider than ' + first(mm(2.0)) : 'the standard ' + cForm;
+        $('clear-hint').textContent = 'Leave blank for ' + cRule + (isFinite(cStd) ? ', ' + mm(cStd) : '') + '; increase it for large lumps';
+        $('clear').placeholder = isFinite(cStd) ? first(mm(cStd)).replace(/ (mm|in)$/, '') : '';
+        if (m) {
+            $('rho-hint').textContent = 'Typically ' + range([m[1], m[2]], function (x) { return num(x, 0); }) + ' kg/m3 [' +
+                range([m[1], m[2]], function (x) { return num(x * 0.06242796, 0); }) + ' lb/ft3]';
+            $('beta-hint').textContent = 'Typically ' + range([m[3], m[4]], deg);
+            $('delta-hint').textContent = m[5] ? 'Typical maximum for this material: ' + range(m[5], deg) : 'Typically 15 to 18 deg maximum for dry bulk materials';
+        } else {
+            $('rho-hint').textContent = 'From a test of the material';
+            $('beta-hint').textContent = 'From a test of the material, typically 5 to 15 deg less than the angle of repose';
+            $('delta-hint').textContent = 'Typically 15 to 18 deg maximum for dry bulk materials';
+        }
+
+        /* validation */
+        var bad = [];
+        numInputs.forEach(function (el) { el.classList.remove('is-invalid'); });
+        function fin(id) { return isFinite(si[id]); }
+        function blank(id) { return $(id).value.trim() === ''; }
+        function need(id, ok, label) { if (!ok) { $(id).classList.add('is-invalid'); bad.push(label); } }
+        need('B', fin('B') && si.B >= 0.2 && si.B <= 4, 'belt width (' + first(mm(0.2)) + ' to ' + first(mm(4)) + ')');
+        need('thick', fin('thick') && si.thick >= 0 && si.thick <= 0.08, 'belt thickness (0 to ' + first(mm(0.08)) + ')');
+        if (arr !== 'flat') { need('lam', fin('lam') && si.lam > 0 && si.lam < 80, (five ? 'outer roll angle' : 'troughing angle') + ' (above 0 and below 80 deg)'); }
+        if (five) { need('lamIn', fin('lamIn') && si.lamIn > 0 && si.lamIn < 80, 'inner roll angle (above 0 and below 80 deg)'); }
+        need('lroll', blank('lroll') || fin('lroll') && si.lroll > 0, 'roll length');
+        var lChk = fin('lroll') ? si.lroll : lStd;
+        if (arr !== 'flat') {
+            need('gap', fin('gap') && (!isFinite(lChk) || (arr === 'two' ? si.gap >= 0 : si.gap > -lChk / 2) && si.gap < lChk),
+                arr === 'two' ? 'roll gap (zero or more for a 2-roll set)' : 'roll gap (more than minus half the roll length)');
+        }
+        need('clear', blank('clear') || fin('clear') && si.clear >= 0 && (!fin('B') || si.clear < si.B / 2), 'edge clearance (less than half the belt width)');
+        need('v', fin('v') && si.v > 0, 'belt speed');
+        need('rho', fin('rho') && si.rho > 0, 'bulk density');
+        need('beta', fin('beta') && si.beta >= 0 && si.beta < 45, 'surcharge angle (0 to 45 deg)');
+        need('delta', fin('delta') && si.delta >= 0 && si.delta < 45, 'incline (0 to 45 deg)');
+        need('qreq', blank('qreq') || fin('qreq') && si.qreq > 0, 'required throughput');
+        function fail(text) {
+            $('resultError').hidden = false;
+            $('resultError').textContent = 'Check these inputs: ' + text + '.';
+            $('resultBody').hidden = true;
+            $('barValue').textContent = 'Check the inputs';
+            last = null;
+        }
+        if (bad.length) { fail(bad.join('; ')); return; }
+
+        var B = si.B, lam = arr === 'flat' ? 0 : si.lam, v = si.v, rho = si.rho, beta = si.beta, delta = si.delta;
+        var lamIn = five ? si.lamIn : lam / 2, g = arr === 'flat' ? 0 : si.gap, tk = si.thick;
+        var l = fin('lroll') ? si.lroll : lStd, c = fin('clear') ? si.clear : cStd;
+        var q = fin('qreq') ? si.qreq : NaN;
+        var s = section(B, arr, lam, lamIn, l, g, tk, c, beta);
+        var sf = section(B, arr, lam, lamIn, l, g, tk, 0, beta);     /* flooded: load spread to the belt edges */
+        if (!s.ok || !sf.ok) {
+            ['gap', 'thick'].forEach(function (id) { $(id).classList.add('is-invalid'); });
+            fail('roll gap and belt thickness (the belt folds over at the first bend; reduce the overlap or the thickness)');
+            return;
+        }
+        $('resultError').hidden = true;
+        $('resultBody').hidden = false;
+
+        var inc = delta > 0, f = surchargeFactor(delta, beta);
+        var k = inclineK(s, delta, beta), kf = inclineK(sf, delta, beta);
+        var Qv = 3600 * s.A * v * k, Qm = Qv * rho / 1000, QvH = 3600 * s.A * v, QmH = QvH * rho / 1000;
+        var Qvf = 3600 * sf.A * v * kf, Qmf = Qvf * rho / 1000, QvfH = 3600 * sf.A * v, QmfH = QvfH * rho / 1000;
+        var load = q / Qm * 100, vReq = q / (3.6 * s.A * k * rho);
+
+        /* the narrower load that carries the required throughput, with the same surcharge angle: solve the edge clearance */
+        function loadFor(target, onIncline) {
+            var kk = function (sc) { return onIncline ? inclineK(sc, delta, beta) : 1; };
+            if (!(target > 0) || sf.A * kk(sf) < target) { return null; }
+            var lo = 0, hi = B / 2 - 1e-6;
+            for (var it = 0; it < 50; it++) {
+                var cm = (lo + hi) / 2, sc = section(B, arr, lam, lamIn, l, g, tk, cm, beta);
+                if (sc.A * kk(sc) > target) { lo = cm; } else { hi = cm; }
+            }
+            var r = section(B, arr, lam, lamIn, l, g, tk, (lo + hi) / 2, beta);
+            r.k = kk(r);
+            return r;
+        }
+        var Aneed = q / (3.6 * v * rho);
+        var rq = isFinite(q) ? loadFor(Aneed, true) : null, rqH = isFinite(q) ? loadFor(Aneed, false) : null;
+
+        /* capacity table: on the incline and on the horizontal */
+        $('capHead').innerHTML = '<tr><th scope="col">Item</th>' + (inc ? '<th scope="col">On the ' + deg(delta) + ' Incline</th><th scope="col">On the Horizontal</th>'
+            : '<th scope="col">Value</th>') + '</tr>';
+        function cell(x) {
+            return '<td><span class="calc-num">' + x[0] + '</span>' + (x[1] ? '<span class="calc-hint">' + x[1] + '</span>' : '') + '</td>';
+        }
+        function cap(label, vi, vh, cls) {      /* each value is text or [text, hint] */
+            vi = typeof vi === 'string' ? [vi] : vi;
+            vh = typeof vh === 'string' ? [vh] : vh;
+            return '<tr' + (cls ? ' class="' + cls + '"' : '') + '><th scope="row">' + label + '</th>' +
+                (inc ? cell(vi) + cell(vh) : cell([vi[0], vi[1] || vh[1]])) + '</tr>';
+        }
+        function group(title) { return '<tr class="table-light"><th scope="rowgroup" colspan="' + (inc ? 3 : 2) + '">' + title + '</th></tr>'; }
+        function depth(sc, ff) { return mm(sc.ye + sc.h * ff - sc.base); }
+        var t = [];
+        t.push(group('Nominal Load'));
+        t.push(cap('Mass capacity', qm(Qm), qm(QmH), 'table-primary fw-semibold'));
+        t.push(cap('Volumetric capacity', qv(Qv), qv(QvH)));
+        t.push(cap('Load cross-section', area(s.A * k), area(s.A)));
+        t.push(cap('Load width at the surface', mm(s.w), mm(s.w)));
+        t.push(cap('Load depth at the belt centre', depth(s, f), depth(s, 1)));
+        if (inc) {
+            t.push(cap('Incline reduction factor', [num(k, 3), pct((1 - k) * 100) + ' less than on the horizontal'], num(1, 3)));
+        }
+        if (isFinite(q)) {
+            var over = 'Above the flooded capacity';
+            t.push(group('Required Throughput'));
+            t.push(cap('Mass throughput', qm(q), qm(q), 'fw-semibold'));
+            t.push(cap('Volumetric throughput', qv(q * 1000 / rho), qv(q * 1000 / rho)));
+            t.push(cap('Loading of the nominal capacity', loadCell(load), loadCell(q / QmH * 100), 'fw-semibold'));
+            t.push(cap('Loading of the flooded capacity', loadCell(q / Qmf * 100), loadCell(q / QmfH * 100)));
+            t.push(cap('Load cross-section', rq ? area(rq.A * rq.k) : over, rqH ? area(rqH.A) : over));
+            t.push(cap('Load width at the surface', rq ? mm(rq.w) : over, rqH ? mm(rqH.w) : over));
+            t.push(cap('Load depth at the belt centre', rq ? depth(rq, f) : over, rqH ? depth(rqH, 1) : over));
+            t.push(cap('Edge clearance at this load', rq ? mm(rq.c) : over, rqH ? mm(rqH.c) : over));
+            t.push(cap('Belt speed to carry it at the nominal load', speed(vReq), speed(q / (3.6 * s.A * rho))));
+        }
+        t.push(group('Flooded Load'));
+        t.push(cap('Mass capacity', [qm(Qmf), 'Load spread to the belt edges, with no edge clearance'], qm(QmfH)));
+        t.push(cap('Volumetric capacity', qv(Qvf), qv(QvfH)));
+        t.push(cap('Load cross-section', area(sf.A * kf), area(sf.A)));
+        t.push(cap('Load width at the surface', mm(sf.w), mm(sf.w)));
+        t.push(cap('Load depth at the belt centre', depth(sf, f), depth(sf, 1)));
+        $('capBody').innerHTML = t.join('');
+
+        /* load and idler geometry */
+        var gm = [];
+        gm.push(row('Edge clearance', mm(c), '', fin('clear') ? 'Entered' : (B > 2.0 ? 'Standard for belts wider than ' + first(mm(2.0)) : 'Standard, ' + cForm)));
+        gm.push(row('Loaded width along the belt', mm(s.b)));
+        gm.push(row('Roll length', mm(l), '', fin('lroll') ? 'Entered' : arr === 'four' ? 'Typical for the belt width' : 'Standard for the belt width'));
+        if (arr !== 'flat') {
+            gm.push(row('Roll gap', mm(g), '', g < 0 ? 'Offset set; the belt bends midway along each overlap' :
+                g > 0 ? 'Inline set; the belt bends midway across each gap' :
+                (arr === 'two' ? 'Rolls meet at the centre' : arr === 'four' ? 'Inner rolls meet at the centre' : '')));
+        }
+        gm.push(row('Belt thickness', mm(tk)));
+        $('geoBody').innerHTML = gm.join('');
+
+        /* all idler arrangements at the entered speed, standard roll lengths */
+        var onInc = inc ? ', on the ' + deg(delta) + ' Incline' : '';
+        $('arrCaption').textContent = 'Idler Arrangements at the Entered Belt Speed' + onInc;
+        var a = [], matched = false;
+        function arrRow(label, lr, sc, cls) {
+            var kc = inclineK(sc, delta, beta), qmc = 3600 * sc.A * v * kc * rho / 1000, ld = q / qmc * 100;
+            return cells([label, first(mm(lr)), first(area(sc.A * kc)), qm(qmc),
+                isFinite(q) ? loadCell(ld) : '', isFinite(q) ? speed(q / (3.6 * sc.A * kc * rho)) : ''], cls, true);
+        }
+        COMPARE.forEach(function (cf) {         /* standard roll lengths with the entered roll gap */
+            var ci = cf.length > 2 ? cf[2] : cf[1] / 2;
+            var lc = stdRoll(cf[0], B), sc = section(B, cf[0], cf[1], ci, lc, cf[0] === 'flat' ? 0 : g, tk, c, beta);
+            var sel = cf[0] === arr && (cf[0] === 'flat' || Math.abs(cf[1] - lam) < 1e-9) && (!multi(arr) || Math.abs(ci - lamIn) < 1e-9) &&
+                Math.abs(lc - l) < 1e-9;
+            if (sel) { matched = true; }
+            a.push(arrRow(arrLabel(cf[0], cf[1], ci), lc, sc, sel ? 'table-primary fw-semibold' : ''));
+        });
+        if (!matched) {
+            a.unshift(arrRow('Selected: ' + arrLabel(arr, lam, lamIn), l, s, 'table-primary fw-semibold'));
+        }
+        $('arrBody').innerHTML = a.join('');
+
+        /* the selected arrangement at evenly spaced belt speeds from 0.5 m/s, with the entered speed in the middle */
+        $('speedCaption').textContent = 'Belt Speeds, ' + arrLabel(arr, lam, lamIn) + onInc;
+        var steps = speedSteps(v), sp = [];
+        steps.list.forEach(function (vs, i) {
+            var qvs = 3600 * s.A * vs * k, qms = qvs * rho / 1000, ld = q / qms * 100;
+            sp.push(cells([speed(vs), qv(qvs), qm(qms), isFinite(q) ? loadCell(ld) : ''],
+                i === steps.nom ? 'table-primary fw-semibold' : '', true));
+        });
+        $('speedBody').innerHTML = sp.join('');
+
+        $('barValue').textContent = first(qm(Qm)) + (isFinite(q) ? ', ' + (isFinite(load) ? pct(load) + ' loaded' : 'no capacity') : '');
+
+        /* warnings */
+        var warn = [];
+        if (!(Qm > 0)) {
+            warn.push('The belt carries no load. ' + (arr === 'flat' ? 'A flat belt carries only the surcharge, which needs a surcharge angle above 0 and above the incline.' :
+                'The loaded width is too narrow to reach the troughed rolls, and the surcharge needs a surcharge angle above 0 and above the incline.'));
+        } else if (isFinite(q) && load > 100) {
+            warn.push('The belt does not carry the required throughput. It needs a belt speed of ' + speed(vReq) + ', a deeper trough or a wider belt.');
+        }
+        if (delta >= beta && beta > 0) {
+            warn.push('The incline is at or above the surcharge angle, so the surcharge is lost and the load can slide back.');
+        }
+        if (m && m[5] && delta > m[5][1]) {
+            warn.push('The incline exceeds the typical maximum of ' + range(m[5], deg) + ' for this material.');
+        } else if (delta > 20) {
+            warn.push('Inclines above 20 deg typically need moulded cleats, chevrons or a corrugated sidewall belt.');
+        }
+        if (fin('clear') && c < cStd - 1e-9) { warn.push('The edge clearance is below the standard ' + mm(cStd) + '.'); }
+        var halfRoll = s.segs.reduce(function (sum, sg) { return sum + sg[0]; }, 0);
+        if (B / 2 > halfRoll + 1e-9) {
+            warn.push('The belt edge extends ' + mm(B / 2 - halfRoll) + ' beyond the end of the outer roll. Use longer rolls.');
+        }
+        if (arr !== 'flat' && lam > 45 && !five) { warn.push('Troughing angles above 45 deg need a carcass rated for the trough angle.'); }
+        if (five && lam > 60) { warn.push(ARR_NAME[arr] + ' outer roll angles above 60 deg need a carcass rated for the trough angle.'); }
+        if (five && lamIn >= lam) { warn.push('The inner roll angle is not less than the outer roll angle.'); }
+        $('warnList').innerHTML = warn.map(function (w) { return '<li>' + w + '</li>'; }).join('');
+        $('warnBox').hidden = !warn.length;
+
+        last = { s: s, sf: sf, f: f, delta: delta, beta: beta, q: q, rq: rq };
+        renderDrawing();
+    }
+
+    /* ── Cross-section drawing (to scale, belt centre at x = 0, y up) ── */
+    var SVGNS = 'http://www.w3.org/2000/svg';
+    function el(name, attrs, parent) {
+        var e = document.createElementNS(SVGNS, name);
+        Object.keys(attrs).forEach(function (key) { e.setAttribute(key, attrs[key]); });
+        if (parent) { parent.appendChild(e); }
+        return e;
+    }
+    function rollDiameter(B) {
+        return B <= 0.5 ? 0.089 : B <= 0.8 ? 0.108 : B <= 1.0 ? 0.127 : B <= 1.4 ? 0.152 : B <= 2.0 ? 0.159 : B <= 2.4 ? 0.194 : 0.219;
+    }
+    /* The belt line P (edge to edge) offset by t towards the load, with each bend drawn as an arc about a common centre:
+       radius R on the underside and R - t on the top surface (the capacity uses the straight lines). Each arc reaches at least
+       Tmin either side of the bend, so across a roll gap the belt lifts off one roll and lands back on the next. */
+    function roundLine(P, t, R, Tmin) {
+        var u = [], n = [], L = [], out = [], i;
+        for (i = 0; i < P.length - 1; i++) {
+            var dx = P[i + 1][0] - P[i][0], dy = P[i + 1][1] - P[i][1], len = Math.sqrt(dx * dx + dy * dy);
+            L.push(len); u.push([dx / len, dy / len]); n.push([-dy / len, dx / len]);
+        }
+        out.push([P[0][0] + t * n[0][0], P[0][1] + t * n[0][1]]);
+        for (i = 1; i < P.length - 1; i++) {
+            var u1 = u[i - 1], u2 = u[i], n1 = n[i - 1], n2 = n[i], V = P[i];
+            var th = Math.atan2(u1[0] * u2[1] - u1[1] * u2[0], u1[0] * u2[0] + u1[1] * u2[1]);     /* turn, positive upwards */
+            if (Math.abs(th) < 1e-6) { out.push([V[0] + t * n2[0], V[1] + t * n2[1]]); continue; }
+            var tn = Math.tan(Math.abs(th) / 2), r = Math.min(Math.max(R, Tmin / tn), 0.5 * Math.min(L[i - 1], L[i]) / tn), sg = th > 0 ? 1 : -1;
+            var rr = r - sg * t;                    /* from the arc centre to the offset line */
+            if (rr < 1e-6) {                        /* too tight to round on this side: plain corner */
+                var det = n1[0] * n2[1] - n1[1] * n2[0], ca = n1[0] * V[0] + n1[1] * V[1] + t, cb = n2[0] * V[0] + n2[1] * V[1] + t;
+                out.push([(ca * n2[1] - n1[1] * cb) / det, (n1[0] * cb - ca * n2[0]) / det]);
+                continue;
+            }
+            var A = [V[0] - r * tn * u1[0], V[1] - r * tn * u1[1]], C = [A[0] + sg * r * n1[0], A[1] + sg * r * n1[1]];
+            for (var j = 0; j <= 16; j++) {
+                var a = th * j / 16, c = Math.cos(a), s = Math.sin(a), m = [n1[0] * c - n1[1] * s, n1[0] * s + n1[1] * c];
+                out.push([C[0] - sg * rr * m[0], C[1] - sg * rr * m[1]]);
+            }
+        }
+        var e = P[P.length - 1], nl = n[n.length - 1];
+        out.push([e[0] + t * nl[0], e[1] + t * nl[1]]);
+        return out;
+    }
+    function yAt(line, x) {                     /* height of a line (ordered by x) at x */
+        for (var i = 0; i < line.length - 1; i++) {
+            var a = line[i], b = line[i + 1];
+            if (x >= a[0] - 1e-12 && x <= b[0] + 1e-12) { return b[0] - a[0] < 1e-12 ? a[1] : a[1] + (b[1] - a[1]) * (x - a[0]) / (b[0] - a[0]); }
+        }
+        return x < line[0][0] ? line[0][1] : line[line.length - 1][1];
+    }
+    function niceLength(x) {
+        var p = Math.pow(10, Math.floor(Math.log(x) / Math.LN10)), m = x / p;
+        return (m < 2 ? 1 : m < 5 ? 2 : 5) * p;
+    }
+    function renderDrawing() {
+        var box = $('drawing');
+        box.innerHTML = '';
+        if (!last) { return; }
+        var s = last.s, f = last.f;
+        var d = rollDiameter(s.B);
+        var W = Math.max(280, box.clientWidth), narrow = W < 560;
+
+        /* rolls as polygons (m): the top edge of each roll is the belt support line; outer rolls first, so an overlapping inner roll sits in front */
+        var rolls = [];
+        function rollPoly(x0, y0, ang, len, side) {
+            var a = ang * Math.PI / 180, ux = side * Math.cos(a), uy = Math.sin(a), nx = -side * Math.sin(a), ny = Math.cos(a);
+            return [[x0, y0], [x0 + len * ux, y0 + len * uy], [x0 + len * ux - d * nx, y0 + len * uy - d * ny], [x0 - d * nx, y0 - d * ny]];
+        }
+        s.rolls.slice().reverse().forEach(function (r) {
+            if (r.centre) {
+                rolls.push({ pts: rollPoly(r.x, r.y, 0, r.len, 1), text: (s.arr === 'flat' ? 'Roll ' : 'Centre roll ') + first(mm(r.len)) });
+            } else {
+                [1, -1].forEach(function (side) {
+                    rolls.push({ pts: rollPoly(side * r.x, r.y, r.a, r.len, side), text: r.name + ' ' + first(mm(r.len)) + ' at ' + deg(r.a) });
+                });
+            }
+        });
+        /* belt as a band from the roll tops to its top surface, rounded at each bend, and the load on the top surface */
+        function both(half) { return half.slice(1).reverse().map(function (q) { return [-q[0], q[1]]; }).concat(half); }
+        var under = both(walk(s.segs, s.B / 2)), R = Math.max(6 * s.t, 0.05 * s.B);
+        var Tmin = Math.max(0, s.g) / 2 + 0.005;
+        var bottomR = roundLine(under, 0, R, Tmin), topR = roundLine(under, s.t, R, Tmin);
+        var belt = bottomR.concat(topR.slice().reverse());
+        var ye = yAt(topR, s.xe), load = [[-s.xe, ye]];
+        topR.forEach(function (q) { if (Math.abs(q[0]) < s.xe - 1e-9) { load.push(q); } });
+        load.push([s.xe, ye]);
+        var surf = [], surfIncline = [];
+        for (var i = 0; i <= 40; i++) {
+            var x = s.xe - 2 * s.xe * i / 40, z = 1 - (x / s.xe) * (x / s.xe);
+            surf.push([x, ye + s.h * z]);
+            surfIncline.push([x, ye + s.h * f * z]);
+        }
+        var base = yAt(topR, 0), yPeak = ye + s.h, sf = last.sf, flood = [];
+        for (var j = 0; j <= 40; j++) {
+            var xf = sf.xe - 2 * sf.xe * j / 40;
+            flood.push([xf, sf.ye + sf.h * (1 - (xf / sf.xe) * (xf / sf.xe))]);
+        }
+        /* the load that carries the required throughput, as it sits on the conveyor (on the incline where there is one) */
+        var rq = last.rq, req = [], yr = 0, hr = 0;
+        if (rq) {
+            yr = yAt(topR, rq.xe); hr = rq.h * f;
+            for (var jr = 0; jr <= 40; jr++) {
+                var xr = rq.xe - 2 * rq.xe * jr / 40;
+                req.push([xr, yr + hr * (1 - (xr / rq.xe) * (xr / rq.xe))]);
+            }
+        }
+        var yTop = Math.max(yPeak, sf.ye + sf.h);
+
+        /* fit to the width, and keep the drawing to a sensible height; equal scale both ways */
+        var all = belt.concat(load, surf, flood, req);
+        rolls.forEach(function (r) { all = all.concat(r.pts); });
+        var xmax = 0, ymin = 0, ymax = yTop;
+        all.forEach(function (q) { xmax = Math.max(xmax, Math.abs(q[0])); ymin = Math.min(ymin, q[1]); ymax = Math.max(ymax, q[1]); });
+        var padTop = 34, padBottom = narrow ? 56 : 38;
+        var k = Math.min((W - 8) / (2 * xmax), 420 / (ymax - ymin));
+        var H = padTop + (ymax - ymin) * k + padBottom;
+        var X = function (xx) { return W / 2 + xx * k; };
+        var Y = function (yy) { return padTop + (ymax - yy) * k; };
+        var pts = function (list) { return list.map(function (q) { return X(q[0]).toFixed(1) + ',' + Y(q[1]).toFixed(1); }).join(' '); };
+        var svg = el('svg', { width: W, height: H, viewBox: '0 0 ' + W + ' ' + H, role: 'img',
+            'aria-label': 'Cross-section of a ' + first(mm(s.B)) + ' belt on ' + arrLabel(s.arr, s.lam, s.lamIn) + ' idlers, load cross-section ' + first(area(s.A)) }, box);
+        function hover(node, text) {
+            function at(e) { var r = box.getBoundingClientRect(); showTip(text, box, e.clientX - r.left, e.clientY - r.top); }
+            node.addEventListener('mouseenter', at);
+            node.addEventListener('mousemove', at);
+            node.addEventListener('mouseleave', hideTip);
+        }
+
+        rolls.forEach(function (r) {
+            hover(el('polygon', { points: pts(r.pts), fill: '#f1f3f5', stroke: '#868e96', 'stroke-width': 1, 'stroke-linejoin': 'round' }, svg), r.text);
+        });
+        hover(el('polygon', { points: pts(belt), fill: '#343a40', stroke: '#343a40', 'stroke-width': s.t * k < 2 ? 2 : 0.5, 'stroke-linejoin': 'round' }, svg),
+            'Belt ' + first(mm(s.B)) + ' wide, ' + first(mm(s.t)) + ' thick, edge clearance ' + first(mm(s.c)));
+        hover(el('polygon', { points: pts(load.concat(surf)), fill: '#a3a9b0', stroke: '#5c636a', 'stroke-width': 1, 'stroke-linejoin': 'round' }, svg),
+            'Nominal load, cross-section ' + first(area(s.A)) + (last.delta > 0 ? ' on the horizontal' : ''));
+
+        /* flooded load surface, spread to the belt edges */
+        hover(el('polyline', { points: pts(flood), fill: 'none', stroke: '#495057', 'stroke-width': 1.25, 'stroke-dasharray': '1 3', 'stroke-linecap': 'round' }, svg),
+            'Flooded load surface, ' + first(area(sf.A)) + ' cross-section');
+        var fx = sf.xe * 0.72, fl = el('text', { x: X(fx) + 4, y: Y(sf.ye + sf.h * (1 - 0.72 * 0.72)) - 5 }, svg);
+        fl.textContent = 'Flooded';
+
+        /* required throughput load surface */
+        if (rq) {
+            hover(el('polyline', { points: pts(req), fill: 'none', stroke: '#212529', 'stroke-width': 2, 'stroke-linejoin': 'round' }, svg),
+                'Required throughput ' + first(qm(last.q)) + (last.delta > 0 ? ' on the ' + deg(last.delta) + ' incline' : '') + ': load width ' +
+                first(mm(rq.w)) + ', edge clearance ' + first(mm(rq.c)) + ', cross-section ' + first(area(rq.A * rq.k)));
+            var rl = el('text', { x: X(-rq.xe * 0.5), y: Y(yr + hr * 0.75) + 15, 'text-anchor': 'middle', 'class': 'calc-on-fill' }, svg);
+            rl.textContent = 'Required';
+        }
+
+        /* load surface on the incline */
+        if (last.delta > 0 && f < 1) {
+            hover(el('polyline', { points: pts(surfIncline), fill: 'none', stroke: '#212529', 'stroke-width': 1.5, 'stroke-dasharray': '5 4' }, svg),
+                'Load surface on the ' + deg(last.delta) + ' incline');
+            var it = el('text', { x: X(0) + 8, y: Y(ye + s.h * f) + 15, 'class': 'calc-on-fill' }, svg);
+            it.textContent = 'On incline';
+        }
+
+        /* load depth at the centre (labelled with the calculated depth) */
+        el('line', { x1: X(0), x2: X(0), y1: Y(base), y2: Y(yPeak), stroke: '#212529', 'stroke-width': 1 }, svg);
+        [base, yPeak].forEach(function (yy) { el('line', { x1: X(0) - 5, x2: X(0) + 5, y1: Y(yy), y2: Y(yy), stroke: '#212529', 'stroke-width': 1 }, svg); });
+        var dl = el('text', { x: X(0) - 8, y: Y(base + (yPeak - base) * 0.45) + 4, 'text-anchor': 'end', 'class': 'calc-on-fill' }, svg);
+        dl.textContent = 'Depth ' + first(mm(s.ye + s.h - s.base));
+
+        /* load width at the surface */
+        var yw = Y(yTop) - 12;
+        el('line', { x1: X(-s.xe), x2: X(s.xe), y1: yw, y2: yw, stroke: '#6c757d', 'stroke-width': 1 }, svg);
+        [-s.xe, s.xe].forEach(function (xx) {
+            el('line', { x1: X(xx), x2: X(xx), y1: yw - 4, y2: Y(ye) - 2, stroke: '#6c757d', 'stroke-width': 0.75, 'stroke-dasharray': '2 3' }, svg);
+        });
+        var wl = el('text', { x: X(0), y: yw - 6, 'text-anchor': 'middle' }, svg);
+        wl.textContent = 'Load width ' + first(mm(s.w));
+
+        /* scale bar and angles along the bottom */
+        var len = niceLength(s.B / 4), yb = padTop + (ymax - ymin) * k + 24, x0 = 4;
+        el('line', { x1: x0, x2: x0 + len * k, y1: yb, y2: yb, stroke: '#212529', 'stroke-width': 2 }, svg);
+        [0, len / 2, len].forEach(function (q) { el('line', { x1: x0 + q * k, x2: x0 + q * k, y1: yb - 5, y2: yb + 1, stroke: '#212529', 'stroke-width': 1 }, svg); });
+        el('text', { x: x0 + len * k + 8, y: yb + 4 }, svg).textContent = first(mm(len));
+        var info = 'Surcharge ' + deg(last.beta) + (s.arr === 'flat' ? '' : ' · Trough ' + angles(s.arr, s.lam, s.lamIn)) +
+            ' · Edge clearance ' + first(mm(s.c));
+        el('text', { x: narrow ? x0 : W - 4, y: narrow ? yb + 24 : yb + 4, 'text-anchor': narrow ? 'start' : 'end' }, svg).textContent = info;
+    }
+
+    var resizeTimer = null;
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(renderDrawing, 120);
+    });
+
+    /* ── Events ── */
+    numInputs.forEach(function (el) {
+        el.addEventListener('input', function () { readInput(el); compute(); });
+    });
+    $('arr').addEventListener('change', function () {
+        if (ARR_DEFAULT_ANGLE[this.value]) { setSI('lam', ARR_DEFAULT_ANGLE[this.value]); }
+        if (ARR_DEFAULT_INNER[this.value]) { setSI('lamIn', ARR_DEFAULT_INNER[this.value]); }
+        compute();
+    });
+    $('mat').addEventListener('change', function () { fillMaterial(); compute(); });
+    form.addEventListener('submit', function (e) { e.preventDefault(); });
+    $('units').addEventListener('change', function () {
+        sys = this.value;
+        numInputs.forEach(display);
+        document.querySelectorAll('[data-unit]').forEach(function (s) { s.textContent = UNIT[s.getAttribute('data-unit')][sys]; });
+        compute();
+    });
+
+    /* The bottom result bar hides while the results are on screen */
+    var bar = $('calcBar');
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) { bar.hidden = e.isIntersecting; });
+        }, { rootMargin: '0px 0px -15% 0px' }).observe($('results'));
+    }
+
+    /* ── Start from the example values (metric), whatever the browser restored ── */
+    numInputs.forEach(function (el) {
+        var d = el.getAttribute('value');
+        el.value = d === null ? '' : d;
+        readInput(el);
+    });
+    form.querySelectorAll('select').forEach(function (s) {
+        var sel = s.querySelector('option[selected]');
+        if (sel) { s.value = sel.value; }
+    });
+    MATERIALS.forEach(function (m, i) { if (m[0] === 'Iron Ore (Crushed)') { matSel.value = String(i); } });
+    fillMaterial();
+    compute();
+})();
+</script>
+
+</body>
+</html>

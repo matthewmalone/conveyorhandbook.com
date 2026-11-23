@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator 2 Transfer Chute Overflow on Stopping – Modern Conveyor Handbook</title>
+    <meta name="description" content="Transfer chute overflow on stopping calculator: material discharged into the chute after a stop, chute margin or overflow, and the minimum receiving belt stop delay.">
+    <meta name="author" content="Matthew Malone">
+    <link rel="canonical" href="https://www.conveyorhandbook.com/02-calculator-transfer-chute-overflow-on-stopping.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Calculator 2 Transfer Chute Overflow on Stopping – Modern Conveyor Handbook">
+    <meta property="og:description" content="Transfer chute overflow on stopping calculator: material discharged into the chute after a stop, chute margin or overflow, and the minimum receiving belt stop delay.">
+    <meta property="og:url" content="https://www.conveyorhandbook.com/02-calculator-transfer-chute-overflow-on-stopping.html">
+    <meta property="og:site_name" content="Modern Conveyor Handbook">
+    <meta property="og:locale" content="en_AU">
+    <meta property="article:published_time" content="2026-11-22T00:00:00+11:00">
+    <meta property="article:modified_time" content="2026-11-23T00:00:00+11:00">
+    <meta property="article:author" content="Matthew Malone">
+    <meta property="article:section" content="Engineering">
+    <meta property="article:tag" content="conveyors">
+    <meta property="article:tag" content="transfer chutes">
+    <meta property="article:tag" content="conveyor stopping">
+    <meta property="article:tag" content="engineering calculator">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Calculator 2 Transfer Chute Overflow on Stopping – Modern Conveyor Handbook">
+    <meta name="twitter:description" content="Transfer chute overflow on stopping calculator: material discharged into the chute after a stop, chute margin or overflow, and the minimum receiving belt stop delay.">
+
+    <link rel="icon" type="image/svg+xml" href="ico/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+    <link rel="home" href="https://www.conveyorhandbook.com/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "TechArticle",
+                "headline": "Calculator 2 Transfer Chute Overflow on Stopping",
+                "description": "Transfer chute overflow on stopping calculator: material discharged into the chute after a stop, chute margin or overflow, and the minimum receiving belt stop delay.",
+                "author": { "@type": "Person", "name": "Matthew Malone" },
+                "copyrightYear": "2026",
+                "copyrightHolder": { "@type": "Person", "name": "Matthew Malone" },
+                "publisher": { "@type": "Organization", "@id": "https://www.conveyorhandbook.com/#organization", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "datePublished": "2026-11-22",
+                "dateModified": "2026-11-23",
+                "mainEntityOfPage": "https://www.conveyorhandbook.com/02-calculator-transfer-chute-overflow-on-stopping.html",
+                "isPartOf": { "@type": "WebSite", "@id": "https://www.conveyorhandbook.com/#website", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "inLanguage": "en-AU",
+                "about": { "@type": "Thing", "name": "Calculator 2 Transfer Chute Overflow on Stopping" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Modern Conveyor Handbook", "item": "https://www.conveyorhandbook.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Calculator 2 Transfer Chute Overflow on Stopping", "item": "https://www.conveyorhandbook.com/02-calculator-transfer-chute-overflow-on-stopping.html" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+    <link rel="stylesheet" href="handbook.css">
+    <style>
+        /* Calculator page: only what Bootstrap's classes and handbook.css do not cover */
+        .calc-page { padding-bottom: 6rem; }
+        .calc-group { margin: 2rem 0 0.25rem; }
+
+        /* One input or result per row: label and hint on the left, field or value on the right */
+        .calc-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            column-gap: 1.5rem;
+            row-gap: 0.35rem;
+            align-items: center;
+            padding: 0.6rem 0.5rem;
+            border-bottom: 1px solid var(--bs-border-color);
+        }
+        .calc-row > label { margin: 0; }
+        .calc-hint { display: block; margin-top: 0.1rem; font-size: 0.8125rem; font-weight: 400; color: var(--bs-secondary-color); }
+        .calc-num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+        @media (max-width: 575.98px) {
+            .calc-row { grid-template-columns: minmax(0, 1fr); padding-left: 0; padding-right: 0; }
+        }
+        #results { scroll-margin-top: 1rem; }
+
+        /* Chute fill bar: peak material, spare volume and any overflow */
+        .calc-stack { display: flex; gap: 2px; height: 28px; margin: 0.5rem 0 0.35rem; }
+        .calc-stack > span {
+            display: flex;
+            align-items: center;
+            min-width: 3px;
+            padding: 0 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            line-height: 1;
+            color: #fff;
+            white-space: nowrap;
+            font-variant-numeric: tabular-nums;
+        }
+        .calc-stack > span.ink-dark { color: #0b0b0b; }
+        .calc-stack > span:focus-visible { outline: 2px solid var(--bs-body-color); outline-offset: 2px; }
+        .calc-tip-wrap { position: relative; }
+        .calc-tip {
+            position: absolute;
+            top: -2.2rem;
+            z-index: 5;
+            padding: 0.3rem 0.55rem;
+            border: 1px solid var(--bs-border-color);
+            border-radius: var(--bs-border-radius-sm);
+            background: var(--bs-body-bg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            font-size: 0.8rem;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        /* Result bar fixed to the bottom of the window while the inputs are on screen */
+        .calc-bar {
+            position: fixed;
+            left: 260px;
+            right: 0;
+            bottom: 0;
+            z-index: 1010;
+            padding: 0.6rem 3rem;
+            border-top: 1px solid var(--bs-border-color);
+            background: var(--bs-body-bg);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.06);
+        }
+        @media (max-width: 991.98px) {
+            .calc-bar { left: 0; padding: 0.55rem 1rem; }
+        }
+        @media print {
+            .calc-page { padding-bottom: 0; }
+            .calc-bar, .calc-tip { display: none !important; }
+            .calc-stack > span { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Contents
+    </button>
+</div>
+
+<nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
+    <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="chapterMenuBtn" aria-expanded="false" aria-controls="chapterMenu">Chapters</button>
+    </p>
+    <div class="chapter-menu" id="chapterMenu"></div>
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="calcMenuBtn" aria-expanded="false" aria-controls="calcMenu">Calculators</button>
+    </p>
+    <div class="chapter-menu" id="calcMenu"></div>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-3">Table of Contents</p>
+    <div class="toc">
+        <a href="#calculator-2-transfer-chute-overflow-on-stopping">1. Calculator 2 Transfer Chute Overflow on Stopping</a>
+        <a href="#inputs">2. Inputs</a>
+        <a href="#results">3. Results</a>
+    </div>
+</nav>
+
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+<main class="main-content calc-page" id="main" tabindex="-1">
+
+    <section id="calculator-2-transfer-chute-overflow-on-stopping">
+        <h1 class="mb-3">1. Calculator 2 Transfer Chute Overflow on Stopping</h1>
+        <p>Checks whether a transfer chute overfills when the feeding and receiving belts stop, and finds the minimum receiving belt stop delay.</p>
+        <noscript><div class="alert alert-warning">This calculator needs JavaScript.</div></noscript>
+    </section>
+
+    <form id="calcForm" autocomplete="off" novalidate>
+    <section id="inputs">
+        <h2 class="border-top pt-4 mt-5">2. Inputs</h2>
+
+        <div>
+            <div class="calc-row mt-3">
+                <label for="units">Units</label>
+                <select class="form-select" id="units">
+                    <option value="met" selected>Metric</option>
+                    <option value="imp">Imperial</option>
+                </select>
+            </div>
+
+            <h3 class="h5 calc-group">Feeding Belt</h3>
+            <div class="calc-row">
+                <label for="f_cap">Capacity<span class="calc-hint">Material flow onto the chute at the time of the stop</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="f_cap" data-kind="cap" min="0" step="any" value="2000">
+                    <span class="input-group-text" data-unit="cap">t/h</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="f_v">Belt speed</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="f_v" data-kind="speed" min="0" step="any" value="4">
+                    <span class="input-group-text" data-unit="speed">m/s</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="f_delay">Stop delay<span class="calc-hint">Time from the stop signal until the belt starts to slow; the belt runs at full speed during the delay. For a brake, the brake application delay, typically 0.5 to 1.5 s.</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="f_delay" data-kind="s" min="0" step="any" value="0">
+                    <span class="input-group-text">s</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="f_ts">Stop time<span class="calc-hint">Time to slow from full speed to rest after the stop delay</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="f_ts" data-kind="s" min="0" step="any" value="25">
+                    <span class="input-group-text">s</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Receiving Belt</h3>
+            <div class="calc-row">
+                <label for="r_cap">Capacity<span class="calc-hint">Maximum carrying capacity at full speed</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="r_cap" data-kind="cap" min="0" step="any" value="2500">
+                    <span class="input-group-text" data-unit="cap">t/h</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="r_v">Belt speed</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="r_v" data-kind="speed" min="0" step="any" value="4.5">
+                    <span class="input-group-text" data-unit="speed">m/s</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="r_delay">Stop delay<span class="calc-hint">Time from the stop signal until the belt starts to slow; the belt runs at full speed during the delay. For a brake, the brake application delay, typically 0.5 to 1.5 s.</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="r_delay" data-kind="s" min="0" step="any" value="1">
+                    <span class="input-group-text">s</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="r_ts">Stop time<span class="calc-hint">Time to slow from full speed to rest after the stop delay</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="r_ts" data-kind="s" min="0" step="any" value="5">
+                    <span class="input-group-text">s</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Chute</h3>
+            <div class="calc-row">
+                <label for="vol">Chute live volume<span class="calc-hint">Free volume that can hold material above the running level, below the overflow point or blocked-chute switch</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="vol" data-kind="vol" min="0" step="any" value="2.5">
+                    <span class="input-group-text" data-unit="vol">m3</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="rho">Bulk density</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="rho" data-kind="dens" min="0" step="any" value="1600">
+                    <span class="input-group-text" data-unit="dens">kg/m3</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    </form>
+
+    <section id="results">
+        <h2 class="border-top pt-4 mt-5">3. Results</h2>
+        <div class="alert alert-danger" id="resultError" role="alert" hidden></div>
+        <div id="resultBody">
+            <figure class="mt-4 mb-4">
+                <figcaption class="small fw-semibold" id="fillCaption">Peak Chute Fill</figcaption>
+                <div class="calc-tip-wrap">
+                    <div class="calc-stack" id="fill" role="group" aria-labelledby="fillCaption"></div>
+                </div>
+            </figure>
+            <div class="calc-tip" id="tip" hidden></div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Chute</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody id="chuteBody"></tbody>
+                </table>
+            </div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Belt Stopping</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Feeding Belt</th>
+                            <th scope="col">Receiving Belt</th>
+                        </tr>
+                    </thead>
+                    <tbody id="beltBody"></tbody>
+                </table>
+            </div>
+            <div class="alert alert-warning mt-4" id="warnBox" hidden>
+                <p class="fw-semibold mb-2">Check</p>
+                <ul class="mb-0 ps-3" id="warnList"></ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="calc-bar d-print-none" id="calcBar">
+        <div class="d-flex flex-wrap align-items-baseline column-gap-3 row-gap-1">
+            <span class="fw-semibold">Chute</span>
+            <span class="fs-5 fw-semibold calc-num" id="barValue" role="status"></span>
+            <a href="#results" class="small">Results</a>
+        </div>
+    </div>
+
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
+        Published <time datetime="2026-11-22">22 November 2026</time><br>
+        Updated <time datetime="2026-11-23">23 November 2026</time><br>
+        &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>
+    </footer>
+
+</main>
+
+<script src="chapters.js"></script>
+<script src="handbook.js"></script>
+<script>
+/* Calculator 2 Transfer Chute Overflow on Stopping. Plain JavaScript; every value is held in SI units
+   (t/h, m/s, s, m3, kg/m3). Each belt runs at full speed for its stop delay, then slows to rest at a
+   constant rate. The chute gains what the feeding belt discharges and loses what the receiving belt
+   can carry away at its current speed. */
+(function () {
+    'use strict';
+
+    var COLOUR = { fill: '#1baf7a', spare: '#dee2e6', over: '#e34948' };
+
+    /* ── Units: imperial value = SI value × factor ── */
+    var sys = 'met';
+    var UNIT = {
+        cap:   { met: 't/h', imp: 'stph', f: 1.1023113, dp: { met: 0, imp: 0 } },
+        speed: { met: 'm/s', imp: 'fpm', f: 196.8504, dp: { met: 2, imp: 0 } },
+        vol:   { met: 'm3', imp: 'ft3', f: 35.314667, dp: { met: 2, imp: 1 } },
+        dens:  { met: 'kg/m3', imp: 'lb/ft3', f: 0.06242796, dp: { met: 0, imp: 1 } }
+    };
+    function toSI(kind, v) { return sys === 'imp' && UNIT[kind] ? v / UNIT[kind].f : v; }
+    function fromSI(kind, v) { return sys === 'imp' && UNIT[kind] ? v * UNIT[kind].f : v; }
+
+    /* ── Formatting ── */
+    function num(v, dp) {
+        if (Math.abs(v) < 0.5 * Math.pow(10, -dp)) { v = 0; }
+        return v.toLocaleString('en-AU', { minimumFractionDigits: dp, maximumFractionDigits: dp });
+    }
+    function pair(a, b) { return sys === 'met' ? a + ' [' + b + ']' : b + ' [' + a + ']'; }
+    function vol(m3) { return pair(num(m3, 2) + ' m3', num(m3 * 35.314667, 1) + ' ft3'); }
+    function mass(kg) { return pair(num(kg / 1000, 2) + ' t', num(kg / 1000 * 1.1023113, 2) + ' st'); }
+    function len(m) { return pair(num(m, 1) + ' m', num(m / 0.3048, 1) + ' ft'); }
+    function speed(v) { return pair(num(v, 2) + ' m/s', num(v * 196.8504, 0) + ' fpm'); }
+    function acc(a) { return pair(num(a, 3) + ' m/s2', num(a * 3.2808399, 3) + ' ft/s2'); }
+    function load(q) { return pair(num(q, 1) + ' kg/m', num(q * 0.6719690, 1) + ' lb/ft'); }
+    function secs(t) { return num(t, 1) + ' s'; }
+    function short(text) { return text.split(' [')[0]; }
+
+    /* ── Elements and stored values ── */
+    var $ = function (id) { return document.getElementById(id); };
+    var form = $('calcForm');
+    var numInputs = Array.prototype.slice.call(form.querySelectorAll('input[data-kind]'));
+    var si = {};
+    function kindOf(el) { return el.getAttribute('data-kind'); }
+    function display(el) {
+        var v = si[el.id], k = kindOf(el);
+        if (!isFinite(v)) { el.value = ''; return; }
+        var dp = UNIT[k] ? UNIT[k].dp[sys] : 2;
+        el.value = String(Number(fromSI(k, v).toFixed(dp)));
+    }
+    function readInput(el) {
+        var t = el.value.trim();
+        si[el.id] = t === '' ? NaN : toSI(kindOf(el), parseFloat(t));
+    }
+    /* ── Belt speed against time after the stop signal ── */
+    function speedAt(b, t) {
+        if (t < b.d) { return b.v; }
+        if (t < b.d + b.ts) { return b.v * (1 - (t - b.d) / b.ts); }
+        return 0;
+    }
+
+    /* Chute mass balance (kg) from the stop signal until both belts are at rest */
+    function simulate(f, r, V, rho) {
+        var T = Math.max(f.d + f.ts, r.d + r.ts);
+        var n = 6000, dt = T / n, M = 0, peak = 0, tOver = NaN;
+        var qIn = f.cap / 3.6, qOut = r.cap / 3.6;
+        for (var i = 0; i < n; i++) {
+            var t = (i + 0.5) * dt;
+            var inflow = qIn * speedAt(f, t) / f.v;
+            var outCap = qOut * speedAt(r, t) / r.v;
+            M = Math.max(0, M + (inflow - outCap) * dt);
+            if (M > peak) { peak = M; }
+            if (isNaN(tOver) && M / rho > V) { tOver = (i + 1) * dt; }
+        }
+        return { peak: peak, final: M, tOver: tOver };
+    }
+
+    /* Smallest receiving belt delay that keeps the peak fill within the live volume */
+    function minDelay(f, r, V, rho) {
+        var probe = { v: r.v, ts: r.ts, cap: r.cap, d: 0 };
+        if (simulate(f, probe, V, rho).peak / rho <= V) { return 0; }
+        var lo = 0, hi = f.d + f.ts;
+        probe.d = hi;
+        if (simulate(f, probe, V, rho).peak / rho > V) { return NaN; }
+        for (var k = 0; k < 40; k++) {
+            probe.d = (lo + hi) / 2;
+            if (simulate(f, probe, V, rho).peak / rho <= V) { hi = probe.d; } else { lo = probe.d; }
+        }
+        return hi;
+    }
+
+    /* ── Results helpers ── */
+    function row(label, value, cls, hint) {
+        return '<tr' + (cls ? ' class="' + cls + '"' : '') + '><th scope="row">' + label + '</th><td><span class="calc-num">' + value + '</span>' +
+            (hint ? '<span class="calc-hint">' + hint + '</span>' : '') + '</td></tr>';
+    }
+    function row2(label, a, b) {
+        return '<tr><th scope="row">' + label + '</th><td class="calc-num">' + a + '</td><td class="calc-num">' + b + '</td></tr>';
+    }
+
+    /* ── Tooltip shared by the chart and the fill bar ── */
+    var tip = $('tip');
+    function showTip(text, anchor, x, y) {
+        anchor.appendChild(tip);
+        tip.textContent = text;
+        tip.hidden = false;
+        var w = tip.offsetWidth, wrap = anchor.clientWidth;
+        tip.style.left = Math.max(0, Math.min(wrap - w, x - w / 2)) + 'px';
+        tip.style.top = (y - tip.offsetHeight - 8) + 'px';
+    }
+    function hideTip() { tip.hidden = true; }
+
+    /* ── Main calculation ── */
+    var last = null;
+    function compute() {
+        var bad = [];
+        numInputs.forEach(function (el) { el.classList.remove('is-invalid'); });
+        function fin(id) { return isFinite(si[id]); }
+        function need(id, ok, label) { if (!ok) { $(id).classList.add('is-invalid'); bad.push(label); } }
+        var names = { f: 'feeding belt', r: 'receiving belt' };
+        ['f', 'r'].forEach(function (p) {
+            need(p + '_cap', fin(p + '_cap') && si[p + '_cap'] > 0, names[p] + ' capacity');
+            need(p + '_v', fin(p + '_v') && si[p + '_v'] > 0, names[p] + ' speed');
+            need(p + '_delay', fin(p + '_delay') && si[p + '_delay'] >= 0, names[p] + ' stop delay');
+            need(p + '_ts', fin(p + '_ts') && si[p + '_ts'] > 0, names[p] + ' stop time');
+        });
+        need('vol', fin('vol') && si.vol >= 0, 'chute live volume');
+        need('rho', fin('rho') && si.rho > 0, 'bulk density');
+
+        if (bad.length) {
+            $('resultError').hidden = false;
+            $('resultError').textContent = 'Check these inputs: ' + bad.join('; ') + '.';
+            $('resultBody').hidden = true;
+            $('barValue').textContent = 'Check the inputs';
+            last = null;
+            return;
+        }
+        $('resultError').hidden = true;
+        $('resultBody').hidden = false;
+
+        function belt(p) {
+            var v = si[p + '_v'], ts = si[p + '_ts'];
+            return { cap: si[p + '_cap'], v: v, d: si[p + '_delay'], ts: ts, a: v / ts };
+        }
+        var f = belt('f'), r = belt('r');
+        var V = si.vol, rho = si.rho;
+
+        var sim = simulate(f, r, V, rho);
+        var qF = f.cap / 3.6 / f.v, qR = r.cap / 3.6 / r.v;        /* kg/m at full speed */
+        var sF = f.v * f.d + f.v * f.ts / 2, sR = r.v * r.d + r.v * r.ts / 2;
+        var mIn = qF * sF;                                         /* kg discharged after the stop signal */
+        var peakV = sim.peak / rho;
+        var margin = V - peakV;
+        if (margin < 0 && margin > -0.005) { margin = 0; }          /* below the displayed precision */
+        var dMin = minDelay(f, r, V, rho);
+        if (!isNaN(dMin)) { dMin = Math.ceil(dMin * 10 - 1e-6) / 10; }   /* rounded up, so the shown delay always works */
+        var fEnd = f.d + f.ts, rEnd = r.d + r.ts;
+
+        /* chute table */
+        var c = [];
+        c.push(row('Material discharged into the chute after the stop signal', mass(mIn), '', vol(mIn / rho)));
+        c.push(row('Material carried away by the receiving belt after the stop signal', mass(Math.max(0, mIn - sim.final))));
+        c.push(row('Peak material held in the chute', vol(peakV), '', mass(sim.peak)));
+        c.push(row('Chute live volume', vol(V)));
+        if (margin >= 0) {
+            c.push(row('Margin', vol(margin), 'table-primary fw-semibold'));
+        } else {
+            c.push(row('Overflow', vol(-margin), 'table-danger fw-semibold', mass(-margin * rho) + ', from ' + secs(sim.tOver) + ' after the stop signal'));
+        }
+        c.push(row('Minimum receiving belt stop delay',
+            isNaN(dMin) ? 'Not achievable' : secs(dMin), '',
+            isNaN(dMin) ? 'The feeding belt capacity exceeds the receiving belt capacity' : 'Entered: ' + secs(r.d)));
+        $('chuteBody').innerHTML = c.join('');
+
+        /* belt table */
+        var b = [];
+        b.push(row2('Belt speed', speed(f.v), speed(r.v)));
+        b.push(row2('Load at full speed', load(qF), load(qR) + ' at capacity'));
+        b.push(row2('Stop delay', secs(f.d), secs(r.d)));
+        b.push(row2('Stop time', secs(f.ts), secs(r.ts)));
+        b.push(row2('Deceleration', acc(f.a), acc(r.a)));
+        b.push(row2('Time to stop after the stop signal', secs(fEnd), secs(rEnd)));
+        b.push(row2('Distance travelled after the stop signal', len(sF), len(sR)));
+        $('beltBody').innerHTML = b.join('');
+
+        $('barValue').textContent = margin >= 0 ? 'Margin ' + vol(margin) : 'Overflow ' + vol(-margin);
+
+        /* warnings */
+        var warn = [];
+        if (margin < 0) {
+            warn.push('The chute overflows by ' + vol(-margin) + '.' + (isNaN(dMin) ? '' :
+                ' For controlled stops, set the receiving belt stop delay to at least ' + secs(dMin) +
+                '. For power loss, brake the feeding belt or add a flywheel to the receiving belt.'));
+        }
+        if (f.cap > r.cap) { warn.push('The feeding belt capacity exceeds the receiving belt capacity, so the chute fills while both belts run.'); }
+        if (rEnd < fEnd - 1e-9) {
+            warn.push('The receiving belt stops ' + secs(fEnd - rEnd) + ' before the feeding belt, so the feeding belt discharges onto a stopped belt.');
+        }
+        $('warnList').innerHTML = warn.map(function (w) { return '<li>' + w + '</li>'; }).join('');
+        $('warnBox').hidden = !warn.length;
+
+        last = { V: V, peakV: peakV };
+        renderFill();
+    }
+
+    /* ── Peak chute fill bar ── */
+    function renderFill() {
+        var bar = $('fill');
+        bar.innerHTML = '';
+        if (!last) { return; }
+        var V = last.V, peak = last.peakV;
+        var full = peak > V + 0.005;
+        var parts = [[full ? 'Chute full' : 'Peak material in the chute', Math.min(peak, V), COLOUR.fill, false, full ? 'Full ' : 'Peak '],
+                     ['Spare live volume', Math.max(0, V - peak), COLOUR.spare, true, 'Spare '],
+                     ['Overflow', full ? peak - V : 0, COLOUR.over, false, 'Overflow ']];
+        parts.forEach(function (p) {
+            if (!(p[1] > 0)) { return; }
+            var seg = document.createElement('span');
+            seg.style.flex = p[1] + ' 1 0';
+            seg.style.background = p[2];
+            if (p[3]) { seg.className = 'ink-dark'; }
+            seg.tabIndex = 0;
+            seg.setAttribute('role', 'img');
+            seg.setAttribute('aria-label', p[0] + ': ' + vol(p[1]));
+            seg.textContent = p[4] + short(vol(p[1]));
+            var text = p[0] + ': ' + vol(p[1]);
+            seg.addEventListener('mouseenter', function () { showTip(text, bar.parentNode, seg.offsetLeft + seg.offsetWidth / 2, 0); });
+            seg.addEventListener('focus', function () { showTip(text, bar.parentNode, seg.offsetLeft + seg.offsetWidth / 2, 0); });
+            seg.addEventListener('mouseleave', hideTip);
+            seg.addEventListener('blur', hideTip);
+            bar.appendChild(seg);
+        });
+        Array.prototype.forEach.call(bar.children, function (seg) {
+            if (seg.scrollWidth > seg.clientWidth + 0.5) { seg.textContent = short(vol(parseFloat(seg.style.flexGrow))); }
+            if (seg.scrollWidth > seg.clientWidth + 0.5) { seg.textContent = ''; }
+        });
+    }
+
+    var resizeTimer = null;
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(renderFill, 120);
+    });
+
+    /* ── Events ── */
+    numInputs.forEach(function (el) {
+        el.addEventListener('input', function () { readInput(el); compute(); });
+    });
+    form.addEventListener('submit', function (e) { e.preventDefault(); });
+    $('units').addEventListener('change', function () {
+        sys = this.value;
+        numInputs.forEach(display);
+        document.querySelectorAll('[data-unit]').forEach(function (s) { s.textContent = UNIT[s.getAttribute('data-unit')][sys]; });
+        compute();
+    });
+
+    /* The bottom result bar hides while the results are on screen */
+    var bar = $('calcBar');
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) { bar.hidden = e.isIntersecting; });
+        }, { rootMargin: '0px 0px -15% 0px' }).observe($('results'));
+    }
+
+    /* ── Start from the example values (metric), whatever the browser restored ── */
+    numInputs.forEach(function (el) {
+        var d = el.getAttribute('value');
+        el.value = d === null ? '' : d;
+        readInput(el);
+    });
+    form.querySelectorAll('select').forEach(function (s) {
+        var sel = s.querySelector('option[selected]');
+        if (sel) { s.value = sel.value; }
+    });
+    compute();
+})();
+</script>
+
+</body>
+</html>

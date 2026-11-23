@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://www.conveyorhandbook.com/</loc>
-        <lastmod>2026-11-22</lastmod>
+        <lastmod>2026-11-23</lastmod>
     </url>
     <url>
         <loc>https://www.conveyorhandbook.com/01-introduction.html</loc>
@@ -14,7 +14,7 @@
     </url>
     <url>
         <loc>https://www.conveyorhandbook.com/03-belt-capacities-and-material-properties.html</loc>
-        <lastmod>2026-11-21</lastmod>
+        <lastmod>2026-11-22</lastmod>
     </url>
     <url>
         <loc>https://www.conveyorhandbook.com/04-belt-power-and-tensions.html</loc>
@@ -30,7 +30,7 @@
     </url>
     <url>
         <loc>https://www.conveyorhandbook.com/07-belt-splicing.html</loc>
-        <lastmod>2026-11-21</lastmod>
+        <lastmod>2026-11-22</lastmod>
     </url>
     <url>
         <loc>https://www.conveyorhandbook.com/08-belt-and-conveyor-monitoring.html</loc>
@@ -58,7 +58,7 @@
     </url>
     <url>
         <loc>https://www.conveyorhandbook.com/14-horizontal-and-vertical-curves-and-transitions.html</loc>
-        <lastmod>2026-11-21</lastmod>
+        <lastmod>2026-11-22</lastmod>
     </url>
     <url>
         <loc>https://www.conveyorhandbook.com/15-fire-detection-and-suppression-systems.html</loc>
@@ -91,5 +91,17 @@
     <url>
         <loc>https://www.conveyorhandbook.com/22-pulley-engineering.html</loc>
         <lastmod>2026-11-22</lastmod>
+    </url>
+    <url>
+        <loc>https://www.conveyorhandbook.com/01-calculator-take-up-travel-and-belt-storage.html</loc>
+        <lastmod>2026-11-23</lastmod>
+    </url>
+    <url>
+        <loc>https://www.conveyorhandbook.com/02-calculator-transfer-chute-overflow-on-stopping.html</loc>
+        <lastmod>2026-11-23</lastmod>
+    </url>
+    <url>
+        <loc>https://www.conveyorhandbook.com/03-calculator-belt-capacity.html</loc>
+        <lastmod>2026-11-23</lastmod>
     </url>
 </urlset>

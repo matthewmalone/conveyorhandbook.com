@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator 1 Take-Up Travel and Belt Storage – Modern Conveyor Handbook</title>
+    <meta name="description" content="Take-up travel and belt storage calculator: elastic and permanent elongation, splicing, belt storage, dynamic allowance, safety buffers and contingency.">
+    <meta name="author" content="Matthew Malone">
+    <link rel="canonical" href="https://www.conveyorhandbook.com/01-calculator-take-up-travel-and-belt-storage.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Calculator 1 Take-Up Travel and Belt Storage – Modern Conveyor Handbook">
+    <meta property="og:description" content="Take-up travel and belt storage calculator: elastic and permanent elongation, splicing, belt storage, dynamic allowance, safety buffers and contingency.">
+    <meta property="og:url" content="https://www.conveyorhandbook.com/01-calculator-take-up-travel-and-belt-storage.html">
+    <meta property="og:site_name" content="Modern Conveyor Handbook">
+    <meta property="og:locale" content="en_AU">
+    <meta property="article:published_time" content="2026-11-22T00:00:00+11:00">
+    <meta property="article:modified_time" content="2026-11-23T00:00:00+11:00">
+    <meta property="article:author" content="Matthew Malone">
+    <meta property="article:section" content="Engineering">
+    <meta property="article:tag" content="conveyors">
+    <meta property="article:tag" content="take-up travel">
+    <meta property="article:tag" content="belt storage unit">
+    <meta property="article:tag" content="engineering calculator">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Calculator 1 Take-Up Travel and Belt Storage – Modern Conveyor Handbook">
+    <meta name="twitter:description" content="Take-up travel and belt storage calculator: elastic and permanent elongation, splicing, belt storage, dynamic allowance, safety buffers and contingency.">
+
+    <link rel="icon" type="image/svg+xml" href="ico/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+    <link rel="home" href="https://www.conveyorhandbook.com/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "TechArticle",
+                "headline": "Calculator 1 Take-Up Travel and Belt Storage",
+                "description": "Take-up travel and belt storage calculator: elastic and permanent elongation, splicing, belt storage, dynamic allowance, safety buffers and contingency.",
+                "author": { "@type": "Person", "name": "Matthew Malone" },
+                "copyrightYear": "2026",
+                "copyrightHolder": { "@type": "Person", "name": "Matthew Malone" },
+                "publisher": { "@type": "Organization", "@id": "https://www.conveyorhandbook.com/#organization", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "datePublished": "2026-11-22",
+                "dateModified": "2026-11-23",
+                "mainEntityOfPage": "https://www.conveyorhandbook.com/01-calculator-take-up-travel-and-belt-storage.html",
+                "isPartOf": { "@type": "WebSite", "@id": "https://www.conveyorhandbook.com/#website", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "inLanguage": "en-AU",
+                "about": { "@type": "Thing", "name": "Calculator 1 Take-Up Travel and Belt Storage" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Modern Conveyor Handbook", "item": "https://www.conveyorhandbook.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Calculator 1 Take-Up Travel and Belt Storage", "item": "https://www.conveyorhandbook.com/01-calculator-take-up-travel-and-belt-storage.html" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+    <link rel="stylesheet" href="handbook.css">
+    <style>
+        /* Calculator page: only what Bootstrap's classes and handbook.css do not cover */
+        .calc-page { padding-bottom: 6rem; }
+        .calc-group { margin: 2rem 0 0.25rem; }
+
+        /* One input or result per row: label and hint on the left, field or value on the right */
+        .calc-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            column-gap: 1.5rem;
+            row-gap: 0.35rem;
+            align-items: center;
+            padding: 0.6rem 0.5rem;
+            border-bottom: 1px solid var(--bs-border-color);
+        }
+        .calc-row > label { margin: 0; }
+        .calc-hint { display: block; margin-top: 0.1rem; font-size: 0.8125rem; font-weight: 400; color: var(--bs-secondary-color); }
+        .calc-num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+        @media (max-width: 575.98px) {
+            .calc-row { grid-template-columns: minmax(0, 1fr); padding-left: 0; padding-right: 0; }
+        }
+        #results { scroll-margin-top: 1rem; }
+
+        /* Segmented bar: the design travel from the fixed side end to the moving side end */
+        .calc-stack-wrap { position: relative; }
+        .calc-stack { display: flex; gap: 2px; height: 28px; margin: 0.5rem 0 0.35rem; }
+        .calc-stack > span {
+            display: flex;
+            align-items: center;
+            min-width: 3px;
+            padding: 0 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            line-height: 1;
+            color: #fff;
+            white-space: nowrap;
+            font-variant-numeric: tabular-nums;
+        }
+        .calc-stack > span.ink-dark { color: #0b0b0b; }
+        .calc-stack > span:focus-visible { outline: 2px solid var(--bs-body-color); outline-offset: 2px; }
+        .calc-tip {
+            position: absolute;
+            top: -2.2rem;
+            z-index: 5;
+            padding: 0.3rem 0.55rem;
+            border: 1px solid var(--bs-border-color);
+            border-radius: var(--bs-border-radius-sm);
+            background: var(--bs-body-bg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            font-size: 0.8rem;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        /* Result bar fixed to the bottom of the window while the inputs are on screen */
+        .calc-bar {
+            position: fixed;
+            left: 260px;
+            right: 0;
+            bottom: 0;
+            z-index: 1010;
+            padding: 0.6rem 3rem;
+            border-top: 1px solid var(--bs-border-color);
+            background: var(--bs-body-bg);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.06);
+        }
+        @media (max-width: 991.98px) {
+            .calc-bar { left: 0; padding: 0.55rem 1rem; }
+        }
+        @media print {
+            .calc-page { padding-bottom: 0; }
+            .calc-bar, .calc-tip { display: none !important; }
+            .calc-stack > span { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Contents
+    </button>
+</div>
+
+<nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
+    <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="chapterMenuBtn" aria-expanded="false" aria-controls="chapterMenu">Chapters</button>
+    </p>
+    <div class="chapter-menu" id="chapterMenu"></div>
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="calcMenuBtn" aria-expanded="false" aria-controls="calcMenu">Calculators</button>
+    </p>
+    <div class="chapter-menu" id="calcMenu"></div>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-3">Table of Contents</p>
+    <div class="toc">
+        <a href="#calculator-1-take-up-travel-and-belt-storage">1. Calculator 1 Take-Up Travel and Belt Storage</a>
+        <a href="#inputs">2. Inputs</a>
+        <a href="#results">3. Results</a>
+    </div>
+</nav>
+
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+<main class="main-content calc-page" id="main" tabindex="-1">
+
+    <section id="calculator-1-take-up-travel-and-belt-storage">
+        <h1 class="mb-3">1. Calculator 1 Take-Up Travel and Belt Storage</h1>
+        <p>Calculates the minimum and design carriage travel for a single-pulley loop take-up or a multilayer belt storage unit (BSU).</p>
+        <noscript><div class="alert alert-warning">This calculator needs JavaScript.</div></noscript>
+    </section>
+
+    <form id="calcForm" autocomplete="off" novalidate>
+    <section id="inputs">
+        <h2 class="border-top pt-4 mt-5">2. Inputs</h2>
+
+        <div>
+            <div class="calc-row mt-3">
+                <label for="units">Units</label>
+                <select class="form-select" id="units">
+                    <option value="met" selected>Metric</option>
+                    <option value="imp">Imperial</option>
+                </select>
+            </div>
+            <h3 class="h5 calc-group">Take-Up</h3>
+            <div class="calc-row">
+                <label for="arr">Take-up arrangement</label>
+                <select class="form-select" id="arr">
+                    <option value="loop-h" selected>Single-pulley loop, horizontal</option>
+                    <option value="loop-v">Single-pulley loop, vertical (tower)</option>
+                    <option value="bsu">Multilayer loop (BSU)</option>
+                </select>
+            </div>
+            <div class="calc-row">
+                <label for="type">Take-up type</label>
+                <select class="form-select" id="type">
+                    <option value="screw">Screw (manual)</option>
+                    <option value="hydraulic">Hydraulic or pneumatic</option>
+                    <option value="gravity" selected>Gravity (counterweight)</option>
+                    <option value="fixed">Fixed winch</option>
+                    <option value="semi">Semi-active winch</option>
+                    <option value="active">Fully active winch</option>
+                </select>
+            </div>
+            <div class="calc-row" data-show="bsu">
+                <label for="strands">Belt strands at the carriage<span class="calc-hint">Typically 4 or 6</span></label>
+                <input type="number" class="form-control" id="strands" data-kind="n" min="2" step="1" value="4">
+            </div>
+            <div class="calc-row" data-show="gravity">
+                <label for="cwratio">Counterweight travel ratio<span class="calc-hint">Counterweight travel per unit carriage travel; 1.0 where the counterweight moves with the carriage</span></label>
+                <input type="number" class="form-control" id="cwratio" data-kind="n" min="0" step="any" value="1">
+            </div>
+            <div class="calc-row" data-show="winch">
+                <label for="vcar">Carriage velocity<span class="calc-hint">Typically 0.3 to 1.0 m/s [60 to 200 fpm]</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="vcar" data-kind="speed" min="0" step="any" value="0.5">
+                    <span class="input-group-text" data-unit="speed">m/s</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="winch">
+                <label for="tresp">Control and brake response time (optional)</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="tresp" data-kind="s" min="0" step="any" value="">
+                    <span class="input-group-text">s</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="C">Conveyor centre distance<span class="calc-hint">Along the belt path, including rises and falls</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="C" data-kind="m" min="0" step="any" value="500">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Belt Elongation</h3>
+            <div class="calc-row">
+                <label for="carcass">Carcass type</label>
+                <select class="form-select" id="carcass"></select>
+            </div>
+            <div class="calc-row">
+                <label for="epoint">Elongation values<span class="calc-hint">From the typical range for the carcass, or typed in below</span></label>
+                <select class="form-select" id="epoint">
+                    <option value="upper" selected>Upper end of range (conservative)</option>
+                    <option value="mid">Middle of range</option>
+                    <option value="lower">Lower end of range</option>
+                    <option value="enter">Enter values</option>
+                </select>
+            </div>
+            <div class="calc-row">
+                <label for="eperm">Permanent elongation<span class="calc-hint" id="eperm-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="eperm" data-kind="pct" min="0" step="any" value="1">
+                    <span class="input-group-text">%</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="tuperm">Permanent elongation travel override (optional)<span class="calc-hint">Leave blank to use the calculated travel. Enter less where the belt will be cut and respliced to remove permanent stretch; include that resplice in the planned splices.</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="tuperm" data-kind="m" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="eelas">Elastic elongation at rated working tension<span class="calc-hint" id="eelas-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="eelas" data-kind="pct" min="0" step="any" value="1.5">
+                    <span class="input-group-text">%</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="rT">Tension ratio<span class="calc-hint">Average belt tension divided by rated working tension; 1.0 applies the full elastic elongation (conservative)</span></label>
+                <input type="number" class="form-control" id="rT" data-kind="n" min="0" step="any" value="1">
+            </div>
+
+            <h3 class="h5 calc-group">Splicing</h3>
+            <div class="calc-row">
+                <label for="smethod">Splice type</label>
+                <select class="form-select" id="smethod">
+                    <option value="stepped" selected>Stepped splice, multi-ply fabric</option>
+                    <option value="st-as">Steel cord, AS 1333</option>
+                    <option value="st-fp">Steel cord, fixed pitch</option>
+                    <option value="st-din">Steel cord, DIN 22131</option>
+                    <option value="fastener">Mechanical fastener</option>
+                    <option value="direct">Enter length per splice</option>
+                </select>
+            </div>
+            <div class="calc-row" data-show="stepped">
+                <label for="plies">Number of plies</label>
+                <input type="number" class="form-control" id="plies" data-kind="n" min="2" step="1" value="4">
+            </div>
+            <div class="calc-row" data-show="stepped">
+                <label for="step">Step length<span class="calc-hint">Typically 200 to 350 mm [8 to 14 in]</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="step" data-kind="mm" min="0" step="any" value="300">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="steel">
+                <label for="grade">Steel cord grade<span class="calc-hint">Typical splice lengths; confirm with the belt manufacturer's splice design</span></label>
+                <select class="form-select" id="grade"></select>
+            </div>
+            <div class="calc-row" data-show="bias">
+                <label for="B">Belt width</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="B" data-kind="mm" min="0" step="any" value="1200">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="bias">
+                <label for="bias">Bias factor</label>
+                <select class="form-select" id="bias">
+                    <option value="0.3" selected>0.3</option>
+                    <option value="0.4">0.4</option>
+                    <option value="0">0 (square splice)</option>
+                </select>
+            </div>
+            <div class="calc-row" data-show="direct">
+                <label for="Ldirect">Belt length consumed per splice<span class="calc-hint">Mechanical fasteners 100 to 200 mm [4 to 8 in]; finger splices from the splice design</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="Ldirect" data-kind="mm" min="0" step="any" value="1000">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="nnew">Planned splices<span class="calc-hint">Over the belt life, excluding replacement splices</span></label>
+                <input type="number" class="form-control" id="nnew" data-kind="n" min="0" step="1" value="6">
+            </div>
+            <div class="calc-row">
+                <label for="nrep">Planned replacement splices<span class="calc-hint">Each cuts out an old splice and consumes about twice the splice length</span></label>
+                <input type="number" class="form-control" id="nrep" data-kind="n" min="0" step="1" value="2">
+            </div>
+
+            <h3 class="h5 calc-group" data-show="bsu">Belt Storage</h3>
+            <div class="calc-row" data-show="bsu">
+                <label for="smode">Storage requirement</label>
+                <select class="form-select" id="smode">
+                    <option value="advance" selected>From face advance</option>
+                    <option value="enter">Enter stored belt length</option>
+                </select>
+            </div>
+            <div class="calc-row" data-show="advance">
+                <label for="Radv">Face advance or retreat per maintenance window</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="Radv" data-kind="m" min="0" step="any" value="25">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="advance">
+                <label for="nw">Maintenance windows between splice events</label>
+                <input type="number" class="form-control" id="nw" data-kind="n" min="0" step="1" value="4">
+            </div>
+            <div class="calc-row" data-show="storeEnter">
+                <label for="BSCd">Stored belt length</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="BSCd" data-kind="m" min="0" step="any" value="200">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Buffers and Contingency</h3>
+            <div class="calc-row">
+                <label for="dret">Safety buffer, fixed side end (retracted)<span class="calc-hint" id="dret-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="dret" data-kind="m" min="0" step="any" value="0.6">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="dext">Safety buffer, moving side end (extended)<span class="calc-hint" id="dext-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="dext" data-kind="m" min="0" step="any" value="0.6">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="tudyn">Dynamic allowance<span class="calc-hint">Extra carriage travel for starting and stopping, from a dynamic analysis where one is available</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="tudyn" data-kind="m" min="0" step="any" value="10">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="cpct">Design contingency<span class="calc-hint" id="cpct-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="cpct" data-kind="pct" min="0" step="any" value="12">
+                    <span class="input-group-text">%</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="bsu">
+                <label for="cadd">Additional carriage travel<span class="calc-hint">Typically 2.0 m [6.6 ft] for a BSU</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="cadd" data-kind="m" min="0" step="any" value="2">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    </form>
+
+    <section id="results">
+        <h2 class="border-top pt-4 mt-5">3. Results</h2>
+        <div class="alert alert-danger" id="resultError" role="alert" hidden></div>
+        <div id="resultBody">
+            <figure class="mt-4 mb-4">
+                <figcaption class="small fw-semibold" id="stackCaption">Design Take-Up Travel</figcaption>
+                <div class="calc-stack-wrap">
+                    <div class="calc-stack" id="stack" role="group" aria-labelledby="stackCaption"></div>
+                    <div class="calc-tip" id="stackTip" hidden></div>
+                </div>
+            </figure>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Carriage Travel</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Component</th>
+                            <th scope="col">Carriage Travel</th>
+                        </tr>
+                    </thead>
+                    <tbody id="travelBody"></tbody>
+                </table>
+            </div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Other Results</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody id="otherBody"></tbody>
+                </table>
+            </div>
+            <div class="alert alert-warning mt-4" id="warnBox" hidden>
+                <p class="fw-semibold mb-2">Check</p>
+                <ul class="mb-0 ps-3" id="warnList"></ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="calc-bar d-print-none" id="calcBar">
+        <div class="d-flex flex-wrap align-items-baseline column-gap-3 row-gap-1">
+            <span class="fw-semibold">Design<span class="d-none d-sm-inline"> take-up</span> travel</span>
+            <span class="fs-5 fw-semibold calc-num text-nowrap" id="barValue" role="status"></span>
+            <a href="#results" class="small">Results</a>
+        </div>
+    </div>
+
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
+        Published <time datetime="2026-11-22">22 November 2026</time><br>
+        Updated <time datetime="2026-11-23">23 November 2026</time><br>
+        &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>
+    </footer>
+
+</main>
+
+<script src="chapters.js"></script>
+<script src="handbook.js"></script>
+<script>
+/* Calculator 1 Take-Up Travel and Belt Storage. Plain JavaScript; every value is held in SI units. */
+(function () {
+    'use strict';
+
+    /* Carcass: id, name, permanent elongation % [low, high], elastic elongation % [low, high], splice family */
+    var CARCASS = [
+        ['cc', 'CC, Plain Weave', [1.50, 2.50], [1.00, 2.00], 'fabric'],
+        ['cn', 'CN, Plain Weave', [1.50, 2.00], [1.50, 2.00], 'fabric'],
+        ['nn', 'NN, Plain / Twill Weave', [1.50, 2.00], [1.50, 2.00], 'fabric'],
+        ['nncf', 'NN, Crowfoot Weave', [1.00, 1.50], [1.50, 2.00], 'fabric'],
+        ['ep', 'PN / EP, Plain / Twill Weave', [0.75, 1.00], [1.00, 1.50], 'fabric'],
+        ['epcf', 'PN / EP, Crowfoot Weave', [0.50, 0.75], [0.50, 1.00], 'fabric'],
+        ['ee', 'EE, Plain / Twill Weave', [0.75, 1.00], [1.00, 1.50], 'fabric'],
+        ['eecf', 'EE, Crowfoot Weave', [0.50, 0.75], [0.50, 1.00], 'fabric'],
+        ['pesw', 'Polyester, Straight-Warp', [0.20, 0.50], [0.50, 1.00], 'finger'],
+        ['pvc', 'PVC, Solid Woven', [0.75, 2.00], [0.75, 2.00], 'finger'],
+        ['pvg', 'PVG, Solid Woven', [0.75, 1.50], [0.75, 1.50], 'finger'],
+        ['ar', 'Aramid, Conventional Weave', [0.25, 0.50], [0.25, 0.40], 'finger'],
+        ['arsw', 'Aramid, Straight-Warp', [0.15, 0.25], [0.15, 0.25], 'finger'],
+        ['st', 'Steel Cord (ST)', [0.10, 0.25], [0.10, 0.20], 'steel'],
+        ['other', 'Other (enter values)', null, null, 'fabric']
+    ];
+    var HIGH_STRETCH = { cc: 1, cn: 1, nn: 1, nncf: 1, pvc: 1, pvg: 1 };
+
+    /* Take-up types: safety buffer range at each end (m) and suitable centre distance (m) */
+    var TYPE = {
+        screw:     { name: 'screw take-ups', buf: [0.2, 0.4], range: [0, 50],
+                     msg: 'Screw take-ups suit very short, light-duty conveyors less than 50 m [164 ft] long.' },
+        hydraulic: { name: 'hydraulic or pneumatic take-ups', buf: [0.3, 0.5], range: [0, 100],
+                     msg: 'Hydraulic and pneumatic take-ups suit conveyors less than 100 m [328 ft] long.' },
+        gravity:   { name: 'gravity take-ups', buf: [0.4, 0.6], range: [50, 3000],
+                     msg: 'Gravity take-ups suit conveyors of 50 to 3,000 m [164 to 9,840 ft].' },
+        fixed:     { name: 'fixed winches', buf: [0.4, 0.6], range: [0, 500],
+                     msg: 'Fixed winch take-ups suit conveyors less than 500 m [1,640 ft] long, and cannot absorb starting transients once the brake is applied.' },
+        semi:      { name: 'semi-active winches', buf: [0.5, 1.0], range: [100, 5000],
+                     msg: 'Semi-active winch take-ups suit conveyors of 100 to 5,000 m [328 to 16,400 ft].' },
+        active:    { name: 'fully active winches', buf: [0.8, 1.5], range: [500, Infinity],
+                     msg: 'Fully active winch take-ups are typically used on conveyors longer than 500 m [1,640 ft].' }
+    };
+    var BSU_BUF = [1.0, 2.0];
+
+    /* Steel cord splice lengths (mm); null = to the belt manufacturer's splice design */
+    var STEEL = {
+        'st-as': [['ST 500', 700], ['ST 560', 700], ['ST 630', 750], ['ST 710', 750], ['ST 800', 800], ['ST 900', 850],
+                  ['ST 1000', 900], ['ST 1120', 950], ['ST 1250', 950], ['ST 1400', 1000], ['ST 1600', 1100],
+                  ['ST 1800', 1150], ['ST 2000', 1200], ['ST 2240', 1300], ['ST 2500', 1450], ['ST 2800', 2300],
+                  ['ST 3150', 2400], ['ST 3550', 2550], ['ST 4000', 2700], ['ST 4500', 2900], ['ST 5000', 3500],
+                  ['ST 5600', 3650], ['ST 6300 and above', null]],
+        'st-fp': [['ST 800', 800], ['ST 1000', 850], ['ST 1250', 900], ['ST 1600', 1450], ['ST 2000', 1600], ['ST 2500', 1700]],
+        'st-din': [['ST 1000', 850], ['ST 1250', 950], ['ST 1600', 1050], ['ST 2000', 1600], ['ST 2500', 2000], ['ST 3150', 2200],
+                   ['ST 3500', 2700], ['ST 4000', 2850], ['ST 4500', 3100], ['ST 5000 and ST 5400', null]]
+    };
+
+    /* ── Units ── */
+    var FT = 0.3048, INCH = 0.0254, FPM_PER_MS = 196.8504;
+    var sys = 'met';
+    var UNIT = {
+        m:     { met: 'm', imp: 'ft', dp: { met: 2, imp: 2 } },
+        mm:    { met: 'mm', imp: 'in', dp: { met: 0, imp: 2 } },
+        speed: { met: 'm/s', imp: 'fpm', dp: { met: 2, imp: 0 } }
+    };
+    function toSI(kind, v) {
+        if (sys === 'met') { return kind === 'mm' ? v / 1000 : v; }
+        if (kind === 'm') { return v * FT; }
+        if (kind === 'mm') { return v * INCH; }
+        if (kind === 'speed') { return v / FPM_PER_MS; }
+        return v;
+    }
+    function fromSI(kind, v) {
+        if (sys === 'met') { return kind === 'mm' ? v * 1000 : v; }
+        if (kind === 'm') { return v / FT; }
+        if (kind === 'mm') { return v / INCH; }
+        if (kind === 'speed') { return v * FPM_PER_MS; }
+        return v;
+    }
+
+    /* ── Formatting ── */
+    function num(v, dp) {
+        if (Math.abs(v) < 0.5 * Math.pow(10, -dp)) { v = 0; }
+        return v.toLocaleString('en-AU', { minimumFractionDigits: dp, maximumFractionDigits: dp });
+    }
+    function len(vm) {
+        var m = num(vm, 2) + ' m', f = num(vm / FT, 1) + ' ft';
+        return sys === 'met' ? m + ' [' + f + ']' : f + ' [' + m + ']';
+    }
+    function mmLen(vm) {
+        var a = num(vm * 1000, 0) + ' mm', b = num(vm / INCH, 1) + ' in';
+        return sys === 'met' ? a + ' [' + b + ']' : b + ' [' + a + ']';
+    }
+    function pct(v) { return num(v, v % 1 ? 2 : 0) + '%'; }
+    function rangePct(r) { return num(r[0], 2) + '% to ' + num(r[1], 2) + '%'; }
+    function esc(t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+
+    /* ── Elements and stored values ── */
+    var $ = function (id) { return document.getElementById(id); };
+    var form = $('calcForm');
+    var numInputs = Array.prototype.slice.call(form.querySelectorAll('input[data-kind]'));
+    var si = {};
+    var contEdited = false;   /* the contingency follows the conveyor length until it is typed in */
+
+    function kindOf(el) { return el.getAttribute('data-kind'); }
+    function display(el) {
+        var v = si[el.id], k = kindOf(el);
+        if (!isFinite(v)) { el.value = ''; return; }
+        var dp = UNIT[k] ? UNIT[k].dp[sys] : 4;
+        el.value = String(Number(fromSI(k, v).toFixed(dp)));
+    }
+    function setSI(id, v) { si[id] = v; display($(id)); }
+    function readInput(el) {
+        var t = el.value.trim();
+        si[el.id] = t === '' ? NaN : toSI(kindOf(el), parseFloat(t));
+    }
+
+    /* ── Select options ── */
+    var carcassSel = $('carcass');
+    CARCASS.forEach(function (c) {
+        var o = document.createElement('option');
+        o.value = c[0];
+        o.textContent = c[1];
+        carcassSel.appendChild(o);
+    });
+    carcassSel.value = 'ep';
+    function carcass() {
+        for (var i = 0; i < CARCASS.length; i++) { if (CARCASS[i][0] === carcassSel.value) { return CARCASS[i]; } }
+        return CARCASS[0];
+    }
+    var gradeSel = $('grade');
+    var gradeStd = '';
+    function fillGrades(std) {
+        if (std === gradeStd) { return; }
+        var keep = gradeSel.value || 'ST 1000';
+        gradeSel.innerHTML = '';
+        STEEL[std].forEach(function (g) {
+            var o = document.createElement('option');
+            o.value = g[0];
+            o.textContent = g[1] ? g[0] + ', ' + num(g[1], 0) + ' mm [' + num(g[1] / 25.4, 0) + ' in] splice' : g[0] + ', to manufacturer';
+            gradeSel.appendChild(o);
+        });
+        gradeSel.value = keep;
+        if (gradeSel.value !== keep) { gradeSel.selectedIndex = Math.min(6, gradeSel.options.length - 1); }
+        gradeStd = std;
+    }
+    function steelLength(std, grade) {
+        var rows = STEEL[std];
+        for (var i = 0; i < rows.length; i++) { if (rows[i][0] === grade) { return rows[i][1] === null ? null : rows[i][1] / 1000; } }
+        return null;
+    }
+
+    /* ── Values filled from the selections ── */
+    function fillElongation() {
+        var c = carcass(), sel = $('epoint');
+        sel.querySelectorAll('option').forEach(function (o) { o.disabled = !c[2] && o.value !== 'enter'; });
+        if (!c[2]) { sel.value = 'enter'; }
+        if (c[2]) {
+            var pick = function (r) { return sel.value === 'lower' ? r[0] : sel.value === 'mid' ? (r[0] + r[1]) / 2 : r[1]; };
+            if (sel.value !== 'enter') {
+                setSI('eperm', pick(c[2]));
+                setSI('eelas', pick(c[3]));
+            }
+            $('eperm-hint').textContent = 'Typically ' + rangePct(c[2]);
+            $('eelas-hint').textContent = 'Typically ' + rangePct(c[3]);
+        } else {
+            $('eperm-hint').textContent = 'From the belt manufacturer\'s data';
+            $('eelas-hint').textContent = 'From the belt manufacturer\'s data';
+        }
+    }
+    function buffers() { return $('arr').value === 'bsu' ? BSU_BUF : TYPE[$('type').value].buf; }
+    function fillBuffers() {
+        var b = buffers();
+        setSI('dext', b[1]);
+        setSI('dret', b[1]);
+    }
+    function contingency(C, bsu) {
+        if (bsu) { return { lo: 15, hi: 15, add: 2.0, name: 'a BSU', hint: 'Typically 15% plus 2.0 m [6.6 ft] for a BSU' }; }
+        if (C < 100) { return { lo: 10, hi: 10, add: 0, name: 'a conveyor less than 100 m [328 ft] long', hint: 'Typically 10% for conveyors less than 100 m [328 ft] long' }; }
+        if (C <= 1000) { return { lo: 10, hi: 12, add: 0, name: 'a 100 to 1,000 m [328 to 3,280 ft] conveyor', hint: 'Typically 10% to 12% for conveyors 100 to 1,000 m [328 to 3,280 ft] long' }; }
+        return { lo: 12, hi: 15, add: 0, name: 'a conveyor longer than 1,000 m [3,280 ft]', hint: 'Typically 12% to 15% for conveyors longer than 1,000 m [3,280 ft]' };
+    }
+
+    /* ── Show or hide rows ── */
+    function show(key, on) {
+        form.querySelectorAll('[data-show="' + key + '"]').forEach(function (el) { el.hidden = !on; });
+    }
+
+    /* ── Results table rows ── */
+    function row(label, value, cls, hint) {
+        return '<tr' + (cls ? ' class="' + cls + '"' : '') + '><th scope="row">' + label + '</th><td><span class="calc-num">' + value + '</span>' +
+            (hint ? '<span class="calc-hint">' + esc(hint) + '</span>' : '') + '</td></tr>';
+    }
+
+    /* Bar colours, one per component; both safety buffers share the neutral grey */
+    var COLOUR = {
+        safe: ['#7a7974', false], elas: ['#2a78d6', false], perm: ['#eb6834', false], splc: ['#1baf7a', false],
+        stor: ['#eda100', true], dyn: ['#e87ba4', false], cont: ['#6250d6', false]
+    };
+    var parts = [];
+
+    /* ── Main calculation ── */
+    function compute() {
+        var arr = $('arr').value, bsu = arr === 'bsu';
+        var type = $('type').value, T = TYPE[type];
+        var c = carcass();
+        var sm = $('smethod').value, steel = sm.indexOf('st-') === 0;
+        var smode = $('smode').value;
+        var winch = type === 'semi' || type === 'active';
+
+        show('bsu', bsu);
+        show('gravity', type === 'gravity');
+        show('winch', winch);
+        show('stepped', sm === 'stepped');
+        show('steel', steel);
+        show('bias', sm === 'stepped' || steel);
+        show('direct', sm === 'fastener' || sm === 'direct');
+        show('advance', bsu && smode === 'advance');
+        show('storeEnter', bsu && smode === 'enter');
+        if (steel) { fillGrades(sm); }
+
+        var buf = buffers();
+        var bufText = 'Typically ' + num(buf[0], 2) + ' to ' + num(buf[1], 2) + ' m [' +
+            num(buf[0] / FT, 1) + ' to ' + num(buf[1] / FT, 1) + ' ft] for ' + (bsu ? 'a BSU' : T.name);
+        $('dext-hint').textContent = bufText;
+        $('dret-hint').textContent = bufText;
+
+        var cat = contingency(isFinite(si.C) ? si.C : 0, bsu);
+        if (!contEdited) {
+            setSI('cpct', cat.hi);
+            setSI('cadd', cat.add);
+        }
+        $('cpct-hint').textContent = cat.hint;
+
+        /* validation */
+        var bad = [];
+        numInputs.forEach(function (el) { el.classList.remove('is-invalid'); });
+        gradeSel.classList.remove('is-invalid');
+        function fin(id) { return isFinite(si[id]); }
+        function blank(id) { return $(id).value.trim() === ''; }
+        function isInt(id) { return fin(id) && Math.abs(si[id] - Math.round(si[id])) < 1e-9; }
+        function need(id, ok, label) { if (!ok) { $(id).classList.add('is-invalid'); bad.push(label); } }
+
+        if (bsu) { need('strands', isInt('strands') && si.strands >= 2 && si.strands <= 24, 'belt strands (a whole number from 2 to 24)'); }
+        if (type === 'gravity') { need('cwratio', fin('cwratio') && si.cwratio > 0, 'counterweight travel ratio'); }
+        if (winch) {
+            need('vcar', fin('vcar') && si.vcar > 0, 'carriage velocity');
+            need('tresp', blank('tresp') || fin('tresp') && si.tresp >= 0, 'response time');
+        }
+        need('C', fin('C') && si.C > 0, 'conveyor centre distance');
+        need('tuperm', blank('tuperm') || fin('tuperm') && si.tuperm >= 0, 'permanent elongation travel override');
+        need('eperm', fin('eperm') && si.eperm >= 0 && si.eperm <= 10, 'permanent elongation (0% to 10%)');
+        need('eelas', fin('eelas') && si.eelas >= 0 && si.eelas <= 10, 'elastic elongation (0% to 10%)');
+        need('rT', fin('rT') && si.rT >= 0, 'tension ratio');
+        if (sm === 'stepped') {
+            need('plies', isInt('plies') && si.plies >= 2, 'number of plies (a whole number, 2 or more)');
+            need('step', fin('step') && si.step > 0, 'step length');
+        }
+        if (sm === 'stepped' || steel) { need('B', fin('B') && si.B > 0, 'belt width'); }
+        if (sm === 'fastener' || sm === 'direct') { need('Ldirect', fin('Ldirect') && si.Ldirect > 0, 'belt length per splice'); }
+        var Lsc = steel ? steelLength(sm, gradeSel.value) : null;
+        if (steel && Lsc === null) {
+            gradeSel.classList.add('is-invalid');
+            bad.push('steel cord grade (no typical splice length; choose "Enter length per splice" as the splice type)');
+        }
+        need('nnew', isInt('nnew') && si.nnew >= 0, 'planned splices (a whole number)');
+        need('nrep', isInt('nrep') && si.nrep >= 0, 'planned replacement splices (a whole number)');
+        if (bsu && smode === 'advance') {
+            need('Radv', fin('Radv') && si.Radv >= 0, 'face advance per maintenance window');
+            need('nw', fin('nw') && si.nw >= 0, 'maintenance windows');
+        }
+        if (bsu && smode === 'enter') { need('BSCd', fin('BSCd') && si.BSCd >= 0, 'stored belt length'); }
+        need('dret', fin('dret') && si.dret >= 0, 'fixed side end safety buffer');
+        need('dext', fin('dext') && si.dext >= 0, 'moving side end safety buffer');
+        need('tudyn', blank('tudyn') || fin('tudyn') && si.tudyn >= 0, 'dynamic allowance');
+        need('cpct', fin('cpct') && si.cpct >= 0, 'design contingency');
+        if (bsu) { need('cadd', fin('cadd') && si.cadd >= 0, 'additional carriage travel'); }
+
+        if (bad.length) {
+            $('resultError').hidden = false;
+            $('resultError').textContent = 'Check these inputs: ' + bad.join('; ') + '.';
+            $('resultBody').hidden = true;
+            $('barValue').textContent = 'Check the inputs';
+            parts = [];
+            return;
+        }
+        $('resultError').hidden = true;
+        $('resultBody').hidden = false;
+
+        /* calculation, all in SI */
+        var N = bsu ? si.strands : 2;
+        var C = si.C;
+        var L = 2 * C;
+        var dLel = si.eelas / 100 * si.rT * L;
+        var dLpm = si.eperm / 100 * L;
+        var kb = parseFloat($('bias').value);
+        var Lsp, spliceText;
+        if (sm === 'stepped') {
+            Lsp = (si.plies - 1) * si.step + kb * si.B;
+            spliceText = (si.plies - 1) + ' steps of ' + mmLen(si.step) + ' plus ' + kb + ' × width bias';
+        } else if (steel) {
+            Lsp = Lsc + kb * si.B;
+            spliceText = mmLen(Lsc) + ' splice plus ' + kb + ' × width bias';
+        } else {
+            Lsp = si.Ldirect;
+            spliceText = 'entered';
+        }
+        var nEq = si.nnew + 2 * si.nrep;
+        var dLsp = nEq * Lsp;
+        var BSC = bsu ? (smode === 'advance' ? 2 * si.Radv * si.nw : si.BSCd) : 0;
+        var dyn = fin('tudyn') ? si.tudyn : 0;
+
+        var tuPmCalc = dLpm / N, permOver = fin('tuperm');
+        var tuEl = dLel / N, tuPm = permOver ? si.tuperm : tuPmCalc, tuSp = dLsp / N, tuSt = BSC / N, tuSafe = si.dext + si.dret;
+        var TUmin = tuEl + tuPm + tuSp + tuSt + dyn + tuSafe;
+        var cp = si.cpct, ac = bsu ? si.cadd : 0;
+        var TUdes = TUmin * (1 + cp / 100) + ac;
+
+        /* carriage travel table, from the fixed side end to the moving side end */
+        var t = [];
+        t.push(row('Safety buffer, fixed side end', len(si.dret)));
+        t.push(row('Elastic elongation', len(tuEl)));
+        t.push(row('Permanent elongation' + (permOver ? ' (override)' : ''), len(tuPm)));
+        t.push(row('Splicing', len(tuSp)));
+        if (bsu) { t.push(row('Belt storage', len(tuSt))); }
+        if (dyn > 0) { t.push(row('Dynamic allowance', len(dyn))); }
+        t.push(row('Safety buffer, moving side end', len(si.dext)));
+        t.push(row('Minimum take-up travel', len(TUmin), 'fw-semibold'));
+        t.push(row('Contingency, ' + pct(cp) + (ac ? ' plus ' + len(ac) : ''), len(TUdes - TUmin)));
+        t.push(row('Design take-up travel', len(TUdes), 'table-primary fw-semibold'));
+        $('travelBody').innerHTML = t.join('');
+        $('barValue').textContent = len(TUdes);
+
+        /* bar parts: the buffers are fixed to the two ends */
+        parts = [
+            ['safe', 'Safety buffer, fixed side end', si.dret],
+            ['elas', 'Elastic elongation', tuEl],
+            ['perm', 'Permanent elongation', tuPm],
+            ['splc', 'Splicing', tuSp],
+            ['stor', 'Belt storage', tuSt],
+            ['dyn', 'Dynamic allowance', dyn],
+            ['cont', 'Contingency', TUdes - TUmin],
+            ['safe', 'Safety buffer, moving side end', si.dext]
+        ];
+        renderStack();
+
+        /* other results and checks */
+        var o = [], warn = [];
+        o.push(row('Belt circuit length', len(L), '', '2 × centre distance'));
+        o.push(row('Belt strands at the carriage', String(N)));
+        o.push(row('Belt length consumed per splice', len(Lsp), '', spliceText));
+        o.push(row('Belt consumed by planned splicing', len(dLsp), '', num(nEq, 0) + ' splice lengths'));
+        if (permOver) {
+            o.push(row('Permanent elongation travel, calculated', len(tuPmCalc)));
+            if (tuPmCalc > tuPm + 1e-9) {
+                o.push(row('Belt to cut out by resplicing', len((tuPmCalc - tuPm) * N), '', 'Permanent elongation not taken up by the take-up'));
+            }
+        }
+        o.push(row('Belt elongation absorbed by the take-up', len(dLel + tuPm * N)));
+        if (bsu) { o.push(row('Stored belt length', len(BSC))); }
+        if (type === 'gravity') {
+            var cw = si.cwratio * TUdes;
+            o.push(row('Counterweight travel', len(cw)));
+            if (arr === 'loop-v' && cw > 20) {
+                warn.push('The counterweight travel of ' + len(cw) + ' exceeds the typical vertical tower height of 10 to 20 m [33 to 66 ft].');
+            }
+        }
+        if (winch) {
+            var tAvail = si.dext / si.vcar;
+            o.push(row('Response time given by the moving side end buffer', num(tAvail, 1) + ' s'));
+            if (fin('tresp') && tAvail < si.tresp) {
+                warn.push('The moving side end buffer gives ' + num(tAvail, 1) + ' s of response time, less than the ' + num(si.tresp, 1) +
+                    ' s control and brake response time. Increase the buffer to at least ' + len(si.vcar * si.tresp) + '.');
+            }
+        }
+        $('otherBody').innerHTML = o.join('');
+
+        /* warnings */
+        if (!bsu && (C < T.range[0] || C > T.range[1])) { warn.push(T.msg); }
+        if (type === 'hydraulic' && TUdes > 2) {
+            warn.push('The design travel exceeds the typical hydraulic cylinder stroke of 2 m [6.6 ft].');
+        }
+        if ((type === 'screw' || type === 'hydraulic' || type === 'fixed') && HIGH_STRETCH[c[0]]) {
+            warn.push('Screw, hydraulic and fixed winch take-ups suit EP/PN, steel cord and aramid carcasses, not high-stretch carcasses such as this one.');
+        }
+        if (bsu && N < 4) { warn.push('BSUs typically have 4 or 6 strands.'); }
+        if (si.rT > 1) { warn.push('A tension ratio above 1.0 means the average belt tension exceeds the rated working tension.'); }
+        if (c[2] && (si.eperm < c[2][0] - 1e-9 || si.eelas < c[3][0] - 1e-9)) {
+            warn.push('The elongation is below the typical range for this carcass.');
+        }
+        if (c[4] === 'steel' && (sm === 'stepped' || sm === 'fastener')) { warn.push('The splice type does not suit a steel cord belt.'); }
+        if (c[4] !== 'steel' && steel) { warn.push('A steel cord splice is selected for a textile carcass.'); }
+        if (si.dext < buf[0] - 1e-9 || si.dret < buf[0] - 1e-9) {
+            warn.push('A safety buffer is below the typical minimum of ' + len(buf[0]) + ' for ' + (bsu ? 'a BSU' : T.name) + '.');
+        }
+        if (cp < cat.lo - 1e-9 || ac < cat.add - 1e-9) { warn.push('The contingency is below the typical value for ' + cat.name + '.'); }
+
+        $('warnList').innerHTML = warn.map(function (w) { return '<li>' + w + '</li>'; }).join('');
+        $('warnBox').hidden = !warn.length;
+    }
+
+    /* ── Segmented bar ── */
+    var stack = $('stack'), tip = $('stackTip');
+    function renderStack() {
+        stack.innerHTML = '';
+        parts.forEach(function (p) {
+            if (!(p[2] > 0)) { return; }
+            var seg = document.createElement('span');
+            seg.style.flex = p[2] + ' 1 0';
+            seg.style.background = COLOUR[p[0]][0];
+            if (COLOUR[p[0]][1]) { seg.className = 'ink-dark'; }
+            seg.tabIndex = 0;
+            seg.setAttribute('role', 'img');
+            seg.setAttribute('aria-label', p[1] + ': ' + len(p[2]));
+            seg.textContent = len(p[2]).split(' [')[0];
+            seg.addEventListener('mouseenter', function () { showTip(seg, p[1], p[2]); });
+            seg.addEventListener('focus', function () { showTip(seg, p[1], p[2]); });
+            seg.addEventListener('mouseleave', hideTip);
+            seg.addEventListener('blur', hideTip);
+            stack.appendChild(seg);
+        });
+        /* a part too narrow for its value prints none; hovering on it shows the value */
+        Array.prototype.forEach.call(stack.children, function (seg) {
+            if (seg.scrollWidth > seg.clientWidth + 0.5) { seg.textContent = ''; }
+        });
+    }
+    function showTip(seg, name, v) {
+        tip.textContent = name + ': ' + len(v);
+        tip.hidden = false;
+        var w = tip.offsetWidth, wrap = stack.parentNode.clientWidth;
+        var x = seg.offsetLeft + seg.offsetWidth / 2 - w / 2;
+        tip.style.left = Math.max(0, Math.min(wrap - w, x)) + 'px';
+    }
+    function hideTip() { tip.hidden = true; }
+    var resizeTimer = null;
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(renderStack, 120);
+    });
+
+    /* ── Events ── */
+    numInputs.forEach(function (el) {
+        el.addEventListener('input', function () {
+            readInput(el);
+            if (el.id === 'cpct' || el.id === 'cadd') { contEdited = true; }
+            if (el.id === 'eperm' || el.id === 'eelas') { $('epoint').value = 'enter'; }
+            compute();
+        });
+    });
+    $('carcass').addEventListener('change', function () {
+        var c = carcass(), sm = $('smethod').value;
+        if (c[2] && $('epoint').value === 'enter') { $('epoint').value = 'upper'; }
+        fillElongation();
+        if (c[4] === 'steel' && sm.indexOf('st-') !== 0) { $('smethod').value = 'st-as'; }
+        if (c[4] === 'fabric' && sm !== 'stepped' && sm !== 'fastener') { $('smethod').value = 'stepped'; }
+        if (c[4] === 'finger') { $('smethod').value = 'direct'; }
+        compute();
+    });
+    $('arr').addEventListener('change', function () {
+        if ($('arr').value === 'bsu' && !(si.strands >= 4)) { setSI('strands', 4); }
+        contEdited = false;
+        fillBuffers();
+        compute();
+    });
+    $('type').addEventListener('change', function () { fillBuffers(); compute(); });
+    $('epoint').addEventListener('change', function () { fillElongation(); compute(); });
+    $('smethod').addEventListener('change', function () {
+        if ($('smethod').value === 'fastener') { setSI('Ldirect', 0.2); }
+        compute();
+    });
+    ['grade', 'bias', 'smode'].forEach(function (id) { $(id).addEventListener('change', compute); });
+    form.addEventListener('submit', function (e) { e.preventDefault(); });
+
+    function setUnits(next) {
+        if (next === sys) { return; }
+        sys = next;
+        numInputs.forEach(display);
+        document.querySelectorAll('[data-unit]').forEach(function (s) { s.textContent = UNIT[s.getAttribute('data-unit')][sys]; });
+        compute();
+    }
+    $('units').addEventListener('change', function () { setUnits(this.value); });
+
+    /* The bottom result bar hides while the results are on screen */
+    var bar = $('calcBar');
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) { bar.hidden = e.isIntersecting; });
+        }, { rootMargin: '0px 0px -15% 0px' }).observe($('results'));
+    }
+
+    /* ── Start from the example values (metric), whatever the browser restored ── */
+    $('units').value = 'met';
+    numInputs.forEach(function (el) {
+        var d = el.getAttribute('value');
+        el.value = d === null ? '' : d;
+        readInput(el);
+    });
+    form.querySelectorAll('select').forEach(function (s) {
+        var sel = s.querySelector('option[selected]');
+        if (sel) { s.value = sel.value; }
+    });
+    carcassSel.value = 'ep';
+    fillElongation();
+    compute();
+})();
+</script>
+
+</body>
+</html>

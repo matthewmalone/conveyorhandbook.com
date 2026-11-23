@@ -1,4 +1,4 @@
-/* chapters.js – shared chapter list: sidebar chapter menu, contents page */
+/* chapters.js – shared chapter and calculator list: sidebar chapter menu, contents page */
 (function () {
     /* Titles are plain text (inserted with textContent), so write "&", not "&amp;".
        Write titles without numbers: the sidebar menu adds "N. " from each chapter's position.
@@ -28,6 +28,14 @@
         ['22-pulley-engineering.html', 'Pulley Engineering', 'Pulley diameters, crowning, lagging, shafts, locking assemblies and bearings.']
     ];
 
+    /* Calculators have their own sidebar menu and follow the chapters on the contents page.
+       The second field is the label in the contents page number column; the menu shows its number and the title. */
+    var calculators = [
+        ['01-calculator-take-up-travel-and-belt-storage.html', 'Calculator 1', 'Take-Up Travel and Belt Storage', 'Minimum and design take-up travel for single-pulley loop take-ups and belt storage units.'],
+        ['02-calculator-transfer-chute-overflow-on-stopping.html', 'Calculator 2', 'Transfer Chute Overflow on Stopping', 'Material discharged into a transfer chute after a stop, chute margin and receiving belt stop delay.'],
+        ['03-calculator-belt-capacity.html', 'Calculator 3', 'Belt Capacity', 'Load cross-section, volumetric and mass capacity, incline reduction and loading for flat, 2, 3, 4 and 5-roll idlers.']
+    ];
+
     /* "chapter04.html", "chapter04" (clean URLs) and "/" all resolve sensibly */
     function pageName(path) {
         var name = path.split('/').pop() || 'index';
@@ -39,6 +47,10 @@
     for (var i = 0; i < chapters.length; i++) {
         if (pageName(chapters[i][0]) === current) { currentIndex = i; }
     }
+    var currentCalc = -1;
+    for (var j = 0; j < calculators.length; j++) {
+        if (pageName(calculators[j][0]) === current) { currentCalc = j; }
+    }
 
     function span(className, text) {
         var s = document.createElement('span');
@@ -47,7 +59,7 @@
         return s;
     }
 
-    /* ── Sidebar chapter menu ── */
+    /* ── Sidebar chapter and calculator menus ── */
     var menu = document.getElementById('chapterMenu');
     if (menu) {
         chapters.forEach(function (ch, i) {
@@ -59,6 +71,19 @@
                 a.setAttribute('aria-current', 'page');
             }
             menu.appendChild(a);
+        });
+    }
+    var calcMenu = document.getElementById('calcMenu') || menu;
+    if (calcMenu) {
+        calculators.forEach(function (calc, i) {
+            var a = document.createElement('a');
+            a.href = calc[0];
+            a.textContent = calc[1].replace(/^\D*/, '') + '. ' + calc[2];
+            if (i === currentCalc) {
+                a.className = 'chapter-active';
+                a.setAttribute('aria-current', 'page');
+            }
+            calcMenu.appendChild(a);
         });
     }
 
@@ -77,6 +102,20 @@
             var text = span('d-flex flex-column', '');
             text.appendChild(span('fw-medium', ch[1]));
             if (ch[2]) { text.appendChild(span('small text-body-secondary', ch[2])); }
+            a.appendChild(text);
+            li.appendChild(a);
+            index.appendChild(li);
+        });
+        calculators.forEach(function (calc) {
+            var li = document.createElement('li');
+            li.className = 'list-group-item list-group-item-action p-0';
+            var a = document.createElement('a');
+            a.href = calc[0];
+            a.className = 'd-flex gap-3 px-1 py-3 text-body text-decoration-none';
+            a.appendChild(span('chapter-num text-body-secondary', calc[1]));
+            var text = span('d-flex flex-column', '');
+            text.appendChild(span('fw-medium', calc[2]));
+            if (calc[3]) { text.appendChild(span('small text-body-secondary', calc[3])); }
             a.appendChild(text);
             li.appendChild(a);
             index.appendChild(li);
