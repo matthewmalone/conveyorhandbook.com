@@ -33,7 +33,8 @@
     var calculators = [
         ['01-calculator-take-up-travel-and-belt-storage.html', 'Calculator 1', 'Take-Up Travel and Belt Storage', 'Minimum and design take-up travel for single-pulley loop take-ups and belt storage units.'],
         ['02-calculator-transfer-chute-overflow-on-stopping.html', 'Calculator 2', 'Transfer Chute Overflow on Stopping', 'Material discharged into a transfer chute after a stop, chute margin and receiving belt stop delay.'],
-        ['03-calculator-belt-capacity.html', 'Calculator 3', 'Belt Capacity', 'Load cross-section, volumetric and mass capacity, incline reduction and loading for flat, 2, 3, 4 and 5-roll idlers.']
+        ['03-calculator-belt-capacity.html', 'Calculator 3', 'Belt Capacity', 'Load cross-section, volumetric and mass capacity, incline reduction and loading for flat, 2, 3, 4 and 5-roll idlers.'],
+        ['04-calculator-belt-roll-size.html', 'Calculator 4', 'Belt Roll Size', 'Circular and racetrack (figure 8) roll sizes, core centre distance and a truck height check.']
     ];
 
     /* "chapter04.html", "chapter04" (clean URLs) and "/" all resolve sensibly */

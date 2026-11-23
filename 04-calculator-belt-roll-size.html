@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator 4 Belt Roll Size – Modern Conveyor Handbook</title>
+    <meta name="description" content="Belt roll size calculator: circular and racetrack (figure 8) roll diameter, core centre distance, and transport height check.">
+    <meta name="author" content="Matthew Malone">
+    <link rel="canonical" href="https://www.conveyorhandbook.com/04-calculator-belt-roll-size.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Calculator 4 Belt Roll Size – Modern Conveyor Handbook">
+    <meta property="og:description" content="Belt roll size calculator: circular and racetrack (figure 8) roll diameter, core centre distance, and transport height check.">
+    <meta property="og:url" content="https://www.conveyorhandbook.com/04-calculator-belt-roll-size.html">
+    <meta property="og:site_name" content="Modern Conveyor Handbook">
+    <meta property="og:locale" content="en_AU">
+    <meta property="article:published_time" content="2026-11-23T00:00:00+11:00">
+    <meta property="article:modified_time" content="2026-11-23T00:00:00+11:00">
+    <meta property="article:author" content="Matthew Malone">
+    <meta property="article:section" content="Engineering">
+    <meta property="article:tag" content="conveyors">
+    <meta property="article:tag" content="belt rolls">
+    <meta property="article:tag" content="belt transport">
+    <meta property="article:tag" content="engineering calculator">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Calculator 4 Belt Roll Size – Modern Conveyor Handbook">
+    <meta name="twitter:description" content="Belt roll size calculator: circular and racetrack (figure 8) roll diameter, core centre distance, and transport height check.">
+
+    <link rel="icon" type="image/svg+xml" href="ico/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+    <link rel="home" href="https://www.conveyorhandbook.com/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "TechArticle",
+                "headline": "Calculator 4 Belt Roll Size",
+                "description": "Belt roll size calculator: circular and racetrack (figure 8) roll diameter, core centre distance, and transport height check.",
+                "author": { "@type": "Person", "name": "Matthew Malone" },
+                "copyrightYear": "2026",
+                "copyrightHolder": { "@type": "Person", "name": "Matthew Malone" },
+                "publisher": { "@type": "Organization", "@id": "https://www.conveyorhandbook.com/#organization", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "datePublished": "2026-11-23",
+                "dateModified": "2026-11-23",
+                "mainEntityOfPage": "https://www.conveyorhandbook.com/04-calculator-belt-roll-size.html",
+                "isPartOf": { "@type": "WebSite", "@id": "https://www.conveyorhandbook.com/#website", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "inLanguage": "en-AU",
+                "about": { "@type": "Thing", "name": "Calculator 4 Belt Roll Size" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Modern Conveyor Handbook", "item": "https://www.conveyorhandbook.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Calculator 4 Belt Roll Size", "item": "https://www.conveyorhandbook.com/04-calculator-belt-roll-size.html" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+    <link rel="stylesheet" href="handbook.css">
+    <style>
+        /* Calculator page: only what Bootstrap's classes and handbook.css do not cover */
+        .calc-page { padding-bottom: 6rem; }
+        .calc-group { margin: 2rem 0 0.25rem; }
+
+        /* One input or result per row: label and hint on the left, field or value on the right */
+        .calc-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            column-gap: 1.5rem;
+            row-gap: 0.35rem;
+            align-items: center;
+            padding: 0.6rem 0.5rem;
+            border-bottom: 1px solid var(--bs-border-color);
+        }
+        .calc-row > label { margin: 0; }
+        .calc-hint { display: block; margin-top: 0.1rem; font-size: 0.8125rem; font-weight: 400; color: var(--bs-secondary-color); }
+        .calc-num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+        @media (max-width: 575.98px) {
+            .calc-row { grid-template-columns: minmax(0, 1fr); padding-left: 0; padding-right: 0; }
+        }
+        #results { scroll-margin-top: 1rem; }
+
+        /* Rolls drawn to scale */
+        .calc-drawing { position: relative; }
+        .calc-drawing svg { display: block; width: 100%; overflow: visible; }
+        .calc-drawing text { font-size: 12px; fill: var(--bs-secondary-color); font-variant-numeric: tabular-nums; }
+        .calc-drawing text.calc-dark { fill: #212529; }
+        .calc-drawing text.calc-bad { fill: #b02a37; font-weight: 600; }
+        .calc-drawing text.calc-on-fill { fill: #212529; paint-order: stroke; stroke: rgba(255, 255, 255, 0.85); stroke-width: 3px; }
+        .calc-tip {
+            position: absolute;
+            z-index: 5;
+            padding: 0.3rem 0.55rem;
+            border: 1px solid var(--bs-border-color);
+            border-radius: var(--bs-border-radius-sm);
+            background: var(--bs-body-bg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            font-size: 0.8rem;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        /* Result bar fixed to the bottom of the window while the inputs are on screen */
+        .calc-bar {
+            position: fixed;
+            left: 260px;
+            right: 0;
+            bottom: 0;
+            z-index: 1010;
+            padding: 0.6rem 3rem;
+            border-top: 1px solid var(--bs-border-color);
+            background: var(--bs-body-bg);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.06);
+        }
+        @media (max-width: 991.98px) {
+            .calc-bar { left: 0; padding: 0.55rem 1rem; }
+        }
+        @media print {
+            .calc-page { padding-bottom: 0; }
+            .calc-bar, .calc-tip { display: none !important; }
+            .calc-drawing svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Contents
+    </button>
+</div>
+
+<nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
+    <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="chapterMenuBtn" aria-expanded="false" aria-controls="chapterMenu">Chapters</button>
+    </p>
+    <div class="chapter-menu" id="chapterMenu"></div>
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="calcMenuBtn" aria-expanded="false" aria-controls="calcMenu">Calculators</button>
+    </p>
+    <div class="chapter-menu" id="calcMenu"></div>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-3">Table of Contents</p>
+    <div class="toc">
+        <a href="#calculator-4-belt-roll-size">1. Calculator 4. Belt Roll Size</a>
+        <a href="#inputs">2. Inputs</a>
+        <a href="#results">3. Results</a>
+    </div>
+</nav>
+
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+<main class="main-content calc-page" id="main" tabindex="-1">
+
+    <section id="calculator-4-belt-roll-size">
+        <h1 class="mb-3">1. Calculator 4. Belt Roll Size</h1>
+        <p>Checks whether a belt roll fits on the truck as a circular roll or as a racetrack (figure 8) roll on two cores, with both rolls drawn to scale.</p>
+        <noscript><div class="alert alert-warning">This calculator needs JavaScript.</div></noscript>
+    </section>
+
+    <form id="calcForm" autocomplete="off" novalidate>
+    <section id="inputs">
+        <h2 class="border-top pt-4 mt-5">2. Inputs</h2>
+
+        <div>
+            <div class="calc-row mt-3">
+                <label for="units">Units</label>
+                <select class="form-select" id="units">
+                    <option value="met" selected>Metric</option>
+                    <option value="imp">Imperial</option>
+                </select>
+            </div>
+
+            <h3 class="h5 calc-group">Belt</h3>
+            <div class="calc-row">
+                <label for="L">Belt length</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="L" data-kind="m" min="0" step="any" value="500">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="G">Belt thickness<span class="calc-hint">Total thickness including covers</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="G" data-kind="mm" min="0" step="any" value="21">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="w">Belt mass per metre</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="w" data-kind="kgm" min="0" step="any" value="42.5">
+                    <span class="input-group-text" data-unit="kgm">kg/m</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Roll and Truck</h3>
+            <div class="calc-row">
+                <label for="d">Core outer diameter<span class="calc-hint">Typically 300 to 600 mm [12 to 24 in]</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="d" data-kind="mm" min="0" step="any" value="500">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="mcore">Core or spool mass (optional)</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="mcore" data-kind="kg" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="kg">kg</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="pack">Packaging allowance<span class="calc-hint">Added to the roll height and length for wrapping and battens</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="pack" data-kind="m" min="0" step="any" value="0">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="H">Maximum roll height<span class="calc-hint">Height available for the roll above the truck deck; the roll stands with the core axis horizontal</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="H" data-kind="m" min="0" step="any" value="3">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Racetrack (Figure 8) Roll</h3>
+            <div class="calc-row">
+                <label for="Cr">Core centre distance<span class="calc-hint" id="Cr-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="Cr" data-kind="m" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    </form>
+
+    <section id="results">
+        <h2 class="border-top pt-4 mt-5">3. Results</h2>
+        <div class="alert alert-danger" id="resultError" role="alert" hidden></div>
+        <div id="resultBody">
+            <figure class="mt-4 mb-4">
+                <figcaption class="small fw-semibold mb-2">Rolls to Scale</figcaption>
+                <div class="calc-drawing" id="drawing"></div>
+            </figure>
+            <div class="calc-tip" id="tip" hidden></div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Roll Sizes</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Circular Roll</th>
+                            <th scope="col">Racetrack (Figure 8) Roll</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rollBody"></tbody>
+                </table>
+            </div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Truck Limits</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody id="truckBody"></tbody>
+                </table>
+            </div>
+            <div class="alert alert-warning mt-4" id="warnBox" hidden>
+                <p class="fw-semibold mb-2">Check</p>
+                <ul class="mb-0 ps-3" id="warnList"></ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="calc-bar d-print-none" id="calcBar">
+        <div class="d-flex flex-wrap align-items-baseline column-gap-3 row-gap-1">
+            <span class="fw-semibold">Roll</span>
+            <span class="fs-5 fw-semibold calc-num" id="barValue" role="status"></span>
+            <a href="#results" class="small">Results</a>
+        </div>
+    </div>
+
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
+        Published <time datetime="2026-11-23">23 November 2026</time><br>
+        Updated <time datetime="2026-11-23">23 November 2026</time><br>
+        &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>
+    </footer>
+
+</main>
+
+<script src="chapters.js"></script>
+<script src="handbook.js"></script>
+<script>
+/* Calculator 4 Belt Roll Size. Plain JavaScript; every value is held in SI units (m, kg, kg/m).
+   A circular roll holds the belt in the annulus between the core and the outer diameter. A racetrack
+   (figure 8) roll is wound around two cores; at a fixed height its cross-section is the annulus plus
+   two straight runs of the core centre distance. */
+(function () {
+    'use strict';
+
+    /* ── Units ── */
+    var sys = 'met';
+    var UNIT = {
+        m:   { met: 'm', imp: 'ft', f: 1 / 0.3048, dp: { met: 2, imp: 2 } },
+        mm:  { met: 'mm', imp: 'in', f: 1 / 0.0254, si: 0.001, dp: { met: 1, imp: 2 } },
+        kgm: { met: 'kg/m', imp: 'lb/ft', f: 0.6719690, dp: { met: 1, imp: 1 } },
+        kg:  { met: 'kg', imp: 'lb', f: 2.2046226, dp: { met: 0, imp: 0 } }
+    };
+    /* input value in the shown units -> SI (m, kg, kg/m) */
+    function toSI(kind, v) {
+        var u = UNIT[kind];
+        if (!u) { return v; }
+        if (sys === 'met') { return v * (u.si || 1); }
+        return kind === 'mm' ? v * 0.0254 : v / u.f;
+    }
+    function fromSI(kind, v) {
+        var u = UNIT[kind];
+        if (!u) { return v; }
+        if (sys === 'met') { return v / (u.si || 1); }
+        return kind === 'mm' ? v / 0.0254 : v * u.f;
+    }
+
+    /* ── Formatting ── */
+    function num(v, dp) {
+        if (Math.abs(v) < 0.5 * Math.pow(10, -dp)) { v = 0; }
+        return v.toLocaleString('en-AU', { minimumFractionDigits: dp, maximumFractionDigits: dp });
+    }
+    function pair(a, b) { return sys === 'met' ? a + ' [' + b + ']' : b + ' [' + a + ']'; }
+    function first(text) { return text.split(' [')[0]; }
+    function dim(m) { return pair(num(m, 2) + ' m', num(m / 0.3048, 2) + ' ft'); }
+    function blen(m) { return pair(num(m, 0) + ' m', num(m / 0.3048, 0) + ' ft'); }
+    function mass(kg) { return pair(num(kg / 1000, 2) + ' t', num(kg / 1000 * 1.1023113, 2) + ' st'); }
+    function count(n) { return num(n, 0); }
+
+    /* ── Elements and stored values ── */
+    var $ = function (id) { return document.getElementById(id); };
+    var form = $('calcForm');
+    var numInputs = Array.prototype.slice.call(form.querySelectorAll('input[data-kind]'));
+    var si = {};
+    function kindOf(el) { return el.getAttribute('data-kind'); }
+    function display(el) {
+        var v = si[el.id], k = kindOf(el);
+        if (!isFinite(v)) { el.value = ''; return; }
+        var dp = UNIT[k] ? UNIT[k].dp[sys] : 0;
+        el.value = String(Number(fromSI(k, v).toFixed(dp)));
+    }
+    function setSI(id, v) { si[id] = v; display($(id)); }
+    function readInput(el) {
+        var t = el.value.trim();
+        si[el.id] = t === '' ? NaN : toSI(kindOf(el), parseFloat(t));
+    }
+    function show(key, on) {
+        form.querySelectorAll('[data-show="' + key + '"]').forEach(function (e) { e.hidden = !on; });
+    }
+
+    /* ── Roll geometry (all in m) ── */
+    function circD(L, G, d) { return Math.sqrt(d * d + 4 * L * G / Math.PI); }             /* outer diameter of a circular roll */
+    function raceC(L, G, d, D) { return (L * G - Math.PI / 4 * (D * D - d * d)) / (D - d); }  /* core centre distance at outer diameter D */
+    function lenOn(D, d, G, C) { return (Math.PI / 4 * (D * D - d * d) + C * (D - d)) / G; }   /* belt length on a roll of outer diameter D */
+    function wraps(D, d, G) { return (D - d) / (2 * G); }
+    function raceD(L, G, d, C) {                                                              /* racetrack outer diameter for core spacing C */
+        return (-C + Math.sqrt(C * C + Math.PI * (Math.PI / 4 * d * d + C * d + L * G))) / (Math.PI / 2);
+    }
+
+    /* ── Tooltip ── */
+    var tip = $('tip');
+    function showTip(text, anchor, x, y) {
+        anchor.appendChild(tip);
+        tip.textContent = text;
+        tip.hidden = false;
+        var w = tip.offsetWidth, wrap = anchor.clientWidth;
+        tip.style.left = Math.max(0, Math.min(wrap - w, x - w / 2)) + 'px';
+        tip.style.top = Math.max(-tip.offsetHeight - 4, y - tip.offsetHeight - 10) + 'px';
+    }
+    function hideTip() { tip.hidden = true; }
+
+    /* ── Results helpers ── */
+    function row(label, value, cls, hint) {
+        return '<tr' + (cls ? ' class="' + cls + '"' : '') + '><th scope="row">' + label + '</th><td><span class="calc-num">' + value + '</span>' +
+            (hint ? '<span class="calc-hint">' + hint + '</span>' : '') + '</td></tr>';
+    }
+    function row2(label, a, b, cls) {
+        function cell(x) {
+            x = typeof x === 'string' ? [x] : x;
+            return '<td><span class="calc-num">' + x[0] + '</span>' + (x[1] ? '<span class="calc-hint">' + x[1] + '</span>' : '') + '</td>';
+        }
+        return '<tr' + (cls ? ' class="' + cls + '"' : '') + '><th scope="row">' + label + '</th>' + cell(a) + cell(b) + '</tr>';
+    }
+    function ok(text) { return '<span class="text-success fw-semibold">' + text + '</span>'; }
+    function bad(text) { return '<span class="text-danger fw-semibold">' + text + '</span>'; }
+
+    /* ── Main calculation ── */
+    var last = null;
+    var cAuto = true;     /* the core centre distance follows the maximum roll height until it is typed in */
+    function compute() {
+        /* validation */
+        var errs = [];
+        numInputs.forEach(function (el) { el.classList.remove('is-invalid'); });
+        function fin(id) { return isFinite(si[id]); }
+        function blank(id) { return $(id).value.trim() === ''; }
+        function need(id, good, label) { if (!good) { $(id).classList.add('is-invalid'); errs.push(label); } }
+        need('L', fin('L') && si.L > 0, 'belt length');
+        need('G', fin('G') && si.G > 0 && si.G <= 0.1, 'belt thickness (above 0, up to ' + first(pair('100 mm', '3.9 in')) + ')');
+        need('w', fin('w') && si.w > 0, 'belt mass per metre');
+        need('d', fin('d') && si.d > 0, 'core outer diameter');
+        need('mcore', blank('mcore') || fin('mcore') && si.mcore >= 0, 'core or spool mass');
+        need('pack', fin('pack') && si.pack >= 0, 'packaging allowance');
+        need('H', fin('H') && si.H > 0 && (!fin('d') || !fin('pack') || si.H - si.pack > si.d), 'maximum roll height (more than the core diameter plus the packaging allowance)');
+        var geomOk = !errs.length;
+
+        /* the core centre distance: the smallest spacing that keeps the racetrack roll within the maximum roll height,
+           and at least one core diameter so the cores do not overlap, unless a value is typed in */
+        var Cmin = geomOk ? raceC(si.L, si.G, si.d, si.H - si.pack) : NaN;
+        if (cAuto) {
+            if (geomOk) { setSI('Cr', Math.ceil(Math.max(Cmin, si.d) * 100 - 1e-6) / 100); } else { si.Cr = NaN; $('Cr').value = ''; }   /* rounded up to 0.01 m, so the shown value works */
+            $('Cr-hint').textContent = 'Set to suit the maximum roll height; type a value to override';
+        } else {
+            $('Cr-hint').textContent = 'Entered; clear the field to set it to suit the maximum roll height';
+            need('Cr', fin('Cr') && si.Cr >= 0, 'racetrack core centre distance');
+        }
+        if (errs.length) {
+            $('resultError').hidden = false;
+            $('resultError').textContent = 'Check these inputs: ' + errs.join('; ') + '.';
+            $('resultBody').hidden = true;
+            $('barValue').textContent = 'Check the inputs';
+            last = null;
+            return;
+        }
+        $('resultError').hidden = true;
+        $('resultBody').hidden = false;
+
+        var L = si.L, G = si.G, w = si.w, d = si.d, p = si.pack, H = si.H, Cr = si.Cr;
+        var mc = fin('mcore') ? si.mcore : 0;
+        var M = L * w + mc;
+
+        /* circular roll */
+        var Dc = circD(L, G, d), hc = Dc + p;
+        var circFitsH = hc <= H + 1e-9;
+
+        /* racetrack roll on the core centre distance */
+        var Dr = raceD(L, G, d, Cr), hr = Dr + p, lr = Cr + Dr + p;
+        var raceFitsH = hr <= H + 1e-9;
+
+        /* longest belt in a circular roll at the maximum roll height */
+        var LcMax = lenOn(H - p, d, G, 0);
+
+        var verdict;
+        if (circFitsH) { verdict = 'Fits as a circular roll, ' + first(dim(hc)) + ' high'; }
+        else if (raceFitsH) { verdict = 'Fits as a racetrack (figure 8) roll, cores ' + first(dim(Cr)) + ' apart'; }
+        else { verdict = 'Fits as a racetrack (figure 8) roll with cores at least ' + first(dim(Cmin)) + ' apart'; }
+
+        /* roll sizes */
+        var r = [];
+        function heightCell(h) {
+            if (h > H + 1e-9) { return [dim(h), bad('Too high') + ' by ' + (h - H < 0.005 ? 'less than ' + first(dim(0.01)) : first(dim(h - H)))]; }
+            return [dim(h), ok('Fits') + (H - h < 0.005 ? ', at the maximum roll height' : ', ' + first(dim(H - h)) + ' below the limit')];
+        }
+        r.push(row2('Roll height' + (p > 0 ? ', with packaging' : ''), heightCell(hc), heightCell(hr), 'fw-semibold'));
+        r.push(row2('Outer diameter', dim(Dc), [dim(Dr), 'At the rounded ends']));
+        r.push(row2('Core centre distance', '–', [dim(Cr), cAuto ? (Cmin > d ? 'Set to suit the maximum roll height' : 'Cores one core diameter apart; the circular roll fits') : 'Entered'],
+            'table-primary fw-semibold'));
+        r.push(row2('Roll length on the deck' + (p > 0 ? ', with packaging' : ''), dim(hc), dim(lr)));
+        r.push(row2('Number of wraps', count(wraps(Dc, d, G)), count(wraps(Dr, d, G))));
+        r.push(row2('Roll mass', [mass(M), mc > 0 ? 'Including the core' : ''], mass(M)));
+        $('rollBody').innerHTML = r.join('');
+
+        /* truck limits */
+        var tr = [];
+        tr.push(row('Longest belt in a circular roll', blen(LcMax), '', 'Within the maximum roll height'));
+        if (!cAuto) {
+            tr.push(row('Smallest racetrack core centre distance for the maximum roll height', Cmin > 0 ? dim(Cmin) : 'Not needed', '',
+                Cmin > 0 ? 'Roll ' + first(dim(Cmin + H)) + ' long' : 'The circular roll fits within the maximum roll height'));
+        }
+        $('truckBody').innerHTML = tr.join('');
+
+        /* warnings and the result bar */
+        var warn = [];
+        if (!raceFitsH) {
+            warn.push('The racetrack roll on ' + first(dim(Cr)) + ' core centres is too high. Increase the core centre distance to at least ' + dim(Cmin) + '.');
+        }
+        if (d < 0.3 - 1e-9) { warn.push('The core diameter is below the typical minimum of ' + first(pair('300 mm', '12 in')) + '.'); }
+        $('warnList').innerHTML = warn.map(function (t) { return '<li>' + t + '</li>'; }).join('');
+        $('warnBox').hidden = !warn.length;
+
+        $('barValue').textContent = verdict;
+
+        last = { L: L, G: G, d: d, p: p, H: H, Dc: Dc, Dr: Dr, C: Cr, circFitsH: circFitsH, raceFitsH: raceFitsH };
+        renderDrawing();
+    }
+
+    /* ── Rolls drawn to scale (x along the deck, y up from the deck) ── */
+    var SVGNS = 'http://www.w3.org/2000/svg';
+    function el(name, attrs, parent) {
+        var e = document.createElementNS(SVGNS, name);
+        Object.keys(attrs).forEach(function (key) { e.setAttribute(key, attrs[key]); });
+        if (parent) { parent.appendChild(e); }
+        return e;
+    }
+    function niceLength(x) {
+        var q = Math.pow(10, Math.floor(Math.log(x) / Math.LN10)), m = x / q;
+        return (m < 2 ? 1 : m < 5 ? 2 : 5) * q;
+    }
+    function renderDrawing() {
+        var box = $('drawing');
+        box.innerHTML = '';
+        if (!last) { return; }
+        var s = last, W = Math.max(280, box.clientWidth);
+        var gap = Math.max(s.Dc, s.Dr) * 0.45;
+        var widthM = s.Dc + s.p + gap + s.C + s.Dr + s.p;
+        var topM = Math.max(s.Dc + s.p, s.Dr + s.p, s.H);
+        var padL = 8, padR = 8, padTop = 26, padBottom = 90;
+        var k = Math.min((W - padL - padR) / widthM, 340 / topM);
+        var used = widthM * k, x0 = (W - used) / 2;
+        var H = padTop + topM * k + padBottom;
+        var X = function (x) { return x0 + x * k; };
+        var Y = function (y) { return padTop + (topM - y) * k; };
+        var svg = el('svg', { width: W, height: H, viewBox: '0 0 ' + W + ' ' + H, role: 'img',
+            'aria-label': 'Circular roll ' + first(dim(s.Dc + s.p)) + ' high and racetrack roll ' + first(dim(s.Dr + s.p)) + ' high with cores ' + first(dim(s.C)) + ' apart' }, box);
+        function hover(node, text) {
+            function at(e) { var b = box.getBoundingClientRect(); showTip(text, box, e.clientX - b.left, e.clientY - b.top); }
+            node.addEventListener('mouseenter', at);
+            node.addEventListener('mousemove', at);
+            node.addEventListener('mouseleave', hideTip);
+        }
+        /* rings every few wraps, so the wraps read without merging */
+        var step = Math.max(1, Math.ceil(4 / (s.G * k)));
+        function stadium(cx1, cx2, cy, rad) {          /* racetrack outline around two centres (screen units) */
+            return 'M' + cx1 + ',' + (cy - rad) + ' L' + cx2 + ',' + (cy - rad) + ' A' + rad + ',' + rad + ' 0 0 1 ' + cx2 + ',' + (cy + rad) +
+                ' L' + cx1 + ',' + (cy + rad) + ' A' + rad + ',' + rad + ' 0 0 1 ' + cx1 + ',' + (cy - rad) + ' Z';
+        }
+        function roll(xc1, xc2, D, label, tipText, tooHigh) {
+            var cy = Y(D / 2 + s.p / 2), c1 = X(xc1), c2 = X(xc2), R = D / 2 * k, r = s.d / 2 * k;
+            var g = el('g', {}, svg);
+            if (s.p > 0) {
+                el('path', { d: stadium(c1, c2, cy, R + s.p / 2 * k), fill: 'none', stroke: '#868e96', 'stroke-width': 1, 'stroke-dasharray': '3 3' }, g);
+            }
+            hover(el('path', { d: stadium(c1, c2, cy, R), fill: '#a3a9b0', stroke: tooHigh ? '#b02a37' : '#495057', 'stroke-width': tooHigh ? 2 : 1 }, g), tipText);
+            var n = Math.floor((D - s.d) / (2 * s.G));
+            for (var i = step; i < n; i += step) {
+                el('path', { d: stadium(c1, c2, cy, r + i * s.G * k), fill: 'none', stroke: '#6c757d', 'stroke-width': 0.6, 'pointer-events': 'none' }, g);
+            }
+            /* core: one piece, a rectangle between the two centres with a round end at each, so it never clashes at small spacings */
+            var coreD = first(pair(num(s.d * 1000, 0) + ' mm', num(s.d / 0.0254, 1) + ' in'));
+            hover(el('path', { d: stadium(c1, c2, cy, r), fill: '#f1f3f5', stroke: '#212529', 'stroke-width': 1.25 }, g),
+                c2 > c1 ? 'Core ' + coreD + ' high with round ends, centres ' + first(dim(s.C)) + ' apart' : 'Core ' + coreD + ' diameter');
+            if (c2 - c1 > 4) {
+                [c1, c2].forEach(function (cx) {
+                    el('line', { x1: cx, x2: cx, y1: cy - r, y2: cy + r, stroke: '#868e96', 'stroke-width': 0.75, 'pointer-events': 'none' }, g);
+                });
+            }
+            [c1, c2].forEach(function (cx, j) {
+                if (j === 1 && c2 === c1) { return; }
+                el('circle', { cx: cx, cy: cy, r: 2, fill: '#212529', 'pointer-events': 'none' }, g);
+            });
+            var lt = el('text', { x: (c1 + c2) / 2, y: Y(0) + 18, 'text-anchor': 'middle', 'class': 'calc-dark' }, svg);
+            lt.textContent = label;
+            return { cy: cy, c1: c1, c2: c2, R: R };
+        }
+
+        /* truck deck */
+        el('line', { x1: 2, x2: W - 2, y1: Y(0), y2: Y(0), stroke: '#212529', 'stroke-width': 2.5 }, svg);
+
+        /* circular roll */
+        var cHigh = !s.circFitsH;
+        var xc = (s.Dc + s.p) / 2;
+        var circ = roll(xc, xc, s.Dc, 'Circular roll', 'Circular roll, ' + first(dim(s.Dc + s.p)) + ' high', cHigh);
+        var dl = el('text', { x: circ.c1, y: Y(0) + 34, 'text-anchor': 'middle', 'class': cHigh ? 'calc-bad' : '' }, svg);
+        dl.textContent = first(dim(s.Dc + s.p)) + ' high' + (cHigh ? ', over the limit' : '');
+
+        /* racetrack (figure 8) roll on the entered core spacing */
+        var xs = s.Dc + s.p + gap + (s.Dr + s.p) / 2, rHigh = !s.raceFitsH;
+        var rr = roll(xs, xs + s.C, s.Dr, 'Racetrack (figure 8) roll',
+            'Racetrack roll, ' + first(dim(s.Dr + s.p)) + ' high and ' + first(dim(s.C + s.Dr + s.p)) + ' long', rHigh);
+        /* core centre distance through the hollow between the cores */
+        var cyM = rr.cy, a = rr.c1, b = rr.c2;
+        hover(el('line', { x1: a, x2: b, y1: cyM, y2: cyM, stroke: '#212529', 'stroke-width': 1.5, 'stroke-dasharray': '4 3' }, svg),
+            'Core centre distance ' + first(dim(s.C)));
+        var ct = el('text', { x: (a + b) / 2, y: cyM - 6, 'text-anchor': 'middle', 'class': 'calc-on-fill' }, svg);
+        ct.textContent = first(dim(s.C)) + ' apart';
+        if (ct.getComputedTextLength() > b - a) { svg.removeChild(ct); }     /* shown only where it fits between the core centres */
+        /* overall length below the deck */
+        var yl = Y(0) + 44, xa = X(xs - s.Dr / 2 - s.p / 2), xb = X(xs + s.C + s.Dr / 2 + s.p / 2);
+        el('line', { x1: xa, x2: xb, y1: yl, y2: yl, stroke: '#6c757d', 'stroke-width': 1 }, svg);
+        [xa, xb].forEach(function (xx) { el('line', { x1: xx, x2: xx, y1: yl - 4, y2: yl + 4, stroke: '#6c757d', 'stroke-width': 1 }, svg); });
+        var rh = el('text', { x: (xa + xb) / 2, y: Y(0) + 34, 'text-anchor': 'middle', 'class': rHigh ? 'calc-bad' : '' }, svg);
+        rh.textContent = first(dim(s.Dr + s.p)) + ' high' + (rHigh ? ', over the limit' : '');
+        var ol = el('text', { x: (xa + xb) / 2, y: yl + 16, 'text-anchor': 'middle' }, svg);
+        ol.textContent = first(dim(s.C + s.Dr + s.p)) + ' long';
+
+        /* maximum roll height */
+        var yH = Y(s.H);
+        hover(el('line', { x1: 2, x2: W - 2, y1: yH, y2: yH, stroke: '#b02a37', 'stroke-width': 1.5, 'stroke-dasharray': '6 4' }, svg),
+            'Maximum roll height ' + first(dim(s.H)));
+        var hl = el('text', { x: W - 4, y: yH - 6, 'text-anchor': 'end', 'class': 'calc-on-fill' }, svg);
+        hl.textContent = 'Maximum roll height ' + first(dim(s.H));
+
+        /* scale bar */
+        var len = niceLength(Math.max(widthM, topM) / 5), yb = H - 12;
+        el('line', { x1: 4, x2: 4 + len * k, y1: yb, y2: yb, stroke: '#212529', 'stroke-width': 2 }, svg);
+        [0, len / 2, len].forEach(function (q) { el('line', { x1: 4 + q * k, x2: 4 + q * k, y1: yb - 5, y2: yb + 1, stroke: '#212529', 'stroke-width': 1 }, svg); });
+        el('text', { x: 4 + len * k + 8, y: yb + 4 }, svg).textContent = first(dim(len));
+    }
+
+    var resizeTimer = null;
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(renderDrawing, 120);
+    });
+
+    /* ── Events ── */
+    numInputs.forEach(function (e) {
+        e.addEventListener('input', function () {
+            readInput(e);
+            if (e.id === 'Cr') { cAuto = e.value.trim() === ''; }
+            compute();
+        });
+    });
+    form.addEventListener('submit', function (e) { e.preventDefault(); });
+    $('units').addEventListener('change', function () {
+        sys = this.value;
+        numInputs.forEach(display);
+        document.querySelectorAll('[data-unit]').forEach(function (s) { s.textContent = UNIT[s.getAttribute('data-unit')][sys]; });
+        compute();
+    });
+
+    /* The bottom result bar hides while the results are on screen */
+    var bar = $('calcBar');
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) { bar.hidden = e.isIntersecting; });
+        }, { rootMargin: '0px 0px -15% 0px' }).observe($('results'));
+    }
+
+    /* ── Start from the example values (metric), whatever the browser restored ── */
+    numInputs.forEach(function (e) {
+        var v = e.getAttribute('value');
+        e.value = v === null ? '' : v;
+        readInput(e);
+    });
+    form.querySelectorAll('select').forEach(function (s) {
+        var sel = s.querySelector('option[selected]');
+        if (sel) { s.value = sel.value; }
+    });
+    compute();
+})();
+</script>
+
+</body>
+</html>
