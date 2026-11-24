@@ -38,7 +38,8 @@
         ['05-calculator-vertical-curve-radius.html', 'Calculator 5', 'Vertical Curve Radius', 'Concave or convex curve radius in each load case, with a nominal radius check.'],
         ['06-calculator-horizontal-curve-radius.html', 'Calculator 6', 'Horizontal Curve Radius', 'Radius the idler banking allows on the carry or return strand, with edge tension and belt drift.'],
         ['07-calculator-transition-distance.html', 'Calculator 7', 'Transition Distance', 'Strain-based transition length for full or half trough pulleys, with the transition idler layout.'],
-        ['08-calculator-stockpile-capacity.html', 'Calculator 8', 'Stockpile Capacity', 'Capacity of six pile shapes, live and dead capacity over the reclaim feeders, and stacking and reclaim times.']
+        ['08-calculator-stockpile-capacity.html', 'Calculator 8', 'Stockpile Capacity', 'Capacity of six pile shapes, live and dead capacity over the reclaim feeders, and stacking and reclaim times.'],
+        ['09-calculator-belt-rating-converter.html', 'Calculator 9', 'Belt Rating Converter', 'Belt ratings in kN/m and PIW, equivalent classes across carcasses, allowable tensions, and cover thickness and grade.']
     ];
 
     /* "chapter04.html", "chapter04" (clean URLs) and "/" all resolve sensibly */

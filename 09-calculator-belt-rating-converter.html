@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator 9 Belt Rating Converter – Modern Conveyor Handbook</title>
+    <meta name="description" content="Belt rating converter: ratings in kN/m, N/mm, PIW and kgf/cm, equivalent fabric, aramid, solid woven and steel cord classes, allowable tensions, pulley diameters, cover thickness, cover grades and belt mass.">
+    <meta name="author" content="Matthew Malone">
+    <link rel="canonical" href="https://www.conveyorhandbook.com/09-calculator-belt-rating-converter.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Calculator 9 Belt Rating Converter – Modern Conveyor Handbook">
+    <meta property="og:description" content="Belt rating converter: ratings in kN/m, N/mm, PIW and kgf/cm, equivalent fabric, aramid, solid woven and steel cord classes, allowable tensions, pulley diameters, cover thickness, cover grades and belt mass.">
+    <meta property="og:url" content="https://www.conveyorhandbook.com/09-calculator-belt-rating-converter.html">
+    <meta property="og:site_name" content="Modern Conveyor Handbook">
+    <meta property="og:locale" content="en_AU">
+    <meta property="article:published_time" content="2026-11-24T00:00:00+11:00">
+    <meta property="article:modified_time" content="2026-11-24T00:00:00+11:00">
+    <meta property="article:author" content="Matthew Malone">
+    <meta property="article:section" content="Engineering">
+    <meta property="article:tag" content="conveyors">
+    <meta property="article:tag" content="conveyor belts">
+    <meta property="article:tag" content="belt rating">
+    <meta property="article:tag" content="engineering calculator">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Calculator 9 Belt Rating Converter – Modern Conveyor Handbook">
+    <meta name="twitter:description" content="Belt rating converter: ratings in kN/m, N/mm, PIW and kgf/cm, equivalent fabric, aramid, solid woven and steel cord classes, allowable tensions, pulley diameters, cover thickness, cover grades and belt mass.">
+
+    <link rel="icon" type="image/svg+xml" href="ico/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+    <link rel="home" href="https://www.conveyorhandbook.com/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "TechArticle",
+                "headline": "Calculator 9 Belt Rating Converter",
+                "description": "Belt rating converter: ratings in kN/m, N/mm, PIW and kgf/cm, equivalent fabric, aramid, solid woven and steel cord classes, allowable tensions, pulley diameters, cover thickness, cover grades and belt mass.",
+                "author": { "@type": "Person", "name": "Matthew Malone" },
+                "copyrightYear": "2026",
+                "copyrightHolder": { "@type": "Person", "name": "Matthew Malone" },
+                "publisher": { "@type": "Organization", "@id": "https://www.conveyorhandbook.com/#organization", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "datePublished": "2026-11-24",
+                "dateModified": "2026-11-24",
+                "mainEntityOfPage": "https://www.conveyorhandbook.com/09-calculator-belt-rating-converter.html",
+                "isPartOf": { "@type": "WebSite", "@id": "https://www.conveyorhandbook.com/#website", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "inLanguage": "en-AU",
+                "about": { "@type": "Thing", "name": "Calculator 9 Belt Rating Converter" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Modern Conveyor Handbook", "item": "https://www.conveyorhandbook.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Calculator 9 Belt Rating Converter", "item": "https://www.conveyorhandbook.com/09-calculator-belt-rating-converter.html" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+    <link rel="stylesheet" href="handbook.css">
+    <style>
+        /* Calculator page: only what Bootstrap's classes and handbook.css do not cover */
+        .calc-page { padding-bottom: 6rem; }
+        .calc-group { margin: 2rem 0 0.25rem; }
+
+        /* One input or result per row: label and hint on the left, field or value on the right */
+        .calc-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            column-gap: 1.5rem;
+            row-gap: 0.35rem;
+            align-items: center;
+            padding: 0.6rem 0.5rem;
+            border-bottom: 1px solid var(--bs-border-color);
+        }
+        .calc-row > label { margin: 0; }
+        .calc-hint { display: block; margin-top: 0.1rem; font-size: 0.8125rem; font-weight: 400; color: var(--bs-secondary-color); }
+        .calc-num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+        .input-group > .form-select.calc-dir { flex: 0 0 8.5rem; width: 8.5rem; }
+        @media (max-width: 575.98px) {
+            .calc-row { grid-template-columns: minmax(0, 1fr); padding-left: 0; padding-right: 0; }
+        }
+        #results { scroll-margin-top: 1rem; }
+        #eqBody th[scope="row"], #wtBody th[scope="row"], #conBody th[scope="row"], #gradeBody th[scope="row"] { min-width: 10rem; }
+        @media (max-width: 575.98px) {
+            #eqBody .calc-num, #wtBody .calc-num, #pulBody .calc-num, #conBody .calc-num, #gradeBody .calc-num { white-space: normal; }
+            #eqBody th[scope="row"], #wtBody th[scope="row"], #conBody th[scope="row"], #gradeBody th[scope="row"] { min-width: 6.5rem; }
+        }
+
+        /* Charts */
+        .calc-drawing { position: relative; }
+        .calc-drawing svg { display: block; width: 100%; overflow: visible; }
+        .calc-drawing text { font-size: 12px; fill: var(--bs-secondary-color); font-variant-numeric: tabular-nums; }
+        .calc-drawing text.calc-dark { fill: #212529; }
+        .calc-drawing text.calc-group-label { fill: #212529; font-weight: 600; font-size: 13px; }
+        .calc-drawing text.calc-gov { fill: #212529; font-weight: 600; }
+        .calc-drawing text.calc-halo { paint-order: stroke; stroke: var(--bs-body-bg); stroke-width: 4px; stroke-linejoin: round; }
+        .calc-tip {
+            position: absolute;
+            z-index: 5;
+            padding: 0.3rem 0.55rem;
+            border: 1px solid var(--bs-border-color);
+            border-radius: var(--bs-border-radius-sm);
+            background: var(--bs-body-bg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            max-width: min(360px, 90vw);
+            font-size: 0.8rem;
+            white-space: pre-line;
+            pointer-events: none;
+        }
+
+        /* Result bar fixed to the bottom of the window while the inputs are on screen */
+        .calc-bar {
+            position: fixed;
+            left: 260px;
+            right: 0;
+            bottom: 0;
+            z-index: 1010;
+            padding: 0.6rem 3rem;
+            border-top: 1px solid var(--bs-border-color);
+            background: var(--bs-body-bg);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.06);
+        }
+        @media (max-width: 991.98px) {
+            .calc-bar { left: 0; padding: 0.55rem 1rem; }
+        }
+        @media print {
+            .calc-page { padding-bottom: 0; }
+            .calc-bar, .calc-tip { display: none !important; }
+            .calc-drawing svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Contents
+    </button>
+</div>
+
+<nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
+    <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="chapterMenuBtn" aria-expanded="false" aria-controls="chapterMenu">Chapters</button>
+    </p>
+    <div class="chapter-menu" id="chapterMenu"></div>
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="calcMenuBtn" aria-expanded="false" aria-controls="calcMenu">Calculators</button>
+    </p>
+    <div class="chapter-menu" id="calcMenu"></div>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-3">Table of Contents</p>
+    <div class="toc">
+        <a href="#calculator-9-belt-rating-converter">1. Calculator 9. Belt Rating Converter</a>
+        <a href="#inputs">2. Inputs</a>
+        <a href="#results">3. Results</a>
+    </div>
+</nav>
+
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+<main class="main-content calc-page" id="main" tabindex="-1">
+
+    <section id="calculator-9-belt-rating-converter">
+        <h1 class="mb-3">1. Calculator 9. Belt Rating Converter</h1>
+        <p>Converts a belt rating between breaking strength and working tension in kN/m, N/mm, PIW and kgf/cm, and names the equivalent fabric, solid woven and steel cord classes. It gives the allowable working and peak tension for the splice and duty, or the class a belt tension needs, with the minimum pulley diameters, troughing limit, belt mass, top cover for the duty and cover grade equivalents.</p>
+        <noscript><div class="alert alert-warning">This calculator needs JavaScript.</div></noscript>
+    </section>
+
+    <form id="calcForm" autocomplete="off" novalidate>
+    <section id="inputs">
+        <h2 class="border-top pt-4 mt-5">2. Inputs</h2>
+
+        <div>
+            <div class="calc-row mt-3">
+                <label for="units">Units</label>
+                <select class="form-select" id="units">
+                    <option value="met" selected>Metric</option>
+                    <option value="imp">Imperial</option>
+                </select>
+            </div>
+
+            <h3 class="h5 calc-group">Belt Rating</h3>
+            <div class="calc-row">
+                <label for="carc">Carcass</label>
+                <select class="form-select" id="carc">
+                    <option value="ep" selected>Multi-ply fabric, plain weave (EP, PN)</option>
+                    <option value="cf">Multi-ply fabric, crow's foot weave</option>
+                    <option value="dw">Multi-ply fabric, double weave</option>
+                    <option value="nn">Multi-ply nylon fabric (NN)</option>
+                    <option value="ee">Multi-ply polyester fabric (EE)</option>
+                    <option value="cc">Multi-ply cotton fabric (CC)</option>
+                    <option value="wp">Straight-warp fabric</option>
+                    <option value="ar">Aramid (DP)</option>
+                    <option value="sw">Solid woven, PVC covers (PVC)</option>
+                    <option value="pvg">Solid woven, rubber covers (PVG)</option>
+                    <option value="st">Steel cord (ST)</option>
+                </select>
+            </div>
+            <div class="calc-row">
+                <label for="basis">Rating to convert</label>
+                <select class="form-select" id="basis">
+                    <option value="ult" selected>Breaking strength, kN/m or N/mm</option>
+                    <option value="ultpiw">Breaking strength, PIW</option>
+                    <option value="kgf">Breaking strength, kgf/cm</option>
+                    <option value="wkn">Working tension, kN/m</option>
+                    <option value="wpiw">Working tension, PIW</option>
+                    <option value="wply">Working tension per ply, PIW</option>
+                    <option value="need">Belt tension and width (the class needed)</option>
+                </select>
+            </div>
+            <div class="calc-row" data-show="val">
+                <label for="val"><span id="val-label">Breaking strength</span><span class="calc-hint" id="val-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="val" data-kind="raw" min="0" step="any" value="630">
+                    <span class="input-group-text" id="val-unit">kN/m</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="plies">
+                <label for="plies">Number of plies</label>
+                <input type="number" class="form-control" id="plies" data-kind="n" min="1" step="1" value="3">
+            </div>
+            <div class="calc-row">
+                <label for="sf">Safety factor<span class="calc-hint" id="sf-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="sf" data-kind="n" min="0" step="any" value="10">
+                    <span class="input-group-text">:1</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Splice and Duty</h3>
+            <div class="calc-row" data-show="fabric">
+                <label for="splice">Splice</label>
+                <select class="form-select" id="splice">
+                    <option value="vulc" selected>Vulcanised</option>
+                    <option value="fast">Mechanical fasteners</option>
+                </select>
+            </div>
+            <div class="calc-row" data-show="cond">
+                <label for="cond">Operating conditions<span class="calc-hint" id="cond-hint"></span></label>
+                <select class="form-select" id="cond">
+                    <option value="std" selected>Standard</option>
+                    <option value="sev">Severe: short cycles, frequent loaded starts or heavy impact</option>
+                    <option value="ext">Extreme: poor maintenance, hot or chemically aggressive</option>
+                </select>
+            </div>
+            <div class="calc-row">
+                <label for="B">Belt width<span class="calc-hint" id="B-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="B" data-kind="mm" min="0" step="any" value="1000" list="B-list">
+                    <datalist id="B-list"></datalist>
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="T">Maximum belt tension<span class="calc-hint" id="T-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="T" data-kind="kN" min="0" step="any" value="45">
+                    <span class="input-group-text" data-unit="kN">kN</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Top Cover Duty</h3>
+            <div class="calc-row">
+                <label for="abr">Material abrasiveness<span class="calc-hint">Sets the top cover for the duty</span></label>
+                <select class="form-select" id="abr">
+                    <option value="none">Not set: covers from the rating</option>
+                    <option value="light">Lightly abrasive: woodchips, coal, grain</option>
+                    <option value="mod" selected>Moderately abrasive: sand, anthracite, gravel</option>
+                    <option value="heavy">Heavily abrasive: limestone, phosphate, slag</option>
+                    <option value="ext">Extremely abrasive: glass cullet, granite, quartz</option>
+                </select>
+            </div>
+            <div class="calc-row" data-show="duty">
+                <label for="lump">Largest lump size</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="lump" data-kind="mm" min="0" step="any" value="125">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="duty">
+                <label for="len">Conveyor centres<span class="calc-hint">With the belt speed, gives the cycle time</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="len" data-kind="m" min="0" step="any" value="150">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="duty">
+                <label for="spd">Belt speed</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="spd" data-kind="ms" min="0" step="any" value="2.5">
+                    <span class="input-group-text" data-unit="ms">m/s</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="duty">
+                <label for="drop">Drop height onto the belt<span class="calc-hint">Over 1.5 m adds 25% to the top cover</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="drop" data-kind="m" min="0" step="any" value="1">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="brk">
+                <label for="brk">Transverse breakers</label>
+                <select class="form-select" id="brk">
+                    <option value="none" selected>None: adds 3 mm to the top cover</option>
+                    <option value="yes">Fitted</option>
+                </select>
+            </div>
+
+            <h3 class="h5 calc-group">Construction</h3>
+            <div class="calc-row">
+                <label for="trough">Trough angle<span class="calc-hint">For the troughability check</span></label>
+                <select class="form-select" id="trough">
+                    <option value="0">Flat belt</option>
+                    <option value="20">20 deg</option>
+                    <option value="35" selected>35 deg</option>
+                    <option value="45">45 deg</option>
+                </select>
+            </div>
+            <div class="calc-row">
+                <label for="comp">Cover compound<span class="calc-hint">Sets the cover mass and grade</span></label>
+                <select class="form-select" id="comp"></select>
+            </div>
+            <div class="calc-row">
+                <label for="ct">Top cover<span class="calc-hint" id="ct-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="ct" data-kind="cov" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="cov">mm</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="cb">Bottom cover<span class="calc-hint" id="cb-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="cb" data-kind="cov" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="cov">mm</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    </form>
+
+    <section id="results">
+        <h2 class="border-top pt-4 mt-5">3. Results</h2>
+        <div class="alert alert-warning mt-3" role="note">
+            <p class="mb-0"><span class="fw-semibold">Check with the supplier.</span> Belt data varies between manufacturers; these results are a guide only.</p>
+        </div>
+        <div class="alert alert-danger" id="resultError" role="alert" hidden></div>
+        <div id="resultBody">
+            <figure class="mt-4 mb-4">
+                <figcaption class="small fw-semibold mb-2">Working Tension per Unit Width</figcaption>
+                <div class="calc-drawing" id="bars"></div>
+            </figure>
+            <div class="calc-tip" id="tip" hidden></div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Equivalent Ratings</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody id="eqBody"></tbody>
+                </table>
+            </div>
+            <figure class="mt-5 mb-4">
+                <figcaption class="small fw-semibold mb-2">Standard Classes by Breaking Strength</figcaption>
+                <div class="calc-drawing" id="ladder"></div>
+            </figure>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Working Tension</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Per Unit Width</th>
+                            <th scope="col" id="wtHead">Belt</th>
+                        </tr>
+                    </thead>
+                    <tbody id="wtBody"></tbody>
+                </table>
+            </div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold" id="pulCap">Minimum Pulley Diameters</caption>
+                    <thead class="table-light" id="pulHead"></thead>
+                    <tbody id="pulBody"></tbody>
+                </table>
+            </div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold" id="conCap">Belt Construction</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody id="conBody"></tbody>
+                </table>
+            </div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Cover Grade Equivalents</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody id="gradeBody"></tbody>
+                </table>
+            </div>
+            <div class="alert alert-warning mt-4" id="warnBox" hidden>
+                <p class="fw-semibold mb-2">Check</p>
+                <ul class="mb-0 ps-3" id="warnList"></ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="calc-bar d-print-none" id="calcBar">
+        <div class="d-flex flex-wrap align-items-baseline column-gap-3 row-gap-1">
+            <span class="fw-semibold" id="barLabel">Rating</span>
+            <span class="fs-5 fw-semibold calc-num" id="barValue" role="status"></span>
+            <a href="#results" class="small">Results</a>
+        </div>
+    </div>
+
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
+        Published <time datetime="2026-11-24">24 November 2026</time><br>
+        Updated <time datetime="2026-11-24">24 November 2026</time><br>
+        &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>
+    </footer>
+
+</main>
+
+<script src="chapters.js"></script>
+<script>
+/* Calculator 9 Belt Rating Converter. Plain JavaScript. Strengths and tensions per unit width are held in kN/m (equal to N/mm),
+   tensions in kN, widths in m and cover thicknesses in mm.
+   Conversions: 1 kN/m = 1 N/mm = 5.710147 lbf/in (PIW) = 1.019716 kgf/cm. Working tension = breaking strength / safety factor.
+   Allowable working tension = working tension x splice factor (0.75 for mechanical fasteners on fabric) x conditions factor
+   (1.00 standard, 0.85 severe, 0.70 extreme); allowable peak on starting or braking = 140%, 150% or 160% of it.
+   Equivalent classes carry the same working tension: fabric and solid woven at 10:1, steel cord at 6.7:1. A stepped fabric
+   splice has (n - 1) / n of the belt strength. Minimum pulley diameters follow the ISO 3684 types for the tension ratio, the
+   maximum belt tension over the rated working tension. */
+(function () {
+    'use strict';
+
+    var PIW = 5.710147, KGF = 1.019716;
+    /* Plain weave fabric classes with their ply counts */
+    var EP4 = [[315, 2], [400, 2], [500, 3], [630, 3], [800, 4], [1000, 4], [1250, 5], [1600, 5], [2000, 5], [2500, 5], [3150, 5]];
+    /* Straight-warp and aramid: typical classes [strength, plies] across their usual ranges (straight-warp to 3150, aramid 630 to 3150) */
+    var WP = [[630, 1], [800, 1], [1000, 1], [1250, 1], [1600, 1], [1600, 2], [2000, 2], [2500, 2], [3150, 2]];
+    var AR = [[630, 1], [800, 1], [1000, 1], [1250, 1], [1600, 1], [2000, 1], [2500, 1], [3150, 1]];
+    /* Other plain weave fabrics: nylon (NN, to 2000), polyester-polyester (EE, to 900) and cotton (CC, to 400), typical classes */
+    var NN = EP4.filter(function (r) { return r[0] <= 2000; }), EE = EP4.filter(function (r) { return r[0] <= 800; });
+    var CC = [[160, 2], [200, 2], [250, 3], [315, 3], [400, 4]];
+    /* Solid woven carcass without covers (with its PVC impregnation): strength kN/m, mass kg/m2, thickness mm */
+    var CARC_SWC = [[630, 7.8, 4.6], [800, 9.5, 5.8], [1000, 11.1, 6.9], [1250, 11.7, 7.4], [1600, 13.3, 8.6], [1800, 14.5, 9.6], [2000, 16.0, 10.8], [2500, 18.5, 12.5]];
+    /* What each carcass is: warp and weft, and its use */
+    var CARC_USE = {
+        ep: 'Polyester warp, nylon weft; the standard construction, with low stretch, good impact resistance and fastener holding',
+        cf: "Polyester warp, nylon weft; the interlocking crow's foot weave resists rips and tears, for heavy duty and large lumps",
+        dw: 'Polyester warp, nylon weft; each ply is a two-layer interlocked weave, for high-abuse duty and fastener holding',
+        nn: 'Nylon warp and weft; high stretch, used for flexibility, a low modulus or high pH resistance',
+        ee: 'Polyester warp and weft; for high acid resistance, but stiffer across the belt than EP',
+        cc: 'Cotton warp and weft; low strength, for plasterboard and hot pellets; absorbs moisture and can mildew',
+        wp: 'Polyester or nylon warp held straight, nylon weft; high impact and rip resistance, low stretch',
+        ar: 'Aramid warp, nylon weft; low stretch, high strength and low mass, non-magnetic and corrosion resistant',
+        sw: 'Nylon or polyester and cotton, woven as one and PVC impregnated; cannot delaminate, fire resistant and anti-static',
+        pvg: 'Solid woven PVC carcass with nitrile rubber covers; more drive friction and abrasion resistance than PVC covers',
+        st: 'Steel wire ropes in rubber; the least stretch and the highest ratings, vulcanised splices only'
+    };
+    /* Short grade names for the belt specification line */
+    var SPEC_GRADE = ['low rolling resistance', 'Grade A (DIN W)', 'Grade N (DIN Y)', 'Grade M (DIN X)', 'cold weather', 'heat resistant', 'heat resistant (chlorobutyl)',
+        'oil resistant (NBR)', 'oil resistant (CR)', 'Grade F (DIN K)', 'Grade S (AS 4606)', 'ceramic embedded'];
+    /* Nominal ply fabrics: a belt of n plies uses the smallest fabric with n times its rating at least 93% of the belt rating */
+    var PLY_FAB = [63, 80, 100, 125, 160, 200, 250, 315, 400, 500, 630];
+    /* Elastic stretch at the rated working tension, %: polyester straight-warp, and aramid straight-warp to conventional weave */
+    var STRETCH = { wp: [0.5, 1.0], ar: [0.15, 0.40], nn: [1.5, 2.0], cc: [1.0, 2.0], sw: [0.75, 2.0], pvg: [0.75, 1.5] };
+    /* Standard widths: ISO 251, mm, and imperial (CEMA), in, sold in Australia as 25 mm per inch (450, 600, 750 ... 2400 mm) */
+    var ISO251 = [300, 400, 500, 600, 650, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400, 2600, 2800, 3000, 3200];
+    var CEMA = [18, 24, 30, 36, 42, 48, 54, 60, 72, 84, 96];
+    /* Top cover thickness, mm [low, high]: rows by cycle time (to 15, 30, 60, 120 and from 180 s), columns by lump size (10, 50, 125, 200, 300 mm) */
+    var CYC = [15, 30, 60, 120, 180], LUMP = [10, 50, 125, 200, 300];
+    var TOPC = {
+        light: [[[1, 2], [3, 5], [6, 7], [8, 10], [10, 12]], [[1, 2], [3, 4], [5, 6], [6, 8], [8, 10]], [[1, 2], [2, 3], [4, 5], [5, 6], [7, 8]],
+            [[1, 2], [2, 3], [3, 4], [5, 6], [6, 7]], [[1, 2], [1, 2], [3, 4], [4, 5], [5, 6]]],
+        mod: [[[1, 2], [4, 5], [7, 10], [9, 12], [11, 15]], [[1, 2], [3, 4], [5, 8], [7, 10], [9, 12]], [[1, 2], [3, 4], [5, 6], [6, 8], [7, 10]],
+            [[1, 2], [2, 3], [4, 6], [5, 7], [6, 9]], [[1, 2], [2, 3], [4, 5], [5, 6], [6, 8]]],
+        heavy: [[[2, 4], [4, 7], [7, 10], [10, 15], [12, 19]], [[2, 3], [3, 6], [6, 10], [8, 12], [10, 15]], [[1, 3], [3, 5], [5, 8], [6, 10], [8, 13]],
+            [[1, 2], [2, 4], [4, 7], [6, 9], [7, 11]], [[1, 2], [2, 4], [4, 6], [5, 8], [6, 10]]],
+        ext: [[[3, 6], [4, 10], [8, 15], [10, 19], [13, 23]], [[2, 5], [4, 8], [6, 12], [8, 15], [10, 18]], [[2, 4], [3, 6], [5, 10], [7, 13], [9, 15]],
+            [[2, 4], [3, 6], [5, 7], [6, 11], [8, 13]], [[2, 3], [2, 5], [4, 8], [5, 10], [7, 12]]]
+    };
+    var ABR = { light: 'lightly abrasive', mod: 'moderately abrasive', heavy: 'heavily abrasive', ext: 'extremely abrasive' };
+    var EP_SERIES = [160, 200, 250, 315, 400, 500, 630, 800, 1000, 1250, 1600, 2000, 2500, 3150];
+    /* Minimum pulley diameters, mm: [strength, plies, A B C above 60%, A B C 30 to 60%, A B C below 30%] */
+    var PUL = {
+        ep: [[315, 2, [315, 250, 200, 250, 200, 160, 200, 160, 125]], [400, 2, [400, 315, 250, 315, 250, 200, 250, 200, 160]], [500, 3, [500, 400, 315, 400, 315, 250, 315, 250, 200]],
+            [630, 3, [630, 500, 400, 500, 400, 315, 400, 315, 250]], [800, 4, [800, 630, 500, 630, 500, 400, 500, 400, 315]], [1000, 4, [1000, 800, 630, 800, 630, 500, 630, 500, 400]],
+            [1250, 5, [1250, 1000, 800, 1000, 800, 630, 800, 630, 500]], [1600, 5, [1600, 1250, 1000, 1250, 1000, 800, 1000, 800, 630]],
+            [2000, 5, [2000, 1600, 1250, 1600, 1250, 1000, 1250, 1000, 800]], [2500, 5, [2500, 2000, 1600, 2000, 1600, 1250, 1600, 1250, 1000]]],
+        cf: [[750, 2, [630, 500, 400, 500, 400, 315, 400, 315, 250]], [800, 2, [630, 500, 400, 500, 400, 315, 400, 315, 250]], [1000, 3, [800, 630, 500, 630, 500, 400, 500, 400, 315]],
+            [1200, 3, [800, 630, 500, 630, 500, 400, 500, 400, 315]], [1250, 4, [1000, 800, 630, 800, 630, 500, 630, 500, 400]], [1500, 3, [1000, 800, 630, 800, 630, 500, 630, 500, 400]],
+            [1500, 4, [1000, 800, 630, 800, 630, 500, 630, 500, 400]], [1600, 5, [1250, 1000, 800, 1000, 800, 630, 800, 630, 500]], [1800, 4, [1250, 1000, 800, 1000, 800, 630, 800, 630, 500]],
+            [1800, 5, [1250, 1000, 800, 1000, 800, 630, 800, 630, 500]], [2250, 5, [1600, 1250, 1000, 1250, 1000, 800, 1000, 800, 630]]],
+        dw: [[900, 2, [630, 500, 400, 500, 400, 315, 400, 315, 250]], [1350, 3, [1000, 800, 630, 800, 630, 500, 630, 500, 400]]],
+        st: [[500, 0, [400, 315, 250, 315, 250, 200, 250, 200, 160]], [800, 0, [500, 400, 315, 400, 315, 250, 315, 250, 200]], [1000, 0, [630, 500, 400, 500, 400, 315, 400, 315, 250]],
+            [1600, 0, [800, 630, 500, 630, 500, 400, 500, 400, 315]], [2000, 0, [1000, 800, 630, 800, 630, 500, 630, 500, 400]], [2500, 0, [1120, 900, 710, 900, 710, 560, 710, 560, 450]],
+            [3150, 0, [1250, 1000, 800, 1000, 800, 630, 800, 630, 500]], [4000, 0, [1400, 1120, 900, 1120, 900, 710, 900, 710, 560]], [5000, 0, [1600, 1250, 1000, 1250, 1000, 800, 1000, 800, 630]],
+            [6300, 0, [2000, 1600, 1250, 1600, 1250, 1000, 1250, 1000, 800]], [7100, 0, [2200, 1800, 1400, 1800, 1400, 1120, 1400, 1120, 900]],
+            [8000, 0, [2400, 2000, 1600, 2000, 1600, 1250, 1600, 1250, 1000]], [10000, 0, [2800, 2200, 1800, 2200, 1800, 1400, 1800, 1400, 1120]]],
+        sw: [[600, 0, [400, 315]], [800, 0, [500, 400]], [1000, 0, [630, 500]], [1250, 0, [800, 630]], [1600, 0, [800, 630]], [2000, 0, [1000, 800]], [2625, 0, [1250, 900]], [3150, 0, [1500, 1000]]]
+    };
+    PUL.nn = PUL.ee = PUL.cc = PUL.ep; PUL.pvg = PUL.sw;            /* other plain weaves use the EP values; PVG the solid woven values */
+    /* Nominal imperial pulley sizes, in */
+    var NOM = { 125: 5, 160: 6, 200: 8, 250: 10, 315: 12, 400: 16, 450: 18, 500: 20, 560: 22, 630: 24, 710: 28, 800: 32, 900: 36, 1000: 40, 1120: 45, 1250: 48,
+        1400: 56, 1500: 60, 1600: 64, 1800: 72, 2000: 80, 2200: 88, 2400: 96, 2500: 100, 2800: 112 };
+    /* Solid woven: PIW class, working kN/m, breaking kN/m, weft breaking kN/m, thickness mm and mass kg/m2 with 1 mm PVC covers each side */
+    var SW = [[3000, 50, 500, 245, 7.7, 10.5], [3300, 58, 580, 245, 8.0, 10.7], [3500, 63, 630, 263, 8.1, 11.0], [4000, 70, 700, 263, 8.4, 11.0], [4500, 80, 800, 315, 8.5, 11.0],
+        [5000, 87, 875, 320, 9.0, 11.3], [6000, 105, 1050, 350, 9.6, 11.7], [6500, 114, 1140, 350, 9.6, 12.1], [7000, 125, 1250, 350, 10.5, 13.0], [8000, 140, 1400, 350, 11.3, 14.4],
+        [9000, 160, 1600, 450, 12.2, 15.1], [10000, 175, 1750, 450, 13.1, 15.9], [12000, 210, 2100, 450, 14.0, 18.5], [15000, 262, 2625, 450, 15.3, 19.6], [18000, 315, 3150, 450, 17.6, 23.8]];
+    /* Steel cord: class, cord diameter mm, cord pitch mm, minimum cover each side mm (0 where not tabulated) */
+    var ST = [[500, 2.6, 13.8, 4], [560, 2.8, 13.8, 4], [630, 3.0, 13.8, 4], [710, 3.1, 13.8, 4], [800, 3.4, 13.8, 4], [900, 3.8, 15.3, 4], [1000, 4.0, 15.3, 4], [1120, 4.2, 15.3, 4],
+        [1250, 4.5, 15.3, 5], [1400, 4.8, 15.3, 5], [1600, 5.5, 17.3, 5], [1800, 6.0, 17.3, 5], [2000, 6.4, 17.3, 5], [2240, 6.8, 17.3, 5], [2500, 7.4, 19.4, 6], [2800, 8.0, 19.4, 6],
+        [3150, 8.6, 19.4, 6], [3500, 9.1, 19.4, 0], [3550, 9.2, 19.4, 7], [4000, 9.8, 19.4, 7], [4500, 10.4, 19.4, 8], [5000, 11.0, 19.4, 8], [5400, 11.6, 20.0, 0], [5600, 11.8, 19.4, 9],
+        [6300, 12.8, 20.0, 9], [7000, 13.5, 22.0, 0], [7500, 14.0, 22.0, 0], [8000, 14.8, 22.0, 0], [8500, 15.2, 24.0, 0], [9000, 15.8, 24.0, 0], [10000, 17.0, 24.0, 0]];
+    /* Carcass mass kg/m2 and thickness mm against breaking strength */
+    var CARC_EP = [[250, 2.8, 2.2], [400, 4.4, 3.3], [630, 5.1, 3.9], [800, 6.8, 5.3], [1000, 7.7, 6.1], [1250, 9.6, 7.8], [1600, 11.9, 9.3], [2000, 14.5, 11.0], [2500, 18.0, 13.5]];
+    var CARC_ST = [[500, 8.0, 4.0], [800, 11.0, 4.5], [1000, 14.0, 5.5], [1250, 16.0, 6.0], [1600, 18.0, 6.5], [2000, 20.0, 7.0], [2500, 23.0, 8.0], [3150, 27.0, 9.0], [3500, 29.0, 9.5],
+        [4000, 32.0, 10.5], [4500, 36.0, 11.5], [5400, 42.0, 13.0], [6300, 47.0, 14.5], [7000, 52.0, 16.0], [7500, 56.0, 17.5], [8000, 60.0, 19.0], [10000, 65.0, 21.0]];
+    /* Cover compounds: name, kg/m2 per mm */
+    var COMP = [['Low rolling resistance', 1.09], ['High abrasion (SAR, DIN W)', 1.10], ['General purpose (DIN Y, RMA Grade II)', 1.11], ['Heavy impact (DIN X, RMA Grade I)', 1.11],
+        ['Cold weather', 1.11], ['Heat resistant (EPDM, SBR)', 1.05], ['Extreme heat (chlorobutyl)', 1.15], ['Oil resistant (NBR)', 1.16], ['Moderate oil resistant (CR)', 1.40],
+        ['Fire resistant, above ground (SBR, CR)', 1.40], ['Fire resistant, underground (PVC, NBR)', 1.28], ['Ceramic embedded', 1.50]];
+    /* Troughability: minimum belt width mm at 20, 35 and 45 deg */
+    var TR_FAB = { 2: [400, 450, 500], 3: [450, 500, 600], 4: [600, 750, 900], 5: [750, 900, 1050], 6: [900, 1050, 1200] };
+    var TR_SW = [[4500, [350, 400, 450]], [6500, [400, 450, 500]], [8000, [450, 500, 600]], [12000, [500, 600, 750]], [18000, [600, 750, 900]]];   /* up to PIW class */
+    var TR_ST = [[1000, [600, 600, 750]], [1400, [600, 750, 900]], [2800, [750, 900, 900]], [4500, [900, 900, 1050]], [6300, [900, 1050, 1200]], [8000, [1050, 1200, 1350]], [10000, [1200, 1350, 1500]]];
+    var FAM = {
+        ep: { name: 'plain weave fabric', sf: 10 }, cf: { name: "crow's foot fabric", sf: 10 }, dw: { name: 'double weave fabric', sf: 10 },
+        nn: { name: 'nylon fabric', sf: 10 }, ee: { name: 'polyester-polyester fabric', sf: 10 }, cc: { name: 'cotton fabric', sf: 10 },
+        wp: { name: 'straight-warp fabric', sf: 10 }, ar: { name: 'aramid', sf: 10 }, sw: { name: 'solid woven', sf: 10 }, pvg: { name: 'solid woven PVG', sf: 10 }, st: { name: 'steel cord', sf: 6.7 }
+    };
+    var COND = { std: [1, 1.4, 'standard'], sev: [0.85, 1.5, 'severe'], ext: [0.70, 1.6, 'extreme'] };
+    /* Cover grade equivalents for each compound: Australia, international, Europe, North America, most abrasion loss (ISO 4649),
+       service temperature [metric, imperial] and use */
+    var NA = '–';
+    var GRADE = [
+        [NA, NA, NA, NA, 'Lower than the standard grades; manufacturer value', ['Cold-weather versions to minus 40 deg C', 'Cold-weather versions to minus 40 deg F'], 'A manufacturer compound, mainly for the bottom cover of long horizontal conveyors'],
+        ['AS 1332 Grade A (SAR)', 'ISO 10247 Category D', 'DIN 22102 Grade W', 'No direct equivalent', '70 mm3 (Grade A), 90 mm3 (DIN W)', [-30, 70], 'Fine, sharp, sliding-abrasive material such as iron ore fines; not for heavy impact'],
+        ['AS 1332 Grade N', 'ISO 10247 Category L', 'DIN 22102 Grade Y', 'RMA Grade II', '200 mm3 (Grade N), 150 mm3 (DIN Y)', [-30, 70], 'General service: coal, sand and gravel'],
+        ['AS 1332 Grade M', 'ISO 10247 Category H', 'DIN 22102 Grade X', 'RMA Grade I', '125 mm3 (Grade M), 120 mm3 (DIN X)', [-30, 70], 'Impact, cut and gouge: ROM rock, primary crusher discharge, large sharp lumps'],
+        [NA, NA, NA, NA, 'To the abrasion grade specified', ['State the lowest service temperature', 'State the lowest service temperature'], 'No separate grade; specify the abrasion grade and the lowest service temperature'],
+        [NA, 'ISO 4195 Class 1, 2 or 3: aged at 100, 125 or 150 deg C [212, 257 or 302 deg F]', NA, NA, '200 mm3, typical', ['Continuous to 125 deg C (SBR), or 170 to 210 deg C (EPDM)', 'Continuous to 257 deg F (SBR), or 338 to 410 deg F (EPDM)'],
+            'The heat class is an ageing test, not the material temperature'],
+        [NA, 'ISO 4195 Class 3: aged at 150 deg C [302 deg F]', NA, NA, 'Fair; manufacturer value', ['Continuous to 200 deg C, peaks to 250 deg C', 'Continuous to 392 deg F, peaks to 482 deg F'], 'Extreme heat; resists cracking and oxidation'],
+        [NA, NA, NA, NA, '150 mm3, typical', [-10, 125], 'SOR (super oil resistant): mineral oils, treated coal, petroleum coke'],
+        [NA, NA, NA, NA, 'Manufacturer value', [-10, 110], 'MOR (moderate oil resistant): vegetable and animal oils, terpenes in woodchips; also flame resistant'],
+        ['AS 1332 Grade F, with Grade E where static conducting', 'ISO 340 flame test', 'DIN 22102 Grade K', 'MSHA 2G', '200 mm3 (DIN K)',
+            ['minus 10 to 110 deg C (CR base); minus 30 to 70 deg C (SBR base)', '14 to 230 deg F (CR base); minus 22 to 158 deg F (SBR base)'], 'Fire retardant, above ground; a fire-rated compound alone does not make a fire-rated belt'],
+        ['AS 1332 Grade S, with AS 4606 certification', NA, 'DIN 22102 Grade K, with EN 14973 certification', 'MSHA Part 14 approval', '250 mm3 (Grade S)',
+            ['minus 10 to 110 deg C (CR); minus 15 to 70 deg C (PVC)', '14 to 230 deg F (CR); 5 to 158 deg F (PVC)'], 'FRAS, underground: the whole belt is certified, and AS 4606, EN 14973 and MSHA Part 14 do not recognise each other'],
+        [NA, NA, NA, NA, 'Manufacturer value', [NA, NA], 'A manufacturer construction; no standard grade']
+    ];
+
+    /* ── Units: the displayed value is the stored value times f[sys] ── */
+    var sys = 'met';
+    var UNIT = {
+        mm:  { met: 'mm', imp: 'in', f: { met: 1000, imp: 39.370079 }, dp: { met: 0, imp: 2 } },
+        kN:  { met: 'kN', imp: 'lbf', f: { met: 1, imp: 224.80894 }, dp: { met: 2, imp: 0 } },
+        cov: { met: 'mm', imp: 'in', f: { met: 1, imp: 1 / 25.4 }, dp: { met: 1, imp: 3 } },
+        m:   { met: 'm', imp: 'ft', f: { met: 1, imp: 3.2808399 }, dp: { met: 2, imp: 1 } },
+        ms:  { met: 'm/s', imp: 'fpm', f: { met: 1, imp: 196.85039 }, dp: { met: 2, imp: 0 } },
+        n:   { dp: { met: 3, imp: 3 } },
+        raw: { dp: { met: 3, imp: 3 } }
+    };
+    function toSI(kind, v) { var u = UNIT[kind]; return u && u.f ? v / u.f[sys] : v; }
+    function fromSI(kind, v) { var u = UNIT[kind]; return u && u.f ? v * u.f[sys] : v; }
+
+    /* ── Formatting ── */
+    function num(v, dp) {
+        if (Math.abs(v) < 0.5 * Math.pow(10, -dp)) { v = 0; }
+        return v.toLocaleString('en-AU', { minimumFractionDigits: dp, maximumFractionDigits: dp });
+    }
+    function sig(v) {                                             /* three significant figures, whole numbers kept */
+        if (!(Math.abs(v) > 0)) { return '0'; }
+        var p = Math.floor(Math.log(Math.abs(v)) / Math.LN10);
+        if (p >= 2) { return num(Math.round(v), 0); }
+        var q = Math.pow(10, p - 2), r = Math.round(v / q) * q;
+        if (Math.abs(r) >= Math.pow(10, p + 1)) { p += 1; }
+        return num(r, Math.max(0, 2 - p));
+    }
+    function pair(a, b) { return sys === 'met' ? a + ' [' + b + ']' : b + ' [' + a + ']'; }
+    function first(text) { return text.split(' [')[0]; }
+    function kNm(x) { return pair(sig(x) + ' kN/m', sig(x * PIW) + ' PIW'); }   /* per unit width */
+    function sig3(v) {                                            /* three significant figures */
+        if (!(Math.abs(v) > 0)) { return '0'; }
+        var p = Math.floor(Math.log(Math.abs(v)) / Math.LN10), q = Math.pow(10, p - 2), r = Math.round(v / q) * q;
+        if (Math.abs(r) >= Math.pow(10, p + 1)) { p += 1; }
+        return num(r, Math.max(0, 2 - p));
+    }
+    function kN(x) { return pair(sig3(x) + ' kN', sig3(x * 224.80894) + ' lbf'); }
+    function mm(m) { return pair(num(m * 1000, 0) + ' mm', num(m * 39.370079, 1) + ' in'); }
+    function cov(x) { return pair(num(x, 1) + ' mm', num(x / 25.4, 2) + ' in'); }
+    function kgm2(x) { return pair(num(x, 1) + ' kg/m2', num(x * 0.2048161, 2) + ' lb/ft2'); }
+    function kgm(x) { return pair(sig(x) + ' kg/m', sig(x * 0.6719690) + ' lb/ft'); }
+    function pul(d) { return pair(num(d, 0) + ' mm', (NOM[d] || num(d / 25.4, 0)) + ' in'); }
+    function pct(p) { return num(p, 0) + '%'; }
+    function kNmR(a, b) { return pair(sig(a) + ' to ' + sig(b) + ' kN/m', sig(a * PIW) + ' to ' + sig(b * PIW) + ' PIW'); }
+    function covR(a, b) { return pair(num(a, 1) + ' to ' + num(b, 1) + ' mm', num(a / 25.4, 2) + ' to ' + num(b / 25.4, 2) + ' in'); }
+    function len(x) { return pair(sig(x) + ' m', sig(x * 3.2808399) + ' ft'); }
+    function speed(x) { return pair(num(x, 2) + ' m/s', num(x * 196.85039, 0) + ' fpm'); }
+    function degs(t) {                                            /* a temperature range [low, high] in deg C, or text [metric, imperial] */
+        if (typeof t[0] === 'string') { return t[0] === t[1] ? t[0] : pair(t[0], t[1]); }
+        function c(x) { return (x < 0 ? 'minus ' : '') + Math.abs(x); }
+        return pair(c(t[0]) + ' to ' + c(t[1]) + ' deg C', c(Math.round(t[0] * 1.8 + 32)) + ' to ' + c(Math.round(t[1] * 1.8 + 32)) + ' deg F');
+    }
+    function upHalf(x) { return Math.ceil(x * 2 - 1e-4) / 2; }    /* rounded up to 0.5 mm, ignoring rounding noise */
+    function ratio(x) { return num(x, x < 10 ? 1 : 0) + ':1'; }
+    function dn(x) { return String(Math.round(x)); }             /* a number in a designation: whole, without separators */
+    function cap1(text) { return text.charAt(0).toUpperCase() + text.slice(1); }
+    function bad(text) { return '<span class="text-danger fw-semibold">' + text + '</span>'; }
+
+    /* ── Elements and stored values ── */
+    var $ = function (id) { return document.getElementById(id); };
+    var form = $('calcForm');
+    var numInputs = Array.prototype.slice.call(form.querySelectorAll('input[data-kind]'));
+    var si = {};
+    function kindOf(el) { return el.getAttribute('data-kind'); }
+    function display(el) {
+        var v = si[el.id], k = kindOf(el);
+        if (!isFinite(v)) { el.value = ''; return; }
+        el.value = String(Number(fromSI(k, v).toFixed(UNIT[k] ? UNIT[k].dp[sys] : 2)));
+    }
+    function setSI(id, v) { si[id] = v; display($(id)); }
+    function readInput(el) {
+        var t = el.value.trim();
+        si[el.id] = t === '' ? NaN : toSI(kindOf(el), parseFloat(t));
+    }
+    function show(key, on) {
+        form.querySelectorAll('[data-show="' + key + '"]').forEach(function (e) { e.hidden = !on; });
+    }
+    COMP.forEach(function (c, i) {
+        var o = document.createElement('option');
+        o.value = String(i);
+        o.textContent = c[0];
+        $('comp').appendChild(o);
+    });
+
+    /* ── Tooltip ── */
+    var tip = $('tip');
+    function showTip(text, anchor, x, y) {
+        anchor.appendChild(tip);
+        tip.textContent = text;
+        tip.style.width = 'max-content';                          /* keeps its natural width inside a chart that scrolls */
+        tip.hidden = false;
+        var w = tip.offsetWidth, sl = anchor.scrollLeft, wrap = anchor.clientWidth;  /* a chart that scrolls sideways moves its tip with it */
+        tip.style.left = Math.max(sl, Math.min(sl + wrap - w, sl + x - w / 2)) + 'px';
+        tip.style.top = Math.max(-tip.offsetHeight - 4, y - tip.offsetHeight - 10) + 'px';
+    }
+    function hideTip() { tip.hidden = true; }
+    function hoverOn(box, node, text) {
+        function at(e) { var b = box.getBoundingClientRect(); showTip(typeof text === 'function' ? text(e) : text, box, e.clientX - b.left, e.clientY - b.top); }
+        node.addEventListener('mouseenter', at);
+        node.addEventListener('mousemove', at);
+        node.addEventListener('mouseleave', hideTip);
+    }
+
+    /* ── Results helpers ── */
+    function cell(value, hint, cls) {
+        return '<td' + (cls ? ' class="' + cls + '"' : '') + '><span class="calc-num">' + value + '</span>' + (hint ? '<span class="calc-hint">' + hint + '</span>' : '') + '</td>';
+    }
+    function rowN(label, cells, cls, labelHint) {
+        return '<tr' + (cls ? ' class="' + cls + '"' : '') + '><th scope="row">' + label + (labelHint ? '<span class="calc-hint">' + labelHint + '</span>' : '') + '</th>' +
+            cells.map(function (c) { return cell(c[0], c[1], c[2]); }).join('') + '</tr>';
+    }
+
+    /* ── Classes ── */
+    var TOL = 1e-6, MATCH = 0.005;                                /* a rating within 0.5% of a class is that class (tabulated values are rounded) */
+    function isPlied(c) { return ['ep', 'cf', 'dw', 'nn', 'ee', 'cc'].indexOf(c) >= 0; }                    /* multi-ply fabric */
+    function isFabric(c) { return isPlied(c) || c === 'wp' || c === 'ar'; }                                 /* textile carcasses with plies */
+    function isSW(c) { return c === 'sw' || c === 'pvg'; }                                                    /* solid woven */
+    function fabCode(c) { return { ar: 'DP', nn: 'NN', ee: 'EE', cc: 'CC' }[c] || 'EP'; }
+    function fabName(c, s, p) {
+        return fabCode(c) + ' ' + dn(s) + '/' + p + (c === 'cf' ? " crow's foot" : c === 'dw' ? ' double weave' : c === 'wp' ? ' straight warp' : c === 'ar' ? ' aramid' : '');
+    }
+    function classList(c) {                                      /* [strength, plies or PIW class] for each standard class of a carcass */
+        if (c === 'ep') { return EP4; }
+        if (c === 'cf' || c === 'dw') { return PUL[c].map(function (r) { return [r[0], r[1]]; }); }
+        if (c === 'wp') { return WP; }
+        if (c === 'ar') { return AR; }
+        if (c === 'nn') { return NN; }
+        if (c === 'ee') { return EE; }
+        if (c === 'cc') { return CC; }
+        if (isSW(c)) { return SW.map(function (r) { return [r[2], r[0]]; }); }
+        return ST.map(function (r) { return [r[0], 0]; });
+    }
+    function nextClass(c, need, tol) {                           /* the smallest standard class at or above a breaking strength */
+        var best = null, t = tol === undefined ? TOL : tol;
+        classList(c).forEach(function (r) { if (r[0] >= need * (1 - t) && (!best || r[0] < best[0] || r[0] === best[0] && r[1] < best[1])) { best = r; } });
+        return best;
+    }
+    function className(c, r) {
+        if (!r) { return ''; }
+        if (isFabric(c)) { return fabName(c, r[0], r[1]); }
+        if (isSW(c)) { return 'Class ' + r[1] + (c === 'pvg' ? ' PVG' : ''); }
+        return 'ST ' + dn(r[0]);
+    }
+    function matchClass(c, ult) {                                /* the standard strength this rating matches, or NaN */
+        var top = classList(c)[classList(c).length - 1][0];
+        var list = c === 'ep' ? EP_SERIES : c === 'nn' || c === 'ee' || c === 'cc' ? EP_SERIES.filter(function (x) { return x <= top; }) : classList(c).map(function (r) { return r[0]; }), hit = NaN;
+        list.forEach(function (x) { if (Math.abs(x - ult) <= MATCH * x && !(Math.abs(hit - ult) <= Math.abs(x - ult))) { hit = x; } });
+        return hit;
+    }
+    function interp(tab, x) {                                    /* linear in the first column, flat beyond the ends; returns [mass, thickness, inside] */
+        if (x <= tab[0][0]) { return [tab[0][1], tab[0][2], Math.abs(x - tab[0][0]) < 1e-9]; }
+        for (var i = 1; i < tab.length; i++) {
+            if (x <= tab[i][0]) { var f = (x - tab[i - 1][0]) / (tab[i][0] - tab[i - 1][0]); return [tab[i - 1][1] + f * (tab[i][1] - tab[i - 1][1]), tab[i - 1][2] + f * (tab[i][2] - tab[i - 1][2]), true]; }
+        }
+        var L = tab[tab.length - 1]; return [L[1], L[2], false];
+    }
+    function pulleyRow(c, ult, plies) {                          /* the tabulated row for this belt, or the nearest one above it */
+        var rows = PUL[c], same = null, any = null;
+        rows.forEach(function (r) {
+            if (r[0] < ult * (1 - TOL)) { return; }
+            if (isFabric(c) && r[1] === plies && (!same || r[0] < same[0])) { same = r; }
+            if (!any || r[0] < any[0] || r[0] === any[0] && r[1] < any[1]) { any = r; }
+        });
+        return same || any;
+    }
+
+    /* ── Top cover range for the duty, mm [low, high]: linear between the tabulated cycle times and lump sizes, held at the ends ── */
+    function at(xs, x) {
+        if (x <= xs[0]) { return [0, 0]; }
+        for (var i = 1; i < xs.length; i++) { if (x <= xs[i]) { return [i - 1, (x - xs[i - 1]) / (xs[i] - xs[i - 1])]; } }
+        return [xs.length - 2, 1];
+    }
+    function dutyRange(a, lumpMm, tc) {
+        var r = at(CYC, tc), q = at(LUMP, lumpMm), t = TOPC[a];
+        function v(k) {
+            function row(i) { return t[i][q[0]][k] + q[1] * (t[i][q[0] + 1][k] - t[i][q[0]][k]); }
+            return row(r[0]) + r[1] * (row(r[0] + 1) - row(r[0]));
+        }
+        return [v(0), v(1)];
+    }
+
+    /* ── Covers set automatically: [top, bottom, top basis, bottom basis] ──
+       Steel cord: the least cover over the cords for the class at the bottom, and at the top the greater of that and 1.5 times the
+       cord diameter (where the least cover is not tabulated, the next tabulated class's, else about 0.7 times the cord diameter).
+       Fabric: the pulley-side cover minimum for the duty, light (to 40 kN/m working at 10:1), medium (to 100 kN/m) or heavy, with a
+       top cover no more than 3 times it. Solid woven: the 1 mm PVC covers its tabulated thickness and mass include.
+       With a duty, the top cover comes from the duty (never below the steel cord minimums) and the bottom cover is at least a third of
+       it (a quarter on steel cord). */
+    function autoCovers(c, ult, nxt, duty) {
+        if (c === 'st') {
+            var r = nxt ? ST.filter(function (x) { return x[0] === nxt[0]; })[0] : ST[ST.length - 1], mc = r[3], stText = 'Set from the steel cord class';
+            if (!mc) {
+                var after = ST.filter(function (x) { return x[0] >= r[0] && x[3]; })[0];
+                if (after) { mc = after[3]; stText = 'Set from the next class with a tabulated cover'; } else { mc = Math.max(9, Math.ceil(0.7 * r[1])); stText = 'Estimated from the cord diameter'; }
+            }
+            var cls = Math.max(mc, Math.ceil(1.5 * r[1]));
+            if (!duty) { return [cls, mc, stText, stText]; }
+            var top = Math.max(duty.top, cls), bot = Math.max(mc, upHalf(top / 4));
+            return [top, bot, duty.top >= cls ? 'Set from the duty' : stText + ', above the duty', bot > mc ? 'A quarter of the top cover' : stText];
+        }
+        if (c === 'pvg') {                                         /* rubber covers, made to 6 mm top and 2 mm bottom */
+            var wg = ult / 10, bandG = wg <= 40 + 1e-9 ? [4, 1.5, 'light'] : [6, 2, wg <= 100 + 1e-9 ? 'medium' : 'heavy'], gt = 'Set from the rating for ' + bandG[2] + ' duty, within the PVG limits';
+            if (!duty) { return [bandG[0], bandG[1], gt, gt]; }
+            var bg = Math.min(2, Math.max(1.5, upHalf(duty.top / 3)));
+            return [duty.top, bg, 'Set from the duty', bg > 1.5 && bg < 2 ? 'A third of the top cover' : 'Set within the PVG limits'];
+        }
+        if (c === 'sw') {
+            var pvc = 'Set to the 1 mm PVC cover';
+            if (!duty) { return [1, 1, pvc, pvc]; }
+            var t2 = Math.max(1, duty.top), b2 = Math.max(1, upHalf(t2 / 3));
+            return [t2, b2, duty.top >= 1 ? 'Set from the duty' : pvc, b2 > 1 ? 'A third of the top cover' : pvc];
+        }
+        var w = ult / 10, band = w <= 40 + 1e-9 ? [4, 1.5, 'light'] : w <= 100 + 1e-9 ? [8, 3, 'medium'] : [12, 5, 'heavy'], bt = 'Set from the rating for ' + band[2] + ' duty';
+        if (!duty) { return [band[0], band[1], bt, bt]; }
+        var bb = Math.max(band[1], upHalf(duty.top / 3));
+        return [duty.top, bb, 'Set from the duty', bb > band[1] ? 'A third of the top cover' : bt];
+    }
+    var coverAuto = { ct: true, cb: true };                       /* a cover follows the rating until it is typed over */
+
+    /* ── Main calculation ── */
+    var last = null;
+    function compute() {
+        var c = $('carc').value, F = FAM[c], basis = $('basis').value, fab = isFabric(c), need = basis === 'need';
+        function fin(id) { return isFinite(si[id]); }
+        function blank(id) { return $(id).value.trim() === ''; }
+        show('val', !need);
+        show('plies', fab && !need);
+        show('fabric', fab);
+        show('cond', c !== 'st');
+        var abr = $('abr').value, hasDuty = abr !== 'none';
+        show('duty', hasDuty);
+        show('brk', hasDuty && c === 'st');
+        var V = { ult: ['Breaking strength', 'kN/m', 'Also N/mm; for example 630 for EP 630 or 2,000 for ST 2000'], ultpiw: ['Breaking strength', 'PIW', 'Pounds-force per inch of width'],
+            kgf: ['Breaking strength', 'kgf/cm', 'As in older JIS and DIN ratings'], wkn: ['Working tension', 'kN/m', 'At the safety factor below'],
+            wpiw: ['Working tension', 'PIW', 'At the safety factor below; the North American rating'],
+            wply: ['Working tension per ply', 'PIW', 'At the safety factor below; the older CEMA rating, times the number of plies'] }[basis];
+        $('basis').querySelector('option[value="wply"]').disabled = !fab;
+        if (V) { $('val-label').textContent = V[0]; $('val-unit').textContent = V[1]; $('val-hint').textContent = V[2]; }
+        $('sf-hint').textContent = c === 'st' ? '6.7 with direct-on-line starting; 5.5 or 4.5 only with controlled starting and a dynamic analysis' :
+            c === 'ar' ? '10 by the fabric convention; aramid ratings vary, so check with the supplier' : '10 for fabric and solid woven belts';
+        $('B-hint').textContent = need ? 'Needed for the class' : 'Optional; gives the totals and width checks';
+        $('T-hint').textContent = need ? 'The highest steady tension in the belt' : 'Optional; the highest steady tension, checked against the allowable';
+        $('cond-hint').textContent = 'Lowers the allowable working tension and sets the allowable peak';
+
+        /* validation */
+        var errs = [];
+        numInputs.forEach(function (el) { el.classList.remove('is-invalid'); });
+        function req(id, okv, text) { if (!okv) { errs.push(text); $(id).classList.add('is-invalid'); } }
+        if (!need) { req('val', fin('val') && si.val > 0, (V ? V[0].toLowerCase() : 'rating') + ' (above 0)'); }
+        if (fab && !need) { req('plies', fin('plies') && si.plies >= 1 && si.plies <= 10 && Math.abs(si.plies - Math.round(si.plies)) < 1e-9, 'number of plies (a whole number, 1 to 10)'); }
+        req('sf', fin('sf') && si.sf >= 1 && si.sf <= 20, 'safety factor (1 to 20)');
+        req('B', need ? fin('B') && si.B > 0 : blank('B') || fin('B') && si.B > 0, 'belt width' + (need ? ' (needed for the class)' : ''));
+        req('T', need ? fin('T') && si.T > 0 : blank('T') || fin('T') && si.T > 0, 'maximum belt tension' + (need ? ' (needed for the class)' : ''));
+        if (hasDuty) {
+            req('lump', fin('lump') && si.lump > 0, 'largest lump size (above 0)');
+            req('len', fin('len') && si.len > 0, 'conveyor centres (above 0)');
+            req('spd', fin('spd') && si.spd > 0, 'belt speed (above 0)');
+            req('drop', blank('drop') || fin('drop') && si.drop >= 0, 'drop height (0 or more)');
+        }
+        if (!coverAuto.ct) { req('ct', fin('ct') && si.ct >= 0, 'top cover'); }
+        if (!coverAuto.cb) { req('cb', fin('cb') && si.cb >= 0, 'bottom cover'); }
+        if (errs.length) {
+            $('resultError').hidden = false;
+            $('resultError').textContent = 'Check these inputs: ' + errs.join('; ') + '.';
+            $('resultBody').hidden = true;
+            $('barValue').textContent = 'Check the inputs';
+            last = null;
+            return;
+        }
+        $('resultError').hidden = true;
+        $('resultBody').hidden = false;
+
+        /* ── Rating ── */
+        var sf = si.sf, cd = COND[$('cond').value], fSp = fab && $('splice').value === 'fast' ? 0.75 : 1, fCo = c === 'st' ? 1 : cd[0], peakF = c === 'st' ? NaN : cd[1];
+        var B = fin('B') ? si.B : NaN, T = fin('T') ? si.T : NaN;
+        var ult, plies = fab ? Math.round(si.plies) : 0, reqUlt = NaN, cls = null, above = false;
+        if (need) {
+            reqUlt = T / B * sf / (fSp * fCo);
+            cls = nextClass(c, reqUlt);
+            if (cls) { ult = cls[0]; plies = fab ? cls[1] : 0; } else { ult = reqUlt; above = true; plies = fab ? classList(c)[classList(c).length - 1][1] : 0; }
+        } else {
+            ult = { ult: si.val, ultpiw: si.val / PIW, kgf: si.val / KGF, wkn: si.val * sf, wpiw: si.val / PIW * sf, wply: si.val * plies / PIW * sf }[basis];
+            var hit = matchClass(c, ult);
+            cls = isFinite(hit) ? (isSW(c) ? classList(c).filter(function (r) { return r[0] === hit; })[0] : fab ? [hit, plies] : [hit, 0]) : null;
+        }
+        var nxt = cls || nextClass(c, ult);                       /* the standard class used for the tables */
+        var Wr = ult / sf, Wa = Wr * fSp * fCo, Wp = Wa * peakF;
+        var tpw = T / B, hasT = isFinite(tpw), hasB = isFinite(B);
+        var designation;
+        var dUlt = cls ? cls[0] : ult;                            /* a matched class is named by its own strength */
+        if (fab) { designation = fabName(c, dUlt, plies); }
+        else if (isSW(c)) { designation = cls ? className(c, cls) : num(ult, 0) + ' kN/m solid woven' + (c === 'pvg' ? ' PVG' : ''); }
+        else { designation = 'ST ' + dn(dUlt); }
+        var stdText = need ? (above ? bad('Above the largest ' + F.name + ' class') : 'Next standard class above the ' + first(kNm(reqUlt)) + ' needed') :
+            cls ? (Math.abs(cls[0] - ult) > 1e-6 * ult ? 'Standard class, within 0.5% of the ' + first(kNm(cls[0])) + ' rating' : 'Standard class') : nxt ? 'Not a standard class; next up ' + className(c, nxt) : bad('Above the largest ' + F.name + ' class');
+
+        /* ── Equivalent ratings ── */
+        var eb = [];
+        if (need) { eb.push(rowN('Breaking strength needed', [[kNm(reqUlt), first(kN(T)) + ' over ' + first(mm(B)) + ' at ' + ratio(sf) + (fSp < 1 || fCo < 1 ? ', after the splice and duty factors' : '')]])); }
+        eb.push(rowN('Breaking strength', [[kNm(ult), 'Equal to ' + sig(ult) + ' N/mm and ' + sig(ult * KGF) + ' kgf/cm']], 'table-primary fw-semibold', designation));
+        eb.push(rowN('Designation', [[designation, stdText]]));
+        eb.push(rowN('Carcass type', [[cap1(F.name), CARC_USE[c]]]));
+        if (fab) { eb.push(rowN('Strength per ply', [[kNm(ult / plies), plies + (plies === 1 ? ' ply' : ' plies')]])); }
+        var hasPF = isPlied(c) && c !== 'cc', fc = fabCode(c), plyFab = hasPF ? PLY_FAB.filter(function (f) { return plies * f >= 0.93 * dUlt - 1e-9; })[0] : 0;
+        if (hasPF) {
+            eb.push(rowN('Ply fabric', [[plyFab ? fc + ' ' + plyFab : bad('Above ' + fc + ' 630'), plyFab ? plies + (plies === 1 ? ' ply' : ' plies') + ' of ' + fc + ' ' + plyFab + ' fabric, nominal' :
+                'Each ply needs more than the largest fabric, ' + fc + ' 630; use more plies']]));
+        }
+        if (fab) { eb.push(rowN('Cross-direction (weft) strength', [[kNmR(0.1 * ult, 0.25 * ult), 'Typically 10% to 25% of the warp; specify a high-weft carcass for heavy sharp lumps, or fasteners at high tension']])); }
+        if (isSW(c) && nxt) { var swr = SW.filter(function (r) { return r[0] === nxt[1]; })[0]; eb.push(rowN('Cross-direction (weft) strength', [[kNm(swr[3]), 'Of ' + className(c, nxt) + ', ' + pct(swr[3] / swr[2] * 100) + ' of the warp']])); }
+        if (c === 'st') { eb.push(rowN('Cross-direction strength', [['None', 'A standard belt has no weft; transverse breakers add rip protection']])); }
+        eb.push(rowN('Working tension', [[kNm(Wr), 'At ' + ratio(sf) + '; ' + pct(100 / sf) + ' of the breaking strength']], 'table-primary fw-semibold'));
+        if (fab) { eb.push(rowN('North American rating', [[plies + '-ply ' + sig(ult / 10 * PIW) + ' PIW, ' + sig(ult / 10 * PIW / plies) + ' PIW per ply', 'Working tension at the 10:1 convention; the older CEMA rating is per ply']])); }
+        if (c === 'st') { eb.push(rowN('Working tension at 6.7, 5.5 and 4.5:1', [[pair(sig(ult / 6.7) + ', ' + sig(ult / 5.5) + ' and ' + sig(ult / 4.5) + ' kN/m', sig(ult / 6.7 * PIW) + ', ' + sig(ult / 5.5 * PIW) + ' and ' + sig(ult / 4.5 * PIW) + ' PIW'), 'Direct-on-line starting, then controlled starting']])); }
+        var eqs = [];
+        ['ep', 'sw', 'st'].forEach(function (x) {
+            if (x === c || x === 'sw' && c === 'pvg') { return; }
+            var r2 = nextClass(x, Wr * FAM[x].sf);
+            eqs.push({ fam: x, need: Wr * FAM[x].sf, cls: r2 });
+            eb.push(rowN(cap1(FAM[x].name) + ' equivalent', [[r2 ? className(x, r2) : bad('Above the largest class'), 'Same working tension at ' + ratio(FAM[x].sf) + '; needs ' + first(kNm(Wr * FAM[x].sf)) + ' breaking strength']]));
+        });
+        $('eqBody').innerHTML = eb.join('');
+
+        /* ── Working tension ── */
+        $('wtHead').textContent = hasB ? 'Belt ' + first(mm(B)) + ' Wide' : 'Belt';
+        var wb = [];
+        function wRow(label, x, hint, cls2, lh) { wb.push(rowN(label, [[kNm(x), hint], [hasB ? kN(x * B) : '–', '']], cls2, lh)); }
+        wRow('Rated working tension', Wr, 'Breaking strength over ' + ratio(sf));
+        if (fab) { wRow('Splice', Wr * fSp, fSp < 1 ? 'Mechanical fasteners: 75% of the vulcanised rating' : 'Vulcanised: full rating'); }
+        if (c !== 'st') { wRow('Operating conditions', Wr * fSp * fCo, cap1(cd[2]) + ': ' + pct(fCo * 100) + (fCo < 1 ? ' of the rating' : ', no reduction')); }
+        wRow('Allowable working tension', Wa, 'For the steady running tension', 'table-primary fw-semibold');
+        if (c !== 'st') { wRow('Allowable peak tension', Wp, pct(peakF * 100) + ' of the allowable, on starting or braking', 'fw-semibold'); }
+        if ((c === 'wp' || c === 'ar') && $('splice').value === 'vulc') {
+            wb.push(rowN('Splice strength', [['–', "Finger splice to the supplier's design; a stepped splice can fall below 50%"], ['', '']]));
+        } else if (fab && $('splice').value === 'vulc') {
+            if (plies >= 2) { wRow('Stepped splice strength', ult * (plies - 1) / plies, pct((plies - 1) / plies * 100) + ' of the belt; ' + ratio(sf * (plies - 1) / plies) + ' at the working tension'); }
+            else { wb.push(rowN('Stepped splice strength', [['–', 'A single-ply belt needs a finger splice'], ['', '']])); }
+        }
+        if (hasT && hasB) {
+            var ut = tpw / Wa;
+            wb.push(rowN('Maximum belt tension', [[kNm(tpw), pct(ut * 100) + ' of the allowable' + (ut > 1 + 1e-9 ? '; ' + bad('above it') : '')], [kN(T), 'Entered']], 'fw-semibold'));
+            wb.push(rowN('Safety factor at this tension', [[ratio(ult / tpw), 'Breaking strength over the belt tension'], ['', '']]));
+        }
+        if (isFinite(T) && !hasB) {
+            wb.push(rowN('Belt tension', [['–', 'Enter the belt width to compare the tension with the rating'], ['', '']]));
+        }
+        $('wtBody').innerHTML = wb.join('');
+
+        /* ── Minimum pulley diameters ── */
+        var pr = PUL[c] ? pulleyRow(c, dUlt, plies) : null, band = hasT && hasB ? (tpw / Wr > 0.6 ? 0 : tpw / Wr >= 0.3 ? 1 : 2) : -1, pb = [];
+        var prName = pr ? (isFabric(c) ? 'EP ' + dn(pr[0]) + '/' + pr[1] : isSW(c) ? num(pr[0], 0) + ' kN/m' : 'ST ' + dn(pr[0])) : '', epUse = c === 'nn' || c === 'ee' || c === 'cc';
+        var exact = pr && Math.abs(pr[0] - dUlt) < 1e-6 * dUlt && (!fab || pr[1] === plies);
+        $('pulCap').textContent = 'Minimum Pulley Diameters' + (pr ? ' for ' + (isSW(c) ? 'a ' + prName + ' Solid Woven Belt' : epUse ? designation + ', from ' + prName : prName + (c === 'cf' ? " Crow's Foot" : c === 'dw' ? ' Double Weave' : '')) : '');
+        if (!PUL[c]) {
+            $('pulHead').innerHTML = '<tr><th scope="col">Item</th><th scope="col">Value</th></tr>';
+            pb.push('<tr><td colspan="2" class="text-body-secondary">Not tabulated for ' + F.name + ' belts; the supplier gives them. Use parallel face pulleys.</td></tr>');
+        } else if (!pr) {
+            $('pulHead').innerHTML = '<tr><th scope="col">Item</th><th scope="col">Value</th></tr>';
+            pb.push('<tr><td colspan="2" class="text-body-secondary">' + (fab && plies > 5 ? 'Tabulated up to 5 plies and ' : 'Tabulated up to ') + first(kNm(PUL[c][PUL[c].length - 1][0])) + ' for this carcass.</td></tr>');
+        } else if (isSW(c)) {
+            $('pulHead').innerHTML = '<tr><th scope="col">Tension Ratio</th><th scope="col">Type A, Head and Drive</th><th scope="col">Type B, Tail and Take-Up</th></tr>';
+            pb.push(rowN('All', [[pul(pr[2][0]), ''], [pul(pr[2][1]), '']], 'fw-semibold', [exact ? '' : 'From the next tabulated rating',
+                c === 'pvg' ? 'for PVC covers; rubber covers stiffen the belt, so allow larger' : ''].filter(Boolean).join('; ').replace(/^f/, 'F')));
+        } else {
+            $('pulHead').innerHTML = '<tr><th scope="col">Tension Ratio</th><th scope="col">Type A, High Tension</th><th scope="col">Type B, Low Tension</th><th scope="col">Type C, Snub and Bend</th></tr>';
+            ['Above 60%', '30% to 60%', 'Below 30%'].forEach(function (lab, k) {
+                var on = k === band;
+                pb.push(rowN(lab, [[pul(pr[2][3 * k]), ''], [pul(pr[2][3 * k + 1]), ''], [pul(pr[2][3 * k + 2]), '']], on ? 'table-primary fw-semibold' : '',
+                    on ? 'This belt, at ' + pct(tpw / Wr * 100) : k === 0 && epUse ? 'The EP values; conservative for nylon and cotton' : k === 0 && !exact ? 'From ' + prName + ', the nearest tabulated class above' : ''));
+            });
+        }
+        $('pulBody').innerHTML = pb.join('');
+
+        /* ── Construction ── */
+        var duty = null;
+        if (hasDuty) {
+            var tc = 2 * si.len / si.spd, lumpMm = si.lump * 1000, dropH = fin('drop') ? si.drop : 0, rg = dutyRange(abr, lumpMm, tc), adds = [], dTop = rg[1];
+            if (dropH > 1.5 + 1e-9) { dTop *= 1.25; adds.push('25% added for the ' + first(len(dropH)) + ' drop'); }
+            var compI = parseInt($('comp').value, 10), fireF = (abr === 'heavy' || abr === 'ext') && (compI === 9 || compI === 10) ? (compI === 9 ? 200 : 250) / 150 : 1;
+            if (fireF > 1) { dTop *= fireF; adds.push(pct((fireF - 1) * 100) + ' added as the fire-rated cover wears faster (' + (compI === 9 ? '200' : '250') + ' against 150 mm3 for DIN Y)'); }
+            if (c === 'st' && $('brk').value === 'none') { dTop += 3; adds.push('3 mm added without transverse breakers'); }
+            duty = { tc: tc, lump: lumpMm, drop: dropH, rg: rg, top: upHalf(dTop), adds: adds, fire: fireF };
+        }
+        var ac = autoCovers(c, dUlt, nxt, duty);
+        ['ct', 'cb'].forEach(function (id, k) {
+            if (coverAuto[id]) {
+                si[id] = ac[k];
+                if (document.activeElement !== $(id)) { display($(id)); }  /* not while the box is being typed in */
+            }
+            $(id + '-hint').textContent = coverAuto[id] ? ac[k + 2] + '; type over to change' : 'Entered; clear it to return to ' + first(cov(ac[k]));
+        });
+        var cb = [], comp = COMP[parseInt($('comp').value, 10)], ctop = si.ct, cbot = si.cb, hasCov = isFinite(ctop) && isFinite(cbot);
+        var cm = NaN, ctk = NaN, tm = NaN, ttk = NaN, note = '';
+        $('conCap').textContent = 'Belt Construction for ' + (fab ? designation : nxt ? className(c, nxt) : 'the Largest Class');
+        if (hasB) {
+            var Bmm = B * 1000, Bin = B * 39.370079, wTol = Bmm <= 500 + 1e-9 ? 5 : 0.01 * Bmm;
+            var wIso = ISO251.filter(function (x) { return Math.abs(x - Bmm) < 0.5; })[0], wImp = CEMA.filter(function (x) { return Math.abs(x * 25 - Bmm) < 0.5 || Math.abs(x - Bin) < 0.05; })[0];
+            var wLo = ISO251.filter(function (x) { return x < Bmm; }).pop(), wHi = ISO251.filter(function (x) { return x > Bmm; })[0];
+            var wText = wIso ? 'ISO 251 standard width' + (wImp ? ', and the ' + wImp + ' in imperial width' : '') :
+                (wImp ? wImp + ' in imperial width; not an ISO 251 width' : 'Not a standard width') +
+                (wLo && wHi ? '; nearest ISO 251 widths ' + first(mm(wLo / 1000)) + ' and ' + first(mm(wHi / 1000)) : '; nearest ISO 251 width ' + first(mm((wLo || wHi) / 1000)));
+            cb.push(rowN('Belt width', [[mm(B), wText + '; tolerance plus or minus ' + first(pair(num(wTol, Math.abs(wTol - Math.round(wTol)) < 0.05 ? 0 : 1) + ' mm', num(wTol / 25.4, 2) + ' in'))]]));
+        }
+        var specGrade = c === 'sw' ? 'PVC covers' : SPEC_GRADE[parseInt($('comp').value, 10)];
+        function cv(x) { return sys === 'met' ? String(Number(x.toFixed(1))) : String(Number((x / 25.4).toFixed(3))); }
+        if (hasCov) {
+            cb.unshift(rowN('Belt specification', [[(hasB ? first(mm(B)) + ' ' : '') + designation + ', ' + cv(ctop) + ' + ' + cv(cbot) + (sys === 'met' ? ' mm' : ' in') + ', ' + specGrade +
+                (c === 'st' && hasDuty && $('brk').value === 'yes' ? ', transverse breakers' : ''), 'For the supplier enquiry' + (hasB ? '' : '; enter the belt width to complete it')]], 'table-primary fw-semibold'));
+        }
+        if (c === 'sw') {
+            var sr = nxt ? SW.filter(function (r) { return r[0] === nxt[1]; })[0] : SW[SW.length - 1];
+            cb.push(rowN('Belt with 1 mm PVC covers', [[pair(num(sr[4], 1) + ' mm, ' + num(sr[5], 1) + ' kg/m2', num(sr[4] / 25.4, 2) + ' in, ' + num(sr[5] * 0.2048161, 2) + ' lb/ft2'), 'Thickness and mass' + (nxt ? '' : ' of the largest class')]]));
+            if (hasCov) { ttk = sr[4] + (ctop - 1) + (cbot - 1); tm = sr[5] + ((ctop - 1) + (cbot - 1)) * comp[1]; }
+        } else if (c === 'wp' || c === 'ar' || c === 'cc') {
+            cb.push(rowN('Carcass', [['–', 'Thickness and mass from the supplier']]));
+        } else if (c === 'pvg') {
+            var cg = interp(CARC_SWC, ult);
+            cm = cg[0]; ctk = cg[1];
+            cb.push(rowN('Carcass', [[pair(num(ctk, 1) + ' mm, ' + num(cm, 1) + ' kg/m2', num(ctk / 25.4, 2) + ' in, ' + num(cm * 0.2048161, 2) + ' lb/ft2'),
+                'Thickness and mass with its PVC impregnation; ' + (cg[2] ? 'typical' : 'outside the tabulated ratings, nearest value')]]));
+            if (hasCov) { ttk = ctk + ctop + cbot; tm = cm + (ctop + cbot) * comp[1]; }
+        } else {
+            var ci = interp(fab ? CARC_EP : CARC_ST, ult), L1 = CARC_EP[CARC_EP.length - 1], L0 = CARC_EP[CARC_EP.length - 2];
+            cm = ci[0]; ctk = ci[1];
+            note = ci[2] ? (fab ? 'typical for ' + (Math.abs(ult - Math.round(ult)) < 1e-9 && CARC_EP.some(function (r) { return r[0] === ult; }) ? 'this rating' : 'this rating, interpolated') : 'typical, within 10%') :
+                'outside the tabulated ratings, nearest value';
+            if (fab && ult > L1[0]) {                                  /* fabric above EP 2500: carried on from the last two ratings, to EP 3150 */
+                var xf = (Math.min(ult, 3150) - L1[0]) / (L1[0] - L0[0]);
+                cm = L1[1] + xf * (L1[1] - L0[1]); ctk = L1[2] + xf * (L1[2] - L0[2]);
+                note = 'extrapolated beyond EP 2500' + (ult > 3150 + 1e-6 ? ', held at EP 3150' : '');
+            }
+            cb.push(rowN('Carcass', [[pair(num(ctk, 1) + ' mm, ' + num(cm, 1) + ' kg/m2', num(ctk / 25.4, 2) + ' in, ' + num(cm * 0.2048161, 2) + ' lb/ft2'), 'Thickness and mass; ' + note + (c === 'nn' || c === 'ee' ? '; EP values' : '')]]));
+            if (hasCov) { ttk = ctk + ctop + cbot; tm = cm + (ctop + cbot) * comp[1]; }
+        }
+        if (duty) {
+            var tcClass = duty.tc < 30 - 1e-9 ? 'high-frequency, near-continuous impact' : duty.tc <= 180 + 1e-9 ? 'a standard plant conveyor' : 'low-frequency, as on overland conveyors';
+            cb.push(rowN('Cycle time', [[num(duty.tc, 0) + ' s', 'Twice the ' + first(len(si.len)) + ' centres at ' + first(speed(si.spd)) + '; ' + tcClass]]));
+            cb.push(rowN('Top cover range for the duty', [[covR(duty.rg[0], duty.rg[1]), cap1(ABR[abr]) + ', ' + first(mm(duty.lump / 1000)) + ' lumps' + (duty.lump > 300 + 1e-9 ? ', read at 300 mm' : '')]]));
+            cb.push(rowN('Top cover for the duty', [[cov(duty.top), 'The upper value' + (duty.adds.length ? '; ' + duty.adds.join('; ') : '') + '; rounded up to 0.5 mm']], 'fw-semibold'));
+        }
+        if (hasCov) {
+            var cmass = (ctop + cbot) * comp[1];
+            cb.push(rowN('Covers', [[pair(num(ctop, 1) + ' mm top, ' + num(cbot, 1) + ' mm bottom', num(ctop / 25.4, 2) + ' in top, ' + num(cbot / 25.4, 2) + ' in bottom'),
+                pair(num(cmass, 1) + ' kg/m2 at ' + num(comp[1], 2) + ' kg/m2 per mm', num(cmass * 0.2048161, 2) + ' lb/ft2 at ' + num(comp[1] * 5.2023, 1) + ' lb/ft2 per in') + (c === 'sw' ? ', in all' : '')]]));
+            if (isFinite(ttk)) {
+                cb.push(rowN('Belt thickness', [[cov(ttk), c === 'sw' ? 'Nominal, with these covers' : 'Carcass and covers']], 'fw-semibold'));
+                cb.push(rowN('Belt mass', [[kgm2(tm), hasB ? first(kgm(tm * B)) + ' for the ' + first(mm(B)) + ' width' : 'Per square metre']], 'fw-semibold'));
+                var tTol = ttk <= 10 + 1e-9 ? 1 : 0.1 * ttk;
+                cb.push(rowN('Thickness tolerance', [[pair('plus or minus ' + num(tTol, 1) + ' mm', 'plus or minus ' + num(tTol / 25.4, 3) + ' in'), 'Total thickness: 1.0 mm up to 10 mm, 10% when thicker']]));
+            }
+            var cTol = function (x) { return x <= 4 + 1e-9 ? [1, 0.2] : [0.05 * x, 0.05 * x]; }, tT = cTol(ctop), tB = cTol(cbot);
+            var d1 = function (v) { return num(v, Math.abs(v * 10 - Math.round(v * 10)) < 1e-6 ? 1 : 2); };
+            var tolTxt = function (t, u) {
+                if (Math.abs(t[0] - t[1]) < 1e-9) { return 'plus or minus ' + (u === 'mm' ? d1(t[0]) + ' mm' : num(t[0] / 25.4, 3) + ' in'); }
+                return u === 'mm' ? 'plus ' + d1(t[0]) + ', minus ' + d1(t[1]) + ' mm' : 'plus ' + num(t[0] / 25.4, 3) + ', minus ' + num(t[1] / 25.4, 3) + ' in';
+            };
+            var hard = abr === 'heavy' || abr === 'ext';
+            cb.push(rowN('Cover tolerance', [[pair('Top ' + tolTxt(tT, 'mm') + '; bottom ' + tolTxt(tB, 'mm'), 'Top ' + tolTxt(tT, 'in') + '; bottom ' + tolTxt(tB, 'in')),
+                'Plus 1.0, minus 0.2 mm up to 4 mm, 5% when thicker; least top cover delivered ' + first(cov(ctop - tT[1])) +
+                (hasDuty && hard ? '. For this abrasive duty, specify a zero negative cover tolerance' : '')]]));
+            if (fab && ctop / Math.max(cbot, 1e-9) > 3 + 1e-9) { cb.push(rowN('Cover ratio', [[num(ctop / Math.max(cbot, 1e-9), 1) + ':1', bad('Above 3:1; the belt can cup and lift at the edges')]])); }
+        }
+        if (c === 'st') {
+            var sr2 = nxt ? ST.filter(function (r) { return r[0] === nxt[0]; })[0] : ST[ST.length - 1];
+            cb.push(rowN('Cords', [[pair(num(sr2[1], 1) + ' mm at ' + num(sr2[2], 1) + ' mm', num(sr2[1] / 25.4, 3) + ' in at ' + num(sr2[2] / 25.4, 2) + ' in'), 'Diameter and pitch' + (sr2[0] >= 7000 ? '; indicative above ST 6300' : '')]]));
+            cb.push(rowN('Least cover over the cords', [[sr2[3] ? cov(sr2[3]) : '–', sr2[3] ? 'Each side' + (hasCov && Math.min(ctop, cbot) < sr2[3] - 1e-9 ? '; ' + bad('the covers are thinner') : '') : 'Not tabulated for this class']]));
+            cb.push(rowN('Top cover for impact', [[cov(1.5 * sr2[1]), 'At least 1.5 times the cord diameter' + (hasCov && ctop < 1.5 * sr2[1] - 1e-9 ? '; ' + bad('the top cover is thinner') : '')]]));
+        }
+        if (isPlied(c) && !STRETCH[c]) { cb.push(rowN('Elastic modulus', [[pair(sig3(10 * ult) + ' kN/m', sig3(10 * ult * PIW) + ' lbf/in'), 'About 10 times the breaking strength; 1% stretch at 10:1']])); }
+        if (STRETCH[c]) {
+            var e0 = ult / 10 / (STRETCH[c][1] / 100), e1 = ult / 10 / (STRETCH[c][0] / 100);
+            cb.push(rowN('Elastic modulus', [[pair(sig3(e0) + ' to ' + sig3(e1) + ' kN/m', sig3(e0 * PIW) + ' to ' + sig3(e1 * PIW) + ' lbf/in'),
+                num(STRETCH[c][0], 2) + '% to ' + num(STRETCH[c][1], 2) + '% stretch at the 10:1 working tension']]));
+        }
+        /* troughability */
+        var ta = parseInt($('trough').value, 10), ti = ta === 20 ? 0 : ta === 35 ? 1 : 2, trMin = NaN, trNote = '';
+        if (ta > 0) {
+            if (c === 'wp' || c === 'ar') { trNote = 'Not tabulated for ' + F.name + ' belts; from the supplier'; }
+            else if (fab) { if (TR_FAB[plies]) { trMin = TR_FAB[plies][ti] / 1000; } else { trNote = 'Tabulated for 2 to 6 plies'; } }
+            else if (isSW(c)) { var swc = nxt ? nxt[1] : 99999, trr = TR_SW.filter(function (r) { return swc <= r[0]; })[0]; if (trr) { trMin = trr[1][ti] / 1000; } else { trNote = 'Above the tabulated classes'; } }
+            else { var trs = TR_ST.filter(function (r) { return dUlt <= r[0] * (1 + TOL); })[0]; if (trs) { trMin = trs[1][ti] / 1000; } else { trNote = 'Above the tabulated classes'; } }
+            cb.push(rowN('Least belt width to trough', [[isFinite(trMin) ? mm(trMin) : '–', isFinite(trMin) ? 'At ' + ta + ' deg; narrower belts do not touch the centre roll when empty' +
+                (c === 'pvg' ? '; PVC cover values, and rubber covers stiffen the belt' : c === 'ee' ? '; EE is stiffer across the belt than EP' : '') +
+                (hasB && B < trMin - 1e-9 ? '; ' + bad('the belt is narrower') : '') : trNote]]));
+        }
+        $('conBody').innerHTML = cb.join('');
+
+        /* ── Cover grade equivalents ── */
+        var ci2 = parseInt($('comp').value, 10), G = GRADE[ci2], gb = [];
+        gb.push(rowN('Compound', [[comp[0], G[6]]], 'fw-semibold'));
+        [['Australia', G[0]], ['International', G[1]], ['Europe', G[2]], ['North America', G[3]]].forEach(function (g) { gb.push(rowN(g[0], [[g[1], '']])); });
+        gb.push(rowN('Maximum abrasion loss', [[G[4], G[4].indexOf('mm3') >= 0 ? 'Volume loss to ISO 4649; lower is more resistant' : '']]));
+        gb.push(rowN('Service temperature', [[degs(G[5]), '']]));
+        if (duty) {
+            var sg = duty.lump >= 200 - 1e-9 ? [3, 'Large lumps: impact, cut and gouge'] : (abr === 'heavy' || abr === 'ext') && duty.lump <= 50 + 1e-9 ? [1, 'Fine, sharp, sliding-abrasive material'] :
+                abr === 'heavy' || abr === 'ext' ? [3, 'Abrasion with impact'] : [2, 'General service'];
+            gb.push(rowN('Abrasion grade for the duty', [[COMP[sg[0]][0], sg[1] + (ci2 === sg[0] ? '; the compound chosen' : ci2 >= 1 && ci2 <= 3 ? '; differs from the compound chosen' : ci2 >= 5 && ci2 <= 10 ? '; heat, oil and fire needs come first' : '')]]));
+        }
+        $('gradeBody').innerHTML = gb.join('');
+
+        /* ── Warnings ── */
+        var warn = [];
+        if (above) { warn.push('The tension needs ' + first(kNm(reqUlt)) + ', above the largest ' + F.name + ' class.'); }
+        if (!need && !nxt) { warn.push('The rating is above the largest ' + F.name + ' class.'); }
+        if (fab && fSp < 1 && ult > 1000 + 1e-9) { warn.push('Mechanical fasteners are not recommended above EP 1000.'); }
+        if (c === 'st' && sf < 6.7 - 1e-9) { warn.push('A steel cord safety factor below 6.7:1 needs controlled soft-start drives, a dynamic analysis of starting and stopping, and a splice checked for the peak tension.'); }
+        if (c !== 'st' && sf < 10 - 1e-9) { warn.push('The safety factor is below the 10:1 used for fabric and solid woven belts.'); }
+        if (hasT && hasB && tpw > Wa * (1 + 1e-9)) { warn.push('The belt tension is ' + pct(tpw / Wa * 100) + ' of the allowable working tension.'); }
+        if (hasB && isFinite(trMin) && B < trMin - 1e-9) { warn.push('The belt is narrower than the ' + first(mm(trMin)) + ' needed to trough at ' + ta + ' deg.'); }
+        if (c === 'st' && hasCov && nxt) {
+            var srw = ST.filter(function (r) { return r[0] === nxt[0]; })[0];
+            if (srw[3] && Math.min(ctop, cbot) < srw[3] - 1e-9) { warn.push('The ' + (ctop < srw[3] - 1e-9 && cbot < srw[3] - 1e-9 ? 'covers are' : ctop < srw[3] - 1e-9 ? 'top cover is' : 'bottom cover is') + ' thinner than the ' + first(cov(srw[3])) + ' least cover over the cords of ' + className('st', nxt) + '.'); }
+            if (ctop < 1.5 * srw[1] - 1e-9) { warn.push('The top cover is thinner than 1.5 times the cord diameter, ' + first(cov(1.5 * srw[1])) + ', for impact.'); }
+        }
+        if (fab && hasCov && ctop / Math.max(cbot, 1e-9) > 3 + 1e-9) { warn.push('The top cover is more than 3 times the bottom cover; the belt can cup and lift at the edges.'); }
+        if (fab && plies === 2 && ult > 400 + 1e-9 && c === 'ep') { warn.push('A two-ply plain weave belt above EP 400 is not a standard construction.'); }
+        if (c === 'ep' && dUlt > 1600 * (1 + 1e-6)) { warn.push("Plain weave fabric is not generally made above EP 1600; EP 2000 and above are usually crow's foot or straight-warp."); }
+        if (hasPF && !plyFab) { warn.push('Each ply would need more than ' + fc + ' 630 fabric; use more plies.'); }
+        if (c === 'sw' && hasCov && (ctop > 3 + 1e-9 || cbot > 3 + 1e-9)) {
+            warn.push(ctop <= 6 + 1e-9 && cbot <= 2 + 1e-9 ? 'Covers over 3 mm on a solid woven belt need rubber covers: choose PVG.' :
+                'The covers are thicker than solid woven belts are made: PVC up to 3 mm a side, rubber (PVG) up to 6 mm top and 2 mm bottom.');
+        }
+        if (c === 'pvg' && hasCov && (ctop > 6 + 1e-9 || cbot > 2 + 1e-9)) { warn.push('Rubber covers on a solid woven belt (PVG) are made up to 6 mm top and 2 mm bottom.'); }
+        if (duty && duty.lump > 300 + 1e-9) { warn.push('Lumps over 300 mm are beyond the top cover table; the range is read at 300 mm.'); }
+        if (duty && duty.drop > 1.5 + 1e-9) { warn.push('The drop onto the belt is over 1.5 m: 25% is added to the top cover. Add up to 50%, or fit an impact bed in the loading zone.'); }
+        $('warnList').innerHTML = warn.map(function (t) { return '<li>' + t + '</li>'; }).join('');
+        $('warnBox').hidden = !warn.length;
+
+        $('barLabel').textContent = need ? 'Class needed' : 'Rating';
+        $('barValue').textContent = (need ? (above ? 'Above the largest class' : designation) : designation) + ', ' + first(kNm(ult)) + ', ' + first(kNm(Wa)) + ' allowable';
+
+        last = { c: c, ult: ult, sf: sf, ownClass: nxt && (!fab || c === 'ep') ? nxt[0] : NaN, Wr: Wr, Wa: Wa, Wp: Wp, tpw: hasT && hasB ? tpw : NaN, designation: designation, eqs: eqs, fSp: fSp, fCo: fCo, peakF: peakF };
+        renderAll();
+    }
+
+    /* ── Drawing helpers ── */
+    var SVGNS = 'http://www.w3.org/2000/svg';
+    function el(name, attrs, parent) {
+        var e = document.createElementNS(SVGNS, name);
+        Object.keys(attrs).forEach(function (key) { e.setAttribute(key, attrs[key]); });
+        if (parent) { parent.appendChild(e); }
+        return e;
+    }
+    function note(box, text) {
+        var p = document.createElement('p');
+        p.className = 'small mb-1';
+        p.textContent = text;
+        box.appendChild(p);
+    }
+    var BLUE = '#9ec5fe', BLUE_LINE = '#0d6efd', GREY = '#ced4da', GREY_LINE = '#868e96', DARK = '#495057';
+    function renderAll() {
+        hideTip();
+        renderBars();
+        renderLadder();
+    }
+
+    /* ── Working, allowable and peak tension against the belt tension, per unit width ── */
+    function renderBars() {
+        var box = $('bars');
+        box.innerHTML = '';
+        if (!last) { return; }
+        var d = last, list = [{ label: 'Rated working tension at ' + ratio(d.sf), v: d.Wr, fill: BLUE, line: BLUE_LINE }];
+        if (Math.abs(d.Wa - d.Wr) > 1e-9) { list.push({ label: 'Allowable working tension', v: d.Wa, fill: BLUE, line: BLUE_LINE }); }
+        if (isFinite(d.Wp)) { list.push({ label: 'Allowable peak tension', v: d.Wp, fill: '#cfe2ff', line: BLUE_LINE }); }
+        if (isFinite(d.tpw)) { list.push({ label: 'Maximum belt tension', v: d.tpw, fill: GREY, line: GREY_LINE, over: d.tpw > d.Wa * (1 + 1e-9) }); }
+        note(box, 'Breaking strength ' + first(kNm(d.ult)) + ', ' + num(d.sf, d.sf % 1 ? 1 : 0) + ' times the rated working tension; ratings in blue, the entered tension in grey');
+        var Wpx = Math.max(280, box.clientWidth), valW = 110, barMax = Wpx - valW, rowH = 36, H = list.length * rowH + 4, vMax = 0;
+        list.forEach(function (it) { vMax = Math.max(vMax, it.v); });
+        var svg = el('svg', { width: Wpx, height: H, viewBox: '0 0 ' + Wpx + ' ' + H, role: 'img', 'aria-label': 'Working tension ' + first(kNm(d.Wr)) + ', allowable ' + first(kNm(d.Wa)) }, box);
+        list.forEach(function (it, n) {
+            var y = n * rowH + 13, w = Math.max(2, it.v / vMax * barMax);
+            el('text', { x: 0, y: y, 'class': 'calc-dark' }, svg).textContent = it.label + (it.over ? ', above the allowable' : '');
+            var r = el('rect', { x: 0, y: y + 5, width: w, height: 12, rx: 2, fill: it.fill, stroke: it.line, 'stroke-width': 1 }, svg);
+            var t = el('text', { x: w + 6, y: y + 15 }, svg);
+            t.textContent = first(kNm(it.v));
+            if (w + 6 + t.getComputedTextLength() > Wpx - 2) { t.setAttribute('x', w - 6); t.setAttribute('text-anchor', 'end'); t.setAttribute('class', 'calc-dark'); }
+            hoverOn(box, r, it.label + '\n' + kNm(it.v) + '\n' + pct(it.v / d.ult * 100) + ' of the breaking strength');
+        });
+    }
+
+    /* ── Standard classes on a log scale, with this belt and its equivalents marked ── */
+    function renderLadder() {
+        var box = $('ladder');
+        box.innerHTML = '';
+        if (!last) { return; }
+        var d = last, rows = [
+            { fam: 'ep', label: 'Plain weave fabric (EP)', list: EP4.map(function (r) { return [r[0], 'EP ' + r[0] + '/' + r[1]]; }) },
+            { fam: 'sw', label: 'Solid woven, by breaking strength', list: SW.map(function (r) { return [r[2], 'Class ' + r[0]]; }) },
+            { fam: 'st', label: 'Steel cord (ST)', list: ST.map(function (r) { return [r[0], 'ST ' + r[0]]; }) }
+        ];
+        var own = isFabric(d.c) ? 'ep' : isSW(d.c) ? 'sw' : d.c;
+        note(box, 'Each class as a tick, labelled with its breaking strength in kN/m; this belt in black and the same working tension in the other carcasses in blue');
+        var marks = [{ fam: own, v: d.ult, self: true }].concat(d.eqs.map(function (e) { return { fam: e.fam, v: e.need, self: false }; }));
+        var picked = {};                                          /* the class ticks to stand out: this belt's class and each equivalent */
+        picked[own] = d.ownClass;
+        d.eqs.forEach(function (e) { if (e.cls) { picked[e.fam] = e.cls[0]; } });
+        var lo = 250, hi = 12500;
+        marks.forEach(function (m) { lo = Math.min(lo, m.v / 1.2); hi = Math.max(hi, m.v * 1.2); });
+        /* at least 900 px wide so the full numbers fit; narrower screens scroll the chart sideways */
+        var Wpx = Math.max(900, box.clientWidth), left = 10, right = 10, pw = Wpx - left - right, rowH = 92, top = 4, H = top + rows.length * rowH + 20, GAP = 15;
+        box.style.overflowX = 'auto';
+        function X(v) { return left + (Math.log(v) - Math.log(lo)) / (Math.log(hi) - Math.log(lo)) * pw; }
+        var svg = el('svg', { width: Wpx, height: H, viewBox: '0 0 ' + Wpx + ' ' + H, role: 'img', style: 'width:' + Wpx + 'px', 'aria-label': 'Standard classes from ' + first(kNm(lo)) + ' to ' + first(kNm(hi)) }, box);
+        rows.forEach(function (row, n) {
+            var y0 = top + n * rowH, yl = y0 + 30, pk = picked[row.fam];
+            el('text', { x: left, y: y0 + 12, 'class': 'calc-dark' }, svg).textContent = row.label;
+            el('line', { x1: X(row.list[0][0]), x2: X(row.list[row.list.length - 1][0]), y1: yl, y2: yl, stroke: '#adb5bd', 'stroke-width': 2 }, svg);
+            /* labels: the picked class first, then each other class where it clears the labels already placed */
+            var shown = [];
+            if (isFinite(pk)) { shown.push(pk); }
+            row.list.forEach(function (cl) { var x = X(cl[0]); if (shown.every(function (v) { return Math.abs(X(v) - x) >= GAP; })) { shown.push(cl[0]); } });
+            row.list.forEach(function (cl) {
+                var x = X(cl[0]), on = isFinite(pk) && Math.abs(cl[0] - pk) < 1e-6 * pk;
+                el('line', { x1: x, x2: x, y1: yl - (on ? 8 : 5), y2: yl + (on ? 8 : 5), stroke: on ? (row.fam === own ? '#212529' : BLUE_LINE) : DARK, 'stroke-width': on ? 3 : 1.25 }, svg);
+                var hit = el('rect', { x: x - 4, y: yl - 8, width: 8, height: 16, fill: 'transparent' }, svg);
+                hoverOn(box, hit, cl[1] + '\nBreaking strength ' + kNm(cl[0]) + '\nWorking tension ' + first(kNm(cl[0] / FAM[row.fam].sf)) + ' at ' + ratio(FAM[row.fam].sf));
+                if (shown.indexOf(cl[0]) >= 0) {
+                    var tx = x + 4, ty = yl + 12;
+                    el('text', { x: tx, y: ty, 'text-anchor': 'end', transform: 'rotate(-90 ' + tx + ' ' + ty + ')', 'class': on ? 'calc-gov' : '' }, svg).textContent = String(cl[0]);
+                }
+            });
+            marks.filter(function (m) { return m.fam === row.fam; }).forEach(function (m) {
+                var x = X(m.v), mk;
+                if (m.self) { mk = el('path', { d: 'M' + x + ',' + (yl - 9) + 'L' + (x + 7) + ',' + yl + 'L' + x + ',' + (yl + 9) + 'L' + (x - 7) + ',' + yl + 'Z', fill: '#212529', stroke: '#fff', 'stroke-width': 1.5 }, svg); }
+                else { mk = el('circle', { cx: x, cy: yl, r: 6, fill: BLUE_LINE, stroke: '#fff', 'stroke-width': 1.5 }, svg); }
+                hoverOn(box, mk, (m.self ? 'This belt, ' + d.designation : 'Same working tension as this belt') + '\nBreaking strength ' + kNm(m.v));
+            });
+        });
+        el('text', { x: left + pw / 2, y: H - 6, 'text-anchor': 'middle' }, svg).textContent = 'Breaking strength, kN/m, on a log scale';
+        if (box.scrollWidth > box.clientWidth) { box.scrollLeft = Math.max(0, X(d.ult) - box.clientWidth / 2); }  /* this belt in view */
+    }
+
+    var resizeTimer = null;
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(renderAll, 120);
+    });
+
+    /* ── Events ── */
+    numInputs.forEach(function (e) {
+        e.addEventListener('input', function () {
+            readInput(e);
+            if (e.id === 'ct' || e.id === 'cb') { coverAuto[e.id] = e.value.trim() === ''; }  /* a cleared cover goes back to the rating */
+            compute();
+        });
+    });
+    ['ct', 'cb'].forEach(function (id) { $(id).addEventListener('change', function () { if (coverAuto[id]) { display($(id)); } }); });
+    var prevCarc = 'ep';
+    $('carc').addEventListener('change', function () {           /* a default safety factor follows the carcass */
+        if (isFinite(si.sf) && Math.abs(si.sf - FAM[prevCarc].sf) < 1e-9) { setSI('sf', FAM[this.value].sf); }
+        if ($('basis').value === 'wply' && !isFabric(this.value)) {  /* a per-ply rating becomes the whole-belt rating */
+            if (isFinite(si.val)) { setSI('val', Math.round(si.val * nPly() * 100) / 100); }
+            $('basis').value = 'wpiw';
+            prevBasis = 'wpiw';
+        }
+        prevCarc = this.value;
+        compute();
+    });
+    ['splice', 'cond', 'trough', 'comp', 'abr', 'brk'].forEach(function (id) { $(id).addEventListener('change', compute); });
+    function fillWidths() {                                       /* standard widths offered in the belt width box */
+        var list = sys === 'met' ? ISO251.concat(CEMA.map(function (x) { return x * 25; })) : CEMA.concat(ISO251.map(function (x) { return Math.round(x / 2.54) / 10; }));
+        list = list.filter(function (x, i) { return list.indexOf(x) === i; }).sort(function (a, b) { return a - b; });
+        $('B-list').innerHTML = list.map(function (x) { return '<option value="' + x + '"></option>'; }).join('');
+    }
+    function nPly() { return isFinite(si.plies) && si.plies >= 1 ? Math.round(si.plies) : 1; }
+    function toUlt(b, v, f) { return { ult: v, ultpiw: v / PIW, kgf: v / KGF, wkn: v * f, wpiw: v / PIW * f, wply: v * nPly() / PIW * f }[b]; }
+    function fromUlt(b, u, f) { return { ult: u, ultpiw: u * PIW, kgf: u * KGF, wkn: u / f, wpiw: u * PIW / f, wply: u * PIW / f / nPly() }[b]; }
+    var prevBasis = 'ult';
+    $('basis').addEventListener('change', function () {           /* switching the form of the rating keeps the same belt */
+        var nb = this.value;
+        if (prevBasis !== 'need' && nb !== 'need' && isFinite(si.val) && si.val > 0 && isFinite(si.sf) && si.sf > 0) {
+            var nv = fromUlt(nb, toUlt(prevBasis, si.val, si.sf), si.sf);
+            setSI('val', Math.round(nv * 100) / 100);
+        }
+        prevBasis = nb;
+        compute();
+    });
+    form.addEventListener('submit', function (e) { e.preventDefault(); });
+    $('units').addEventListener('change', function () {
+        sys = this.value;
+        numInputs.forEach(display);
+        document.querySelectorAll('[data-unit]').forEach(function (s) { s.textContent = UNIT[s.getAttribute('data-unit')][sys]; });
+        fillWidths();
+        compute();
+    });
+
+    /* The bottom result bar hides while the results are on screen */
+    var bar = $('calcBar');
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) { bar.hidden = e.isIntersecting; });
+        }, { rootMargin: '0px 0px -15% 0px' }).observe($('results'));
+    }
+
+    /* ── Start from the example values (metric), whatever the browser restored ── */
+    numInputs.forEach(function (e) {
+        var v = e.getAttribute('value');
+        e.value = v === null ? '' : v;
+        readInput(e);
+    });
+    form.querySelectorAll('select').forEach(function (s) {
+        var sel = s.querySelector('option[selected]');
+        if (sel) { s.value = sel.value; }
+    });
+    $('comp').value = '2';
+    prevCarc = $('carc').value;
+    prevBasis = $('basis').value;
+    fillWidths();
+    compute();
+})();
+</script>
+<script src="handbook.js"></script>
+
+</body>
+</html>
