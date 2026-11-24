@@ -15,7 +15,7 @@
     <meta property="og:site_name" content="Modern Conveyor Handbook">
     <meta property="og:locale" content="en_AU">
     <meta property="article:published_time" content="2026-11-21T00:00:00+11:00">
-    <meta property="article:modified_time" content="2026-11-21T00:00:00+11:00">
+    <meta property="article:modified_time" content="2026-11-24T00:00:00+11:00">
     <meta property="article:author" content="Matthew Malone">
     <meta property="article:section" content="Engineering">
     <meta property="article:tag" content="conveyors">
@@ -45,7 +45,7 @@
                 "copyrightHolder": { "@type": "Person", "name": "Matthew Malone" },
                 "publisher": { "@type": "Organization", "@id": "https://www.conveyorhandbook.com/#organization", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
                 "datePublished": "2026-11-21",
-                "dateModified": "2026-11-21",
+                "dateModified": "2026-11-24",
                 "mainEntityOfPage": "https://www.conveyorhandbook.com/19-conveyor-starting-methods-and-control.html",
                 "isPartOf": { "@type": "WebSite", "@id": "https://www.conveyorhandbook.com/#website", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
                 "inLanguage": "en-AU",
@@ -98,12 +98,16 @@
         <a href="#startup-algorithms-and-sequencing">4. Startup Algorithms and Sequencing</a>
         <a href="#pre-magnetisation-phase-flux-build-up" class="sub">4.1 Pre-Magnetisation Phase (Flux Build-Up)</a>
         <a href="#breakaway-dwell-overcoming-stiction" class="sub">4.2 Breakaway Dwell (Overcoming Stiction)</a>
-        <a href="#s-curve-and-jerk-control" class="sub">4.3 S-Curve and Jerk Control</a>
-        <a href="#consolidated-startup-sequence" class="sub">4.4 Consolidated Startup Sequence</a>
+        <a href="#low-speed-pre-tension-stage" class="sub">4.3 Low-Speed Pre-Tension Stage</a>
+        <a href="#s-curve-and-jerk-control" class="sub">4.4 S-Curve and Jerk Control</a>
+        <a href="#consolidated-startup-sequence" class="sub">4.5 Consolidated Startup Sequence</a>
         <a href="#multi-motor-load-sharing">5. Multi-Motor Load Sharing</a>
         <a href="#fluid-coupling-load-sharing" class="sub">5.1 Fluid Coupling Load Sharing</a>
         <a href="#vfd-master-follower-load-sharing" class="sub">5.2 VFD Master/Follower Load Sharing</a>
+        <a href="#intermediate-drive-tension-control" class="sub">5.3 Intermediate Drive Tension Control</a>
+        <a href="#tail-drive-control" class="sub">5.4 Tail Drive Control</a>
         <a href="#application-specific-startup-sequences">6. Application-Specific Startup Sequences</a>
+        <a href="#starting-with-a-locked-winch-take-up" class="sub">6.1 Starting with a Locked Winch Take-Up</a>
         <a href="#drive-protection-and-fault-handling">7. Drive Protection and Fault Handling</a>
         <a href="#hard-trip-faults" class="sub">7.1 Hard-Trip Faults</a>
         <a href="#managed-faults" class="sub">7.2 Managed Faults</a>
@@ -284,8 +288,17 @@
         </ul>
     </section>
 
+    <section id="low-speed-pre-tension-stage">
+        <h3>4.3 Low-Speed Pre-Tension Stage</h3>
+        <p>Low-modulus fabric and solid woven belts, long conveyors, valley profiles and downhill conveyors hold a large length of slack belt at standstill. The breakaway dwell lets the tension wave reach the tail, but it does not remove this slack. Where dynamic simulation shows low tensions or excessive take-up movement early in the ramp, insert a low-speed pre-tension stage between the breakaway dwell and the lower knee of the S-curve.</p>
+        <p>During the pre-tension stage, the drives run the belt at a low, constant or gently rising speed, typically 4% to 10% of rated speed. This draws slack belt out of the low-tension zones into the take-up and sets up the tension along the whole belt before the main acceleration begins. On downhill conveyors, it also accelerates the declined section gently before full acceleration torque is applied.</p>
+        <div class="callout" role="note">
+            <p><strong>Engineering Takeaway:</strong> Belt stretch and slack set the length of the pre-tension stage, not wave transit time, so it lasts far longer than the breakaway dwell.</p>
+        </div>
+    </section>
+
     <section id="s-curve-and-jerk-control">
-        <h3>4.3 S-Curve and Jerk Control</h3>
+        <h3>4.4 S-Curve and Jerk Control</h3>
         <p>Once stiction is overcome, the VFD executes the S-curve velocity ramp. Do not use a simple linear ramp. The step change from zero to constant acceleration produces theoretically infinite jerk at the transition point, generating the tension transients the S-curve avoids.</p>
         <p><strong>Rules of Thumb:</strong></p>
         <ul>
@@ -307,7 +320,7 @@
     </section>
 
     <section id="consolidated-startup-sequence">
-        <h3>4.4 Consolidated Startup Sequence</h3>
+        <h3>4.5 Consolidated Startup Sequence</h3>
         <p>The complete VFD startup sequence consists of six phases executed in series, each with distinct control parameters in the VFD and PLC. The table below summarises the phase, its function, the governing parameters, typical values and the primary constraint that limits each parameter.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
@@ -359,6 +372,32 @@
         <p>The drives share load proportionally according to their rated capacity. If pulley diameters vary, the follower motor rotates at a differential speed to maintain the torque share, avoiding mechanical conflict.</p>
     </section>
 
+    <section id="intermediate-drive-tension-control">
+        <h3>5.3 Intermediate Drive Tension Control</h3>
+        <p>Run intermediate (tripper) drives in tension control during the start and in operation:</p>
+        <ul>
+            <li>A load cell measures the slack-side tension leaving the tripper drive.</li>
+            <li>The tripper drive adjusts its torque to hold that tension at a target value while the head drives follow the demand speed curve.</li>
+            <li>Fit a clamp that limits tripper torque to the drive rating. Where the target cannot be held without overloading the drive, the tension is allowed to rise.</li>
+        </ul>
+        <p>Check the empty running case. The target tension, plus the empty-belt resistance between the tripper and the head, must exceed the slack-side tension at the head drive. If it does not, the tripper does work the head drive must absorb, and the head drive is forced into regeneration. In that case:</p>
+        <ul>
+            <li>Raise the target for empty running, or</li>
+            <li>Limit tripper torque so it never exceeds head drive torque.</li>
+        </ul>
+        <p>Fill-controlled (drain) fluid couplings do this passively. Once the head coupling is full at the end of the start, the tripper couplings cannot transmit more than the head.</p>
+    </section>
+
+    <section id="tail-drive-control">
+        <h3>5.4 Tail Drive Control</h3>
+        <p>On very long conveyors with a tail drive:</p>
+        <ul>
+            <li>Hold the tail drive inactive until belt movement produced by the head drives is detected at the tail.</li>
+            <li>The tail drive then acts as a follower, applying the same torque as the head drives.</li>
+            <li>Slip detection on the tail drive is essential, with an algorithm that reduces torque when slip is detected.</li>
+        </ul>
+    </section>
+
     <section id="application-specific-startup-sequences">
         <h2 class="border-top pt-4 mt-5">6. Application-Specific Startup Sequences</h2>
         <p>Complex conveyor geometries such as vertical or horizontal curves and declines cause non-uniform tension during startup that a single S-curve does not control. A mid-ramp speed hold pauses the S-curve at a target speed for a set duration so the belt tension profile redistributes and stabilises before acceleration resumes.</p>
@@ -381,6 +420,7 @@
                     <tr><th scope="row">Horizontal Curves (Tilted Idlers)</th><td>High transient tension amplifies uneven edge tension, risking splice overstress (outside edge) or mistracking (inside).</td><td>Ramp acceleration phase (transient tension peaks).</td><td>Cap the peak acceleration rate to limit maximum transient tension at the curve.</td><td>Max transient tension at the curve: no greater than 110% of steady-state tension. Tight curves (less than 400 m [1,312 ft] radius): no greater than 105%.</td></tr>
                     <tr><th scope="row">Long Decline Sections</th><td>Torque dip during zero-torque crossover causes momentary belt slip or speed transients.</td><td>Motoring-to-regenerating crossover (typically 15% to 30% of rated speed).</td><td>Program a speed hold to stabilise the VFD control loop in the regenerating quadrant.</td><td>Trigger the hold when motoring torque falls below 5% of rated torque. Maintain the hold for 3 to 5 seconds, resuming acceleration only when a stable negative (braking) torque is achieved and regenerative braking is active.</td></tr>
                     <tr><th scope="row">Decline Conveyors (Take-Up Sequencing)</th><td>Gravity pulls belt forward before drive has control, causing take-up runaway, T2 collapse and drive slip.</td><td>Initial breakaway and low-speed ramp phases.</td><td>Hold take-up brake locked until the drive encoder confirms positive speed control.</td><td>Release at 10% to 15% rated speed. Steep declines (greater than 12 deg): Hold until the VFD enters the regenerating quadrant and braking is active.</td></tr>
+                    <tr><th scope="row">Gentle Declines (Not Regenerative)</th><td>Gravity offsets most of the running resistance, so running demand is low. Starting demand is set by inertia and breakaway resistance and is similar to a flat conveyor. The declined section can run ahead and gather slack.</td><td>Breakaway and early acceleration, particularly at full length.</td><td>Use a pre-tension stage to draw in slack and accelerate the declined section gently. Size the drives and starting equipment for starting demand, not running demand.</td><td>Starting demand about 120% to 130% of drive nameplate where running demand is 75% to 85% or less. A second or standby drive may be needed to start at full length, e.g. 234 kW [314 hp] running and about 500 kW [670 hp] starting.</td></tr>
                     <tr><th scope="row">Take-Up at Higher Elevation Than Drive</th><td>Unsupported belt mass sags, pulling take-up forward and reducing T2 at the drive.</td><td>Early startup before drive T1 builds enough to support the gravity load.</td><td>Hold take-up brake locked until drive torque can support the hanging belt mass.</td><td>Hold until drive torque is at least 130% of the static gravitational load (typically 15% to 25% rated speed).</td></tr>
                     <tr><th scope="row">Concave Curve Between Drive and Take-Up</th><td>High-tension zone at the curve slows the redistribution of the tension wave to the take-up.</td><td>Wave transit phase during breakaway.</td><td>Extend the timed take-up brake hold duration to account for curve geometry.</td><td>Add one wave transit time per concave curve to the base brake hold time.</td></tr>
                     <tr><th scope="row">Long Conveyors with Remote Take-Up (greater than 5 km [3.1 mi])</th><td>Long wave transit times (typically 5 to 10 seconds) mean the drive accelerates before tension control reaches the take-up.</td><td>Breakaway dwell and lower S-curve knee.</td><td>Delay brake release or transition to active, feedback-controlled tension release.</td><td>Greater than 5 km [3.1 mi]: Hold for the full dwell time until the lower S-curve knee confirms positive speed. Greater than 10 km [6.2 mi]: Release only when local tension is within 10% of the T2 setpoint and the rate of change is less than 2 kN/s [450 lbf/s] for at least 2 s.</td></tr>
@@ -391,6 +431,20 @@
         <div class="callout" role="note">
             <p><strong>Note:</strong> Values are typical practice. Confirm hold speeds, durations and tension limits by dynamic simulation for conveyors exceeding 3 km [1.9 mi].</p>
         </div>
+    </section>
+
+    <section id="starting-with-a-locked-winch-take-up">
+        <h3>6.1 Starting with a Locked Winch Take-Up</h3>
+        <p>Where the winch is locked during the stop, the take-up tension after the stop is above the running set point. If the winch is released as the next start begins, it pays out belt to bring that tension down and feeds slack into the low-tension zones. Keep the winch brake applied until the drives have drawn the take-up tension back down to the set point:</p>
+        <ol>
+            <li>Sound the pre-start warning.</li>
+            <li>Energise the conveyor drives.</li>
+            <li>Energise the winch with the winch brake still applied.</li>
+            <li>Give the drives a zero speed command.</li>
+            <li>Release the drive park brakes.</li>
+            <li>Begin the acceleration ramp.</li>
+            <li>When the take-up tension falls to the set point, release the winch brake. The winch then pays out or hauls in to hold the set point.</li>
+        </ol>
     </section>
 
     <section id="drive-protection-and-fault-handling">
@@ -451,7 +505,7 @@
 
     <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
         Published <time datetime="2026-11-21">21 November 2026</time><br>
-        Updated <time datetime="2026-11-21">21 November 2026</time><br>
+        Updated <time datetime="2026-11-24">24 November 2026</time><br>
         &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>
     </footer>
 

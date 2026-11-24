@@ -15,7 +15,7 @@
     <meta property="og:site_name" content="Modern Conveyor Handbook">
     <meta property="og:locale" content="en_AU">
     <meta property="article:published_time" content="2026-11-21T00:00:00+11:00">
-    <meta property="article:modified_time" content="2026-11-21T00:00:00+11:00">
+    <meta property="article:modified_time" content="2026-11-24T00:00:00+11:00">
     <meta property="article:author" content="Matthew Malone">
     <meta property="article:section" content="Engineering">
     <meta property="article:tag" content="conveyors">
@@ -45,7 +45,7 @@
                 "copyrightHolder": { "@type": "Person", "name": "Matthew Malone" },
                 "publisher": { "@type": "Organization", "@id": "https://www.conveyorhandbook.com/#organization", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
                 "datePublished": "2026-11-21",
-                "dateModified": "2026-11-21",
+                "dateModified": "2026-11-24",
                 "mainEntityOfPage": "https://www.conveyorhandbook.com/20-deceleration-braking-and-anti-runback.html",
                 "isPartOf": { "@type": "WebSite", "@id": "https://www.conveyorhandbook.com/#website", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
                 "inLanguage": "en-AU",
@@ -102,6 +102,7 @@
         <a href="#brake-thermal-capacity-and-duty-cycle" class="sub">5.2 Brake Thermal Capacity and Duty Cycle</a>
         <a href="#brake-pad-material-selection" class="sub">5.3 Brake Pad Material Selection</a>
         <a href="#brake-rotor-material-selection" class="sub">5.4 Brake Rotor Material Selection</a>
+        <a href="#brake-application-profiles" class="sub">5.5 Brake Application Profiles</a>
         <a href="#flywheel-and-inertia-control">6. Flywheel and Inertia Control</a>
         <a href="#installation-location" class="sub">6.1 Installation Location</a>
         <a href="#flywheel-and-brake-pairing" class="sub">6.2 Flywheel and Brake Pairing</a>
@@ -110,6 +111,8 @@
         <a href="#braking-redundancy" class="sub">7.1 Braking Redundancy</a>
         <a href="#transfer-point-overload" class="sub">7.2 Transfer Point Overload</a>
         <a href="#stop-sequencing-and-geometry-specific-control">8. Stop Sequencing and Geometry-Specific Control</a>
+        <a href="#take-up-control-during-stopping" class="sub">8.1 Take-Up Control During Stopping</a>
+        <a href="#releasing-stored-energy-after-a-stop" class="sub">8.2 Releasing Stored Energy After a Stop</a>
         <a href="#deceleration-limits-for-personnel-safety">9. Deceleration Limits for Personnel Safety</a>
     </div>
 </nav>
@@ -127,6 +130,12 @@
     <section id="coasting-and-transfer-chutes">
         <h2 class="border-top pt-4 mt-5">2. Coasting and Transfer Chutes</h2>
         <p>Coasting time is proportional to system inertia and belt speed, and inversely proportional to the net retarding force from running resistance and gravity.</p>
+        <p>Analyse stopping with three friction cases:</p>
+        <ul>
+            <li><strong>High friction</strong> (new belt and idlers, coldest ambient) sets maximum tensions and motor ratings.</li>
+            <li><strong>Low friction</strong> (worn-in idlers, worn belt, hottest ambient) sets the longest stopping time and the brake torque.</li>
+            <li><strong>Normal friction</strong> (after run-in, at nominal ambient) represents normal operation.</li>
+        </ul>
         <p>Keep the receiving conveyor running until the feeding conveyor stops discharging. Otherwise, material discharges onto a stationary belt and blocks the transfer chute. Restarting a buried receiving belt increases breakaway torque and risks drive pulley slip, cover damage and splice overload.</p>
         <p>Where the feeding conveyor coasts longer than the receiving conveyor, delay the receiving conveyor stop through the control sequence for controlled stops. For power loss, specify a brake on the feeding conveyor or install a flywheel on the receiving conveyor.</p>
         <p>Size the downstream chute for the material discharged after a stop command under power loss and emergency stop cases.</p>
@@ -319,6 +328,30 @@
         <p>Friction data applies only to the pad and rotor combination tested. Do not substitute rotor material without supplier confirmation of the friction coefficient.</p>
     </section>
 
+    <section id="brake-application-profiles">
+        <h3>5.5 Brake Application Profiles</h3>
+        <div class="my-4 table-responsive">
+            <table class="table table-bordered table-sm table-hover caption-top">
+                <caption class="small fw-semibold">Table 7: Typical Brake Application Profiles</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Brake Location</th>
+                        <th scope="col">Application Profile</th>
+                        <th scope="col">Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Braking tripper</th><td>Dump to 50% on de-energisation, then bleed to 100% over 10 to 15 s</td><td>Immediate braking effort while tension builds at the pulley</td></tr>
+                    <tr><th scope="row">Brake immediately after the take-up</th><td>Dump to 30%, then bleed to 100% over 10 s</td><td>Limits slip while the take-up draws belt in</td></tr>
+                    <tr><th scope="row">Single brake on a long, flexible downhill belt</th><td>Bleed uniformly from 0% to 100% over 10 s</td><td>Limits take-up weight movement</td></tr>
+                    <tr><th scope="row">Small brakes on long conveyors and drifts</th><td>Bleed on over approximately 5 s</td><td>Prevents torque arriving too quickly when fully loaded</td></tr>
+                    <tr><th scope="row">Brakes paired with flywheels</th><td>No torque for 5 s, then 0% to 100% over 5 s</td><td>Preserves the flywheel benefit</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>A dump and bleed profile set for the loaded case stops an empty conveyor very quickly. This typically causes slip at the tripper and runback at the tail and boot end. It is unpleasant but not destructive. Consider proportional brake control for powered stops so the empty case does not slip on every stop.</p>
+    </section>
+
     <section id="flywheel-and-inertia-control">
         <h2 class="border-top pt-4 mt-5">6. Flywheel and Inertia Control</h2>
         <p>Rotating components (motor rotors, couplings, gearbox internals and pulleys), together with belt and material mass, determine system inertia. On complex profiles, inherent inertia can be insufficient to prevent transient tension collapse during an uncontrolled stop. Add a flywheel to increase system inertia.</p>
@@ -337,6 +370,8 @@
     <section id="flywheel-and-brake-pairing">
         <h3>6.2 Flywheel and Brake Pairing</h3>
         <p>Adding a flywheel extends coasting time. Pair the flywheel with a controlled mechanical brake that applies a retarding force to stop the system within the required time. Set brake torque and application timing by dynamic analysis so carry-side tension at the concave curve remains positive.</p>
+        <p>Delay the brake so it does not cancel the flywheel. Apply no torque for about 5 s after the drives switch off, then ramp from 0% to 100% over about 5 s. Full torque then arrives only after a fully loaded conveyor has already stopped, while an empty conveyor, which would otherwise coast for more than 60 s, is stopped in a reasonable time.</p>
+        <p>Alternatively, use a brake controller that targets a fixed stopping time, such as 15 s. It applies no torque where the conveyor will stop within the target, and only enough torque to meet the target otherwise. This control is largely independent of pad wear and needs less adjustment.</p>
     </section>
 
     <section id="flywheel-hazards-and-chute-capacity">
@@ -369,7 +404,7 @@
         <p>The conveyor profile determines VFD torque commands and brake timing.</p>
         <div class="my-4 table-responsive">
             <table class="table table-bordered table-sm table-hover caption-top">
-                <caption class="small fw-semibold">Table 7: Conveyor Geometry Stopping Configurations</caption>
+                <caption class="small fw-semibold">Table 8: Conveyor Geometry Stopping Configurations</caption>
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Configuration</th>
@@ -382,7 +417,7 @@
                 <tbody>
                     <tr><th scope="row">Steep incline, net motoring. Torque taper with holdback hand-off.</th><td>When drive torque is removed, the loaded carry side runs back. Holdback engagement after backlash shock-loads the driveline and releases stored belt strain as a tension wave. Material rolls back at the loading zone. Holdbacks on multi-drive systems share load unequally.</td><td>Stop the feed. Ramp down on an S-curve under closed-loop vector control with encoder feedback. Set the ramp slower than the natural stop of the lightest load case so drive torque stays positive and does not reverse through gear backlash. Hold at zero speed under torque. Command brake set and confirm by limit or pressure switch feedback. Taper torque to zero while monitoring the encoder for creep. Apply Safe Torque Off (STO).</td><td>Brake set confirmation timeout: 2 to 3 s. Torque taper: 100% to 0% over 3 to 5 s. If creep is detected during the taper, restore torque and raise a brake slip alarm. Rate each holdback to stop and hold at least 150% of the maximum dynamic runback torque, then apply the supplier service factor. On multi-drive systems, rate each holdback for the full runback torque or use torque-limiting holdbacks.</td><td>The holdback arrests runback and spring-applied brakes set on loss of power. Calculate runback travel to holdback engagement and the engagement shock torque. Add flywheel inertia where an uncontrolled stop causes transfer spillage or exceeds transient tension limits.</td></tr>
                     <tr><th scope="row">Steep decline, net regenerative. Regenerative stop with brake hand-off.</th><td>Gravity-driven overspeed. Emergency brake torque that exceeds the friction capacity of the braked pulley slips the belt. Repeated high-energy stops on mechanical brakes glaze pads and thermally distort discs. On a head-driven decline, the slack side is the carry side approaching the head.</td><td>Stop the feed. Ramp down on an S-curve with brakes released. Return energy to the grid through an AFE or dissipate it through a DC chopper and braking resistors. Below the static brake threshold, set the brakes, confirm by feedback, then taper drive braking torque to zero. Confirm zero speed at a non-driven pulley to detect slip.</td><td>Static brake threshold: less than 0.1 m/s [20 fpm], or 2% to 5% of rated speed. Set emergency deceleration by dynamic analysis, limited by drive pulley slip, brake thermal capacity and transient tension. Use 0.2 to 0.3 m/s2 [0.66 to 0.98 ft/s2] as a starting value only. Brake torque must be greater than or equal to peak full-load regenerative torque plus inertial deceleration torque, with design margin. Under emergency braking, confirm that the braked pulley does not slip at the peak braking effective tension. If it slips, increase take-up tension or wrap angle, apply braking at additional pulleys subject to dynamic analysis, or relocate the take-up to the slack side near the drive.</td><td>Option A: closed-loop soft braking. A UPS-backed controller modulates a proportional valve on the Hydraulic Power Unit (HPU) against encoder speed. Accumulators supply hydraulic energy because the pump is lost with the grid. Option B: a drive with a DC chopper and braking resistors continues braking because regenerated energy sustains the DC bus, with control powered from the UPS. An AFE without a chopper cannot brake on grid loss. An independent overspeed trip, commonly set at 110% of rated speed, forces full brake application. Staged application, reduced pressure then full clamp, limits transients. Implement the stop as Safe Stop 1 with ramp monitoring (SS1-r) with Safe Brake Control (SBC).</td></tr>
-                    <tr><th scope="row">Long horizontal and overland. Drive-controlled stop with take-up coordination.</th><td>Abrupt torque removal produces a step change in tension. It generates longitudinal stress waves and collapses tension at the low-tension point. Results include carry-side sag and spillage near the tail, take-up carriage overshoot or bottoming, belt lift at concave curves from transient high tension and pulley slip.</td><td>Stop the feed upstream. Ramp drive torque down at or near the natural deceleration rate. On systems with head, tail and booster drives, stop all drives together under master torque control to preserve load share. Ramp the tail drive to keep the low-tension point positive. Switch active winch take-ups to the stop tension setpoint before the stop and hold carriage position at zero speed. Use natural coast only where dynamic analysis confirms the torque step is acceptable.</td><td>Natural deceleration: calculate for each load case, since loaded and empty stop times differ. Low-resistance overlands typically decelerate at 0.05 to 0.1 m/s2 [0.16 to 0.33 ft/s2]. Set ramp time greater than the stress wave round-trip time 2 * L / v_w, where L is conveyor length and v_w is the tension wave propagation velocity in the belt carcass, and confirm by dynamic analysis. Apply project sag limits, commonly 1% to 2% steady state and up to 3% transient. Include the stop transient in take-up travel.</td><td>Include power loss as an uncontrolled torque step in the dynamic analysis. Mitigate with drive flywheels and a damped or brake-held take-up. Fit brakes or holdbacks to any section that is net regenerative or net runback in any load case.</td></tr>
+                    <tr><th scope="row">Long horizontal and overland. Drive-controlled stop with take-up coordination.</th><td>Abrupt torque removal produces a step change in tension. It generates longitudinal stress waves and collapses tension at the low-tension point. Results include carry-side sag and spillage near the tail, take-up carriage overshoot or bottoming, belt lift at concave curves from transient high tension and pulley slip.</td><td>Stop the feed upstream. Ramp drive torque down at or near the natural deceleration rate. On systems with head, tail and booster drives, stop all drives together under master torque control to preserve load share. Ramp the tail drive to keep the low-tension point positive. Switch active winch take-ups to the stop tension setpoint before the stop and hold carriage position at zero speed. Use natural coast only where dynamic analysis confirms the torque step is acceptable.</td><td>Natural deceleration: calculate for each load case, since loaded and empty stop times differ. Low-resistance overlands typically decelerate at 0.05 to 0.1 m/s2 [0.16 to 0.33 ft/s2]. Set ramp time greater than the stress wave round-trip time and confirm by dynamic analysis. Apply project sag limits, commonly 1% to 2% steady state and up to 3% transient for controlled stops. On power loss and emergency stops, momentary sag of about 5% at the low-tension point is commonly accepted where no loading point or curve is nearby to make it worse. Include the stop transient in take-up travel.</td><td>Include power loss as an uncontrolled torque step in the dynamic analysis. Mitigate with drive flywheels and a damped or brake-held take-up. Fit brakes or holdbacks to any section that is net regenerative or net runback in any load case.</td></tr>
                     <tr><th scope="row">Undulating terrain. Load-state-indexed stop profiles.</th><td>Concave curves: belt lift-off at high tension, worst with an empty belt. Convex curves: centre buckling at low tension and edge overstress at high tension. Valleys: sag and spillage at low tension. The system can switch between motoring and regenerative during the stop depending on which flights are loaded.</td><td>Stop the feed. Select a pre-computed stop profile for the current load case, identified by material tracking from belt scale and speed integration. Load cases include empty, full, loaded inclines with empty declines, and the reverse. Run the drives in torque control to hold span tension between a minimum set by sag and convex buckling and a maximum set by concave lift-off. Estimate span tension from drive torque, pulley load pins, take-up position and force, and drive versus non-drive pulley speed.</td><td>Derive the convex buckling limit from curve radius, trough angle and belt modulus. Derive the stop time for each profile by dynamic analysis. Extending the deceleration ramp protects valley tension only. Apply the maximum tension limit to protect concave curves.</td><td>Stop profiles cannot be enforced on power loss. Check the worst load case under coast. Fit controlled braking for regenerative cases and holdbacks for runback cases.</td></tr>
                 </tbody>
             </table>
@@ -390,6 +425,22 @@
         <div class="callout" role="note">
             <p><strong>Note:</strong> Timing values, deceleration rates and sag limits are indicative starting values from common practice. Confirm by dynamic analysis and commissioning.</p>
         </div>
+    </section>
+
+    <section id="take-up-control-during-stopping">
+        <h3>8.1 Take-Up Control During Stopping</h3>
+        <p>Lock the take-up for every stop by applying the winch brake. An active winch left free pays out belt as the take-up tension rises, and the belt piles up at the tail. A power failure locks the winch anyway, so design for the locked case even where the winch normally stays active during controlled stops. The tension locked in at the take-up after the stop governs the next start.</p>
+    </section>
+
+    <section id="releasing-stored-energy-after-a-stop">
+        <h3>8.2 Releasing Stored Energy After a Stop</h3>
+        <p>Brakes at several locations, a locked take-up and holdbacks trap belt tension after the conveyor stops. Releasing one brake can move the belt along its whole length, with a risk of injury or death to anyone working on it. Release the energy after every stop in this order:</p>
+        <ol>
+            <li>With the take-up powered, release the take-up brake and let the take-up tension settle to the set point.</li>
+            <li>With the take-up still active, release the remaining brakes one location at a time, letting the belt settle between each.</li>
+            <li>Re-apply the brakes and de-energise the take-up.</li>
+        </ol>
+        <p>After an emergency stop, do not release until the cause has been established. Stored energy cannot be released during a power-loss stop, so release it with the same sequence once power returns. Develop and document the procedure before first operation.</p>
     </section>
 
     <section id="deceleration-limits-for-personnel-safety">
@@ -401,7 +452,7 @@
 
     <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
         Published <time datetime="2026-11-21">21 November 2026</time><br>
-        Updated <time datetime="2026-11-21">21 November 2026</time><br>
+        Updated <time datetime="2026-11-24">24 November 2026</time><br>
         &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>
     </footer>
 

@@ -1756,6 +1756,10 @@
             if (d.hasTaT && Math.abs(d.TaT - d.Ta) > 1e-9) { limits.push([d.TaT * d.edgeF, 'Edge, start/stop', '#adb5bd']); }
         }
         limits.forEach(function (lm) { vTop = Math.max(vTop, lm[0]); });
+        var longest = 'Minimum allowed'.length;                   /* room in the right margin for the longest name */
+        limits.forEach(function (lm) { longest = Math.max(longest, lm[1].length); });
+        lines.forEach(function (ln) { longest = Math.max(longest, ln.c.short.length); });
+        right = Math.min(Wpx * 0.45, Math.max(right, 12 + 6.8 * longest));
         var rawTop = fromSI('kNm', vTop), rawBot = fromSI('kNm', vBot), step = niceStep(Math.max(rawTop - rawBot, 1e-9) * 1.1 / 4);
         var dBot = rawBot < 0 ? Math.floor(rawBot * 1.05 / step) * step : 0, dTop = rawTop + 0.1 * (rawTop - dBot), widest = 0;
         for (var t0 = Math.ceil(dBot / step - 1e-9); t0 * step <= dTop + 1e-9; t0++) { widest = Math.max(widest, num(t0 * step, step < 1 ? 1 : 0).length); }

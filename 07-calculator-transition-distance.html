@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator 7 Transition Distance – Modern Conveyor Handbook</title>
+    <meta name="description" content="Transition distance calculator: the transition length by the strain-based method, from the edge tension and centre slack in each load case, with full and half trough pulley heights, the transition idlers and to-scale drawings.">
+    <meta name="author" content="Matthew Malone">
+    <link rel="canonical" href="https://www.conveyorhandbook.com/07-calculator-transition-distance.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Calculator 7 Transition Distance – Modern Conveyor Handbook">
+    <meta property="og:description" content="Transition distance calculator: the transition length by the strain-based method, from the edge tension and centre slack in each load case, with full and half trough pulley heights, the transition idlers and to-scale drawings.">
+    <meta property="og:url" content="https://www.conveyorhandbook.com/07-calculator-transition-distance.html">
+    <meta property="og:site_name" content="Modern Conveyor Handbook">
+    <meta property="og:locale" content="en_AU">
+    <meta property="article:published_time" content="2026-11-24T00:00:00+11:00">
+    <meta property="article:modified_time" content="2026-11-24T00:00:00+11:00">
+    <meta property="article:author" content="Matthew Malone">
+    <meta property="article:section" content="Engineering">
+    <meta property="article:tag" content="conveyors">
+    <meta property="article:tag" content="transition distance">
+    <meta property="article:tag" content="transition idlers">
+    <meta property="article:tag" content="engineering calculator">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Calculator 7 Transition Distance – Modern Conveyor Handbook">
+    <meta name="twitter:description" content="Transition distance calculator: the transition length by the strain-based method, from the edge tension and centre slack in each load case, with full and half trough pulley heights, the transition idlers and to-scale drawings.">
+
+    <link rel="icon" type="image/svg+xml" href="ico/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+    <link rel="home" href="https://www.conveyorhandbook.com/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "TechArticle",
+                "headline": "Calculator 7 Transition Distance",
+                "description": "Transition distance calculator: the transition length by the strain-based method, from the edge tension and centre slack in each load case, with full and half trough pulley heights, the transition idlers and to-scale drawings.",
+                "author": { "@type": "Person", "name": "Matthew Malone" },
+                "copyrightYear": "2026",
+                "copyrightHolder": { "@type": "Person", "name": "Matthew Malone" },
+                "publisher": { "@type": "Organization", "@id": "https://www.conveyorhandbook.com/#organization", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "datePublished": "2026-11-24",
+                "dateModified": "2026-11-24",
+                "mainEntityOfPage": "https://www.conveyorhandbook.com/07-calculator-transition-distance.html",
+                "isPartOf": { "@type": "WebSite", "@id": "https://www.conveyorhandbook.com/#website", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "inLanguage": "en-AU",
+                "about": { "@type": "Thing", "name": "Calculator 7 Transition Distance" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Modern Conveyor Handbook", "item": "https://www.conveyorhandbook.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Calculator 7 Transition Distance", "item": "https://www.conveyorhandbook.com/07-calculator-transition-distance.html" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+    <link rel="stylesheet" href="handbook.css">
+    <style>
+        /* Calculator page: only what Bootstrap's classes and handbook.css do not cover */
+        .calc-page { padding-bottom: 6rem; }
+        .calc-group { margin: 2rem 0 0.25rem; }
+
+        /* One input or result per row: label and hint on the left, field or value on the right */
+        .calc-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            column-gap: 1.5rem;
+            row-gap: 0.35rem;
+            align-items: center;
+            padding: 0.6rem 0.5rem;
+            border-bottom: 1px solid var(--bs-border-color);
+        }
+        .calc-row > label { margin: 0; }
+        .calc-hint { display: block; margin-top: 0.1rem; font-size: 0.8125rem; font-weight: 400; color: var(--bs-secondary-color); }
+        .calc-num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+        .input-group > .form-select.calc-dir { flex: 0 0 8.5rem; width: 8.5rem; }
+        @media (max-width: 575.98px) {
+            .calc-row { grid-template-columns: minmax(0, 1fr); padding-left: 0; padding-right: 0; }
+        }
+        #results { scroll-margin-top: 1rem; }
+        #caseBody th[scope="row"], #idlerBody th[scope="row"] { min-width: 10rem; }
+
+        /* Charts */
+        .calc-drawing { position: relative; }
+        .calc-drawing svg { display: block; width: 100%; overflow: visible; }
+        .calc-drawing text { font-size: 12px; fill: var(--bs-secondary-color); font-variant-numeric: tabular-nums; }
+        .calc-drawing text.calc-dark { fill: #212529; }
+        .calc-drawing text.calc-group-label { fill: #212529; font-weight: 600; font-size: 13px; }
+        .calc-drawing text.calc-gov { fill: #212529; font-weight: 600; }
+        .calc-drawing text.calc-halo { paint-order: stroke; stroke: var(--bs-body-bg); stroke-width: 4px; stroke-linejoin: round; }
+        .calc-tip {
+            position: absolute;
+            z-index: 5;
+            padding: 0.3rem 0.55rem;
+            border: 1px solid var(--bs-border-color);
+            border-radius: var(--bs-border-radius-sm);
+            background: var(--bs-body-bg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            max-width: min(360px, 90vw);
+            font-size: 0.8rem;
+            white-space: pre-line;
+            pointer-events: none;
+        }
+
+        /* Result bar fixed to the bottom of the window while the inputs are on screen */
+        .calc-bar {
+            position: fixed;
+            left: 260px;
+            right: 0;
+            bottom: 0;
+            z-index: 1010;
+            padding: 0.6rem 3rem;
+            border-top: 1px solid var(--bs-border-color);
+            background: var(--bs-body-bg);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.06);
+        }
+        @media (max-width: 991.98px) {
+            .calc-bar { left: 0; padding: 0.55rem 1rem; }
+        }
+        @media print {
+            .calc-page { padding-bottom: 0; }
+            .calc-bar, .calc-tip { display: none !important; }
+            .calc-drawing svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Contents
+    </button>
+</div>
+
+<nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
+    <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="chapterMenuBtn" aria-expanded="false" aria-controls="chapterMenu">Chapters</button>
+    </p>
+    <div class="chapter-menu" id="chapterMenu"></div>
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="calcMenuBtn" aria-expanded="false" aria-controls="calcMenu">Calculators</button>
+    </p>
+    <div class="chapter-menu" id="calcMenu"></div>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-3">Table of Contents</p>
+    <div class="toc">
+        <a href="#calculator-7-transition-distance">1. Calculator 7. Transition Distance</a>
+        <a href="#inputs">2. Inputs</a>
+        <a href="#results">3. Results</a>
+    </div>
+</nav>
+
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+<main class="main-content calc-page" id="main" tabindex="-1">
+
+    <section id="calculator-7-transition-distance">
+        <h1 class="mb-3">1. Calculator 7. Transition Distance</h1>
+        <p>Finds the transition length from the last fully troughed idler to the terminal pulley by the strain-based method, from the edge tension and centre slack in each load case. It compares full and half trough pulley heights, sets out the transition idlers and draws the transition to scale.</p>
+        <noscript><div class="alert alert-warning">This calculator needs JavaScript.</div></noscript>
+    </section>
+
+    <form id="calcForm" autocomplete="off" novalidate>
+    <section id="inputs">
+        <h2 class="border-top pt-4 mt-5">2. Inputs</h2>
+
+        <div>
+            <div class="calc-row mt-3">
+                <label for="units">Units</label>
+                <select class="form-select" id="units">
+                    <option value="met" selected>Metric</option>
+                    <option value="imp">Imperial</option>
+                </select>
+            </div>
+
+            <h3 class="h5 calc-group">Transition</h3>
+            <div class="calc-row">
+                <label for="ph">Pulley height<span class="calc-hint">Full trough keeps the belt line level through a loading zone; half trough shortens the transition</span></label>
+                <select class="form-select" id="ph">
+                    <option value="full" selected>Full trough, flush with the centre roll</option>
+                    <option value="half">Half trough, raised half the trough depth</option>
+                    <option value="lift">Raised by an entered lift</option>
+                </select>
+            </div>
+            <div class="calc-row" data-show="lift">
+                <label for="lift">Pulley lift<span class="calc-hint" id="lift-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="lift" data-kind="mm" min="0" step="any" value="70">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="Ln">Design transition length (optional)<span class="calc-hint">From the pulley centre to the first fully troughed idler, checked against each requirement</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="Ln" data-kind="m" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="spc">Carrying idler spacing<span class="calc-hint">The largest gap between transition idlers</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="spc" data-kind="m" min="0" step="any" value="1.2">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="Dp">Pulley diameter (optional)<span class="calc-hint" id="Dp-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="Dp" data-kind="mm" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Belt</h3>
+            <div class="calc-row">
+                <label for="W">Belt width</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="W" data-kind="mm" min="0" step="any" value="1200">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="btype">Belt carcass<span class="calc-hint">For the handbook Table 8 estimate</span></label>
+                <select class="form-select" id="btype">
+                    <option value="fabric">Fabric</option>
+                    <option value="steel" selected>Steel cord</option>
+                </select>
+            </div>
+            <div class="calc-row">
+                <label for="E">Belt elastic modulus<span class="calc-hint">Per unit width; about 10 times the rated breaking strength for fabric belts</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="E" data-kind="kNm" min="0" step="any" value="100000">
+                    <span class="input-group-text" data-unit="kNm">kN/m</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="Ta">Allowable working tension<span class="calc-hint">Per unit width</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="Ta" data-kind="kNm" min="0" step="any" value="240">
+                    <span class="input-group-text" data-unit="kNm">kN/m</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="TaT">Allowable starting and stopping tension (optional)<span class="calc-hint">Per unit width; leave blank to use the working value</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="TaT" data-kind="kNm" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="kNm">kN/m</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="edgeA">Edge tension allowance (optional)<span class="calc-hint">How far the belt edge may exceed the allowable tension</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="edgeA" data-kind="pct" min="0" step="any" value="">
+                    <span class="input-group-text">%</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="Tmin">Minimum belt tension<span class="calc-hint" id="Tmin-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="Tmin" data-kind="kNm" min="0" step="any" value="4.4">
+                    <span class="input-group-text" data-unit="kNm">kN/m</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Troughing Idlers</h3>
+            <div class="calc-row">
+                <label for="arr">Idler arrangement</label>
+                <select class="form-select" id="arr">
+                    <option value="two">2-roll</option>
+                    <option value="three" selected>3-roll</option>
+                    <option value="four">4-roll</option>
+                    <option value="five">5-roll</option>
+                </select>
+            </div>
+            <div class="calc-row" data-show="inner">
+                <label for="lamIn">Inner roll angle<span class="calc-hint" id="lamIn-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="lamIn" data-kind="deg" min="0" step="any" value="20">
+                    <span class="input-group-text">deg</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="lam"><span id="lam-label">Troughing angle</span><span class="calc-hint" id="lam-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="lam" data-kind="deg" min="0" step="any" value="35">
+                    <span class="input-group-text">deg</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="lroll">Roll length (optional)<span class="calc-hint" id="lroll-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="lroll" data-kind="mm" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="gap">Roll gap<span class="calc-hint">Typically 10 to 20 mm; negative for offset sets, where the rolls overlap</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="gap" data-kind="mm" step="any" value="10">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="droll">Roll diameter (optional)<span class="calc-hint" id="droll-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="droll" data-kind="mm" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Belt Tension at the Pulley</h3>
+            <div class="calc-row">
+                <label for="TrF">Belt tension when running full<span class="calc-hint">Across the full belt width, at design capacity</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="TrF" data-kind="kN" min="0" step="any" value="80">
+                    <span class="input-group-text" data-unit="kN">kN</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="TrE">Belt tension when running empty</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="TrE" data-kind="kN" min="0" step="any" value="40">
+                    <span class="input-group-text" data-unit="kN">kN</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="TtH">Highest belt tension when starting or stopping (optional)<span class="calc-hint">From the starting and stopping analysis</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="TtH" data-kind="kN" min="0" step="any" value="110">
+                    <span class="input-group-text" data-unit="kN">kN</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="TtL">Lowest belt tension when starting or stopping (optional)</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="TtL" data-kind="kN" min="0" step="any" value="30">
+                    <span class="input-group-text" data-unit="kN">kN</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    </form>
+
+    <section id="results">
+        <h2 class="border-top pt-4 mt-5">3. Results</h2>
+        <div class="alert alert-danger" id="resultError" role="alert" hidden></div>
+        <div id="resultBody">
+            <figure class="mt-4 mb-4">
+                <figcaption class="small fw-semibold mb-2">Required Transition Length by Check</figcaption>
+                <div class="calc-drawing" id="chart"></div>
+            </figure>
+            <div class="calc-tip" id="tip" hidden></div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold" id="checkCap">Required Transition Length</caption>
+                    <thead class="table-light" id="checkHead"></thead>
+                    <tbody id="checkBody"></tbody>
+                </table>
+            </div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Load Cases</caption>
+                    <thead class="table-light" id="caseHead"></thead>
+                    <tbody id="caseBody"></tbody>
+                </table>
+            </div>
+            <figure class="mt-5 mb-4">
+                <figcaption class="small fw-semibold mb-2">Transition Side View to Scale</figcaption>
+                <div class="calc-drawing" id="side"></div>
+            </figure>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold" id="idlerCap">Transition Idlers</caption>
+                    <thead class="table-light" id="idlerHead"></thead>
+                    <tbody id="idlerBody"></tbody>
+                </table>
+            </div>
+            <figure class="mt-5 mb-4">
+                <figcaption class="small fw-semibold mb-2">Idler and Pulley Profiles to Scale</figcaption>
+                <div class="calc-drawing" id="sect"></div>
+            </figure>
+            <figure class="mt-5 mb-4">
+                <figcaption class="small fw-semibold mb-2">Tension Across the Belt Width</figcaption>
+                <div class="calc-drawing" id="ten"></div>
+            </figure>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold" id="tenCap">Belt Tension</caption>
+                    <thead class="table-light" id="tenHead"></thead>
+                    <tbody id="tenBody"></tbody>
+                </table>
+            </div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Pulley Height Comparison</caption>
+                    <thead class="table-light" id="cmpHead"></thead>
+                    <tbody id="cmpBody"></tbody>
+                </table>
+            </div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Belt, Idlers and Pulley</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody id="infoBody"></tbody>
+                </table>
+            </div>
+            <div class="alert alert-warning mt-4" id="warnBox" hidden>
+                <p class="fw-semibold mb-2">Check</p>
+                <ul class="mb-0 ps-3" id="warnList"></ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="calc-bar d-print-none" id="calcBar">
+        <div class="d-flex flex-wrap align-items-baseline column-gap-3 row-gap-1">
+            <span class="fw-semibold">Transition</span>
+            <span class="fs-5 fw-semibold calc-num" id="barValue" role="status"></span>
+            <a href="#results" class="small">Results</a>
+        </div>
+    </div>
+
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
+        Published <time datetime="2026-11-24">24 November 2026</time><br>
+        Updated <time datetime="2026-11-24">24 November 2026</time><br>
+        &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>
+    </footer>
+
+</main>
+
+<script src="chapters.js"></script>
+<script>
+/* Calculator 7 Transition Distance. Plain JavaScript; every value is held in SI units (m, kN, kN/m, deg).
+   Strain-based method: between the first fully troughed idler and the terminal pulley each strip of belt, at s along the belt from its
+   centre, runs straight from its troughed position (x across, y up, on the idler profile) to its flat position on the pulley (s across,
+   the pulley lift up). Over a transition length L its path is sqrt(L^2 + D(s)), with D = (s - x)^2 + (y - lift)^2, so its strain is
+   d(s) = sqrt(1 + D / L^2) - 1. The belt tension T is shared across the belt width W, so each strip carries t(s) = T / W + E (d(s) - mean d),
+   with E the belt modulus per unit width (as Calculators 5 and 6). The edge tension check keeps the highest t within the allowable tension
+   (plus any edge allowance); the centre slack check keeps the lowest t at or above the minimum belt tension. D is quadratic along each
+   roll, so its extremes lie at the bends, the belt centre and edge, or where a roll's path is shortest; the mean is by Simpson's rule.
+   Transition idlers set on the straight-line paths carry the belt without changing these strains: a fraction a of the way from the pulley
+   to the troughing idler, a roll at lambda sits at atan(a sin(lambda) / (a cos(lambda) + 1 - a)) and the centre roll at (1 - a) lift.
+   The handbook (Chapter 14 Tables 8 and 9) gives the preliminary lengths as multiples of the belt width and the least number of
+   intermediate sets; the gaps between sets are kept within the carrying idler spacing. */
+(function () {
+    'use strict';
+
+    var RAD = Math.PI / 180;
+
+    /* ── Idler arrangements (as Calculators 3, 5 and 6) ── */
+    var ROLLS = {      /* roll length (mm) by belt width (mm); 4-roll sets take a length between the 3-roll and 5-roll values */
+        two:   [[400, 250], [500, 315], [650, 380], [800, 465], [1000, 600], [1200, 700], [1400, 800], [1600, 900], [1800, 1000], [2000, 1100], [2200, 1250], [2400, 1400], [2600, 1500]],
+        three: [[400, 160], [500, 200], [650, 250], [800, 315], [1000, 380], [1200, 465], [1400, 530], [1600, 600], [1800, 670], [2000, 750], [2200, 800], [2400, 900], [2600, 950]],
+        five:  [[800, 165], [1000, 205], [1200, 250], [1400, 290], [1600, 340], [1800, 380], [2000, 420], [2200, 460], [2400, 500], [2600, 540]]
+    };
+    var ARR_NAME = { two: '2-roll', three: '3-roll', four: '4-roll', five: '5-roll' };
+    var ARR_DEFAULT_ANGLE = { two: 20, three: 35, four: 45, five: 45 };
+    var ARR_DEFAULT_INNER = { four: 15, five: 20 };
+    var ARR_HINT = { two: 'Typically 10 to 30 deg', three: 'Typically 20 to 45 deg', four: 'Typically 40 to 60 deg', five: 'Typically 45 to 60 deg' };
+    var INNER_HINT = { four: 'Typically 10 to 20 deg', five: 'Typically 20 to 30 deg' };
+    var SEG_NAME = { two: ['roll'], three: ['centre roll', 'wing roll'], four: ['inner roll', 'outer roll'], five: ['centre roll', 'inner wing roll', 'outer wing roll'] };
+    var T8 = {         /* handbook Table 8: [trough angle, tension above 60%, 60% or less] as multiples of the belt width */
+        half: { fabric: [[20, 0.9, 0.8], [35, 1.6, 1.3], [45, 2.0, 1.6]], steel: [[20, 2.0, 1.6], [35, 3.2, 2.7], [45, 4.0, 3.2]] },
+        full: { fabric: [[20, 1.8, 1.4], [35, 3.2, 2.4], [45, 4.0, 3.0]], steel: [[20, 4.0, 3.2], [35, 6.6, 5.2], [45, 8.0, 6.6]] }
+    };
+    function multi(arr) { return arr === 'four' || arr === 'five'; }
+    function round5(x) { return Math.round(x / 5) * 5; }
+    function tableRoll(key, B) {     /* roll length (mm) from a table, interpolated, or in proportion beyond its ends */
+        var t = ROLLS[key], n = t.length;
+        if (B <= t[0][0]) { return t[0][1] * B / t[0][0]; }
+        if (B >= t[n - 1][0]) { return t[n - 1][1] * B / t[n - 1][0]; }
+        for (var i = 0; i < n - 1; i++) {
+            if (B >= t[i][0] && B <= t[i + 1][0]) {
+                return t[i][1] + (t[i + 1][1] - t[i][1]) * (B - t[i][0]) / (t[i + 1][0] - t[i][0]);
+            }
+        }
+        return NaN;
+    }
+    function stdRoll(arr, Bm) {      /* standard roll length (m) for the belt width, to the nearest 5 mm */
+        var B = Bm * 1000;
+        if (arr === 'four') { return round5((3 * tableRoll('three', B) + 5 * tableRoll('five', B)) / 8) / 1000; }
+        return round5(tableRoll(arr, B)) / 1000;
+    }
+    function stdDia(Bm) {                                        /* a typical roll diameter (m) for the belt width, for the drawing */
+        var B = Bm * 1000;
+        return (B <= 500 ? 89 : B <= 800 ? 108 : B <= 1000 ? 127 : B <= 1400 ? 152 : B <= 1800 ? 159 : B <= 2200 ? 178 : 194) / 1000;
+    }
+    function stdPulley(Bm) {                                     /* a typical terminal pulley diameter (m) for the belt width, for the drawing */
+        var B = Bm * 1000;
+        return (B <= 650 ? 500 : B <= 1000 ? 630 : B <= 1400 ? 800 : B <= 1800 ? 1000 : 1250) / 1000;
+    }
+    /* Roll-top profile from the belt centre outwards as [length along the belt, angle deg]; the last runs on past the end of the outer roll.
+       The belt bends midway across each roll gap; rolls meeting at the belt centre (2 and 4-roll sets) take half of a positive gap each side. */
+    function rollSegs(arr, lam, lamIn, l, g) {
+        var h = g / 2, hc = Math.max(0, g) / 2;
+        if (arr === 'two') { return [[hc + l, lam]]; }
+        if (arr === 'four') { return [[hc + l + h, lamIn], [h + l, lam]]; }
+        var b1 = l / 2 + h;
+        if (arr === 'three') { return [[b1, 0], [h + l, lam]]; }
+        return [[b1, 0], [l + g, lamIn], [h + l, lam]];
+    }
+    /* The profile as bends {s along the profile from the centre, x across, y up}; end: from the centre to the end of the outer roll */
+    function profile(arr, lam, lamIn, l, g) {
+        var segs = rollSegs(arr, lam, lamIn, l, g), v = [{ s: 0, x: 0, y: 0 }], s = 0, x = 0, y = 0;
+        segs.forEach(function (sg) {
+            var a = sg[1] * RAD;
+            s += sg[0]; x += sg[0] * Math.cos(a); y += sg[0] * Math.sin(a);
+            v.push({ s: s, x: x, y: y });
+        });
+        var junc = [];                                            /* bends between rolls, away from the centre */
+        for (var k = 1; k < segs.length; k++) { junc.push(v[k].s); }
+        return { arr: arr, segs: segs, v: v, n: segs.length, end: s, junc: junc };
+    }
+    function segIdx(P, u) {                                       /* the roll segment holding distance u (>= 0) from the centre */
+        for (var k = 0; k < P.n - 1; k++) { if (u < P.v[k + 1].s) { return k; } }
+        return P.n - 1;
+    }
+    function ptAt(P, u) {
+        var k = segIdx(P, u), a = P.segs[k][1] * RAD, d = u - P.v[k].s;
+        return { x: P.v[k].x + d * Math.cos(a), y: P.v[k].y + d * Math.sin(a), k: k };
+    }
+    function lineAngle(lamD, a) {                                 /* a roll's angle a fraction a of the way from the pulley (flat) to the troughing idler */
+        var r = lamD * RAD;
+        return Math.atan2(a * Math.sin(r), a * Math.cos(r) + 1 - a) / RAD;
+    }
+
+    /* ── Units ── */
+    var sys = 'met';
+    var UNIT = {
+        m:     { met: 'm', imp: 'ft', f: 1 / 0.3048, dp: { met: 2, imp: 2 } },
+        mm:    { met: 'mm', imp: 'in', f: 1 / 0.0254, si: 0.001, dp: { met: 0, imp: 1 } },
+        kN:    { met: 'kN', imp: 'lbf', f: 224.80894, dp: { met: 1, imp: 0 } },
+        kNm:   { met: 'kN/m', imp: 'PIW', f: 5.7101471, dp: { met: 1, imp: 1 } }
+    };
+    function toSI(kind, v) {
+        var u = UNIT[kind];
+        if (!u) { return v; }
+        if (sys === 'met') { return v * (u.si || 1); }
+        return kind === 'mm' ? v * 0.0254 : v / u.f;
+    }
+    function fromSI(kind, v) {
+        var u = UNIT[kind];
+        if (!u) { return v; }
+        if (sys === 'met') { return v / (u.si || 1); }
+        return kind === 'mm' ? v / 0.0254 : v * u.f;
+    }
+
+    /* ── Formatting ── */
+    function num(v, dp) {
+        if (Math.abs(v) < 0.5 * Math.pow(10, -dp)) { v = 0; }
+        return v.toLocaleString('en-AU', { minimumFractionDigits: dp, maximumFractionDigits: dp });
+    }
+    function pair(a, b) { return sys === 'met' ? a + ' [' + b + ']' : b + ' [' + a + ']'; }
+    function first(text) { return text.split(' [')[0]; }
+    function dist(m) { return pair(num(m, 2) + ' m', num(m / 0.3048, 1) + ' ft'); }
+    function distUp(m) {                                          /* a shortest length, rounded up so the shown value is never short */
+        return pair(num(Math.ceil(m * 100 - 1e-7) / 100, 2) + ' m', num(Math.ceil(m / 0.3048 * 10 - 1e-7) / 10, 1) + ' ft');
+    }
+    function len(m) { return pair(num(m * 1000, 0) + ' mm', num(m / 0.0254, 1) + ' in'); }
+    function force(kN) { return pair(num(kN, 1) + ' kN', num(kN * 224.80894, 0) + ' lbf'); }
+    function tpw(kNm) { return pair(num(kNm, 1) + ' kN/m', num(kNm * 5.7101471, 0) + ' PIW'); }
+    function pct(p) { return num(p, 0) + '%'; }
+    function strain(x) { var p = x * 100; return num(p, Math.abs(p) < 0.1 ? 3 : 2) + '%'; }
+    function deg(d) { return num(d, Math.abs(d - Math.round(d)) < 1e-9 ? 0 : 1) + '°'; }
+    function lc1(text) { return text.charAt(0).toLowerCase() + text.slice(1); }
+    function cap1(text) { return text.charAt(0).toUpperCase() + text.slice(1); }
+    function ok(text) { return '<span class="text-success fw-semibold">' + text + '</span>'; }
+    function bad(text) { return '<span class="text-danger fw-semibold">' + text + '</span>'; }
+
+    /* ── Elements and stored values ── */
+    var $ = function (id) { return document.getElementById(id); };
+    var form = $('calcForm');
+    var numInputs = Array.prototype.slice.call(form.querySelectorAll('input[data-kind]'));
+    var si = {};
+    function kindOf(el) { return el.getAttribute('data-kind'); }
+    function display(el) {
+        var v = si[el.id], k = kindOf(el);
+        if (!isFinite(v)) { el.value = ''; return; }
+        var dp = UNIT[k] ? UNIT[k].dp[sys] : 2;
+        el.value = String(Number(fromSI(k, v).toFixed(dp)));
+    }
+    function setSI(id, v) { si[id] = v; display($(id)); }
+    function readInput(el) {
+        var t = el.value.trim();
+        si[el.id] = t === '' ? NaN : toSI(kindOf(el), parseFloat(t));
+    }
+    function show(key, on) {
+        form.querySelectorAll('[data-show="' + key + '"]').forEach(function (e) { e.hidden = !on; });
+    }
+
+    /* ── Tooltip ── */
+    var tip = $('tip');
+    function showTip(text, anchor, x, y) {
+        anchor.appendChild(tip);
+        tip.textContent = text;
+        tip.hidden = false;
+        var w = tip.offsetWidth, wrap = anchor.clientWidth;
+        tip.style.left = Math.max(0, Math.min(wrap - w, x - w / 2)) + 'px';
+        tip.style.top = Math.max(-tip.offsetHeight - 4, y - tip.offsetHeight - 10) + 'px';
+    }
+    function hideTip() { tip.hidden = true; }
+    function hoverOn(box, node, text) {
+        function at(e) { var b = box.getBoundingClientRect(); showTip(text, box, e.clientX - b.left, e.clientY - b.top); }
+        node.addEventListener('mouseenter', at);
+        node.addEventListener('mousemove', at);
+        node.addEventListener('mouseleave', hideTip);
+    }
+
+    /* ── Results helpers ── */
+    function cell(value, hint, cls) {
+        return '<td' + (cls ? ' class="' + cls + '"' : '') + '><span class="calc-num">' + value + '</span>' + (hint ? '<span class="calc-hint">' + hint + '</span>' : '') + '</td>';
+    }
+    function row(label, value, cls, hint) {
+        return '<tr' + (cls ? ' class="' + cls + '"' : '') + '><th scope="row">' + label + '</th>' + cell(value, hint) + '</tr>';
+    }
+    function rowN(label, cells, cls, labelHint) {                 /* cells: [[value, hint, class], ...]; a cell with .span spans that many columns */
+        return '<tr' + (cls ? ' class="' + cls + '"' : '') + '><th scope="row">' + label + (labelHint ? '<span class="calc-hint">' + labelHint + '</span>' : '') + '</th>' +
+            cells.map(function (c) { return c.span ? cell(c[0], c[1], c[2]).replace('<td', '<td colspan="' + c.span + '"') : cell(c[0], c[1], c[2]); }).join('') + '</tr>';
+    }
+    function head(cols) { return '<tr>' + cols.map(function (c) { return '<th scope="col">' + c + '</th>'; }).join('') + '</tr>'; }
+    function lenText(r) { return r === 0 ? 'No limit' : isFinite(r) ? distUp(r) : bad('No length is enough'); }
+    function lenShort(r) { return r === 0 ? 'no limit' : isFinite(r) ? first(distUp(r)) : 'no length is enough'; }
+    function roundUp(r) { return Math.ceil(r * 100 - 1e-7) / 100; }
+
+    /* ── Main calculation ── */
+    var last = null;
+    function compute() {
+        var arr = $('arr').value, multiRoll = multi(arr), ph = $('ph').value, btype = $('btype').value;
+        function fin(id) { return isFinite(si[id]); }
+        function blank(id) { return $(id).value.trim() === ''; }
+        show('inner', multiRoll);
+        show('lift', ph === 'lift');
+        $('lam-hint').textContent = ARR_HINT[arr];
+        if (multiRoll) { $('lamIn-hint').textContent = INNER_HINT[arr]; }
+        $('lam-label').textContent = multiRoll ? 'Outer roll angle' : 'Troughing angle';
+        var lStd = fin('W') && si.W > 0 ? stdRoll(arr, si.W) : NaN;
+        $('lroll-hint').textContent = 'Leave blank for ' + (arr === 'four' ? 'a typical' : 'the standard') + ' length' + (isFinite(lStd) ? ': ' + len(lStd) : '');
+        $('lroll').placeholder = isFinite(lStd) ? first(len(lStd)).replace(/ (mm|in)$/, '') : '';
+        var dStd = fin('W') && si.W > 0 ? stdDia(si.W) : NaN, pStd = fin('W') && si.W > 0 ? stdPulley(si.W) : NaN;
+        $('droll-hint').textContent = 'For the drawings only; leave blank for a typical diameter' + (isFinite(dStd) ? ': ' + len(dStd) : '');
+        $('droll').placeholder = isFinite(dStd) ? first(len(dStd)).replace(/ (mm|in)$/, '') : '';
+        $('Dp-hint').textContent = 'For the drawing only; leave blank for a typical diameter' + (isFinite(pStd) ? ': ' + len(pStd) : '');
+        $('Dp').placeholder = isFinite(pStd) ? first(len(pStd)).replace(/ (mm|in)$/, '') : '';
+        $('Tmin-hint').textContent = 'Anywhere across the belt. Typically ' + tpw(4.4) + '; 0 for the zero tension limit';
+
+        /* validation */
+        var errs = [];
+        numInputs.forEach(function (el) { el.classList.remove('is-invalid'); });
+        function need(id, okv, text) { if (!okv) { errs.push(text); $(id).classList.add('is-invalid'); } }
+        need('W', fin('W') && si.W > 0, 'belt width');
+        need('E', fin('E') && si.E > 0, 'belt elastic modulus');
+        need('Ta', fin('Ta') && si.Ta > 0, 'allowable working tension');
+        need('TaT', blank('TaT') || fin('TaT') && si.TaT > 0, 'allowable starting and stopping tension');
+        need('edgeA', blank('edgeA') || fin('edgeA') && si.edgeA >= 0 && si.edgeA <= 100, 'edge tension allowance (0 to 100%)');
+        need('Tmin', fin('Tmin') && si.Tmin >= 0, 'minimum belt tension');
+        need('lam', fin('lam') && si.lam > 0 && si.lam < 80, (multiRoll ? 'outer roll angle' : 'troughing angle') + ' (above 0 and below 80 deg)');
+        if (multiRoll) { need('lamIn', fin('lamIn') && si.lamIn > 0 && si.lamIn < 80, 'inner roll angle (above 0 and below 80 deg)'); }
+        need('lroll', blank('lroll') || fin('lroll') && si.lroll > 0, 'roll length');
+        var lChk = fin('lroll') ? si.lroll : lStd;
+        need('gap', fin('gap') && (!isFinite(lChk) || (arr === 'two' ? si.gap >= 0 : si.gap > -lChk / 2) && si.gap < lChk),
+            arr === 'two' ? 'roll gap (zero or more for a 2-roll set)' : 'roll gap (more than minus half the roll length)');
+        need('droll', blank('droll') || fin('droll') && si.droll > 0, 'roll diameter');
+        need('Dp', blank('Dp') || fin('Dp') && si.Dp > 0, 'pulley diameter');
+        need('Ln', blank('Ln') || fin('Ln') && si.Ln > 0, 'design transition length');
+        need('spc', fin('spc') && si.spc > 0, 'carrying idler spacing');
+        need('TrF', fin('TrF') && si.TrF > 0, 'belt tension when running full');
+        need('TrE', fin('TrE') && si.TrE > 0, 'belt tension when running empty');
+        need('TtH', blank('TtH') || fin('TtH') && si.TtH > 0, 'highest belt tension when starting or stopping');
+        need('TtL', blank('TtL') || fin('TtL') && si.TtL > 0 && (!fin('TtH') || si.TtL <= si.TtH),
+            'lowest belt tension when starting or stopping (above 0 and not more than the highest)');
+
+        /* the trough depth (belt edge height above the belt centre) for the lift hint and check */
+        var W = si.W, lam = si.lam, lamIn = multiRoll ? si.lamIn : 0, l = fin('lroll') ? si.lroll : lStd, g = si.gap, P = null, edgeH = NaN, edgeX = NaN;
+        if (!errs.length) {
+            P = profile(arr, lam, lamIn, l, g);
+            var ep = ptAt(P, W / 2);
+            edgeH = ep.y; edgeX = ep.x;
+        }
+        $('lift-hint').textContent = 'Above the top of the centre roll; a third to a half of the trough depth is typical' +
+            (isFinite(edgeH) ? ': ' + first(len(edgeH / 3)) + ' to ' + len(edgeH / 2) : '');
+        if (isFinite(edgeH) && !(edgeH > 1e-6)) {
+            errs.push('belt width or roll length (the belt lies on the centre roll only, with no trough)');
+            $('W').classList.add('is-invalid'); $('lroll').classList.add('is-invalid');
+        }
+        if (ph === 'lift') {
+            need('lift', fin('lift') && si.lift >= 0 && (!isFinite(edgeH) || si.lift <= edgeH + 1e-9),
+                'pulley lift (0 to the trough depth' + (isFinite(edgeH) ? ', ' + first(len(edgeH)) : '') + ')');
+        }
+        if (errs.length) {
+            $('resultError').hidden = false;
+            $('resultError').textContent = 'Check these inputs: ' + errs.join('; ') + '.';
+            $('resultBody').hidden = true;
+            $('barValue').textContent = 'Check the inputs';
+            last = null;
+            return;
+        }
+        $('resultError').hidden = true;
+        $('resultBody').hidden = false;
+
+        var E = si.E, Ta = si.Ta, TaT = fin('TaT') ? si.TaT : Ta, allow = fin('edgeA') ? si.edgeA : 0, edgeF = 1 + allow / 100, Tmin = si.Tmin;
+        var Ln = fin('Ln') ? si.Ln : NaN, hasNom = isFinite(Ln), spc = si.spc, half = W / 2;
+        var dRoll = fin('droll') ? si.droll : dStd, Dp = fin('Dp') ? si.Dp : pStd;
+        var lift = ph === 'full' ? 0 : ph === 'half' ? edgeH / 2 : si.lift;
+        var lamMax = Math.max(lam, lamIn);
+
+        /* load cases: each belt tension with its allowable tension */
+        function mkCase(key, name, short, T, transient, desc) {
+            var c = { key: key, name: name, short: short, T: T, t: T / W, transient: transient, desc: desc };
+            c.Ta = transient ? TaT : Ta;
+            c.hi = c.Ta * edgeF;
+            return c;
+        }
+        var cases = [mkCase('full', 'Running full', 'Running full', si.TrF, false, 'At design capacity'),
+                     mkCase('empty', 'Running empty', 'Running empty', si.TrE, false, 'No material on the belt')];
+        if (fin('TtH')) { cases.push(mkCase('trHi', 'Starting or stopping, highest tension', 'Start/stop, highest', si.TtH, true, 'From the starting and stopping analysis')); }
+        if (fin('TtL')) { cases.push(mkCase('trLo', 'Starting or stopping, lowest tension', 'Start/stop, lowest', si.TtL, true, 'From the starting and stopping analysis')); }
+        function whenCase(c) { return 'when ' + lc1(c.name); }
+        function allowName(c) { return c.transient && fin('TaT') ? 'allowable starting and stopping tension' : 'allowable working tension'; }
+        function hiName(c) { return (allow > 0 ? 'allowable edge tension' : allowName(c)); }
+
+        /* path geometry for a pulley lift: D(s) along each roll as (A1 + B1 u)^2 + (A2 + B2 u)^2, u from the roll's start;
+           Simpson nodes for the mean, and the strips with the longest and shortest paths */
+        function geom(lv) {
+            var br = [0];
+            P.junc.forEach(function (sj) { if (sj < half - 1e-12) { br.push(sj); } });
+            br.push(half);
+            var segs = [], cand = [], nodes = [];
+            for (var i = 0; i < br.length - 1; i++) {
+                var a = br[i], b = br[i + 1], k = segIdx(P, (a + b) / 2), ang = P.segs[k][1] * RAD, pa = ptAt(P, a);
+                var sg = { a: a, b: b, k: k, A1: a - pa.x, B1: 1 - Math.cos(ang), A2: pa.y - lv, B2: Math.sin(ang) };
+                segs.push(sg);
+                cand.push({ s: a, sg: sg }, { s: b, sg: sg });
+                var den = sg.B1 * sg.B1 + sg.B2 * sg.B2;
+                if (den > 0) {
+                    var u = -(sg.A1 * sg.B1 + sg.A2 * sg.B2) / den;
+                    if (u > 0 && u < b - a) { cand.push({ s: a + u, sg: sg }); }
+                }
+                var m = 16, hh = (b - a) / m;
+                for (var j = 0; j <= m; j++) {
+                    var w = j === 0 || j === m ? 1 : j % 2 ? 4 : 2;
+                    nodes.push({ D: Dseg(sg, a + j * hh), w: w * hh / 3 / half });
+                }
+            }
+            var mx = null, mn = null;
+            cand.forEach(function (cd) {
+                cd.D = Dseg(cd.sg, cd.s);
+                if (!mx || cd.D > mx.D + 1e-15 || Math.abs(cd.D - mx.D) <= 1e-15 && cd.s > mx.s) { mx = cd; }
+                if (!mn || cd.D < mn.D - 1e-15 || Math.abs(cd.D - mn.D) <= 1e-15 && cd.s < mn.s) { mn = cd; }
+            });
+            return { lift: lv, segs: segs, nodes: nodes, hi: mx, lo: mn };
+        }
+        function Dseg(sg, s) { var u = s - sg.a, p = sg.A1 + sg.B1 * u, q = sg.A2 + sg.B2 * u; return p * p + q * q; }
+        function Dat(G, s) {
+            for (var i = 0; i < G.segs.length; i++) { if (s <= G.segs[i].b + 1e-12) { return Dseg(G.segs[i], s); } }
+            return Dseg(G.segs[G.segs.length - 1], s);
+        }
+        function dl(D, L) { var x = D / (L * L); return x / (Math.sqrt(1 + x) + 1); }        /* sqrt(1 + x) - 1 without round-off */
+        function meanD(G, L) { var sum = 0; G.nodes.forEach(function (n) { sum += n.w * dl(n.D, L); }); return sum; }
+        function tHi(G, c, L) { return c.t + E * (dl(G.hi.D, L) - meanD(G, L)); }
+        function tLo(G, c, L) { return c.t + E * (dl(G.lo.D, L) - meanD(G, L)); }
+        function tAt(G, c, L, s) { return c.t + E * (dl(Dat(G, s), L) - meanD(G, L)); }
+        function needL(okAt) {                                    /* the shortest length that passes; the strains fall as the length grows */
+            if (!okAt(1e6)) { return Infinity; }
+            if (okAt(1e-4)) { return 0; }
+            var lo = Math.log(1e-4), hi = Math.log(1e6);
+            for (var i = 0; i < 50; i++) { var m = (lo + hi) / 2; if (okAt(Math.exp(m))) { hi = m; } else { lo = m; } }
+            return Math.exp(hi);
+        }
+        function solve(lv) {                                      /* both checks for every load case at a pulley lift of lv */
+            var G = geom(lv);
+            function mk(key, name, per) {
+                var gi = 0;
+                per.forEach(function (r, i) { if (r > per[gi]) { gi = i; } });
+                return { key: key, name: name, per: per, r: per[gi], c: cases[gi] };
+            }
+            var edge = mk('edge', 'Edge tension', cases.map(function (c) { return needL(function (L) { return tHi(G, c, L) <= c.hi * (1 + 1e-12); }); }));
+            var slack = mk('slack', 'Centre slack', cases.map(function (c) { return needL(function (L) { return tLo(G, c, L) >= Tmin - 1e-12; }); }));
+            var gov = edge.r >= slack.r ? edge : slack;
+            return { G: G, checks: [edge, slack], gov: gov };
+        }
+        var main = solve(lift), G = main.G, checks = main.checks, gov = main.gov;
+
+        /* the pulley lift giving the shortest transition, from 0 to the trough depth */
+        function govAt(lv) { return solve(lv).gov.r; }
+        var best = { h: 0, r: Infinity }, NS = 40;
+        for (var i = 0; i <= NS; i++) { var hv = edgeH * i / NS, rv = govAt(hv); if (rv < best.r) { best = { h: hv, r: rv, i: i }; } }
+        if (isFinite(best.r)) {
+            var ga = edgeH * Math.max(0, best.i - 1) / NS, gb = edgeH * Math.min(NS, best.i + 1) / NS, gr = (Math.sqrt(5) - 1) / 2;
+            var c1 = gb - gr * (gb - ga), c2 = ga + gr * (gb - ga), f1 = govAt(c1), f2 = govAt(c2);
+            for (var it = 0; it < 40; it++) {
+                if (f1 < f2) { gb = c2; c2 = c1; f2 = f1; c1 = gb - gr * (gb - ga); f1 = govAt(c1); }
+                else { ga = c1; c1 = c2; f1 = f2; c2 = ga + gr * (gb - ga); f2 = govAt(c2); }
+            }
+            var hm = (ga + gb) / 2, rm = govAt(hm);
+            if (rm < best.r) { best = { h: hm, r: rm }; }
+        }
+
+        /* the length laid out and drawn: the design length, or the required length rounded up */
+        var Ld = hasNom ? Ln : isFinite(gov.r) ? Math.max(roundUp(gov.r), 0.01) : NaN, role = hasNom ? 'design' : 'required';
+        var roleText = hasNom ? 'Design' : 'Required';
+        function where(s) {
+            if (s >= half - 1e-6) { return 'belt edges'; }
+            if (s <= 1e-6) { return 'belt centre'; }
+            return SEG_NAME[arr][segIdx(P, s)] + 's, ' + first(len(s)) + ' from the belt centre';
+        }
+        function atLen(c, L) {                                    /* highest and lowest tension, and the highest strain, at length L */
+            var th = tHi(G, c, L), tl = tLo(G, c, L);
+            return { hi: th, lo: tl, okHi: th <= c.hi * (1 + 1e-9), okLo: tl >= Tmin - 1e-9, eps: th / E, extra: dl(G.hi.D, L) - meanD(G, L) };
+        }
+        var nomOK = hasNom ? cases.every(function (c) { var a = atLen(c, Ln); return a.okHi && a.okLo; }) : null;
+
+        /* ── Required length by check ── */
+        var setText = ARR_NAME[arr] + ' ' + (multiRoll ? deg(lamIn) + ' and ' : '') + deg(lam) + ' idlers';
+        var htName = ph === 'full' ? 'Full trough' : ph === 'half' ? 'Half trough' : 'Pulley raised ' + first(len(lift));
+        $('checkCap').textContent = 'Required Transition Length, ' + titleCase(htName) + ', ' + titleCase(setText);
+        function titleCase(t) { return t.replace(/(^|\s)([a-z])/g, function (m0, sp0, ch) { return sp0 + ch.toUpperCase(); }); }
+        function checkHint(k) {
+            var c = k.c;
+            if (k.key === 'edge') {
+                if (!isFinite(k.r)) { return c.name + ': the belt tension, ' + first(tpw(c.t)) + ', is above the ' + hiName(c) + ' of ' + first(tpw(c.hi)); }
+                return c.name + ': the highest tension, at the ' + where(G.hi.s) + ', reaches the ' + hiName(c) + ' of ' + first(tpw(c.hi));
+            }
+            if (!isFinite(k.r)) { return c.name + ': the belt tension, ' + first(tpw(c.t)) + ', is not above the minimum belt tension of ' + first(tpw(Tmin)); }
+            return c.name + ': the lowest tension, at the ' + where(G.lo.s) + ', falls to the minimum belt tension of ' + first(tpw(Tmin));
+        }
+        function atNominal(k) {
+            var w = null;
+            cases.forEach(function (c) {
+                var a = atLen(c, Ln), m = k.key === 'edge' ? c.hi - a.hi : a.lo - Tmin;
+                if (!w || m < w.m) { w = { m: m, c: c, a: a }; }
+            });
+            var v = k.key === 'edge' ? w.a.hi : w.a.lo, good = k.key === 'edge' ? w.a.okHi : w.a.okLo;
+            return [first(tpw(v)) + ' ' + (good ? ok('OK') : bad('Fails')),
+                w.c.name + ': ' + (k.key === 'edge' ? 'highest' : 'lowest') + ' tension, at the ' + where(k.key === 'edge' ? G.hi.s : G.lo.s) +
+                '; the ' + (k.key === 'edge' ? 'limit is ' + first(tpw(w.c.hi)) : 'lowest allowed is ' + first(tpw(Tmin)))];
+        }
+        $('checkHead').innerHTML = head(['Check', 'Required Length'].concat(hasNom ? ['At the Design Length'] : []));
+        var ckRows = checks.map(function (k) {
+            var cells = [[lenText(k.r), checkHint(k)]];
+            if (hasNom) { cells.push(atNominal(k)); }
+            return rowN(k.name, cells, k === gov ? 'fw-semibold' : '', k.key === 'edge' ? 'Highest tension across the belt' : 'Lowest tension across the belt');
+        });
+        var govHint = isFinite(gov.r) ? 'Set by ' + lc1(gov.name) + ' ' + whenCase(gov.c) + '; ' + num(roundUp(gov.r) / W, 1) + ' times the belt width' :
+            'The ' + lc1(gov.name) + ' check cannot be met';
+        var gcells = [[lenText(gov.r), govHint]];
+        if (hasNom) {
+            gcells.push(nomOK ? [first(dist(Ln)) + ' ' + ok('OK'), gov.r > 0 ? pct((Ln / gov.r - 1) * 100) + ' above the required length' : ''] :
+                !isFinite(gov.r) ? [first(dist(Ln)) + ' ' + bad('Fails'), 'No length is enough'] :
+                [first(dist(Ln)) + ' ' + bad('Fails'), Ln < gov.r ? pct((1 - Ln / gov.r) * 100) + ' below the required length' : 'A check fails at this length']);
+        }
+        ckRows.push(rowN('Governing length', gcells, 'table-primary fw-semibold'));
+        $('checkBody').innerHTML = ckRows.join('');
+
+        /* ── Load cases ── */
+        $('caseHead').innerHTML = head(['Load Case', 'Belt Tension', 'Length for Edge Tension', 'Length for Centre Slack',
+            'Highest Strain at the ' + roleText + ' Length']);
+        $('caseBody').innerHTML = cases.map(function (c, i) {
+            var eK = checks[0], sK = checks[1], a = isFinite(Ld) ? atLen(c, Ld) : null;
+            var cells = [[force(c.T), first(tpw(c.t)) + '; ' + pct(c.t / c.Ta * 100) + ' of the ' + allowName(c)],
+                [lenText(eK.per[i]), eK.per[i] > 0 && isFinite(eK.per[i]) ? 'Up to the ' + hiName(c) + ', ' + first(tpw(c.hi)) : '', eK.c === c && gov === eK ? 'fw-semibold' : ''],
+                [lenText(sK.per[i]), sK.per[i] > 0 && isFinite(sK.per[i]) ? 'Down to ' + first(tpw(Tmin)) : '', sK.c === c && gov === sK ? 'fw-semibold' : ''],
+                a ? [strain(a.eps), 'At the ' + where(G.hi.s) + '; ' + strain(a.extra) + ' from the transition'] : ['–', 'No length is enough']];
+            return rowN(c.name, cells, c === gov.c && isFinite(gov.r) ? 'table-primary' : '', c.desc);
+        }).join('');
+
+        /* ── Transition idlers at the laid-out length ── */
+        var nMin = Math.max(0, Math.ceil(lamMax / 20 - 1e-9) - 1), sets = [], nSets = 0, gapT = NaN;
+        if (isFinite(Ld)) {
+            nSets = Math.max(nMin, Math.ceil(Ld / spc - 1e-9) - 1);
+            gapT = Ld / (nSets + 1);
+            for (var si2 = 1; si2 <= nSets; si2++) {
+                var dd = si2 * gapT, fa = dd / Ld;
+                sets.push({ n: si2, d: dd, a: fa, angs: P.segs.map(function (sg) { return lineAngle(sg[1], fa); }), cl: (1 - fa) * lift, eh: fa * edgeH + (1 - fa) * lift });
+            }
+        }
+        function angText(angs, short) {
+            var f = function (v) { return num(v, short ? 0 : 1) + '°'; };
+            if (arr === 'two') { return f(angs[0]); }
+            if (arr === 'three') { return f(angs[1]); }
+            if (arr === 'four') { return f(angs[0]) + ' and ' + f(angs[1]); }
+            return f(angs[1]) + ' and ' + f(angs[2]);
+        }
+        var angLabel = arr === 'two' ? 'Roll Angle' : arr === 'three' ? 'Wing Roll Angle' : 'Inner and Outer Roll Angles';
+        $('idlerCap').textContent = 'Transition Idlers for the ' + roleText + ' ' + (isFinite(Ld) ? first(dist(Ld)) + ' ' : '') + 'Length';
+        $('idlerHead').innerHTML = head(['Position', 'From the Pulley', angLabel].concat(lift > 0 ? ['Centre Roll Raised'] : []).concat(['Belt Edge Height']));
+        var it2 = [];
+        if (!isFinite(Ld)) {
+            it2.push('<tr><td colspan="' + (lift > 0 ? 5 : 4) + '" class="text-body-secondary">No length is enough, so there is no layout to show.</td></tr>');
+        } else {
+            var fullAng = P.segs.map(function (sg) { return sg[1]; });
+            function idRow(name, d, angs, cl, eh, hint, hHint) {
+                var cells = [[dist(d), ''], [angs ? angText(angs) : 'Flat', hint]];
+                if (lift > 0) { cells.push([len(cl), hHint]); }
+                cells.push([len(eh), hHint]);
+                return rowN(name, cells);
+            }
+            it2.push(idRow('Pulley', 0, null, lift, lift, 'The belt lies flat on the pulley', 'Above the troughing idlers\' centre roll'));
+            sets.forEach(function (st) {
+                it2.push(idRow('Transition idler ' + st.n, st.d, st.angs, st.cl, st.eh, 'On the straight-line belt path', ''));
+            });
+            it2.push(idRow('First troughing idler', Ld, fullAng, 0, edgeH, 'Fully troughed', ''));
+            var tab9 = lamMax <= 20 + 1e-9 ? 'none for a ' + deg(lamMax) + ' trough' : 'at least ' + nMin + ' for a ' + deg(lamMax) + ' trough';
+            var setsTxt = nSets === 0 ? 'None' : nSets + ' set' + (nSets > 1 ? 's' : '') + ', ' + first(dist(gapT)) + ' apart';
+            var tr = rowN('Transition idlers', [[setsTxt, 'Handbook Table 9: ' + tab9 + '; the gaps are within the ' + first(dist(spc)) + ' carrying idler spacing']]);
+            it2.push(tr.replace('<td>', '<td colspan="' + (lift > 0 ? 4 : 3) + '">'));
+        }
+        $('idlerBody').innerHTML = it2.join('');
+
+        /* ── Tension at the laid-out length ── */
+        $('tenCap').textContent = 'Belt Tension at the ' + roleText + ' Length';
+        $('tenHead').innerHTML = head(['Load Case', 'Highest Tension', 'Lowest Tension']);
+        $('tenBody').innerHTML = !isFinite(Ld) ? '<tr><td colspan="3" class="text-body-secondary">No length is enough, so there is no tension to show.</td></tr>' :
+            cases.map(function (c) {
+                var a = atLen(c, Ld);
+                return rowN(c.name, [[first(tpw(a.hi)) + ' ' + (a.okHi ? ok('OK') : bad('Fails')), 'At the ' + where(G.hi.s) + '; ' + pct(a.hi / c.Ta * 100) + ' of the ' + allowName(c)],
+                    [first(tpw(a.lo)) + ' ' + (a.okLo ? ok('OK') : bad('Fails')), 'At the ' + where(G.lo.s) + '; the lowest allowed is ' + first(tpw(Tmin))]]);
+            }).join('');
+
+        /* ── Pulley height comparison ── */
+        var ratio = Math.max(si.TrF, si.TrE) / W / Ta, high = ratio > 0.6;
+        function t8(kind) {
+            if (lam < 20 - 1e-9 || lam > 45 + 1e-9) { return NaN; }
+            var t = T8[kind][btype], col = high ? 1 : 2;
+            for (var j = 0; j < t.length - 1; j++) {
+                if (lam <= t[j + 1][0] + 1e-9) { return (t[j][col] + (t[j + 1][col] - t[j][col]) * (lam - t[j][0]) / (t[j + 1][0] - t[j][0])) * W; }
+            }
+            return NaN;
+        }
+        var t8Hint = (btype === 'steel' ? 'Steel cord' : 'Fabric') + ', running tension ' + (high ? 'above 60%' : '60% or less') + ' of the allowable';
+        var opts = [{ key: 'full', name: 'Full trough', h: 0, note: 'Flush with the centre roll', t8: t8('full') },
+                    { key: 'half', name: 'Half trough', h: edgeH / 2, note: 'Half the trough depth', t8: t8('half') }];
+        if (isFinite(best.r)) { opts.push({ key: 'best', name: 'Shortest transition', h: best.h, note: num(best.h / edgeH * 100, 0) + '% of the trough depth', t8: NaN }); }
+        if (ph === 'lift') { opts.push({ key: 'lift', name: 'Entered lift', h: lift, note: num(lift / edgeH * 100, 0) + '% of the trough depth', t8: NaN }); }
+        $('cmpHead').innerHTML = head(['Pulley Height', 'Pulley Lift', 'Required Length', 'Handbook Table 8 Estimate']);
+        $('cmpBody').innerHTML = opts.map(function (o) {
+            var s = Math.abs(o.h - lift) < 1e-12 ? main : solve(o.h), chosen = o.key === ph;
+            return rowN(o.name, [[len(o.h), o.note],
+                [lenText(s.gov.r), isFinite(s.gov.r) ? (s.gov.r > 0 ? cap1(lc1(s.gov.name)) + ' ' + whenCase(s.gov.c) + '; ' + num(roundUp(s.gov.r) / W, 1) + ' times the belt width' : '') : 'The ' + lc1(s.gov.name) + ' check cannot be met'],
+                isFinite(o.t8) ? [dist(o.t8), num(o.t8 / W, 1) + ' times the belt width; ' + t8Hint] :
+                    [o.key === 'full' || o.key === 'half' ? '–' : '', o.key === 'full' || o.key === 'half' ? 'Table 8 covers 20 to 45° troughs' : '']],
+                chosen ? 'table-primary fw-semibold' : '', chosen ? 'Entered' : '');
+        }).join('');
+
+        /* ── Belt, idlers and pulley ── */
+        var info = [];
+        info.push(row('Idler set', ARR_NAME[arr] + ', ' + (multiRoll ? deg(lamIn) + ' and ' : '') + deg(lam) + ', ' + first(len(l)) + ' rolls', '',
+            fin('lroll') ? 'Entered roll length' : (arr === 'four' ? 'Typical' : 'Standard') + ' roll length for this belt width'));
+        info.push(row('Trough depth', len(edgeH), '', 'Height of the belt edge above the belt centre on the troughing idlers'));
+        info.push(row('Troughed belt width', len(2 * edgeX), '', 'In plan on the troughing idlers; ' + first(len(W)) + ' flat on the pulley'));
+        info.push(row('Pulley lift', len(lift), '', lift === 0 ? 'Flush with the top of the centre roll' : num(lift / edgeH * 100, 0) + '% of the trough depth, above the top of the centre roll'));
+        if (isFinite(Ld)) {
+            var pe = Math.sqrt(Ld * Ld + Dat(G, half)), pc = Math.sqrt(Ld * Ld + Dat(G, 0));
+            info.push(row('Belt edge path longer than the centre path', len(pe - pc), '', 'Over the ' + lc1(roleText) + ' ' + first(dist(Ld)) + ' length'));
+            info.push(row('Extra strain from the transition', strain(dl(G.hi.D, Ld) - meanD(G, Ld)) + ' and ' + strain(dl(G.lo.D, Ld) - meanD(G, Ld)), '',
+                'At the ' + where(G.hi.s) + ' and the ' + where(G.lo.s) + ', against the belt\'s mean strain; ' +
+                first(tpw(E * (dl(G.hi.D, Ld) - meanD(G, Ld)))) + ' and ' + first(tpw(E * (dl(G.lo.D, Ld) - meanD(G, Ld)))) + ' of tension'));
+        }
+        info.push(row('Running tension', pct(ratio * 100) + ' of the allowable working tension', '', 'The higher running tension, ' + first(tpw(Math.max(si.TrF, si.TrE) / W))));
+        info.push(row('Pulley diameter', len(Dp), '', fin('Dp') ? 'Entered, for the drawing' : 'Typical for this belt width, for the drawing only'));
+        info.push(row('Allowable working tension', tpw(Ta), '', 'When running'));
+        if (fin('TaT')) { info.push(row('Allowable starting and stopping tension', tpw(TaT))); }
+        if (allow > 0) { info.push(row('Allowable edge tension', tpw(Ta * edgeF) + (fin('TaT') ? '; ' + first(tpw(TaT * edgeF)) : ''), '', num(allow, allow % 1 ? 1 : 0) + '% above the allowable tension' + (fin('TaT') ? '; running, then starting and stopping' : ''))); }
+        $('infoBody').innerHTML = info.join('');
+
+        /* ── Warnings ── */
+        var warn = [];
+        if (lift > edgeH / 2 + 1e-9) {
+            warn.push('The pulley lift is more than half the trough depth, which reverses the strain: the belt centre carries more tension than the edges and bears on the centre rolls of the last troughing idlers, and the slack edges can buckle.');
+        }
+        checks.forEach(function (k) {
+            k.per.forEach(function (r, i) {
+                if (isFinite(r)) { return; }
+                var c = cases[i];
+                warn.push(k.key === 'edge' ? c.name + ': the belt tension, ' + first(tpw(c.t)) + ', is above the ' + hiName(c) + ', so no transition length is enough.'
+                    : c.name + ': the belt tension, ' + first(tpw(c.t)) + ', is not above the minimum belt tension, so no transition length keeps the belt in tension. Raise the take-up tension.');
+            });
+        });
+        if (multiRoll && lamIn >= lam) { warn.push('The inner roll angle is not less than the outer roll angle.'); }
+        if (hasNom && !nomOK) {
+            warn.push('The design transition length of ' + first(dist(Ln)) + ' fails' + (isFinite(gov.r) && Ln < gov.r ? ': the required length is ' + first(distUp(gov.r)) + ', set by ' + lc1(gov.name) + ' ' + whenCase(gov.c) : '') + '.');
+        }
+        $('warnList').innerHTML = warn.map(function (t) { return '<li>' + t + '</li>'; }).join('');
+        $('warnBox').hidden = !warn.length;
+
+        $('barValue').textContent = cap1(lenShort(gov.r)) + (hasNom ? ', design ' + first(dist(Ln)) + (nomOK ? ' OK' : ' fails') : '');
+
+        /* ── Drawing data ── */
+        var hc = Math.max(0, g) / 2, rolls;                       /* rolls along the profile on one half: [from, to, segment, centre roll] */
+        if (arr === 'two') { rolls = [[hc, hc + l, 0]]; }
+        else if (arr === 'three') { rolls = [[-l / 2, l / 2, 0, true], [l / 2 + g, l / 2 + g + l, 1]]; }
+        else if (arr === 'four') { rolls = [[hc, hc + l, 0], [hc + l + g, hc + 2 * l + g, 1]]; }
+        else { rolls = [[-l / 2, l / 2, 0, true], [l / 2 + g, l / 2 + g + l, 1], [l / 2 + 2 * g + l, l / 2 + 2 * g + 2 * l, 2]]; }
+        var bpS = [0];                                            /* the bends under the belt, for the profiles and the tension chart */
+        P.junc.forEach(function (sj) { if (sj < half - 1e-12) { bpS.push(sj); } });
+        bpS.push(half);
+        last = { checks: checks, gov: gov, nom: hasNom ? Ln : null, Ld: Ld, role: role, htName: htName, setText: setText,
+            cases: cases, govCase: isFinite(gov.r) ? gov.c : null,
+            geo: { P: P, W: W, rolls: rolls, dRoll: dRoll, Dp: Dp, edgeH: edgeH, lift: lift, sets: sets, spc: spc, bpS: bpS, arr: arr,
+                   angText: angText, fullAng: P.segs.map(function (sg) { return sg[1]; }) },
+            ten: { G: G, tAt: tAt, W: W, Ta: Ta, TaT: TaT, hasTaT: fin('TaT'), edgeF: edgeF, allow: allow, Tmin: Tmin, P: P, arr: arr } };
+        renderAll();
+    }
+
+    /* ── Drawing helpers ── */
+    var SVGNS = 'http://www.w3.org/2000/svg';
+    function el(name, attrs, parent) {
+        var e = document.createElementNS(SVGNS, name);
+        Object.keys(attrs).forEach(function (key) { e.setAttribute(key, attrs[key]); });
+        if (parent) { parent.appendChild(e); }
+        return e;
+    }
+    function note(box, text, cls) {
+        var p = document.createElement('p');
+        p.className = 'small mb-1 ' + (cls || '');
+        p.textContent = text;
+        box.appendChild(p);
+    }
+    function niceStep(x) {                                        /* 1, 2, 2.5 or 5 times a power of ten, at or above x */
+        var p = Math.pow(10, Math.floor(Math.log(x) / Math.LN10)), m = x / p;
+        return (m > 5 ? 10 : m > 2.5 ? 5 : m > 2 ? 2.5 : m > 1 ? 2 : 1) * p;
+    }
+    function spread(labels, top, bottom, gap) {                   /* move labels apart (sorted by y), keeping them between top and bottom */
+        labels.sort(function (p, q) { return p.y - q.y; });
+        var n;
+        for (n = 1; n < labels.length; n++) { labels[n].y = Math.max(labels[n].y, labels[n - 1].y + gap); }
+        if (labels.length) { labels[labels.length - 1].y = Math.min(labels[labels.length - 1].y, bottom); }
+        for (n = labels.length - 2; n >= 0; n--) { labels[n].y = Math.min(labels[n].y, labels[n + 1].y - gap); }
+        if (labels.length && labels[0].y < top) {
+            labels[0].y = top;
+            for (n = 1; n < labels.length; n++) { labels[n].y = Math.max(labels[n].y, labels[n - 1].y + gap); }
+        }
+    }
+    function lenLabel() { return last.role === 'design' ? first(dist(last.Ld)) : first(distUp(last.Ld)); }
+    function scaleBar(svg, x, y, k, span) {                       /* a scale bar of a round length in the display units */
+        var useMm = span < 3, kind = useMm ? 'mm' : 'm', sm = niceStep(fromSI(kind, span) / 4), sl = toSI(kind, sm) * k;
+        el('line', { x1: x, x2: x + sl, y1: y, y2: y, stroke: '#495057', 'stroke-width': 2 }, svg);
+        [x, x + sl].forEach(function (xx) { el('line', { x1: xx, x2: xx, y1: y - 4, y2: y + 4, stroke: '#495057', 'stroke-width': 1.5 }, svg); });
+        el('text', { x: x + sl + 6, y: y + 4 }, svg).textContent = num(sm, sm < 1 ? 1 : 0) + ' ' + UNIT[kind][sys];
+    }
+    function renderAll() {
+        hideTip();
+        renderChart();
+        renderSide();
+        renderSect();
+        renderTension();
+    }
+
+    /* ── Required length chart: one bar per check (the load case needing most), the governing check in dark grey, the design length as a blue line ── */
+    function renderChart() {
+        var box = $('chart');
+        box.innerHTML = '';
+        if (!last) { return; }
+        var W = Math.max(280, box.clientWidth), narrow = W < 560;
+        var labelW = narrow ? 0 : Math.min(220, W * 0.32), valueW = narrow ? 0 : 250;
+        var rowH = narrow ? 44 : 30, groupH = 28, barH = 16, list = last.checks;
+        var maxR = last.nom || 0;
+        list.forEach(function (c) { if (isFinite(c.r)) { maxR = Math.max(maxR, c.r); } });
+        if (maxR <= 0) { maxR = 1; }
+        var barMax = W - labelW - valueW - 8;
+        var y = groupH, H = groupH + list.length * rowH + 8;
+        var svg = el('svg', { width: W, height: H, viewBox: '0 0 ' + W + ' ' + H, role: 'img',
+            'aria-label': 'Required transition length by check. Governing length ' + lenShort(last.gov.r) + (last.nom ? ', design length ' + first(dist(last.nom)) : '') }, box);
+        var gl = el('text', { x: 0, y: 18, 'class': 'calc-group-label' }, svg);
+        gl.textContent = last.htName + ', ' + last.setText;
+        if (gl.getComputedTextLength() > W - 4) { gl.textContent = last.htName; }
+        if (!narrow) { el('line', { x1: labelW, x2: labelW, y1: y, y2: y + list.length * rowH, stroke: '#adb5bd', 'stroke-width': 1 }, svg); }
+        var xn = last.nom ? labelW + last.nom / maxR * barMax : 0;
+        if (last.nom) {
+            el('line', { x1: xn, x2: xn, y1: groupH - 4, y2: groupH + list.length * rowH, stroke: '#0d6efd', 'stroke-width': 1.5, 'stroke-dasharray': '4 3' }, svg);
+        }
+        list.forEach(function (c) {
+            var gov = c === last.gov, inf = !isFinite(c.r);
+            var yb = narrow ? y + 18 : y + (rowH - barH) / 2;
+            var valText = (c.r === 0 ? 'No limit' : inf ? 'No length is enough' : first(distUp(c.r))) +
+                (c.r > 0 ? ', ' + lc1(c.c.short.replace('highest', 'high').replace('lowest', 'low')) : '');
+            var nameT = el('text', { x: 0, y: narrow ? y + 13 : yb + 12, 'class': (gov ? 'calc-gov' : 'calc-dark') + ' calc-halo' }, svg);
+            nameT.textContent = c.name + (narrow ? ': ' + lc1(valText) : '');
+            if (narrow && nameT.getComputedTextLength() > W - 2) { nameT.textContent = c.name + ': ' + lc1(valText.split(', ')[0]); }
+            var wBar = inf ? barMax : Math.max(c.r > 0 ? 2 : 0, c.r / maxR * barMax);
+            el('rect', { x: labelW, y: yb, width: wBar, height: barH, rx: 3,
+                fill: inf ? 'none' : gov ? '#343a40' : '#ced4da',
+                stroke: inf ? '#b02a37' : 'none', 'stroke-width': 1.5, 'stroke-dasharray': inf ? '5 4' : '' }, svg);
+            hoverOn(box, el('rect', { x: labelW, y: y, width: barMax, height: rowH, fill: 'transparent' }, svg),
+                c.name + ': ' + lc1(valText) + (gov ? ' (governing)' : ''));
+            if (!narrow) {
+                var vt = el('text', { x: labelW + wBar + 8, y: yb + 12, 'class': (gov ? 'calc-gov ' : '') + 'calc-halo' }, svg);
+                vt.textContent = valText;
+                if (labelW + wBar + 8 + vt.getComputedTextLength() > W - 2) { vt.textContent = valText.split(', ')[0]; }
+            }
+            y += rowH;
+        });
+        if (last.nom) {
+            var top = groupH;
+            var nt = el('text', { x: xn + 4, y: top - 6, 'class': 'calc-dark' }, svg);
+            nt.textContent = 'Design ' + first(dist(last.nom));
+            var glEnd = gl.getComputedTextLength(), ntW = nt.getComputedTextLength();
+            if (xn + 4 + ntW > W) { nt.setAttribute('x', xn - 4); nt.setAttribute('text-anchor', 'end'); }
+            var x0 = nt.getAttribute('text-anchor') === 'end' ? xn - 4 - ntW : xn + 4;
+            if (x0 < glEnd + 8) { nt.setAttribute('y', y + 12); y += 14; }
+            hoverOn(box, el('line', { x1: xn, x2: xn, y1: top - 4, y2: y, stroke: 'transparent', 'stroke-width': 12 }, svg), 'Design length: ' + first(dist(last.nom)));
+        }
+        if (y + 8 > H) { svg.setAttribute('height', y + 8); svg.setAttribute('viewBox', '0 0 ' + W + ' ' + (y + 8)); }
+    }
+
+    /* ── Side view to scale: the pulley, the transition idlers and the first troughing idlers, with the belt edge and centre paths ── */
+    function renderSide() {
+        var box = $('side');
+        box.innerHTML = '';
+        if (!last) { return; }
+        var d = last.geo, L = last.Ld;
+        if (!isFinite(L)) { note(box, 'No length is enough, so there is no transition to draw.', 'text-danger'); return; }
+        note(box, 'At the ' + last.role + ' ' + lenLabel() + ' length, the pulley on the left');
+        var R = d.Dp / 2, dr = d.dRoll, eh = d.edgeH, lift = d.lift;
+        var st = d.sets.map(function (s) { return { x: s.d, cz: s.cl, ez: s.eh, label: d.angText(s.angs, true), tip: 'Transition idler ' + s.n + ': ' + first(dist(s.d)) +
+            ' from the pulley\n' + d.angText(s.angs) + ' rolls' + (lift > 0 ? '\nCentre roll raised ' + first(len(s.cl)) : '') + '\nBelt edge ' + first(len(s.eh)) + ' above the troughing idlers\' centre roll' }; });
+        var fullLab = d.angText(d.fullAng, true);
+        st.push({ x: L, cz: 0, ez: eh, label: fullLab, full: true, tip: 'First troughing idler: ' + lenLabel() + ' from the pulley\n' + d.angText(d.fullAng) + ' rolls' });
+        st.push({ x: L + d.spc, cz: 0, ez: eh, label: '', full: true, tip: 'Troughing idler: ' + first(dist(L + d.spc)) + ' from the pulley' });
+        var xEnd = L + d.spc * 1.4, base = Math.min(lift - 2 * R, -dr - 0.12);
+        var x0 = -R - 0.06, x1 = xEnd, y0 = base, y1 = Math.max(eh, lift);
+        var Wpx = Math.max(280, box.clientWidth), pad = 12, right = 84, top = 30, bottom = 66, maxH = 300;
+        var k = Math.min((Wpx - pad - right) / (x1 - x0), maxH / (y1 - y0));
+        var H = top + (y1 - y0) * k + bottom;
+        function S(x, y) { return [pad + (x - x0) * k, top + (y1 - y) * k]; }
+        function pts(list) { return list.map(function (p) { var q = S(p[0], p[1]); return q[0].toFixed(1) + ',' + q[1].toFixed(1); }).join(' '); }
+        var svg = el('svg', { width: Wpx, height: H, viewBox: '0 0 ' + Wpx + ' ' + H, role: 'img',
+            'aria-label': 'Side view of the transition to scale: ' + lenLabel() + ' from the pulley to the first troughing idler, with ' + d.sets.length + ' transition idler sets' }, box);
+
+        /* idler stands and rolls seen side-on: the wing rolls rise from the centre roll to the belt edge */
+        st.forEach(function (s) {
+            var a = S(s.x - dr / 2, s.ez), b = S(s.x + dr / 2, s.cz - dr), c = S(s.x, s.cz - dr / 2), f = S(s.x, s.cz - dr), fb = S(s.x, base);
+            el('line', { x1: f[0], y1: f[1], x2: fb[0], y2: fb[1], stroke: '#adb5bd', 'stroke-width': 1.5 }, svg);
+            el('rect', { x: a[0], y: a[1], width: Math.max(1, b[0] - a[0]), height: Math.max(1, b[1] - a[1]), fill: '#dee2e6', stroke: '#868e96', 'stroke-width': 1 }, svg);
+            el('circle', { cx: c[0], cy: c[1], r: Math.max(1.5, dr / 2 * k), fill: '#f8f9fa', stroke: '#868e96', 'stroke-width': 1 }, svg);
+        });
+        /* pulley, with the belt wrapping it */
+        var pc = S(0, lift - R);
+        el('circle', { cx: pc[0], cy: pc[1], r: R * k, fill: '#e9ecef', stroke: '#868e96', 'stroke-width': 1.25 }, svg);
+        el('path', { d: 'M' + (pc[0] - 4) + ',' + pc[1] + ' h8 M' + pc[0] + ',' + (pc[1] - 4) + ' v8', stroke: '#868e96', 'stroke-width': 1 }, svg);
+        var ptop = S(0, lift), pleft = S(-R, lift - R);
+        el('path', { d: 'M' + ptop[0].toFixed(1) + ',' + ptop[1].toFixed(1) + ' A' + (R * k).toFixed(1) + ',' + (R * k).toFixed(1) + ' 0 0 0 ' + pleft[0].toFixed(1) + ',' + pleft[1].toFixed(1),
+            fill: 'none', stroke: '#212529', 'stroke-width': 2.5 }, svg);
+        hoverOn(box, el('circle', { cx: pc[0], cy: pc[1], r: R * k, fill: 'transparent' }, svg),
+            'Pulley, ' + first(len(d.Dp)) + ' diameter\nTop ' + (lift > 0 ? first(len(lift)) + ' above' : 'flush with') + ' the troughing idlers\' centre roll');
+        /* the belt between its edge and centre paths, and the two paths */
+        el('polygon', { points: pts([[0, lift], [L, eh], [xEnd, eh], [xEnd, 0], [L, 0]]), fill: '#f1f3f5', stroke: 'none', opacity: 0.85 }, svg);
+        el('polyline', { points: pts([[0, lift], [L, 0], [xEnd, 0]]), fill: 'none', stroke: '#868e96', 'stroke-width': 2 }, svg);
+        el('polyline', { points: pts([[0, lift], [L, eh], [xEnd, eh]]), fill: 'none', stroke: '#212529', 'stroke-width': 2.5 }, svg);
+        var le = S(xEnd, eh), lc = S(xEnd, 0), pl = [{ y: le[1], text: 'Belt edge', cls: 'calc-dark' }, { y: lc[1], text: 'Belt centre', cls: '' }];
+        spread(pl, 8, H - 50, 14);
+        pl.forEach(function (lb) { el('text', { x: le[0] + 6, y: (lb.y + 4).toFixed(1), 'class': lb.cls }, svg).textContent = lb.text; });
+        /* roll angles above each set, thinned where they would crowd */
+        var lastX = -1e9;
+        st.forEach(function (s) {
+            var p = S(s.x, s.ez);
+            if (s.label) {
+                var t = el('text', { x: p[0], y: p[1] - 8, 'text-anchor': 'middle', 'class': (s.full ? 'calc-dark ' : '') + 'calc-halo' }, svg);
+                t.textContent = s.label;
+                var w = t.getComputedTextLength() || 6.6 * s.label.length;
+                if (p[0] - w / 2 < Math.max(lastX + 4, 2) || p[0] + w / 2 > Wpx - 2) { t.remove(); } else { lastX = p[0] + w / 2; }
+            }
+            var hb = S(s.x - Math.max(dr, 0.12), y1), hb2 = S(s.x + Math.max(dr, 0.12), base);
+            hoverOn(box, el('rect', { x: hb[0], y: top - 20, width: Math.max(10, hb2[0] - hb[0]), height: hb2[1] - top + 20, fill: 'transparent' }, svg), s.tip);
+        });
+        /* the transition length, with a tick at each set */
+        var yd = H - 46, a0 = S(0, 0)[0], a1 = S(L, 0)[0];
+        el('line', { x1: a0, x2: a1, y1: yd, y2: yd, stroke: '#495057', 'stroke-width': 1.25 }, svg);
+        [0].concat(d.sets.map(function (s) { return s.d; })).concat([L]).forEach(function (x, i, arr2) {
+            var xx = S(x, 0)[0], big = i === 0 || i === arr2.length - 1;
+            el('line', { x1: xx, x2: xx, y1: yd - (big ? 6 : 4), y2: yd + (big ? 6 : 4), stroke: '#495057', 'stroke-width': big ? 1.5 : 1 }, svg);
+        });
+        var dt = el('text', { x: (a0 + a1) / 2, y: yd - 8, 'text-anchor': 'middle', 'class': 'calc-dark calc-halo' }, svg);
+        dt.textContent = 'Transition ' + lenLabel();
+        if ((dt.getComputedTextLength() || 0) > a1 - a0 + 40) { dt.setAttribute('x', a0); dt.setAttribute('text-anchor', 'start'); }
+        scaleBar(svg, pad, H - 14, k, x1 - x0);
+    }
+
+    /* ── Profiles to scale, looking along the belt: the troughing idler, each transition idler's belt line and the belt on the pulley,
+       with the full trough and half trough pulley heights ── */
+    function renderSect() {
+        var box = $('sect');
+        box.innerHTML = '';
+        if (!last) { return; }
+        var d = last.geo, P = d.P, W = d.W, half = W / 2, eh = d.edgeH, lift = d.lift, dr = d.dRoll;
+        note(box, isFinite(last.Ld) ? 'At the ' + last.role + ' ' + lenLabel() + ' length' : 'The troughing idler and the pulley heights');
+        /* rolls as quadrilaterals: the top line on the segment's line, the body below it by the roll diameter */
+        var polys = [];
+        d.rolls.forEach(function (r) {
+            var kk = r[2], a = P.segs[kk][1] * RAD, v0 = P.v[kk];
+            function onLine(s) { return [v0.x + (s - v0.s) * Math.cos(a), v0.y + (s - v0.s) * Math.sin(a)]; }
+            (r[3] ? [1] : [1, -1]).forEach(function (sd) {
+                var p0 = r[3] ? [r[0], 0] : onLine(r[0]), p1 = r[3] ? [r[1], 0] : onLine(r[1]);
+                p0 = [sd * p0[0], p0[1]]; p1 = [sd * p1[0], p1[1]];
+                var n = [sd * Math.sin(a) * dr, -Math.cos(a) * dr];
+                polys.push({ q: [p0, p1, [p1[0] + n[0], p1[1] + n[1]], [p0[0] + n[0], p0[1] + n[1]]], k: kk });
+            });
+        });
+        function profPts(fa) {                                    /* the belt line a fraction fa of the way from the pulley to the troughing idler */
+            var ss = d.bpS, out = [];
+            ss.slice().reverse().forEach(function (s) { var q = ptAt(P, s); out.push([-(fa * q.x + (1 - fa) * s), fa * q.y + (1 - fa) * lift]); });
+            ss.forEach(function (s, i) { if (i === 0) { return; } var q = ptAt(P, s); out.push([fa * q.x + (1 - fa) * s, fa * q.y + (1 - fa) * lift]); });
+            return out;
+        }
+        var narrow = Math.max(280, box.clientWidth) < 480, many = d.sets.length > 5;
+        var lines = [{ pts: profPts(1), name: 'Troughing idler', cls: 'calc-dark', stroke: '#212529', w: 2.5 }];
+        d.sets.slice().reverse().forEach(function (s, j) {               /* with many sets, one name for them all */
+            var angs = narrow ? d.angText(s.angs, true).split(' and ').pop() : d.angText(s.angs, true);   /* the outer roll only on a narrow screen */
+            lines.push({ pts: profPts(s.a), name: many ? (j === Math.floor(d.sets.length / 2) ? d.sets.length + ' transition idlers' : '') : 'Transition ' + s.n + ', ' + angs,
+                cls: '', stroke: '#868e96', w: many ? 1 : 1.5, tip: 'Transition idler ' + s.n + ', ' + d.angText(s.angs) });
+        });
+        lines.push({ pts: [[-half, lift], [half, lift]], name: 'On the pulley', cls: 'calc-dark', stroke: '#495057', w: 2.5, dash: '' });
+        var refs = [];
+        if (Math.abs(lift) > 1e-9) { refs.push({ y: 0, name: 'Full trough' }); }
+        if (Math.abs(lift - eh / 2) > 1e-9) { refs.push({ y: eh / 2, name: 'Half trough' }); }
+        var xs = [], ys = [];
+        polys.forEach(function (p) { p.q.forEach(function (q) { xs.push(q[0]); ys.push(q[1]); }); });
+        lines.forEach(function (ln) { ln.pts.forEach(function (q) { xs.push(q[0]); ys.push(q[1]); }); });
+        var X0 = Math.min.apply(null, xs.concat([-half])) - 0.03, X1 = Math.max.apply(null, xs.concat([half])) + 0.03;
+        var Y0 = Math.min.apply(null, ys) - 0.02, Y1 = Math.max.apply(null, ys.concat([eh, lift])) + 0.02;
+        var Wpx = Math.max(280, box.clientWidth), left = 8, top = 14, bottom = 34, longest = 0;
+        lines.concat(refs).forEach(function (ln) { longest = Math.max(longest, (ln.name || '').length); });
+        var right = Math.min(Wpx * 0.45, 14 + 6.8 * longest);
+        var pw = Wpx - left - right, k = Math.min(pw / (X1 - X0), 340 / (Y1 - Y0)), H = top + (Y1 - Y0) * k + bottom;
+        var offX = left + (pw - (X1 - X0) * k) / 2;
+        function S(x, y) { return [offX + (x - X0) * k, top + (Y1 - y) * k]; }
+        var svg = el('svg', { width: Wpx, height: H, viewBox: '0 0 ' + Wpx + ' ' + H, role: 'img',
+            'aria-label': 'Belt profiles to scale: the troughing idler, ' + d.sets.length + ' transition idler sets and the belt on the pulley, ' + first(len(lift)) + ' above the centre roll' }, box);
+        var labels = [];
+        refs.forEach(function (r) {
+            var a = S(X0, r.y), b = S(X1, r.y);
+            el('line', { x1: a[0], x2: b[0], y1: a[1], y2: a[1], stroke: '#adb5bd', 'stroke-width': 1, 'stroke-dasharray': '4 4' }, svg);
+            labels.push({ y: a[1], text: r.name, cls: '' });
+        });
+        polys.forEach(function (p) {
+            el('polygon', { points: p.q.map(function (q) { var s = S(q[0], q[1]); return s[0].toFixed(1) + ',' + s[1].toFixed(1); }).join(' '),
+                fill: p.k % 2 === 0 ? '#e9ecef' : '#dee2e6', stroke: '#868e96', 'stroke-width': 1 }, svg);
+        });
+        lines.slice().reverse().forEach(function (ln) {
+            var p = ln.pts.map(function (q) { var s = S(q[0], q[1]); return s[0].toFixed(1) + ',' + s[1].toFixed(1); }).join(' ');
+            el('polyline', { points: p, fill: 'none', stroke: ln.stroke, 'stroke-width': ln.w, 'stroke-linejoin': 'round' }, svg);
+            hoverOn(box, el('polyline', { points: p, fill: 'none', stroke: 'transparent', 'stroke-width': 10 }, svg), ln.tip || ln.name);
+        });
+        lines.forEach(function (ln) { if (!ln.name) { return; } var e = ln.pts[ln.pts.length - 1], s = S(e[0], e[1]); labels.push({ y: s[1], text: ln.name, cls: ln.cls }); });
+        var need = top + 4 + labels.length * 14 + bottom - H;      /* room below for the names */
+        if (need > 0) { H += need; svg.setAttribute('height', H); svg.setAttribute('viewBox', '0 0 ' + Wpx + ' ' + H); }
+        spread(labels, top + 4, H - bottom, 14);
+        var lx = S(X1, 0)[0] + 6;
+        labels.forEach(function (lb) { el('text', { x: lx, y: (lb.y + 4).toFixed(1), 'class': lb.cls + ' calc-halo' }, svg).textContent = lb.text; });
+        scaleBar(svg, left, H - 12, k, X1 - X0);
+    }
+
+    /* ── Tension across the belt width, left edge to right edge, in each load case at the laid-out length ── */
+    function renderTension() {
+        var box = $('ten');
+        box.innerHTML = '';
+        if (!last) { return; }
+        var d = last.ten, L = last.Ld, G = d.G, W = d.W, half = W / 2;
+        if (!isFinite(L)) { note(box, 'No length is enough, so there is no tension to show.', 'text-danger'); return; }
+        note(box, 'At the ' + last.role + ' ' + lenLabel() + ' length');
+        var ss = [];                                              /* the tension is smooth along each roll: sample it, with the bends and extremes */
+        G.segs.forEach(function (sg) { for (var j = 0; j <= 24; j++) { ss.push(sg.a + (sg.b - sg.a) * j / 24); } });
+        ss.push(G.hi.s, G.lo.s);
+        ss = ss.sort(function (p, q) { return p - q; }).filter(function (s, i, a) { return i === 0 || s - a[i - 1] > 1e-9; });
+        var sg2 = ss.slice().reverse().map(function (s) { return -s; }).concat(ss.slice(1));
+        var lines = last.cases.map(function (c) { return { c: c, vals: sg2.map(function (s) { return d.tAt(G, c, L, Math.abs(s)); }) }; });
+        var Wpx = Math.max(260, box.clientWidth), left = 44, right = Wpx < 420 ? 112 : 132, top = 20, ph = 200, bottom = 46;
+        var vTop = d.Ta, vBot = 0;
+        lines.forEach(function (ln) { vTop = Math.max(vTop, Math.max.apply(null, ln.vals)); vBot = Math.min(vBot, Math.min.apply(null, ln.vals)); });
+        var limits = [[d.Ta, 'Allowable', '#6c757d']];
+        if (d.hasTaT && Math.abs(d.TaT - d.Ta) > 1e-9) { limits.push([d.TaT, 'Allowable, start/stop', '#6c757d']); }
+        if (d.allow > 0) {
+            limits.push([d.Ta * d.edgeF, 'Edge allowable', '#adb5bd']);
+            if (d.hasTaT && Math.abs(d.TaT - d.Ta) > 1e-9) { limits.push([d.TaT * d.edgeF, 'Edge, start/stop', '#adb5bd']); }
+        }
+        limits.forEach(function (lm) { vTop = Math.max(vTop, lm[0]); });
+        var longest = 'Minimum allowed'.length;
+        limits.forEach(function (lm) { longest = Math.max(longest, lm[1].length); });
+        lines.forEach(function (ln) { longest = Math.max(longest, ln.c.short.length); });
+        right = Math.min(Wpx * 0.45, Math.max(right, 12 + 6.8 * longest));
+        var rawTop = fromSI('kNm', vTop), rawBot = fromSI('kNm', vBot), step = niceStep(Math.max(rawTop - rawBot, 1e-9) * 1.1 / 4);
+        var dBot = rawBot < 0 ? -niceStep(-rawBot * 1.05) : 0, dTop = rawTop + 0.1 * (rawTop - dBot), widest = 0;
+        for (var t0 = Math.ceil(dBot / step - 1e-9); t0 * step <= dTop + 1e-9; t0++) { widest = Math.max(widest, num(t0 * step, step < 1 ? 1 : 0).length); }
+        left = Math.max(44, 12 + 7 * widest);
+        var pw = Wpx - left - right, H = top + ph + bottom;
+        function X(s) { return left + (s + half) / W * pw; }
+        function Y(v) { return top + ph - (fromSI('kNm', v) - dBot) / (dTop - dBot) * ph; }
+        var svg = el('svg', { width: Wpx, height: H, viewBox: '0 0 ' + Wpx + ' ' + H, role: 'img',
+            'aria-label': 'Tension across the belt width at ' + lenLabel() + ': ' + lines.map(function (ln) {
+                return lc1(ln.c.name) + ' edge ' + first(tpw(ln.vals[0])) + ' and centre ' + first(tpw(d.tAt(G, ln.c, L, 0)));
+            }).join('; ') }, box);
+        /* roll bands (alternate rolls shaded), grid and axes */
+        var bands = [], P = d.P;
+        for (var i = 0; i < sg2.length - 1; i++) {                /* a level centre roll spans the belt centre; other rolls lie on one side */
+            var a = sg2[i], b = sg2[i + 1], mid = (a + b) / 2, kk = segIdx(P, Math.abs(mid)), lb = bands[bands.length - 1];
+            var key = kk === 0 && P.segs[0][1] === 0 ? 'c' : kk + (mid < 0 ? 'L' : 'R');
+            if (lb && lb.key === key) { lb.b = b; } else { bands.push({ a: a, b: b, k: kk, key: key }); }
+        }
+        bands.forEach(function (bd) {
+            if (P.n > 1 && bd.k % 2 === 0) { el('rect', { x: X(bd.a), y: top, width: X(bd.b) - X(bd.a), height: ph, fill: '#f1f3f5' }, svg); }
+        });
+        for (i = Math.ceil(dBot / step - 1e-9); i * step <= dTop + 1e-9; i++) {
+            var yy = top + ph - (i * step - dBot) / (dTop - dBot) * ph;
+            el('line', { x1: left, x2: left + pw, y1: yy, y2: yy, stroke: i === 0 ? '#adb5bd' : '#e9ecef', 'stroke-width': 1 }, svg);
+            el('text', { x: left - 6, y: yy + 4, 'text-anchor': 'end' }, svg).textContent = num(i * step, step < 1 ? 1 : 0);
+        }
+        el('text', { x: left - 6, y: top - 8, 'text-anchor': 'end' }, svg).textContent = UNIT.kNm[sys];
+        bands.forEach(function (bd) {
+            var names = SEG_NAME[d.arr], lab = el('text', { x: (X(bd.a) + X(bd.b)) / 2, y: top + ph + 18, 'text-anchor': 'middle' }, svg);
+            lab.textContent = cap1(names[Math.min(bd.k, names.length - 1)]);
+            if (lab.getComputedTextLength() + 6 > X(bd.b) - X(bd.a)) { lab.remove(); }
+        });
+        el('text', { x: left, y: top + ph + 36, 'class': 'calc-dark' }, svg).textContent = 'Belt edge';
+        el('text', { x: left + pw / 2, y: top + ph + 36, 'text-anchor': 'middle', 'class': 'calc-dark' }, svg).textContent = 'Centre';
+        el('text', { x: left + pw, y: top + ph + 36, 'text-anchor': 'end', 'class': 'calc-dark' }, svg).textContent = 'Belt edge';
+        /* limits dashed, each load case as a line (the case that sets the required length in dark grey); names in the right margin */
+        var labels = [];
+        limits.concat([[d.Tmin, 'Minimum allowed', '#6c757d']]).forEach(function (lm) {
+            el('line', { x1: left, x2: left + pw, y1: Y(lm[0]), y2: Y(lm[0]), stroke: lm[2], 'stroke-width': 1.25, 'stroke-dasharray': '5 4' }, svg);
+            labels.push({ y: Y(lm[0]), text: lm[1], cls: '' });
+        });
+        function line(vals) { return sg2.map(function (s, n) { return X(s).toFixed(1) + ',' + Y(vals[n]).toFixed(1); }).join(' '); }
+        lines.slice().sort(function (p, q) { return (p.c === last.govCase) - (q.c === last.govCase); }).forEach(function (ln) {
+            var dark = ln.c === last.govCase;
+            el('polyline', { points: line(ln.vals), fill: 'none', stroke: dark ? '#212529' : '#868e96', 'stroke-width': dark ? 2.25 : 1.75, 'stroke-linejoin': 'round' }, svg);
+            labels.push({ y: Y(ln.vals[ln.vals.length - 1]), text: ln.c.short, cls: 'calc-dark' });
+        });
+        spread(labels, top - 10, top + ph + 2, 14);
+        labels.forEach(function (lb) { el('text', { x: left + pw + 6, y: (lb.y + 4).toFixed(1), 'class': lb.cls }, svg).textContent = lb.text; });
+        /* hover: a line across the plot and the tension at that point in each load case */
+        var cross = el('line', { x1: 0, x2: 0, y1: top, y2: top + ph, stroke: '#495057', 'stroke-width': 1, visibility: 'hidden' }, svg);
+        var dots = lines.map(function (ln) { return el('circle', { r: 3.5, fill: ln.c === last.govCase ? '#212529' : '#868e96', stroke: '#fff', 'stroke-width': 2, visibility: 'hidden' }, svg); });
+        var hit = el('rect', { x: left, y: top, width: pw, height: ph, fill: 'transparent' }, svg);
+        function marks(on) { [cross].concat(dots).forEach(function (m) { m.setAttribute('visibility', on ? 'visible' : 'hidden'); }); }
+        function move(e) {
+            var bx = box.getBoundingClientRect(), sb = svg.getBoundingClientRect();
+            var fromL = Math.max(0, Math.min(W, (e.clientX - sb.left - left) / pw * W)), s = fromL - half, xx = X(s), kk = segIdx(P, Math.abs(s));
+            cross.setAttribute('x1', xx); cross.setAttribute('x2', xx);
+            var names = SEG_NAME[d.arr], text = cap1(names[Math.min(kk, names.length - 1)]) + ', ' + first(len(Math.abs(s))) + ' from the belt centre';
+            lines.forEach(function (ln, m) {
+                var v = d.tAt(G, ln.c, L, Math.abs(s));
+                dots[m].setAttribute('cx', xx);
+                dots[m].setAttribute('cy', Y(v));
+                text += '\n' + ln.c.name + ': ' + first(tpw(v));
+            });
+            marks(true);
+            showTip(text, box, e.clientX - bx.left, e.clientY - bx.top);
+        }
+        hit.addEventListener('mouseenter', move);
+        hit.addEventListener('mousemove', move);
+        hit.addEventListener('mouseleave', function () { hideTip(); marks(false); });
+    }
+
+    var resizeTimer = null;
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(renderAll, 120);
+    });
+
+    /* ── Events ── */
+    numInputs.forEach(function (e) {
+        e.addEventListener('input', function () { readInput(e); compute(); });
+    });
+    $('arr').addEventListener('change', function () {
+        if (ARR_DEFAULT_ANGLE[this.value]) { setSI('lam', ARR_DEFAULT_ANGLE[this.value]); }
+        if (ARR_DEFAULT_INNER[this.value]) { setSI('lamIn', ARR_DEFAULT_INNER[this.value]); }
+        compute();
+    });
+    $('ph').addEventListener('change', compute);
+    $('btype').addEventListener('change', compute);
+    form.addEventListener('submit', function (e) { e.preventDefault(); });
+    $('units').addEventListener('change', function () {
+        sys = this.value;
+        numInputs.forEach(display);
+        document.querySelectorAll('[data-unit]').forEach(function (s) { s.textContent = UNIT[s.getAttribute('data-unit')][sys]; });
+        compute();
+    });
+
+    /* The bottom result bar hides while the results are on screen */
+    var bar = $('calcBar');
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) { bar.hidden = e.isIntersecting; });
+        }, { rootMargin: '0px 0px -15% 0px' }).observe($('results'));
+    }
+
+    /* ── Start from the example values (metric), whatever the browser restored ── */
+    numInputs.forEach(function (e) {
+        var v = e.getAttribute('value');
+        e.value = v === null ? '' : v;
+        readInput(e);
+    });
+    form.querySelectorAll('select').forEach(function (s) {
+        var sel = s.querySelector('option[selected]');
+        if (sel) { s.value = sel.value; }
+    });
+    compute();
+})();
+</script>
+
+<script src="handbook.js"></script>
+
+</body>
+</html>
