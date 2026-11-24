@@ -349,7 +349,7 @@
             <div class="calc-row" data-show="pullers">
                 <label for="ppos">Puller positions</label>
                 <select class="form-select" id="ppos">
-                    <option value="best" selected>Best positions, equal stage pulls</option>
+                    <option value="best" selected>Best positions, lowest peak tension</option>
                     <option value="equal">Equal spacing along the route</option>
                     <option value="set">Set positions</option>
                 </select>
@@ -357,14 +357,14 @@
             <div class="calc-row" data-show="setpos">
                 <label for="plist">Positions<span class="calc-hint">Distance along the route from the trailing end, separated by commas</span></label>
                 <div class="input-group">
-                    <input type="text" inputmode="decimal" class="form-control" id="plist" data-kind="lenlist" value="">
+                    <input type="text" class="form-control" id="plist" data-kind="lenlist" value="">
                     <span class="input-group-text" data-unit="len">m</span>
                 </div>
             </div>
 
             <h3 class="h5 calc-group">Winch and Drive</h3>
             <div class="calc-row">
-                <label for="vp">Pulling speed<span class="calc-hint">Winch line speed or drive creep speed; 5 to 15 m/min typical</span></label>
+                <label for="vp">Pulling speed<span class="calc-hint">Winch line speed or drive creep speed; typically 5 to 15 m/min [16 to 50 ft/min]</span></label>
                 <div class="input-group">
                     <input type="number" class="form-control" id="vp" data-kind="mpm" min="0" step="any" value="10">
                     <span class="input-group-text" data-unit="mpm">m/min</span>
@@ -777,44 +777,51 @@
         });
         return { R: r, B: b };
     }
-    /* Puller positions that give every stage the same peak breakaway pull: the least stage peak that n pullers can hold to */
+    /* Puller positions that give every stage the same peak breakaway pull: the least stage peak that n pullers can hold to.
+       With the drive the front of the new belt can be anywhere, so each stage follows two tensions: Tn with new belt all the way,
+       and Tm, the highest with new belt up to some earlier point and old belt from there on. With a winch the two are the same. */
     function bestPositions(C, T0, n) {
         var pcs = C.pieces;
-        function place(Pmax) {
-            if (Pmax <= T0 + 1e-12) { return null; }
-            var T = T0, xs = [], stepAt = -1;
+        function walk(Pmax, n) {                                   /* the puller positions for a stage limit, or null */
+            var Tn = T0, Tm = T0, xs = [], stepAt = -1, top = T0;
             for (var i = 0; i < pcs.length; i++) {
                 var pc = pcs[i];
                 if (pc.kind === 'mul') {
-                    if (T * pc.kB > Pmax + 1e-12) {
+                    if (Math.max(Tn, Tm) * pc.kB > Pmax + 1e-12) {
                         if (!xs.length || Math.abs(xs[xs.length - 1] - pc.at) > EPS) { xs.push(pc.at); }   /* just before the step */
-                        T = T0;
-                        if (T * pc.kB > Pmax + 1e-12) { return null; }
+                        Tn = Tm = T0;
+                        if (T0 * pc.kB > Pmax + 1e-12) { return null; }
                     }
-                    T *= pc.kB;
+                    Tn *= pc.kB; Tm *= pc.kB;
                     stepAt = pc.at;
                 } else {
-                    var r = rate(pc, C.qN, true, C.bf), a = 0;
-                    while (r > 0 && T + r * (pc.len - a) > Pmax + 1e-12) {
-                        a += Math.max(0, (Pmax - T) / r);
+                    Tm = Math.max(Tm, Tn);                         /* the front at the start of this piece */
+                    var rn = rate(pc, C.qN, true, C.bf), ro = rate(pc, C.qO, true, C.bf), a = 0;
+                    for (;;) {
+                        var rem = pc.len - a;
+                        var dn = rn > 0 && Tn + rn * rem > Pmax + 1e-12 ? (Pmax - Tn) / rn : Infinity;
+                        var dm = ro > 0 && Tm + ro * rem > Pmax + 1e-12 ? (Pmax - Tm) / ro : Infinity;
+                        var d = Math.min(dn, dm);
+                        if (!isFinite(d)) { break; }
+                        a += Math.max(0, d);
                         if (a < 1e-3 && Math.abs(stepAt - pc.at) < EPS) { a = Math.min(1e-3, pc.len); }   /* just after a step, 1 mm on */
                         xs.push(pc.at + a);
-                        T = T0;
+                        Tn = Tm = T0;
                         if (xs.length > n) { return null; }
                     }
-                    T += r * (pc.len - a);
+                    Tn += rn * (pc.len - a); Tm += ro * (pc.len - a);
                 }
+                top = Math.max(top, Tn, Tm);
                 if (xs.length > n) { return null; }
             }
-            return xs;
+            return { xs: xs, top: top };
         }
-        var hi = T0, T = T0;
-        pcs.forEach(function (pc) { T = pc.kind === 'mul' ? T * pc.kB : T + rate(pc, C.qN, true, C.bf) * pc.len; hi = Math.max(hi, T); });
+        var hi = walk(Infinity, 0).top;                            /* the peak with no pullers */
         if (hi <= T0 + 1e-9) { return []; }
         var lo = T0, best = [];
         for (var it = 0; it < 60; it++) {
-            var mid = (lo + hi) / 2, p = place(mid);
-            if (p) { hi = mid; best = p; } else { lo = mid; }
+            var mid = (lo + hi) / 2, p = walk(mid, n);
+            if (p) { hi = mid; best = p.xs; } else { lo = mid; }
         }
         return best.filter(function (x) { return x > EPS && x < C.S - 1e-6; });
     }
@@ -905,10 +912,11 @@
         var errs = [];
         numInputs.forEach(function (el) { el.classList.remove('is-invalid'); });
         function req(id, ok, text) { if (!ok) { errs.push(text); $(id).classList.add('is-invalid'); } }
-        req('L', fin('L') && si.L >= 5, 'conveyor centres (5 m or more)');
+        function u(met, imp) { return first(pair(met, imp)); }          /* a range in the units shown */
+        req('L', fin('L') && si.L >= 5, 'conveyor centres (' + u('5 m', '16.4 ft') + ' or more)');
         req('H', fin('H') && (!fin('L') || Math.abs(si.H) < 0.5 * si.L), 'lift (less than half the length either way)');
-        req('B', okB, 'belt width (200 to 4,000 mm)');
-        req('mB', fin('mB') && si.mB > 0 && si.mB <= 300, 'belt mass (above 0, to 300 kg/m2)');
+        req('B', okB, 'belt width (' + u('200 to 4,000 mm', '7.9 to 157.4 in') + ')');
+        req('mB', fin('mB') && si.mB > 0 && si.mB <= 300, 'belt mass (above 0, to ' + u('300 kg/m2', '61.4 lb/ft2') + ')');
         req('R', blank('R') || fin('R') && si.R > 0, 'belt rating (above 0, or blank)');
         if (loop) {
             req('np', whole('np') && si.np >= 0 && si.np <= 20, 'pulleys at the far end (a whole number, 0 to 20)');
@@ -917,14 +925,14 @@
         if (hasCarry) {
             req('Ls', fin('Ls') && si.Ls >= 0 && (!fin('L') || si.Ls <= 0.5 * si.L), 'slider or impact bed (0 to half the length)');
             req('mus', fin('mus') && si.mus >= 0 && si.mus <= 1.5, 'slider bed friction (0 to 1.5)');
-            req('ac', fin('ac') && si.ac >= 0.3 && si.ac <= 10, 'carry idler spacing (0.3 to 10 m)');
-            req('mRc', blank('mRc') || fin('mRc') && si.mRc >= 0 && si.mRc <= 1000, 'carry idler rotating mass (0 to 1,000 kg, or blank)');
+            req('ac', fin('ac') && si.ac >= 0.3 && si.ac <= 10, 'carry idler spacing (' + u('0.3 to 10 m', '1.0 to 32.8 ft') + ')');
+            req('mRc', blank('mRc') || fin('mRc') && si.mRc >= 0 && si.mRc <= 1000, 'carry idler rotating mass (' + u('0 to 1,000 kg', '0 to 2,204 lb') + ', or blank)');
         }
         if (hasRet) {
-            req('ar', fin('ar') && si.ar >= 0.3 && si.ar <= 20, 'return idler spacing (0.3 to 20 m)');
-            req('mRr', blank('mRr') || fin('mRr') && si.mRr >= 0 && si.mRr <= 1000, 'return idler rotating mass (0 to 1,000 kg, or blank)');
+            req('ar', fin('ar') && si.ar >= 0.3 && si.ar <= 20, 'return idler spacing (' + u('0.3 to 20 m', '1.0 to 65.6 ft') + ')');
+            req('mRr', blank('mRr') || fin('mRr') && si.mRr >= 0 && si.mRr <= 1000, 'return idler rotating mass (' + u('0 to 1,000 kg', '0 to 2,204 lb') + ', or blank)');
         }
-        if (drive) { req('mO', blank('mO') || fin('mO') && si.mO > 0 && si.mO <= 300, 'old belt mass (above 0, to 300 kg/m2, or blank)'); }
+        if (drive) { req('mO', blank('mO') || fin('mO') && si.mO > 0 && si.mO <= 300, 'old belt mass (above 0, to ' + u('300 kg/m2', '61.4 lb/ft2') + ', or blank)'); }
         req('hc', fin('hc') && si.hc >= 0 && si.hc <= 360, 'horizontal curves (0 to 360 deg)');
         req('sag', fin('sag') && si.sag >= 0.5 && si.sag <= 10, 'sag limit (0.5% to 10%)');
         req('fi', fin('fi') && si.fi >= 0 && si.fi <= 1, 'idler friction factor (0 to 1)');
@@ -937,15 +945,15 @@
             if (okL) { var srt = pl.slice().sort(function (a, b) { return a - b; }); for (var i = 1; i < srt.length; i++) { if (srt[i] - srt[i - 1] < 0.01) { okL = false; } } }
             req('plist', okL, 'puller positions (' + plural(nP, 'distance', 'different distances') + ' above 0 and below the route length' + (isFinite(S) ? ', ' + first(len(S)) : '') + ')');
         }
-        req('vp', fin('vp') && si.vp > 0 && si.vp <= 200, 'pulling speed (above 0, to 200 m/min)');
+        req('vp', fin('vp') && si.vp > 0 && si.vp <= 200, 'pulling speed (above 0, to ' + u('200 m/min', '656 ft/min') + ')');
         if (drive) {
             req('wrap', fin('wrap') && si.wrap >= 90 && si.wrap <= 720, 'drive wrap angle (90 to 720 deg)');
             req('mud', fin('mud') && si.mud >= 0.05 && si.mud <= 0.8, 'lagging friction (0.05 to 0.8)');
         }
         req('wm', fin('wm') && si.wm >= 0 && si.wm <= 200, 'margin (0% to 200%)');
-        req('Lr', fin('Lr') && si.Lr >= 1, 'belt on each roll (1 m or more)');
-        req('Df', fin('Df') && si.Df >= 0.2 && si.Df <= 8, 'full roll diameter (200 to 8,000 mm)');
-        req('dc', fin('dc') && si.dc >= 0.05 && (!fin('Df') || si.dc < si.Df), 'core diameter (50 mm or more, below the full roll diameter)');
+        req('Lr', fin('Lr') && si.Lr >= 1, 'belt on each roll (' + u('1 m', '3.3 ft') + ' or more)');
+        req('Df', fin('Df') && si.Df >= 0.2 && si.Df <= 8, 'full roll diameter (' + u('200 to 8,000 mm', '7.9 to 314.9 in') + ')');
+        req('dc', fin('dc') && si.dc >= 0.05 && (!fin('Df') || si.dc < si.Df), 'core diameter (' + u('50 mm', '2.0 in') + ' or more, below the full roll diameter)');
         req('muk', fin('muk') && si.muk >= 0.05 && si.muk <= 1.5, 'clamp friction (0.05 to 1.5)');
         req('ksf', fin('ksf') && si.ksf >= 1 && si.ksf <= 10, 'clamp safety factor (1 to 10)');
         req('nb', whole('nb') && si.nb >= 1 && si.nb <= 100, 'bolts per clamp (a whole number, 1 to 100)');
@@ -987,7 +995,7 @@
         });
         var f0 = R.front0;
         sb.push(rowN('Peak', [[kN(f0.R.T), ''], [kN(f0.B.T), '']], 'table-primary fw-semibold', f0.B.s <= 1e-9 ? 'Breakaway peak at the start: the back tension alone' :
-            'Breakaway peak with the front ' + (f0.B.s >= rt.total - 1e-6 ? 'at the ' + (drive ? 'drive' : 'winch') : first(len(f0.B.s)) + ' along the route')));
+            'Breakaway peak' + (drive ? ' in the new belt' : '') + ' with the front ' + (f0.B.s >= rt.total - 1e-6 ? 'at the ' + (drive ? 'drive' : 'winch') : first(len(f0.B.s)) + ' along the route')));
         $('secBody').innerHTML = sb.join('');
         $('secCap').textContent = 'Pull Force Through Each Section' + (staged ? ', Without the Pullers' : '');
 
@@ -1047,7 +1055,8 @@
         bt.push(rowN('To hold the sag to ' + pct(P.sag), [[kN(R.needSag), 'Between idlers at ' + spc.join(' and ') + ' spacing']]));
         bt.push(rowN('Least back tension', [[kN(R.Tmin), T0 >= R.Tmin - 1e-9 ? 'The set back tension, ' + first(kN(T0)) + ', is enough' : bad('Above the set back tension, ' + first(kN(T0)))]], 'table-primary fw-semibold'));
         bt.push(rowN('Belt rolls', [[num(nR, 0), first(len(si.Lr)) + ' per roll, ' + plural(nR - 1, 'joint', 'joints') + ' between rolls']]));
-        bt.push(rowN('Roll mass', [[tonnes(P.qN * si.Lr), 'Belt only; add the core or spool']]));
+        var tRoll = Math.PI * (si.Df * si.Df - si.dc * si.dc) / (4 * si.Lr);   /* belt thickness the roll sizes imply */
+        bt.push(rowN('Roll mass', [[tonnes(P.qN * si.Lr), 'Belt only; add the core or spool. The roll sizes imply a ' + first(mmF(tRoll)) + ' thick belt']]));
         bt.push(rowN('Brake torque, full roll', [[knm(T0 * si.Df / 2), 'At the set back tension and ' + first(mmF(si.Df)) + ' diameter']]));
         bt.push(rowN('Brake torque, at the core', [[knm(T0 * si.dc / 2), 'A brake left at the full roll setting holds ' + first(kN(T0 * si.Df / si.dc)) + ' at the core; ease it as the roll empties']]));
         $('btBody').innerHTML = bt.join('');
@@ -1081,7 +1090,7 @@
         else if (loop) { sug.push('Where a winch on the old belt draws the new one on, the old belt, its splices and the joint carry the same pull.'); }
         sug.push('When pulling a belt on, clamp it at the splice station, then release the pulling tension so it equalises across the idlers before splicing.');
         if (staged) { sug.push('Set each puller to take the pull built up behind it, so the belt ahead stays at about the back tension.' + (P.ppos === 'best' ? ' Place them on straight, level runs close to the positions shown; moving one shifts pull to the next stage.' : '')); }
-        if (P.ppos === 'best' && P.npl > 0 && R.xs.length < P.npl) { sug.push('Only ' + plural(R.xs.length, 'puller is', 'pullers are') + ' placed; more would not lower the peak pull.'); }
+        if (P.ppos === 'best' && P.npl > 0 && R.xs.length < P.npl) { sug.push(R.xs.length ? 'Only ' + plural(R.xs.length, 'puller is', 'pullers are') + ' placed; more would not lower the peak tension.' : 'No pullers are placed: the tension does not build up enough along the route for a puller to lower it.'); }
         if (P.hc > 0) { sug.push('On horizontal curves the empty belt is drawn against the inner wing rolls; intermediate pullers limit the build-up.'); }
         if (rt.total > 2000 && !staged) { warn.push('Over 2 km of pull: consider staged pulling, with intermediate pullers or tugger winches along the route.'); }
         if (R.needRA > T0 + 1e-9) { warn.push('The belt runs ahead on the downhill section: set the back tension to at least ' + first(kN(R.needRA)) + '.'); }
@@ -1090,6 +1099,7 @@
         if (!drive && !wt) { warn.push('The pull needs more than a 200 t winch; stage the pull with intermediate pullers.'); }
         if (staged && R.pullers.some(function (p) { return !p.size; })) { warn.push('A puller needs more than 200 t; add pullers or move them.'); }
         if (staged && R.pullers.some(function (p) { return p.B < -1e-9; })) { warn.push('A puller after a downhill run would have to hold the belt back; move it further along the route.'); }
+        if (tRoll < 0.005 || tRoll > 0.06) { warn.push('The roll diameters and belt on each roll imply a ' + first(mmF(tRoll)) + ' thick belt; check them.'); }
         if (P.fi >= 0.1) { warn.push('An idler friction factor of 0.1 or more suggests stiff or seized idlers; free them before the pull.'); }
         $('sugList').innerHTML = sug.map(function (t) { return '<li>' + t + '</li>'; }).join('');
         $('sugBox').hidden = !sug.length;
