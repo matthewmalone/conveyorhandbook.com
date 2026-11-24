@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator 6 Horizontal Curve Radius – Modern Conveyor Handbook</title>
-    <meta name="description" content="Horizontal curve radius calculator for the carry or return strand: the equilibrium radius the idler banking allows in each load case, with inner and outer edge tension, belt drift with trough self-centring and friction, an optional combined vertical curve, the tension across the belt width, to-scale drawings and a 4 to 8 deg banking comparison.">
+    <meta name="description" content="Horizontal curve radius calculator: the radius the idler banking allows from the banking equilibrium and edge tension in each load case, with the belt drift and to-scale drawings.">
     <meta name="author" content="Matthew Malone">
     <link rel="canonical" href="https://www.conveyorhandbook.com/06-calculator-horizontal-curve-radius.html">
 
     <meta property="og:type" content="article">
     <meta property="og:title" content="Calculator 6 Horizontal Curve Radius – Modern Conveyor Handbook">
-    <meta property="og:description" content="Horizontal curve radius calculator for the carry or return strand: the equilibrium radius the idler banking allows in each load case, with inner and outer edge tension, belt drift with trough self-centring and friction, an optional combined vertical curve, the tension across the belt width, to-scale drawings and a 4 to 8 deg banking comparison.">
+    <meta property="og:description" content="Horizontal curve radius calculator: the radius the idler banking allows from the banking equilibrium and edge tension in each load case, with the belt drift and to-scale drawings.">
     <meta property="og:url" content="https://www.conveyorhandbook.com/06-calculator-horizontal-curve-radius.html">
     <meta property="og:site_name" content="Modern Conveyor Handbook">
     <meta property="og:locale" content="en_AU">
@@ -25,7 +25,7 @@
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Calculator 6 Horizontal Curve Radius – Modern Conveyor Handbook">
-    <meta name="twitter:description" content="Horizontal curve radius calculator for the carry or return strand: the equilibrium radius the idler banking allows in each load case, with inner and outer edge tension, belt drift with trough self-centring and friction, an optional combined vertical curve, the tension across the belt width, to-scale drawings and a 4 to 8 deg banking comparison.">
+    <meta name="twitter:description" content="Horizontal curve radius calculator: the radius the idler banking allows from the banking equilibrium and edge tension in each load case, with the belt drift and to-scale drawings.">
 
     <link rel="icon" type="image/svg+xml" href="ico/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
@@ -39,7 +39,7 @@
             {
                 "@type": "TechArticle",
                 "headline": "Calculator 6 Horizontal Curve Radius",
-                "description": "Horizontal curve radius calculator for the carry or return strand: the equilibrium radius the idler banking allows in each load case, with inner and outer edge tension, belt drift with trough self-centring and friction, an optional combined vertical curve, the tension across the belt width, to-scale drawings and a 4 to 8 deg banking comparison.",
+                "description": "Horizontal curve radius calculator: the radius the idler banking allows from the banking equilibrium and edge tension in each load case, with the belt drift and to-scale drawings.",
                 "author": { "@type": "Person", "name": "Matthew Malone" },
                 "copyrightYear": "2026",
                 "copyrightHolder": { "@type": "Person", "name": "Matthew Malone" },
@@ -169,7 +169,7 @@
 
     <section id="calculator-6-horizontal-curve-radius">
         <h1 class="mb-3">1. Calculator 6. Horizontal Curve Radius</h1>
-        <p>Finds the radius the idler banking allows in a horizontal curve, for the carry or the return strand (run each separately): the equilibrium radius in each load case, where the inward pull of the belt tension balances the outward pull of the banked belt and material weight, with the inner and outer edge tension from in-plane bending. It shows the belt drift with the trough self-centring and optional friction, the belt position on the idlers and the curve radius to scale, the tension across the belt width and an optional vertical curve through the horizontal curve, and compares banking from 4 to 8 deg.</p>
+        <p>Finds the radius the idler banking allows in a horizontal curve, from the banking equilibrium and edge tension in each load case. It also shows the belt drift, draws the idlers and the curve to scale and checks a nominal radius.</p>
         <noscript><div class="alert alert-warning">This calculator needs JavaScript.</div></noscript>
     </section>
 
@@ -186,7 +186,7 @@
                 </select>
             </div>
             <div class="calc-row">
-                <label for="strand">Strand<span class="calc-hint">Run the carry and return strands separately, each with its own idlers and tensions</span></label>
+                <label for="strand">Strand<span class="calc-hint">Run each strand separately</span></label>
                 <select class="form-select" id="strand">
                     <option value="carry" selected>Carry</option>
                     <option value="return">Return</option>
@@ -209,21 +209,21 @@
                 </div>
             </div>
             <div class="calc-row">
-                <label for="Rn">Nominal curve radius (optional)<span class="calc-hint">The radius as designed; it is checked against each requirement, with the belt drift and tension shown at it</span></label>
+                <label for="Rn">Nominal curve radius (optional)<span class="calc-hint">The radius as designed, checked against each requirement</span></label>
                 <div class="input-group">
                     <input type="number" class="form-control" id="Rn" data-kind="m" min="0" step="any" value="">
                     <span class="input-group-text" data-unit="m">m</span>
                 </div>
             </div>
             <div class="calc-row">
-                <label for="theta">Curve angle (optional)<span class="calc-hint">The angle the belt turns through, up to 180 deg; gives the curve length and the plan drawing</span></label>
+                <label for="theta">Curve angle (optional)<span class="calc-hint">Up to 180 deg, for the curve length and plan</span></label>
                 <div class="input-group">
                     <input type="number" class="form-control" id="theta" data-kind="deg" min="0" step="any" value="30">
                     <span class="input-group-text">deg</span>
                 </div>
             </div>
             <div class="calc-row">
-                <label for="Rv">Vertical curve radius (optional)<span class="calc-hint">Where the belt also curves vertically through the horizontal curve; leave blank for none</span></label>
+                <label for="Rv">Vertical curve radius (optional)<span class="calc-hint">Where the belt also curves vertically</span></label>
                 <div class="input-group">
                     <input type="number" class="form-control" id="Rv" data-kind="m" min="0" step="any" value="">
                     <span class="input-group-text" data-unit="m">m</span>
@@ -250,35 +250,35 @@
                 </div>
             </div>
             <div class="calc-row">
-                <label for="mbw">Worn belt mass per metre (optional)<span class="calc-hint">The belt near the end of its life, with the covers worn, for the empty belt at the highest tension; a heavily worn belt can be 30% lighter. Leave blank to use the belt mass</span></label>
+                <label for="mbw">Worn belt mass per metre (optional)<span class="calc-hint">For the lightest belt cases; a heavily worn belt can be 30% lighter</span></label>
                 <div class="input-group">
                     <input type="number" class="form-control" id="mbw" data-kind="kgm" min="0" step="any" value="">
                     <span class="input-group-text" data-unit="kgm">kg/m</span>
                 </div>
             </div>
             <div class="calc-row">
-                <label for="E">Belt elastic modulus<span class="calc-hint">Whole carcass, per unit width. Fabric belts: about 10 times the rated breaking strength. Steel cord belts: the belt modulus</span></label>
+                <label for="E">Belt elastic modulus<span class="calc-hint">Per unit width; about 10 times the rated breaking strength for fabric belts</span></label>
                 <div class="input-group">
                     <input type="number" class="form-control" id="E" data-kind="kNm" min="0" step="any" value="100000">
                     <span class="input-group-text" data-unit="kNm">kN/m</span>
                 </div>
             </div>
             <div class="calc-row">
-                <label for="Ta">Allowable working tension<span class="calc-hint">Per unit width, from the belt rating and safety factor</span></label>
+                <label for="Ta">Allowable working tension<span class="calc-hint">Per unit width</span></label>
                 <div class="input-group">
                     <input type="number" class="form-control" id="Ta" data-kind="kNm" min="0" step="any" value="240">
                     <span class="input-group-text" data-unit="kNm">kN/m</span>
                 </div>
             </div>
             <div class="calc-row">
-                <label for="TaT">Allowable starting and stopping tension (optional)<span class="calc-hint">Per unit width. Belts are often allowed more tension for the short time of a start or stop; leave blank to use the allowable working tension</span></label>
+                <label for="TaT">Allowable starting and stopping tension (optional)<span class="calc-hint">Per unit width; leave blank to use the working value</span></label>
                 <div class="input-group">
                     <input type="number" class="form-control" id="TaT" data-kind="kNm" min="0" step="any" value="">
                     <span class="input-group-text" data-unit="kNm">kN/m</span>
                 </div>
             </div>
             <div class="calc-row">
-                <label for="edgeA">Edge tension allowance (optional)<span class="calc-hint">How far above the allowable tension the belt edge may go in a curve; leave blank for none</span></label>
+                <label for="edgeA">Edge tension allowance (optional)<span class="calc-hint">How far the belt edge may exceed the allowable tension</span></label>
                 <div class="input-group">
                     <input type="number" class="form-control" id="edgeA" data-kind="pct" min="0" step="any" value="">
                     <span class="input-group-text">%</span>
@@ -332,14 +332,14 @@
                 </div>
             </div>
             <div class="calc-row" data-show="gap">
-                <label for="gap">Roll gap<span class="calc-hint">Gap between the ends of adjacent rolls, typically 10 to 20 mm for inline sets. Enter a negative value for offset sets, where the wing rolls overlap the inner rolls.</span></label>
+                <label for="gap">Roll gap<span class="calc-hint">Typically 10 to 20 mm; negative for offset sets, where the rolls overlap</span></label>
                 <div class="input-group">
                     <input type="number" class="form-control" id="gap" data-kind="mm" step="any" value="10">
                     <span class="input-group-text" data-unit="mm">mm</span>
                 </div>
             </div>
             <div class="calc-row">
-                <label for="sp">Idler spacing (optional)<span class="calc-hint">Gives the banking transition length and the loads on each idler set</span></label>
+                <label for="sp">Idler spacing (optional)<span class="calc-hint">For the banking transition and the loads on each idler set</span></label>
                 <div class="input-group">
                     <input type="number" class="form-control" id="sp" data-kind="m" min="0" step="any" value="">
                     <span class="input-group-text" data-unit="m">m</span>
@@ -353,13 +353,13 @@
                 </div>
             </div>
             <div class="calc-row">
-                <label for="mu">Lateral friction coefficient (optional)<span class="calc-hint">Between the belt and the rolls, resisting the belt sliding across them. Used for the belt drift only; the equilibrium and required radius leave friction out. Leave blank to ignore friction</span></label>
+                <label for="mu">Lateral friction coefficient (optional)<span class="calc-hint">Between the belt and rolls, for the belt drift only</span></label>
                 <input type="number" class="form-control" id="mu" data-kind="n" min="0" step="any" value="">
             </div>
 
             <h3 class="h5 calc-group" data-show="carry">Material on the Belt</h3>
             <div class="calc-row" data-show="carry">
-                <label for="Q">Throughput (optional)<span class="calc-hint">Leave blank for an empty belt. When entered, the belt is loaded in the lowest tension cases</span></label>
+                <label for="Q">Throughput (optional)<span class="calc-hint">Carried in the loaded cases; leave blank for an empty belt</span></label>
                 <div class="input-group">
                     <input type="number" class="form-control" id="Q" data-kind="cap" min="0" step="any" value="2000">
                     <span class="input-group-text" data-unit="cap">t/h</span>
@@ -373,7 +373,7 @@
                 </div>
             </div>
             <div class="calc-row" data-show="mat">
-                <label for="rho">Bulk density<span class="calc-hint">With the surcharge angle, sets how the material lies across the belt, for the belt drift</span></label>
+                <label for="rho">Bulk density<span class="calc-hint">Sets how the material lies across the belt</span></label>
                 <div class="input-group">
                     <input type="number" class="form-control" id="rho" data-kind="dens" min="0" step="any" value="1600">
                     <span class="input-group-text" data-unit="dens">kg/m3</span>
@@ -389,28 +389,28 @@
 
             <h3 class="h5 calc-group">Belt Tension at the Curve</h3>
             <div class="calc-row">
-                <label for="TrH">Highest belt tension when running<span class="calc-hint">Across the full belt width. Taken with the lightest belt (empty, and worn if entered), which drifts furthest to the inside</span></label>
+                <label for="TrF"><span id="TrF-label">Belt tension when running full</span><span class="calc-hint" id="TrF-hint"></span></label>
                 <div class="input-group">
-                    <input type="number" class="form-control" id="TrH" data-kind="kN" min="0" step="any" value="80">
+                    <input type="number" class="form-control" id="TrF" data-kind="kN" min="0" step="any" value="80">
                     <span class="input-group-text" data-unit="kN">kN</span>
                 </div>
             </div>
             <div class="calc-row">
-                <label for="TrL">Lowest belt tension when running<span class="calc-hint">Taken with the heaviest belt (loaded on the carry strand), which drifts furthest to the outside</span></label>
+                <label for="TrE"><span id="TrE-label">Belt tension when running empty</span><span class="calc-hint" id="TrE-hint"></span></label>
                 <div class="input-group">
-                    <input type="number" class="form-control" id="TrL" data-kind="kN" min="0" step="any" value="40">
+                    <input type="number" class="form-control" id="TrE" data-kind="kN" min="0" step="any" value="40">
                     <span class="input-group-text" data-unit="kN">kN</span>
                 </div>
             </div>
             <div class="calc-row">
-                <label for="TtH">Highest belt tension when starting or stopping (optional)<span class="calc-hint">From the starting and stopping analysis, including aborted starts; taken with the lightest belt. Leave blank to leave out</span></label>
+                <label for="TtH">Highest belt tension when starting or stopping (optional)<span class="calc-hint">From the starting and stopping analysis; taken with the lightest belt</span></label>
                 <div class="input-group">
                     <input type="number" class="form-control" id="TtH" data-kind="kN" min="0" step="any" value="110">
                     <span class="input-group-text" data-unit="kN">kN</span>
                 </div>
             </div>
             <div class="calc-row">
-                <label for="TtL">Lowest belt tension when starting or stopping (optional)<span class="calc-hint">Taken with the heaviest belt. Leave blank to leave out</span></label>
+                <label for="TtL">Lowest belt tension when starting or stopping (optional)<span class="calc-hint">Taken with the heaviest belt</span></label>
                 <div class="input-group">
                     <input type="number" class="form-control" id="TtL" data-kind="kN" min="0" step="any" value="30">
                     <span class="input-group-text" data-unit="kN">kN</span>
@@ -546,8 +546,10 @@
    loaded, filling the trough with a parabolic surcharge (as Calculator 3, without the belt thickness), so a loaded belt that climbs a
    wing roll lifts its load with it. Optional friction between the belt and the rolls resists the sliding, up to the friction coefficient
    times the normal force on the rolls; the equilibrium and required radius leave it out, as the handbook advises.
-   Load cases follow the handbook: the lightest (empty) belt at the highest tension drifts furthest inwards and the heaviest (loaded)
-   belt at the lowest tension furthest outwards. The carry and return strands are run separately; the return strand carries no material. */
+   Load cases follow the handbook and Calculator 5: running full and running empty, each at its own tension, and the part loaded belt at
+   both running tensions, as the empty belt at the higher tension drifts furthest inwards and the loaded belt at the lower tension furthest
+   outwards; starting and stopping take the lightest belt at the highest tension and the heaviest at the lowest. The carry and return
+   strands are run separately; the return strand carries no material. */
 (function () {
     'use strict';
 
@@ -566,12 +568,12 @@
     var ARR_HINT = {
         two: 'Typically 10 to 30 deg',
         three: 'Typically 20 to 45 deg',
-        four: 'Angle of the outer rolls, typically 40 to 60 deg',
-        five: 'Angle of the outer rolls, typically 45 to 60 deg'
+        four: 'Typically 40 to 60 deg',
+        five: 'Typically 45 to 60 deg'
     };
     var INNER_HINT = {
-        four: 'Angle of the two inner rolls, typically 10 to 20 deg; a third of the outer roll angle gives an evenly curved garland',
-        five: 'Angle of the inner wing rolls, typically 20 to 30 deg; half the outer roll angle gives an evenly curved garland'
+        four: 'Typically 10 to 20 deg',
+        five: 'Typically 20 to 30 deg'
     };
     var SEG_NAME = { flat: ['Flat roll'], two: ['Roll'], three: ['Centre roll', 'Wing roll'], four: ['Inner roll', 'Outer roll'],
                      five: ['Centre roll', 'Inner wing roll', 'Outer wing roll'] };
@@ -803,7 +805,11 @@
         function blank(id) { return $(id).value.trim() === ''; }
         var isRet = $('strand').value === 'return', hasQ = !isRet && fin('Q') && si.Q > 0;
         var turn = $('turn').value, inSide = turn === 'left' ? 'left' : 'right', outSide = turn === 'left' ? 'right' : 'left';
-        $('beta-hint').textContent = 'Positive raises the inside of the curve, here the ' + inSide + ' side; negative raises the outside. Typically 4 to 8 deg';
+        $('beta-hint').textContent = 'Positive raises the inside (' + inSide + ' side), negative the outside. Typically 4 to 8 deg';
+        $('TrF-label').textContent = isRet ? 'Belt tension when the conveyor runs full' : 'Belt tension when running full';
+        $('TrE-label').textContent = isRet ? 'Belt tension when the conveyor runs empty' : 'Belt tension when running empty';
+        $('TrF-hint').textContent = isRet ? 'At the curve; the higher running tension takes the worn belt' : 'At the curve, at design capacity';
+        $('TrE-hint').textContent = isRet ? 'At the curve' : 'At the curve; use a lower part-loaded tension if there is one';
         show('trough', arr !== 'flat');
         show('inner', multiRoll);
         show('gap', arr !== 'flat');
@@ -813,18 +819,18 @@
         if (multiRoll) { $('lamIn-hint').textContent = INNER_HINT[arr]; }
         $('lam-label').textContent = multiRoll ? 'Outer roll angle' : 'Troughing angle';
         var lStd = fin('W') && si.W > 0 ? stdRoll(arr, si.W) : NaN;
-        $('lroll-hint').textContent = 'Leave blank for ' + (arr === 'four' ? 'a typical' : 'the standard') + ' length for this belt width' +
+        $('lroll-hint').textContent = 'Leave blank for ' + (arr === 'four' ? 'a typical' : 'the standard') + ' length' +
             (isFinite(lStd) ? ': ' + len(lStd) : '');
         $('lroll').placeholder = isFinite(lStd) ? first(len(lStd)).replace(/ (mm|in)$/, '') : '';
         var dStd = fin('W') && si.W > 0 ? stdDia(si.W) : NaN;
-        $('droll-hint').textContent = 'For the cross-section drawing; leave blank for a typical diameter for this belt width' + (isFinite(dStd) ? ': ' + len(dStd) : '');
+        $('droll-hint').textContent = 'For the drawing only; leave blank for a typical diameter' + (isFinite(dStd) ? ': ' + len(dStd) : '');
         $('droll').placeholder = isFinite(dStd) ? first(len(dStd)).replace(/ (mm|in)$/, '') : '';
-        $('Tmin-hint').textContent = 'Keeps the inner edge in tension. Typically ' + tpw(4.4) + '; 0 gives the zero tension limit';
+        $('Tmin-hint').textContent = 'Typically ' + tpw(4.4) + '; 0 for the zero tension limit';
         var lHint = fin('lroll') && si.lroll > 0 ? si.lroll : lStd, gHint = arr === 'flat' ? 0 : si.gap, spaceHint = NaN;
         if (isFinite(lHint) && isFinite(gHint) && fin('W')) {
             spaceHint = profile(arr, fin('lam') ? si.lam : 0, fin('lamIn') ? si.lamIn : 0, lHint, gHint).end - si.W / 2;
         }
-        $('dmax-hint').textContent = 'Leave blank for the space from the belt edge to the end of the ' + END_NAME[arr] +
+        $('dmax-hint').textContent = 'Leave blank for the space to the end of the ' + END_NAME[arr] +
             (isFinite(spaceHint) && spaceHint > 0 ? ': ' + len(spaceHint) : '');
         $('dmax').placeholder = isFinite(spaceHint) && spaceHint > 0 ? first(len(spaceHint)).replace(/ (mm|in)$/, '') : '';
 
@@ -862,8 +868,8 @@
             need('rho', fin('rho') && si.rho > 0, 'bulk density (needed with a throughput)');
             need('surch', fin('surch') && si.surch > 0 && si.surch < 45, 'surcharge angle (above 0 and below 45 deg)');
         }
-        need('TrH', fin('TrH') && si.TrH > 0, 'highest belt tension when running');
-        need('TrL', fin('TrL') && si.TrL > 0 && (!fin('TrH') || si.TrL <= si.TrH), 'lowest belt tension when running (above 0 and not more than the highest)');
+        need('TrF', fin('TrF') && si.TrF > 0, isRet ? 'belt tension when the conveyor runs full' : 'belt tension when running full');
+        need('TrE', fin('TrE') && si.TrE > 0, isRet ? 'belt tension when the conveyor runs empty' : 'belt tension when running empty');
         need('TtH', blank('TtH') || fin('TtH') && si.TtH > 0, 'highest belt tension when starting or stopping');
         need('TtL', blank('TtL') || fin('TtL') && si.TtL > 0 && (!fin('TtH') || si.TtL <= si.TtH),
             'lowest belt tension when starting or stopping (above 0 and not more than the highest)');
@@ -910,11 +916,11 @@
             } };
         }
 
-        /* load cases: inward cases take the lightest belt (empty, worn) at the highest tension, outward cases the heaviest (loaded) at the lowest */
-        function mkCase(key, name, T, inward, transient) {
-            var c = { key: key, name: name, short: name.replace('Starting or stopping', 'Start/stop').replace(' tension', ''), T: T, t: T / W, inward: inward, transient: transient };
-            c.mbelt = inward ? mbw : mb;
-            c.mmat = !inward ? mm : 0;
+        /* load cases: a light belt (empty, and worn if entered) or a heavy belt (new, and loaded on the carry strand) at a tension */
+        function mkCase(key, name, short, T, light, transient, desc) {
+            var c = { key: key, name: name, short: short, T: T, t: T / W, light: light, transient: transient, desc: desc || '' };
+            c.mbelt = light ? mbw : mb;
+            c.mmat = !light ? mm : 0;
             c.m = c.mbelt + c.mmat;
             c.wEff = c.m * G / 1000 - sW * T / Rv;               /* weight pressing the belt onto the idlers, kN/m */
             c.qb = c.mbelt * G / 1000 / W - sW * c.t / Rv;        /* the belt's own share per unit width, kN/m2 */
@@ -925,15 +931,29 @@
             c.TaE = c.Ta * edgeF;
             return c;
         }
-        var cases = [mkCase('runHi', 'Running, highest tension', si.TrH, true, false),
-                     mkCase('runLo', 'Running, lowest tension', si.TrL, false, false)];
-        if (fin('TtH')) { cases.push(mkCase('trHi', 'Starting or stopping, highest tension', si.TtH, true, true)); }
-        if (fin('TtL')) { cases.push(mkCase('trLo', 'Starting or stopping, lowest tension', si.TtL, false, true)); }
+        var TF = si.TrF, TE = si.TrE, cases;
+        if (isRet) {                                              /* no material: the higher running tension with the light belt, the lower with the heavy */
+            cases = [mkCase('full', 'Running full', 'Running full', TF, TF >= TE, false, 'The conveyor running at design capacity'),
+                     mkCase('empty', 'Running empty', 'Running empty', TE, TF < TE, false, 'The conveyor running empty')];
+        } else {                                                  /* as Calculator 5, with the part loaded belt at both running tensions */
+            cases = [mkCase('full', 'Running full', 'Running full', TF, false, false, 'At design capacity'),
+                     mkCase('partE', 'Part loaded, curve empty', 'Part loaded, curve empty', TF, true, false, 'Running full tension, belt empty at the curve'),
+                     mkCase('empty', 'Running empty', 'Running empty', TE, true, false, 'No material on the belt'),
+                     mkCase('partL', 'Part loaded, curve loaded', 'Part loaded, curve loaded', TE, false, false, 'Running empty tension, belt loaded at the curve')];
+            cases.forEach(function (c) { c.part = c.key === 'partE' || c.key === 'partL'; });
+            var steady = cases.filter(function (c) { return !c.part; });
+            cases = cases.filter(function (c) {                   /* a part loaded case matches a running case without material or a worn belt */
+                return !c.part || !steady.some(function (o) { return o.T === c.T && o.m === c.m; });
+            });
+            cases.forEach(function (c) { if (c.part) { c.twin = steady.filter(function (o) { return o.T === c.T; })[0]; } });
+        }
+        if (fin('TtH')) { cases.push(mkCase('trHi', 'Starting or stopping, highest tension', 'Start/stop, highest', si.TtH, true, true, 'Taken with the lightest belt')); }
+        if (fin('TtL')) { cases.push(mkCase('trLo', 'Starting or stopping, lowest tension', 'Start/stop, lowest', si.TtL, false, true, 'Taken with the heaviest belt')); }
         function whenCase(c) { return 'when ' + lc1(c.name); }
         function massDesc(c) {
             if (c.mmat > 0) { return 'Belt and material'; }
             if (isRet) { return c.mbelt < mb ? 'Worn belt' : 'Belt'; }
-            if (!c.inward) { return 'Belt only (no throughput entered)'; }
+            if (!c.light) { return 'Belt only (no throughput entered)'; }
             return c.mbelt < mb ? 'Empty worn belt' : 'Empty belt';
         }
 
@@ -1232,8 +1252,7 @@
                 [radText(et.r), et.r > 0 ? et.k.name : '', et.k.c === c && et.r > 0 ? 'fw-semibold' : ''],
                 rangeCellJ(main.rin[ci], main.rout[ci], rinJ[ci], routJ[ci]),
                 needCell(c, Rref, beta)];
-            return rowN(c.name, cells, c === gov.c && isFinite(gov.r) ? 'table-primary' : '',
-                c.inward ? 'Drifts furthest to the inside' : 'Drifts furthest to the outside');
+            return rowN(c.name, cells, c === gov.c && isFinite(gov.r) ? 'table-primary' : '', c.desc);
         }).join('') + (cases.length > 1 ? rowN('Every load case', [['', ''], [radText(checks[0].r), 'Largest'], ['', ''],
             rangeCellJ(main.Rin, main.Rout, RinJ, RoutJ), ['', '']], 'fw-semibold') : '');
 
@@ -1314,6 +1333,7 @@
             et2.push('<tr><td colspan="' + (showC ? 4 : 3) + '" class="text-body-secondary">No radius is enough, so there is no tension to show.</td></tr>');
         } else {
             cases.forEach(function (c) {
+                if (c.part) { return; }                           /* the same tension as a running case */
                 var pts = [bp.pts[0], bp.pts[bp.pts.length - 1]];
                 var hiE = c.TaE;
                 function tc(p, hiLim) {
@@ -1373,11 +1393,11 @@
                 : 'Loaded width ' + first(len(2 * mat.sec.se)) + ' along the belt; ' + pct(mat.need / mat.full.A * 100) + ' of the area at the standard edge distance'));
         }
         if (vert) {
-            var cHi = cases[0];
-            cases.forEach(function (c) { if (c.inward && c.T > cHi.T) { cHi = c; } });
+            var cHi = cases[0];                                   /* the case with the most tension for its weight */
+            cases.forEach(function (c) { if (c.T / c.m > cHi.T / cHi.m) { cHi = c; } });
             info.push(row('Vertical curve', (conc ? 'Concave, ' : 'Convex, ') + first(rad(Rv)) + ' radius', '',
-                cHi.lift ? 'Lifts the empty belt off the idlers at the highest belt tension' :
-                'At the highest belt tension the belt presses on the idlers with ' + pct(cHi.wEff / (cHi.m * G / 1000) * 100) + ' of its weight'));
+                cHi.lift ? 'Lifts the belt off the idlers ' + whenCase(cHi) :
+                (conc ? 'The belt presses on the idlers with as little as ' : 'The belt presses on the idlers with ') + pct(cHi.wEff / (cHi.m * G / 1000) * 100) + ' of its weight, ' + whenCase(cHi)));
         }
         info.push(row('Allowable working tension', tpw(Ta), '', 'When running'));
         if (fin('TaT')) { info.push(row('Allowable starting and stopping tension', tpw(TaT))); }
@@ -1463,11 +1483,11 @@
         $('barValue').textContent = radShort(gov.r).replace(/^no/, 'No') + (hasNom ? ', nominal ' + first(rad(Rn)) + (nomOK ? ' OK' : ' fails') : '');
 
         /* chart data: drift lines for the empty and loaded belt, by belt tension */
-        var lines = [{ inward: true, name: mbw < mb ? (isRet ? 'Worn belt' : 'Empty worn belt') : 'Empty belt' }];
-        if (mm > 0 || mbw < mb) { lines.push({ inward: false, name: mm > 0 ? 'Loaded belt' : 'Belt' }); } else { lines[0].name = 'Belt'; }
-        var runR = [si.TrL, si.TrH], trR = null;
+        var lines = [{ light: true, name: mbw < mb ? (isRet ? 'Worn belt' : 'Empty worn belt') : 'Empty belt' }];
+        if (mm > 0 || mbw < mb) { lines.push({ light: false, name: mm > 0 ? 'Loaded belt' : 'Belt' }); } else { lines[0].name = 'Belt'; }
+        var runR = [Math.min(TF, TE), Math.max(TF, TE)], trR = null;
         if (fin('TtH') || fin('TtL')) {
-            trR = [Math.min(fin('TtL') ? si.TtL : si.TrL, si.TrL), Math.max(fin('TtH') ? si.TtH : si.TrH, si.TrH)];
+            trR = [Math.min(fin('TtL') ? si.TtL : runR[0], runR[0]), Math.max(fin('TtH') ? si.TtH : runR[1], runR[1])];
         }
         var hc = Math.max(0, g) / 2, rolls;                       /* rolls along the profile on the inside half: [from, to, segment]; a centre roll spans both halves */
         if (arr === 'flat') { rolls = [[-l / 2, l / 2, 0, true]]; }
@@ -1479,7 +1499,7 @@
             sec: { P: P, W: W, beta: beta, rolls: rolls, dRoll: dRoll, cases: cases, drift: drift, dlim: dlim, space: space, endName: END_NAME[arr],
                    govCase: cases.indexOf(gov.c) >= 0 ? gov.c : null, mu: mu },
             plan: { theta: theta, sp: sp },
-            dr: { lines: lines, make: function (inward, T) { return mkCase('p', '', T, inward, false); }, drift: drift, cases: cases, dlim: dlim,
+            dr: { lines: lines, make: function (light, T) { return mkCase('p', '', '', T, light, false); }, drift: drift, cases: cases, dlim: dlim,
                   flat: arr === 'flat', run: runR, tran: trR, beta: beta, mu: mu },
             ten: { W: W, E: E, pts: bp.pts, P: P, arr: arr, cases: cases, govCase: cases.indexOf(gov.c) >= 0 ? gov.c : null, tAt: tAt,
                    Ta: Ta, TaT: TaT, hasTaT: fin('TaT'), edgeF: edgeF, allow: allow, Tmin: Tmin } };
@@ -1563,14 +1583,20 @@
             var yb = narrow ? y + 18 : y + (rowH - barH) / 2;
             var valText = (c.r === 0 ? 'No limit' : inf ? 'No radius is enough' : first(radUp(c.r))) +
                 (c.r > 0 ? ', ' + lc1(c.c.short.replace('highest', 'high').replace('lowest', 'low')) : '');
-            el('text', { x: 0, y: narrow ? y + 13 : yb + 12, 'class': (gov ? 'calc-gov' : 'calc-dark') + ' calc-halo' }, svg).textContent = c.name + (narrow ? ': ' + lc1(valText) : '');
+            var nameT = el('text', { x: 0, y: narrow ? y + 13 : yb + 12, 'class': (gov ? 'calc-gov' : 'calc-dark') + ' calc-halo' }, svg);
+            nameT.textContent = c.name + (narrow ? ': ' + lc1(valText) : '');
+            if (narrow && nameT.getComputedTextLength() > W - 2) { nameT.textContent = c.name + ': ' + lc1(valText.split(', ')[0]); }   /* the load case is in the hover */
             var wBar = inf ? barMax : Math.max(c.r > 0 ? 2 : 0, c.r / maxR * barMax);
             el('rect', { x: labelW, y: yb, width: wBar, height: barH, rx: 3,
                 fill: inf ? 'none' : gov ? '#343a40' : '#ced4da',
                 stroke: inf ? '#b02a37' : 'none', 'stroke-width': 1.5, 'stroke-dasharray': inf ? '5 4' : '' }, svg);
             hoverOn(box, el('rect', { x: labelW, y: y, width: barMax, height: rowH, fill: 'transparent' }, svg),
                 c.name + ': ' + lc1(valText) + (gov ? ' (governing)' : ''));
-            if (!narrow) { el('text', { x: labelW + wBar + 8, y: yb + 12, 'class': (gov ? 'calc-gov ' : '') + 'calc-halo' }, svg).textContent = valText; }
+            if (!narrow) {
+                var vt = el('text', { x: labelW + wBar + 8, y: yb + 12, 'class': (gov ? 'calc-gov ' : '') + 'calc-halo' }, svg);
+                vt.textContent = valText;
+                if (labelW + wBar + 8 + vt.getComputedTextLength() > W - 2) { vt.textContent = valText.split(', ')[0]; }   /* the load case is in the hover */
+            }
             y += rowH;
         });
         if (last.nom) {
@@ -1605,7 +1631,7 @@
         var N = 64, Ts = [];
         for (var i = 0; i <= N; i++) { Ts.push(toSI('kN', xTop * i / N)); }
         var lines = d.lines.map(function (ln) {
-            return { ln: ln, vals: Ts.map(function (T) { return d.drift(d.make(ln.inward, T), R, d.beta); }) };
+            return { ln: ln, vals: Ts.map(function (T) { return d.drift(d.make(ln.light, T), R, d.beta); }) };
         });
         if (lines.every(function (ln) { return ln.vals.every(function (v) { return isNaN(v); }); })) {
             note(box, 'The concave curve lifts the belt edges off the idlers, so there is no drift to show.', 'text-body-secondary');
@@ -1613,7 +1639,7 @@
         }
         var dots = d.cases.map(function (c) {
             var li = 0;
-            d.lines.forEach(function (ln, j) { if (ln.inward === c.inward) { li = j; } });
+            d.lines.forEach(function (ln, j) { if (ln.light === c.light) { li = j; } });
             return { c: c, li: li, v: d.drift(c, R, d.beta) };
         });
         var big = d.dlim;
@@ -1691,7 +1717,7 @@
             cross.setAttribute('x1', xx); cross.setAttribute('x2', xx); cross.setAttribute('visibility', 'visible');
             var text = 'Belt tension ' + first(force(T));
             lines.forEach(function (ln, j) {
-                var v = d.drift(d.make(ln.ln.inward, T), R, d.beta);
+                var v = d.drift(d.make(ln.ln.light, T), R, d.beta);
                 marks[j].setAttribute('visibility', isFinite(v) ? 'visible' : 'hidden');
                 if (isFinite(v)) { marks[j].setAttribute('cx', xx); marks[j].setAttribute('cy', Math.max(top, Math.min(top + ph, Y(v)))); }
                 text += '\n' + ln.ln.name + ': ' + (isNaN(v) ? 'lifts off' : !isFinite(v) ? 'runs to the ' + (v > 0 ? 'inside' : 'outside') : first(driftTxt(v)));
@@ -1719,7 +1745,7 @@
         note(box, 'At the ' + role + ' ' + radLabel(R, role) + ' radius');
         var Wpx = Math.max(260, box.clientWidth), left = 44, right = Wpx < 420 ? 112 : 132, top = 20, ph = 200, bottom = 46;
         var pw = Wpx - left - right, H = top + ph + bottom, half = d.W / 2;
-        var lines = d.cases.map(function (c) { return { c: c, vals: pts.map(function (p) { return d.tAt(p, c, R); }) }; });
+        var lines = d.cases.filter(function (c) { return !c.part; }).map(function (c) { return { c: c, vals: pts.map(function (p) { return d.tAt(p, c, R); }) }; });
         var vTop = d.Ta, vBot = 0;
         lines.forEach(function (ln) { vTop = Math.max(vTop, Math.max.apply(null, ln.vals)); vBot = Math.min(vBot, Math.min.apply(null, ln.vals)); });
         var limits = [[d.Ta, 'Allowable', '#6c757d']];
@@ -1772,8 +1798,9 @@
             el('line', { x1: left, x2: left + pw, y1: Y(lm[0]), y2: Y(lm[0]), stroke: lm[2], 'stroke-width': 1.25, 'stroke-dasharray': '5 4' }, svg);
             labels.push({ y: Y(lm[0]), text: lm[1], cls: '' });
         });
-        lines.slice().sort(function (p, q) { return (p.c === d.govCase) - (q.c === d.govCase); }).forEach(function (ln) {
-            var dark = ln.c === d.govCase;
+        function isGov(c) { return c === d.govCase || d.govCase && d.govCase.twin === c; }   /* a partly loaded case shares its running case's line */
+        lines.slice().sort(function (p, q) { return isGov(p.c) - isGov(q.c); }).forEach(function (ln) {
+            var dark = isGov(ln.c);
             el('polyline', { points: line(ln.vals).join(' '), fill: 'none', stroke: dark ? '#212529' : '#868e96', 'stroke-width': dark ? 2.25 : 1.75, 'stroke-linejoin': 'round' }, svg);
             labels.push({ y: Y(mir ? ln.vals[0] : ln.vals[ln.vals.length - 1]), text: ln.c.short, cls: 'calc-dark' });   /* at the right-hand edge */
         });
@@ -1783,7 +1810,7 @@
         /* hover: a line across the plot and the tension at that point in each load case */
         var cross = el('line', { x1: 0, x2: 0, y1: top, y2: top + ph, stroke: '#495057', 'stroke-width': 1, visibility: 'hidden' }, svg);
         var dotsEl = lines.map(function (ln) {
-            return el('circle', { r: 3.5, fill: ln.c === d.govCase ? '#212529' : '#868e96', stroke: '#fff', 'stroke-width': 2, visibility: 'hidden' }, svg);
+            return el('circle', { r: 3.5, fill: isGov(ln.c) ? '#212529' : '#868e96', stroke: '#fff', 'stroke-width': 2, visibility: 'hidden' }, svg);
         });
         var hit = el('rect', { x: left, y: top, width: pw, height: ph, fill: 'transparent' }, svg);
         function showMarks(on) { [cross].concat(dotsEl).forEach(function (m) { m.setAttribute('visibility', on ? 'visible' : 'hidden'); }); }
@@ -1836,7 +1863,7 @@
         });
         var x0 = Math.min.apply(null, pts.map(function (q) { return q[0]; })), x1 = Math.max.apply(null, pts.map(function (q) { return q[0]; }));
         var y0 = Math.min.apply(null, pts.map(function (q) { return q[1]; })), y1 = Math.max.apply(null, pts.map(function (q) { return q[1]; }));
-        var Wpx = Math.max(280, box.clientWidth), pad = 16, top = 18, maxH = 340, bottom = 46;
+        var Wpx = Math.max(280, box.clientWidth), pad = 16, top = 24, maxH = 340, bottom = 46;
         var k = Math.min((Wpx - 2 * pad) / Math.max(x1 - x0, 1e-9), maxH / Math.max(y1 - y0, 1e-9));
         var H = top + (y1 - y0) * k + bottom, cx = Wpx / 2 - (x0 + x1) / 2 * k, cy = top + y1 * k;
         function S(q) { return [cx + q[0] * k, cy - q[1] * k]; }
