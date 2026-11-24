@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator 10 Belt Pull – Modern Conveyor Handbook</title>
+    <meta name="description" content="Belt pull: winch or drive pull through each section when pulling a belt on or off, staged pulling with intermediate pullers, least back tension, let-off brake torque, and clamp loads.">
+    <meta name="author" content="Matthew Malone">
+    <link rel="canonical" href="https://www.conveyorhandbook.com/10-calculator-belt-pull.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Calculator 10 Belt Pull – Modern Conveyor Handbook">
+    <meta property="og:description" content="Belt pull: winch or drive pull through each section when pulling a belt on or off, staged pulling with intermediate pullers, least back tension, let-off brake torque, and clamp loads.">
+    <meta property="og:url" content="https://www.conveyorhandbook.com/10-calculator-belt-pull.html">
+    <meta property="og:site_name" content="Modern Conveyor Handbook">
+    <meta property="og:locale" content="en_AU">
+    <meta property="article:published_time" content="2026-11-25T00:00:00+11:00">
+    <meta property="article:modified_time" content="2026-11-25T00:00:00+11:00">
+    <meta property="article:author" content="Matthew Malone">
+    <meta property="article:section" content="Engineering">
+    <meta property="article:tag" content="conveyors">
+    <meta property="article:tag" content="belt installation">
+    <meta property="article:tag" content="belt winch">
+    <meta property="article:tag" content="engineering calculator">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Calculator 10 Belt Pull – Modern Conveyor Handbook">
+    <meta name="twitter:description" content="Belt pull: winch or drive pull through each section when pulling a belt on or off, staged pulling with intermediate pullers, least back tension, let-off brake torque, and clamp loads.">
+
+    <link rel="icon" type="image/svg+xml" href="ico/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+    <link rel="home" href="https://www.conveyorhandbook.com/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "TechArticle",
+                "headline": "Calculator 10 Belt Pull",
+                "description": "Belt pull: winch or drive pull through each section when pulling a belt on or off, staged pulling with intermediate pullers, least back tension, let-off brake torque, and clamp loads.",
+                "author": { "@type": "Person", "name": "Matthew Malone" },
+                "copyrightYear": "2026",
+                "copyrightHolder": { "@type": "Person", "name": "Matthew Malone" },
+                "publisher": { "@type": "Organization", "@id": "https://www.conveyorhandbook.com/#organization", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "datePublished": "2026-11-25",
+                "dateModified": "2026-11-25",
+                "mainEntityOfPage": "https://www.conveyorhandbook.com/10-calculator-belt-pull.html",
+                "isPartOf": { "@type": "WebSite", "@id": "https://www.conveyorhandbook.com/#website", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "inLanguage": "en-AU",
+                "about": { "@type": "Thing", "name": "Calculator 10 Belt Pull" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Modern Conveyor Handbook", "item": "https://www.conveyorhandbook.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Calculator 10 Belt Pull", "item": "https://www.conveyorhandbook.com/10-calculator-belt-pull.html" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+    <link rel="stylesheet" href="handbook.css">
+    <style>
+        /* Calculator page: only what Bootstrap's classes and handbook.css do not cover */
+        .calc-page { padding-bottom: 6rem; }
+        .calc-group { margin: 2rem 0 0.25rem; }
+
+        /* One input or result per row: label and hint on the left, field or value on the right */
+        .calc-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            column-gap: 1.5rem;
+            row-gap: 0.35rem;
+            align-items: center;
+            padding: 0.6rem 0.5rem;
+            border-bottom: 1px solid var(--bs-border-color);
+        }
+        .calc-row > label { margin: 0; }
+        .calc-hint { display: block; margin-top: 0.1rem; font-size: 0.8125rem; font-weight: 400; color: var(--bs-secondary-color); }
+        .calc-num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+        .input-group > .form-select.calc-dir { flex: 0 0 8.5rem; width: 8.5rem; }
+        @media (max-width: 575.98px) {
+            .calc-row { grid-template-columns: minmax(0, 1fr); padding-left: 0; padding-right: 0; }
+        }
+        #results { scroll-margin-top: 1rem; }
+        #secBody th[scope="row"], #winBody th[scope="row"], #clBody th[scope="row"], #stageBody th[scope="row"], #btBody th[scope="row"] { min-width: 10rem; }
+        #senBody th[scope="row"] { min-width: 5rem; }
+        @media (max-width: 575.98px) {
+            #winBody .calc-num, #clBody .calc-num, #secBody .calc-num, #stageBody .calc-num, #btBody .calc-num, #senBody .calc-num, #barValue { white-space: normal; }
+            #winBody th[scope="row"], #clBody th[scope="row"], #btBody th[scope="row"] { min-width: 6.5rem; }
+            #stageBody th[scope="row"] { min-width: 5.5rem; }
+            #secBody th[scope="row"] { min-width: 6rem; }
+            #senBody th[scope="row"] { min-width: 3rem; }
+        }
+
+        /* Charts */
+        .calc-drawing { position: relative; }
+        .calc-drawing svg { display: block; width: 100%; overflow: visible; }
+        .calc-drawing text { font-size: 12px; fill: var(--bs-secondary-color); font-variant-numeric: tabular-nums; }
+        .calc-drawing text.calc-dark { fill: #212529; }
+        .calc-drawing text.calc-group-label { fill: #212529; font-weight: 600; font-size: 13px; }
+        .calc-drawing text.calc-gov { fill: #212529; font-weight: 600; }
+        .calc-drawing text.calc-halo { paint-order: stroke; stroke: var(--bs-body-bg); stroke-width: 4px; stroke-linejoin: round; }
+        .calc-tip {
+            position: absolute;
+            z-index: 5;
+            padding: 0.3rem 0.55rem;
+            border: 1px solid var(--bs-border-color);
+            border-radius: var(--bs-border-radius-sm);
+            background: var(--bs-body-bg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            max-width: min(360px, 90vw);
+            font-size: 0.8rem;
+            white-space: pre-line;
+            pointer-events: none;
+        }
+
+        /* Result bar fixed to the bottom of the window while the inputs are on screen */
+        .calc-bar {
+            position: fixed;
+            left: 260px;
+            right: 0;
+            bottom: 0;
+            z-index: 1010;
+            padding: 0.6rem 3rem;
+            border-top: 1px solid var(--bs-border-color);
+            background: var(--bs-body-bg);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.06);
+        }
+        @media (max-width: 991.98px) {
+            .calc-bar { left: 0; padding: 0.55rem 1rem; }
+        }
+        @media print {
+            .calc-page { padding-bottom: 0; }
+            .calc-bar, .calc-tip { display: none !important; }
+            .calc-drawing svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Contents
+    </button>
+</div>
+
+<nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
+    <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="chapterMenuBtn" aria-expanded="false" aria-controls="chapterMenu">Chapters</button>
+    </p>
+    <div class="chapter-menu" id="chapterMenu"></div>
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="calcMenuBtn" aria-expanded="false" aria-controls="calcMenu">Calculators</button>
+    </p>
+    <div class="chapter-menu" id="calcMenu"></div>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-3">Table of Contents</p>
+    <div class="toc">
+        <a href="#calculator-10-belt-pull">1. Calculator 10. Belt Pull</a>
+        <a href="#inputs">2. Inputs</a>
+        <a href="#results">3. Results</a>
+    </div>
+</nav>
+
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+<main class="main-content calc-page" id="main" tabindex="-1">
+
+    <section id="calculator-10-belt-pull">
+        <h1 class="mb-3">1. Calculator 10. Belt Pull</h1>
+        <p>Works out the pull to draw a belt onto or off a conveyor with a winch, or with the conveyor drive when the old belt pulls the new one, section by section along the route and with intermediate pullers where the pull is staged. It gives the peak running and breakaway pull, the winch or drive needs, the least back tension, the let-off brake torque and the clamp loads.</p>
+        <noscript><div class="alert alert-warning">This calculator needs JavaScript.</div></noscript>
+    </section>
+
+    <form id="calcForm" autocomplete="off" novalidate>
+    <section id="inputs">
+        <h2 class="border-top pt-4 mt-5">2. Inputs</h2>
+
+        <div>
+            <div class="calc-row mt-3">
+                <label for="units">Units</label>
+                <select class="form-select" id="units">
+                    <option value="met" selected>Metric</option>
+                    <option value="imp">Imperial</option>
+                </select>
+            </div>
+
+            <h3 class="h5 calc-group">Conveyor and Belt</h3>
+            <div class="calc-row">
+                <label for="L">Conveyor centres<span class="calc-hint">Along the belt</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="L" data-kind="len" min="0" step="any" value="800">
+                    <span class="input-group-text" data-unit="len">m</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="H">Lift<span class="calc-hint">Head above tail; negative for a decline</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="H" data-kind="len" step="any" value="30">
+                    <span class="input-group-text" data-unit="len">m</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="B">Belt width</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="B" data-kind="mm" min="0" step="any" value="1200">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="mB">Belt mass<span class="calc-hint">Carcass and covers</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="mB" data-kind="kgm2" min="0" step="any" value="25">
+                    <span class="input-group-text" data-unit="kgm2">kg/m2</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="R">Belt rating<span class="calc-hint">Optional; breaking strength, to check the pull against the belt</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="R" data-kind="rat" min="0" step="any" value="1000">
+                    <span class="input-group-text" data-unit="rat">kN/m</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Pull Route</h3>
+            <div class="calc-row">
+                <label for="mode">Pulled by</label>
+                <select class="form-select" id="mode">
+                    <option value="winch" selected>Winch</option>
+                    <option value="drive">Conveyor drive, the old belt pulls the new one</option>
+                </select>
+            </div>
+            <div class="calc-row">
+                <label for="route">Route<span class="calc-hint" id="route-hint"></span></label>
+                <select class="form-select" id="route">
+                    <option value="ct">Carry side, tail to head</option>
+                    <option value="ch">Carry side, head to tail</option>
+                    <option value="rt">Return side, tail to head</option>
+                    <option value="rh">Return side, head to tail</option>
+                    <option value="lt" selected>Full loop from the tail: carry, head, return</option>
+                    <option value="lh">Full loop from the head: return, tail, carry</option>
+                </select>
+            </div>
+            <div class="calc-row" data-show="loop">
+                <label for="np">Pulleys at the far end<span class="calc-hint" id="np-hint"></span></label>
+                <input type="number" class="form-control" id="np" data-kind="n" min="0" step="1" value="3">
+            </div>
+            <div class="calc-row" data-show="carry">
+                <label for="Ls">Slider or impact bed<span class="calc-hint">Length the belt slides over on the carry side, at the tail</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="Ls" data-kind="len" min="0" step="any" value="6">
+                    <span class="input-group-text" data-unit="len">m</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="hc">Horizontal curves<span class="calc-hint">Total turning angle of the conveyor in plan, passed on each side the belt is pulled along; capstan friction 0.1</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="hc" data-kind="n" min="0" step="any" value="0">
+                    <span class="input-group-text">deg</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="drive">
+                <label for="mO">Old belt mass<span class="calc-hint">Optional; blank for the same as the new belt</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="mO" data-kind="kgm2" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="kgm2">kg/m2</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Idlers</h3>
+            <div class="calc-row" data-show="carry">
+                <label for="ac">Carry idler spacing</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="ac" data-kind="len" min="0" step="any" value="1.2">
+                    <span class="input-group-text" data-unit="len">m</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="carry">
+                <label for="mRc">Carry idler rotating mass<span class="calc-hint" id="mRc-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="mRc" data-kind="kg" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="kg">kg</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="ret">
+                <label for="ar">Return idler spacing</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="ar" data-kind="len" min="0" step="any" value="3">
+                    <span class="input-group-text" data-unit="len">m</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="ret">
+                <label for="mRr">Return idler rotating mass<span class="calc-hint" id="mRr-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="mRr" data-kind="kg" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="kg">kg</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="sag">Sag limit<span class="calc-hint">Belt sag between idlers while pulling, for the least back tension; 2% to 3%</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="sag" data-kind="n" min="0" step="any" value="3">
+                    <span class="input-group-text">%</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Resistance</h3>
+            <div class="calc-row">
+                <label for="fi">Idler friction factor<span class="calc-hint">DIN 22101 f, on the belt and idler rotating mass; 0.025 to 0.035 for free-turning idlers; 0.1 or more with stiff or seized idlers</span></label>
+                <input type="number" class="form-control" id="fi" data-kind="n" min="0" step="any" value="0.03">
+            </div>
+            <div class="calc-row" data-show="carry">
+                <label for="mus">Slider bed friction<span class="calc-hint">0.4 to 0.6 for a belt dragged over slider or impact bars</span></label>
+                <input type="number" class="form-control" id="mus" data-kind="n" min="0" step="any" value="0.5">
+            </div>
+            <div class="calc-row" data-show="loop">
+                <label for="pf">Pulley resistance<span class="calc-hint">Each pulley, as a share of the belt tension; 1% to 3%</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="pf" data-kind="n" min="0" step="any" value="2">
+                    <span class="input-group-text">%</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="bf">Breakaway factor<span class="calc-hint">Static over moving friction when a stopped pull restarts; 1.2 to 1.5</span></label>
+                <input type="number" class="form-control" id="bf" data-kind="n" min="0" step="any" value="1.3">
+            </div>
+            <div class="calc-row">
+                <label for="T0">Back tension<span class="calc-hint">Hold-back on the trailing end: the let-off stand brake when pulling on, a brake winch when pulling off</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="T0" data-kind="kN" min="0" step="any" value="5">
+                    <span class="input-group-text" data-unit="kN">kN</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Staged Pulling</h3>
+            <div class="calc-row">
+                <label for="npl">Intermediate pullers<span class="calc-hint">Linear pullers or tugger winches along the route; each takes the pull built up behind it and leaves the back tension ahead</span></label>
+                <input type="number" class="form-control" id="npl" data-kind="n" min="0" step="1" value="0">
+            </div>
+            <div class="calc-row" data-show="pullers">
+                <label for="ppos">Puller positions</label>
+                <select class="form-select" id="ppos">
+                    <option value="best" selected>Best positions, equal stage pulls</option>
+                    <option value="equal">Equal spacing along the route</option>
+                    <option value="set">Set positions</option>
+                </select>
+            </div>
+            <div class="calc-row" data-show="setpos">
+                <label for="plist">Positions<span class="calc-hint">Distance along the route from the trailing end, separated by commas</span></label>
+                <div class="input-group">
+                    <input type="text" inputmode="decimal" class="form-control" id="plist" data-kind="lenlist" value="">
+                    <span class="input-group-text" data-unit="len">m</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Winch and Drive</h3>
+            <div class="calc-row">
+                <label for="vp">Pulling speed<span class="calc-hint">Winch line speed or drive creep speed; 5 to 15 m/min typical</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="vp" data-kind="mpm" min="0" step="any" value="10">
+                    <span class="input-group-text" data-unit="mpm">m/min</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="drive">
+                <label for="wrap">Drive wrap angle<span class="calc-hint">Total wrap on the drive pulleys; 180 to 240 for one pulley</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="wrap" data-kind="n" min="0" step="any" value="210">
+                    <span class="input-group-text">deg</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="drive">
+                <label for="mud">Lagging friction<span class="calc-hint">Rubber lagging 0.35 dry, 0.25 wet; ceramic 0.4 or more</span></label>
+                <input type="number" class="form-control" id="mud" data-kind="n" min="0" step="any" value="0.3">
+            </div>
+            <div class="calc-row">
+                <label for="wm">Margin<span class="calc-hint">Above the peak breakaway pull, for uneven pulling and sheave losses; sizes the winch, pullers and joint</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="wm" data-kind="n" min="0" step="any" value="25">
+                    <span class="input-group-text">%</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Let-Off Stand</h3>
+            <div class="calc-row">
+                <label for="Lr">Belt on each roll<span class="calc-hint">When pulling a belt on</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="Lr" data-kind="len" min="0" step="any" value="300">
+                    <span class="input-group-text" data-unit="len">m</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="Df">Full roll diameter</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="Df" data-kind="mm" min="0" step="any" value="3000">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="dc">Core diameter</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="dc" data-kind="mm" min="0" step="any" value="600">
+                    <span class="input-group-text" data-unit="mm">mm</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Clamps</h3>
+            <div class="calc-row">
+                <label for="muk">Clamp friction<span class="calc-hint">Plain steel bars on rubber covers 0.3; serrated or gripping faces more</span></label>
+                <input type="number" class="form-control" id="muk" data-kind="n" min="0" step="any" value="0.3">
+            </div>
+            <div class="calc-row">
+                <label for="ksf">Clamp safety factor</label>
+                <input type="number" class="form-control" id="ksf" data-kind="n" min="0" step="any" value="2">
+            </div>
+            <div class="calc-row">
+                <label for="nb">Bolts per clamp</label>
+                <input type="number" class="form-control" id="nb" data-kind="n" min="0" step="1" value="8">
+            </div>
+        </div>
+    </section>
+    </form>
+
+    <section id="results">
+        <h2 class="border-top pt-4 mt-5">3. Results</h2>
+        <div class="alert alert-warning mt-3" role="note">
+            <p class="mb-0"><span class="fw-semibold">Check with the suppliers.</span> Winch, puller, rope and clamp ratings must meet the site lifting and rigging rules; these results are a guide only.</p>
+        </div>
+        <div class="alert alert-danger" id="resultError" role="alert" hidden></div>
+        <div id="resultBody">
+            <figure class="mt-4 mb-4">
+                <figcaption class="small fw-semibold mb-2">Tension Along the Route</figcaption>
+                <div class="calc-drawing" id="route-fig"></div>
+            </figure>
+            <div class="calc-tip" id="tip" hidden></div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold" id="secCap">Pull Force Through Each Section</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Section</th>
+                            <th scope="col">Pull at End</th>
+                            <th scope="col">Breakaway Pull</th>
+                        </tr>
+                    </thead>
+                    <tbody id="secBody"></tbody>
+                </table>
+            </div>
+            <div class="my-4 table-responsive" id="stageWrap" hidden>
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Staged Pull</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Running</th>
+                            <th scope="col">Breakaway</th>
+                        </tr>
+                    </thead>
+                    <tbody id="stageBody"></tbody>
+                </table>
+            </div>
+            <figure class="mt-5 mb-4">
+                <figcaption class="small fw-semibold mb-2" id="chartCap">Winch Pull Along the Route</figcaption>
+                <div class="calc-drawing" id="chart"></div>
+            </figure>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold" id="winCap">Winch</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody id="winBody"></tbody>
+                </table>
+            </div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Back Tension and Let-Off Stand</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody id="btBody"></tbody>
+                </table>
+            </div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Clamps</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col" id="clHead">At the Winch End</th>
+                            <th scope="col">At the Trailing End</th>
+                        </tr>
+                    </thead>
+                    <tbody id="clBody"></tbody>
+                </table>
+            </div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold" id="senCap">Peak Breakaway Pull Against Friction</caption>
+                    <thead class="table-light" id="senHead"></thead>
+                    <tbody id="senBody"></tbody>
+                </table>
+            </div>
+            <div class="alert alert-info mt-4" id="sugBox" hidden>
+                <p class="fw-semibold mb-2">Suggestions</p>
+                <ul class="mb-0 ps-3" id="sugList"></ul>
+            </div>
+            <div class="alert alert-warning mt-4" id="warnBox" hidden>
+                <p class="fw-semibold mb-2">Check</p>
+                <ul class="mb-0 ps-3" id="warnList"></ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="calc-bar d-print-none" id="calcBar">
+        <div class="d-flex flex-wrap align-items-baseline column-gap-3 row-gap-1">
+            <span class="fw-semibold" id="barLabel">Winch</span>
+            <span class="fs-5 fw-semibold calc-num" id="barValue" role="status"></span>
+            <a href="#results" class="small">Results</a>
+        </div>
+    </div>
+
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
+        Published <time datetime="2026-11-25">25 November 2026</time><br>
+        Updated <time datetime="2026-11-25">25 November 2026</time><br>
+        &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>
+    </footer>
+
+</main>
+
+<script src="chapters.js"></script>
+<script>
+/* Calculator 10 Belt Pull. Plain JavaScript. Lengths are held in m, widths in m, belt mass in kg/m2, idler mass in kg, rating in
+   kN/m, speed in m/min and forces in kN.
+   The belt runs from its trailing end along the route to the winch, or to the conveyor drive when the old belt pulls the new one,
+   whether it is pulled on or off. Its tension starts at the back tension and, along each side, gains the idler friction
+   f * g * (qR + q * cos d) per metre, where qR is the idler rotating mass per metre (DIN 22101), or the slider bed friction
+   mu * q * g * cos d where it slides, and the lift q * g * h. Each pulley at the far end of a loop multiplies the tension by (1 + p),
+   and the horizontal curves by e^(0.1 * theta), midway along each side. An intermediate puller takes the tension built up behind it
+   and leaves the back tension ahead. With a winch the pull is the tension at the front of the belt; with the drive it is the
+   tension at the end of the route, with the old belt ahead of the new one. Both are worked out for the front at every piece end.
+   Breakaway raises the friction terms by the breakaway factor. The winch is sized at the peak breakaway pull plus the margin; the
+   drive needs a slack side tension of T1 / e^(mu * phi). The tension anywhere is a(x) * T0 + b(x), which gives the least back
+   tension for run-ahead and sag exactly. Each clamp holds its load times the safety factor through two faces. */
+(function () {
+    'use strict';
+
+    var G = 9.81, MU_CURVE = 0.10, ETA = 0.8, EPS = 1e-9, TF = 9.80665;   /* TF: kN per tonne-force */
+    var ROUTES = {
+        ct: [['carry', 'tail']], ch: [['carry', 'head']], rt: [['return', 'tail']], rh: [['return', 'head']],
+        lt: [['carry', 'tail'], ['return', 'head']], lh: [['return', 'head'], ['carry', 'tail']]
+    };
+    var WINCH_T = [0.5, 1, 1.5, 2, 3, 5, 8, 10, 12, 15, 20, 25, 30, 40, 50, 60, 80, 100, 150, 200];   /* line pull, tonnes-force */
+
+    /* ── Units: the displayed value is the stored value times f[sys] ── */
+    var sys = 'met';
+    var UNIT = {
+        len:  { met: 'm', imp: 'ft', f: { met: 1, imp: 3.2808399 }, dp: { met: 1, imp: 1 } },
+        mm:   { met: 'mm', imp: 'in', f: { met: 1000, imp: 39.370079 }, dp: { met: 0, imp: 1 } },
+        kgm2: { met: 'kg/m2', imp: 'lb/ft2', f: { met: 1, imp: 0.2048161 }, dp: { met: 1, imp: 2 } },
+        kg:   { met: 'kg', imp: 'lb', f: { met: 1, imp: 2.2046226 }, dp: { met: 1, imp: 1 } },
+        rat:  { met: 'kN/m', imp: 'PIW', f: { met: 1, imp: 5.710147 }, dp: { met: 0, imp: 0 } },
+        kN:   { met: 'kN', imp: 'lbf', f: { met: 1, imp: 224.80894 }, dp: { met: 2, imp: 0 } },
+        mpm:  { met: 'm/min', imp: 'ft/min', f: { met: 1, imp: 3.2808399 }, dp: { met: 1, imp: 1 } },
+        n:    { dp: { met: 3, imp: 3 } }
+    };
+    function toSI(kind, v) { var u = UNIT[kind]; return u && u.f ? v / u.f[sys] : v; }
+    function fromSI(kind, v) { var u = UNIT[kind]; return u && u.f ? v * u.f[sys] : v; }
+
+    /* ── Formatting ── */
+    function num(v, dp) {
+        if (Math.abs(v) < 0.5 * Math.pow(10, -dp)) { v = 0; }
+        return v.toLocaleString('en-AU', { minimumFractionDigits: dp, maximumFractionDigits: dp });
+    }
+    function sig(v) {                                             /* three significant figures, whole numbers kept */
+        if (!(Math.abs(v) > 0)) { return '0'; }
+        var p = Math.floor(Math.log(Math.abs(v)) / Math.LN10);
+        if (p >= 2) { return num(Math.round(v), 0); }
+        var q = Math.pow(10, p - 2), r = Math.round(v / q) * q;
+        if (Math.abs(r) >= Math.pow(10, p + 1)) { p += 1; }
+        return num(r, Math.max(0, 2 - p));
+    }
+    function trim(v) { return String(Number(v.toFixed(4))); }
+    function pair(a, b) { return sys === 'met' ? a + ' [' + b + ']' : b + ' [' + a + ']'; }
+    function first(text) { return text.split(' [')[0]; }
+    function kN(x) { return pair(sig(x) + ' kN', sig(x * 224.80894) + ' lbf'); }   /* a value only wraps before its bracket */
+    function len(x) { return pair(sig(x) + ' m', sig(x * 3.2808399) + ' ft'); }
+    function mmF(x) { return pair(sig(x * 1000) + ' mm', sig(x * 39.370079) + ' in'); }
+    function kgm(x) { return pair(sig(x) + ' kg/m', sig(x * 0.6719690) + ' lb/ft'); }
+    function kgs(x) { return pair(sig(x) + ' kg', sig(x * 2.2046226) + ' lb'); }
+    function tonnes(kgv) { return pair(sig(kgv / 1000) + ' t', sig(kgv / 907.18474) + ' short tons'); }
+    function knm(x) { return pair(sig(x) + ' kNm', sig(x * 737.56215) + ' lbf-ft'); }
+    function kw(x) { return pair(sig(x) + ' kW', sig(x * 1.3410221) + ' hp'); }
+    function speed(v) { return pair(sig(v) + ' m/min', sig(v * 3.2808399) + ' ft/min'); }
+    function pct(p) { return num(p, Math.abs(p - Math.round(p)) < 0.05 ? 0 : 1) + '%'; }
+    function tsize(t) { return num(t, t % 1 ? 1 : 0) + ' t'; }
+    function dur(min) {
+        var m = Math.round(min);
+        if (m < 1) { return 'Under 1 min'; }
+        if (m < 60) { return m + ' min'; }
+        var h = Math.floor(m / 60), r = m % 60;
+        return num(h, 0) + ' h' + (r ? ' ' + r + ' min' : '');
+    }
+    function cap1(text) { return text.charAt(0).toUpperCase() + text.slice(1); }
+    function bad(text) { return '<span class="text-danger fw-semibold">' + text + '</span>'; }
+    function plural(n, one, many) { return num(n, 0) + ' ' + (n === 1 ? one : many); }
+    function uniq(a) {
+        var s = a.slice().sort(function (x, y) { return x - y; }), out = [];
+        s.forEach(function (x) { if (!out.length || x - out[out.length - 1] > EPS) { out.push(x); } });
+        return out;
+    }
+    function winchFor(kNv) { return WINCH_T.filter(function (t) { return t * TF >= kNv - 1e-9; })[0]; }
+
+    /* ── Elements and stored values ── */
+    var $ = function (id) { return document.getElementById(id); };
+    var form = $('calcForm');
+    var numInputs = Array.prototype.slice.call(form.querySelectorAll('input[data-kind]'));
+    var si = {};
+    function kindOf(el) { return el.getAttribute('data-kind'); }
+    function parseList(t) {
+        var parts = t.split(/[,;\s]+/).filter(function (x) { return x !== ''; }), out = [];
+        for (var i = 0; i < parts.length; i++) { var v = Number(parts[i]); if (!isFinite(v)) { return null; } out.push(v); }
+        return out;
+    }
+    function display(el) {
+        var v = si[el.id], k = kindOf(el);
+        if (k === 'lenlist') {
+            if (Array.isArray(v)) { el.value = v.map(function (x) { return String(Number(fromSI('len', x).toFixed(1))); }).join(', '); }
+            return;
+        }
+        if (!isFinite(v)) { el.value = ''; return; }
+        el.value = String(Number(fromSI(k, v).toFixed(UNIT[k] ? UNIT[k].dp[sys] : 3)));
+    }
+    function readInput(el) {
+        var t = el.value.trim(), k = kindOf(el);
+        if (k === 'lenlist') { var a = parseList(t); si[el.id] = a === null ? null : a.map(function (x) { return toSI('len', x); }); return; }
+        si[el.id] = t === '' ? NaN : toSI(k, parseFloat(t));
+    }
+    function show(key, on) { form.querySelectorAll('[data-show="' + key + '"]').forEach(function (e) { e.hidden = !on; }); }
+
+    /* ── Tooltip ── */
+    var tip = $('tip');
+    function showTip(text, anchor, x, y) {
+        anchor.appendChild(tip);
+        tip.textContent = text;
+        tip.style.width = 'max-content';
+        tip.hidden = false;
+        var w = tip.offsetWidth, wrap = anchor.clientWidth;
+        tip.style.left = Math.max(0, Math.min(wrap - w, x - w / 2)) + 'px';
+        tip.style.top = Math.max(-tip.offsetHeight - 4, y - tip.offsetHeight - 14) + 'px';
+    }
+    function hideTip() { tip.hidden = true; }
+    function hoverOn(box, node, text) {
+        function at(e) { var b = box.getBoundingClientRect(); showTip(typeof text === 'function' ? text(e) : text, box, e.clientX - b.left, e.clientY - b.top); }
+        node.addEventListener('mouseenter', at);
+        node.addEventListener('mousemove', at);
+        node.addEventListener('mouseleave', hideTip);
+    }
+
+    /* ── Results helpers ── */
+    function cell(value, hint, cls) {
+        return '<td' + (cls ? ' class="' + cls + '"' : '') + '><span class="calc-num">' + value + '</span>' + (hint ? '<span class="calc-hint">' + hint + '</span>' : '') + '</td>';
+    }
+    function rowN(label, cells, cls, labelHint) {
+        return '<tr' + (cls ? ' class="' + cls + '"' : '') + '><th scope="row">' + label + (labelHint ? '<span class="calc-hint">' + labelHint + '</span>' : '') + '</th>' +
+            cells.map(function (c) { return cell(c[0], c[1], c[2]); }).join('') + '</tr>';
+    }
+    function other(end) { return end === 'tail' ? 'head' : 'tail'; }
+
+    /* Rotating mass of one steel idler set: shell tube per metre of roll face and the ends of each roll, by belt width */
+    function idlerMass(B, side) {
+        var d = B <= 0.8 ? [9.0, 1.0] : B <= 1.4 ? [12.7, 1.2] : B <= 2.0 ? [17.1, 1.6] : [27.8, 2.5];   /* 108, 133, 159, 194 mm rolls */
+        return d[0] * (B + 0.2) + (side === 'carry' ? 3 : 1) * d[1];
+    }
+
+    /* ── The route as pieces: 'lin' adds friction and lift per metre, 'mul' multiplies the tension at a point,
+          'reset' is a puller that leaves the back tension ahead of it ── */
+    function buildRoute(p) {
+        var legs = ROUTES[p.route], pieces = [], sections = [], pos = 0, cosd = Math.sqrt(1 - Math.pow(p.H / p.L, 2));
+        var kc = Math.exp(MU_CURVE * p.hc * Math.PI / 180), kcB = Math.exp(MU_CURVE * p.bf * p.hc * Math.PI / 180);
+        sections.push({ name: 'Back tension', kind: 'start', s0: 0, s1: 0 });
+        legs.forEach(function (leg, n) {
+            if (n > 0) {                                           /* around the far end pulleys */
+                var kp = Math.pow(1 + p.pf / 100, p.np), kpB = Math.pow(1 + p.bf * p.pf / 100, p.np);
+                pieces.push({ kind: 'mul', at: pos, k: kp, kB: kpB });
+                sections.push({ name: 'Pulleys at the ' + other(legs[0][1]), kind: 'pul', s0: pos, s1: pos, n: p.np });
+            }
+            var side = leg[0], from = leg[1], rise = from === 'tail' ? p.H : -p.H;
+            var qR = side === 'carry' ? p.mRc / p.ac : p.mRr / p.ar;               /* idler rotating mass, kg per metre */
+            var frR = p.fi * G * qR / 1000, frq = p.fi * G * cosd / 1000, fsq = p.mus * G * cosd / 1000, grq = G * rise / p.L / 1000;
+            var slide = side === 'carry' ? Math.min(p.Ls, p.L) : 0, cuts = [0, p.L / 2, p.L];
+            if (slide > 0) { cuts.push(from === 'tail' ? slide : p.L - slide); }
+            cuts = uniq(cuts);
+            var curveDone = false;
+            sections.push({ name: cap1(side) + ' side, ' + from + ' to ' + other(from), kind: 'leg', s0: pos, s1: pos + p.L, side: side, from: from,
+                rise: rise, frR: frR, frq: frq, fsq: fsq, grq: grq, slide: slide, qR: qR });
+            for (var i = 0; i < cuts.length - 1; i++) {
+                var a = cuts[i], b = cuts[i + 1], mid = (a + b) / 2;
+                if (!curveDone && a >= p.L / 2 - EPS) { pieces.push({ kind: 'mul', at: pos + p.L / 2, k: kc, kB: kcB, curve: true }); curveDone = true; }
+                var onSlide = slide > 0 && (from === 'tail' ? mid < slide : mid > p.L - slide);
+                pieces.push({ kind: 'lin', at: pos + a, len: b - a, frR: onSlide ? 0 : frR, frq: onSlide ? fsq : frq, grq: grq, side: side, slide: onSlide });
+            }
+            pos += p.L;
+        });
+        return { pieces: pieces, sections: sections, total: pos, kc: kc, legs: legs };
+    }
+    function rate(pc, q, brk, bf) { return (brk ? bf : 1) * (pc.frR + pc.frq * q) + pc.grq * q; }   /* kN per metre */
+    function withPullers(pieces, xs) {                             /* split at each puller; a puller comes before a pulley at the same point */
+        var out = [], k = 0;
+        function cut(pc, a, b) { var c = {}; Object.keys(pc).forEach(function (key) { c[key] = pc[key]; }); c.at = a; c.len = b - a; return c; }
+        pieces.forEach(function (pc) {
+            if (pc.kind === 'lin') {
+                var a = pc.at, end = pc.at + pc.len;
+                while (k < xs.length && xs[k] < end - EPS) {
+                    if (xs[k] > a + EPS) { out.push(cut(pc, a, xs[k])); a = xs[k]; }
+                    out.push({ kind: 'reset', at: xs[k], n: k }); k++;
+                }
+                out.push(cut(pc, a, end));
+            } else {
+                while (k < xs.length && xs[k] <= pc.at + EPS) { out.push({ kind: 'reset', at: xs[k], n: k }); k++; }
+                out.push(pc);
+            }
+        });
+        while (k < xs.length) { out.push({ kind: 'reset', at: xs[k], n: k }); k++; }
+        return out;
+    }
+    function makeC(rt, P, xs) {
+        return { rt: rt, pieces: xs.length ? withPullers(rt.pieces, xs) : rt.pieces, xs: xs, S: rt.total, bf: P.bf, qN: P.qN, qO: P.qO, drive: P.mode === 'drive' };
+    }
+    /* Tension in the belt at x with the front of the new belt at 'front' (old belt ahead of it with the drive), running or at breakaway.
+       before: leave out a puller, pulley or curve step at exactly x. */
+    function tensionAt(C, x, front, brk, before, T0) {
+        var T = T0, pcs = C.pieces;
+        for (var i = 0; i < pcs.length; i++) {
+            var pc = pcs[i];
+            if (pc.at > x + EPS) { break; }
+            if (pc.kind === 'lin') {
+                var e = Math.min(pc.at + pc.len, x), m = Math.max(pc.at, Math.min(e, front));
+                T += rate(pc, C.qN, brk, C.bf) * (m - pc.at) + rate(pc, C.qO, brk, C.bf) * (e - m);
+            } else {
+                if (before && pc.at > x - EPS) { break; }
+                T = pc.kind === 'reset' ? T0 : T * (brk ? pc.kB : pc.k);
+            }
+        }
+        return T;
+    }
+    function bounds(C) {
+        var b = [0, C.S];
+        C.pieces.forEach(function (pc) { b.push(pc.at); if (pc.kind === 'lin') { b.push(pc.at + pc.len); } });
+        return uniq(b);
+    }
+    /* The pull at the winch (tension at the front) or at the drive (tension at the end of the route) */
+    function devPull(C, s, brk, before, T0) { return C.drive ? tensionAt(C, C.S, s, brk, true, T0) : tensionAt(C, s, s, brk, before, T0); }
+    function peaks(C, T0, atFront) {
+        var r = { T: -Infinity }, b = { T: -Infinity };
+        bounds(C).forEach(function (s) {
+            [true, false].forEach(function (bef) {
+                var vr = atFront ? tensionAt(C, s, s, false, bef, T0) : devPull(C, s, false, bef, T0);
+                var vb = atFront ? tensionAt(C, s, s, true, bef, T0) : devPull(C, s, true, bef, T0);
+                if (vr > r.T + 1e-12) { r = { T: vr, s: s }; }
+                if (vb > b.T + 1e-12) { b = { T: vb, s: s }; }
+            });
+        });
+        return { R: r, B: b };
+    }
+    /* Puller positions that give every stage the same peak breakaway pull: the least stage peak that n pullers can hold to */
+    function bestPositions(C, T0, n) {
+        var pcs = C.pieces;
+        function place(Pmax) {
+            if (Pmax <= T0 + 1e-12) { return null; }
+            var T = T0, xs = [], stepAt = -1;
+            for (var i = 0; i < pcs.length; i++) {
+                var pc = pcs[i];
+                if (pc.kind === 'mul') {
+                    if (T * pc.kB > Pmax + 1e-12) {
+                        if (!xs.length || Math.abs(xs[xs.length - 1] - pc.at) > EPS) { xs.push(pc.at); }   /* just before the step */
+                        T = T0;
+                        if (T * pc.kB > Pmax + 1e-12) { return null; }
+                    }
+                    T *= pc.kB;
+                    stepAt = pc.at;
+                } else {
+                    var r = rate(pc, C.qN, true, C.bf), a = 0;
+                    while (r > 0 && T + r * (pc.len - a) > Pmax + 1e-12) {
+                        a += Math.max(0, (Pmax - T) / r);
+                        if (a < 1e-3 && Math.abs(stepAt - pc.at) < EPS) { a = Math.min(1e-3, pc.len); }   /* just after a step, 1 mm on */
+                        xs.push(pc.at + a);
+                        T = T0;
+                        if (xs.length > n) { return null; }
+                    }
+                    T += r * (pc.len - a);
+                }
+                if (xs.length > n) { return null; }
+            }
+            return xs;
+        }
+        var hi = T0, T = T0;
+        pcs.forEach(function (pc) { T = pc.kind === 'mul' ? T * pc.kB : T + rate(pc, C.qN, true, C.bf) * pc.len; hi = Math.max(hi, T); });
+        if (hi <= T0 + 1e-9) { return []; }
+        var lo = T0, best = [];
+        for (var it = 0; it < 60; it++) {
+            var mid = (lo + hi) / 2, p = place(mid);
+            if (p) { hi = mid; best = p; } else { lo = mid; }
+        }
+        return best.filter(function (x) { return x > EPS && x < C.S - 1e-6; });
+    }
+
+    /* ── Solve one set of inputs; lite leaves out what the friction table does not need ── */
+    function solve(P, lite) {
+        var rt = buildRoute(P), base = makeC(rt, P, []), T0 = P.T0, xs = [];
+        if (P.npl > 0) {
+            if (P.ppos === 'set') { xs = P.plist.slice().sort(function (a, b) { return a - b; }); }
+            else if (P.ppos === 'equal') { for (var k = 1; k <= P.npl; k++) { xs.push(rt.total * k / (P.npl + 1)); } }
+            else { xs = bestPositions(base, T0, P.npl); }
+        }
+        var C = xs.length ? makeC(rt, P, xs) : base, pk = peaks(C, T0);
+        var o = { rt: rt, base: base, C: C, xs: xs, T0: T0, peakR: pk.R, peakB: pk.B };
+        o.T2 = C.drive ? pk.B.T / Math.exp(P.mud * P.wrap * Math.PI / 180) : NaN;
+        if (lite) { return o; }
+        o.peak0 = xs.length ? peaks(base, T0) : pk;                /* the winch or drive alone */
+        o.front0 = peaks(base, T0, true);                          /* tension at the front, for the section table */
+        o.joint = C.drive ? peaks(C, T0, true).B.T : NaN;
+        var B = bounds(C), fronts = C.drive ? B : [C.S];
+        o.pullers = xs.map(function (x) {
+            var fr = 0, fb = 0, firstOne = true;
+            fronts.forEach(function (s) {
+                var r = tensionAt(C, x, s, false, true, T0) - T0, b = tensionAt(C, x, s, true, true, T0) - T0;
+                if (firstOne || Math.abs(r) > Math.abs(fr)) { fr = r; }
+                if (firstOne || Math.abs(b) > Math.abs(fb)) { fb = b; }
+                firstOne = false;
+            });
+            return { x: x, R: fr, B: fb, size: winchFor(Math.abs(fb) * (1 + P.wm / 100)) };
+        });
+        /* highest and least belt tension, and the least back tension (the tension is a * T0 + b everywhere) */
+        var hi = -Infinity, lo = { T: Infinity }, needRA = 0, needSag = 0;
+        fronts.forEach(function (s) {
+            B.forEach(function (x) {
+                [true, false].forEach(function (bef) {
+                    hi = Math.max(hi, tensionAt(C, x, s, true, bef, T0));
+                    var t = tensionAt(C, x, s, false, bef, T0);
+                    if (t < lo.T - 1e-12) { lo = { T: t, x: x }; }
+                    var b0 = tensionAt(C, x, s, false, bef, 0), a = tensionAt(C, x, s, false, bef, 1) - b0;
+                    if (a > EPS) { needRA = Math.max(needRA, -b0 / a); }
+                });
+            });
+            C.pieces.forEach(function (pc) {
+                if (pc.kind !== 'lin' || pc.slide) { return; }
+                var sp = pc.side === 'carry' ? P.ac : P.ar;
+                [[pc.at, false, pc.at < s - EPS], [pc.at + pc.len, true, pc.at + pc.len <= s + EPS]].forEach(function (e) {
+                    var q = e[2] ? C.qN : C.qO, req = q * G * sp / (8 * P.sag / 100) / 1000;
+                    var b0 = tensionAt(C, e[0], s, false, e[1], 0), a = tensionAt(C, e[0], s, false, e[1], 1) - b0;
+                    if (a > EPS) { needSag = Math.max(needSag, (req - b0) / a); }
+                });
+            });
+        });
+        o.hiB = hi; o.least = lo; o.needRA = needRA; o.needSag = needSag; o.Tmin = Math.max(needRA, needSag);
+        return o;
+    }
+
+    function describe(x, P) {                                      /* where a point along the route is on the conveyor */
+        var legs = ROUTES[P.route], n = Math.min(legs.length - 1, Math.floor(x / P.L + EPS)), u = x - n * P.L;
+        if (n > 0 && u < 1e-6) { n -= 1; u = P.L; }
+        var leg = legs[n];
+        if (u > P.L - 1e-6) { return cap1(leg[0]) + ' side, at the ' + other(leg[1]); }
+        if (u < 1e-6) { return cap1(leg[0]) + ' side, at the ' + leg[1]; }
+        return cap1(leg[0]) + ' side, ' + first(len(u)) + ' from the ' + leg[1];
+    }
+
+    /* ── Main calculation ── */
+    var last = null;
+    function compute() {
+        var route = $('route').value, legs = ROUTES[route], loop = legs.length > 1, drive = $('mode').value === 'drive', ppos = $('ppos').value;
+        var hasCarry = legs.some(function (l) { return l[0] === 'carry'; }), hasRet = legs.some(function (l) { return l[0] === 'return'; });
+        function fin(id) { return isFinite(si[id]); }
+        function blank(id) { return $(id).value.trim() === ''; }
+        function whole(id) { return fin(id) && Math.abs(si[id] - Math.round(si[id])) < 1e-9; }
+        var npl = fin('npl') ? si.npl : 0;
+        show('loop', loop);
+        show('carry', hasCarry);
+        show('ret', hasRet);
+        show('drive', drive);
+        show('pullers', npl >= 1);
+        show('setpos', npl >= 1 && ppos === 'set');
+        $('np-hint').textContent = 'Pulleys the belt wraps around at the ' + other(legs[0][1]) + ': head, snub, bend and take-up pulleys';
+        $('route-hint').textContent = drive ? 'From the trailing end of the new belt to the drive pulley' : 'From the trailing end of the belt to the winch';
+        var okB = fin('B') && si.B >= 0.2 && si.B <= 4, estC = okB ? idlerMass(si.B, 'carry') : NaN, estR = okB ? idlerMass(si.B, 'return') : NaN;
+        $('mRc-hint').textContent = 'Rolls of one carry set; blank uses ' + (okB ? 'about ' + first(kgs(estC)) : 'an estimate') + ' for steel rolls on this belt width';
+        $('mRr-hint').textContent = 'Rolls of one return set; blank uses ' + (okB ? 'about ' + first(kgs(estR)) : 'an estimate') + ' for steel rolls on this belt width';
+
+        /* validation */
+        var errs = [];
+        numInputs.forEach(function (el) { el.classList.remove('is-invalid'); });
+        function req(id, ok, text) { if (!ok) { errs.push(text); $(id).classList.add('is-invalid'); } }
+        req('L', fin('L') && si.L >= 5, 'conveyor centres (5 m or more)');
+        req('H', fin('H') && (!fin('L') || Math.abs(si.H) < 0.5 * si.L), 'lift (less than half the length either way)');
+        req('B', okB, 'belt width (200 to 4,000 mm)');
+        req('mB', fin('mB') && si.mB > 0 && si.mB <= 300, 'belt mass (above 0, to 300 kg/m2)');
+        req('R', blank('R') || fin('R') && si.R > 0, 'belt rating (above 0, or blank)');
+        if (loop) {
+            req('np', whole('np') && si.np >= 0 && si.np <= 20, 'pulleys at the far end (a whole number, 0 to 20)');
+            req('pf', fin('pf') && si.pf >= 0 && si.pf <= 20, 'pulley resistance (0% to 20%)');
+        }
+        if (hasCarry) {
+            req('Ls', fin('Ls') && si.Ls >= 0 && (!fin('L') || si.Ls <= 0.5 * si.L), 'slider or impact bed (0 to half the length)');
+            req('mus', fin('mus') && si.mus >= 0 && si.mus <= 1.5, 'slider bed friction (0 to 1.5)');
+            req('ac', fin('ac') && si.ac >= 0.3 && si.ac <= 10, 'carry idler spacing (0.3 to 10 m)');
+            req('mRc', blank('mRc') || fin('mRc') && si.mRc >= 0 && si.mRc <= 1000, 'carry idler rotating mass (0 to 1,000 kg, or blank)');
+        }
+        if (hasRet) {
+            req('ar', fin('ar') && si.ar >= 0.3 && si.ar <= 20, 'return idler spacing (0.3 to 20 m)');
+            req('mRr', blank('mRr') || fin('mRr') && si.mRr >= 0 && si.mRr <= 1000, 'return idler rotating mass (0 to 1,000 kg, or blank)');
+        }
+        if (drive) { req('mO', blank('mO') || fin('mO') && si.mO > 0 && si.mO <= 300, 'old belt mass (above 0, to 300 kg/m2, or blank)'); }
+        req('hc', fin('hc') && si.hc >= 0 && si.hc <= 360, 'horizontal curves (0 to 360 deg)');
+        req('sag', fin('sag') && si.sag >= 0.5 && si.sag <= 10, 'sag limit (0.5% to 10%)');
+        req('fi', fin('fi') && si.fi >= 0 && si.fi <= 1, 'idler friction factor (0 to 1)');
+        req('bf', fin('bf') && si.bf >= 1 && si.bf <= 3, 'breakaway factor (1 to 3)');
+        req('T0', fin('T0') && si.T0 >= 0, 'back tension (0 or more)');
+        req('npl', whole('npl') && si.npl >= 0 && si.npl <= 10, 'intermediate pullers (a whole number, 0 to 10)');
+        var S = fin('L') ? si.L * legs.length : NaN, nP = Math.round(npl);
+        if (whole('npl') && nP >= 1 && nP <= 10 && ppos === 'set') {
+            var pl = si.plist, okL = Array.isArray(pl) && pl.length === nP && pl.every(function (x) { return x > 0 && (!isFinite(S) || x < S - 1e-6); });
+            if (okL) { var srt = pl.slice().sort(function (a, b) { return a - b; }); for (var i = 1; i < srt.length; i++) { if (srt[i] - srt[i - 1] < 0.01) { okL = false; } } }
+            req('plist', okL, 'puller positions (' + plural(nP, 'distance', 'different distances') + ' above 0 and below the route length' + (isFinite(S) ? ', ' + first(len(S)) : '') + ')');
+        }
+        req('vp', fin('vp') && si.vp > 0 && si.vp <= 200, 'pulling speed (above 0, to 200 m/min)');
+        if (drive) {
+            req('wrap', fin('wrap') && si.wrap >= 90 && si.wrap <= 720, 'drive wrap angle (90 to 720 deg)');
+            req('mud', fin('mud') && si.mud >= 0.05 && si.mud <= 0.8, 'lagging friction (0.05 to 0.8)');
+        }
+        req('wm', fin('wm') && si.wm >= 0 && si.wm <= 200, 'margin (0% to 200%)');
+        req('Lr', fin('Lr') && si.Lr >= 1, 'belt on each roll (1 m or more)');
+        req('Df', fin('Df') && si.Df >= 0.2 && si.Df <= 8, 'full roll diameter (200 to 8,000 mm)');
+        req('dc', fin('dc') && si.dc >= 0.05 && (!fin('Df') || si.dc < si.Df), 'core diameter (50 mm or more, below the full roll diameter)');
+        req('muk', fin('muk') && si.muk >= 0.05 && si.muk <= 1.5, 'clamp friction (0.05 to 1.5)');
+        req('ksf', fin('ksf') && si.ksf >= 1 && si.ksf <= 10, 'clamp safety factor (1 to 10)');
+        req('nb', whole('nb') && si.nb >= 1 && si.nb <= 100, 'bolts per clamp (a whole number, 1 to 100)');
+        if (errs.length) {
+            $('resultError').hidden = false;
+            $('resultError').textContent = 'Check these inputs: ' + errs.join('; ') + '.';
+            $('resultBody').hidden = true;
+            $('barValue').textContent = 'Check the inputs';
+            last = null;
+            return;
+        }
+        $('resultError').hidden = true;
+        $('resultBody').hidden = false;
+
+        var P = { route: route, mode: drive ? 'drive' : 'winch', L: si.L, H: si.H, B: si.B, mB: si.mB, qN: si.mB * si.B,
+            qO: drive && !blank('mO') ? si.mO * si.B : si.mB * si.B, np: loop ? Math.round(si.np) : 0, pf: loop ? si.pf : 0,
+            Ls: hasCarry ? si.Ls : 0, mus: hasCarry ? si.mus : 0, ac: hasCarry ? si.ac : 1, ar: hasRet ? si.ar : 1,
+            mRc: hasCarry ? (blank('mRc') ? estC : si.mRc) : 0, mRr: hasRet ? (blank('mRr') ? estR : si.mRr) : 0,
+            hc: si.hc, fi: si.fi, bf: si.bf, T0: si.T0, sag: si.sag, npl: nP, ppos: ppos, plist: si.plist, wm: si.wm,
+            wrap: drive ? si.wrap : 0, mud: drive ? si.mud : 0, vp: si.vp };
+        var R = solve(P), rt = R.rt, T0 = P.T0, nb = Math.round(si.nb), staged = R.xs.length > 0, dev = drive ? 'drive' : 'winch';
+
+        /* ── Section table: the build-up along the route, without the pullers ── */
+        var sb = [], prevR = T0;
+        rt.sections.forEach(function (sc, n) {
+            var ex = sc.kind === 'leg', endR = tensionAt(R.base, sc.s1, sc.s1, false, ex, T0), endB = tensionAt(R.base, sc.s1, sc.s1, true, ex, T0), hint = '';
+            if (sc.kind === 'start') { hint = 'Hold-back at the trailing end'; }
+            else if (sc.kind === 'pul') { hint = sc.n + (sc.n === 1 ? ' pulley' : ' pulleys') + ' at ' + trim(P.pf) + '% each'; }
+            else {
+                var parts = [first(len(P.L)) + ', ' + (sc.rise >= 0 ? 'up ' : 'down ') + first(len(Math.abs(sc.rise))),
+                    'idlers ' + first(kN((sc.frR + sc.frq * P.qN) * (P.L - sc.slide)))];
+                if (sc.slide > 0) { parts.push('slider bed ' + first(kN(sc.fsq * P.qN * sc.slide))); }
+                parts.push('lift ' + first(kN(sc.grq * P.qN * P.L)));
+                if (P.hc > 0) { parts.push('curves times ' + num(rt.kc, 3) + ' midway'); }
+                hint = parts.join(', ');
+            }
+            sb.push(rowN((n + 1) + '. ' + sc.name, [[kN(endR), ''], [kN(endB), '']], '', (sc.kind === 'start' ? '' : 'Adds ' + first(kN(endR - prevR)) + ': ') + hint));
+            prevR = endR;
+        });
+        var f0 = R.front0;
+        sb.push(rowN('Peak', [[kN(f0.R.T), ''], [kN(f0.B.T), '']], 'table-primary fw-semibold', f0.B.s <= 1e-9 ? 'Breakaway peak at the start: the back tension alone' :
+            'Breakaway peak with the front ' + (f0.B.s >= rt.total - 1e-6 ? 'at the ' + (drive ? 'drive' : 'winch') : first(len(f0.B.s)) + ' along the route')));
+        $('secBody').innerHTML = sb.join('');
+        $('secCap').textContent = 'Pull Force Through Each Section' + (staged ? ', Without the Pullers' : '');
+
+        /* ── Staged pull ── */
+        var stb = [];
+        function stepNote(x) {                                     /* a puller at a pulley or curve step */
+            var t = '';
+            rt.pieces.forEach(function (pc) {
+                if (pc.kind !== 'mul' || (!pc.curve && P.np === 0) || (pc.curve && P.hc === 0)) { return; }
+                var what = pc.curve ? 'curve' : 'pulleys';
+                if (Math.abs(x - pc.at) < EPS) { t = ', just before the ' + what; }
+                else if (x > pc.at && x - pc.at < 0.01) { t = ', just after the ' + what; }
+            });
+            return t;
+        }
+        if (staged) {
+            R.pullers.forEach(function (pk, k) {
+                stb.push(rowN('Puller ' + (k + 1), [[kN(pk.R), pk.B < -1e-9 ? bad('Holds the belt back') : ''], [kN(pk.B), pk.size ? tsize(pk.size) + ' puller with the margin' : bad('Above 200 t')]], '',
+                    describe(pk.x, P) + stepNote(pk.x) + (loop ? ', ' + first(len(pk.x)) + ' along the route' : '')));
+            });
+            stb.push(rowN(cap1(dev), [[kN(R.peakR.T), ''], [kN(R.peakB.T), '']], 'table-primary fw-semibold', 'Peak over the pull, with the pullers'));
+            stb.push(rowN('Without pullers', [[kN(R.peak0.R.T), ''], [kN(R.peak0.B.T), '']], '', 'The ' + dev + ' alone'));
+        }
+        $('stageBody').innerHTML = stb.join('');
+        $('stageWrap').hidden = !staged;
+
+        /* ── Winch or drive ── */
+        var need = R.peakB.T * (1 + P.wm / 100), wt = winchFor(need), wb = [], allow = fin('R') ? si.R * P.B / 10 : NaN;
+        var mins = rt.total / P.vp, timeHint = first(len(rt.total)) + ' at ' + first(speed(P.vp)) + ', without stops to re-rig or add rolls';
+        wb.push(rowN('Peak running pull', [[kN(R.peakR.T), (drive ? 'Tight side at the drive pulley, belt moving' : 'Belt moving') + (staged ? ', with the pullers' : '')]]));
+        wb.push(rowN('Peak breakaway pull', [[kN(R.peakB.T), 'Restarting a stopped pull, friction times ' + trim(P.bf)]], 'fw-semibold'));
+        if (!drive) {
+            wb.push(rowN('Winch pull needed', [[kN(need), 'Breakaway peak plus ' + pct(P.wm)]], 'table-primary fw-semibold'));
+            wb.push(rowN('Winch size', [[wt ? pair(tsize(wt) + ' (' + sig(wt * TF) + ' kN)', tsize(wt) + ' (' + sig(wt * TF * 224.80894) + ' lbf)') : bad('Above 200 t'),
+                wt ? 'The next standard line pull, ' + pct(need / (wt * TF) * 100) + ' used' : 'Stage the pull with intermediate pullers']]));
+            if (wt) { wb.push(rowN('Wire rope', [[kN(5 * wt * TF), 'Minimum breaking force, 5 times the winch line pull']])); }
+            wb.push(rowN('Winch power', [[kw(need * P.vp / 60 / ETA), 'At the winch pull needed and ' + first(speed(P.vp)) + ', 80% efficient']]));
+        } else {
+            var dF = R.peakB.T - R.T2;
+            wb.push(rowN('Slack side tension needed', [[kN(R.T2), 'Stops the drive slipping at ' + trim(P.mud) + ' lagging friction and ' + trim(P.wrap) + ' deg wrap; from the take-up or a rewinder on the old belt']], 'table-primary fw-semibold'));
+            wb.push(rowN('Drive force', [[kN(dF), 'Tight side less slack side, at breakaway']]));
+            wb.push(rowN('Drive power', [[kw(dF * P.vp / 60 / ETA), 'At the drive force and ' + first(speed(P.vp)) + ', 80% efficient']]));
+            wb.push(rowN('Joint between the belts', [[kN(R.joint), 'Peak breakaway pull at the joint; rate it above ' + first(kN(R.joint * (1 + P.wm / 100))) + ' with the margin']]));
+        }
+        wb.push(rowN('Pull time', [[dur(mins), timeHint]]));
+        wb.push(rowN('Least pull', [[kN(R.least.T), R.least.T < 0 ? bad('The belt runs ahead under its own weight') : 'The belt stays in tension along the route']]));
+        wb.push(rowN('Belt mass', [[kgm(P.qN), first(len(rt.total)) + ' of belt on the route, ' + tonnes(P.qN * rt.total) + (drive && Math.abs(P.qO - P.qN) > 1e-9 ? '; old belt ' + first(kgm(P.qO)) : '')]]));
+        if (isFinite(allow)) { wb.push(rowN('Belt check', [[pct(R.hiB / allow * 100), 'Highest belt tension, of the working tension at 10:1, ' + first(kN(allow)) + (R.hiB > allow + 1e-9 ? '; ' + bad('above it') : '')]])); }
+        $('winBody').innerHTML = wb.join('');
+        $('winCap').textContent = drive ? 'Drive' : 'Winch';
+
+        /* ── Back tension and let-off stand ── */
+        var bt = [], nR = Math.ceil(rt.total / si.Lr - 1e-9), spc = [];
+        if (hasCarry) { spc.push(first(len(P.ac)) + ' carry'); }
+        if (hasRet) { spc.push(first(len(P.ar)) + ' return'); }
+        bt.push(rowN('To keep the belt in tension', [[kN(R.needRA), R.needRA > 1e-9 ? 'Stops the belt running ahead downhill' : 'The belt does not run ahead']]));
+        bt.push(rowN('To hold the sag to ' + pct(P.sag), [[kN(R.needSag), 'Between idlers at ' + spc.join(' and ') + ' spacing']]));
+        bt.push(rowN('Least back tension', [[kN(R.Tmin), T0 >= R.Tmin - 1e-9 ? 'The set back tension, ' + first(kN(T0)) + ', is enough' : bad('Above the set back tension, ' + first(kN(T0)))]], 'table-primary fw-semibold'));
+        bt.push(rowN('Belt rolls', [[num(nR, 0), first(len(si.Lr)) + ' per roll, ' + plural(nR - 1, 'joint', 'joints') + ' between rolls']]));
+        bt.push(rowN('Roll mass', [[tonnes(P.qN * si.Lr), 'Belt only; add the core or spool']]));
+        bt.push(rowN('Brake torque, full roll', [[knm(T0 * si.Df / 2), 'At the set back tension and ' + first(mmF(si.Df)) + ' diameter']]));
+        bt.push(rowN('Brake torque, at the core', [[knm(T0 * si.dc / 2), 'A brake left at the full roll setting holds ' + first(kN(T0 * si.Df / si.dc)) + ' at the core; ease it as the roll empties']]));
+        $('btBody').innerHTML = bt.join('');
+
+        /* ── Clamps ── */
+        var hold = [R.peakR.T, Math.max(T0, R.needRA)], cb = [];
+        var dsg = hold.map(function (h) { return h * si.ksf; }), nrm = dsg.map(function (d) { return d / (2 * si.muk); });
+        cb.push(rowN('Belt load held', [[kN(hold[0]), 'The peak running pull'], [kN(hold[1]), R.needRA > T0 + 1e-9 ? 'The hold that stops the belt running ahead' : 'The back tension']]));
+        cb.push(rowN('Design load', [[kN(dsg[0]), 'Times ' + trim(si.ksf)], [kN(dsg[1]), '']], 'fw-semibold'));
+        cb.push(rowN('Clamping force', [[kN(nrm[0]), 'Through two faces at ' + trim(si.muk) + ' friction'], [kN(nrm[1]), '']], 'table-primary fw-semibold'));
+        cb.push(rowN('Per bolt', [[kN(nrm[0] / nb), plural(nb, 'bolt', 'bolts')], [kN(nrm[1] / nb), '']]));
+        $('clBody').innerHTML = cb.join('');
+        $('clHead').textContent = drive ? 'At the Drive End' : 'At the Winch End';
+
+        /* ── Friction sensitivity: peak breakaway pull for other idler friction and breakaway factors ── */
+        var fis = uniq([0.025, 0.035, 0.05, 0.1, P.fi]), bfs = uniq([1.2, P.bf, 1.5]);
+        if (bfs.length < 3) { bfs = uniq(bfs.concat([1.35])); }
+        $('senHead').innerHTML = '<tr><th scope="col">Idler Fric&shy;tion</th>' + bfs.map(function (b) { return '<th scope="col">Break&shy;away ' + trim(b) + '</th>'; }).join('') + '</tr>';
+        $('senBody').innerHTML = fis.map(function (f) {
+            return rowN(trim(f), bfs.map(function (b) {
+                var here = Math.abs(f - P.fi) < EPS && Math.abs(b - P.bf) < EPS;
+                var Q = here ? R : solve(Object.assign({}, P, { fi: f, bf: b }), true), w = winchFor(Q.peakB.T * (1 + P.wm / 100));
+                return [first(kN(Q.peakB.T)).replace(' ', ' '), drive ? 'Slack side ' + first(kN(Q.T2)).replace(' ', ' ') : (w ? tsize(w) + ' winch' : 'Above 200 t'), here ? 'table-primary fw-semibold' : ''];
+            }), '', Math.abs(f - P.fi) < EPS ? 'As set' : '');
+        }).join('');
+
+        /* ── Suggestions and checks ── */
+        var sug = [], warn = [];
+        sug.push('Join fabric belts to the leader with temporary mechanical fasteners, and steel cord belts with bolted pulling clamps, rated above the peak pull.');
+        if (drive) { sug.push('Run the drive on its inching drive or VVVF at creep speed, and check the motor torque covers the breakaway drive force. The old belt and its splices carry up to the tight side pull.'); }
+        else if (loop) { sug.push('Where a winch on the old belt draws the new one on, the old belt, its splices and the joint carry the same pull.'); }
+        sug.push('When pulling a belt on, clamp it at the splice station, then release the pulling tension so it equalises across the idlers before splicing.');
+        if (staged) { sug.push('Set each puller to take the pull built up behind it, so the belt ahead stays at about the back tension.' + (P.ppos === 'best' ? ' Place them on straight, level runs close to the positions shown; moving one shifts pull to the next stage.' : '')); }
+        if (P.ppos === 'best' && P.npl > 0 && R.xs.length < P.npl) { sug.push('Only ' + plural(R.xs.length, 'puller is', 'pullers are') + ' placed; more would not lower the peak pull.'); }
+        if (P.hc > 0) { sug.push('On horizontal curves the empty belt is drawn against the inner wing rolls; intermediate pullers limit the build-up.'); }
+        if (rt.total > 2000 && !staged) { warn.push('Over 2 km of pull: consider staged pulling, with intermediate pullers or tugger winches along the route.'); }
+        if (R.needRA > T0 + 1e-9) { warn.push('The belt runs ahead on the downhill section: set the back tension to at least ' + first(kN(R.needRA)) + '.'); }
+        else if (R.needSag > T0 + 1e-9) { warn.push('The back tension is below the ' + first(kN(R.needSag)) + ' that holds the sag to ' + pct(P.sag) + '; the belt may bunch or wander.'); }
+        if (isFinite(allow) && R.hiB > allow + 1e-9) { warn.push('The highest belt tension is above the belt working tension; stage the pull or ease the resistance.'); }
+        if (!drive && !wt) { warn.push('The pull needs more than a 200 t winch; stage the pull with intermediate pullers.'); }
+        if (staged && R.pullers.some(function (p) { return !p.size; })) { warn.push('A puller needs more than 200 t; add pullers or move them.'); }
+        if (staged && R.pullers.some(function (p) { return p.B < -1e-9; })) { warn.push('A puller after a downhill run would have to hold the belt back; move it further along the route.'); }
+        if (P.fi >= 0.1) { warn.push('An idler friction factor of 0.1 or more suggests stiff or seized idlers; free them before the pull.'); }
+        $('sugList').innerHTML = sug.map(function (t) { return '<li>' + t + '</li>'; }).join('');
+        $('sugBox').hidden = !sug.length;
+        $('warnList').innerHTML = warn.map(function (t) { return '<li>' + t + '</li>'; }).join('');
+        $('warnBox').hidden = !warn.length;
+
+        $('barLabel').textContent = drive ? 'Drive' : 'Winch';
+        $('barValue').textContent = drive ? 'Pull ' + first(kN(R.peakB.T)) + ', slack side ' + first(kN(R.T2)) + ', clamp ' + first(kN(dsg[0])) :
+            (wt ? tsize(wt) + ' winch' : 'Above 200 t') + ', peak ' + first(kN(R.peakB.T)) + ', clamp ' + first(kN(dsg[0]));
+        $('chartCap').textContent = (drive ? 'Drive' : 'Winch') + ' Pull Along the Route';
+        last = { P: P, R: R, T0: T0, dsg: dsg };
+        renderAll();
+    }
+
+    /* ── Drawing helpers ── */
+    var SVGNS = 'http://www.w3.org/2000/svg';
+    function el(name, attrs, parent) {
+        var e = document.createElementNS(SVGNS, name);
+        Object.keys(attrs).forEach(function (key) { e.setAttribute(key, attrs[key]); });
+        if (parent) { parent.appendChild(e); }
+        return e;
+    }
+    var BLUE = '#0d6efd', GREY = '#adb5bd', DARK = '#495057', RED = '#dc3545';
+    function renderAll() { hideTip(); renderRoute(); renderChart(); }
+    function niceStep(span, n) {
+        var raw = span / n, p = Math.pow(10, Math.floor(Math.log(raw) / Math.LN10)), m = raw / p;
+        return (m <= 1 ? 1 : m <= 2 ? 2 : m <= 2.5 ? 2.5 : m <= 5 ? 5 : 10) * p;
+    }
+    function mix(c1, c2, u) {                                      /* one hue, light to dark */
+        function rgb(c) { return [1, 3, 5].map(function (i) { return parseInt(c.substr(i, 2), 16); }); }
+        var a = rgb(c1), b = rgb(c2);
+        return 'rgb(' + a.map(function (v, i) { return Math.round(v + (b[i] - v) * u); }).join(',') + ')';
+    }
+    function spread(items, top, bot, gap) {                        /* keep end labels apart and inside the plot */
+        items.sort(function (a, b) { return a.y - b.y; });
+        for (var i = 1; i < items.length; i++) { items[i].y = Math.max(items[i].y, items[i - 1].y + gap); }
+        if (items.length) { items[items.length - 1].y = Math.min(items[items.length - 1].y, bot); }
+        for (i = items.length - 2; i >= 0; i--) { items[i].y = Math.min(items[i].y, items[i + 1].y - gap); }
+        if (items.length && items[0].y < top) { var sh = top - items[0].y; items.forEach(function (it) { it.y += sh; }); }
+        return items;
+    }
+
+    /* ── Side view of the conveyor, shaded by the belt tension with the belt fully on the route ── */
+    function renderRoute() {
+        var box = $('route-fig');
+        box.innerHTML = '';
+        if (!last) { return; }
+        var d = last, P = d.P, R = d.R, C = R.C, legs = ROUTES[P.route], drive = C.drive;
+        var W = Math.max(300, box.clientWidth), narrow = W < 520, r = 15, xT = narrow ? 62 : 96, xH = W - (narrow ? 62 : 96), H = 236;
+        var slope = Math.max(-1, Math.min(1, P.H / P.L * 4)), dy = slope * 60, yMid = 118;   /* lift drawn exaggerated, at most 60 px */
+        var yT = yMid + dy / 2, yH = yMid - dy / 2;                 /* pulley centres */
+        function ends(side) { var o = side === 'carry' ? -r : r; return { tail: [xT, yT + o], head: [xH, yH + o] }; }
+        var svg = el('svg', { width: W, height: H, viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': 'Side view of the pull route, shaded by belt tension' }, box);
+        var startEnd = legs[0][1], startSide = legs[0][0], lastLeg = legs[legs.length - 1], finishEnd = other(lastLeg[1]), finishSide = lastLeg[0];
+        /* the conveyor: both sides and the end pulleys */
+        ['carry', 'return'].forEach(function (side) { var e = ends(side); el('line', { x1: e.tail[0], y1: e.tail[1], x2: e.head[0], y2: e.head[1], stroke: GREY, 'stroke-width': 2 }, svg); });
+        [['tail', xT, yT], ['head', xH, yH]].forEach(function (c) {
+            var isDrive = drive && c[0] === finishEnd;
+            var pul = el('circle', { cx: c[1], cy: c[2], r: r, fill: isDrive ? '#dee2e6' : '#fff', stroke: DARK, 'stroke-width': isDrive ? 2.5 : 1.5 }, svg);
+            if (isDrive) { hoverOn(box, pul, 'Drive pulley\nTight side ' + kN(R.peakB.T) + ' at breakaway\nSlack side at least ' + kN(R.T2)); }
+        });
+        el('text', { x: xT + r + 6, y: yT + 4, 'class': 'calc-dark' }, svg).textContent = drive && finishEnd === 'tail' ? 'Tail drive' : 'Tail';   /* between the sides */
+        el('text', { x: xH - r - 6, y: yH + 4, 'text-anchor': 'end', 'class': 'calc-dark' }, svg).textContent = drive && finishEnd === 'head' ? 'Head drive' : 'Head';
+        /* tension along the route, running, for the shading */
+        function Tat(x, brk) { return tensionAt(C, x, C.S, brk, false, d.T0); }
+        var loT = Infinity, hiT = -Infinity;
+        bounds(C).forEach(function (x) { [true, false].forEach(function (bef) { var t = tensionAt(C, x, C.S, false, bef, d.T0); loT = Math.min(loT, t); hiT = Math.max(hiT, t); }); });
+        loT = Math.max(0, loT);
+        function shade(T) { return T < -1e-9 ? RED : mix('#9ec5fe', '#052c65', hiT - loT > 1e-9 ? Math.max(0, Math.min(1, (T - loT) / (hiT - loT))) : 0.6); }
+        legs.forEach(function (leg, n) {
+            var e = ends(leg[0]), a = e[leg[1]], b = e[other(leg[1])], s0 = n * P.L;
+            function pt(u) { return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u]; }
+            var us = [];
+            for (var i = 0; i <= 48; i++) { us.push(i / 48); }
+            R.xs.forEach(function (x) { if (x > s0 && x < s0 + P.L) { us.push((x - s0) / P.L); } });
+            us = uniq(us);
+            for (i = 0; i < us.length - 1; i++) {
+                var p0 = pt(us[i]), p1 = pt(us[i + 1]);
+                el('line', { x1: p0[0], y1: p0[1], x2: p1[0], y2: p1[1], stroke: shade(Tat(s0 + (us[i] + us[i + 1]) / 2 * P.L, false)), 'stroke-width': 4 }, svg);
+            }
+            var m = pt(0.5), ang = Math.atan2(b[1] - a[1], b[0] - a[0]);
+            el('path', { d: 'M' + (m[0] + 9 * Math.cos(ang)) + ',' + (m[1] + 9 * Math.sin(ang)) + 'L' + (m[0] - 6 * Math.cos(ang) - 6 * Math.sin(ang)) + ',' + (m[1] - 6 * Math.sin(ang) + 6 * Math.cos(ang)) +
+                'L' + (m[0] - 6 * Math.cos(ang) + 6 * Math.sin(ang)) + ',' + (m[1] - 6 * Math.sin(ang) - 6 * Math.cos(ang)) + 'Z', fill: '#fff', stroke: shade(Tat(s0 + P.L / 2, false)), 'stroke-width': 1.5 }, svg);
+            if (n > 0) {                                           /* around the far end pulley */
+                var c = leg[1] === 'tail' ? [xT, yT] : [xH, yH], right = leg[1] === 'head';
+                el('path', { d: 'M' + c[0] + ',' + (c[1] - r) + ' A' + r + ',' + r + ' 0 0 ' + (right ? 1 : 0) + ' ' + c[0] + ',' + (c[1] + r), fill: 'none', stroke: shade(Tat(s0, false)), 'stroke-width': 4 }, svg);
+            }
+            var hit = el('line', { x1: a[0], y1: a[1], x2: b[0], y2: b[1], stroke: 'transparent', 'stroke-width': 14 }, svg);
+            hoverOn(box, hit, function (ev) {
+                var bb = svg.getBoundingClientRect(), dx = b[0] - a[0], dy2 = b[1] - a[1];
+                var u = Math.max(0, Math.min(1, ((ev.clientX - bb.left - a[0]) * dx + (ev.clientY - bb.top - a[1]) * dy2) / (dx * dx + dy2 * dy2))), x = s0 + u * P.L;
+                return describe(x, P) + '\n' + first(len(x)) + ' along the route\nTension ' + kN(Tat(x, false)) + '\nBreakaway ' + kN(Tat(x, true));
+            });
+        });
+        /* section markers, numbered as in the table, with the pull at each section end without the pullers */
+        function marker(x, y, n, text) {
+            var g = el('g', {}, svg);
+            el('circle', { cx: x, cy: y, r: 9, fill: '#fff', stroke: BLUE, 'stroke-width': 1.5 }, g);
+            el('text', { x: x, y: y + 4, 'text-anchor': 'middle', 'class': 'calc-dark', style: 'font-size:11px' }, g).textContent = String(n);
+            hoverOn(box, g, text);
+        }
+        R.rt.sections.forEach(function (sc, n) {
+            var ex = sc.kind === 'leg', pull = tensionAt(R.base, sc.s1, sc.s1, false, ex, d.T0), pullB = tensionAt(R.base, sc.s1, sc.s1, true, ex, d.T0);
+            var text = (n + 1) + '. ' + sc.name + '\nPull at the end ' + kN(pull) + '\nBreakaway ' + kN(pullB) + (R.xs.length ? '\nWithout the pullers' : '');
+            if (sc.kind === 'leg') {
+                var e = ends(sc.side), a = e[sc.from], b = e[other(sc.from)], off = sc.side === 'carry' ? -18 : 18;
+                marker(a[0] + (b[0] - a[0]) * 0.3, a[1] + (b[1] - a[1]) * 0.3 + off, n + 1, text);
+            } else if (sc.kind === 'pul') {
+                var cx = legs[1][1] === 'tail' ? xT : xH, cy = cx === xT ? yT : yH;
+                marker(cx + (cx === xT ? -r - 16 : r + 16), cy, n + 1, text);
+            }
+        });
+        /* intermediate pullers */
+        (R.pullers || []).forEach(function (pk, k) {
+            var n = Math.min(legs.length - 1, Math.floor(pk.x / P.L + EPS)), u = (pk.x - n * P.L) / P.L;
+            if (n > 0 && u < 1e-6) { n -= 1; u = 1; }
+            var e = ends(legs[n][0]), a = e[legs[n][1]], b = e[other(legs[n][1])], x = a[0] + (b[0] - a[0]) * u, y = a[1] + (b[1] - a[1]) * u;
+            var g = el('rect', { x: x - 6, y: y - 6, width: 12, height: 12, rx: 2, fill: '#fff', stroke: DARK, 'stroke-width': 2 }, svg);
+            hoverOn(box, g, 'Puller ' + (k + 1) + '\n' + describe(pk.x, P) + '\nForce ' + kN(pk.R) + ', breakaway ' + kN(pk.B));
+        });
+        /* trailing end and winch, or the old belt leaving the drive, outside the ends where the route starts and finishes */
+        function outside(end, side, gap) { var e = ends(side)[end]; return [e[0] + (end === 'tail' ? -gap : gap), e[1]]; }
+        var lo = outside(startEnd, startSide, 34), wi = outside(finishEnd, finishSide, 34);
+        if (P.route === 'lt' || P.route === 'lh') { lo[1] += startSide === 'carry' ? -22 : 22; wi[1] += finishSide === 'carry' ? -22 : 22; }
+        var s0 = ends(startSide)[startEnd], f0 = ends(finishSide)[finishEnd];
+        el('line', { x1: lo[0], y1: lo[1], x2: s0[0], y2: s0[1], stroke: shade(d.T0), 'stroke-width': 4, 'stroke-linecap': 'round' }, svg);
+        var reel = el('g', {}, svg);
+        el('circle', { cx: lo[0], cy: lo[1], r: 14, fill: '#cfe2ff', stroke: BLUE, 'stroke-width': 1.5 }, reel);
+        el('circle', { cx: lo[0], cy: lo[1], r: 3, fill: BLUE }, reel);
+        hoverOn(box, reel, 'Trailing end\nBack tension ' + kN(d.T0));
+        var win = el('g', {}, svg);
+        if (drive) {
+            el('line', { x1: f0[0], y1: f0[1], x2: wi[0], y2: wi[1], stroke: GREY, 'stroke-width': 4, 'stroke-linecap': 'round' }, svg);
+            svg.appendChild(win);
+            el('circle', { cx: wi[0], cy: wi[1], r: 14, fill: '#e9ecef', stroke: DARK, 'stroke-width': 1.5 }, win);
+            el('circle', { cx: wi[0], cy: wi[1], r: 3, fill: DARK }, win);
+            hoverOn(box, win, 'Old belt out to a rewinder\nSlack side at least ' + kN(R.T2));
+        } else {
+            el('line', { x1: f0[0], y1: f0[1], x2: wi[0], y2: wi[1], stroke: DARK, 'stroke-width': 1.5, 'stroke-dasharray': '4 3' }, svg);
+            svg.appendChild(win);
+            el('rect', { x: wi[0] - 13, y: wi[1] - 10, width: 26, height: 20, rx: 3, fill: '#e9ecef', stroke: DARK, 'stroke-width': 1.5 }, win);
+            el('circle', { cx: wi[0], cy: wi[1], r: 5, fill: '#fff', stroke: DARK, 'stroke-width': 1.5 }, win);
+            hoverOn(box, win, 'Winch\nPeak breakaway pull ' + kN(R.peakB.T));
+        }
+        function fit(y) { return Math.max(14, Math.min(H - 24, y)); }  /* labels stay clear of the edges and the note */
+        var lyLo = fit(lo[1] < yMid ? lo[1] - 22 : lo[1] + 30), lyWi = fit(wi[1] < yMid ? wi[1] - 22 : wi[1] + 30);
+        if (Math.abs(lo[0] - wi[0]) < 1 && Math.abs(lyLo - lyWi) < 16) { lyWi += lyWi < yMid ? -16 : 16; }
+        el('text', { x: lo[0], y: lyLo, 'text-anchor': 'middle', 'class': 'calc-dark' }, svg).textContent = 'Belt end';
+        el('text', { x: wi[0], y: lyWi, 'text-anchor': 'middle', 'class': 'calc-dark' }, svg).textContent = drive ? 'Old belt' : 'Winch';
+        /* clamps just inside each end of the route */
+        function clamp(pt, toward, text) {
+            var x = pt[0] + (toward - pt[0]) * 0.12, y = pt[1];
+            var c = el('rect', { x: x - 3, y: y - 9, width: 6, height: 18, rx: 1, fill: RED }, svg);
+            hoverOn(box, c, text);
+        }
+        clamp(f0, ends(finishSide)[other(finishEnd)][0], 'Clamp at the ' + (drive ? 'drive' : 'winch') + ' end\nDesign load ' + kN(d.dsg[0]));
+        clamp(s0, ends(startSide)[other(startEnd)][0], 'Clamp at the trailing end\nDesign load ' + kN(d.dsg[1]));
+        el('text', { x: W / 2, y: H - 6, 'text-anchor': 'middle' }, svg).textContent = 'Darker is higher tension; not to scale';
+    }
+
+    /* ── Winch or drive pull against the length of belt pulled, running and at breakaway ── */
+    function renderChart() {
+        var box = $('chart');
+        box.innerHTML = '';
+        if (!last) { return; }
+        var d = last, R = d.R, C = R.C, S = C.S, P = d.P, staged = R.xs.length > 0;
+        function series(Cx, brk) {                                 /* each point twice, either side of a step */
+            var out = [];
+            bounds(Cx).forEach(function (s) { out.push([s, devPull(Cx, s, brk, true, d.T0)]); out.push([s, devPull(Cx, s, brk, false, d.T0)]); });
+            return out;
+        }
+        var cv = sys === 'met' ? 1 : 224.80894, cl = sys === 'met' ? 1 : 3.2808399;
+        var run = series(C, false), brk = series(C, true), base = staged ? series(R.base, true) : [], lo = 0, hi = 0;
+        run.concat(brk, base).forEach(function (p) { lo = Math.min(lo, p[1] * cv); hi = Math.max(hi, p[1] * cv); });   /* axis in the units shown */
+        var ys = niceStep((hi - lo) || 1, 4), y0 = Math.floor(lo / ys + 1e-9) * ys, y1 = Math.ceil(hi / ys - 1e-9) * ys;
+        if (y1 - y0 < 1e-9) { y1 = y0 + ys; }
+        var ydp = Math.abs(ys - Math.round(ys)) < 1e-9 ? 0 : 1, wide = Math.max(num(y0, ydp).length, num(y1, ydp).length);
+        var W = Math.max(300, box.clientWidth), narrow = W < 520, padL = Math.max(narrow ? 40 : 52, wide * 7 + 12), padR = narrow ? 70 : 86, padT = 12, padB = 40, H = narrow ? 230 : 260;
+        var pw = W - padL - padR, phh = H - padT - padB;
+        function X(s) { return padL + s / S * pw; }
+        function Y(t) { return padT + (1 - (t * cv - y0) / (y1 - y0)) * phh; }  /* t in kN */
+        var svg = el('svg', { width: W, height: H, viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': (C.drive ? 'Drive' : 'Winch') + ' pull rising to ' + first(kN(R.peakB.T)) + ' at breakaway' }, box);
+        for (var t = y0; t <= y1 + 1e-9; t += ys) {
+            el('line', { x1: padL, x2: padL + pw, y1: Y(t / cv), y2: Y(t / cv), stroke: '#dee2e6', 'stroke-width': 1, 'stroke-dasharray': Math.abs(t) < 1e-9 ? '' : '3 3' }, svg);
+            el('text', { x: padL - 6, y: Y(t / cv) + 4, 'text-anchor': 'end' }, svg).textContent = num(t, ydp);
+        }
+        var xst = niceStep(S * cl, narrow ? 4 : 6);
+        for (var xv = 0; xv <= S * cl + 1e-9; xv += xst) {
+            var lab = el('text', { x: X(xv / cl), y: padT + phh + 16, 'text-anchor': 'middle' }, svg);
+            lab.textContent = num(xv, Math.abs(xst - Math.round(xst)) < 1e-9 ? 0 : 1);
+            if (X(xv / cl) + lab.getComputedTextLength() / 2 > W - 1) { svg.removeChild(lab); }
+        }
+        el('text', { x: padL + pw / 2, y: H - 4, 'text-anchor': 'middle' }, svg).textContent = 'Belt pulled, ' + (sys === 'met' ? 'm' : 'ft') + '; ' + (C.drive ? 'drive' : 'winch') + ' pull, ' + (sys === 'met' ? 'kN' : 'lbf');
+        function line(pts, colour, dash) { el('polyline', { points: pts.map(function (p) { return X(p[0]).toFixed(1) + ',' + Y(p[1]).toFixed(1); }).join(' '), fill: 'none', stroke: colour, 'stroke-width': 2, 'stroke-dasharray': dash || '', 'stroke-linejoin': 'round' }, svg); }
+        if (staged) { line(base, GREY, '2 3'); }
+        line(brk, DARK, '5 3');
+        line(run, BLUE);
+        var labels = [{ t: 'Breakaway', y: Y(brk[brk.length - 1][1]) + 4 }, { t: 'Running', y: Y(run[run.length - 1][1]) + 4 }];
+        if (staged) { labels.push({ t: 'No pullers', y: Y(base[base.length - 1][1]) + 4 }); }
+        spread(labels, padT + 10, padT + phh - 2, 14).forEach(function (lb) { el('text', { x: X(S) + 6, y: lb.y, 'class': 'calc-dark' }, svg).textContent = lb.t; });
+        var guide = el('line', { x1: 0, x2: 0, y1: padT, y2: padT + phh, stroke: DARK, 'stroke-width': 1, visibility: 'hidden' }, svg);
+        var hit = el('rect', { x: padL, y: padT, width: pw, height: phh, fill: 'transparent' }, svg);
+        function at(e) {
+            var b = svg.getBoundingClientRect(), s = Math.max(0, Math.min(S, (e.clientX - b.left - padL) / pw * S));
+            guide.setAttribute('x1', X(s)); guide.setAttribute('x2', X(s)); guide.setAttribute('visibility', 'visible');
+            var sc = R.rt.sections.filter(function (q) { return q.kind === 'leg' && s >= q.s0 - 1e-9 && s <= q.s1 + 1e-9; })[0];
+            showTip(len(s) + ' pulled' + (sc ? ', ' + sc.name.toLowerCase() : '') + '\nRunning ' + kN(devPull(C, s, false, false, d.T0)) + '\nBreakaway ' + kN(devPull(C, s, true, false, d.T0)) +
+                (staged ? '\nNo pullers ' + kN(devPull(R.base, s, true, false, d.T0)) : ''), box, X(s), e.clientY - b.top);
+        }
+        hit.addEventListener('mousemove', at);
+        hit.addEventListener('mouseenter', at);
+        hit.addEventListener('mouseleave', function () { hideTip(); guide.setAttribute('visibility', 'hidden'); });
+    }
+
+    var resizeTimer = null;
+    window.addEventListener('resize', function () { clearTimeout(resizeTimer); resizeTimer = setTimeout(renderAll, 120); });
+
+    /* ── Events ── */
+    numInputs.forEach(function (e) { e.addEventListener('input', function () { readInput(e); compute(); }); });
+    ['route', 'mode', 'ppos'].forEach(function (id) { $(id).addEventListener('change', compute); });
+    form.addEventListener('submit', function (e) { e.preventDefault(); });
+    $('units').addEventListener('change', function () {
+        sys = this.value;
+        numInputs.forEach(display);
+        document.querySelectorAll('[data-unit]').forEach(function (s) { s.textContent = UNIT[s.getAttribute('data-unit')][sys]; });
+        compute();
+    });
+
+    /* The bottom result bar hides while the results are on screen */
+    var bar = $('calcBar');
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) { bar.hidden = e.isIntersecting; });
+        }, { rootMargin: '0px 0px -15% 0px' }).observe($('results'));
+    }
+
+    /* ── Start from the example values (metric), whatever the browser restored ── */
+    numInputs.forEach(function (e) {
+        var v = e.getAttribute('value');
+        e.value = v === null ? '' : v;
+        readInput(e);
+    });
+    form.querySelectorAll('select').forEach(function (s) {
+        var sel = s.querySelector('option[selected]');
+        if (sel) { s.value = sel.value; }
+    });
+    compute();
+})();
+</script>
+<script src="handbook.js"></script>
+
+</body>
+</html>
