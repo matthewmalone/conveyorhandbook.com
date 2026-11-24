@@ -1,4 +1,18 @@
-/* handbook.js – mobile sidebar, chapter and calculator menu toggles, scrollspy */
+/* handbook.js – Google Tag Manager, mobile sidebar, chapter and calculator menu toggles, scrollspy */
+
+/* ── Google Tag Manager on every page (not loaded when a page is opened from a local file) ── */
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+if (location.protocol === 'https:' || location.protocol === 'http:') {
+    gtag('js', new Date());
+    (function () {
+        var gtm = document.createElement('script');
+        gtm.async = true;
+        gtm.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-M465BH75';
+        document.head.appendChild(gtm);
+    })();
+}
+
 (function () {
     var sidebar = document.getElementById('sidebar');
     var sidebarToggle = document.getElementById('sidebarToggle');

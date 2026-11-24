@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator 8 Stockpile Capacity – Modern Conveyor Handbook</title>
+    <meta name="description" content="Stockpile capacity calculator: conical, elongated, kidney, ring, wall-retained and dozed pile volumes, live and dead capacity over the reclaim feeders, stacking and reclaim times, and to-scale drawings.">
+    <meta name="author" content="Matthew Malone">
+    <link rel="canonical" href="https://www.conveyorhandbook.com/08-calculator-stockpile-capacity.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Calculator 8 Stockpile Capacity – Modern Conveyor Handbook">
+    <meta property="og:description" content="Stockpile capacity calculator: conical, elongated, kidney, ring, wall-retained and dozed pile volumes, live and dead capacity over the reclaim feeders, stacking and reclaim times, and to-scale drawings.">
+    <meta property="og:url" content="https://www.conveyorhandbook.com/08-calculator-stockpile-capacity.html">
+    <meta property="og:site_name" content="Modern Conveyor Handbook">
+    <meta property="og:locale" content="en_AU">
+    <meta property="article:published_time" content="2026-11-24T00:00:00+11:00">
+    <meta property="article:modified_time" content="2026-11-24T00:00:00+11:00">
+    <meta property="article:author" content="Matthew Malone">
+    <meta property="article:section" content="Engineering">
+    <meta property="article:tag" content="conveyors">
+    <meta property="article:tag" content="stockpiles">
+    <meta property="article:tag" content="live capacity">
+    <meta property="article:tag" content="engineering calculator">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Calculator 8 Stockpile Capacity – Modern Conveyor Handbook">
+    <meta name="twitter:description" content="Stockpile capacity calculator: conical, elongated, kidney, ring, wall-retained and dozed pile volumes, live and dead capacity over the reclaim feeders, stacking and reclaim times, and to-scale drawings.">
+
+    <link rel="icon" type="image/svg+xml" href="ico/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+    <link rel="home" href="https://www.conveyorhandbook.com/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "TechArticle",
+                "headline": "Calculator 8 Stockpile Capacity",
+                "description": "Stockpile capacity calculator: conical, elongated, kidney, ring, wall-retained and dozed pile volumes, live and dead capacity over the reclaim feeders, stacking and reclaim times, and to-scale drawings.",
+                "author": { "@type": "Person", "name": "Matthew Malone" },
+                "copyrightYear": "2026",
+                "copyrightHolder": { "@type": "Person", "name": "Matthew Malone" },
+                "publisher": { "@type": "Organization", "@id": "https://www.conveyorhandbook.com/#organization", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "datePublished": "2026-11-24",
+                "dateModified": "2026-11-24",
+                "mainEntityOfPage": "https://www.conveyorhandbook.com/08-calculator-stockpile-capacity.html",
+                "isPartOf": { "@type": "WebSite", "@id": "https://www.conveyorhandbook.com/#website", "name": "Modern Conveyor Handbook", "url": "https://www.conveyorhandbook.com/" },
+                "inLanguage": "en-AU",
+                "about": { "@type": "Thing", "name": "Calculator 8 Stockpile Capacity" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Modern Conveyor Handbook", "item": "https://www.conveyorhandbook.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Calculator 8 Stockpile Capacity", "item": "https://www.conveyorhandbook.com/08-calculator-stockpile-capacity.html" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+    <link rel="stylesheet" href="handbook.css">
+    <style>
+        /* Calculator page: only what Bootstrap's classes and handbook.css do not cover */
+        .calc-page { padding-bottom: 6rem; }
+        .calc-group { margin: 2rem 0 0.25rem; }
+
+        /* One input or result per row: label and hint on the left, field or value on the right */
+        .calc-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            column-gap: 1.5rem;
+            row-gap: 0.35rem;
+            align-items: center;
+            padding: 0.6rem 0.5rem;
+            border-bottom: 1px solid var(--bs-border-color);
+        }
+        .calc-row > label { margin: 0; }
+        .calc-hint { display: block; margin-top: 0.1rem; font-size: 0.8125rem; font-weight: 400; color: var(--bs-secondary-color); }
+        .calc-num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+        .input-group > .form-select.calc-dir { flex: 0 0 8.5rem; width: 8.5rem; }
+        @media (max-width: 575.98px) {
+            .calc-row { grid-template-columns: minmax(0, 1fr); padding-left: 0; padding-right: 0; }
+        }
+        #results { scroll-margin-top: 1rem; }
+        #capBody th[scope="row"], #timeBody th[scope="row"], #dimBody th[scope="row"] { min-width: 10rem; }
+
+        /* Charts */
+        .calc-drawing { position: relative; }
+        .calc-drawing svg { display: block; width: 100%; overflow: visible; }
+        .calc-drawing text { font-size: 12px; fill: var(--bs-secondary-color); font-variant-numeric: tabular-nums; }
+        .calc-drawing text.calc-dark { fill: #212529; }
+        .calc-drawing text.calc-group-label { fill: #212529; font-weight: 600; font-size: 13px; }
+        .calc-drawing text.calc-gov { fill: #212529; font-weight: 600; }
+        .calc-drawing text.calc-halo { paint-order: stroke; stroke: var(--bs-body-bg); stroke-width: 4px; stroke-linejoin: round; }
+        .calc-tip {
+            position: absolute;
+            z-index: 5;
+            padding: 0.3rem 0.55rem;
+            border: 1px solid var(--bs-border-color);
+            border-radius: var(--bs-border-radius-sm);
+            background: var(--bs-body-bg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            max-width: min(360px, 90vw);
+            font-size: 0.8rem;
+            white-space: pre-line;
+            pointer-events: none;
+        }
+
+        /* Result bar fixed to the bottom of the window while the inputs are on screen */
+        .calc-bar {
+            position: fixed;
+            left: 260px;
+            right: 0;
+            bottom: 0;
+            z-index: 1010;
+            padding: 0.6rem 3rem;
+            border-top: 1px solid var(--bs-border-color);
+            background: var(--bs-body-bg);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.06);
+        }
+        @media (max-width: 991.98px) {
+            .calc-bar { left: 0; padding: 0.55rem 1rem; }
+        }
+        @media print {
+            .calc-page { padding-bottom: 0; }
+            .calc-bar, .calc-tip { display: none !important; }
+            .calc-drawing svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="topbar sticky-top d-flex d-lg-none d-print-none align-items-center bg-white border-bottom px-3 py-2">
+    <button type="button" class="btn btn-light border d-inline-flex align-items-center gap-2 fw-semibold" id="sidebarToggle" aria-controls="sidebar" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Contents
+    </button>
+</div>
+
+<nav class="sidebar" id="sidebar" aria-label="Table of contents" role="doc-toc" tabindex="-1">
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" id="sidebarClose" aria-label="Close contents"></button>
+    <a href="index.html" class="sidebar-title">Modern Conveyor Handbook</a>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="chapterMenuBtn" aria-expanded="false" aria-controls="chapterMenu">Chapters</button>
+    </p>
+    <div class="chapter-menu" id="chapterMenu"></div>
+    <p class="sidebar-heading mb-2">
+        <button type="button" class="chapter-toggle" id="calcMenuBtn" aria-expanded="false" aria-controls="calcMenu">Calculators</button>
+    </p>
+    <div class="chapter-menu" id="calcMenu"></div>
+    <hr class="my-2">
+    <p class="sidebar-heading mb-3">Table of Contents</p>
+    <div class="toc">
+        <a href="#calculator-8-stockpile-capacity">1. Calculator 8. Stockpile Capacity</a>
+        <a href="#inputs">2. Inputs</a>
+        <a href="#results">3. Results</a>
+    </div>
+</nav>
+
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+<main class="main-content calc-page" id="main" tabindex="-1">
+
+    <section id="calculator-8-stockpile-capacity">
+        <h1 class="mb-3">1. Calculator 8. Stockpile Capacity</h1>
+        <p>Finds how much a stockpile holds and how much of it is live, draining to the reclaim feeders, for six pile shapes. It gives the stacking and reclaim times and the live capacity in hours of plant feed, and draws the pile to scale.</p>
+        <noscript><div class="alert alert-warning">This calculator needs JavaScript.</div></noscript>
+    </section>
+
+    <form id="calcForm" autocomplete="off" novalidate>
+    <section id="inputs">
+        <h2 class="border-top pt-4 mt-5">2. Inputs</h2>
+
+        <div>
+            <div class="calc-row mt-3">
+                <label for="units">Units</label>
+                <select class="form-select" id="units">
+                    <option value="met" selected>Metric</option>
+                    <option value="imp">Imperial</option>
+                </select>
+            </div>
+
+            <h3 class="h5 calc-group">Stockpile</h3>
+            <div class="calc-row">
+                <label for="shape">Pile shape</label>
+                <select class="form-select" id="shape">
+                    <option value="cone">Conical</option>
+                    <option value="long" selected>Elongated (linear stacker)</option>
+                    <option value="kidney">Kidney (radial stacker)</option>
+                    <option value="ring">Ring (circular stacker)</option>
+                    <option value="wall">Elongated against a wall</option>
+                    <option value="dozed">Dozed rectangular</option>
+                </select>
+            </div>
+            <div class="calc-row">
+                <label for="H">Pile height</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="H" data-kind="m" min="0" step="any" value="15">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="len">
+                <label for="Lb">Base length<span class="calc-hint" id="Lb-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="Lb" data-kind="m" min="0" step="any" value="150">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="wid">
+                <label for="Bb">Base width</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="Bb" data-kind="m" min="0" step="any" value="60">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="rad">
+                <label for="Rc">Ridge radius<span class="calc-hint">From the stacker pivot to the pile peak</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="Rc" data-kind="m" min="0" step="any" value="50">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="slew">
+                <label for="slew">Slew angle<span class="calc-hint" id="slew-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="slew" data-kind="deg" min="0" step="any" value="120">
+                    <span class="input-group-text">deg</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="top">
+                <label for="btop"><span id="btop-label">Flat top width (optional)</span><span class="calc-hint" id="btop-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="btop" data-kind="m" min="0" step="any" value="">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Material</h3>
+            <div class="calc-row">
+                <label for="mat">Material<span class="calc-hint">From Chapter 3 Table 1, at the low end of each range</span></label>
+                <select class="form-select" id="mat"></select>
+            </div>
+            <div class="calc-row">
+                <label for="rho">Bulk density in the pile<span class="calc-hint" id="rho-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="rho" data-kind="dens" min="0" step="any" value="720">
+                    <span class="input-group-text" data-unit="dens">kg/m3</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="alpha"><span id="alpha-label">Angle of repose</span><span class="calc-hint" id="alpha-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="alpha" data-kind="deg" min="0" step="any" value="35">
+                    <span class="input-group-text">deg</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Reclaim Feeders</h3>
+            <div class="calc-row">
+                <label for="nf">Number of feeders<span class="calc-hint">In a reclaim tunnel under the pile ridge; 0 for none</span></label>
+                <input type="number" class="form-control" id="nf" data-kind="n" min="0" step="1" value="6">
+            </div>
+            <div class="calc-row" data-show="feed">
+                <label for="fsp">Feeder spacing<span class="calc-hint">Centre to centre along the tunnel</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="fsp" data-kind="m" min="0" step="any" value="15">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="feed">
+                <label for="fa">Feeder opening length<span class="calc-hint">Along the tunnel</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="fa" data-kind="m" min="0" step="any" value="1.5">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="feed">
+                <label for="fw">Feeder opening width</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="fw" data-kind="m" min="0" step="any" value="1.2">
+                    <span class="input-group-text" data-unit="m">m</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="feed">
+                <label for="delta">Draw-down angle<span class="calc-hint">Slope of the crater above each feeder, steeper than the angle of repose; typically 50 to 70 deg, steeper for cohesive material</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="delta" data-kind="deg" min="0" step="any" value="60">
+                    <span class="input-group-text">deg</span>
+                </div>
+            </div>
+
+            <h3 class="h5 calc-group">Stacking and Reclaim</h3>
+            <div class="calc-row">
+                <label for="Qs">Stacking rate</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="Qs" data-kind="tph" min="0" step="any" value="2000">
+                    <span class="input-group-text" data-unit="tph">t/h</span>
+                </div>
+            </div>
+            <div class="calc-row">
+                <label for="Qp">Plant feed rate<span class="calc-hint">The reclaim rate from the feeders</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="Qp" data-kind="tph" min="0" step="any" value="800">
+                    <span class="input-group-text" data-unit="tph">t/h</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    </form>
+
+    <section id="results">
+        <h2 class="border-top pt-4 mt-5">3. Results</h2>
+        <div class="alert alert-danger" id="resultError" role="alert" hidden></div>
+        <div id="resultBody">
+            <figure class="mt-4 mb-4">
+                <figcaption class="small fw-semibold mb-2">Live and Dead Capacity</figcaption>
+                <div class="calc-drawing" id="chart"></div>
+            </figure>
+            <div class="calc-tip" id="tip" hidden></div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold" id="capCap">Capacity</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Mass</th>
+                            <th scope="col">Volume</th>
+                        </tr>
+                    </thead>
+                    <tbody id="capBody"></tbody>
+                </table>
+            </div>
+            <figure class="mt-5 mb-4">
+                <figcaption class="small fw-semibold mb-2">Top View to Scale</figcaption>
+                <div class="calc-drawing" id="plan"></div>
+            </figure>
+            <figure class="mt-5 mb-4">
+                <figcaption class="small fw-semibold mb-2">Side View to Scale</figcaption>
+                <div class="calc-drawing" id="side"></div>
+            </figure>
+            <figure class="mt-5 mb-4">
+                <figcaption class="small fw-semibold mb-2">Cross-Section to Scale</figcaption>
+                <div class="calc-drawing" id="sect"></div>
+            </figure>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Pile Dimensions</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dimBody"></tbody>
+                </table>
+            </div>
+            <figure class="mt-5 mb-4">
+                <figcaption class="small fw-semibold mb-2">Pile Contents Over a Fill and Reclaim Cycle</figcaption>
+                <div class="calc-drawing" id="cycle"></div>
+            </figure>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Stacking and Reclaim Times</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="timeBody"></tbody>
+                </table>
+            </div>
+            <div class="my-4 table-responsive">
+                <table class="table table-bordered table-sm table-hover caption-top">
+                    <caption class="small fw-semibold">Live Capacity by Number of Feeders</caption>
+                    <thead class="table-light" id="cmpHead"></thead>
+                    <tbody id="cmpBody"></tbody>
+                </table>
+            </div>
+            <div class="alert alert-warning mt-4" id="warnBox" hidden>
+                <p class="fw-semibold mb-2">Check</p>
+                <ul class="mb-0 ps-3" id="warnList"></ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="calc-bar d-print-none" id="calcBar">
+        <div class="d-flex flex-wrap align-items-baseline column-gap-3 row-gap-1">
+            <span class="fw-semibold">Capacity</span>
+            <span class="fs-5 fw-semibold calc-num" id="barValue" role="status"></span>
+            <a href="#results" class="small">Results</a>
+        </div>
+    </div>
+
+    <footer class="mt-5 pt-3 pb-4 border-top text-body-secondary small">
+        Published <time datetime="2026-11-24">24 November 2026</time><br>
+        Updated <time datetime="2026-11-24">24 November 2026</time><br>
+        &copy; 2026 Modern Conveyor Handbook &middot; All rights reserved &middot; <a href="01-introduction.html#disclaimer-of-liability-and-engineering-responsibility" class="link-secondary">Disclaimer</a>
+    </footer>
+
+</main>
+
+<script src="chapters.js"></script>
+<script>
+/* Calculator 8 Stockpile Capacity. Plain JavaScript; every value is held in SI units (m, kg/m3, t, t/h, deg).
+   Pile volume: every horizontal section of these piles lies a fixed horizontal distance inside the toe, so its area is quadratic in
+   height and the prismoidal rule V = H / 6 (A_base + 4 A_mid + A_top) is exact. For the conical, elongated, kidney, ring and
+   wall piles the section at height z is the set of points within r(z) = r_top + (H - z) / tan(repose) of the ridge (a point, a line,
+   an arc, a circle or a line against a wall); for the dozed pile it is a rectangle shrinking by z / tan(slope) on each side.
+   Live capacity: each feeder opening (a rectangle at the base under the ridge) draws down a crater whose surface rises from the edge
+   of the opening at the draw-down angle. Material above the lowest crater surface drains to the feeders; the rest is dead. The live
+   volume is the integral over the plan of max(0, pile height - crater height), taken on a fine grid by the midpoint rule.
+   Times: the capacity over the stacking rate, and the live and total capacity over the plant feed (reclaim) rate. */
+(function () {
+    'use strict';
+
+    var RAD = Math.PI / 180;
+    /* Materials from Chapter 3 Table 1: name, bulk density kg/m3 [low, high], angle of repose deg [low, high] */
+    var MATERIALS = [
+        ["Acid Phosphate", 1540, 1540, 26, 26],
+        ["Alum (Lump)", 800, 960, 27, 27],
+        ["Alum (Pulverised)", 720, 800, 35, 35],
+        ["Alumina", 800, 960, 22, 22],
+        ["Ashes (Boiler-house, dry, loose)", 560, 690, 38, 45],
+        ["Asphalt", 1280, 1360, 45, 45],
+        ["Bagasse (Dry, loose)", 80, 80, 45, 45],
+        ["Bagasse (Fresh, moist)", 120, 120, 45, 45],
+        ["Barytes (15 mm screenings)", 2080, 2320, 30, 30],
+        ["Barytes (50 to 75 mm lumps)", 2320, 2400, 30, 30],
+        ["Barytes (Dust)", 1760, 2080, 30, 30],
+        ["Basalt (15 mm screenings)", 2080, 2320, 30, 34],
+        ["Basalt (50 to 75 mm lumps)", 1680, 1760, 35, 39],
+        ["Bauxite (Crushed)", 1200, 1360, 30, 35],
+        ["Borax (Solid, 40 to 50 mm lumps)", 880, 960, 30, 45],
+        ["Borax (Solid, 50 to 100 mm lumps)", 960, 1040, 40, 40],
+        ["Brewers' Grain (Dry)", 400, 480, 45, 45],
+        ["Brewers' Grain (Wet)", 880, 960, 45, 45],
+        ["Brick (Hard)", 2000, 2000, 30, 45],
+        ["Brick (Soft)", 1600, 1600, 30, 45],
+        ["Carbon Black (Pellets)", 400, 400, 40, 40],
+        ["Cement (Portland, Dry)", 1200, 1360, 40, 40],
+        ["Cement Clinker", 1280, 1520, 33, 33],
+        ["Chalk (40 to 50 mm lumps)", 1200, 1280, 40, 45],
+        ["Chalk (50 to 75 mm lumps)", 1280, 1360, 45, 45],
+        ["Clay (Brick, ground fine)", 1760, 1760, 35, 35],
+        ["Clay (Dry, loose)", 1010, 1440, 40, 45],
+        ["Coal (150 mm domestic sizes)", 830, 900, 35, 35],
+        ["Coal (Bituminous, Run-of-Mine (ROM))", 720, 880, 35, 35],
+        ["Coal (Lignite/Brown)", 640, 800, 35, 35],
+        ["Coal (Pulverised for coking)", 480, 590, 45, 45],
+        ["Coal (Slack)", 690, 800, 37, 37],
+        ["Coke (Breeze)", 380, 560, 30, 45],
+        ["Coke (Screened)", 400, 480, 30, 30],
+        ["Concrete (Wet, on conveyor)", 1760, 2400, 20, 29],
+        ["Copper Ore (Crushed)", 2080, 2400, 30, 34],
+        ["Corn Grits", 670, 670, 30, 45],
+        ["Cryolite (15 mm screenings)", 1440, 1600, 30, 45],
+        ["Cryolite (50 to 75 mm lumps)", 1600, 1680, 30, 45],
+        ["Cryolite (Dust)", 1200, 1440, 30, 45],
+        ["Dolomite (Lump)", 1440, 1600, 30, 45],
+        ["Earth (Dry, loose)", 1120, 1280, 30, 45],
+        ["Earth (Wet, mud)", 1600, 1760, 45, 45],
+        ["Foundry Refuse (Old sand, cores)", 960, 1280, 35, 39],
+        ["Garbage (Household)", 800, 800, 30, 30],
+        ["Glass (Batch)", 1680, 1680, 20, 29],
+        ["Glass (Broken)", 1280, 1600, 30, 45],
+        ["Grains (Wheat/Corn)", 720, 770, 28, 28],
+        ["Granite (15 mm screenings)", 1280, 1440, 20, 29],
+        ["Granite (40 to 50 mm lumps)", 1360, 1440, 25, 25],
+        ["Granite (Broken)", 1520, 1600, 35, 40],
+        ["Gravel (Dry, sharp)", 1440, 1600, 30, 45],
+        ["Gravel (Wet)", 1600, 1920, 32, 32],
+        ["Gypsum (15 mm screenings)", 1120, 1280, 40, 40],
+        ["Gypsum (50 to 75 mm lumps)", 1200, 1280, 30, 30],
+        ["Gypsum (Dust)", 960, 1120, 42, 42],
+        ["Hops (Brewery, moist)", 560, 560, 30, 45],
+        ["Iron Ore (Crushed)", 2200, 2900, 35, 35],
+        ["Iron Pyrites (50 to 75 mm lumps)", 2160, 2320, 30, 34],
+        ["Lead Ore (Varies with lead content)", 3200, 4320, 30, 30],
+        ["Limestone (50 to 75 mm lumps)", 1440, 1520, 30, 40],
+        ["Limestone (Crushed)", 1280, 1440, 30, 40],
+        ["Limestone (Dust)", 1200, 1280, 45, 45],
+        ["Manganese Ore", 2000, 2240, 39, 39],
+        ["Petroleum Coke", 560, 640, 20, 29],
+        ["Phosphate Rock", 1360, 1360, 25, 30],
+        ["Quartz (Dust)", 1120, 1280, 40, 40],
+        ["Quartz (Solid, 40 to 50 mm lumps)", 1360, 1440, 35, 35],
+        ["Quartz (Solid, 50 to 75 mm lumps)", 1440, 1520, 35, 35],
+        ["Rock (Soft, excavated)", 1600, 1760, 35, 39],
+        ["Rubber", 930, 930, 35, 35],
+        ["Rubber (Reclaim)", 560, 560, 32, 32],
+        ["Salt (Coarse)", 640, 900, 30, 45],
+        ["Salt (Fines)", 720, 720, 25, 25],
+        ["Salt (Lump, for stock)", 1600, 1600, 35, 39],
+        ["Sand (Damp)", 1600, 2080, 40, 45],
+        ["Sand (Dry)", 1440, 1600, 30, 35],
+        ["Sand (Foundry, loose)", 1280, 1440, 39, 39],
+        ["Sand (Foundry, rammed lumps)", 1600, 1760, 20, 29],
+        ["Sandstone", 1360, 1440, 30, 34],
+        ["Sawdust", 160, 200, 35, 35],
+        ["Shale (Broken)", 1440, 1600, 30, 45],
+        ["Shale (Crushed)", 1360, 1440, 39, 39],
+        ["Slag (Blast furnace, crushed)", 1280, 1440, 25, 25],
+        ["Slag (Granulated, dry)", 960, 1040, 25, 25],
+        ["Slag (Granulated, wet)", 1440, 1600, 45, 45],
+        ["Slate (15 mm screenings)", 1280, 1440, 28, 28],
+        ["Slate (40 to 75 mm lumps)", 1360, 1520, 30, 34],
+        ["Soda Ash", 800, 1040, 32, 32],
+        ["Sugar (Raw)", 880, 1040, 37, 37],
+        ["Sugar (Refined)", 880, 880, 30, 45],
+        ["Sulphur (15 mm screenings)", 1200, 1360, 30, 45],
+        ["Sulphur (50 to 75 mm lumps)", 1360, 1440, 35, 35],
+        ["Talc (Dust)", 1220, 1280, 45, 45],
+        ["Woodchips", 190, 480, 45, 45],
+        ["Woodchips (Yellow pine)", 320, 400, 45, 45],
+        ["Zinc Ore (Crushed)", 2400, 2560, 38, 38],
+        ["Zinc Oxide (Heavy)", 480, 560, 45, 45],
+        ["Zinc Oxide (Light)", 160, 480, 45, 45]
+    ];
+    var SHAPE_NAME = { cone: 'conical pile', long: 'elongated pile', kidney: 'kidney pile', ring: 'ring pile', wall: 'elongated pile against a wall', dozed: 'dozed rectangular pile' };
+
+    /* ── Units ── */
+    var sys = 'met';
+    var UNIT = {
+        m:    { met: 'm', imp: 'ft', f: 1 / 0.3048, dp: { met: 2, imp: 2 } },
+        dens: { met: 'kg/m3', imp: 'lb/ft3', f: 0.06242796, dp: { met: 0, imp: 1 } },
+        tph:  { met: 't/h', imp: 'stph', f: 1.1023113, dp: { met: 0, imp: 0 } }
+    };
+    function toSI(kind, v) { var u = UNIT[kind]; return !u || sys === 'met' ? v : v / u.f; }
+    function fromSI(kind, v) { var u = UNIT[kind]; return !u || sys === 'met' ? v : v * u.f; }
+
+    /* ── Formatting ── */
+    function num(v, dp) {
+        if (Math.abs(v) < 0.5 * Math.pow(10, -dp)) { v = 0; }
+        return v.toLocaleString('en-AU', { minimumFractionDigits: dp, maximumFractionDigits: dp });
+    }
+    function sig(v) {                                             /* three significant figures */
+        if (!(Math.abs(v) > 0)) { return '0'; }
+        var p = Math.floor(Math.log(Math.abs(v)) / Math.LN10), q = Math.pow(10, p - 2), r = Math.round(v / q) * q;
+        if (Math.abs(r) >= Math.pow(10, p + 1)) { p += 1; }
+        return num(r, Math.max(0, 2 - p));
+    }
+    function pair(a, b) { return sys === 'met' ? a + ' [' + b + ']' : b + ' [' + a + ']'; }
+    function first(text) { return text.split(' [')[0]; }
+    function dist(m) { return pair(num(m, 1) + ' m', num(m / 0.3048, 0) + ' ft'); }
+    function distUp(m) { return pair(num(Math.ceil(m * 10 - 1e-7) / 10, 1) + ' m', num(Math.ceil(m / 0.3048 - 1e-7), 0) + ' ft'); }   /* a least value, never shown short */
+    function area(m2) { return pair(sig(m2) + ' m2', sig(m2 * 10.763910) + ' ft2'); }
+    function vol(m3) { return pair(sig(m3) + ' m3', sig(m3 * 1.3079506) + ' yd3'); }
+    function tonnes(t) { return pair(sig(t) + ' t', sig(t * 1.1023113) + ' st'); }
+    function rate(t) { return pair(num(t, 0) + ' t/h', num(t * 1.1023113, 0) + ' stph'); }
+    function dens(k) { return pair(num(k, 0) + ' kg/m3', num(k * 0.06242796, 1) + ' lb/ft3'); }
+    function hrs(h) { return num(h, h < 10 ? 2 : 1) + ' h'; }
+    function days(h) { return num(h / 24, h / 24 < 10 ? 1 : 0) + ' days'; }
+    function pct(p) { return num(p, 0) + '%'; }
+    function deg(d) { return num(d, Math.abs(d - Math.round(d)) < 1e-9 ? 0 : 1) + '°'; }
+    function cap1(text) { return text.charAt(0).toUpperCase() + text.slice(1); }
+    function titleCase(text) {                                    /* minor words stay lower case */
+        return text.split(' ').map(function (w, i) { return i && /^(a|an|the|of|on|to|at|and|against)$/.test(w) ? w : cap1(w); }).join(' ');
+    }
+    function densRange(a, b) {
+        return a === b ? dens(a) : pair(num(a, 0) + ' to ' + num(b, 0) + ' kg/m3', num(a * 0.06242796, 1) + ' to ' + num(b * 0.06242796, 1) + ' lb/ft3');
+    }
+    function bad(text) { return '<span class="text-danger fw-semibold">' + text + '</span>'; }
+
+    /* ── Elements and stored values ── */
+    var $ = function (id) { return document.getElementById(id); };
+    var form = $('calcForm');
+    var numInputs = Array.prototype.slice.call(form.querySelectorAll('input[data-kind]'));
+    var si = {};
+    function kindOf(el) { return el.getAttribute('data-kind'); }
+    function display(el) {
+        var v = si[el.id], k = kindOf(el);
+        if (!isFinite(v)) { el.value = ''; return; }
+        var dp = UNIT[k] ? UNIT[k].dp[sys] : 2;
+        el.value = String(Number(fromSI(k, v).toFixed(dp)));
+    }
+    function setSI(id, v) { si[id] = v; display($(id)); }
+    function readInput(el) {
+        var t = el.value.trim();
+        si[el.id] = t === '' ? NaN : toSI(kindOf(el), parseFloat(t));
+    }
+    function show(key, on) {
+        form.querySelectorAll('[data-show="' + key + '"]').forEach(function (e) { e.hidden = !on; });
+    }
+    var matSel = $('mat');
+    MATERIALS.forEach(function (m, i) {
+        var o = document.createElement('option');
+        o.value = String(i);
+        o.textContent = m[0];
+        matSel.appendChild(o);
+    });
+    var other = document.createElement('option');
+    other.value = 'other';
+    other.textContent = 'Other (enter values)';
+    matSel.appendChild(other);
+    function material() { return matSel.value === 'other' ? null : MATERIALS[parseInt(matSel.value, 10)]; }
+    function fillMaterial() { var m = material(); if (m) { setSI('rho', m[1]); setSI('alpha', m[3]); } }
+
+    /* ── Tooltip ── */
+    var tip = $('tip');
+    function showTip(text, anchor, x, y) {
+        anchor.appendChild(tip);
+        tip.textContent = text;
+        tip.hidden = false;
+        var w = tip.offsetWidth, wrap = anchor.clientWidth;
+        tip.style.left = Math.max(0, Math.min(wrap - w, x - w / 2)) + 'px';
+        tip.style.top = Math.max(-tip.offsetHeight - 4, y - tip.offsetHeight - 10) + 'px';
+    }
+    function hideTip() { tip.hidden = true; }
+    function hoverOn(box, node, text) {
+        function at(e) { var b = box.getBoundingClientRect(); showTip(typeof text === 'function' ? text(e) : text, box, e.clientX - b.left, e.clientY - b.top); }
+        node.addEventListener('mouseenter', at);
+        node.addEventListener('mousemove', at);
+        node.addEventListener('mouseleave', hideTip);
+    }
+
+    /* ── Results helpers ── */
+    function cell(value, hint, cls) {
+        return '<td' + (cls ? ' class="' + cls + '"' : '') + '><span class="calc-num">' + value + '</span>' + (hint ? '<span class="calc-hint">' + hint + '</span>' : '') + '</td>';
+    }
+    function rowN(label, cells, cls, labelHint) {
+        return '<tr' + (cls ? ' class="' + cls + '"' : '') + '><th scope="row">' + label + (labelHint ? '<span class="calc-hint">' + labelHint + '</span>' : '') + '</th>' +
+            cells.map(function (c) { return cell(c[0], c[1], c[2]); }).join('') + '</tr>';
+    }
+    function head(cols) { return '<tr>' + cols.map(function (c) { return '<th scope="col">' + c + '</th>'; }).join('') + '</tr>'; }
+
+    /* ── Pile geometry ── */
+    function mkGeo(shape, H, alphaD, r0, Lb, Bb, Rc, slewD) {
+        var t = Math.tan(alphaD * RAD), s = H / t, R = r0 + s, th = slewD * RAD;
+        var g = { shape: shape, H: H, t: t, s: s, R: R, r0: r0, Rc: Rc, th: th, alpha: alphaD, Lb: Lb, B: Bb, cosA: Math.cos(alphaD * RAD) };
+        g.Lr = shape === 'long' || shape === 'wall' ? Lb - 2 * R : 0;
+        function areaRho(rho) {                                   /* plan area within rho of the ridge */
+            if (shape === 'cone') { return Math.PI * rho * rho; }
+            if (shape === 'long') { return 2 * rho * g.Lr + Math.PI * rho * rho; }
+            if (shape === 'kidney') { return 2 * rho * Rc * th + Math.PI * rho * rho; }
+            if (shape === 'ring') { return 4 * Math.PI * Rc * rho; }
+            return rho * g.Lr + Math.PI * rho * rho / 2;          /* against a wall */
+        }
+        g.areaZ = function (z) {                                  /* plan area of the section at height z */
+            if (shape === 'dozed') { return (Lb - 2 * z / t) * (Bb - 2 * z / t); }
+            return areaRho(r0 + (H - z) / t);
+        };
+        g.V = H / 6 * (g.areaZ(0) + 4 * g.areaZ(H / 2) + g.areaZ(H));
+        g.foot = g.areaZ(0);
+        g.topA = g.areaZ(H);
+        g.surf = (g.foot - g.topA) / g.cosA + g.topA;            /* the sloping faces and the flat top */
+        g.hRaw = function (x, y) {                                /* height above the base; negative outside the toe */
+            var d;
+            if (shape === 'dozed') { return Math.min(H, t * Math.min(Lb / 2 - Math.abs(x), Bb / 2 - Math.abs(y))); }
+            if (shape === 'cone') { d = Math.sqrt(x * x + y * y); }
+            else if (shape === 'long' || shape === 'wall') {
+                if (shape === 'wall' && y < 0) { return -10 * H - 1; }
+                var dx = Math.max(0, Math.abs(x) - g.Lr / 2); d = Math.sqrt(dx * dx + y * y);
+            } else if (shape === 'ring') { d = Math.abs(Math.sqrt(x * x + y * y) - Rc); }
+            else {
+                var ph = Math.atan2(x, y);
+                if (Math.abs(ph) <= th / 2) { d = Math.abs(Math.sqrt(x * x + y * y) - Rc); }
+                else { var e = (ph < 0 ? -1 : 1) * th / 2, ex = Rc * Math.sin(e), ey = Rc * Math.cos(e); d = Math.sqrt((x - ex) * (x - ex) + (y - ey) * (y - ey)); }
+            }
+            return H - Math.max(0, d - r0) * t;
+        };
+        g.h = function (x, y) { return Math.max(0, Math.min(H, g.hRaw(x, y))); };
+        g.ridge = function (u) {                                  /* the tunnel line under the ridge: point and direction at u along it */
+            if (shape === 'kidney' || shape === 'ring') { var a = u / Rc; return { x: Rc * Math.sin(a), y: Rc * Math.cos(a), tx: Math.cos(a), ty: -Math.sin(a) }; }
+            return { x: u, y: 0, tx: 1, ty: 0 };
+        };
+        if (shape === 'cone') { g.uR = [-R, R]; g.vR = [-R, R]; }
+        else if (shape === 'long') { g.uR = [-Lb / 2, Lb / 2]; g.vR = [-R, R]; }
+        else if (shape === 'wall') { g.uR = [-Lb / 2, Lb / 2]; g.vR = [-0.12 * R, R]; }
+        else if (shape === 'dozed') { g.uR = [-Lb / 2, Lb / 2]; g.vR = [-Bb / 2, Bb / 2]; }
+        else if (shape === 'ring') { g.uR = [-Math.PI * Rc, Math.PI * Rc]; g.vR = [-R, R]; }
+        else { var ue = Math.min(Math.PI * Rc, Rc * th / 2 + 1.1 * R); g.uR = [-ue, ue]; g.vR = [-R, R]; }
+        g.outline = function (z) {                                /* polygons of the section at height z, for the drawings */
+            var P = [], i, n = 72, rho = r0 + (H - z) / t;
+            function arc(cx, cy, r, a0, a1, m) { for (var k = 0; k <= m; k++) { var a = a0 + (a1 - a0) * k / m; P.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]); } }
+            if (shape === 'dozed') { var hl = Lb / 2 - z / t, hb = Bb / 2 - z / t; return [[[-hl, -hb], [hl, -hb], [hl, hb], [-hl, hb]]]; }
+            if (rho <= 1e-9) { return []; }
+            if (shape === 'cone') { arc(0, 0, rho, 0, 2 * Math.PI, 2 * n); return [P]; }
+            if (shape === 'long') { arc(g.Lr / 2, 0, rho, -Math.PI / 2, Math.PI / 2, n); arc(-g.Lr / 2, 0, rho, Math.PI / 2, 1.5 * Math.PI, n); return [P]; }
+            if (shape === 'wall') { arc(g.Lr / 2, 0, rho, 0, Math.PI / 2, n / 2); arc(-g.Lr / 2, 0, rho, Math.PI / 2, Math.PI, n / 2); return [P]; }
+            if (shape === 'ring') {
+                var Q = []; P = [];
+                arc(0, 0, Rc + rho, 0, 2 * Math.PI, 4 * n);
+                if (Rc - rho > 1e-9) { for (i = 0; i <= 4 * n; i++) { var a = 2 * Math.PI * i / (4 * n); Q.push([(Rc - rho) * Math.cos(a), (Rc - rho) * Math.sin(a)]); } }
+                return Q.length ? [P, Q] : [P];
+            }
+            /* kidney: outer arc, far end cap, inner arc, near end cap (angles from the y axis, positive clockwise) */
+            var m = Math.max(8, Math.round(n * th / Math.PI)), e1 = th / 2, e0 = -th / 2;
+            for (i = 0; i <= m; i++) { var p1 = e0 + (e1 - e0) * i / m; P.push([(Rc + rho) * Math.sin(p1), (Rc + rho) * Math.cos(p1)]); }
+            for (i = 1; i < n; i++) {
+                var w = Math.PI * i / n, ex = Rc * Math.sin(e1), ey = Rc * Math.cos(e1);
+                P.push([ex + rho * (Math.cos(w) * Math.sin(e1) + Math.sin(w) * Math.cos(e1)), ey + rho * (Math.cos(w) * Math.cos(e1) - Math.sin(w) * Math.sin(e1))]);
+            }
+            if (Rc - rho > 1e-9) { for (i = 0; i <= m; i++) { var p2 = e1 + (e0 - e1) * i / m; P.push([(Rc - rho) * Math.sin(p2), (Rc - rho) * Math.cos(p2)]); } }
+            for (i = 1; i < n; i++) {
+                var w2 = Math.PI * i / n, fx = Rc * Math.sin(e0), fy = Rc * Math.cos(e0);
+                P.push([fx - rho * (Math.cos(w2) * Math.sin(e0) + Math.sin(w2) * Math.cos(e0)), fy - rho * (Math.cos(w2) * Math.cos(e0) - Math.sin(w2) * Math.sin(e0))]);
+            }
+            return [P];
+        };
+        var bb = [Infinity, -Infinity, Infinity, -Infinity];
+        g.outline(0).forEach(function (poly) { poly.forEach(function (p) { bb[0] = Math.min(bb[0], p[0]); bb[1] = Math.max(bb[1], p[0]); bb[2] = Math.min(bb[2], p[1]); bb[3] = Math.max(bb[3], p[1]); }); });
+        var mg = 1e-3 * Math.max(bb[1] - bb[0], bb[3] - bb[2]);  /* the sampled arcs can fall just short of a curve's extreme */
+        g.bbox = [bb[0] - mg, bb[1] + mg, shape === 'wall' ? 0 : bb[2] - mg, bb[3] + mg];
+        return g;
+    }
+    /* feeders along the tunnel, centred on the middle of the ridge; the wall pile's tunnel runs along the wall */
+    function mkFeeders(g, n, sp, a, w) {
+        var list = [], off = g.shape === 'wall' ? w / 2 : 0;
+        for (var i = 0; i < n; i++) {
+            var u = (i - (n - 1) / 2) * sp, r = g.ridge(u);
+            list.push({ u: u, x: r.x - r.ty * off, y: r.y + r.tx * off, tx: r.tx, ty: r.ty, a: a, w: w });
+        }
+        return list;
+    }
+    function craterAt(fs, td, x, y) {                             /* height of the lowest crater surface at (x, y) */
+        var best = Infinity;
+        for (var i = 0; i < fs.length; i++) {
+            var f = fs[i], px = x - f.x, py = y - f.y, al = Math.abs(px * f.tx + py * f.ty) - f.a / 2, ac = Math.abs(-px * f.ty + py * f.tx) - f.w / 2;
+            var dx = al > 0 ? al : 0, dy = ac > 0 ? ac : 0, d = dx * dx + dy * dy;
+            if (d < best) { best = d; }
+        }
+        return Math.sqrt(best) * td;
+    }
+    function integrate(g, fs, td, N) {                            /* pile and live volume on an N-cell grid (midpoint rule) */
+        var bb = g.bbox, wd = bb[1] - bb[0], ht = bb[3] - bb[2], c = Math.max(wd, ht) / N, nx = Math.max(1, Math.ceil(wd / c)), ny = Math.max(1, Math.ceil(ht / c));
+        var cx = wd / nx, cy = ht / ny, tot = 0, live = 0;
+        for (var j = 0; j < ny; j++) {
+            var y = bb[2] + (j + 0.5) * cy;
+            for (var i = 0; i < nx; i++) {
+                var x = bb[0] + (i + 0.5) * cx, hh = g.h(x, y);
+                if (hh <= 0) { continue; }
+                tot += hh;
+                if (fs.length) { var d = craterAt(fs, td, x, y); if (d < hh) { live += hh - d; } }
+            }
+        }
+        return { tot: tot * cx * cy, live: live * cx * cy };
+    }
+
+    /* ── Main calculation ── */
+    var last = null;
+    function compute() {
+        var shape = $('shape').value, isDozed = shape === 'dozed';
+        function fin(id) { return isFinite(si[id]); }
+        function blank(id) { return $(id).value.trim() === ''; }
+        show('len', shape === 'long' || shape === 'wall' || isDozed);
+        show('wid', isDozed);
+        show('rad', shape === 'kidney' || shape === 'ring');
+        show('slew', shape === 'kidney');
+        show('top', !isDozed);
+        show('feed', fin('nf') && si.nf > 0);
+        $('btop-label').textContent = shape === 'cone' ? 'Flat top diameter (optional)' : 'Flat top width (optional)';
+        $('btop-hint').textContent = shape === 'cone' ? 'Leave blank for a peaked pile' : shape === 'wall' ? 'Out from the wall; leave blank for a peak at the wall' : 'Leave blank for a peaked ridge';
+        $('Lb-hint').textContent = shape === 'long' ? 'Overall, including the conical ends' : shape === 'wall' ? 'Along the wall, including the ends' : 'At the toe';
+        $('alpha-label').textContent = isDozed ? 'Side slope angle' : 'Angle of repose';
+        var m = material();
+        $('rho-hint').textContent = m ? 'Typically ' + densRange(m[1], m[2]) + ' for this material' : 'Compaction by dozers raises the loose bulk density';
+        $('alpha-hint').textContent = isDozed ? 'The slope of the dozed faces, no steeper than the angle of repose' :
+            m ? 'Typically ' + (m[3] === m[4] ? m[3] : m[3] + ' to ' + m[4]) + ' deg for this material' : 'The slope the material takes when stacked';
+
+        /* validation */
+        var errs = [];
+        numInputs.forEach(function (el) { el.classList.remove('is-invalid'); });
+        function need(id, okv, text) { if (!okv) { errs.push(text); $(id).classList.add('is-invalid'); } }
+        need('H', fin('H') && si.H > 0, 'pile height');
+        need('alpha', fin('alpha') && si.alpha > 0 && si.alpha < 70, (isDozed ? 'side slope angle' : 'angle of repose') + ' (above 0 and below 70 deg)');
+        need('rho', fin('rho') && si.rho > 0, 'bulk density');
+        if (!isDozed) { need('btop', blank('btop') || fin('btop') && si.btop >= 0, shape === 'cone' ? 'flat top diameter' : 'flat top width'); }
+        if (shape === 'long' || shape === 'wall' || isDozed) { need('Lb', fin('Lb') && si.Lb > 0, 'base length'); }
+        if (isDozed) { need('Bb', fin('Bb') && si.Bb > 0 && (!fin('Lb') || si.Bb <= si.Lb), 'base width (above 0 and not more than the base length)'); }
+        if (shape === 'kidney' || shape === 'ring') { need('Rc', fin('Rc') && si.Rc > 0, 'ridge radius'); }
+        if (shape === 'kidney') { need('slew', fin('slew') && si.slew > 0 && si.slew < 360, 'slew angle (above 0 and below 360 deg)'); }
+        need('nf', fin('nf') && si.nf >= 0 && si.nf <= 60 && Math.abs(si.nf - Math.round(si.nf)) < 1e-9, 'number of feeders (a whole number, 0 to 60)');
+        var nf = fin('nf') ? Math.round(si.nf) : 0;
+        if (nf > 0) {
+            if (nf > 1) { need('fsp', fin('fsp') && si.fsp > 0, 'feeder spacing'); }
+            need('fa', fin('fa') && si.fa > 0, 'feeder opening length');
+            need('fw', fin('fw') && si.fw > 0, 'feeder opening width');
+            need('delta', fin('delta') && si.delta > 0 && si.delta < 90, 'draw-down angle (above 0 and below 90 deg)');
+        }
+        need('Qs', fin('Qs') && si.Qs > 0, 'stacking rate');
+        need('Qp', fin('Qp') && si.Qp > 0, 'plant feed rate');
+
+        /* the pile's own limits, once its inputs are valid */
+        var H = si.H, alpha = si.alpha, r0 = isDozed || !fin('btop') ? 0 : shape === 'wall' ? si.btop : si.btop / 2;
+        var run = H / Math.tan(alpha * RAD), R = r0 + run, slewMax = NaN;
+        if (fin('H') && fin('alpha') && si.H > 0 && si.alpha > 0 && si.alpha < 70) {
+            if ((shape === 'long' || shape === 'wall') && fin('Lb')) {
+                need('Lb', si.Lb >= 2 * R - 1e-9, 'base length (at least the ' + (shape === 'wall' ? 'length of the two ends, ' : 'base width, ') + first(distUp(2 * R)) + ', or use a conical pile)');
+            }
+            if (isDozed && fin('Bb')) { need('Bb', si.Bb >= 2 * run - 1e-9, 'base width (at least ' + first(distUp(2 * run)) + ' for this height and slope)'); }
+            if ((shape === 'kidney' || shape === 'ring') && fin('Rc')) { need('Rc', si.Rc >= R - 1e-9, 'ridge radius (at least half the base width, ' + first(distUp(R)) + ')'); }
+            if (shape === 'kidney' && fin('Rc') && si.Rc >= R) {
+                slewMax = 360 - 2 * Math.asin(Math.min(1, R / si.Rc)) / RAD;
+                if (fin('slew')) { need('slew', si.slew <= slewMax + 1e-9, 'slew angle (up to ' + deg(Math.floor(slewMax * 10) / 10) + ', where the ends meet; use a ring)'); }
+            }
+        }
+        $('slew-hint').textContent = 'The arc the ridge turns through' + (isFinite(slewMax) ? '; up to ' + deg(Math.floor(slewMax * 10) / 10) + ' before the ends meet' : '');
+        if (errs.length) {
+            $('resultError').hidden = false;
+            $('resultError').textContent = 'Check these inputs: ' + errs.join('; ') + '.';
+            $('resultBody').hidden = true;
+            $('barValue').textContent = 'Check the inputs';
+            last = null;
+            return;
+        }
+        $('resultError').hidden = true;
+        $('resultBody').hidden = false;
+
+        var rhoT = si.rho / 1000, Qs = si.Qs, Qp = si.Qp;
+        var g = mkGeo(shape, H, alpha, r0, si.Lb, si.Bb, si.Rc, si.slew);
+        var sp = nf > 1 ? si.fsp : 0, fa = si.fa, fw = si.fw, delta = si.delta, td = nf > 0 ? Math.tan(delta * RAD) : 0;
+        var fs = nf > 0 ? mkFeeders(g, nf, sp, fa, fw) : [];
+        var Vt = g.V, Mt = Vt * rhoT;
+        var grid = nf > 0 ? integrate(g, fs, td, 520) : null;
+        var Vl = grid ? Math.min(grid.live * Vt / grid.tot, Vt) : NaN;   /* scaled by the exact volume over the grid's */
+        var Ml = Vl * rhoT, Vd = Vt - (nf > 0 ? Vl : 0), Md = Vd * rhoT, share = Vl / Vt;
+
+        /* ── Capacity ── */
+        var hText = first(pair(num(H, 1) + ' m', num(H / 0.3048, 1) + ' ft'));
+        $('capCap').textContent = 'Capacity of the ' + titleCase(SHAPE_NAME[shape]);
+        var cb = [];
+        cb.push(rowN('Capacity', [[tonnes(Mt), 'At ' + first(dens(si.rho))], [vol(Vt), '']], 'table-primary fw-semibold'));
+        if (nf > 0) {
+            cb.push(rowN('Live capacity', [[tonnes(Ml), pct(share * 100) + ' of the capacity; drains to the ' + (nf === 1 ? 'feeder' : nf + ' feeders')], [vol(Vl), '']], 'fw-semibold'));
+            cb.push(rowN('Dead capacity', [[tonnes(Md), pct((1 - share) * 100) + ' of the capacity; stays outside the draw-down craters'], [vol(Vd), '']]));
+            cb.push(rowN('Live capacity per feeder', [[tonnes(Ml / nf), 'Average'], [vol(Vl / nf), '']]));
+        } else {
+            cb.push(rowN('Live capacity', [['–', 'No reclaim feeders entered'], ['–', '']]));
+        }
+        $('capBody').innerHTML = cb.join('');
+
+        /* ── Dimensions ── */
+        var dm = [];
+        function dRow(label, value, hint) { dm.push(rowN(label, [[value, hint || '']])); }
+        dRow('Pile height', dist(H), 'Above the base');
+        dRow(isDozed ? 'Side slope' : 'Angle of repose', deg(alpha), 'Slope run ' + first(dist(run)) + ' from the top to the toe');
+        if (shape === 'cone') {
+            dRow('Base diameter', dist(2 * R));
+            if (r0 > 0) { dRow('Flat top diameter', dist(2 * r0)); }
+        } else if (shape === 'long') {
+            dRow('Base length', dist(si.Lb), 'Entered');
+            dRow('Base width', dist(2 * R));
+            dRow(r0 > 0 ? 'Flat top' : 'Ridge length', r0 > 0 ? first(dist(g.Lr + 2 * r0)) + ' by ' + dist(2 * r0) : dist(g.Lr), r0 > 0 ? 'Length and width' : 'Between the conical ends');
+        } else if (shape === 'wall') {
+            dRow('Base length along the wall', dist(si.Lb), 'Entered; the wall is at least this long and ' + first(dist(H)) + ' high');
+            dRow('Base width from the wall', dist(R));
+            dRow(r0 > 0 ? 'Flat top' : 'Ridge length at the wall', r0 > 0 ? first(dist(g.Lr + 2 * r0)) + ' by ' + dist(r0) : dist(g.Lr), r0 > 0 ? 'Length along the wall and width from it' : 'Between the ends');
+        } else if (shape === 'kidney') {
+            dRow('Ridge radius and slew', first(dist(si.Rc)) + ', ' + deg(si.slew), 'Ridge length ' + first(dist(si.Rc * g.th)) + ' along the arc');
+            dRow('Base width', dist(2 * R), 'Toe radii ' + first(dist(si.Rc - R)) + ' and ' + first(dist(si.Rc + R)) + ' from the pivot');
+            if (r0 > 0) { dRow('Flat top width', dist(2 * r0)); }
+        } else if (shape === 'ring') {
+            dRow('Ridge radius', dist(si.Rc), 'Ridge length ' + first(dist(2 * Math.PI * si.Rc)) + ' around the ring');
+            dRow('Base width', dist(2 * R), 'Inner and outer toe diameters ' + first(dist(2 * (si.Rc - R))) + ' and ' + first(dist(2 * (si.Rc + R))));
+            if (r0 > 0) { dRow('Flat top width', dist(2 * r0)); }
+        } else {
+            dRow('Base', first(dist(si.Lb)) + ' by ' + dist(si.Bb), 'Length and width at the toe');
+            dRow('Flat top', g.topA > 1e-9 ? first(dist(si.Lb - 2 * run)) + ' by ' + dist(si.Bb - 2 * run) : 'None', g.topA > 1e-9 ? 'Length and width' : 'The faces meet in a ridge');
+        }
+        dRow('Footprint area', area(g.foot), 'At the toe');
+        if (g.topA > 1e-9) { dRow('Flat top area', area(g.topA)); }
+        dRow('Exposed surface area', area(g.surf), 'The sloping faces and the flat top, for dust suppression and covers');
+        if (nf > 0) { dRow('Feeder tunnel', dist((nf - 1) * sp + fa), 'From the first feeder opening to the last; ' + (nf > 1 ? first(dist(sp)) + ' feeder spacing' : 'one feeder')); }
+        $('dimBody').innerHTML = dm.join('');
+
+        /* ── Times ── */
+        var tb = [], tFill = Mt / Qs, tLive = nf > 0 ? Ml / Qp : NaN;
+        function tRow(label, h, hint, cls) { tb.push(rowN(label, [[isFinite(h) ? hrs(h) + (h >= 24 ? ' [' + days(h) + ']' : '') : h, hint]], cls)); }
+        tRow('Build the pile', tFill, 'Stacking ' + first(tonnes(Mt)) + ' at ' + first(rate(Qs)) + ' with the feeders stopped', 'fw-semibold');
+        if (nf > 0) {
+            tRow('Build the pile with the plant running', Qs > Qp ? Mt / (Qs - Qp) : 'Does not fill', Qs > Qp ? 'Stacking at ' + first(rate(Qs)) + ' while reclaiming ' + first(rate(Qp)) :
+                'The plant takes all of the ' + first(rate(Qs)) + ' stacked');
+            tRow('Live capacity in plant feed', tLive, 'Reclaiming ' + first(tonnes(Ml)) + ' at ' + first(rate(Qp)) + ' with the stacker stopped', 'table-primary fw-semibold');
+            tRow('Draw down the live capacity with the stacker running', Qp > Qs ? Ml / (Qp - Qs) : 'Does not draw down', Qp > Qs ? 'Reclaiming ' + first(rate(Qp)) + ' while stacking ' + first(rate(Qs)) :
+                'The stacker supplies at least the ' + first(rate(Qp)) + ' reclaimed');
+            tRow('Restore the live capacity', Ml / Qs, 'Stacking at ' + first(rate(Qs)) + ' with the feeders stopped');
+        }
+        tRow('Total capacity in plant feed', Mt / Qp, nf > 0 ? 'Including the dead capacity, dozed to the feeders' : 'At ' + first(rate(Qp)));
+        $('timeBody').innerHTML = tb.join('');
+
+        /* ── Live capacity by the number of feeders ── */
+        var cmpRows = [];
+        if (nf > 0) {
+            var maxN = Math.max(4, nf + 2), minN = nf > 4 ? nf - 3 : 1, spC = nf > 1 ? sp : Math.max(fa * 2, si.fsp > 0 ? si.fsp : 2 * fa);
+            $('cmpHead').innerHTML = head(['Feeders', 'Live Capacity', 'Share of Capacity', 'Live Capacity in Plant Feed']);
+            for (var k = minN; k <= maxN; k++) {
+                var lv, fk = k === nf ? fs : mkFeeders(g, k, spC, fa, fw);
+                if (k === nf) { lv = Vl; }
+                else { var gr = integrate(g, fk, td, 240); lv = Math.min(gr.live * Vt / gr.tot, Vt); }
+                var on = k === nf, outK = fk.filter(function (f) { return !(g.hRaw(f.x, f.y) > 1e-9); }).length;   /* centred, so the outer ones can run off the pile */
+                cmpRows.push(rowN(String(k), [[tonnes(lv * rhoT), (on ? 'Entered' : '') + (outK ? (on ? '; ' : '') + (outK === k ? 'all' : outK) + ' outside the pile' : '')],
+                    [pct(lv / Vt * 100), ''], [hrs(lv * rhoT / Qp), '']], on ? 'table-primary fw-semibold' : '',
+                    k > 1 ? first(dist(spC)) + ' apart, centred on the ridge' : 'At the middle of the ridge'));
+            }
+        } else {
+            $('cmpHead').innerHTML = head(['Feeders', 'Live Capacity']);
+            cmpRows.push('<tr><td colspan="2" class="text-body-secondary">Enter the reclaim feeders to compare their number.</td></tr>');
+        }
+        $('cmpBody').innerHTML = cmpRows.join('');
+
+        /* ── Warnings ── */
+        var warn = [];
+        if (nf > 0) {
+            if (delta <= alpha + 1e-9) { warn.push('The draw-down angle is not steeper than the ' + (isDozed ? 'side slope' : 'angle of repose') + ', so the craters run out to the toe of the pile.'); }
+            var outside = fs.filter(function (f) { return !(g.hRaw(f.x, f.y) > 1e-9); }).length;
+            if (outside) { warn.push((outside === nf ? 'Every feeder lies' : outside + ' of the ' + nf + ' feeders lie') + ' outside the pile footprint; reduce the spacing or the number of feeders.'); }
+            if (nf > 1 && sp < fa - 1e-9) { warn.push('The feeder openings overlap: the spacing is less than the opening length.'); }
+            if ((shape === 'kidney' || shape === 'ring') && nf > 1 && (nf - 1) * sp >= 2 * Math.PI * si.Rc) { warn.push('The feeders wrap past a full turn of the ridge.'); }
+        }
+        $('warnList').innerHTML = warn.map(function (t) { return '<li>' + t + '</li>'; }).join('');
+        $('warnBox').hidden = !warn.length;
+
+        $('barValue').textContent = first(tonnes(Mt)) + (nf > 0 ? ', ' + first(tonnes(Ml)) + ' live' : '');
+
+        last = { g: g, fs: fs, td: td, nf: nf, Mt: Mt, Ml: Ml, Md: Md, Vt: Vt, share: share, rhoT: rhoT, Qs: Qs, Qp: Qp, tFill: tFill, tLive: tLive, shape: shape, hText: hText };
+        renderAll();
+    }
+
+    /* ── Drawing helpers ── */
+    var SVGNS = 'http://www.w3.org/2000/svg';
+    function el(name, attrs, parent) {
+        var e = document.createElementNS(SVGNS, name);
+        Object.keys(attrs).forEach(function (key) { e.setAttribute(key, attrs[key]); });
+        if (parent) { parent.appendChild(e); }
+        return e;
+    }
+    function note(box, text, cls) {
+        var p = document.createElement('p');
+        p.className = 'small mb-1 ' + (cls || '');
+        p.textContent = text;
+        box.appendChild(p);
+    }
+    function niceStep(x) {                                        /* 1, 2, 2.5 or 5 times a power of ten, at or above x */
+        var p = Math.pow(10, Math.floor(Math.log(x) / Math.LN10)), m = x / p;
+        return (m > 5 ? 10 : m > 2.5 ? 5 : m > 2 ? 2.5 : m > 1 ? 2 : 1) * p;
+    }
+    function scaleBar(svg, x, y, k, span) {                       /* a scale bar of a round length in the display units */
+        var sm = niceStep(fromSI('m', span) / 4), sl = toSI('m', sm) * k;
+        el('line', { x1: x, x2: x + sl, y1: y, y2: y, stroke: '#495057', 'stroke-width': 2 }, svg);
+        [x, x + sl].forEach(function (xx) { el('line', { x1: xx, x2: xx, y1: y - 4, y2: y + 4, stroke: '#495057', 'stroke-width': 1.5 }, svg); });
+        el('text', { x: x + sl + 6, y: y + 4 }, svg).textContent = num(sm, sm < 1 ? 1 : 0) + ' ' + UNIT.m[sys];
+    }
+    function polyD(polys, S) {                                    /* polygons to path data */
+        return polys.map(function (p) { return p.map(function (q, i) { var s = S(q[0], q[1]); return (i ? 'L' : 'M') + s[0].toFixed(1) + ',' + s[1].toFixed(1); }).join('') + 'Z'; }).join('');
+    }
+    var LIVE = '#9ec5fe', LIVE_LINE = '#0d6efd', DEAD = '#e9ecef', EDGE = '#868e96';
+    function renderAll() {
+        hideTip();
+        renderChart();
+        renderPlan();
+        renderSide();
+        renderSect();
+        renderCycle();
+    }
+
+    /* ── Live and dead capacity as one bar, live in blue ── */
+    function renderChart() {
+        var box = $('chart');
+        box.innerHTML = '';
+        if (!last) { return; }
+        var d = last, W = Math.max(280, box.clientWidth), top = 30, barH = 22, H = top + barH + 30;
+        var svg = el('svg', { width: W, height: H, viewBox: '0 0 ' + W + ' ' + H, role: 'img',
+            'aria-label': 'Capacity ' + first(tonnes(d.Mt)) + (d.nf > 0 ? ', of which ' + first(tonnes(d.Ml)) + ' live and ' + first(tonnes(d.Md)) + ' dead' : '') }, box);
+        var x0 = 0, x1 = W - 2, xl = d.nf > 0 ? x0 + (x1 - x0) * d.share : x0;
+        var gl = el('text', { x: 0, y: 16, 'class': 'calc-group-label' }, svg);
+        gl.textContent = cap1(SHAPE_NAME[d.shape]) + ', ' + d.hText + ' high, ' + first(tonnes(d.Mt));
+        if (gl.getComputedTextLength() > W - 4) { gl.textContent = d.hText + ' high, ' + first(tonnes(d.Mt)); }
+        if (d.nf > 0 && xl - x0 > 0.5) {
+            var lr = el('rect', { x: x0, y: top, width: Math.max(1, xl - x0 - 1), height: barH, rx: 3, fill: LIVE_LINE }, svg);
+            hoverOn(box, lr, 'Live: ' + first(tonnes(d.Ml)) + ', ' + pct(d.share * 100) + ' of the capacity');
+        }
+        var dr = el('rect', { x: xl + (d.nf > 0 ? 1 : 0), y: top, width: Math.max(1, x1 - xl - (d.nf > 0 ? 1 : 0)), height: barH, rx: 3, fill: '#ced4da' }, svg);
+        hoverOn(box, dr, d.nf > 0 ? 'Dead: ' + first(tonnes(d.Md)) + ', ' + pct((1 - d.share) * 100) + ' of the capacity' : 'Capacity: ' + first(tonnes(d.Mt)) + '; no feeders entered');
+        var yl = top + barH + 18;
+        if (d.nf > 0) {
+            var t1 = el('text', { x: x0, y: yl, 'class': 'calc-dark' }, svg);
+            t1.textContent = 'Live ' + first(tonnes(d.Ml)) + ', ' + pct(d.share * 100);
+            var t2 = el('text', { x: x1, y: yl, 'text-anchor': 'end' }, svg);
+            t2.textContent = 'Dead ' + first(tonnes(d.Md));
+            if (t1.getComputedTextLength() + t2.getComputedTextLength() + 12 > x1 - x0) { t2.textContent = 'Dead ' + pct((1 - d.share) * 100); }
+        } else {
+            el('text', { x: x0, y: yl }, svg).textContent = 'No reclaim feeders, so no live capacity';
+        }
+    }
+
+    /* ── Top view to scale: the toe, the flat top or ridge, the live zone over the feeders and the feeder openings ── */
+    function renderPlan() {
+        var box = $('plan');
+        box.innerHTML = '';
+        if (!last) { return; }
+        var d = last, g = d.g, bb = g.bbox.slice(), shape = d.shape;
+        if (shape === 'wall') { bb[2] = -0.06 * g.R; }
+        if (shape === 'kidney' || shape === 'ring') { bb[2] = Math.min(bb[2], -0.03 * g.Rc); bb[3] = Math.max(bb[3], 0.03 * g.Rc); bb[0] = Math.min(bb[0], -0.03 * g.Rc); bb[1] = Math.max(bb[1], 0.03 * g.Rc); }
+        note(box, (d.nf > 0 ? 'The live zone over the feeders in blue' : 'No reclaim feeders entered') + (shape === 'kidney' || shape === 'ring' ? '; the stacker pivot marked' : ''));
+        var Wpx = Math.max(280, box.clientWidth), pad = 10, top = 10, bottom = 70, maxH = 420;
+        var k = Math.min((Wpx - 2 * pad) / (bb[1] - bb[0]), maxH / (bb[3] - bb[2])), H = top + (bb[3] - bb[2]) * k + bottom;
+        var offX = pad + ((Wpx - 2 * pad) - (bb[1] - bb[0]) * k) / 2;
+        function S(x, y) { return [offX + (x - bb[0]) * k, top + (bb[3] - y) * k]; }
+        var svg = el('svg', { width: Wpx, height: H, viewBox: '0 0 ' + Wpx + ' ' + H, role: 'img',
+            'aria-label': 'Top view of the ' + SHAPE_NAME[shape] + ' to scale' + (d.nf > 0 ? ', with ' + d.nf + ' reclaim feeders and the live zone over them' : '') }, box);
+        /* the pile at its toe (dead material) */
+        var foot = el('path', { d: polyD(g.outline(0), S), fill: DEAD, stroke: EDGE, 'stroke-width': 1.25, 'fill-rule': 'evenodd' }, svg);
+        hoverOn(box, foot, d.nf > 0 ? 'Dead: ' + first(tonnes(d.Md)) + ', outside the draw-down craters' : 'Pile: ' + first(tonnes(d.Mt)));
+        /* the live zone: grid cells inside the crater rims, clipped along the rims (marching squares) */
+        if (d.nf > 0) {
+            var N = Math.min(260, Math.max(120, Math.round(Wpx / 3))), wd = bb[1] - bb[0], ht = bb[3] - bb[2], c = Math.max(wd, ht) / N;
+            var nx = Math.ceil(wd / c), ny = Math.ceil(ht / c), cx = wd / nx, cy = ht / ny, G = [];
+            for (var j = 0; j <= ny; j++) {
+                var rowv = [], y = bb[2] + j * cy;
+                for (var i = 0; i <= nx; i++) { var x = bb[0] + i * cx; rowv.push(Math.min(g.H, g.hRaw(x, y)) - craterAt(d.fs, d.td, x, y)); }
+                G.push(rowv);
+            }
+            var fill = [], line = [];
+            function P2(x, y) { var s = S(x, y); return s[0].toFixed(1) + ',' + s[1].toFixed(1); }
+            for (j = 0; j < ny; j++) {
+                var runStart = -1;
+                for (i = 0; i <= nx; i++) {
+                    var full = i < nx && G[j][i] > 0 && G[j][i + 1] > 0 && G[j + 1][i] > 0 && G[j + 1][i + 1] > 0;
+                    if (full && runStart < 0) { runStart = i; }
+                    if (!full && runStart >= 0) {
+                        var xa = bb[0] + runStart * cx, xb = bb[0] + i * cx, ya = bb[2] + j * cy, yb = ya + cy;
+                        fill.push('M' + P2(xa, ya) + 'L' + P2(xb, ya) + 'L' + P2(xb, yb) + 'L' + P2(xa, yb) + 'Z');
+                        runStart = -1;
+                    }
+                    if (i === nx || full) { continue; }
+                    var v = [G[j][i], G[j][i + 1], G[j + 1][i + 1], G[j + 1][i]];
+                    if (!(v[0] > 0 || v[1] > 0 || v[2] > 0 || v[3] > 0)) { continue; }
+                    var px = [bb[0] + i * cx, bb[0] + (i + 1) * cx, bb[0] + (i + 1) * cx, bb[0] + i * cx], py = [bb[2] + j * cy, bb[2] + j * cy, bb[2] + (j + 1) * cy, bb[2] + (j + 1) * cy];
+                    var poly = [], cross = [];
+                    for (var e = 0; e < 4; e++) {
+                        var a = e, b = (e + 1) % 4;
+                        if (v[a] > 0) { poly.push([px[a], py[a]]); }
+                        if ((v[a] > 0) !== (v[b] > 0)) {
+                            var f = v[a] / (v[a] - v[b]), q = [px[a] + f * (px[b] - px[a]), py[a] + f * (py[b] - py[a])];
+                            poly.push(q); cross.push(q);
+                        }
+                    }
+                    if (poly.length > 2) { fill.push(poly.map(function (q, n) { return (n ? 'L' : 'M') + P2(q[0], q[1]); }).join('') + 'Z'); }
+                    if (cross.length === 2) { line.push('M' + P2(cross[0][0], cross[0][1]) + 'L' + P2(cross[1][0], cross[1][1])); }
+                    else if (cross.length === 4) { line.push('M' + P2(cross[0][0], cross[0][1]) + 'L' + P2(cross[1][0], cross[1][1]) + 'M' + P2(cross[2][0], cross[2][1]) + 'L' + P2(cross[3][0], cross[3][1])); }
+                }
+            }
+            var lf = el('path', { d: fill.join(''), fill: LIVE, stroke: LIVE, 'stroke-width': 0.6 }, svg);
+            el('path', { d: line.join(''), fill: 'none', stroke: LIVE_LINE, 'stroke-width': 1.25, 'stroke-linecap': 'round' }, svg);
+            hoverOn(box, lf, 'Live: ' + first(tonnes(d.Ml)) + ', drains to the feeders');
+        }
+        /* the flat top or ridge, the dozed pile's hips */
+        var topP = g.outline(g.H);
+        if (shape === 'dozed') {
+            var b0 = g.outline(0)[0], t0 = topP[0];
+            if (g.topA > 1e-9) { el('path', { d: polyD(topP, S), fill: 'none', stroke: EDGE, 'stroke-width': 1, 'stroke-dasharray': '4 3' }, svg); }
+            else { t0 = [[-g.Lb / 2 + g.B / 2, 0], [g.Lb / 2 - g.B / 2, 0], [g.Lb / 2 - g.B / 2, 0], [-g.Lb / 2 + g.B / 2, 0]]; var r1 = S(t0[0][0], 0), r2 = S(t0[1][0], 0); el('line', { x1: r1[0], y1: r1[1], x2: r2[0], y2: r2[1], stroke: '#495057', 'stroke-width': 1.5 }, svg); }
+            for (var hq = 0; hq < 4; hq++) { var p1 = S(b0[hq][0], b0[hq][1]), p2 = S(t0[hq][0], t0[hq][1]); el('line', { x1: p1[0], y1: p1[1], x2: p2[0], y2: p2[1], stroke: EDGE, 'stroke-width': 1 }, svg); }
+        } else if (g.r0 > 1e-9) {
+            el('path', { d: polyD(topP, S), fill: 'none', stroke: EDGE, 'stroke-width': 1, 'stroke-dasharray': '4 3', 'fill-rule': 'evenodd' }, svg);
+        } else {
+            var rd = [];
+            if (shape === 'cone') { var c0 = S(0, 0); el('circle', { cx: c0[0], cy: c0[1], r: 2.5, fill: '#495057' }, svg); }
+            else if (shape === 'long' || shape === 'wall') { rd = [[-g.Lr / 2, 0], [g.Lr / 2, 0]]; }
+            else {
+                var aR = shape === 'ring' ? Math.PI : g.th / 2;
+                for (var ri = 0; ri <= 120; ri++) { var aa = -aR + 2 * aR * ri / 120; rd.push([g.Rc * Math.sin(aa), g.Rc * Math.cos(aa)]); }
+            }
+            if (rd.length) { el('polyline', { points: rd.map(function (q) { var s = S(q[0], q[1]); return s[0].toFixed(1) + ',' + s[1].toFixed(1); }).join(' '), fill: 'none', stroke: '#495057', 'stroke-width': 1.5 }, svg); }
+        }
+        /* the wall, the pivot, the tunnel and the feeders */
+        if (shape === 'wall') {
+            var wa = S(-g.Lb / 2, 0), wb = S(g.Lb / 2, 0);
+            el('line', { x1: wa[0], y1: wa[1] + 2, x2: wb[0], y2: wb[1] + 2, stroke: '#495057', 'stroke-width': 4 }, svg);
+            hoverOn(box, el('line', { x1: wa[0], y1: wa[1] + 2, x2: wb[0], y2: wb[1] + 2, stroke: 'transparent', 'stroke-width': 10 }, svg), 'Retaining wall, ' + first(dist(g.Lb)) + ' long, at least ' + first(dist(g.H)) + ' high');
+        }
+        if (shape === 'kidney' || shape === 'ring') {
+            var pv = S(0, 0);
+            el('circle', { cx: pv[0], cy: pv[1], r: 3.5, fill: '#fff', stroke: '#495057', 'stroke-width': 1.5 }, svg);
+            hoverOn(box, el('circle', { cx: pv[0], cy: pv[1], r: 9, fill: 'transparent' }, svg), 'Stacker pivot, ' + first(dist(g.Rc)) + ' from the ridge');
+        }
+        if (d.nf > 0) {
+            var clip = el('clipPath', { id: 'clipPlan' }, el('defs', {}, svg));   /* feeders beyond the pile stay inside the drawing */
+            el('rect', { x: 0, y: 0, width: Wpx, height: H - bottom + 6 }, clip);
+            var u0 = d.fs[0].u - d.fs[0].a, u1 = d.fs[d.fs.length - 1].u + d.fs[0].a, tp = [];
+            if ((shape === 'kidney' || shape === 'ring') && u1 - u0 > 2 * Math.PI * g.Rc) { u0 = -Math.PI * g.Rc; u1 = Math.PI * g.Rc; }
+            for (var ti = 0; ti <= 80; ti++) { var rr = g.ridge(u0 + (u1 - u0) * ti / 80), off = shape === 'wall' ? d.fs[0].w / 2 : 0; tp.push(S(rr.x - rr.ty * off, rr.y + rr.tx * off)); }
+            el('polyline', { points: tp.map(function (q) { return q[0].toFixed(1) + ',' + q[1].toFixed(1); }).join(' '), fill: 'none', stroke: '#495057', 'stroke-width': 1, 'stroke-dasharray': '5 4', 'clip-path': 'url(#clipPlan)' }, svg);
+            d.fs.forEach(function (f, n) {
+                var ax = f.tx * f.a / 2, ay = f.ty * f.a / 2, wx = -f.ty * f.w / 2, wy = f.tx * f.w / 2;
+                var corners = [[f.x - ax - wx, f.y - ay - wy], [f.x + ax - wx, f.y + ay - wy], [f.x + ax + wx, f.y + ay + wy], [f.x - ax + wx, f.y - ay + wy]];
+                el('path', { d: polyD([corners], S), fill: '#212529', stroke: '#212529', 'stroke-width': 1.5, 'clip-path': 'url(#clipPlan)' }, svg);
+                var cc = S(f.x, f.y);
+                hoverOn(box, el('circle', { cx: cc[0], cy: cc[1], r: 8, fill: 'transparent' }, svg), 'Feeder ' + (n + 1) + ', ' + first(dist(f.u)) + ' from the middle of the ridge\nOpening ' + first(dist(f.a)) + ' by ' + first(dist(f.w)));
+            });
+        }
+        /* overall size and scale */
+        var yd = H - bottom + 16, gx = g.bbox;                  /* the overall length, its value under the line */
+        var la2 = S(gx[0], 0)[0], lb2 = S(gx[1], 0)[0];
+        el('line', { x1: la2, x2: lb2, y1: yd, y2: yd, stroke: '#495057', 'stroke-width': 1 }, svg);
+        [la2, lb2].forEach(function (xx) { el('line', { x1: xx, x2: xx, y1: yd - 5, y2: yd + 5, stroke: '#495057', 'stroke-width': 1.25 }, svg); });
+        el('text', { x: (la2 + lb2) / 2, y: yd + 16, 'text-anchor': 'middle', 'class': 'calc-dark calc-halo' }, svg).textContent = 'Overall ' + first(dist(gx[1] - gx[0]));
+        scaleBar(svg, pad, H - 10, k, bb[1] - bb[0]);
+    }
+
+    /* ── Side view along the ridge (developed for kidney and ring piles), and the cross-section through the middle feeder ── */
+    function profileView(box, kind) {
+        box.innerHTML = '';
+        if (!last) { return; }
+        var d = last, g = d.g, shape = d.shape, ridge = kind === 'side', u0, u1, mid = 0;
+        if (d.nf > 0) { var best = d.fs[0]; d.fs.forEach(function (f) { if (Math.abs(f.u) < Math.abs(best.u) - 1e-9) { best = f; } }); mid = best.u; }
+        if (ridge) { u0 = g.uR[0]; u1 = g.uR[1]; } else { u0 = g.vR[0]; u1 = g.vR[1]; }
+        var c = g.ridge(mid), off = shape === 'wall' && d.nf > 0 ? d.fs[0].w / 2 : 0;
+        function at(u) {                                          /* plan point at u along the view: the ridge itself, or across it */
+            if (ridge) { var r = g.ridge(u); return [r.x, r.y]; }
+            return [c.x - c.ty * u, c.y + c.tx * u];
+        }
+        note(box, ridge ? (shape === 'kidney' || shape === 'ring' ? 'Along the ridge, developed flat' : 'Along the ridge') + (d.nf > 0 ? ', through the feeders' : '') :
+            'Across the pile' + (d.nf > 0 ? ' through the ' + (d.nf > 1 ? 'middle feeder' : 'feeder') : ' at its middle') + (shape === 'wall' ? ', the wall on the left' : ''));
+        var M = 600, us = [], hs = [], ds = [];
+        for (var i = 0; i <= M; i++) {
+            var u = u0 + (u1 - u0) * i / M, p = at(u), hh = g.h(p[0], p[1]);
+            us.push(u); hs.push(hh); ds.push(d.nf > 0 ? craterAt(d.fs, d.td, p[0], p[1]) : Infinity);
+        }
+        var Wpx = Math.max(280, box.clientWidth), pad = 12, top = 22, bottom = 54, ext = 0.04 * (u1 - u0);
+        var X0 = u0 - ext, X1 = u1 + ext, Y0 = -0.06 * g.H - (d.nf > 0 ? 0.03 * (u1 - u0) : 0), Y1 = g.H * 1.04;
+        var k = Math.min((Wpx - 2 * pad) / (X1 - X0), 300 / (Y1 - Y0)), H = top + (Y1 - Y0) * k + bottom;
+        var offX = pad + ((Wpx - 2 * pad) - (X1 - X0) * k) / 2;
+        function S(x, y) { return [offX + (x - X0) * k, top + (Y1 - y) * k]; }
+        function pts(list) { return list.map(function (q) { var s = S(q[0], q[1]); return s[0].toFixed(1) + ',' + s[1].toFixed(1); }).join(' '); }
+        var svg = el('svg', { width: Wpx, height: H, viewBox: '0 0 ' + Wpx + ' ' + H, role: 'img',
+            'aria-label': (ridge ? 'Side view' : 'Cross-section') + ' of the ' + SHAPE_NAME[shape] + ' to scale, ' + num(g.H, 1) + ' m high' }, box);
+        /* ground, pile, live zone, crater rims */
+        var gA = S(X0, 0), gB = S(X1, 0);
+        el('line', { x1: gA[0], x2: gB[0], y1: gA[1], y2: gA[1], stroke: '#adb5bd', 'stroke-width': 1.5 }, svg);
+        var pile = [[us[0], 0]];
+        us.forEach(function (u, n) { pile.push([u, hs[n]]); });
+        pile.push([us[M], 0]);
+        var pp = el('polygon', { points: pts(pile), fill: DEAD, stroke: EDGE, 'stroke-width': 1.25, 'stroke-linejoin': 'round' }, svg);
+        var liveA = 0;
+        if (d.nf > 0) {
+            var up = [], dn = [];
+            us.forEach(function (u, n) { up.push([u, hs[n]]); dn.push([u, Math.min(ds[n], hs[n])]); if (hs[n] > ds[n]) { liveA += (hs[n] - ds[n]) * (u1 - u0) / M; } });
+            el('polygon', { points: pts(up.concat(dn.reverse())), fill: LIVE, stroke: 'none' }, svg);
+            var seg = [], segs = [];
+            us.forEach(function (u, n) {
+                if (ds[n] < hs[n]) { seg.push([u, ds[n]]); } else if (seg.length) { segs.push(seg); seg = []; }
+            });
+            if (seg.length) { segs.push(seg); }
+            segs.forEach(function (sg) { if (sg.length > 1) { el('polyline', { points: pts(sg), fill: 'none', stroke: LIVE_LINE, 'stroke-width': 1.25 }, svg); } });
+            /* the feeder openings at the base, kept inside the drawing */
+            var clip = el('clipPath', { id: 'clip' + kind }, el('defs', {}, svg));
+            el('rect', { x: 0, y: 0, width: Wpx, height: H - bottom + 6 }, clip);
+            var fdep = Math.max(3 / k, 0.02 * (u1 - u0));
+            d.fs.forEach(function (f, n) {
+                var s0, s1;
+                if (ridge) { s0 = f.u - f.a / 2; s1 = f.u + f.a / 2; } else if (Math.abs(f.u - mid) < 1e-9) { s0 = (shape === 'wall' ? off : 0) - f.w / 2; s1 = (shape === 'wall' ? off : 0) + f.w / 2; } else { return; }
+                var a = S(s0, 0), b = S(s1, -fdep);
+                var r = el('rect', { x: a[0], y: a[1], width: Math.max(2, b[0] - a[0]), height: Math.max(2, b[1] - a[1]), fill: '#212529', 'clip-path': 'url(#clip' + kind + ')' }, svg);
+                hoverOn(box, r, 'Feeder ' + (n + 1) + '\nOpening ' + first(dist(f.a)) + ' by ' + first(dist(f.w)));
+            });
+        }
+        el('polyline', { points: pts(pile.slice(1, -1)), fill: 'none', stroke: '#495057', 'stroke-width': 1.5, 'stroke-linejoin': 'round' }, svg);
+        if (shape === 'wall' && !ridge) {                         /* the retaining wall */
+            var wa = S(-0.08 * g.R, g.H * 1.02), wb = S(0, 0);
+            el('rect', { x: wa[0], y: wa[1], width: wb[0] - wa[0], height: wb[1] - wa[1], fill: '#adb5bd', stroke: '#495057', 'stroke-width': 1 }, svg);
+        }
+        /* height and length */
+        var pk = 0;                                               /* the highest point of this section, which can sit below the peak */
+        hs.forEach(function (hh, n) { if (hh > hs[pk] + 1e-9) { pk = n; } });
+        if (hs[pk] > 1e-9) {
+            var ph = S(us[pk], hs[pk]), pb = S(us[pk], 0);
+            el('line', { x1: ph[0], x2: pb[0], y1: ph[1], y2: pb[1], stroke: '#495057', 'stroke-width': 1, 'stroke-dasharray': '3 3' }, svg);
+            el('text', { x: ph[0] + 5, y: ph[1] - 6, 'class': 'calc-dark calc-halo' }, svg).textContent = num(fromSI('m', hs[pk]), 1) + ' ' + UNIT.m[sys] + ' high';
+        }
+        var first0 = -1, last0 = -1;
+        hs.forEach(function (hh, n) { if (hh > 1e-9) { if (first0 < 0) { first0 = n; } last0 = n; } });
+        function toe(n, dir) {                                    /* where the slope meets the ground, from the two samples inside it */
+            var m2 = n + dir;
+            if (n - dir < 0 || n - dir > M || m2 < 0 || m2 > M) { return us[n]; }
+            var sl = (hs[m2] - hs[n]) / (us[m2] - us[n]) * dir;
+            if (!(sl > 1e-12)) { return us[n]; }                 /* a wall face, not a slope */
+            var x = us[n] - dir * hs[n] / sl;
+            return dir > 0 ? Math.max(x, us[n - 1]) : Math.min(x, us[n + 1]);
+        }
+        if (first0 >= 0) {
+            var ta = toe(first0, 1), tb2 = toe(last0, -1), la = S(ta, 0)[0], lb = S(tb2, 0)[0], yd = H - bottom + 22;
+            el('line', { x1: la, x2: lb, y1: yd, y2: yd, stroke: '#495057', 'stroke-width': 1 }, svg);
+            [la, lb].forEach(function (xx) { el('line', { x1: xx, x2: xx, y1: yd - 5, y2: yd + 5, stroke: '#495057', 'stroke-width': 1.25 }, svg); });
+            el('text', { x: (la + lb) / 2, y: yd - 5, 'text-anchor': 'middle', 'class': 'calc-dark calc-halo' }, svg).textContent =
+                (ridge ? (shape === 'ring' ? 'Ridge around the ring ' : 'Base ') : 'Base width ') + first(dist(tb2 - ta));
+        }
+        hoverOn(box, pp, function (e) {                           /* the pile height and the live depth under the pointer */
+            var r = svg.getBoundingClientRect(), u = X0 + (e.clientX - r.left - offX) / k, n = Math.max(0, Math.min(M, Math.round((u - u0) / (u1 - u0) * M)));
+            var t = first(dist(us[n])) + (ridge ? ' along the ridge from its middle' : ' across from the ridge') + '\nPile ' + first(dist(hs[n])) + ' high';
+            if (d.nf > 0) { t += '\nLive depth ' + first(dist(Math.max(0, hs[n] - ds[n]))); }
+            return t;
+        });
+        scaleBar(svg, pad, H - 12, k, X1 - X0);
+    }
+    function renderSide() { profileView($('side'), 'side'); }
+    function renderSect() { profileView($('sect'), 'sect'); }
+
+    /* ── Pile contents over one cycle: stacking from empty to full, then reclaiming the live capacity ── */
+    function renderCycle() {
+        var box = $('cycle');
+        box.innerHTML = '';
+        if (!last) { return; }
+        var d = last, T1 = d.tFill, T2 = d.nf > 0 ? d.tFill + d.tLive : d.tFill, Tm = T2 * 1.06;
+        note(box, 'Stacking at ' + first(rate(d.Qs)) + ' from empty' + (d.nf > 0 ? ', then reclaiming at ' + first(rate(d.Qp)) + ' until only the dead capacity is left' : ''));
+        var Wpx = Math.max(260, box.clientWidth), top = 26, ph = 200, bottom = 40, right = Wpx < 420 ? 60 : 80;
+        var yMax = fromSI('tph', d.Mt), yStep = niceStep(yMax * 1.1 / 4), yTop = Math.ceil(yMax * 1.08 / yStep) * yStep, widest = 0;
+        for (var t0 = 0; t0 * yStep <= yTop + 1e-9; t0++) { widest = Math.max(widest, num(t0 * yStep, yStep < 1 ? 1 : 0).length); }
+        var left = Math.max(44, 12 + 7 * widest), pw = Wpx - left - right, H = top + ph + bottom;
+        var xStep = niceStep(Tm / 5);
+        function X(h) { return left + h / (Math.ceil(Tm / xStep) * xStep) * pw; }
+        function Y(t) { return top + ph - fromSI('tph', t) / yTop * ph; }
+        var svg = el('svg', { width: Wpx, height: H, viewBox: '0 0 ' + Wpx + ' ' + H, role: 'img',
+            'aria-label': 'Pile contents over a cycle: full after ' + hrs(T1) + (d.nf > 0 ? ', live capacity reclaimed after a further ' + hrs(d.tLive) : '') }, box);
+        for (var i = 0; i * yStep <= yTop + 1e-9; i++) {
+            var yy = top + ph - i * yStep / yTop * ph;
+            el('line', { x1: left, x2: left + pw, y1: yy, y2: yy, stroke: i === 0 ? '#adb5bd' : '#e9ecef', 'stroke-width': 1 }, svg);
+            el('text', { x: left - 6, y: yy + 4, 'text-anchor': 'end' }, svg).textContent = num(i * yStep, yStep < 1 ? 1 : 0);
+        }
+        el('text', { x: left - 6, y: top - 14, 'text-anchor': 'end' }, svg).textContent = sys === 'met' ? 't' : 'st';
+        var xTop = Math.ceil(Tm / xStep) * xStep;
+        for (i = 0; i * xStep <= xTop + 1e-9; i++) {
+            var xx = X(i * xStep);
+            el('line', { x1: xx, x2: xx, y1: top + ph, y2: top + ph + 4, stroke: '#adb5bd', 'stroke-width': 1 }, svg);
+            el('text', { x: xx, y: top + ph + 16, 'text-anchor': 'middle' }, svg).textContent = num(i * xStep, xStep < 1 ? 1 : 0);
+        }
+        el('text', { x: left + pw / 2, y: top + ph + 33, 'text-anchor': 'middle' }, svg).textContent = 'Hours';
+        var labels = [{ y: Y(d.Mt), text: 'Full', cls: 'calc-dark' }];
+        el('line', { x1: left, x2: left + pw, y1: Y(d.Mt), y2: Y(d.Mt), stroke: '#6c757d', 'stroke-width': 1.25, 'stroke-dasharray': '5 4' }, svg);
+        if (d.nf > 0) {
+            el('line', { x1: left, x2: left + pw, y1: Y(d.Md), y2: Y(d.Md), stroke: '#6c757d', 'stroke-width': 1.25, 'stroke-dasharray': '5 4' }, svg);
+            labels.push({ y: Y(d.Md), text: 'Dead', cls: '' });
+            el('rect', { x: left, y: Y(d.Mt), width: pw, height: Math.max(0, Y(d.Md) - Y(d.Mt)), fill: LIVE, opacity: 0.35 }, svg);
+        }
+        var line = [[0, 0], [T1, d.Mt]];
+        if (d.nf > 0) { line.push([T2, d.Md]); }
+        el('polyline', { points: line.map(function (q) { return X(q[0]).toFixed(1) + ',' + Y(q[1]).toFixed(1); }).join(' '), fill: 'none', stroke: '#212529', 'stroke-width': 2.25, 'stroke-linejoin': 'round' }, svg);
+        line.slice(1).forEach(function (q) { el('circle', { cx: X(q[0]), cy: Y(q[1]), r: 4, fill: '#212529', stroke: '#fff', 'stroke-width': 2 }, svg); });
+        if (d.nf > 0 && Y(d.Md) - Y(d.Mt) > 30) { labels.push({ y: (Y(d.Md) + Y(d.Mt)) / 2, text: 'Live', cls: 'calc-dark' }); }
+        labels.sort(function (p, q) { return p.y - q.y; });
+        for (var li = 1; li < labels.length; li++) { labels[li].y = Math.max(labels[li].y, labels[li - 1].y + 14); }
+        labels.forEach(function (lb) { el('text', { x: left + pw + 6, y: lb.y + 4, 'class': lb.cls }, svg).textContent = lb.text; });
+        /* hover: the contents at a time */
+        var cross = el('line', { x1: 0, x2: 0, y1: top, y2: top + ph, stroke: '#495057', 'stroke-width': 1, visibility: 'hidden' }, svg);
+        var dot = el('circle', { r: 3.5, fill: '#212529', stroke: '#fff', 'stroke-width': 2, visibility: 'hidden' }, svg);
+        var hit = el('rect', { x: left, y: top, width: pw, height: ph, fill: 'transparent' }, svg);
+        function move(e) {
+            var bx = box.getBoundingClientRect(), sb = svg.getBoundingClientRect(), xx2 = Math.max(left, Math.min(left + pw, e.clientX - sb.left)), h = (xx2 - left) / pw * xTop;
+            var m = h <= T1 ? d.Mt * h / T1 : d.nf > 0 && h <= T2 ? d.Mt - (h - T1) * d.Qp : d.nf > 0 ? d.Md : d.Mt;
+            cross.setAttribute('x1', xx2); cross.setAttribute('x2', xx2); cross.setAttribute('visibility', 'visible');
+            dot.setAttribute('cx', xx2); dot.setAttribute('cy', Y(m)); dot.setAttribute('visibility', 'visible');
+            var phase = h <= T1 ? 'Stacking' : d.nf > 0 && h <= T2 ? 'Reclaiming' : d.nf > 0 ? 'Live capacity reclaimed' : 'Full';
+            showTip(hrs(h) + ': ' + phase + '\nIn the pile ' + first(tonnes(m)), box, e.clientX - bx.left, e.clientY - bx.top);
+        }
+        hit.addEventListener('mouseenter', move);
+        hit.addEventListener('mousemove', move);
+        hit.addEventListener('mouseleave', function () { hideTip(); cross.setAttribute('visibility', 'hidden'); dot.setAttribute('visibility', 'hidden'); });
+    }
+
+    var resizeTimer = null;
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(renderAll, 120);
+    });
+
+    /* ── Events ── */
+    numInputs.forEach(function (e) {
+        e.addEventListener('input', function () {
+            readInput(e);
+            var m = material();                                   /* an edited density or angle no longer matches the material */
+            if (m && (e.id === 'rho' && Math.abs(si.rho - m[1]) > 1e-6 || e.id === 'alpha' && Math.abs(si.alpha - m[3]) > 1e-6)) { matSel.value = 'other'; }
+            compute();
+        });
+    });
+    $('shape').addEventListener('change', compute);
+    matSel.addEventListener('change', function () { fillMaterial(); compute(); });
+    form.addEventListener('submit', function (e) { e.preventDefault(); });
+    $('units').addEventListener('change', function () {
+        sys = this.value;
+        numInputs.forEach(display);
+        document.querySelectorAll('[data-unit]').forEach(function (s) { s.textContent = UNIT[s.getAttribute('data-unit')][sys]; });
+        compute();
+    });
+
+    /* The bottom result bar hides while the results are on screen */
+    var bar = $('calcBar');
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) { bar.hidden = e.isIntersecting; });
+        }, { rootMargin: '0px 0px -15% 0px' }).observe($('results'));
+    }
+
+    /* ── Start from the example values (metric), whatever the browser restored ── */
+    numInputs.forEach(function (e) {
+        var v = e.getAttribute('value');
+        e.value = v === null ? '' : v;
+        readInput(e);
+    });
+    form.querySelectorAll('select').forEach(function (s) {
+        var sel = s.querySelector('option[selected]');
+        if (sel) { s.value = sel.value; }
+    });
+    MATERIALS.forEach(function (m, i) { if (m[0] === 'Coal (Bituminous, Run-of-Mine (ROM))') { matSel.value = String(i); } });
+    compute();
+})();
+</script>
+
+<script src="handbook.js"></script>
+
+</body>
+</html>
