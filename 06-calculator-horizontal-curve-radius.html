@@ -1445,7 +1445,7 @@
         checks.forEach(function (k) {
             if (!k.pts) { return; }
             k.list.forEach(function (c, i) {
-                if (isFinite(k.per[i])) { return; }
+                if (isFinite(k.per[i]) || c.part) { return; }      /* a part loaded case has its running case's tension */
                 var d = k.det[i];
                 warn.push(c.name + ': the ' + where(k, d.p) + ' tension is ' + (d.kind === 'hi' ? 'at or above the ' : 'at or below the ') + limName(k, c, d.kind) +
                     (vert ? ' with the ' + vword + ' curve alone' : '') + ', so no radius keeps it ' + (d.kind === 'hi' ? 'within it.' : 'above it. Raise the take-up tension.'));
@@ -1458,7 +1458,7 @@
         else if (fin('dmax') && si.dmax > space + 1e-9) { warn.push('The maximum belt drift is more than the space from the belt edge to the end of the ' + END_NAME[arr] + ', ' + first(len(space)) + '.'); }
         if (over) { warn.push('The material needs more than the belt holds at the standard edge distance.'); }
         if (isFinite(theta) && isFinite(sp)) {
-            var nTr = Math.ceil(beta / 2 - 1e-9) * sp;               /* the shortest transition, at 2° a frame */
+            var nTr = Math.ceil(Math.abs(beta) / 2 - 1e-9) * sp;               /* the shortest transition, at 2° a frame */
             cols.forEach(function (cl) {
                 if (isFinite(cl.R) && 2 * nTr > cl.R * theta * RAD) {
                     warn.push('At the ' + cl.role + ' radius the curve, ' + first(dist(cl.R * theta * RAD)) + ' long, is shorter than the banking transitions at both ends, ' +
@@ -1647,6 +1647,7 @@
         big = Math.max(big, 0.01);                                /* at least 10 mm each way, so a zero drift and limit still give an axis */
         var yStep = niceStep(fromSI('mm', big) * 1.25 / 3), yTop = Math.ceil(fromSI('mm', big) * 1.15 / yStep) * yStep;
         var Wpx = Math.max(260, box.clientWidth), left = 48, right = Wpx < 420 ? 96 : 118, top = 26, ph = 220, bottom = 40;
+        d.lines.forEach(function (ln) { right = Math.max(right, 12 + 6.8 * ln.name.length); });   /* room for the longest line name */
         var pw = Wpx - left - right, H = top + ph + bottom;
         function X(T) { return left + fromSI('kN', T) / xTop * pw; }
         function Y(v) { return top + ph / 2 - fromSI('mm', v) / yTop * ph / 2; }
@@ -1789,8 +1790,9 @@
             lab.textContent = names[Math.min(bd.k, names.length - 1)];
             if (lab.getComputedTextLength() + 6 > Math.abs(X(bd.b) - X(bd.a))) { lab.remove(); }
         });
-        el('text', { x: left, y: top + ph + 36, 'class': 'calc-dark' }, svg).textContent = 'Left edge, ' + (mir ? 'inside' : 'outside');
-        el('text', { x: left + pw, y: top + ph + 36, 'text-anchor': 'end', 'class': 'calc-dark' }, svg).textContent = 'Right edge, ' + (mir ? 'outside' : 'inside');
+        var edgeW = pw < 250 ? '' : ' edge';                      /* shorter on a narrow screen */
+        el('text', { x: left, y: top + ph + 36, 'class': 'calc-dark' }, svg).textContent = 'Left' + edgeW + ', ' + (mir ? 'inside' : 'outside');
+        el('text', { x: left + pw, y: top + ph + 36, 'text-anchor': 'end', 'class': 'calc-dark' }, svg).textContent = 'Right' + edgeW + ', ' + (mir ? 'outside' : 'inside');
 
         /* limits dashed, each load case as a line (the case that sets the required radius in dark grey); names in the right margin */
         var labels = [];
