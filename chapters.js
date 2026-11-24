@@ -35,7 +35,8 @@
         ['02-calculator-transfer-chute-overflow-on-stopping.html', 'Calculator 2', 'Transfer Chute Overflow on Stopping', 'Material discharged into a transfer chute after a stop, chute margin and receiving belt stop delay.'],
         ['03-calculator-belt-capacity.html', 'Calculator 3', 'Belt Capacity', 'Load cross-section, volumetric and mass capacity, incline reduction and loading for flat, 2, 3, 4 and 5-roll idlers.'],
         ['04-calculator-belt-roll-size.html', 'Calculator 4', 'Belt Roll Size', 'Circular and racetrack (figure 8) roll sizes, core centre distance and a truck height check.'],
-        ['05-calculator-vertical-curve-radius.html', 'Calculator 5', 'Vertical Curve Radius', 'Concave or convex curve radius in each load case for flat to 5-roll idlers, with a nominal radius check, the curve profile and a troughing angle comparison.']
+        ['05-calculator-vertical-curve-radius.html', 'Calculator 5', 'Vertical Curve Radius', 'Concave or convex curve radius in each load case for flat to 5-roll idlers, with a nominal radius check, the curve profile and a troughing angle comparison.'],
+        ['06-calculator-horizontal-curve-radius.html', 'Calculator 6', 'Horizontal Curve Radius', 'Equilibrium radius for the idler banking on the carry or return strand, with edge tension, belt drift with friction, a combined vertical curve, to-scale drawings and a 4 to 8 deg banking comparison.']
     ];
 
     /* "chapter04.html", "chapter04" (clean URLs) and "/" all resolve sensibly */
