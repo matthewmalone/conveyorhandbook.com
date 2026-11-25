@@ -256,7 +256,23 @@
                     <option value="rh">Return side, head to tail</option>
                     <option value="lt" selected>Full loop from the tail: carry, head, return</option>
                     <option value="lh">Full loop from the head: return, tail, carry</option>
+                    <option value="pt">Part loop from the tail: carry, head, return</option>
+                    <option value="ph">Part loop from the head: return, tail, carry</option>
                 </select>
+            </div>
+            <div class="calc-row" data-show="part">
+                <label for="pa"><span id="pa-label">Belt end from the tail</span><span class="calc-hint" id="pa-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="pa" data-kind="len" min="0" step="any" value="200">
+                    <span class="input-group-text" data-unit="len">m</span>
+                </div>
+            </div>
+            <div class="calc-row" data-show="partw">
+                <label for="pb"><span id="pb-label">Winch from the tail</span><span class="calc-hint" id="pb-hint"></span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="pb" data-kind="len" min="0" step="any" value="200">
+                    <span class="input-group-text" data-unit="len">m</span>
+                </div>
             </div>
             <div class="calc-row" data-show="loop">
                 <label for="np">Pulleys at the far end<span class="calc-hint" id="np-hint"></span></label>
@@ -570,7 +586,8 @@
     var G = 9.81, MU_CURVE = 0.10, ETA = 0.8, EPS = 1e-9, TF = 9.80665;   /* TF: kN per tonne-force */
     var ROUTES = {
         ct: [['carry', 'tail']], ch: [['carry', 'head']], rt: [['return', 'tail']], rh: [['return', 'head']],
-        lt: [['carry', 'tail'], ['return', 'head']], lh: [['return', 'head'], ['carry', 'tail']]
+        lt: [['carry', 'tail'], ['return', 'head']], lh: [['return', 'head'], ['carry', 'tail']],
+        pt: [['carry', 'tail'], ['return', 'head']], ph: [['return', 'head'], ['carry', 'tail']]    /* part loops */
     };
     var WINCH_T = [0.5, 1, 1.5, 2, 3, 5, 8, 10, 12, 15, 20, 25, 30, 40, 50, 60, 80, 100, 150, 200];   /* line pull, tonnes-force */
 
@@ -697,8 +714,11 @@
 
     /* ── The route as pieces: 'lin' adds friction and lift per metre, 'mul' multiplies the tension at a point,
           'reset' is a puller that leaves the back tension ahead of it ── */
+    /* Each leg runs along one side from u0 to u1, measured from the end it starts at. On a part loop the belt end sits pa along the
+       first side and the winch pb short of the end on the last side; otherwise each leg is the whole side. */
     function buildRoute(p) {
-        var legs = ROUTES[p.route], pieces = [], sections = [], pos = 0, cosd = Math.sqrt(1 - Math.pow(p.H / p.L, 2));
+        var legs = ROUTES[p.route], part = p.route === 'pt' || p.route === 'ph', pieces = [], sections = [], info = [], pos = 0;
+        var cosd = Math.sqrt(1 - Math.pow(p.H / p.L, 2));
         var kc = Math.exp(MU_CURVE * p.hc * Math.PI / 180), kcB = Math.exp(MU_CURVE * p.bf * p.hc * Math.PI / 180);
         sections.push({ name: 'Back tension', kind: 'start', s0: 0, s1: 0 });
         legs.forEach(function (leg, n) {
@@ -707,24 +727,31 @@
                 pieces.push({ kind: 'mul', at: pos, k: kp, kB: kpB });
                 sections.push({ name: 'Pulleys at the ' + other(legs[0][1]), kind: 'pul', s0: pos, s1: pos, n: p.np });
             }
-            var side = leg[0], from = leg[1], rise = from === 'tail' ? p.H : -p.H;
+            var side = leg[0], from = leg[1], rise = from === 'tail' ? p.H : -p.H, last = n === legs.length - 1;
+            var u0 = part && n === 0 ? p.pa : 0, u1 = part && last ? p.L - p.pb : p.L, ln = u1 - u0;
             var qR = side === 'carry' ? p.mRc / p.ac : p.mRr / p.ar;               /* idler rotating mass, kg per metre */
             var frR = p.fi * G * qR / 1000, frq = p.fi * G * cosd / 1000, fsq = p.mus * G * cosd / 1000, grq = G * rise / p.L / 1000;
-            var slide = side === 'carry' ? Math.min(p.Ls, p.L) : 0, cuts = [0, p.L / 2, p.L];
-            if (slide > 0) { cuts.push(from === 'tail' ? slide : p.L - slide); }
+            var slide = side === 'carry' ? Math.min(p.Ls, p.L) : 0, cuts = [u0, u1];
+            var sz = from === 'tail' ? [0, slide] : [p.L - slide, p.L];             /* the slider bed, from this leg's start end */
+            var slideLen = slide > 0 ? Math.max(0, Math.min(u1, sz[1]) - Math.max(u0, sz[0])) : 0;
+            var hasCurve = u0 < p.L / 2 - EPS && p.L / 2 < u1 - EPS;
+            if (hasCurve) { cuts.push(p.L / 2); }
+            if (slide > 0) { var sb = from === 'tail' ? slide : p.L - slide; if (sb > u0 + EPS && sb < u1 - EPS) { cuts.push(sb); } }
             cuts = uniq(cuts);
-            var curveDone = false;
-            sections.push({ name: cap1(side) + ' side, ' + from + ' to ' + other(from), kind: 'leg', s0: pos, s1: pos + p.L, side: side, from: from,
-                rise: rise, frR: frR, frq: frq, fsq: fsq, grq: grq, slide: slide, qR: qR });
+            var curveDone = !hasCurve;
+            var startName = u0 > EPS ? (p.job === 'off' ? 'free end' : 'belt end') : from, endName = u1 < p.L - EPS ? 'winch' : other(from);
+            sections.push({ name: cap1(side) + ' side, ' + startName + ' to ' + endName, kind: 'leg', s0: pos, s1: pos + ln, side: side, from: from,
+                rise: rise * ln / p.L, len: ln, frR: frR, frq: frq, fsq: fsq, grq: grq, slide: slideLen, qR: qR, u0: u0, u1: u1 });
+            info.push({ side: side, from: from, u0: u0, u1: u1, s0: pos, s1: pos + ln });
             for (var i = 0; i < cuts.length - 1; i++) {
                 var a = cuts[i], b = cuts[i + 1], mid = (a + b) / 2;
-                if (!curveDone && a >= p.L / 2 - EPS) { pieces.push({ kind: 'mul', at: pos + p.L / 2, k: kc, kB: kcB, curve: true }); curveDone = true; }
-                var onSlide = slide > 0 && (from === 'tail' ? mid < slide : mid > p.L - slide);
-                pieces.push({ kind: 'lin', at: pos + a, len: b - a, frR: onSlide ? 0 : frR, frq: onSlide ? fsq : frq, grq: grq, side: side, slide: onSlide });
+                if (!curveDone && a >= p.L / 2 - EPS) { pieces.push({ kind: 'mul', at: pos + p.L / 2 - u0, k: kc, kB: kcB, curve: true }); curveDone = true; }
+                var onSlide = slide > 0 && mid > sz[0] && mid < sz[1];
+                pieces.push({ kind: 'lin', at: pos + a - u0, len: b - a, frR: onSlide ? 0 : frR, frq: onSlide ? fsq : frq, grq: grq, side: side, slide: onSlide });
             }
-            pos += p.L;
+            pos += ln;
         });
-        return { pieces: pieces, sections: sections, total: pos, kc: kc, legs: legs };
+        return { pieces: pieces, sections: sections, total: pos, kc: kc, legs: legs, info: info };
     }
     function rate(pc, q, brk, bf) { return (brk ? bf : 1) * (pc.frR + pc.frq * q) + pc.grq * q; }   /* kN per metre */
     function withPullers(pieces, xs) {                             /* split at each puller; a puller comes before a pulley at the same point */
@@ -917,13 +944,16 @@
         return o;
     }
 
-    function describe(x, P) {                                      /* where a point along the route is on the conveyor */
-        var legs = ROUTES[P.route], n = Math.min(legs.length - 1, Math.floor(x / P.L + EPS)), u = x - n * P.L;
-        if (n > 0 && u < 1e-6) { n -= 1; u = P.L; }
-        var leg = legs[n];
-        if (u > P.L - 1e-6) { return cap1(leg[0]) + ' side, at the ' + other(leg[1]); }
-        if (u < 1e-6) { return cap1(leg[0]) + ' side, at the ' + leg[1]; }
-        return cap1(leg[0]) + ' side, ' + first(len(u)) + ' from the ' + leg[1];
+    function legAt(rt, x) {                                        /* the leg a route point is on; at a leg end, the earlier leg */
+        var n = 0;
+        while (n < rt.info.length - 1 && x > rt.info[n].s1 + 1e-6) { n++; }
+        return rt.info[n];
+    }
+    function describe(x, rt, P) {                                  /* where a point along the route is on the conveyor */
+        var g = legAt(rt, x), u = g.u0 + (x - g.s0);
+        if (u > P.L - 1e-6) { return cap1(g.side) + ' side, at the ' + other(g.from); }
+        if (u < 1e-6) { return cap1(g.side) + ' side, at the ' + g.from; }
+        return cap1(g.side) + ' side, ' + first(len(u)) + ' from the ' + g.from;
     }
 
     /* ── Main calculation ── */
@@ -931,6 +961,7 @@
     function compute() {
         var route = $('route').value, legs = ROUTES[route], loop = legs.length > 1, drive = $('mode').value === 'drive', ppos = $('ppos').value;
         var off = !drive && $('job').value === 'off';             /* pulling an old belt off with a winch */
+        var part = route === 'pt' || route === 'ph', e0 = legs[0][1];  /* part loop: belt end and winch along the sides */
         var hasCarry = legs.some(function (l) { return l[0] === 'carry'; }), hasRet = legs.some(function (l) { return l[0] === 'return'; });
         function fin(id) { return isFinite(si[id]); }
         function blank(id) { return $(id).value.trim() === ''; }
@@ -941,6 +972,14 @@
         show('ret', hasRet);
         show('drive', drive);
         show('winch', !drive);
+        show('part', part);
+        show('partw', part && !drive);
+        if (part) {
+            $('pa-label').textContent = (off ? 'Free end' : 'Belt end') + ' from the ' + e0;
+            $('pa-hint').textContent = 'Along the ' + legs[0][0] + ' side; 0 at the ' + e0;
+            $('pb-label').textContent = 'Winch from the ' + e0;
+            $('pb-hint').textContent = 'Along the ' + legs[1][0] + ' side; 0 at the ' + e0;
+        }
         show('on', !off);
         show('pullers', npl >= 1);
         show('setpos', npl >= 1 && ppos === 'set');
@@ -977,13 +1016,18 @@
             req('mRr', blank('mRr') || fin('mRr') && si.mRr >= 0 && si.mRr <= 1000, 'return idler rotating mass (' + u('0 to 1,000 kg', '0 to 2,204 lb') + ', or blank)');
         }
         if (drive) { req('mO', blank('mO') || fin('mO') && si.mO > 0 && si.mO <= 300, 'old belt mass (above 0, to ' + u('300 kg/m2', '61.4 lb/ft2') + ', or blank)'); }
+        if (part) {
+            var lim = fin('L') ? ' (0 to ' + first(len(si.L - 1)) + ')' : ' (0 to 1 m short of the centres)';
+            req('pa', fin('pa') && si.pa >= 0 && (!fin('L') || si.pa <= si.L - 1 + 1e-9), (off ? 'free end' : 'belt end') + ' from the ' + e0 + lim);
+            if (!drive) { req('pb', fin('pb') && si.pb >= 0 && (!fin('L') || si.pb <= si.L - 1 + 1e-9), 'winch from the ' + e0 + lim); }
+        }
         req('hc', fin('hc') && si.hc >= 0 && si.hc <= 360, 'horizontal curves (0 to 360 deg)');
         req('sag', fin('sag') && si.sag >= 0.5 && si.sag <= 10, 'sag limit (0.5% to 10%)');
         req('fi', fin('fi') && si.fi >= 0 && si.fi <= 1, 'idler friction factor (0 to 1)');
         req('bf', fin('bf') && si.bf >= 1 && si.bf <= 3, 'breakaway factor (1 to 3)');
         req('T0', fin('T0') && si.T0 >= 0, 'back tension (0 or more)');
         req('npl', whole('npl') && si.npl >= 0 && si.npl <= 10, 'intermediate pullers (a whole number, 0 to 10)');
-        var S = fin('L') ? si.L * legs.length : NaN, nP = Math.round(npl);
+        var S = fin('L') ? si.L * legs.length - (part ? (fin('pa') ? si.pa : 0) + (!drive && fin('pb') ? si.pb : 0) : 0) : NaN, nP = Math.round(npl);
         if (whole('npl') && nP >= 1 && nP <= 10 && ppos === 'set') {
             var pl = si.plist, okL = Array.isArray(pl) && pl.length === nP && pl.every(function (x) { return x > 0 && (!isFinite(S) || x < S - 1e-6); });
             if (okL) { var srt = pl.slice().sort(function (a, b) { return a - b; }); for (var i = 1; i < srt.length; i++) { if (srt[i] - srt[i - 1] < 0.01) { okL = false; } } }
@@ -1014,7 +1058,8 @@
         $('resultError').hidden = true;
         $('resultBody').hidden = false;
 
-        var P = { route: route, mode: drive ? 'drive' : 'winch', job: off ? 'off' : 'on', Lr: off ? Infinity : si.Lr, L: si.L, H: si.H, B: si.B, mB: si.mB, qN: si.mB * si.B,
+        var P = { route: route, mode: drive ? 'drive' : 'winch', job: off ? 'off' : 'on', Lr: off ? Infinity : si.Lr, L: si.L,
+            pa: part ? si.pa : 0, pb: part && !drive ? si.pb : 0, H: si.H, B: si.B, mB: si.mB, qN: si.mB * si.B,
             qO: drive && !blank('mO') ? si.mO * si.B : si.mB * si.B, np: loop ? Math.round(si.np) : 0, pf: loop ? si.pf : 0,
             Ls: hasCarry ? si.Ls : 0, mus: hasCarry ? si.mus : 0, ac: hasCarry ? si.ac : 1, ar: hasRet ? si.ar : 1,
             mRc: hasCarry ? (blank('mRc') ? estC : si.mRc) : 0, mRr: hasRet ? (blank('mRr') ? estR : si.mRr) : 0,
@@ -1029,11 +1074,11 @@
             if (sc.kind === 'start') { hint = off ? 'Hold-back on the free end' : 'Hold-back at the trailing end'; }
             else if (sc.kind === 'pul') { hint = sc.n + (sc.n === 1 ? ' pulley' : ' pulleys') + ' at ' + trim(P.pf) + '% each'; }
             else {
-                var parts = [first(len(P.L)) + ', ' + (Math.abs(sc.rise) < 1e-9 ? 'level' : (sc.rise > 0 ? 'up ' : 'down ') + first(len(Math.abs(sc.rise)))),
-                    'idlers ' + first(kN((sc.frR + sc.frq * P.qN) * (P.L - sc.slide)))];
+                var parts = [first(len(sc.len)) + ', ' + (Math.abs(sc.rise) < 1e-9 ? 'level' : (sc.rise > 0 ? 'up ' : 'down ') + first(len(Math.abs(sc.rise)))),
+                    'idlers ' + first(kN((sc.frR + sc.frq * P.qN) * (sc.len - sc.slide)))];
                 if (sc.slide > 0) { parts.push('slider bed ' + first(kN(sc.fsq * P.qN * sc.slide))); }
-                if (Math.abs(sc.rise) > 1e-9) { parts.push('lift ' + first(kN(sc.grq * P.qN * P.L))); }
-                if (P.hc > 0) { parts.push('curves times ' + num(rt.kc, 3) + ' midway'); }
+                if (Math.abs(sc.rise) > 1e-9) { parts.push('lift ' + first(kN(sc.grq * P.qN * sc.len))); }
+                if (P.hc > 0 && sc.u0 < P.L / 2 - EPS && P.L / 2 < sc.u1 - EPS) { parts.push('curves times ' + num(rt.kc, 3) + ' midway'); }
                 hint = parts.join(', ');
             }
             sb.push(rowN((n + 1) + '. ' + sc.name, [[kN(endR), ''], [kN(endB), '']], '', (sc.kind === 'start' ? '' : 'Adds ' + first(kN(endR - prevR)) + ': ') + hint));
@@ -1061,7 +1106,7 @@
         if (staged) {
             R.pullers.forEach(function (pk, k) {
                 stb.push(rowN('Puller ' + (k + 1), [[kN(pk.R), pk.B < -1e-9 ? bad('Holds the belt back') : ''], [kN(pk.B), pk.size ? tsize(pk.size) + ' puller with the margin' : bad('Above 200 t')]], '',
-                    describe(pk.x, P) + stepNote(pk.x) + (loop ? ', ' + first(len(pk.x)) + ' along the route' : '')));
+                    describe(pk.x, rt, P) + stepNote(pk.x) + (loop ? ', ' + first(len(pk.x)) + ' along the route' : '')));
             });
             stb.push(rowN(cap1(dev), [[kN(R.peakR.T), ''], [kN(R.peakB.T), '']], 'table-primary fw-semibold', 'Peak over the pull, with the pullers'));
             stb.push(rowN('Without pullers', [[kN(R.peak0.R.T), ''], [kN(R.peak0.B.T), '']], '', 'The ' + dev + ' alone'));
@@ -1109,7 +1154,9 @@
             var nR = Math.ceil(rt.total / si.Lr - 1e-9), Tb = Math.max(T0, R.Tmin), Tc = Tb * si.Df / si.dc;
             var Qc = solve(Object.assign({}, P, { T0: Tc }), true);   /* the brake left at the full roll setting */
             tRoll = Math.PI * (si.Df * si.Df - si.dc * si.dc) / (4 * si.Lr);   /* belt thickness the roll sizes imply */
-            bt.push(rowN('Belt rolls', [[num(nR, 0), first(len(si.Lr)) + ' per roll; ' + plural(nR - 1, 'joint', 'joints') + ' between rolls' + (loop ? ' and the closing splice' : '') +
+            var gap = part ? P.pa + P.pb : 0;                      /* a part loop leaves this much of the loop without new belt */
+            bt.push(rowN('Belt rolls', [[num(nR, 0), first(len(si.Lr)) + ' per roll; ' + plural(nR - 1, 'joint', 'joints') + ' between rolls' +
+                (gap > EPS ? '. The pull leaves ' + first(len(gap)) + ' of the loop at the ' + e0 + ' without new belt' : loop ? ' and the closing splice' : '') +
                 (nR > 1 && isFinite(R.jointRolls) ? '. A joint between rolls carries up to ' + first(kN(R.jointRolls)) + ' at breakaway' : '')]]));
             bt.push(rowN('Roll mass', [[tonnes(P.qN * si.Lr), 'Belt only; add the core or spool. The roll sizes imply a ' + first(mmF(tRoll)) + ' thick belt']]));
             bt.push(rowN('Brake torque, full roll', [[knm(Tb * si.Df / 2), 'At ' + (low ? 'the least back tension, ' + first(kN(Tb)) + ',' : 'the set back tension') + ' and ' + first(mmF(si.Df)) + ' diameter']]));
@@ -1213,13 +1260,26 @@
         var box = $('route-fig');
         box.innerHTML = '';
         if (!last) { return; }
-        var d = last, P = d.P, R = d.R, C = R.C, legs = ROUTES[P.route], drive = C.drive;
-        var W = Math.max(300, box.clientWidth), narrow = W < 520, r = 15, xT = narrow ? 62 : 96, xH = W - (narrow ? 62 : 96), H = 236;
+        var d = last, P = d.P, R = d.R, C = R.C, rt = R.rt, info = rt.info, drive = C.drive;
+        var W = Math.max(300, box.clientWidth), narrow = W < 520, r = 15, mg = narrow ? 64 : 112, xT = mg, xH = W - mg, H = 236;
         var slope = Math.max(-1, Math.min(1, P.H / P.L * 4)), dy = slope * 60, yMid = 118;   /* lift drawn exaggerated, at most 60 px */
         var yT = yMid + dy / 2, yH = yMid - dy / 2;                 /* pulley centres */
         function ends(side) { var o = side === 'carry' ? -r : r; return { tail: [xT, yT + o], head: [xH, yH + o] }; }
+        function at(g, u) {                                        /* u along a leg's side, from the end it starts at */
+            var e = ends(g.side), A = e[g.from], B = e[other(g.from)], f = u / P.L;
+            return [A[0] + (B[0] - A[0]) * f, A[1] + (B[1] - A[1]) * f];
+        }
+        function routePt(x) { var g = legAt(rt, x); return at(g, g.u0 + x - g.s0); }
         var svg = el('svg', { width: W, height: H, viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': 'Side view of the pull route, shaded by belt tension' }, box);
-        var startEnd = legs[0][1], startSide = legs[0][0], lastLeg = legs[legs.length - 1], finishEnd = other(lastLeg[1]), finishSide = lastLeg[0];
+        function label(x, y, text, anchor) {                       /* a label kept inside the drawing */
+            var t = el('text', { x: x, y: Math.max(14, Math.min(H - 24, y)), 'text-anchor': anchor || 'middle', 'class': 'calc-dark' }, svg);
+            t.textContent = text;
+            var w = t.getComputedTextLength(), left = anchor === 'end' ? x - w : anchor === 'start' ? x : x - w / 2;
+            if (left < 2) { t.setAttribute('x', x + 2 - left); }
+            else if (left + w > W - 2) { t.setAttribute('x', x - (left + w - W + 2)); }
+            return t;
+        }
+        var g0 = info[0], gN = info[info.length - 1], startEnd = g0.from, finishEnd = other(gN.from);
         /* the conveyor: both sides and the end pulleys */
         ['carry', 'return'].forEach(function (side) { var e = ends(side); el('line', { x1: e.tail[0], y1: e.tail[1], x2: e.head[0], y2: e.head[1], stroke: GREY, 'stroke-width': 2 }, svg); });
         [['tail', xT, yT], ['head', xH, yH]].forEach(function (c) {
@@ -1227,107 +1287,178 @@
             var pul = el('circle', { cx: c[1], cy: c[2], r: r, fill: isDrive ? '#dee2e6' : '#fff', stroke: DARK, 'stroke-width': isDrive ? 2.5 : 1.5 }, svg);
             if (isDrive) { hoverOn(box, pul, 'Drive pulley\nTight side ' + kN(R.peakB.T) + ' at breakaway\nSlack side at least ' + kN(R.T2)); }
         });
-        el('text', { x: xT + r + 6, y: yT + 4, 'class': 'calc-dark' }, svg).textContent = drive && finishEnd === 'tail' ? 'Tail drive' : 'Tail';   /* between the sides */
-        el('text', { x: xH - r - 6, y: yH + 4, 'text-anchor': 'end', 'class': 'calc-dark' }, svg).textContent = drive && finishEnd === 'head' ? 'Head drive' : 'Head';
+        var endLab = {};                                           /* end names between the sides; clamps stay clear of them */
+        function midY(x) { return yT + (yH - yT) * (x - xT) / (xH - xT); }   /* halfway between the sides */
+        endLab.tail = el('text', { x: xT + r + 6, y: yT + 4, 'class': 'calc-dark' }, svg);
+        endLab.tail.textContent = drive && finishEnd === 'tail' ? (narrow ? 'Drive' : 'Tail drive') : 'Tail';
+        endLab.tail.setAttribute('y', midY(xT + r + 6 + endLab.tail.getComputedTextLength() / 2) + 4);
+        endLab.head = el('text', { x: xH - r - 6, y: yH + 4, 'text-anchor': 'end', 'class': 'calc-dark' }, svg);
+        endLab.head.textContent = drive && finishEnd === 'head' ? (narrow ? 'Drive' : 'Head drive') : 'Head';
+        endLab.head.setAttribute('y', midY(xH - r - 6 - endLab.head.getComputedTextLength() / 2) + 4);
         /* tension along the route, running, for the shading */
         function Tat(x, brk) { return tensionAt(C, x, C.S, brk, false, d.T0); }
         var loT = Infinity, hiT = -Infinity;
         bounds(C).forEach(function (x) { [true, false].forEach(function (bef) { var t = tensionAt(C, x, C.S, false, bef, d.T0); loT = Math.min(loT, t); hiT = Math.max(hiT, t); }); });
         loT = Math.max(0, loT);
         function shade(T) { return T < -1e-9 ? RED : mix('#9ec5fe', '#052c65', hiT - loT > 1e-9 ? Math.max(0, Math.min(1, (T - loT) / (hiT - loT))) : 0.6); }
-        legs.forEach(function (leg, n) {
-            var e = ends(leg[0]), a = e[leg[1]], b = e[other(leg[1])], s0 = n * P.L;
-            function pt(u) { return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u]; }
-            var us = [];
-            for (var i = 0; i <= 48; i++) { us.push(i / 48); }
-            R.xs.forEach(function (x) { if (x > s0 && x < s0 + P.L) { us.push((x - s0) / P.L); } });
+        info.forEach(function (g, n) {
+            var A = at(g, g.u0), B = at(g, g.u1), us = [];
+            for (var i = 0; i <= 48; i++) { us.push(g.u0 + (g.u1 - g.u0) * i / 48); }
+            R.xs.forEach(function (x) { if (x > g.s0 && x < g.s1) { us.push(g.u0 + x - g.s0); } });
             us = uniq(us);
             for (i = 0; i < us.length - 1; i++) {
-                var p0 = pt(us[i]), p1 = pt(us[i + 1]);
-                el('line', { x1: p0[0], y1: p0[1], x2: p1[0], y2: p1[1], stroke: shade(Tat(s0 + (us[i] + us[i + 1]) / 2 * P.L, false)), 'stroke-width': 4 }, svg);
+                var p0 = at(g, us[i]), p1 = at(g, us[i + 1]);
+                el('line', { x1: p0[0], y1: p0[1], x2: p1[0], y2: p1[1], stroke: shade(Tat(g.s0 + (us[i] + us[i + 1]) / 2 - g.u0, false)), 'stroke-width': 4 }, svg);
             }
-            var m = pt(0.5), ang = Math.atan2(b[1] - a[1], b[0] - a[0]);
+            var m = at(g, (g.u0 + g.u1) / 2), ang = Math.atan2(B[1] - A[1], B[0] - A[0]);
             el('path', { d: 'M' + (m[0] + 9 * Math.cos(ang)) + ',' + (m[1] + 9 * Math.sin(ang)) + 'L' + (m[0] - 6 * Math.cos(ang) - 6 * Math.sin(ang)) + ',' + (m[1] - 6 * Math.sin(ang) + 6 * Math.cos(ang)) +
-                'L' + (m[0] - 6 * Math.cos(ang) + 6 * Math.sin(ang)) + ',' + (m[1] - 6 * Math.sin(ang) - 6 * Math.cos(ang)) + 'Z', fill: '#fff', stroke: shade(Tat(s0 + P.L / 2, false)), 'stroke-width': 1.5 }, svg);
+                'L' + (m[0] - 6 * Math.cos(ang) + 6 * Math.sin(ang)) + ',' + (m[1] - 6 * Math.sin(ang) - 6 * Math.cos(ang)) + 'Z', fill: '#fff', stroke: shade(Tat((g.s0 + g.s1) / 2, false)), 'stroke-width': 1.5 }, svg);
             if (n > 0) {                                           /* around the far end pulley */
-                var c = leg[1] === 'tail' ? [xT, yT] : [xH, yH], right = leg[1] === 'head';
-                el('path', { d: 'M' + c[0] + ',' + (c[1] - r) + ' A' + r + ',' + r + ' 0 0 ' + (right ? 1 : 0) + ' ' + c[0] + ',' + (c[1] + r), fill: 'none', stroke: shade(Tat(s0, false)), 'stroke-width': 4 }, svg);
+                var c = g.from === 'tail' ? [xT, yT] : [xH, yH], right = g.from === 'head';
+                el('path', { d: 'M' + c[0] + ',' + (c[1] - r) + ' A' + r + ',' + r + ' 0 0 ' + (right ? 1 : 0) + ' ' + c[0] + ',' + (c[1] + r), fill: 'none', stroke: shade(Tat(g.s0, false)), 'stroke-width': 4 }, svg);
             }
-            var hit = el('line', { x1: a[0], y1: a[1], x2: b[0], y2: b[1], stroke: 'transparent', 'stroke-width': 14 }, svg);
+            var hit = el('line', { x1: A[0], y1: A[1], x2: B[0], y2: B[1], stroke: 'transparent', 'stroke-width': 14 }, svg);
             hoverOn(box, hit, function (ev) {
-                var bb = svg.getBoundingClientRect(), dx = b[0] - a[0], dy2 = b[1] - a[1];
-                var u = Math.max(0, Math.min(1, ((ev.clientX - bb.left - a[0]) * dx + (ev.clientY - bb.top - a[1]) * dy2) / (dx * dx + dy2 * dy2))), x = s0 + u * P.L;
-                return describe(x, P) + '\n' + first(len(x)) + ' along the route\nTension ' + kN(Tat(x, false)) + '\nBreakaway ' + kN(Tat(x, true)) + (C.off ? '\nAt the start, with all the belt on' : '');
+                var bb = svg.getBoundingClientRect(), dx = B[0] - A[0], dy2 = B[1] - A[1], dd = dx * dx + dy2 * dy2 || 1;
+                var f = Math.max(0, Math.min(1, ((ev.clientX - bb.left - A[0]) * dx + (ev.clientY - bb.top - A[1]) * dy2) / dd)), x = g.s0 + f * (g.s1 - g.s0);
+                return describe(x, rt, P) + '\n' + first(len(x)) + ' along the route\nTension ' + kN(Tat(x, false)) + '\nBreakaway ' + kN(Tat(x, true)) + (C.off ? '\nAt the start, with all the belt on' : '');
             });
         });
+        /* Everything placed from here keeps clear of what is already drawn: pulleys, end names, icons, labels, markers and clamps */
+        var taken = [];
+        function boxOf(x0, y0, x1, y1) { return [x0, y0, x1, y1]; }
+        function hits(b) { return taken.some(function (t) { return b[0] < t[2] - 1 && t[0] < b[2] - 1 && b[1] < t[3] - 1 && t[1] < b[3] - 1; }); }
+        function inside(b) { return b[0] >= 0 && b[2] <= W && b[1] >= 0 && b[3] <= H - 18; }
+        [[xT, yT], [xH, yH]].forEach(function (c) { taken.push(boxOf(c[0] - r - 2, c[1] - r - 2, c[0] + r + 2, c[1] + r + 2)); });
+        ['tail', 'head'].forEach(function (k) { var bb = endLab[k].getBBox(); taken.push(boxOf(bb.x, bb.y, bb.x + bb.width, bb.y + bb.height)); });
+        /* The belt end and the winch: outside the pulley with the belt or rope level and tangent to it, or beside the conveyor
+           where a part loop sets them along a side. The reel sits above the carry side and below the return side. */
+        function place(g, u, end) {                                /* within 48 px of its pulley, it is drawn outside the pulley */
+            var p = at(g, u), up = g.side === 'carry' ? -1 : 1, pulleyEnd = end === 'start' ? g.from : other(g.from), out = pulleyEnd === 'tail' ? -1 : 1;
+            var tp = at(g, end === 'start' ? 0 : P.L), atEnd = Math.abs(p[0] - tp[0]) < 48;
+            return { p: p, tp: tp, up: up, atEnd: atEnd, out: out, x: atEnd ? tp[0] + out * (r + 30) : p[0] };
+        }
+        function via(o) { return o.x + ',' + o.tp[1] + ' ' + o.tp[0] + ',' + o.tp[1] + ' ' + o.p[0] + ',' + o.p[1]; }   /* level past the pulley, then along the side */
+        function offPulley(q, g, named) {                          /* a point on the belt moved inward along its side, clear of a pulley (and its name) */
+            var E = at(g, 0), F = at(g, P.L);
+            [['tail', xT], ['head', xH]].forEach(function (c) {
+                var cx = c[1], reach = r + 8 + (named ? endLab[c[0]].getComputedTextLength() + 10 : 0);
+                var inSpan = c[0] === 'tail' ? q[0] > cx - r - 8 && q[0] < cx + reach : q[0] < cx + r + 8 && q[0] > cx - reach;
+                if (!inSpan || Math.abs(F[0] - E[0]) < 1) { return; }
+                var want = cx + (c[0] === 'tail' ? reach : -reach), f = (want - E[0]) / (F[0] - E[0]);
+                q = [want, E[1] + (F[1] - E[1]) * f];
+            });
+            return q;
+        }
+        var st = place(g0, g0.u0, 'start'), fi = place(gN, gN.u1, 'finish');
+        var reel = el('g', {}, svg), lead = shade(d.T0);
+        if (C.off) {                                               /* the free end of the old belt */
+            if (st.atEnd) { el('polyline', { points: via(st), fill: 'none', stroke: lead, 'stroke-width': 4 }, svg); st.cy = st.tp[1]; }
+            else { var q0 = offPulley(st.p, g0, true); st.x = q0[0]; st.cy = q0[1]; }
+            svg.appendChild(reel);
+            st.rad = 6;
+            el('circle', { cx: st.x, cy: st.cy, r: 5.5, fill: '#fff', stroke: DARK, 'stroke-width': 2 }, reel);
+            hoverOn(box, reel, 'Free end of the old belt\nHold-back ' + kN(d.T0));
+            taken.push(boxOf(st.x - 7, st.cy - 7, st.x + 7, st.cy + 7));
+        } else {
+            st.cy = st.atEnd ? st.tp[1] + st.up * 14 : st.p[1] + st.up * 34; st.rad = 14;
+            if (st.atEnd) { el('polyline', { points: via(st), fill: 'none', stroke: lead, 'stroke-width': 4 }, svg); }
+            else { el('line', { x1: st.x, y1: st.cy - st.up * 14, x2: st.p[0], y2: st.p[1], stroke: lead, 'stroke-width': 4 }, svg); }
+            svg.appendChild(reel);
+            el('circle', { cx: st.x, cy: st.cy, r: 14, fill: '#cfe2ff', stroke: BLUE, 'stroke-width': 1.5 }, reel);
+            el('circle', { cx: st.x, cy: st.cy, r: 3, fill: BLUE }, reel);
+            hoverOn(box, reel, 'Let-off stand\nBack tension ' + kN(d.T0));
+            taken.push(boxOf(st.x - 15, st.cy - 15, st.x + 15, st.cy + 15));
+        }
+        var win = el('g', {}, svg);
+        if (drive) {                                               /* the old belt leaves the drive pulley to a rewinder */
+            fi.cy = fi.tp[1] + fi.up * 14; fi.rad = 14;
+            el('polyline', { points: via(fi), fill: 'none', stroke: GREY, 'stroke-width': 4 }, svg);
+            svg.appendChild(win);
+            el('circle', { cx: fi.x, cy: fi.cy, r: 14, fill: '#e9ecef', stroke: DARK, 'stroke-width': 1.5 }, win);
+            el('circle', { cx: fi.x, cy: fi.cy, r: 3, fill: DARK }, win);
+            hoverOn(box, win, 'Old belt out to a rewinder\nSlack side at least ' + kN(R.T2));
+            taken.push(boxOf(fi.x - 15, fi.cy - 15, fi.x + 15, fi.cy + 15));
+        } else {
+            fi.cy = fi.atEnd ? fi.tp[1] : fi.p[1] + fi.up * 34; fi.rad = 10;
+            if (fi.atEnd) { el('polyline', { points: via(fi), fill: 'none', stroke: DARK, 'stroke-width': 1.5, 'stroke-dasharray': '4 3' }, svg); }
+            else { el('line', { x1: fi.p[0], y1: fi.p[1], x2: fi.x, y2: fi.cy - fi.up * 10, stroke: DARK, 'stroke-width': 1.5, 'stroke-dasharray': '4 3' }, svg); }
+            svg.appendChild(win);
+            el('rect', { x: fi.x - 13, y: fi.cy - 10, width: 26, height: 20, rx: 3, fill: '#e9ecef', stroke: DARK, 'stroke-width': 1.5 }, win);
+            el('circle', { cx: fi.x, cy: fi.cy, r: 5, fill: '#fff', stroke: DARK, 'stroke-width': 1.5 }, win);
+            hoverOn(box, win, 'Winch\nPeak breakaway pull ' + kN(R.peakB.T));
+            taken.push(boxOf(fi.x - 14, fi.cy - 11, fi.x + 14, fi.cy + 11));
+        }
+        /* icon labels: the first clear spot of above or below, outward beside, inward beside */
+        function iconLabel(o, text) {
+            var vy = o.up < 0 ? o.cy - o.rad - 8 : o.cy + o.rad + 16, tries = [[o.x, vy, 'middle'], [o.x + o.out * (o.rad + 6), o.cy + 4, o.out < 0 ? 'end' : 'start'],
+                [o.x - o.out * (o.rad + 6), o.cy + 4, o.out < 0 ? 'start' : 'end'], [o.x, o.up < 0 ? o.cy + o.rad + 16 : o.cy - o.rad - 8, 'middle'],
+                [o.x + o.out * (o.rad + 6), vy, o.out < 0 ? 'end' : 'start'], [o.x, o.up < 0 ? o.cy - o.rad - 24 : o.cy + o.rad + 32, 'middle']];
+            if (!o.atEnd) { tries.unshift(tries.splice(1, 1)[0]); }   /* beside first, along a side */
+            for (var i = 0; i < tries.length; i++) {
+                var t = label(tries[i][0], tries[i][1], text, tries[i][2]), bb = t.getBBox(), b = boxOf(bb.x, bb.y, bb.x + bb.width, bb.y + bb.height);
+                if ((!hits(b) && inside(b)) || i === tries.length - 1) { taken.push(b); return; }
+                svg.removeChild(t);
+            }
+        }
+        iconLabel(st, C.off ? 'Free end' : 'Belt end');
+        iconLabel(fi, drive ? 'Old belt' : 'Winch');
         /* section markers, numbered as in the table, with the pull at each section end without the pullers */
         function marker(x, y, n, text) {
             var g = el('g', {}, svg);
             el('circle', { cx: x, cy: y, r: 9, fill: '#fff', stroke: BLUE, 'stroke-width': 1.5 }, g);
             el('text', { x: x, y: y + 4, 'text-anchor': 'middle', 'class': 'calc-dark', style: 'font-size:11px' }, g).textContent = String(n);
             hoverOn(box, g, text);
+            taken.push(boxOf(x - 10, y - 10, x + 10, y + 10));
         }
-        R.rt.sections.forEach(function (sc, n) {
+        rt.sections.forEach(function (sc, n) {
             var ex = sc.kind === 'leg', pull = tensionAt(R.base, sc.s1, sc.s1, false, ex, d.T0), pullB = tensionAt(R.base, sc.s1, sc.s1, true, ex, d.T0);
             var text = (n + 1) + '. ' + sc.name + '\nPull at the end ' + kN(pull) + '\nBreakaway ' + kN(pullB) + (R.xs.length ? '\nWithout the pullers' : '');
-            if (sc.kind === 'leg') {
-                var e = ends(sc.side), a = e[sc.from], b = e[other(sc.from)], off = sc.side === 'carry' ? -18 : 18;
-                marker(a[0] + (b[0] - a[0]) * 0.3, a[1] + (b[1] - a[1]) * 0.3 + off, n + 1, text);
-            } else if (sc.kind === 'pul') {
-                var cx = legs[1][1] === 'tail' ? xT : xH, cy = cx === xT ? yT : yH;
+            if (sc.kind === 'pul') {
+                var cx = info[1].from === 'tail' ? xT : xH, cy = cx === xT ? yT : yH;
                 marker(cx + (cx === xT ? -r - 16 : r + 16), cy, n + 1, text);
             }
         });
-        /* intermediate pullers */
-        (R.pullers || []).forEach(function (pk, k) {
-            var n = Math.min(legs.length - 1, Math.floor(pk.x / P.L + EPS)), u = (pk.x - n * P.L) / P.L;
-            if (n > 0 && u < 1e-6) { n -= 1; u = 1; }
-            var e = ends(legs[n][0]), a = e[legs[n][1]], b = e[other(legs[n][1])], x = a[0] + (b[0] - a[0]) * u, y = a[1] + (b[1] - a[1]) * u;
-            var g = el('rect', { x: x - 6, y: y - 6, width: 12, height: 12, rx: 2, fill: '#fff', stroke: DARK, 'stroke-width': 2 }, svg);
-            hoverOn(box, g, 'Puller ' + (k + 1) + '\n' + describe(pk.x, P) + '\nForce ' + kN(pk.R) + ', breakaway ' + kN(pk.B));
-        });
-        /* trailing end and winch, or the old belt leaving the drive, outside the ends where the route starts and finishes */
-        function outside(end, side, gap) { var e = ends(side)[end]; return [e[0] + (end === 'tail' ? -gap : gap), e[1]]; }
-        var lo = outside(startEnd, startSide, 34), wi = outside(finishEnd, finishSide, 34);
-        if (P.route === 'lt' || P.route === 'lh') { lo[1] += startSide === 'carry' ? -22 : 22; wi[1] += finishSide === 'carry' ? -22 : 22; }
-        var s0 = ends(startSide)[startEnd], f0 = ends(finishSide)[finishEnd];
-        el('line', { x1: lo[0], y1: lo[1], x2: s0[0], y2: s0[1], stroke: shade(d.T0), 'stroke-width': 4, 'stroke-linecap': 'round' }, svg);
-        var reel = el('g', {}, svg);
-        if (C.off) {                                               /* the free end of the old belt */
-            el('circle', { cx: lo[0], cy: lo[1], r: 6, fill: '#fff', stroke: DARK, 'stroke-width': 2 }, reel);
-            hoverOn(box, reel, 'Free end of the old belt\nHold-back ' + kN(d.T0));
-        } else {
-            el('circle', { cx: lo[0], cy: lo[1], r: 14, fill: '#cfe2ff', stroke: BLUE, 'stroke-width': 1.5 }, reel);
-            el('circle', { cx: lo[0], cy: lo[1], r: 3, fill: BLUE }, reel);
-            hoverOn(box, reel, 'Let-off stand\nBack tension ' + kN(d.T0));
-        }
-        var win = el('g', {}, svg);
-        if (drive) {
-            el('line', { x1: f0[0], y1: f0[1], x2: wi[0], y2: wi[1], stroke: GREY, 'stroke-width': 4, 'stroke-linecap': 'round' }, svg);
-            svg.appendChild(win);
-            el('circle', { cx: wi[0], cy: wi[1], r: 14, fill: '#e9ecef', stroke: DARK, 'stroke-width': 1.5 }, win);
-            el('circle', { cx: wi[0], cy: wi[1], r: 3, fill: DARK }, win);
-            hoverOn(box, win, 'Old belt out to a rewinder\nSlack side at least ' + kN(R.T2));
-        } else {
-            el('line', { x1: f0[0], y1: f0[1], x2: wi[0], y2: wi[1], stroke: DARK, 'stroke-width': 1.5, 'stroke-dasharray': '4 3' }, svg);
-            svg.appendChild(win);
-            el('rect', { x: wi[0] - 13, y: wi[1] - 10, width: 26, height: 20, rx: 3, fill: '#e9ecef', stroke: DARK, 'stroke-width': 1.5 }, win);
-            el('circle', { cx: wi[0], cy: wi[1], r: 5, fill: '#fff', stroke: DARK, 'stroke-width': 1.5 }, win);
-            hoverOn(box, win, 'Winch\nPeak breakaway pull ' + kN(R.peakB.T));
-        }
-        function fit(y) { return Math.max(14, Math.min(H - 24, y)); }  /* labels stay clear of the edges and the note */
-        var lyLo = fit(lo[1] < yMid ? lo[1] - 22 : lo[1] + 30), lyWi = fit(wi[1] < yMid ? wi[1] - 22 : wi[1] + 30);
-        if (Math.abs(lo[0] - wi[0]) < 1 && Math.abs(lyLo - lyWi) < 16) { lyWi += lyWi < yMid ? -16 : 16; }
-        el('text', { x: lo[0], y: lyLo, 'text-anchor': 'middle', 'class': 'calc-dark' }, svg).textContent = C.off ? 'Free end' : 'Belt end';
-        el('text', { x: wi[0], y: lyWi, 'text-anchor': 'middle', 'class': 'calc-dark' }, svg).textContent = drive ? 'Old belt' : 'Winch';
-        /* clamps just inside each end of the route */
-        function clamp(pt, toward, text) {
-            var x = pt[0] + (toward - pt[0]) * 0.12, y = pt[1];
-            var c = el('rect', { x: x - 3, y: y - 9, width: 6, height: 18, rx: 1, fill: RED }, svg);
+        /* clamps just inside each end of the belt, at the first clear spot */
+        function clamp(g, fromStart, text) {
+            var A = at(g, g.u0), B = at(g, g.u1), px = Math.max(1, Math.hypot(B[0] - A[0], B[1] - A[1]));
+            var d0 = Math.min(Math.max(Math.min(0.12 * px, 100), 24), 0.5 * px), tries = [d0], q = null, b;
+            for (var k = 1; k <= 30; k++) { tries.push(d0 + 12 * k); }
+            for (k = 1; k <= 3; k++) { tries.push(d0 - 6 * k); }
+            for (var i = 0; i < tries.length; i++) {
+                var dp = tries[i];
+                if (dp < 4 || dp > px - 4) { continue; }
+                var qq = at(g, fromStart ? g.u0 + dp / px * (g.u1 - g.u0) : g.u1 - dp / px * (g.u1 - g.u0));
+                b = boxOf(qq[0] - 4, qq[1] - 10, qq[0] + 4, qq[1] + 10);
+                if (!hits(b)) { q = qq; break; }
+            }
+            if (!q) { q = at(g, fromStart ? g.u0 + Math.min(d0, px / 2) / px * (g.u1 - g.u0) : g.u1 - Math.min(d0, px / 2) / px * (g.u1 - g.u0)); }   /* a very short run of belt */
+            var c = el('rect', { x: q[0] - 3, y: q[1] - 9, width: 6, height: 18, rx: 1, fill: RED }, svg);
             hoverOn(box, c, text);
+            taken.push(boxOf(q[0] - 4, q[1] - 10, q[0] + 4, q[1] + 10));
         }
-        clamp(f0, ends(finishSide)[other(finishEnd)][0], 'Clamp at the ' + (drive ? 'drive' : 'winch') + ' end\nDesign load ' + kN(d.dsg[0]));
-        clamp(s0, ends(startSide)[other(startEnd)][0], 'Clamp at the ' + (C.off ? 'free' : 'trailing') + ' end\nDesign load ' + kN(d.dsg[1]));
+        clamp(gN, false, 'Clamp at the ' + (drive ? 'drive' : 'winch') + ' end\nDesign load ' + kN(d.dsg[0]));
+        clamp(g0, true, 'Clamp at the ' + (C.off ? 'free' : 'trailing') + ' end\nDesign load ' + kN(d.dsg[1]));
+        rt.sections.forEach(function (sc, n) {                     /* along each side: outside it, further out, between the sides, then just beyond */
+            if (sc.kind !== 'leg') { return; }
+            var pull = tensionAt(R.base, sc.s1, sc.s1, false, true, d.T0), pullB = tensionAt(R.base, sc.s1, sc.s1, true, true, d.T0);
+            var text = (n + 1) + '. ' + sc.name + '\nPull at the end ' + kN(pull) + '\nBreakaway ' + kN(pullB) + (R.xs.length ? '\nWithout the pullers' : '');
+            var outY = sc.side === 'carry' ? -18 : 18, fr = [0.4, 0.55, 0.25, 0.7, 0.15, 0.85, 0.5], spot = null, tries = [];
+            [outY, outY * 2.3, -Math.sign(outY) * 15].forEach(function (oy) { fr.forEach(function (f) { tries.push([f, 0, oy]); }); });
+            [24, -24, 48, -48, 72, -72].forEach(function (dx) { tries.push([0.5, dx, outY]); tries.push([0.5, dx, outY * 2.3]); });
+            for (var i = 0; i < tries.length && !spot; i++) {
+                var q = at(sc, sc.u0 + (sc.u1 - sc.u0) * tries[i][0]), x = q[0] + tries[i][1], y = q[1] + tries[i][2], b = boxOf(x - 10, y - 10, x + 10, y + 10);
+                if (!hits(b) && inside(b)) { spot = [x, y]; }
+            }
+            if (!spot) { var q0 = at(sc, sc.u0 + (sc.u1 - sc.u0) * 0.4); spot = [q0[0], q0[1] + outY]; }
+            marker(spot[0], spot[1], n + 1, text);
+        });
+        /* intermediate pullers, at their place on the belt, kept off the pulley circles */
+        (R.pullers || []).forEach(function (pk, k) {
+            var q = offPulley(routePt(pk.x), legAt(rt, pk.x));
+            var g = el('rect', { x: q[0] - 5, y: q[1] - 5, width: 10, height: 10, rx: 2, fill: '#fff', stroke: DARK, 'stroke-width': 2 }, svg);
+            hoverOn(box, g, 'Puller ' + (k + 1) + '\n' + describe(pk.x, rt, P) + '\nForce ' + kN(pk.R) + ', breakaway ' + kN(pk.B));
+        });
         el('text', { x: W / 2, y: H - 6, 'text-anchor': 'middle' }, svg).textContent = 'Darker is higher tension; not to scale';
     }
 
