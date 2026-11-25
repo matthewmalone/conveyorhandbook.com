@@ -141,7 +141,7 @@ section[id] { scroll-margin-top: 1rem; }
 .formula-block > p { margin: 0.75rem 0 0; }
 
 /* Contents list (landing page): fixed-width chapter number column */
-.chapter-num { flex: 0 0 6rem; font-variant-numeric: tabular-nums; }
+.chapter-num { flex: 0 0 7rem; white-space: nowrap; font-variant-numeric: tabular-nums; }
 
 /* ── Tablets and phones: off-canvas sidebar ── */
 @media (max-width: 991.98px) {
@@ -181,7 +181,7 @@ section[id] { scroll-margin-top: 1rem; }
 }
 
 @media (max-width: 575.98px) {
-    .chapter-num { flex-basis: 5.25rem; }
+    .chapter-num { flex-basis: 6.5rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
